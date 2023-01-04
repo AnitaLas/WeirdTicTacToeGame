@@ -39,12 +39,12 @@ namespace Assets.Scripts
         public static double PositionMinOrMaxXYZForCubePlayCalculate(double number, int devide, int round)
         {
             double result = number / devide;
-            Debug.Log("number: " + number);
-            Debug.Log("devide: " + devide);
-            Debug.Log("result: " + result);
+            //Debug.Log("number: " + number);
+            //Debug.Log("devide: " + devide);
+            //Debug.Log("result: " + result);
 
             double roundedNumber = Math.Round(result, round);
-            Debug.Log("roundedNumber: " + roundedNumber);
+            //Debug.Log("roundedNumber: " + roundedNumber);
             return roundedNumber;
             //double position = roundedNumber + scale;
             //return position;
@@ -75,10 +75,10 @@ namespace Assets.Scripts
         {
             float floatNumber = PositionMinOrMaxXYZForCubePlayConvertResultInDoubleToFloat(number);
             //float startPositionXYZ = 0.65f; // add scale scale/2
-            Debug.Log("PositionForFirstPrefab: floatNumber:" + floatNumber);
+            //Debug.Log("PositionForFirstPrefab: floatNumber:" + floatNumber);
            
             float positionForFirstCubePlay = startPositionXYZ - floatNumber;
-            Debug.Log("positionForFirstCubePlay: " + positionForFirstCubePlay);
+            //Debug.Log("positionForFirstCubePlay: " + positionForFirstCubePlay);
 
             return positionForFirstCubePlay;
         }
@@ -98,10 +98,10 @@ namespace Assets.Scripts
         public static float CalculateLengthForAllPrefabInOneLineXYZ(int number, float scale)
         {
             float floatNumber = CommonMethods.ConvertIntToFloat(number);
-            Debug.Log("CalculateLengthForAllPrefabInOneLineXYZ floatNumber: " + floatNumber);
+            //Debug.Log("CalculateLengthForAllPrefabInOneLineXYZ floatNumber: " + floatNumber);
             
             float lenght = floatNumber * scale;
-            Debug.Log("CalculateLengthForAllPrefabInOneLineXYZ lenght: " + lenght);
+            //Debug.Log("CalculateLengthForAllPrefabInOneLineXYZ lenght: " + lenght);
             return lenght;
         }
 

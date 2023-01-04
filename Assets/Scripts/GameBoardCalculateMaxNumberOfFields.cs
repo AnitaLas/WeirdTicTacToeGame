@@ -40,18 +40,18 @@ namespace Assets.Scripts
             double maxNumberOfFieldForWidth = CountMaxNumberOfFields(_meter, screenWidth, _px);
             double maxNumberOfFieldsForHeight = CountMaxNumberOfFields(_meter, screenHeight, _px);
             var maxNumberOfFields = new Tuple<double,double>(maxNumberOfFieldForWidth, maxNumberOfFieldsForHeight);
-            Debug.Log("maxNumberOfFields: " + maxNumberOfFields);
+            //Debug.Log("maxNumberOfFields: " + maxNumberOfFields);
             return maxNumberOfFields;
         }
 
         public static double CountMaxNumberOfFields(double meter, double screenSize, double px)
         {
-            Debug.Log("-------------------------------: ");
-            Debug.Log("meter: " + meter);
-            Debug.Log("screenSize: " + screenSize);
+            //Debug.Log("-------------------------------: ");
+            //Debug.Log("meter: " + meter);
+            //Debug.Log("screenSize: " + screenSize);
             // count scale
             double scale = ((meter * screenSize) / px) * 100;
-            Debug.Log("scale: " + scale);
+            //Debug.Log("scale: " + scale);
             // count "new" size of screen in px
             double newSizeOfScreen = screenSize * scale;
            // Debug.Log("newSizeOfScreen: " + newSizeOfScreen);

@@ -361,6 +361,8 @@
 "Assets/Scripts/Game.cs"
 "Assets/Scripts/GameBoardCalculateMaxNumberOfFields.cs"
 "Assets/Scripts/GameBoardCreate.cs"
+"Assets/Scripts/GameBoardCreateChangeColour.cs"
+"Assets/Scripts/GameBoardCreateChangeText.cs"
 "Assets/Scripts/GameBoardCreateMethods.cs"
 "Assets/Scripts/GameBoardCreateScale.cs"
 "Assets/Scripts/GameObjectSize.cs"
