@@ -3,91 +3,129 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
     internal class GameBoardCreate : MonoBehaviour
     {
 
-        public static void CreateBoardGame(GameObject prefab, int numbersCubesForWidthX, int numbersCubesForHeightY, int numbersCubesForDepthZ)
+
+        public static void CreateBoardGame(GameObject prefab, int numbersCubesForWidthX, int numbersCubesForHeightY, int numbersCubesForDepthZ, Material[] cubePlayColour)
         {
+            // [prefabColor] lenght of array colour assigned to object "GameBoard"
+            int cubePlayColourLenght = cubePlayColour.Length;
+
+            // [prefabCubePlay] number for all created prefab "CubePlay"
+            int maxCubePlayNumber = numbersCubesForWidthX * numbersCubesForHeightY * numbersCubesForDepthZ;
+
+            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+            // [prefabCubePlay] calculate data for game board - start
+            // [prefabCubePlay] calculate new scale for prefab "CubaPlay"
             float newScale = GameBoardCreateScale.ScaleForPrefabCubePlay(prefab, numbersCubesForWidthX, numbersCubesForHeightY);
-            float startPositionXYZ = GameBoardCreateScale.StartPositionXYZ(newScale);
+
+            // [prefabCubePlay] calculate data for first "CubaPlay"
+            float startPositionForPrefabCubePlayXYZ = GameBoardCreateScale.StartPositionXYZ(newScale);
+
+            // [prefabCubePlay] change the scale for prefab "CubePlay" using a new scale 
             GameBoardCreateScale.TransformPrefabCubePlayToNewScale(prefab, newScale);
-            /*
-            float positionForFirstCubePlayWidthX = GameBoardCreateMethods.PositionForFirstPrefab(numbersCubesForWidthX);
-            float positionForFirstCubePlayHeightY = GameBoardCreateMethods.PositionForFirstPrefab(numbersCubesForHeightY); // max 2 down, the other field mast be seen if 
-            float positionForFirstCubePlayDepthZ = GameBoardCreateMethods.PositionForFirstPrefab(numbersCubesForDepthZ);
 
-            float positionForLastCubePlayWidthX = GameBoardCreateMethods.PositionForLastPrefab(numbersCubesForWidthX);
-            float positionForLastCubePlayHeightY = GameBoardCreateMethods.PositionForLastPrefab(numbersCubesForHeightY);
-            float positionForLastCubePlayDepthZ = GameBoardCreateMethods.PositionForLastPrefab(numbersCubesForDepthZ);
-            */
+            // [prefabCubePlay] finding the lenght for all prefab "CubePlay" in one line for X, Y Z
+            float lengthForAllPrefabCubePlayInOneLineX = GameBoardCreateMethods.CalculateLengthForAllPrefabInOneLineXYZ(numbersCubesForWidthX, newScale);
+            float lengthForAllPrefabCubePlayInOneLineY = GameBoardCreateMethods.CalculateLengthForAllPrefabInOneLineXYZ(numbersCubesForHeightY, newScale);
+            float lengthForAllPrefabCubePlayInOneLineZ = GameBoardCreateMethods.CalculateLengthForAllPrefabInOneLineXYZ(numbersCubesForDepthZ, newScale);
 
-            float lengthForAllPrefabInOneLineX = GameBoardCreateMethods.CalculateLengthForAllPrefabInOneLineXYZ(numbersCubesForWidthX, newScale);
-            //Debug.Log("??????????????????????????? lengthForAllPrefabInOneLineX: " + lengthForAllPrefabInOneLineX);
+            // [prefabCubePlay] finding position X, Y, Z for fisrt prefab "CubePlay"
+            float positionForFirstCubePlayWidthX = GameBoardCreateMethods.PositionForFirstPrefab(lengthForAllPrefabCubePlayInOneLineX, startPositionForPrefabCubePlayXYZ);
+            float positionForFirstCubePlayHeightY = GameBoardCreateMethods.PositionForFirstPrefab(lengthForAllPrefabCubePlayInOneLineY, startPositionForPrefabCubePlayXYZ);
+            float positionForFirstCubePlayDepthZ = GameBoardCreateMethods.PositionForFirstPrefab(lengthForAllPrefabCubePlayInOneLineZ, startPositionForPrefabCubePlayXYZ);
 
-            float lengthForAllPrefabInOneLineY = GameBoardCreateMethods.CalculateLengthForAllPrefabInOneLineXYZ(numbersCubesForHeightY, newScale);
-           // Debug.Log("lengthForAllPrefabInOneLineY: " + lengthForAllPrefabInOneLineY);
+            // [prefabCubePlay] finding position X, Y, Z for last prefab "CubePlay"
+            float positionForLastCubePlayWidthX = GameBoardCreateMethods.PositionForLastPrefab(lengthForAllPrefabCubePlayInOneLineX);
+            float positionForLastCubePlayHeightY = GameBoardCreateMethods.PositionForLastPrefab(lengthForAllPrefabCubePlayInOneLineY);
+            float positionForLastCubePlayDepthZ = GameBoardCreateMethods.PositionForLastPrefab(lengthForAllPrefabCubePlayInOneLineZ);
 
-            float lengthForAllPrefabInOneLineZ = GameBoardCreateMethods.CalculateLengthForAllPrefabInOneLineXYZ(numbersCubesForDepthZ, newScale);
-           // Debug.Log("lengthForAllPrefabInOneLineZ: " + lengthForAllPrefabInOneLineZ);
-
-            float positionForFirstCubePlayWidthX = GameBoardCreateMethods.PositionForFirstPrefab(lengthForAllPrefabInOneLineX, startPositionXYZ);
-           // float positionForFirstCubePlayWidthX = -1.15f;
-            Debug.Log("positionForFirstCubePlayWidthX: " + positionForFirstCubePlayWidthX);
-
-            float positionForFirstCubePlayHeightY = GameBoardCreateMethods.PositionForFirstPrefab(lengthForAllPrefabInOneLineY, startPositionXYZ); // max 2 down, the other field mast be seen if 
-           // float positionForFirstCubePlayHeightY = -2.3f;
-            Debug.Log("positionForFirstCubePlayHeightY: " + positionForFirstCubePlayHeightY);
-
-            float positionForFirstCubePlayDepthZ = GameBoardCreateMethods.PositionForFirstPrefab(lengthForAllPrefabInOneLineZ, startPositionXYZ);
-            //float positionForFirstCubePlayDepthZ = 0;
-            Debug.Log("positionForFirstCubePlayDepthZ: " + positionForFirstCubePlayDepthZ);
-
-            float positionForLastCubePlayWidthX = GameBoardCreateMethods.PositionForLastPrefab(lengthForAllPrefabInOneLineX);
-            float positionForLastCubePlayHeightY = GameBoardCreateMethods.PositionForLastPrefab(lengthForAllPrefabInOneLineY);
-            float positionForLastCubePlayDepthZ = GameBoardCreateMethods.PositionForLastPrefab(lengthForAllPrefabInOneLineZ);
+            // [prefabCubePlay] calculate data for game board - end
+            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+            // [prefabCubePlayName] change text and name for prefab "CubePlay"
+            int[] cubePlayNumber = new int[1];
+            cubePlayNumber[0] = 0;
+
+            // [prefabCubePlayColor] change last index for material -> colour for prefab "CubePlay"
+            // variant of material colour assigne to object "GameBoard"
+            int[] indexForPreviousCubePlayColour = new int[1];
+            indexForPreviousCubePlayColour[0] = 0;
+
+            // [prefabCubePlayColor] change last index for current counted number height for Y
+            // max colour number = number columns given by user = number prefab "CubePlay" in one column for Y
+            int[] currentCountedNumberCubePlayForY = new int[1];
+            currentCountedNumberCubePlayForY[0] = 0;
+
+            int[] zz = new int[1];
+            zz[0] = 0;
+
+            // [gameBoard] create game board - start
             for (float x = positionForFirstCubePlayWidthX; x < positionForLastCubePlayWidthX; x = x + newScale)          
             {
-                 for(float y = positionForFirstCubePlayHeightY; y < positionForLastCubePlayHeightY; y = y + newScale)
+                int newZ = zz[0] + 1;
+                zz[0] = newZ;
+                Debug.Log("----------------------------------------------------------------------------------");
+                Debug.Log("----------------------------------------------------------------------------------");
+                Debug.Log("cube number: " + newZ);
+
+                for (float y = positionForFirstCubePlayHeightY; y < positionForLastCubePlayHeightY; y = y + newScale)
                  {
 
                      for (float z = positionForFirstCubePlayDepthZ; z < positionForLastCubePlayDepthZ; z = z + newScale)
                      {
-                        Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
-                     }
+                        // [prefabCubePlayColorDefaule] change colour for new prefab "CubePlay"
+                        int currentIndexForPreviousColour = indexForPreviousCubePlayColour[0];
+                        int currentCountedNumberForCubePlayHeightY = currentCountedNumberCubePlayForY[0];
+
+                        Debug.Log("currentIndexForPreviousColour :" + currentIndexForPreviousColour);
+                       
+                        var newDataForCubePlayColour = GameBoardCreateChangeColour.NewIndexColourForPrefabCubePlay(cubePlayColourLenght, currentIndexForPreviousColour, numbersCubesForHeightY, currentCountedNumberForCubePlayHeightY);
+
+                        int newIndexForCubePlayColour = newDataForCubePlayColour.Item1;
+                        int newCountedNumberForCubePlayHeightY = newDataForCubePlayColour.Item2;
+
+                        Debug.Log("newIndexForCubePlayColour :" + newIndexForCubePlayColour);
+                        indexForPreviousCubePlayColour[0] = newIndexForCubePlayColour;
+                        currentCountedNumberCubePlayForY[0] = newCountedNumberForCubePlayHeightY;
+
+                        GameBoardCreateChangeColour.ChangeColourForPrefabCubePlay(prefab, cubePlayColour, newIndexForCubePlayColour);
+
+
+
+
+
+
+
+                        // [prefabCubePlayTextDefault] - change text for new prefab "CubePlay"
+                        string prefabCubePlayDefaultText = "?";
+                        GameBoardCreateChangeText.SetUpFirstTextForPrefaCubePlay(prefab, prefabCubePlayDefaultText);
+
+                        // create new prefab "CubePlay"
+                        var newPrefabCubePlay = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
+
+                        // [prefabCubePlayName] chcange the name for new prefab "CubePlay"
+                        newPrefabCubePlay.name = "CubePlay" + cubePlayNumber[0];
+                        cubePlayNumber[0] = cubePlayNumber[0] + 1;
+
+
+
+
+  
+                    }
                  }
             }
-
+            // [gameBoard] create game board - end
         }
-
-
-
-        /*
-        public static void ScaleForCubePlay(GameObject prefab, double numbersCubesForWidthX, double numbersCubesForHeightY)
-        {
-
-
-            if (numbersCubesForWidthX < 5 && numbersCubesForHeightY < 7)
-            {
-                prefab.transform.localScale = new Vector3(1, 1, 1);
-            }
-
-          else
-            {
-                prefab.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            }
-
-        
-        }
-
-         */
-
 
 
 

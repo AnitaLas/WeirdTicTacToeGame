@@ -8,15 +8,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Vector3 = UnityEngine.Vector3;
+using UnityEngine.UI;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
     public GameObject prefabCubePlay;
 
-    //public int width = 3;
-    // public int height = 2;
-    // Start is called before the first frame update
+    // prefab "CubePlay" - colour 
+    public Material[] cubePlayColour;
 
+    private int _minNumbersCubesForWidthX = 3;
+    private int _minNumbersCubesForHeightY = 3;
+    private int _minNumbersCubesForDepthZ = 3;
 
     void Start()
     {
@@ -24,25 +28,16 @@ public class Game : MonoBehaviour
         int minNumbersCubesForHeightY = 3;
         int minNumbersCubesForDepthZ = 3;
 
-        int numbersCubesForWidthX = 10; // 1                            //2
-        int numbersCubesForHeightY = 3;  // 1                          // 1
-        int numbersCubesForDepthZ = 1; // 1 - generuje 3 na na 3       // 1 -> generuje 3h na 4w
-
-        //transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        int numbersCubesForWidthX = 5;
+        int numbersCubesForHeightY = 6;
+        int numbersCubesForDepthZ = 1;
 
 
-        //ransform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        //Vector3 objectScale = transform.localScale;
-        // transform.localScale = new Vector3(objectScale.x * 0.5f, objectScale.y * 0.5f, objectScale.z * 0.5f);
-        //GameBoardCreateScale.ScaleForCubePlay();
+        // [createGameBoard] - creating the board game 
+        GameBoardCreate.CreateBoardGame(prefabCubePlay, numbersCubesForWidthX, numbersCubesForHeightY, numbersCubesForDepthZ, cubePlayColour);
 
 
-
-
-        GameBoardCreate.CreateBoardGame(prefabCubePlay, numbersCubesForWidthX, numbersCubesForHeightY, numbersCubesForDepthZ);
-
-       
-
+   
 
 
 
