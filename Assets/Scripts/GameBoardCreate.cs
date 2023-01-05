@@ -28,7 +28,7 @@ namespace Assets.Scripts
             float newScale = GameBoardCreateScale.ScaleForPrefabCubePlay(prefab, numbersCubesForWidthX, numbersCubesForHeightY);
 
             // [prefabCubePlay] calculate data for first "CubaPlay"
-            float startPositionForPrefabCubePlayXYZ = GameBoardCreateScale.StartPositionXYZ(newScale);
+            float startPositionForPrefabCubePlayXYZ = GameBoardCreateMethods.StartPositionXYZ(newScale);
 
             // [prefabCubePlay] change the scale for prefab "CubePlay" using a new scale 
             GameBoardCreateScale.TransformPrefabCubePlayToNewScale(prefab, newScale);
@@ -50,7 +50,7 @@ namespace Assets.Scripts
 
             // [prefabCubePlay] calculate data for game board - end
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+            bool isNumbersCubesForHeightY = CommonMethods.IsNumberEven(numbersCubesForHeightY);
 
             // [prefabCubePlayName] change text and name for prefab "CubePlay"
             int[] cubePlayNumber = new int[1];
@@ -66,6 +66,7 @@ namespace Assets.Scripts
             int[] currentCountedNumberCubePlayForY = new int[1];
             currentCountedNumberCubePlayForY[0] = 0;
 
+            // remove zz - only for help
             int[] zz = new int[1];
             zz[0] = 0;
 
@@ -74,30 +75,29 @@ namespace Assets.Scripts
             {
                 int newZ = zz[0] + 1;
                 zz[0] = newZ;
-                Debug.Log("----------------------------------------------------------------------------------");
-                Debug.Log("----------------------------------------------------------------------------------");
-                Debug.Log("cube number: " + newZ);
+               // Debug.Log("----------------------------------------------------------------------------------");
+               // Debug.Log("cube number: " + newZ);
 
                 for (float y = positionForFirstCubePlayHeightY; y < positionForLastCubePlayHeightY; y = y + newScale)
                  {
 
                      for (float z = positionForFirstCubePlayDepthZ; z < positionForLastCubePlayDepthZ; z = z + newScale)
                      {
-                        // [prefabCubePlayColorDefaule] change colour for new prefab "CubePlay"
+                        // [prefabCubePlayColorDefaule] old data - change colour for new prefab "CubePlay"
                         int currentIndexForPreviousColour = indexForPreviousCubePlayColour[0];
                         int currentCountedNumberForCubePlayHeightY = currentCountedNumberCubePlayForY[0];
 
-                        Debug.Log("currentIndexForPreviousColour :" + currentIndexForPreviousColour);
-                       
-                        var newDataForCubePlayColour = GameBoardCreateChangeColour.NewIndexColourForPrefabCubePlay(cubePlayColourLenght, currentIndexForPreviousColour, numbersCubesForHeightY, currentCountedNumberForCubePlayHeightY);
+                        // [prefabCubePlayColorDefaule] calculate new data - change colour for new prefab "CubePlay"
+                        var newDataForCubePlayColour = GameBoardCreateChangeColour.NewIndexColourForPrefabCubePlay(cubePlayColourLenght, currentIndexForPreviousColour, numbersCubesForHeightY, currentCountedNumberForCubePlayHeightY, isNumbersCubesForHeightY);
 
                         int newIndexForCubePlayColour = newDataForCubePlayColour.Item1;
                         int newCountedNumberForCubePlayHeightY = newDataForCubePlayColour.Item2;
 
-                        Debug.Log("newIndexForCubePlayColour :" + newIndexForCubePlayColour);
+                        // [prefabCubePlayColorDefaule] new data - change colour for new prefab "CubePlay"
                         indexForPreviousCubePlayColour[0] = newIndexForCubePlayColour;
                         currentCountedNumberCubePlayForY[0] = newCountedNumberForCubePlayHeightY;
 
+                        // [prefabCubePlayColorDefaule] change colour for new prefab "CubePlay"
                         GameBoardCreateChangeColour.ChangeColourForPrefabCubePlay(prefab, cubePlayColour, newIndexForCubePlayColour);
 
 
@@ -109,6 +109,19 @@ namespace Assets.Scripts
                         // [prefabCubePlayTextDefault] - change text for new prefab "CubePlay"
                         string prefabCubePlayDefaultText = "?";
                         GameBoardCreateChangeText.SetUpFirstTextForPrefaCubePlay(prefab, prefabCubePlayDefaultText);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                         // create new prefab "CubePlay"
                         var newPrefabCubePlay = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
