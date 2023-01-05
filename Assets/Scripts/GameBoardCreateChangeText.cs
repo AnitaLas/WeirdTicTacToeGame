@@ -13,7 +13,7 @@ namespace Assets.Scripts
     internal class GameBoardCreateChangeText : MonoBehaviour
     {
 
-        public static void SetUpFirstTextForPrefaCubePlay(GameObject prefab, string prefabDefaultText)
+        public static void SetUpDefaultTextForPrefaCubePlay(GameObject prefab, string prefabDefaultText)
         {
             var newPrefabCubePlayCanvas = prefab.transform.GetChild(0);
             var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();

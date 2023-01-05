@@ -7,6 +7,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Assets.Scripts
 {
@@ -56,6 +57,9 @@ namespace Assets.Scripts
             int[] cubePlayNumber = new int[1];
             cubePlayNumber[0] = 0;
 
+            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+            // [prefabCubePlayColor] - start
+
             // [prefabCubePlayColor] change last index for material -> colour for prefab "CubePlay"
             // variant of material colour assigne to object "GameBoard"
             int[] indexForPreviousCubePlayColour = new int[1];
@@ -66,22 +70,54 @@ namespace Assets.Scripts
             int[] currentCountedNumberCubePlayForY = new int[1];
             currentCountedNumberCubePlayForY[0] = 0;
 
+            //[prefabCubePlayColor] - end
+            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+            // [prefabCubePlayTextDefault] - start
+
+            // [prefabCubePlayTextDefault] - table wiht number for prefab "CubePlay", number added to prefab as are creaiing in UI (var newPrefabCubePlay) 
+            // first coulumn from button to up, then next column from button to up, from left to reight
+            int[,] prefabCubePlayNumbers = GameBoardCreateMethods.CreateTableWithPrefabCubePlayNumbers(numbersCubesForWidthX, numbersCubesForHeightY);
+
+            // [prefabCubePlayTextDefault] - default text for new prefab "CubePlay"
+            string[,] defaultTextForPrefabCubePlay = GameBoardCreateMethods.CreateTableWithTextForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
+
+            int[] countedPrefabCubePlay = new int[1];
+            countedPrefabCubePlay[0] = 1;
+            //int currentPrefabCubePlayX;
+
+
+
+
+            //[prefabCubePlayTextDefault] - end
+            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
             // remove zz - only for help
-            int[] zz = new int[1];
-            zz[0] = 0;
+            //int[] zz = new int[1];
+            //zz[0] = 0;
 
             // [gameBoard] create game board - start
             for (float x = positionForFirstCubePlayWidthX; x < positionForLastCubePlayWidthX; x = x + newScale)          
             {
-                int newZ = zz[0] + 1;
-                zz[0] = newZ;
-               // Debug.Log("----------------------------------------------------------------------------------");
-               // Debug.Log("cube number: " + newZ);
+                //int newZ = zz[0] + 1;
+                //zz[0] = newZ;
+                // Debug.Log("----------------------------------------------------------------------------------");
+                // Debug.Log("cube number: " + newZ);
+
+
+
+
 
                 for (float y = positionForFirstCubePlayHeightY; y < positionForLastCubePlayHeightY; y = y + newScale)
                  {
 
-                     for (float z = positionForFirstCubePlayDepthZ; z < positionForLastCubePlayDepthZ; z = z + newScale)
+ 
+
+                    for (float z = positionForFirstCubePlayDepthZ; z < positionForLastCubePlayDepthZ; z = z + newScale)
                      {
                         // [prefabCubePlayColorDefaule] old data - change colour for new prefab "CubePlay"
                         int currentIndexForPreviousColour = indexForPreviousCubePlayColour[0];
@@ -106,10 +142,26 @@ namespace Assets.Scripts
 
 
 
-                        // [prefabCubePlayTextDefault] - change text for new prefab "CubePlay"
-                        string prefabCubePlayDefaultText = "?";
-                        GameBoardCreateChangeText.SetUpFirstTextForPrefaCubePlay(prefab, prefabCubePlayDefaultText);
+                        //[prefabCubePlayTextDefault] - change text for new prefab "CubePlay"
+                        int currentNumberForPrefabCubePlay = countedPrefabCubePlay[0];
+                        
 
+                        
+                       // var newPositionXYForPrefabCubePlayColour = GameBoardCreateMethods.GetIndexXYForDefaultNumberForPrefaCubePlay(prefabCubePlayNumbers, currentNumberForPrefabCubePlay);
+
+                       // int newPositionXForPrefabCubePlayColour = newPositionXYForPrefabCubePlayColour.Item1;
+                        //int newPositionYForPrefabCubePlayColour = newPositionXYForPrefabCubePlayColour.Item2;
+
+                        //Debug.Log("X: " + newPositionXForPrefabCubePlayColour);
+                        //Debug.Log("Y: " + newPositionYForPrefabCubePlayColour);
+
+                        string prefabCubePlayDefaultText = GameBoardCreateMethods.GetDefaultTextForPrefaCubePlay(prefabCubePlayNumbers, defaultTextForPrefabCubePlay, currentNumberForPrefabCubePlay);
+
+                        GameBoardCreateChangeText.SetUpDefaultTextForPrefaCubePlay(prefab, prefabCubePlayDefaultText);
+
+                       
+                        int newNumberForPrefabCubePlay = GameBoardCreateMethods.GetNumberForPrefabCubePlay(currentNumberForPrefabCubePlay);
+                        countedPrefabCubePlay[0] = newNumberForPrefabCubePlay;
 
 
 
@@ -136,6 +188,13 @@ namespace Assets.Scripts
   
                     }
                  }
+
+
+             
+
+
+
+
             }
             // [gameBoard] create game board - end
         }

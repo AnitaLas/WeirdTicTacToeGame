@@ -28,8 +28,8 @@ internal class Game : MonoBehaviour
         int minNumbersCubesForHeightY = 3;
         int minNumbersCubesForDepthZ = 3;
 
-        int numbersCubesForWidthX = 7;
-        int numbersCubesForHeightY = 6;
+        int numbersCubesForWidthX = 10;
+        int numbersCubesForHeightY = 7;
         int numbersCubesForDepthZ = 1;
 
 
