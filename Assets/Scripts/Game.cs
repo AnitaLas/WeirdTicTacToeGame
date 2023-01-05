@@ -11,7 +11,7 @@ using Vector3 = UnityEngine.Vector3;
 using UnityEngine.UI;
 using TMPro;
 
-public class Game : MonoBehaviour
+internal class Game : MonoBehaviour
 {
     public GameObject prefabCubePlay;
 
@@ -28,7 +28,7 @@ public class Game : MonoBehaviour
         int minNumbersCubesForHeightY = 3;
         int minNumbersCubesForDepthZ = 3;
 
-        int numbersCubesForWidthX = 5;
+        int numbersCubesForWidthX = 7;
         int numbersCubesForHeightY = 6;
         int numbersCubesForDepthZ = 1;
 
@@ -37,7 +37,11 @@ public class Game : MonoBehaviour
         GameBoardCreate.CreateBoardGame(prefabCubePlay, numbersCubesForWidthX, numbersCubesForHeightY, numbersCubesForDepthZ, cubePlayColour);
 
 
-   
+
+        GameBoardCreateMethods.CreateTableWithTextForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
+        
+        
+        //GameBoardCreateMethods.CreateNewTableWithCharactersBasedOntheExistingTableWithCharacters(numbersCubesForWidthX, numbersCubesForHeightY);
 
 
 
@@ -47,20 +51,6 @@ public class Game : MonoBehaviour
 
         //--------------------------------------------------------------------
 
-        /*
-         // version 1
-        for (float y = 0.5f; y < height; ++y)
-        {
-            for (float x = 0.5f; x < width; ++x)
-            {
-                for (float z = 0.5f; z < depth; ++z)
-                {
-                    Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
-                }
-            }
-        }
-        */
-        //------------------------------------------------------------
         /*
         int cubePlaySize = 100;
 

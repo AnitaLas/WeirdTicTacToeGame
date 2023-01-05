@@ -13,39 +13,36 @@ namespace Assets.Scripts
     {
 
         /// <summary>
-        /// <para> dodać opis, że to z obietu GameBoard </para>
+        /// <para> tt returns the index one by one from the array colour assigned to the object "GameBoard" by Name "Cube Play Colour" </para>
         /// </summary>
-        /// <param name="cubePlayColour"></param>
+        /// <param name="cubePlayColourLenght"></param>
         /// <param name="indexForPreviousColour"></param>
+        /// <param name="numbersCubesForHeightY"></param>
+        /// <param name="currentCountedNumberForCubePlayHeightY"></param>
+        /// <param name="isNumbersCubesForHeightY"></param>
         /// <returns></returns>
-        public static Tuple <int, int> NewIndexColourForPrefabCubePlay(int cubePlayColourLenght, int indexForPreviousColour, int numbersCubesForHeightY, int currentCountedNumberForCubePlayHeightY)
+        public static Tuple <int, int> NewIndexColourForPrefabCubePlay(int cubePlayColourLenght, int indexForPreviousColour, int numbersCubesForHeightY, int currentCountedNumberForCubePlayHeightY, bool isNumbersCubesForHeightY)
         {
-            //int numbersCubesForHeightY = numbersCubesForHeightY2 - 1;
             int maxIndexForCubePlayColour = cubePlayColourLenght - 1;
             int newIndexForCubePlayColour;
 
             int currentCountedNumberForHeightY;
 
-            //int[] currentCountedNumberCubeForHeightY = new int[1];
-            //currentCountedNumberCubeForHeightY[0] = 1;
-
-            Debug.Log("numbersCubesForHeightY :" + numbersCubesForHeightY);
-            Debug.Log("currentCountedNumberForCubePlayHeightY :" + currentCountedNumberForCubePlayHeightY);
- 
-
-
             if (indexForPreviousColour == 0)
             {
-                //currentCountedNumberForHeightY = currentCountedNumberForCubePlayHeightY + 1;
-                //newIndexForCubePlayColour = indexForPreviousColour + 1;
 
                 if (currentCountedNumberForCubePlayHeightY == numbersCubesForHeightY)
                 {
-                    //Debug.Log("Tu jestem?  V222222 IF currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
-
                     currentCountedNumberForHeightY = 1;
-                    newIndexForCubePlayColour = indexForPreviousColour;
-                   // Debug.Log("Tu jestem?  V222222 IF currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
+
+                    if (isNumbersCubesForHeightY == true)
+                    {
+                        newIndexForCubePlayColour = indexForPreviousColour;
+                    }
+                    else
+                    {
+                        newIndexForCubePlayColour = indexForPreviousColour + 1;
+                    }
 
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayColour, currentCountedNumberForHeightY);
                     return newDataForCubePlayColour;
@@ -53,10 +50,9 @@ namespace Assets.Scripts
                 }
                 else
                 {
-                    //Debug.Log("Tu jestem?  V222222 ELSE currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
                     currentCountedNumberForHeightY = currentCountedNumberForCubePlayHeightY + 1;
-                    newIndexForCubePlayColour = indexForPreviousColour + 1; ;
-                    
+                    newIndexForCubePlayColour = indexForPreviousColour + 1;
+
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayColour, currentCountedNumberForHeightY);
                     return newDataForCubePlayColour;
                 }
@@ -64,18 +60,19 @@ namespace Assets.Scripts
             
             else if (indexForPreviousColour == maxIndexForCubePlayColour)
             {
-                Debug.Log("Tu jestem?  V222222 :");
-                Debug.Log("Tu jestem?  V222222 indexForPreviousColour = maxIndexForCubePlayColour:" + indexForPreviousColour + " = " + maxIndexForCubePlayColour);
-
-
                 
                 if (currentCountedNumberForCubePlayHeightY == numbersCubesForHeightY)
                 {
-                    Debug.Log("Tu jestem?  V222222 IF currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
-
                     currentCountedNumberForHeightY = 1;                   
-                    newIndexForCubePlayColour = indexForPreviousColour;
-                    Debug.Log("Tu jestem?  V222222 IF currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
+                    
+                    if (isNumbersCubesForHeightY == true)
+                    {
+                        newIndexForCubePlayColour = indexForPreviousColour;
+                    }
+                    else
+                    {
+                        newIndexForCubePlayColour = 0;
+                    }
 
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayColour, currentCountedNumberForHeightY);
                     return newDataForCubePlayColour;
@@ -83,11 +80,9 @@ namespace Assets.Scripts
                 }
                 else
                 {
-                    Debug.Log("Tu jestem?  V222222 ELSE currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
                     currentCountedNumberForHeightY = currentCountedNumberForCubePlayHeightY + 1;
                     newIndexForCubePlayColour = 0;
-                    //newIndexForCubePlayColour = indexForPreviousColour;
-                    Debug.Log("Tu jestem?  V222222 ELSE currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
+
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayColour, currentCountedNumberForHeightY);
                     return newDataForCubePlayColour;
                 }
@@ -98,45 +93,59 @@ namespace Assets.Scripts
 
                 if (currentCountedNumberForCubePlayHeightY == numbersCubesForHeightY)
                 {
-                    Debug.Log("Tu jestem?  V1111 IF currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
                     currentCountedNumberForHeightY = 0;
-                    //Log("1 ELSE IF IF currentCountedNumberForHeightY :" + currentCountedNumberForHeightY);
 
-                    newIndexForCubePlayColour = indexForPreviousColour;
-                    //Debug.Log("1 ELSE IF IF newIndexForCubePlayColour :" + newIndexForCubePlayColour);
-                    Debug.Log("Tu jestem?  V1111 IF currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
+                    if (isNumbersCubesForHeightY == true)
+                    {
+                        newIndexForCubePlayColour = indexForPreviousColour;
+                    }
+                    else
+                    {
+                        newIndexForCubePlayColour = indexForPreviousColour + 1;
+                    }
+
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayColour, currentCountedNumberForHeightY);
                     return newDataForCubePlayColour;
                 }
                 else
                 {
-                    Debug.Log("Tu jestem?  V1111 ELSE currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
-
                     currentCountedNumberForHeightY = currentCountedNumberForCubePlayHeightY + 1;
                     newIndexForCubePlayColour = indexForPreviousColour + 1;
-                    Debug.Log("Tu jestem?  V1111 ELSE currentCountedNumberForCubePlayHeightY = numbersCubesForHeightY:" + currentCountedNumberForCubePlayHeightY + " = " + numbersCubesForHeightY);
-
-
+                   
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayColour, currentCountedNumberForHeightY);
                     return newDataForCubePlayColour;
                 }
             }
             else
             {
-                Debug.Log("Tu jestem?  V33333 :");
                 currentCountedNumberForHeightY = 0;
                 newIndexForCubePlayColour = 0;
+
                 var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayColour, currentCountedNumberForHeightY);
                 return newDataForCubePlayColour;
             }
         }
 
+        /// <summary>
+        /// <para> it returns colour for the new prefab "CubePlay" </para>
+        /// <para> indexForNewColour come from method NewIndexColourForPrefabCubePlay() </para>
+        /// </summary>
+        /// <param name="cubePlayColour"></param>
+        /// <param name="indexForNewColour"></param>
+        /// <returns></returns>
         public static Material NewColourForPrefabCubePlay(Material[] cubePlayColour, int indexForNewColour)
         {
             Material cubeColour = cubePlayColour[indexForNewColour];
             return cubeColour;         
         }
 
+        /// <summary>
+        /// <para> it changes the colour for prefab "CubePlay" </para> 
+        /// <para> indexForNewColour come from method NewIndexColourForPrefabCubePlay() </para>
+        /// </summary>
+        /// <param name="prefab"></param>
+        /// <param name="cubePlayColour"></param>
+        /// <param name="indexForNewColour"></param>
         public static void ChangeColourForPrefabCubePlay(GameObject prefab, Material[] cubePlayColour, int indexForNewColour)
         {
             Material cubeColour = NewColourForPrefabCubePlay(cubePlayColour, indexForNewColour);

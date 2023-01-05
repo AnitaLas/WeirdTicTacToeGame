@@ -16,7 +16,7 @@ namespace Assets.Scripts
         private static float _prefabCubePlayDefaultScaleX = 1;
         private static float _prefabCubePlayDefaultScaleY = 1;
         private static float _prefabCubePlayDefaultScaleZ = 1;
-        private static float _prefabCubePlayDefaultLowerScale = 10000;
+        private static float _prefabCubePlayDefaultLowerScale = 1;
 
         // max number cube for phone
         private static int _prefabCubePlayMaxNumberWidthXPhone = 4;
@@ -53,11 +53,7 @@ namespace Assets.Scripts
             prefab.transform.localScale = new Vector3(newScale, newScale, newScale);
         }
 
-        public static float StartPositionXYZ(float newScale)
-        {
-            float startPositionXYZ = newScale / 2;
-            return startPositionXYZ;
-        }
+
 
 
     }
