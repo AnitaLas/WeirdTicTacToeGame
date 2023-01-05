@@ -4,6 +4,7 @@ using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -188,7 +189,7 @@ namespace Assets.Scripts
             int newTableWithCharactersLenght = numbersCubesForWidthX * numbersCubesForHeightY;
            
             int oldTableLenght = oldTableWithCharacters.Length;
-            Debug.Log("oldTableLenght: " + oldTableLenght);
+            //Debug.Log("oldTableLenght: " + oldTableLenght);
 
             string[] oldTable = new string[oldTableLenght];
             string[] newTableWithCharacters = new string[newTableWithCharactersLenght];
@@ -422,63 +423,280 @@ namespace Assets.Scripts
         }
 
 
-        public static string [,] CreateTableWithTextForPrefabCubePlay(int numbersCubesForWidthX, int numbersCubesForHeightY)
-        {
-            string[,] tableWithText = new string[numbersCubesForWidthX, numbersCubesForHeightY];
-            string[] alphabet = CreateTableWithCharactersForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
-            string[] numbers = CreateTableWithNumbersForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
-            int[] indexForNumbers = new int[1];
-            indexForNumbers[0] = 0;
-            int indexForNumber;
+        //public static string [,] Create2DTableWithCharacters(int numbersCubesForWidthX, int numbersCubesForHeightY)
+        //{
+        //    string[,] newTable = new string[numbersCubesForWidthX, numbersCubesForHeightY];
+        //    string[] alphabet = CreateTableWithCharactersForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
+        //    int[] index = new int[1];
+        //    index[0] = 0;
+        //    int currentIndex;
 
-            /*
-            for (int i = 0; i < alphabet.Length; i++)
-            {
-                Debug.Log($"numbersCubesForWidthX[{i}] = " + alphabet[i]);
-            }
-            */
-            //Debug.Log($"------------------------------------------------------ ");
-            /*
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                Debug.Log($"numbers[{i}] = " + numbers[i]);
-            }
-            */
-            /*
-              numbersCubesForHeightY
-             numbersCubesForWidthX
-             */
-            int indexStaticForX = 0;
+        //    int indexStaticForX = 0;
+
+        //    for (int indexX = 0; indexX < numbersCubesForWidthX; indexX++)
+        //    {
+
+        //        for (int indexY = 0; indexY < numbersCubesForHeightY; indexY++)
+        //        {
+        //            currentIndex = index[0];
+        //            string stringAlphabet = alphabet[currentIndex];
+        //            string textForPrebaCubePlay = stringAlphabet;
+
+        //            newTable[indexStaticForX, indexY] = textForPrebaCubePlay;
+        //            Debug.Log($"tableWithText[{indexStaticForX}, {indexY}]: " + newTable[indexStaticForX, indexY]);
+
+        //            index[0] = index[0] + 1;
+
+        //        }
+        //    }
+            
+        //    return newTable;
+
+        //}
+
+        //public static string[,] Create2DTableWithNumbers(int numbersCubesForWidthX, int numbersCubesForHeightY)
+        //{
+        //    string[,] tableWithText = new string[numbersCubesForWidthX, numbersCubesForHeightY];
+        //    string[] numbers = CreateTableWithNumbersForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
+        //    int[] index = new int[1];
+        //    index[0] = 0;
+        //    int currentIndex;
+
+        //    /*
+        //    for (int i = 0; i < alphabet.Length; i++)
+        //    {
+        //        Debug.Log($"numbersCubesForWidthX[{i}] = " + alphabet[i]);
+        //    }
+        //    */
+        //    //Debug.Log($"------------------------------------------------------ ");
+        //    /*
+        //    for (int i = 0; i < numbers.Length; i++)
+        //    {
+        //        Debug.Log($"numbers[{i}] = " + numbers[i]);
+        //    }
+        //    */
+
+        //    int indexStaticForX = 0;
+
+        //    for (int indexX = 0; indexX < numbersCubesForWidthX; indexX++)
+        //    {
+
+        //        for (int indexY = 0; indexY < numbersCubesForHeightY; indexY++)
+        //        {
+        //            currentIndex = index[0];
+        //            string stringNumber = numbers[currentIndex];
+
+        //            string textForPrebaCubePlay =  stringNumber;
+
+        //            tableWithText[indexStaticForX, indexY] = textForPrebaCubePlay;
+        //            Debug.Log($"tableWithText[{indexStaticForX}, {indexY}]: " + tableWithText[indexStaticForX, indexY]);
+
+        //            index[0] = index[0] + 1;
+
+        //        }
+        //    }
+
+        //    return tableWithText;
+
+        //}
+
+
+
+        public static string[,] Create2DTableWithCharacters(string[] table, int numbersCubesForWidthX, int numbersCubesForHeightY)
+        {
+            string[,] newTable = new string[numbersCubesForWidthX, numbersCubesForHeightY];
+            int[] index = new int[1];
+            index[0] = 0;
+            int currentIndex;
+
+
+         //   Debug.Log($"------------------------ Create2DTable START ----------------------------- "); 
 
             for (int indexX = 0; indexX < numbersCubesForWidthX; indexX++)
             {
-                // for (int indexY = numbersCubesForHeightY - 1; indexY >= 0; indexY--)
 
                 for (int indexY = 0; indexY < numbersCubesForHeightY; indexY++)
                 {
-                    indexForNumber = indexForNumbers[0];
-                    //string stringNumber = numbers[indexForNumber];
-                    string stringAlphabet = alphabet[indexForNumber];
-                    //string textForPrebaCubePlay = stringAlphabet + stringNumber;
+                    currentIndex = index[0];
+                    string stringAlphabet = table[indexY];
                     string textForPrebaCubePlay = stringAlphabet;
 
-                    //tableWithText[indexX, indexY] = textForPrebaCubePlay;
-                    //Debug.Log($"tableWithText[{indexX}, {indexY}]: " + tableWithText[indexX, indexY]);
+                    newTable[indexX, indexY] = textForPrebaCubePlay;
+                   // Debug.Log($"tableWithText[{indexX}, {indexY}]: " + newTable[indexStaticForX, indexY]);
 
-                    tableWithText[indexStaticForX, indexY] = textForPrebaCubePlay;
-                    Debug.Log($"tableWithText[{indexStaticForX}, {indexY}]: " + tableWithText[indexStaticForX, indexY]);
-
-                    indexForNumbers[0] = indexForNumbers[0] + 1;
+                    index[0] = index[0] + 1;
 
                 }
             }
-            
-            return tableWithText;
+            //Debug.Log($"------------------------ Create2DTable END ----------------------------- ");
+
+
+            return newTable;
 
         }
 
 
-        
+
+
+
+
+        public static string[,] CreateTableWithTextForPrefabCubePlay(int numbersCubesForWidthX, int numbersCubesForHeightY)
+        {
+            //int newTableWithCharactersLenght = numbersCubesForWidthX * numbersCubesForHeightY;
+            string[,] newTable = new string[numbersCubesForWidthX, numbersCubesForHeightY];
+            string[] alphabet = CreateTableWithCharactersForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
+            //string[] numbers = CreateTableWithNumbersForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
+
+            string[,] alphabet2D = Create2DTableWithCharacters(alphabet, numbersCubesForWidthX, numbersCubesForHeightY);
+            //string[,] numbers2D = Create2DTable(numbers, numbersCubesForWidthX, numbersCubesForHeightY);
+
+
+            for (int indexX = 0; indexX < numbersCubesForWidthX; indexX++)
+            {
+
+                for (int indexY = 0; indexY < numbersCubesForHeightY; indexY++)
+                {
+                   
+                   // string stringAlphabet = alphabet2D[indexX, indexY];
+                    
+                    
+                   // string textForPrebaCubePlay = stringAlphabet;
+
+
+                   //newTable[indexX, indexY] = textForPrebaCubePlay;
+                    newTable[indexX, indexY] = alphabet2D[indexX, indexY];
+
+                   //Debug.Log($"newTable[{indexX}, {indexY}]: " + newTable[indexX, indexY]);
+
+
+                }
+            }
+
+            
+            return newTable;
+        }
+
+        public static int[,] CreateTableWithPrefabCubePlayNumbers(int numbersCubesForWidthX, int numbersCubesForHeightY)
+        {
+
+            int[,] PrefabCubePlayNumbers = new int[numbersCubesForWidthX, numbersCubesForHeightY];
+            int number = 0;
+
+            for (int indexX = 0; indexX < numbersCubesForWidthX; indexX++)          
+            {
+                for (int indexY = numbersCubesForHeightY-1; indexY >= 0; indexY--)
+                {
+                    number = number + 1;
+                    PrefabCubePlayNumbers[indexX, indexY] = number;
+                }
+            }
+
+            return PrefabCubePlayNumbers;
+        }
+
+
+
+
+
+
+
+        public static Tuple<int, int> GetIndexXYForDefaultNumberForPrefaCubePlay(int[,] prefabCubePlayNumbers, int currentNumberForPrefabCubePlay)
+        {
+            int lenghtForX = prefabCubePlayNumbers.GetLength(0);
+            int lenghtForY = prefabCubePlayNumbers.GetLength(1);
+            int cubePlayIndexX;
+            int cubePlayIndexY;
+
+            for (int indexX = 0; indexX < lenghtForX; indexX++)
+            {
+                for (int indexY = 0; indexY < lenghtForY; indexY++)
+                {
+                    if (prefabCubePlayNumbers[indexX, indexY].Equals(currentNumberForPrefabCubePlay))
+                    {
+                         cubePlayIndexX = indexX;
+                         cubePlayIndexY = indexY;
+                         return Tuple.Create(cubePlayIndexX, cubePlayIndexY);                   
+                    } 
+                }
+            }
+
+            return Tuple.Create(0, 0);
+
+        }
+
+        public static string GetDefaultTextForPrefaCubePlay(int[,] prefabCubePlayNumbers, string[,] defaultTextForPrefabCubePlay, int currentNumberForPrefabCubePlay)
+        {
+            var cublePlayIndexXY = GetIndexXYForDefaultNumberForPrefaCubePlay(prefabCubePlayNumbers, currentNumberForPrefabCubePlay);
+            int cubePlayIndexX = cublePlayIndexXY.Item1;
+            int cubePlayIndexY = cublePlayIndexXY.Item2;
+
+            string defaultText = defaultTextForPrefabCubePlay[cubePlayIndexX, cubePlayIndexY];
+
+            //int newNumberForPrefabCubePlay = currentNumberForPrefabCubePlay + 1;
+            //string defaultText = "BLE";
+
+            //var dataForPrefabCubePlayTextDefault = Tuple.Create(newNumberForPrefabCubePlay, defaultText);
+            return defaultText;
+
+        }
+
+        public static int  GetNumberForPrefabCubePlay(int currentNumberForPrefabCubePlay)
+        {
+            int newNumberForPrefabCubePlay = currentNumberForPrefabCubePlay + 1;
+            return newNumberForPrefabCubePlay;
+        }
+
+
+        //public static string[,] CreateTableWithTextForPrefabCubePlay(int numbersCubesForWidthX, int numbersCubesForHeightY)
+        //{
+        //    string[,] tableWithText = new string[numbersCubesForWidthX, numbersCubesForHeightY];
+        //    string[,] alphabet = CreateNew2DTableWithCharacters(numbersCubesForWidthX, numbersCubesForHeightY);
+        //    string[] numbers = CreateTableWithNumbersForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
+        //    int[] indexForNumbers = new int[1];
+        //    indexForNumbers[0] = 0;
+        //    int indexForNumber;
+
+        //    /*
+        //    for (int i = 0; i < alphabet.Length; i++)
+        //    {
+        //        Debug.Log($"numbersCubesForWidthX[{i}] = " + alphabet[i]);
+        //    }
+        //    */
+        ////Debug.Log($"------------------------------------------------------ ");
+        ///*
+        //for (int i = 0; i < numbers.Length; i++)
+        //{
+        //    Debug.Log($"numbers[{i}] = " + numbers[i]);
+        //}
+        //*/
+
+        //    int indexStaticForX = 0;
+
+        //    for (int indexX = 0; indexX < numbersCubesForWidthX; indexX++)
+        //    {
+
+        //        for (int indexY = 0; indexY < numbersCubesForHeightY; indexY++)
+        //        {
+        //            indexForNumber = indexForNumbers[0];
+        //            //string stringNumber = numbers[indexForNumber];
+        //            string stringAlphabet = alphabet[indexForNumber];
+        //            //string textForPrebaCubePlay = stringAlphabet + stringNumber;
+        //            string textForPrebaCubePlay = stringAlphabet;
+
+        //            //tableWithText[indexX, indexY] = textForPrebaCubePlay;
+        //            //Debug.Log($"tableWithText[{indexX}, {indexY}]: " + tableWithText[indexX, indexY]);
+
+        //            tableWithText[indexStaticForX, indexY] = textForPrebaCubePlay;
+        //            Debug.Log($"tableWithText[{indexStaticForX}, {indexY}]: " + tableWithText[indexStaticForX, indexY]);
+
+        //            indexForNumbers[0] = indexForNumbers[0] + 1;
+
+        //        }
+        //    }
+
+        //    return tableWithText;
+
+        //}
 
 
 
