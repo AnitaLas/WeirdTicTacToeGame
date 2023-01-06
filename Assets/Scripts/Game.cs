@@ -18,30 +18,41 @@ internal class Game : MonoBehaviour
     // prefab "CubePlay" - colour 
     public Material[] cubePlayColour;
 
-    private int _minNumbersCubesForWidthX = 3;
-    private int _minNumbersCubesForHeightY = 3;
+    private int _minNumberOfRows = 3;
+    private int _minNumberOfColumns = 3;
     private int _minNumbersCubesForDepthZ = 3;
+
+    private static int numberOfRows = 5;
+    private static int  numberOfColumns = 5;
+    // default = 1; this is needed for future version 3D WeirdTicTacToeGame
+    // it is not possible to change from UI
+    static int numberOfDepths = 1;
+
+    // [prefabCubePlay] table wiht number for prefab "CubePlay", number added to prefab as are created in UI (in the same direction),
+    int[,] prefabCubePlayNumbers = CreateGameBoardMethods.CreateTableWithNumbersBasedOnMethodCreatingBoardGameforUI(numberOfRows, numberOfColumns);
+
 
     void Start()
     {
-        int minNumbersCubesForWidthX = 3;
-        int minNumbersCubesForHeightY = 3;
-        int minNumbersCubesForDepthZ = 3;
+        //int minNumbersCubesForWidthX = 3;
+        //int minNumbersCubesForHeightY = 3;
+        //int minNumbersCubesForDepthZ = 3;
 
-        int numbersCubesForWidthX = 10;
-        int numbersCubesForHeightY = 7;
-        int numbersCubesForDepthZ = 1;
+        //int numberOfRows = 5;
+        //int numberOfColumns = 5;
+        //// default = 1; this is needed for future version 3D WeirdTicTacToeGame
+        //// it is not possible to change from UI
+        //int numberOfDepths = 1;
 
 
         // [createGameBoard] - creating the board game 
-        GameBoardCreate.CreateBoardGame(prefabCubePlay, numbersCubesForWidthX, numbersCubesForHeightY, numbersCubesForDepthZ, cubePlayColour);
+        CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfRows, numberOfColumns, numberOfDepths, cubePlayColour);
 
 
 
-        GameBoardCreateMethods.CreateTableWithTextForPrefabCubePlay(numbersCubesForWidthX, numbersCubesForHeightY);
         
         
-        //GameBoardCreateMethods.CreateNewTableWithCharactersBasedOntheExistingTableWithCharacters(numbersCubesForWidthX, numbersCubesForHeightY);
+       
 
 
 
@@ -113,4 +124,9 @@ internal class Game : MonoBehaviour
 
 
     }
+
+
+    // TO DO:
+    // GameBoardCreateScale - > FindSmallestScaleXYZForPrefabCubePlay
+    // to do: add the method checking the screen width and height, than add the method return the max rows and max rows for tablet
 }
