@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CubePlayNumber
+  - CubePlayFree
+  - CubePlayTaken
   layers:
   - Default
   - TransparentFX
