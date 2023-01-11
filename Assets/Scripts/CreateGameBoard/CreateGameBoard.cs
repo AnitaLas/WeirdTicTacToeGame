@@ -151,7 +151,7 @@ namespace Assets.Scripts
                         CreateGameBoardPrefabDefaultText.SetUpDefaultTextForPrefaCubePlay(prefab, prefabCubePlayDefaultText);
 
                         //[prefabCubePlayTextDefault] - set up new currentNumberForPrefabCubePlay
-                        countedPrefabCubePlay = CommonMethods.SetUpNewNumberForCurrentNumber(countedPrefabCubePlay);
+                        countedPrefabCubePlay = CommonMethods.SetUpNewCurrentNumber(countedPrefabCubePlay);
                         
 
                         // create new prefab "CubePlay"
@@ -166,7 +166,7 @@ namespace Assets.Scripts
                         newPrefabCubePlay.name = prefabCubePlayName;
 
                         // [prefabCubePlayName] set up new currentNumberCubePlayName
-                        numbersCubePlayName = CommonMethods.SetUpNewNumberForCurrentNumber(numbersCubePlayName);
+                        numbersCubePlayName = CommonMethods.SetUpNewCurrentNumber(numbersCubePlayName);
 
 
                         // [gameBoard]

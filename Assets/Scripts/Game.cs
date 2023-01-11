@@ -17,6 +17,7 @@ using TouchPhase = UnityEngine.TouchPhase;
 using Assets.Scripts.GameConfiguration;
 using System.Net.NetworkInformation;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using Assets.Scripts.GameFieldsVerification;
 
 internal class Game : MonoBehaviour
 {
@@ -39,7 +40,7 @@ internal class Game : MonoBehaviour
     private int _minNumberOfColumns = 3;
     private int _minNumbersCubesForDepthZ = 3;
 
-    private static int numberOfRows = 6;
+    private static int numberOfRows = 7;
     private static int  numberOfColumns = 4;
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
@@ -59,13 +60,15 @@ internal class Game : MonoBehaviour
     int[] currentPlayer;
     int[] currentCountedTagCubePlayTaken;
 
-
+    bool winner = false;
 
     GameObject[,,] gameBoard;
+    string[,] gameBoardVerification2D;
 
     void Start()
     {
 
+        gameBoardVerification2D = GameConfiguration.CreateEmptyTable2D(numberOfRows, numberOfColumns);
 
         // does it need it?
         playerNumber = GameConfiguration.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration);
@@ -80,7 +83,7 @@ internal class Game : MonoBehaviour
 
 
 
-        // [gameBoard] - creating the board game 
+        // [gameBoard] - creating the board game with game object "CubePlay"
         gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour);
 
     }
@@ -113,8 +116,48 @@ internal class Game : MonoBehaviour
                         int currentPlayerNumber = currentPlayer[0];
                         string cubePlayName = cubePlayTouch.collider.transform.name;
                         //Debug.Log("cubePlayName = " + cubePlayName);
-                        GameChangeText.SetUpPlayerSymbolForCubePlay(gameBoard, cubePlayName, playersSymbols, currentPlayerNumber);
-                        currentPlayer = GameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
+
+                        var cubePlayDataZYXSymbol = PlayGameChangeText.SetUpPlayerSymbolForCubePlay(gameBoard, cubePlayName, playersSymbols, currentPlayerNumber);
+
+                        int cubePlayIndexY = cubePlayDataZYXSymbol.Item1.Item2;
+                        int cubePlayIndexX = cubePlayDataZYXSymbol.Item1.Item3;
+                        string cubePlaySymbol = cubePlayDataZYXSymbol.Item2;
+
+                        gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
+
+                        winner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D);
+                        Debug.Log("winner = " + winner);
+
+                        if (winner == true)
+                        {
+                            Debug.Log("IF winner = ");
+                            //string test = "payer SYMBOL";
+                            GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
+                        }
+                        
+                        else
+                        {
+                            Debug.Log("ELSE winner");
+
+                            currentPlayer = PlayGameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
+
+                            cubePlayTouch.collider.transform.tag = tagCubePlayTaken;
+                            currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumber(currentCountedTagCubePlayTaken);
+                            //Debug.Log("currentCountedTagCubePlayTaken = " + currentCountedTagCubePlayTaken[0]);
+
+
+                            int countedTagCubePlayTaken = currentCountedTagCubePlayTaken[0];
+
+                            if (countedTagCubePlayTaken >= maxCubePlayNumber)
+                            {
+                                Debug.Log("Game Over :) Would you like to start new game? Yes No");
+                            }
+
+                        }
+                        
+
+                        /*
+                        currentPlayer = PlayGameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
                         cubePlayTouch.collider.transform.tag = tagCubePlayTaken;
                         currentCountedTagCubePlayTaken = CommonMethods.SetUpNewNumberForCurrentNumber(currentCountedTagCubePlayTaken);
@@ -126,7 +169,7 @@ internal class Game : MonoBehaviour
                         {
                             Debug.Log("Game Over :) Would you like to start new game? Yes No");
                         }
-
+                        */
                     }
                     else
                     {

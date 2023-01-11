@@ -78,7 +78,7 @@ namespace Assets.Scripts
         /// </summary>
         /// <param name="currentNumber"></param>
         /// <returns></returns>
-        public static int SetUpNewNumberForCurrentNumber(int currentNumber)
+        public static int SetUpNewCurrentNumber(int currentNumber)
         {
             int newCurrentNumber = currentNumber + 1;
             return newCurrentNumber;
@@ -89,19 +89,19 @@ namespace Assets.Scripts
         /// </summary>
         /// <param name="currentCountedNumber"></param>
         /// <returns></returns>
-        public static int[] SetUpNewNumberForCurrentNumber(int[] currentCountedNumber)
+        public static int[] SetUpNewCurrentNumber(int[] currentCountedNumber)
         {
             currentCountedNumber[0] = currentCountedNumber[0] + 1;
             return currentCountedNumber;
 
         }
 
-            // [CurrentNumber] - end
-            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // [CurrentNumber] - end
+        // --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
-            // [TextChange] - start
-            public static void ChangeTextForCubePlay(GameObject gameObject, string gameObjectText)
+        // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // [TextChange] - start
+        public static void ChangeTextForCubePlay(GameObject gameObject, string gameObjectText)
         {
             // game object: prefab CubePlay -> CubePlayCanvas ->
             var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);

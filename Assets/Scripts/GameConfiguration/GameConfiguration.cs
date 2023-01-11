@@ -35,6 +35,21 @@ namespace Assets.Scripts.GameConfiguration
             return table;
         }
 
+        public static string[,] CreateEmptyTable2D(int numberOfRows, int numberOfColumns)
+        {
+            string[,] table = new string[numberOfRows, numberOfColumns];
+
+            for (int row = 0; row < numberOfRows; row++)
+            {
+                for (int column = 0; column < numberOfColumns; column++)
+                {
+                    table[row, column] = "";
+                }
+
+            }
+            return table;
+
+        }
 
 
 
