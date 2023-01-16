@@ -15,10 +15,12 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
 
-namespace Assets.Scripts
+namespace Assets.Scripts   
 {
-    internal class CreateGameBoardMethods
+
+    internal class CreateGameBoardMethods : MonoBehaviour
     {
+
         // --------------------------------------------------------------------
         // GameBoardCreate - start
 
@@ -214,9 +216,134 @@ namespace Assets.Scripts
             }
         }
 
+        public static float[] CreateTableWithCoordinatesZ()
+        {
+            //float[] table = new float[3];
+            float[] table = new float[2];
+            table[0] = -0.05f;
+            table[1] = 0.05f;
+           //table[2] = 1; and that is an interesting idea!
+            return table;
+        }
 
+        
+        /// <summary>
+        /// <para> cubePlayDataLenght: </para>
+        /// <para> lenght of array colour assigned to object "GameBoard" </para>
+        /// <para> lenght of array with coordinates "Z" </para>
+        /// <para> ----------------------------------------------------- </para>
+        /// </summary>
+        /// <param name="cubePlayDataLenght"></param>
+        /// <param name="indexForPreviousColour"></param>
+        /// <param name="numberOfRows"></param>
+        /// <param name="currentCountedNumberForCubeRows"></param>
+        /// <param name="isNumberOfRowsEven"></param>
+        /// <returns></returns>
+        public static Tuple<int, int> GetnewCountedNumberForCubeRowsAndNewIndexForTheTableSetting(int cubePlayDataLenght, int indexForPreviousColour, int numberOfRows, int currentCountedNumberForCubeRows, bool isNumberOfRowsEven)
+        {
+            int maxIndexForCubePlayData = cubePlayDataLenght - 1;
+            int newIndexForCubePlayData;
 
+            int currentCountedNumberOfRows;
 
+            if (indexForPreviousColour == 0)
+            {
+
+                if (currentCountedNumberForCubeRows == numberOfRows)
+                {
+                    currentCountedNumberOfRows = 1;
+
+                    if (isNumberOfRowsEven == true)
+                    {
+                        newIndexForCubePlayData = indexForPreviousColour;
+                    }
+                    else
+                    {
+                        newIndexForCubePlayData = indexForPreviousColour + 1;
+                    }
+
+                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
+                    return newDataForCubePlayColour;
+
+                }
+                else
+                {
+                    currentCountedNumberOfRows = currentCountedNumberForCubeRows + 1;
+                    newIndexForCubePlayData = indexForPreviousColour + 1;
+
+                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
+                    return newDataForCubePlayColour;
+                }
+            }
+
+            else if (indexForPreviousColour == maxIndexForCubePlayData)
+            {
+
+                if (currentCountedNumberForCubeRows == numberOfRows)
+                {
+                    currentCountedNumberOfRows = 1;
+
+                    if (isNumberOfRowsEven == true)
+                    {
+                        newIndexForCubePlayData = indexForPreviousColour;
+                    }
+                    else
+                    {
+                        newIndexForCubePlayData = 0;
+                    }
+
+                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
+                    return newDataForCubePlayColour;
+
+                }
+                else
+                {
+                    currentCountedNumberOfRows = currentCountedNumberForCubeRows + 1;
+                    newIndexForCubePlayData = 0;
+
+                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
+                    return newDataForCubePlayColour;
+                }
+
+            }
+            else if (indexForPreviousColour < maxIndexForCubePlayData)
+            {
+
+                if (currentCountedNumberForCubeRows == numberOfRows)
+                {
+                    currentCountedNumberOfRows = 0;
+
+                    if (isNumberOfRowsEven == true)
+                    {
+                        newIndexForCubePlayData = indexForPreviousColour;
+                    }
+                    else
+                    {
+                        newIndexForCubePlayData = indexForPreviousColour + 1;
+                    }
+
+                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
+                    return newDataForCubePlayColour;
+                }
+                else
+                {
+                    currentCountedNumberOfRows = currentCountedNumberForCubeRows + 1;
+                    newIndexForCubePlayData = indexForPreviousColour + 1;
+
+                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
+                    return newDataForCubePlayColour;
+                }
+            }
+            else
+            {
+                currentCountedNumberOfRows = 0;
+                newIndexForCubePlayData = 0;
+
+                var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
+                return newDataForCubePlayColour;
+            }
+        }
+        
 
 
     }

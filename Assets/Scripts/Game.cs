@@ -41,7 +41,8 @@ internal class Game : MonoBehaviour
     private int _minNumbersCubesForDepthZ = 3;
 
     private static int numberOfRows = 7;
-    private static int  numberOfColumns = 4;
+    private static int  numberOfColumns = 3;
+
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
     static int numberOfDepths = 1;
@@ -118,6 +119,9 @@ internal class Game : MonoBehaviour
                         //Debug.Log("cubePlayName = " + cubePlayName);
 
                         var cubePlayDataZYXSymbol = PlayGameChangeText.SetUpPlayerSymbolForCubePlay(gameBoard, cubePlayName, playersSymbols, currentPlayerNumber);
+
+                        GameObject cubePlay = CommonMethods.GetCubePlay(gameBoard, cubePlayName);
+                        PlayGameMethods.ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(cubePlay);
 
                         int cubePlayIndexY = cubePlayDataZYXSymbol.Item1.Item2;
                         int cubePlayIndexX = cubePlayDataZYXSymbol.Item1.Item3;

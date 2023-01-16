@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CubePlayFree
   - CubePlayTaken
+  - CubePlayNumber
+  - ArrowLeft
+  - ArrowRight
   layers:
   - Default
   - TransparentFX

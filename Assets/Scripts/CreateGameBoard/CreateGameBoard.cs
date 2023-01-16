@@ -17,8 +17,15 @@ namespace Assets.Scripts
         // public static GameObject[,,] CreateBoardGame(GameObject prefab, int numberOfRows, int numberOfColumns, int numberOfDepths, Material[] prefabCubePlayDefaultColour)
         public static GameObject[,,] CreateBoardGame(GameObject prefab, int numberOfDepths, int numberOfRows, int numberOfColumns,  Material[] prefabCubePlayDefaultColour)
         {
-            // [prefabColor] lenght of array colour assigned to object "GameBoard"
+            // [prefabCubePlay][prefabCubePlayNewZ]
+            bool isNumberOfRowsEven = CommonMethods.IsNumberEven(numberOfRows);
+
+            // [prefabCubePlayColor] lenght of array colour assigned to object "GameBoard"
             int cubePlayColourLenght = prefabCubePlayDefaultColour.Length;
+
+            // [prefabCubePlayNewZ]
+            float[] coordinateZForPrefabCubePlay = CreateGameBoardMethods.CreateTableWithCoordinatesZ();
+            int coordinateZForPrefabCubePlayLenght = coordinateZForPrefabCubePlay.Length;
 
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------
             // [prefabCubePlay] calculate data for game board - start
@@ -45,9 +52,6 @@ namespace Assets.Scripts
             float positionForLastCubePlayX = CreateGameBoardMethods.PositionForLastPrefab(lengthForAllPrefabCubePlayInOneLineX);
             float positionForLastCubePlayY = CreateGameBoardMethods.PositionForLastPrefab(lengthForAllPrefabCubePlayInOneLineY);
             float positionForLastCubePlayZ = CreateGameBoardMethods.PositionForLastPrefab(lengthForAllPrefabCubePlayInOneLineZ);
-
-            // [prefabCubePlayColorDefault]
-            bool isNumberOfRowsEven = CommonMethods.IsNumberEven(numberOfRows);
 
             // [prefabCubePlay] table wiht number for prefab "CubePlay", number added to prefab as are created in UI (in the same direction),
             int[,,] prefabCubePlayNumbers = CreateGameBoardMethods.CreateTableWithNumbersBasedOnMethodCreatingBoardGameforUI(numberOfDepths, numberOfRows, numberOfColumns);
@@ -77,8 +81,8 @@ namespace Assets.Scripts
 
             // [prefabCubePlayColor] change last index for current counted number height for Y
             // max colour number = number columns given by user = number prefab "CubePlay" in one column for Y
-            int[] currentCountedNumberCubePlayForY = new int[1];
-            currentCountedNumberCubePlayForY[0] = 0;
+            int[] countedNumberCubePlayForRowsForColour = new int[1];
+            countedNumberCubePlayForRowsForColour[0] = 0;
 
             //[prefabCubePlayColor] - end
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,7 +90,6 @@ namespace Assets.Scripts
 
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------
             // [prefabCubePlayTextDefault] - start
-
             // [prefabCubePlayTextDefault] - default text for new prefab "CubePlay"
             string[,,] defaultTextForPrefabCubePlay = CreateGameBoardPrefabDefaultText.CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);
 
@@ -94,6 +97,18 @@ namespace Assets.Scripts
             countedPrefabCubePlay[0] = 1;
 
             //[prefabCubePlayTextDefault] - end
+            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+            // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+            // [prefabCubePlayNewZ] - start
+            int[] indexForCubePlayCoordinateZ = new int[1];
+            indexForCubePlayCoordinateZ[0] = 0;
+
+            int[] countedNumberCubePlayForRowsForCoordinateZ = new int[1];
+            countedNumberCubePlayForRowsForCoordinateZ[0] = 0;
+
+            //[prefabCubePlayNewZ] - end
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -129,17 +144,17 @@ namespace Assets.Scripts
                     {
                         // [prefabCubePlayColorDefaul] old data - change colour for new prefab "CubePlay"
                         int currentIndexForPreviousColour = indexForPreviousCubePlayColour[0];
-                        int currentCountedNumberForCubeRows = currentCountedNumberCubePlayForY[0];
+                        int currentCountedNumberForCubeRows = countedNumberCubePlayForRowsForColour[0];
 
                         // [prefabCubePlayColorDefault] calculate new data - change colour for new prefab "CubePlay"
-                        var newDataForCubePlayColour = CreateGameBoardPrefabDefaultColour.NewIndexColourForPrefabCubePlay(cubePlayColourLenght, currentIndexForPreviousColour, numberOfRows, currentCountedNumberForCubeRows, isNumberOfRowsEven);
+                        var newDataForCubePlayColour = CreateGameBoardMethods.GetnewCountedNumberForCubeRowsAndNewIndexForTheTableSetting(cubePlayColourLenght, currentIndexForPreviousColour, numberOfRows, currentCountedNumberForCubeRows, isNumberOfRowsEven);
 
                         int newIndexForCubePlayColour = newDataForCubePlayColour.Item1;
                         int newCountedNumberForCubePlayHeightY = newDataForCubePlayColour.Item2;
 
                         // [prefabCubePlayColorDefault] new data - change colour for new prefab "CubePlay"
                         indexForPreviousCubePlayColour[0] = newIndexForCubePlayColour;
-                        currentCountedNumberCubePlayForY[0] = newCountedNumberForCubePlayHeightY;
+                        countedNumberCubePlayForRowsForColour[0] = newCountedNumberForCubePlayHeightY;
 
                         // [prefabCubePlayColorDefault] change colour for new prefab "CubePlay"
                         CreateGameBoardPrefabDefaultColour.ChangeColourForPrefabCubePlay(prefab, prefabCubePlayDefaultColour, newIndexForCubePlayColour);
@@ -179,11 +194,33 @@ namespace Assets.Scripts
                         int newNumberOfColumn = newXYZFornewCubePlayOnTheBoard.Item3;
 
                         gameBoard[newNumberOfDepth, newNumberOfRow, newNumberOfColumn] = newCublePlayOnTheBoard;
-                                               
-                        //currentNumberOfRows[0] = newNumberOfRow;
-                       // currentNumberOfColumns[0] = newNumberOfColumn;
-                       // currentNumberOfDepths[0] = newNumberOfDepth;
-                        
+
+                        //---------------------------------
+
+                        int currentIndexPrefabCubePlayZ = indexForCubePlayCoordinateZ[0];
+                       // Debug.Log("currentNumberPrefabCubePlayZ = " + currentIndexPrefabCubePlayZ);
+
+                        //float currentCoordinateZ = coordinateZForPrefabCubePlay[currentIndexPrefabCubePlayZ];
+                        //CreateGameBoardMethods.SetUpNewZForPrefabCubePlay(newPrefabCubePlay, currentCoordinateZ);
+                        //Debug.Log("currentCoordinateZ = " + currentCoordinateZ);
+
+                        var newCountedNumberPrefabCubePlayForYForNewZ = CreateGameBoardMethods.GetnewCountedNumberForCubeRowsAndNewIndexForTheTableSetting(coordinateZForPrefabCubePlayLenght, currentIndexPrefabCubePlayZ, numberOfRows, currentCountedNumberForCubeRows, isNumberOfRowsEven);
+
+                        int newIndexPrefabCubePlayForCoordinateZ = newCountedNumberPrefabCubePlayForYForNewZ.Item1;
+                       //Debug.Log("newNumberPrefabCubePlayZ = " + newNumberPrefabCubePlayZ);
+
+                        int newCountedNumberOfRows = newCountedNumberPrefabCubePlayForYForNewZ.Item2;
+                        // Debug.Log("newCountedNumberOfRows = " + newCountedNumberOfRows);
+
+                        indexForCubePlayCoordinateZ[0] = newIndexPrefabCubePlayForCoordinateZ;
+                        Debug.Log("indexForCubePlayCoordinateZ[0] " + newIndexPrefabCubePlayForCoordinateZ);
+
+                        countedNumberCubePlayForRowsForCoordinateZ[0] = newCountedNumberOfRows;
+                        Debug.Log("countedNumberCubePlayForRowsForCoordinateZ[0] " + newCountedNumberOfRows);
+
+
+                        float currentCoordinateZ = coordinateZForPrefabCubePlay[newIndexPrefabCubePlayForCoordinateZ];
+                        CommonMethods.SetUpNewZForPrefabCubePlay(newPrefabCubePlay, currentCoordinateZ);
                     }
                 }
             }

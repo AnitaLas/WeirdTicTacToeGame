@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.XR;
 using UnityEngine;
 
@@ -189,5 +190,82 @@ namespace Assets.Scripts
 
         //[GetIndexZYXForGameObject] - end
         // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        public static GameObject GetCubePlay(GameObject[,,] table, string cubePlayName)
+        {
+            GameObject cubePlay;
+            int lenghtForDepths = table.GetLength(0);
+            int lenghtForRows = table.GetLength(1);
+            int lenghtForColumns = table.GetLength(2);
+
+            for (int indexDepth = 0; indexDepth < lenghtForDepths; indexDepth++)
+            {
+                for (int indexRow = 0; indexRow < lenghtForRows; indexRow++)
+                {
+                    for (int indexColumn = 0; indexColumn < lenghtForColumns; indexColumn++)
+                    {
+                        cubePlay = table[indexDepth, indexRow, indexColumn];
+                        string cubePlayNameFromTable = cubePlay.name;
+
+                        if (cubePlayNameFromTable == cubePlayName)
+                        {
+
+                            return cubePlay;
+
+                        }
+
+                    }             
+                }  
+            }
+
+            return cubePlay = table[0, 0, 0];
+
+        }
+
+
+
+        public static void SetUpNewZForPrefabCubePlay(GameObject cubePlay, float newCoordinateZ)
+        {
+            //float transformSpeed = 1.0f;
+            //float newZ = 0.05f;
+            bool isGame2D = true;
+
+            if (isGame2D == true)
+            {
+                float x = cubePlay.transform.position.x;
+                float y = cubePlay.transform.position.y;
+                float z = cubePlay.transform.position.z;
+
+                // it works
+                //cubePlay.transform.position = new Vector3(x, y, newCoordinateZ);
+
+                //newPrefabCubePlay.transform.position = new Vector3(x, y, currentCoordinateZ * Time.deltaTime);
+
+                //newPrefabCubePlay.transform.position =  Vector3.MoveTowards(newPrefabCubePlay.transform.position, (new Vector3(x, y, currentCoordinateZ)), transformSpeed * Time.deltaTime);
+
+                //cubePlay.transform.Translate(Vector3.forward * Time.deltaTime);
+              
+
+
+                    //Vector3 test = new Vector3(x, y, newCoordinateZ);
+                    //cubePlay.transform.position = Vector3.Lerp(cubePlay.transform.position, test, 0.1f);
+
+                //cubePlay.transform.position += cubePlay.transform.forward * Time.deltaTime;
+
+
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+
     }
 }

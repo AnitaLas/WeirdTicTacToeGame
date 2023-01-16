@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -16,7 +17,11 @@ namespace Assets.Scripts
         }
 
 
-
+        public static void ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(GameObject cubePlay)
+        {
+            float newCoordinateZ = 0;
+            CommonMethods.SetUpNewZForPrefabCubePlay(cubePlay, newCoordinateZ);
+        }
 
 
 
