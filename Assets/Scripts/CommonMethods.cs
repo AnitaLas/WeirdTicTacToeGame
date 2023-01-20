@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -8,6 +9,8 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.XR;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts
 {
@@ -49,6 +52,7 @@ namespace Assets.Scripts
             double newNumber = number * 10;
             double newNumberRounded = Math.Floor(newNumber);
             double resul = newNumberRounded / Math.Pow(10, numberAfterDecimal);
+
             return resul;
         }
 
@@ -223,7 +227,7 @@ namespace Assets.Scripts
         }
 
 
-
+        
         public static void SetUpNewZForPrefabCubePlay(GameObject cubePlay, float newCoordinateZ)
         {
             //float transformSpeed = 1.0f;
@@ -237,7 +241,7 @@ namespace Assets.Scripts
                 float z = cubePlay.transform.position.z;
 
                 // it works
-                //cubePlay.transform.position = new Vector3(x, y, newCoordinateZ);
+                cubePlay.transform.position = new Vector3(x, y, newCoordinateZ);
 
                 //newPrefabCubePlay.transform.position = new Vector3(x, y, currentCoordinateZ * Time.deltaTime);
 
@@ -262,6 +266,32 @@ namespace Assets.Scripts
 
 
 
+        public static void SetUpNewXForPrefabCubePlay(GameObject gameObject, float newCoordinateX)
+        {
+            bool isGame2D = true;
+
+            if (isGame2D == true)
+            {
+                float x = gameObject.transform.position.x;
+                float y = gameObject.transform.position.y;
+                float z = gameObject.transform.position.z;
+
+                // it works
+                gameObject.transform.position = new Vector3(x + newCoordinateX, y, z);
+            }
+        }
+
+        public static int[] CreateTableWithGivenLengthAndGivenValue(int tableLenght, int value)
+        {
+            int[] table = new int[tableLenght];
+
+            for (int i = 0; i < tableLenght; i++)
+            {
+                table[i] = value;
+            }
+
+            return table;
+        }
 
 
 

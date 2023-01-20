@@ -23,11 +23,7 @@ namespace Assets.Scripts
             CommonMethods.SetUpNewZForPrefabCubePlay(cubePlay, newCoordinateZ);
         }
 
-
-
-
-
-
+       
 
 
 
