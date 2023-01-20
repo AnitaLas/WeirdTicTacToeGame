@@ -23,18 +23,29 @@ namespace Assets.Scripts
         private static int _prefabCubePlayMaxNumberHeightYPhone = 6;
         private static int _prefabCubePlayMaxNumberDetphZPhone = 1;
 
-        public static void TransformPrefabCubePlayToNewScale(GameObject prefab, float newScale)
+        public static void TransformGameObjectPrefabToNewScale(GameObject prefab, float newScaleX, float newScaleY, float newScaleZ)
         {
-            prefab.transform.localScale = new Vector3(newScale, newScale, newScale);
+            prefab.transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
         }
+
+        
+        public static void TransformGameObjectPrefabToNewScaleX(GameObject prefab, float newScaleX, float newScaleY, float newScaleZ)
+        {
+            prefab.transform.GetChild(0).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
+            prefab.transform.GetChild(1).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
+            prefab.transform.GetChild(2).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
+            prefab.transform.GetChild(3).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
+        }
+        
 
         /// <summary>
         /// <para> prefab = CubePlay </para>
         /// </summary>
-        /// <param name="prefab"></param>
+        /// <param name="numberOfDepths"></param>
         /// <param name="numberOfRows"></param>
         /// <param name="numberOfColumns"></param>
-        public static float  ScaleForPrefabCubePlay(GameObject prefab, double numberOfDepths, double numberOfRows, double numberOfColumns)
+        /// <returns></returns>
+        public static float  ScaleForPrefabCubePlay(double numberOfDepths, double numberOfRows, double numberOfColumns)
         {
             double newScaleForX = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleX, numberOfColumns, _prefabCubePlayMaxNumberWidthXPhone);
             double newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYPhone);
@@ -45,7 +56,6 @@ namespace Assets.Scripts
             float floatNewScaleForZ = CommonMethods.ConvertDoubleToFloat(newScaleForZ);
 
             float[] newScaleForXYZ = { floatNewScaleForX, floatNewScaleForY, floatNewScaleForZ };
-            //float[] newScaleForXYZ = { floatNewScaleForX, floatNewScaleForY };
 
             float newScale = FindSmallestScaleXYZForPrefabCubePlay(newScaleForXYZ, numberOfDepths, numberOfRows, numberOfColumns);
 

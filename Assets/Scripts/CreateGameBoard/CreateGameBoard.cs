@@ -15,7 +15,7 @@ namespace Assets.Scripts
     {
 
         // public static GameObject[,,] CreateBoardGame(GameObject prefab, int numberOfRows, int numberOfColumns, int numberOfDepths, Material[] prefabCubePlayDefaultColour)
-        public static GameObject[,,] CreateBoardGame(GameObject prefab, int numberOfDepths, int numberOfRows, int numberOfColumns,  Material[] prefabCubePlayDefaultColour)
+        public static GameObject[,,] CreateBoardGame(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns,  Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             // [prefabCubePlay][prefabCubePlayNewZ]
             bool isNumberOfRowsEven = CommonMethods.IsNumberEven(numberOfRows);
@@ -30,13 +30,13 @@ namespace Assets.Scripts
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------
             // [prefabCubePlay] calculate data for game board - start
             // [prefabCubePlay] calculate new scale for prefab "CubaPlay"
-            float newScale = CreateGameBoardPrefabCalculateScale.ScaleForPrefabCubePlay(prefab, numberOfDepths, numberOfRows, numberOfColumns);
+            float newScale = CreateGameBoardPrefabCalculateScale.ScaleForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);
 
             // [prefabCubePlay] calculate data for first prefab "CubaPlay" X and Y and Z
             float startPositionForPrefabCubePlayXYZ = CreateGameBoardMethods.StartPositionXYZ(newScale);
 
             // [prefabCubePlay] change the scale for prefab "CubePlay" using a new scale 
-            CreateGameBoardPrefabCalculateScale.TransformPrefabCubePlayToNewScale(prefab, newScale);
+            CreateGameBoardPrefabCalculateScale.TransformGameObjectPrefabToNewScale(prefabCubePlay, newScale, newScale, newScale);
 
             // [prefabCubePlay] finding the lenght for all prefab "CubePlay" in one line for X, Y, Z
             float lengthForAllPrefabCubePlayInOneLineY = CreateGameBoardMethods.CalculateLengthForAllPrefabInOneLineXYZ(numberOfRows, newScale);
@@ -157,20 +157,20 @@ namespace Assets.Scripts
                         countedNumberCubePlayForRowsForColour[0] = newCountedNumberForCubePlayHeightY;
 
                         // [prefabCubePlayColorDefault] change colour for new prefab "CubePlay"
-                        CreateGameBoardPrefabDefaultColour.ChangeColourForPrefabCubePlay(prefab, prefabCubePlayDefaultColour, newIndexForCubePlayColour);
+                        CreateGameBoardPrefabDefaultColour.ChangeColourForPrefabCubePlay(prefabCubePlay, prefabCubePlayDefaultColour, newIndexForCubePlayColour);
 
                         //[prefabCubePlayTextDefault] - change text for new prefab "CubePlay"
                         int currentNumberForPrefabCubePlay = countedPrefabCubePlay[0];
                         string prefabCubePlayDefaultText = CreateGameBoardPrefabDefaultText.SetUpNewDefaultTextForPrefaCubePlay(prefabCubePlayNumbers, defaultTextForPrefabCubePlay, currentNumberForPrefabCubePlay);
                         
-                        CreateGameBoardPrefabDefaultText.SetUpDefaultTextForPrefaCubePlay(prefab, prefabCubePlayDefaultText);
+                        CreateGameBoardPrefabDefaultText.SetUpDefaultTextForPrefaCubePlay(prefabCubePlay, prefabCubePlayDefaultText);
 
                         //[prefabCubePlayTextDefault] - set up new currentNumberForPrefabCubePlay
                         countedPrefabCubePlay = CommonMethods.SetUpNewCurrentNumber(countedPrefabCubePlay);
                         
 
                         // create new prefab "CubePlay"
-                        var newPrefabCubePlay = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
+                        var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(x, y, z), Quaternion.identity);
 ;
                         // [prefabCubePlayName] chcange the name for new prefab "CubePlay"
                         int currentNumberCubePlayName = numbersCubePlayName[0];
@@ -213,12 +213,7 @@ namespace Assets.Scripts
                         // Debug.Log("newCountedNumberOfRows = " + newCountedNumberOfRows);
 
                         indexForCubePlayCoordinateZ[0] = newIndexPrefabCubePlayForCoordinateZ;
-                        Debug.Log("indexForCubePlayCoordinateZ[0] " + newIndexPrefabCubePlayForCoordinateZ);
-
-                        countedNumberCubePlayForRowsForCoordinateZ[0] = newCountedNumberOfRows;
-                        Debug.Log("countedNumberCubePlayForRowsForCoordinateZ[0] " + newCountedNumberOfRows);
-
-
+                        countedNumberCubePlayForRowsForCoordinateZ[0] = newCountedNumberOfRows;                     
                         float currentCoordinateZ = coordinateZForPrefabCubePlay[newIndexPrefabCubePlayForCoordinateZ];
                         CommonMethods.SetUpNewZForPrefabCubePlay(newPrefabCubePlay, currentCoordinateZ);
                     }
@@ -227,7 +222,60 @@ namespace Assets.Scripts
 
             return gameBoard;
             // [gameBoard] create game board - end
+
+
+
+
+
         }
+
+        public static GameObject CreateCubePlayFrame(GameObject prefabCubePlayFrame, GameObject cubePlayForFrame, bool isGame2D)
+        {
+            if (isGame2D == true)
+            {
+                //float zs = 0.0f;
+                float cubePlayScaleX = cubePlayForFrame.transform.localScale.x;
+                float cubePlayScaleY = cubePlayForFrame.transform.localScale.y;
+                float cubePlayScaleZ = cubePlayForFrame.transform.localScale.z;
+                //Debug.Log("cubePlayScale = " + cubePlayScale);
+               // Debug.Log("cubePlayForFrame.transform.position.x = " + cubePlayForFrame.transform.position.x);
+               // Debug.Log("cubePlayForFrame.transform.position.y = " + cubePlayForFrame.transform.position.y);
+               // Debug.Log("cubePlayForFrame.transform.position.z = " + cubePlayForFrame.transform.position.z);
+
+                CreateGameBoardPrefabCalculateScale.TransformGameObjectPrefabToNewScale(prefabCubePlayFrame, cubePlayScaleX, cubePlayScaleY, cubePlayScaleZ);
+
+                // same of game objects CubePlay have coordinate Z = -0,05
+                float topForAllCubePlay = 0.15f;
+
+                float x = cubePlayForFrame.transform.position.x;
+                float y = cubePlayForFrame.transform.position.y;
+                float z = cubePlayForFrame.transform.position.z - cubePlayScaleX/2 - topForAllCubePlay;
+
+                // create new prefab "CubePlayFrame"
+                var newPrefabCubePlay = Instantiate(prefabCubePlayFrame, new Vector3(x, y, z), Quaternion.identity);
+
+                
+
+                return cubePlayForFrame;
+            }
+
+            return cubePlayForFrame;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

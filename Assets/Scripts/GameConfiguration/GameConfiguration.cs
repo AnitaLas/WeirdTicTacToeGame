@@ -22,17 +22,10 @@ namespace Assets.Scripts.GameConfiguration
             return players;
         }
 
-        public static string[] CreatetableWithPlayersSymbolsV2()
+        public static string[] CreatetableWithPlayersSymbols()
         {
             string[] newPlayersSymbols = { "x", "o", "i"};
             return newPlayersSymbols;
-        }
-
-        public static int[] CreateTableWithLengthOneAndValueZero()
-        {
-            int[] table = new int[1];
-            table[0] = 0;
-            return table;
         }
 
         public static string[,] CreateEmptyTable2D(int numberOfRows, int numberOfColumns)
