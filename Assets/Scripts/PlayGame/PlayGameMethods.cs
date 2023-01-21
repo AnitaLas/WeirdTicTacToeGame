@@ -23,7 +23,12 @@ namespace Assets.Scripts
             CommonMethods.SetUpNewZForPrefabCubePlay(cubePlay, newCoordinateZ);
         }
 
-       
+       public static int[] CreateTableForMoveIndexForFrame(int numberOfRows)
+        {
+            int[] table = CommonMethods.CreateTableWithGivenLengthAndGivenValue(2, 0);
+            table[1] = numberOfRows - 1;
+            return table;
+        }
 
 
 

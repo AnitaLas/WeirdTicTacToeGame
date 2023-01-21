@@ -281,6 +281,22 @@ namespace Assets.Scripts
             }
         }
 
+
+        public static void SetUpNewYForPrefabCubePlay(GameObject gameObject, float newCoordinateY)
+        {
+            bool isGame2D = true;
+
+            if (isGame2D == true)
+            {
+                float x = gameObject.transform.position.x;
+                float y = gameObject.transform.position.y;
+                float z = gameObject.transform.position.z;
+
+                // it works
+                gameObject.transform.position = new Vector3(x, y + newCoordinateY, z);
+            }
+        }
+
         public static int[] CreateTableWithGivenLengthAndGivenValue(int tableLenght, int value)
         {
             int[] table = new int[tableLenght];

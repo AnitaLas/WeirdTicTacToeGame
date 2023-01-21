@@ -10,6 +10,8 @@ TagManager:
   - ArrowLeft
   - CubePlayFrame
   - ArrowRight
+  - ArrowDown
+  - ArrowUp
   layers:
   - Default
   - TransparentFX
