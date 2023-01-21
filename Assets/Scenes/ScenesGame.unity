@@ -426,6 +426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 6239705776628075970, guid: d04175f188a775647983c3b246bb8d98, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075972, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_text
       value: ->
@@ -557,19 +561,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6239705776127172700, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_Name
-      value: Arrow (3)
+      value: ArrowUp
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776127172700, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: ArrowUp
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075970, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 6239705776628075970, guid: d04175f188a775647983c3b246bb8d98, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075972, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_text
-      value: down
+      value: up
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075972, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_fontSize
@@ -665,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7294766113134934948, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7294766113134934948, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -820,10 +828,6 @@ MonoBehaviour:
   prefabCubePlayDefaultColour:
   - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
   - {fileID: 2100000, guid: 92154e8fc314d4446ba5f033d1e2ee37, type: 2}
-  tagCubePlayFree: CubePlayFree
-  tagCubePlayTaken: CubePlayTaken
-  tagArrowRight: ArrowRight
-  tagArrowLeft: ArrowLeft
 --- !u!1001 &1836543924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -833,19 +837,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6239705776127172700, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_Name
-      value: ArrowUp
+      value: ArrowDown
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776127172700, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: ArrowDown
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075970, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 6239705776628075970, guid: d04175f188a775647983c3b246bb8d98, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075972, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_text
-      value: up
+      value: down
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075972, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_fontSize
@@ -941,7 +949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7294766113134934948, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7294766113134934948, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -979,6 +987,10 @@ PrefabInstance:
     - target: {fileID: 6531032552907379633, guid: 3454f66b1af36d74ca9e9a8be45dadff, type: 3}
       propertyPath: m_TagString
       value: ArrowLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531032553826254383, guid: 3454f66b1af36d74ca9e9a8be45dadff, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7568642189102352457, guid: 3454f66b1af36d74ca9e9a8be45dadff, type: 3}
       propertyPath: m_Pivot.x

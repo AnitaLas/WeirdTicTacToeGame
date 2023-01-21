@@ -16,17 +16,17 @@ namespace Assets.Scripts.PlayGame
         /// </summary>
         /// <param name="moveIndexTable"></param>
         /// <returns></returns>
-        public static int[] SetUpNewMoveIndexByAdding(int[] moveIndexTable, int moveIndexForXorY, int currentMoveIndexForXorY)
+        public static int[] SetUpNewMoveIndexByAddition(int[] moveIndexTable, int moveIndexForXorY, int currentMoveIndexForXorY)
         {
-         //  Debug.Log(" ++++++++++ moveIndexForXorY = " + moveIndexForXorY);
-         //   int newMoveIndex = moveIndexTable[moveIndexForXorY] + 1;
-           // Debug.Log($" ++++++++++ moveIndexTable[{moveIndexForXorY}] = " + moveIndexTable[moveIndexForXorY]);
-          // Debug.Log(" ++++++++++ newMoveIndex = " + newMoveIndex);
-
-            int newMoveIndex = currentMoveIndexForXorY + 1;
+            //  Debug.Log(" ++++++++++ moveIndexForXorY = " + moveIndexForXorY);
+            int newMoveIndex = moveIndexTable[moveIndexForXorY] + 1;
+            //Debug.Log($" ++++++++++ moveIndexTable[{moveIndexForXorY}] = " + moveIndexTable[moveIndexForXorY]);
+            //Debug.Log(" ++++++++++ newMoveIndex = " + moveIndexForXorY);
+            //Debug.Log(" +++ ");
+            //int newMoveIndex = currentMoveIndexForXorY + 1;
             moveIndexTable[moveIndexForXorY] = newMoveIndex;
-           // Debug.Log($" ++++++++++ moveIndexTable[{moveIndexForXorY}] = " + moveIndexTable[moveIndexForXorY]);
-           // Debug.Log(" ++++++++++ newMoveIndex = " + newMoveIndex);
+            //Debug.Log($" ++++++++++ moveIndexTable[{moveIndexForXorY}] = " + moveIndexTable[moveIndexForXorY]);
+            //Debug.Log(" ++++++++++ newMoveIndex = " + newMoveIndex);
             return moveIndexTable;
         }
 
@@ -38,7 +38,6 @@ namespace Assets.Scripts.PlayGame
         /// <returns></returns>
         public static int[] SetUpNewMoveIndexBySubtraction(int[] moveIndexTable, int moveIndexForXorY, int currentMoveIndexForXorY)
         {
-            Debug.Log(" ------------ moveIndexForXorY = " + moveIndexForXorY);
             int newMoveIndex = moveIndexTable[moveIndexForXorY] - 1;
             moveIndexTable[moveIndexForXorY] = newMoveIndex;
             return moveIndexTable;
@@ -59,70 +58,103 @@ namespace Assets.Scripts.PlayGame
             int moveIndexForY = 1;
 
             int moveIndexForFrameLenght = moveIndexForFrame.Length;
-           // Debug.Log(" moveIndexForFrameLenght = " + moveIndexForFrameLenght);
             int[] newMoveIndexForFrame = new int[moveIndexForFrameLenght];
-           // Debug.Log(" newMoveIndexForFrame = " + newMoveIndexForFrame);
 
             // y
             int currentMoveIndexForRows = moveIndexForFrame[1];
-            //Debug.Log(" currentMoveIndexForRows = " + currentMoveIndexForRows);
 
             // x
             int currentMoveIndexForColumns = moveIndexForFrame[0];
-            //Debug.Log(" currentMoveIndexForColumns = " + currentMoveIndexForColumns);
 
+            // move to the right + x
             if (tagArrow == tagArrowRight)
             {
-                //Debug.Log("numberOfColumns =  " + (numberOfColumns - 1));
-
                 if (currentMoveIndexForColumns < numberOfColumns)
                 {
-                    //Debug.Log(" hmmmmm ");
-                    newMoveIndexForFrame = SetUpNewMoveIndexByAdding(moveIndexForFrame, moveIndexForX, currentMoveIndexForColumns);
-                    //Debug.Log("newMoveIndexForFrame[0] = X =" + newMoveIndexForFrame[0]);
-                    //Debug.Log("newMoveIndexForFrame[1] = " + newMoveIndexForFrame[1]);
+                    newMoveIndexForFrame = SetUpNewMoveIndexByAddition(moveIndexForFrame, moveIndexForX, currentMoveIndexForColumns);
                     return newMoveIndexForFrame;
                 }
                 else
                 {
-                    //Debug.Log(" yyyyyyy ");
                     newMoveIndexForFrame = moveIndexForFrame;
-                    //newMoveIndexForFrame = CommonMethods.CreateTableWithGivenLengthAndGivenValue(2, 1);
                     return newMoveIndexForFrame;
                 }
-
-
-
             }
 
+            // move to the left - x
             if (tagArrow == tagArrowLeft)
             {
-                Debug.Log(" *********************************************************** ");
-                Debug.Log("numberOfColumns =  " + (numberOfColumns));
-                Debug.Log("currentMoveIndexForColumns =  " + (currentMoveIndexForColumns));
-                Debug.Log(" *********************************************************** ");
                 if (currentMoveIndexForColumns > 0)
                 {
-                    //Debug.Log(" hmmmmm ");
                     newMoveIndexForFrame = SetUpNewMoveIndexBySubtraction(moveIndexForFrame, moveIndexForX, currentMoveIndexForColumns);
-                    //Debug.Log("newMoveIndexForFrame[0] = X =" + newMoveIndexForFrame[0]);
-                    //Debug.Log("newMoveIndexForFrame[1] = " + newMoveIndexForFrame[1]);
                     return newMoveIndexForFrame;
                 }
                 else
                 {
-                    //Debug.Log(" yyyyyyy ");
                     newMoveIndexForFrame = moveIndexForFrame;
-                    //newMoveIndexForFrame = CommonMethods.CreateTableWithGivenLengthAndGivenValue(2, 1);
                     return newMoveIndexForFrame;
                 }
+            }
 
-
-
+            // move to down - y
+            if (tagArrow == tagArrowDown)
+            {
+                if (currentMoveIndexForRows > 0)
+                {
+                    newMoveIndexForFrame = SetUpNewMoveIndexBySubtraction(moveIndexForFrame, moveIndexForY, currentMoveIndexForColumns);
+                    return newMoveIndexForFrame;
+                }
+                else
+                {
+                    newMoveIndexForFrame = moveIndexForFrame;
+                    return newMoveIndexForFrame;
+                }
             }
 
 
+            // move to down + y
+            if (tagArrow == tagArrowUp)
+            {
+                if (currentMoveIndexForRows < numberOfRows)
+                {
+                    newMoveIndexForFrame = SetUpNewMoveIndexByAddition(moveIndexForFrame, moveIndexForY, currentMoveIndexForColumns);
+                    return newMoveIndexForFrame;
+                }
+                else
+                {
+                    newMoveIndexForFrame = moveIndexForFrame;
+                    return newMoveIndexForFrame;
+                }
+            }
+
             return moveIndexForFrame;
+        }
+
+
+        public static void SetUpNewXYForCubePlayFrame(GameObject cubePlayFrame, GameObject cubePlay)
+        {
+            bool isGame2D = true;
+
+            if (isGame2D == true)
+            {
+                float x = cubePlay.transform.position.x;
+                float y = cubePlay.transform.position.y;
+                float z = cubePlayFrame.transform.position.z;
+
+                //float newCoordinateX = cubePlayIndexX * cubePlayForFrameScale;
+                //Debug.Log("cubePlayIndexX = " + cubePlayIndexX);
+                //Debug.Log("cubePlayForFrameScale = " + cubePlayForFrameScale);
+                //Debug.Log("newCoordinateX = " + newCoordinateX);
+
+                //float newCoordinateY = cubePlayIndexY * cubePlayForFrameScale;
+
+                //float newCoordinateX = cubePlayIndexX * cubePlayForFrameScale - cubePlayForFrameScale;
+                //float newCoordinateY = cubePlayIndexY * cubePlayForFrameScale - cubePlayForFrameScale;
+
+                // it works
+                //gameObject.transform.position = new Vector3(x + newCoordinateX, y + newCoordinateY, z);
+                cubePlayFrame.transform.position = new Vector3(x, y, z);
+            }
         }
 
     }
