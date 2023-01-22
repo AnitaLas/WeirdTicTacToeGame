@@ -94,9 +94,21 @@ namespace Assets.Scripts
         /// </summary>
         /// <param name="currentCountedNumber"></param>
         /// <returns></returns>
-        public static int[] SetUpNewCurrentNumber(int[] currentCountedNumber)
+        public static int[] SetUpNewCurrentNumberByAddition(int[] currentCountedNumber, int tableIndex)
         {
-            currentCountedNumber[0] = currentCountedNumber[0] + 1;
+            currentCountedNumber[tableIndex] = currentCountedNumber[tableIndex] + 1;
+            return currentCountedNumber;
+
+        }
+
+        /// <summary>
+        /// <para> set the new number for current number, it's decrease current number by one </para>
+        /// </summary>
+        /// <param name="currentCountedNumber"></param>
+        /// <returns></returns>
+        public static int[] SetUpNewCurrentNumberBySubtraction(int[] currentCountedNumber, int tableIndex)
+        {
+            currentCountedNumber[tableIndex] = currentCountedNumber[tableIndex] - 1;
             return currentCountedNumber;
 
         }
@@ -227,8 +239,22 @@ namespace Assets.Scripts
         }
 
 
-        
-        public static void SetUpNewZForPrefabCubePlay(GameObject cubePlay, float newCoordinateZ)
+        public static GameObject GetCubePlay(GameObject[,,] table, int indexY, int indexX)
+        {
+            int indexZ = 0;
+            GameObject cubePlay = table[indexZ, indexY, indexX];
+            return cubePlay;
+        }
+
+        public static string GetCubePlayName(GameObject[,,] table, int indexY, int indexX)
+        {
+            int indexZ = 0;
+            GameObject cubePlay = table[indexZ, indexY, indexX];
+            string cubePlayName = cubePlay.name;
+            return cubePlayName;
+        }
+
+        public static void SetUpNewZForGameObject(GameObject cubePlay, float newCoordinateZ)
         {
             //float transformSpeed = 1.0f;
             //float newZ = 0.05f;
@@ -266,7 +292,7 @@ namespace Assets.Scripts
 
 
 
-        public static void SetUpNewXForPrefabCubePlay(GameObject gameObject, float newCoordinateX)
+        public static void SetUpNewXForGameObject(GameObject gameObject, float newCoordinateX)
         {
             bool isGame2D = true;
 
@@ -282,7 +308,7 @@ namespace Assets.Scripts
         }
 
 
-        public static void SetUpNewYForPrefabCubePlay(GameObject gameObject, float newCoordinateY)
+        public static void SetUpNewYForGameObject(GameObject gameObject, float newCoordinateY)
         {
             bool isGame2D = true;
 

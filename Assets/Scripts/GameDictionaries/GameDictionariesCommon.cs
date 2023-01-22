@@ -19,7 +19,7 @@ namespace Assets.Scripts.GameDictionaries
             return tagArrowDictionary;
         }
 
-        public static Dictionary<int, string> DictionaryTagArrow()
+        public static Dictionary<int, string> DictionaryTagHelpButtons()
         {
             Dictionary<int, string> tagArrowDictionary = new Dictionary<int, string>();
 
@@ -27,6 +27,7 @@ namespace Assets.Scripts.GameDictionaries
             tagArrowDictionary.Add(2, "ArrowDown");
             tagArrowDictionary.Add(3, "ArrowLeft");
             tagArrowDictionary.Add(4, "ArrowUp");
+            tagArrowDictionary.Add(5, "ButtonConfirm");
 
             return tagArrowDictionary;
         }
