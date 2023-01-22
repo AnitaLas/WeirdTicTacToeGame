@@ -20,6 +20,7 @@ using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCou
 using Assets.Scripts.GameFieldsVerification;
 using Assets.Scripts.PlayGame;
 using Assets.Scripts.GameDictionaries;
+using System.Reflection;
 
 internal class Game : MonoBehaviour
 {
@@ -68,13 +69,15 @@ internal class Game : MonoBehaviour
     private string _tagCubePlayTaken;
     private string _tagCubePlayFrame;
 
-    Dictionary<int, string> tagArrowDictionary = GameDictionariesCommon.DictionaryTagArrow();
+    Dictionary<int, string> tagArrowDictionary = GameDictionariesCommon.DictionaryTagHelpButtons();
 
     private string _tagArrowRight;
     private string _tagArrowLeft;
     private string _tagArrowUp;
     private string _tagArrowDown;
+    private string _tagButtonConfirm;
 
+    private int _index;
 
     int[] playerNumber;
     string[] playersSymbols;
@@ -100,10 +103,13 @@ internal class Game : MonoBehaviour
         _tagArrowLeft = tagArrowDictionary[3];
         _tagArrowUp = tagArrowDictionary[4];
         _tagArrowDown = tagArrowDictionary[2];
+        _tagButtonConfirm = tagArrowDictionary[5];
 
-        //Debug.Log("_tagArrowDown = " + _tagArrowDown);
+        _index = 0;
 
-        gameBoardVerification2D = GameConfiguration.CreateEmptyTable2D(numberOfRows, numberOfColumns);
+         //Debug.Log("_tagArrowDown = " + _tagArrowDown);
+
+         gameBoardVerification2D = GameConfiguration.CreateEmptyTable2D(numberOfRows, numberOfColumns);
 
         // does it need it?
         playerNumber = GameConfiguration.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration);
@@ -114,7 +120,7 @@ internal class Game : MonoBehaviour
         playersSymbols = GameConfiguration.CreatetableWithPlayersSymbols();
         currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
-        currentCountedTagCubePlayTaken = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
+        currentCountedTagCubePlayTaken = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 1);
 
 
 
@@ -156,20 +162,227 @@ internal class Game : MonoBehaviour
             {
                 if (touch.collider != null)
                 {
+
                     string gameObjectTag = touch.collider.transform.tag;
                     string gameObjectName = touch.collider.transform.name;
+                    int currentPlayerNumber = currentPlayer[0];
+                    GameObject cubePlay = CommonMethods.GetCubePlay(gameBoard, gameObjectName);
 
+                    
+                    /*
+                    if (gameObjectTag == _tagArrowRight)
+                    {
+                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+
+                        if (moveIndexForFrame[0] < numberOfColumns - 1)
+                        {
+                            moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, numberOfRows, numberOfColumns);
+                            CommonMethods.SetUpNewXForPrefabCubePlay(cubePlayFrame, _cubePlayForFrameScale);
+
+                        }
+                    }
+                    */
+
+                    // move by arrows 
+                    if (gameObjectTag == _tagArrowRight || gameObjectTag == _tagArrowLeft || gameObjectTag == _tagArrowDown || gameObjectTag == _tagArrowUp)
+                    {
+                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+                        moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, cubePlayFrame, _cubePlayForFrameScale, numberOfRows, numberOfColumns);
+                        
+                        
+                        
+                        
+                        //if (gameObjectTag == _tagArrowRight)
+                        // {
+                        // cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+
+                        // if (moveIndexForFrame[0] < numberOfColumns - 1)
+                        //{
+                       // moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, cubePlayFrame, _cubePlayForFrameScale, numberOfRows, numberOfColumns);
+                                //moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexByAddition(moveIndexForFrame, 0, moveIndexForFrame[0]);
+                                //CommonMethods.SetUpNewXForGameObject(cubePlayFrame, _cubePlayForFrameScale);
+
+                          //  }
+                       // }
+
+                       // if (gameObjectTag == _tagArrowLeft)
+                       // {
+                           // cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+
+                           // if (moveIndexForFrame[0] > 0)
+                           // {
+                              //  moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, cubePlayFrame, _cubePlayForFrameScale, numberOfRows);
+                                //float newCoordinateX = _cubePlayForFrameScale * (-1);
+                               // CommonMethods.SetUpNewXForGameObject(cubePlayFrame, newCoordinateX);
+
+                           // }
+                        //}
+
+                       // if (gameObjectTag == _tagArrowDown)
+                       // {
+                           // cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+
+                          //  if (moveIndexForFrame[1] > 0)
+                           // {
+                               // moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, cubePlayFrame, _cubePlayForFrameScale, numberOfRows);
+                                //float newCoordinateY = _cubePlayForFrameScale * (-1);
+                                //CommonMethods.SetUpNewYForGameObject(cubePlayFrame, newCoordinateY);
+
+                           // }
+                      //  }
+
+
+                        //if (gameObjectTag == _tagArrowUp)
+                      //  {
+                            //cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+
+                          //  if (moveIndexForFrame[1] < numberOfRows - 1)
+                           // {
+                              //  moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, cubePlayFrame, _cubePlayForFrameScale, numberOfRows);
+                                //CommonMethods.SetUpNewYForGameObject(cubePlayFrame, _cubePlayForFrameScale);
+
+                            //}
+                       // }
+
+                    }
+
+
+
+                    /*
+                    if (gameObjectTag == _tagArrowRight)
+                    {
+                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+
+                        if (moveIndexForFrame[0] < numberOfColumns - 1)
+                        {
+                            moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, numberOfRows, numberOfColumns);
+                            CommonMethods.SetUpNewXForGameObject(cubePlayFrame, _cubePlayForFrameScale);
+
+                        }
+                    }
+                    */
+
+                    /*
+                    if (gameObjectTag == _tagArrowLeft)
+                    {
+                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+
+                        if (moveIndexForFrame[0] > 0)
+                        {
+                            moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, numberOfRows, numberOfColumns);
+                            float newCoordinateX = _cubePlayForFrameScale * (-1);
+                            CommonMethods.SetUpNewXForGameObject(cubePlayFrame, newCoordinateX);
+
+                        }
+                    }
+                    */
+
+                    /*
+                    if (gameObjectTag == _tagArrowDown)
+                    {
+                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+
+                        if (moveIndexForFrame[1] > 0)
+                        {
+                            moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, numberOfRows, numberOfColumns);
+                            float newCoordinateY = _cubePlayForFrameScale * (-1);
+                            CommonMethods.SetUpNewYForGameObject(cubePlayFrame, newCoordinateY);
+
+                        }
+                    }
+                    */
+
+                    /*
+                    if (gameObjectTag == _tagArrowUp)
+                    {
+                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
+
+                        if (moveIndexForFrame[1] < numberOfRows - 1)
+                        {
+                            moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, numberOfRows, numberOfColumns);
+                            CommonMethods.SetUpNewYForGameObject(cubePlayFrame, _cubePlayForFrameScale);
+
+                        }
+                    }
+                    */
+                    /*
+                    if (gameObjectTag == _tagButtonConfirm)
+                    {
+
+                       // Debug.Log("gameObjectTag = " + gameObjectTag);
+                        int indexX = moveIndexForFrame[0];
+                        int indexY = moveIndexForFrame[1];
+                        //Debug.Log("moveIndexForFrame[0] = " + moveIndexForFrame[0]);
+                       // Debug.Log("moveIndexForFrame[1] " + moveIndexForFrame[1]);
+
+                        GameObject cubePlayMarkByFrame = CommonMethods.GetCubePlay(gameBoard, indexY, indexX);
+                        string cubePlayMarkByFrameName = cubePlayMarkByFrame.name;
+                        string cubePlayMarkByFrameTag = cubePlayMarkByFrame.tag;
+                        //Debug.Log("cubePlay name = " + cubePlay.transform.name);
+
+                        if (cubePlayMarkByFrameTag == _tagCubePlayFree)
+                        {
+                            var cubePlayDataZYXSymbol = PlayGameChangeText.SetUpPlayerSymbolForCubePlay(gameBoard, cubePlayMarkByFrameName, playersSymbols, currentPlayerNumber);
+
+                            //GameObject cubePlay = CommonMethods.GetCubePlay(gameBoard, gameObjectName);
+                            PlayGameMethods.ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(cubePlayMarkByFrame);
+
+                            int cubePlayIndexY = cubePlayDataZYXSymbol.Item1.Item2;
+                            int cubePlayIndexX = cubePlayDataZYXSymbol.Item1.Item3;
+                            string cubePlaySymbol = cubePlayDataZYXSymbol.Item2;
+
+                            gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
+
+                            winner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D);
+
+
+                            if (winner == true)
+                            {
+
+                                GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
+                            }
+                            else
+                            {
+
+                                currentPlayer = PlayGameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
+
+                                cubePlayMarkByFrame.transform.tag = _tagCubePlayTaken;
+                                //Debug.Log("cubePlay new name = " + cubePlayMarkByFrame.transform.name);
+                                //Debug.Log("cubePlay new tag = " + cubePlayMarkByFrame.transform.tag);
+                                //Debug.Log("currentCountedTagCubePlayTaken[0] = " + currentCountedTagCubePlayTaken[0]);
+                                Debug.Log(" ------------------------------------------------------- ");
+                                currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);
+
+                                int countedTagCubePlayTaken = currentCountedTagCubePlayTaken[0];
+
+                                if (countedTagCubePlayTaken >= maxCubePlayNumber)
+                                {
+                                    float newCoordinateZ = 1;
+                                    CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
+                                    Debug.Log("Game Over :) Would you like to start new game? Yes No");
+                                }
+                            }
+
+                        }
+                        else // (gameObjectTag1 == _tagCubePlayTaken)
+                        {
+                            Debug.Log("CubePlay has already been taken by another player.");
+                        }
+                    }
+                    */
+
+                    // to fix currentCountedTagCubePlayTaken[0]
 
                     if (gameObjectTag == _tagCubePlayFree || gameObjectTag == _tagCubePlayTaken)
                     {
                         if (gameObjectTag == _tagCubePlayFree)
                         {
-                            int currentPlayerNumber = currentPlayer[0];
-
+                            //int currentPlayerNumber = currentPlayer[0];
+                            Debug.Log("BEFORE currentCountedTagCubePlayTaken[0] = " + currentCountedTagCubePlayTaken[0]);
 
                             var cubePlayDataZYXSymbol = PlayGameChangeText.SetUpPlayerSymbolForCubePlay(gameBoard, gameObjectName, playersSymbols, currentPlayerNumber);
 
-                            GameObject cubePlay = CommonMethods.GetCubePlay(gameBoard, gameObjectName);
+                            //GameObject cubePlay = CommonMethods.GetCubePlay(gameBoard, gameObjectName);
                             PlayGameMethods.ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(cubePlay);
 
                             int cubePlayIndexY = cubePlayDataZYXSymbol.Item1.Item2;
@@ -180,14 +393,20 @@ internal class Game : MonoBehaviour
 
                             cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
                             PlayGameFrameMove.SetUpNewXYForCubePlayFrame(cubePlayFrame, cubePlay);
+                            moveIndexForFrame[0] = cubePlayIndexX;
+                            moveIndexForFrame[1] = cubePlayIndexY;
+
+                            //Debug.Log("moveIndexForFrame[0] = " + cubePlayIndexX);
 
                             winner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D);
 
 
                             if (winner == true)
                             {
-
+                                float newCoordinateZ = 1;
+                                CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
+
                             }
 
                             else
@@ -197,14 +416,21 @@ internal class Game : MonoBehaviour
                                 currentPlayer = PlayGameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
                                 touch.collider.transform.tag = _tagCubePlayTaken;
-                                currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumber(currentCountedTagCubePlayTaken);
+                                currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);
 
+                                //currentCountedTagCubePlayTaken[0] = currentCountedTagCubePlayTaken[0] + 1;
 
 
                                 int countedTagCubePlayTaken = currentCountedTagCubePlayTaken[0];
 
+                                Debug.Log("AFTER currentCountedTagCubePlayTaken[0] = " + currentCountedTagCubePlayTaken[0]);
+                                Debug.Log(" ---------------------------------- ");
+
+
                                 if (countedTagCubePlayTaken >= maxCubePlayNumber)
                                 {
+                                    float newCoordinateZ = 1;
+                                    CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
                                     Debug.Log("Game Over :) Would you like to start new game? Yes No");
                                 }
 
@@ -220,78 +446,7 @@ internal class Game : MonoBehaviour
                     }
 
 
-                    // move by arrows 
-
-                    if (gameObjectTag == _tagArrowRight)
-                    {
-                        //float newCoordinateX;
-                        //string tagCubePlayFrame = _tagCubePlayFrame;
-                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
-
-                        if (moveIndexForFrame[0] < numberOfColumns - 1)
-                        {
-                            moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, numberOfRows, numberOfColumns);
-                            //newCoordinateX = _cubePlayForFrameScale; // new scale
-                            CommonMethods.SetUpNewXForPrefabCubePlay(cubePlayFrame, _cubePlayForFrameScale);
-
-                        }
-                    }
-
-                    if (gameObjectTag == _tagArrowLeft)
-                    {
-                        //float newCoordinateX;
-                        //string tagCubePlayFrame = _tagCubePlayFrame;
-                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
-
-                        if (moveIndexForFrame[0] > 0)
-                        {
-                            moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, numberOfRows, numberOfColumns);
-                            float newCoordinateX = _cubePlayForFrameScale * (-1); 
-                            CommonMethods.SetUpNewXForPrefabCubePlay(cubePlayFrame, newCoordinateX);
-
-                        }
-                    }
-
-
-                    //Debug.Log("gameObjectTag = " + gameObjectTag);
-                    //Debug.Log("_tagArrowDown = " + _tagArrowDown);
-
-                    if (gameObjectTag == _tagArrowDown)
-                    {
-                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
-
-                        if (moveIndexForFrame[1] > 0)
-                        {
-                            moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, numberOfRows, numberOfColumns);
-                            float newCoordinateY = _cubePlayForFrameScale * (-1);
-                            CommonMethods.SetUpNewYForPrefabCubePlay(cubePlayFrame, newCoordinateY);
-
-                        }
-                    }
-
-                    //Debug.Log(" BEFORE moveIndexForFrame[0] X = " + moveIndexForFrame[0]);
-                    //Debug.Log(" BEFORE moveIndexForFrame[1] Y = " + moveIndexForFrame[1]);
-
-
-                    if (gameObjectTag == _tagArrowUp)
-                    {
-                        cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
-
-                        //Debug.Log(" BEFORE moveIndexForFrame[0] X = " + moveIndexForFrame[0]);
-                        //Debug.Log(" BEFORE moveIndexForFrame[1] Y = " + moveIndexForFrame[1]);
-
-                        //Debug.Log(" --------------------------------- ");
-                        if (moveIndexForFrame[1] < numberOfRows - 1)
-                        {
-                            moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(moveIndexForFrame, gameObjectTag, numberOfRows, numberOfColumns);
-                            CommonMethods.SetUpNewYForPrefabCubePlay(cubePlayFrame, _cubePlayForFrameScale);
-
-                            //Debug.Log(" AFTER moveIndexForFrame[0] X = " + moveIndexForFrame[0]);
-                           // Debug.Log(" AFTER moveIndexForFrame[1] Y = " + moveIndexForFrame[1]);
-
-                           // Debug.Log(" --------------------------------- ");
-                        }
-                    }
+                    
 
 
 

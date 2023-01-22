@@ -59,6 +59,8 @@ namespace Assets.Scripts
             // [prefabCubePlay] calculate data for game board - end
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+            // idenx for  CommonMethods.SetUpNewCurrentNumberByAddition()
+            int index = 0;
 
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------
             //[prefabCubePlayName] - start
@@ -166,7 +168,7 @@ namespace Assets.Scripts
                         CreateGameBoardPrefabDefaultText.SetUpDefaultTextForPrefaCubePlay(prefabCubePlay, prefabCubePlayDefaultText);
 
                         //[prefabCubePlayTextDefault] - set up new currentNumberForPrefabCubePlay
-                        countedPrefabCubePlay = CommonMethods.SetUpNewCurrentNumber(countedPrefabCubePlay);
+                        countedPrefabCubePlay = CommonMethods.SetUpNewCurrentNumberByAddition(countedPrefabCubePlay, index);
                         
 
                         // create new prefab "CubePlay"
@@ -181,7 +183,7 @@ namespace Assets.Scripts
                         newPrefabCubePlay.name = prefabCubePlayName;
 
                         // [prefabCubePlayName] set up new currentNumberCubePlayName
-                        numbersCubePlayName = CommonMethods.SetUpNewCurrentNumber(numbersCubePlayName);
+                        numbersCubePlayName = CommonMethods.SetUpNewCurrentNumberByAddition(numbersCubePlayName, index);
 
 
                         // [gameBoard]
@@ -215,7 +217,7 @@ namespace Assets.Scripts
                         indexForCubePlayCoordinateZ[0] = newIndexPrefabCubePlayForCoordinateZ;
                         countedNumberCubePlayForRowsForCoordinateZ[0] = newCountedNumberOfRows;                     
                         float currentCoordinateZ = coordinateZForPrefabCubePlay[newIndexPrefabCubePlayForCoordinateZ];
-                        CommonMethods.SetUpNewZForPrefabCubePlay(newPrefabCubePlay, currentCoordinateZ);
+                        CommonMethods.SetUpNewZForGameObject(newPrefabCubePlay, currentCoordinateZ);
                     }
                 }
             }

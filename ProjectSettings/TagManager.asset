@@ -12,6 +12,7 @@ TagManager:
   - ArrowRight
   - ArrowDown
   - ArrowUp
+  - ButtonConfirm
   layers:
   - Default
   - TransparentFX

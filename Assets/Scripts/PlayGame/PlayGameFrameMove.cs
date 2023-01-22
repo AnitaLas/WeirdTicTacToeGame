@@ -10,23 +10,16 @@ namespace Assets.Scripts.PlayGame
 {
     internal class PlayGameFrameMove
     {
-
+        /*
         /// <summary>
         /// move to the right or move up frame if we start with position 0,5 for CubePlayFrame
         /// </summary>
         /// <param name="moveIndexTable"></param>
         /// <returns></returns>
-        public static int[] SetUpNewMoveIndexByAddition(int[] moveIndexTable, int moveIndexForXorY, int currentMoveIndexForXorY)
+        public static int[] SetUpNewMoveIndexByAddition(int[] moveIndexTable, int moveIndexForXorY)
         {
-            //  Debug.Log(" ++++++++++ moveIndexForXorY = " + moveIndexForXorY);
             int newMoveIndex = moveIndexTable[moveIndexForXorY] + 1;
-            //Debug.Log($" ++++++++++ moveIndexTable[{moveIndexForXorY}] = " + moveIndexTable[moveIndexForXorY]);
-            //Debug.Log(" ++++++++++ newMoveIndex = " + moveIndexForXorY);
-            //Debug.Log(" +++ ");
-            //int newMoveIndex = currentMoveIndexForXorY + 1;
             moveIndexTable[moveIndexForXorY] = newMoveIndex;
-            //Debug.Log($" ++++++++++ moveIndexTable[{moveIndexForXorY}] = " + moveIndexTable[moveIndexForXorY]);
-            //Debug.Log(" ++++++++++ newMoveIndex = " + newMoveIndex);
             return moveIndexTable;
         }
 
@@ -36,19 +29,56 @@ namespace Assets.Scripts.PlayGame
         /// </summary>
         /// <param name="moveIndexTable"></param>
         /// <returns></returns>
-        public static int[] SetUpNewMoveIndexBySubtraction(int[] moveIndexTable, int moveIndexForXorY, int currentMoveIndexForXorY)
+        public static int[] SetUpNewMoveIndexBySubtraction(int[] moveIndexTable, int moveIndexForXorY)
         {
             int newMoveIndex = moveIndexTable[moveIndexForXorY] - 1;
             moveIndexTable[moveIndexForXorY] = newMoveIndex;
             return moveIndexTable;
         }
+        */
 
-
-
-        public static int[] SetUpNewMoveIndexXYForCubePlayFrame(int[] moveIndexForFrame, string tagArrow, int numberOfRows, int numberOfColumns)
+        
+        public static int[] SetUpNewMoveIndexXForRight(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForYorX)
         {
-            Dictionary<int, string> tagArrowDictionary = GameDictionariesCommon.DictionaryTagArrow();
-            
+            moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberByAddition(moveIndexForFrame, moveIndexForYorX);
+            float newCoordinate = cubePlayForFrameScale * (1);
+            CommonMethods.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
+            return moveIndexForFrame;
+        }
+
+        public static int[] SetUpNewMoveIndexYForUp(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForYorX)
+        {
+            moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberByAddition(moveIndexForFrame, moveIndexForYorX);
+            float newCoordinate = cubePlayForFrameScale * (1);
+            CommonMethods.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
+            return moveIndexForFrame;
+        }
+
+        public static int[] SetUpNewMoveIndexXForLeft(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForX)
+        {
+            moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberBySubtraction(moveIndexForFrame, moveIndexForX);
+            float newCoordinate = cubePlayForFrameScale * (-1);
+            CommonMethods.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
+            return moveIndexForFrame;
+        }
+
+
+        public static int[] SetUpNewMoveIndexYForDown(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForY)
+        {
+            moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberBySubtraction(moveIndexForFrame, moveIndexForY);
+            float newCoordinate = cubePlayForFrameScale * (-1);
+            CommonMethods.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
+            return moveIndexForFrame;
+        }
+        
+
+
+
+        public static int[] SetUpNewMoveIndexXYForCubePlayFrame(int[] moveIndexForFrame, string tagArrow, GameObject cubePlayFrame, float cubePlayForFrameScale, int numberOfRows, int numberOfColumns)
+        {
+
+            Dictionary<int, string> tagArrowDictionary = GameDictionariesCommon.DictionaryTagHelpButtons();
+
             string tagArrowRight = tagArrowDictionary[1];
             string tagArrowLeft = tagArrowDictionary[3];
             string tagArrowUp = tagArrowDictionary[4];
@@ -57,73 +87,43 @@ namespace Assets.Scripts.PlayGame
             int moveIndexForX = 0;
             int moveIndexForY = 1;
 
-            int moveIndexForFrameLenght = moveIndexForFrame.Length;
-            int[] newMoveIndexForFrame = new int[moveIndexForFrameLenght];
-
-            // y
-            int currentMoveIndexForRows = moveIndexForFrame[1];
-
-            // x
-            int currentMoveIndexForColumns = moveIndexForFrame[0];
-
             // move to the right + x
             if (tagArrow == tagArrowRight)
             {
-                if (currentMoveIndexForColumns < numberOfColumns)
+                if (moveIndexForFrame[0] < numberOfColumns - 1)
                 {
-                    newMoveIndexForFrame = SetUpNewMoveIndexByAddition(moveIndexForFrame, moveIndexForX, currentMoveIndexForColumns);
-                    return newMoveIndexForFrame;
-                }
-                else
-                {
-                    newMoveIndexForFrame = moveIndexForFrame;
-                    return newMoveIndexForFrame;
+                    moveIndexForFrame = SetUpNewMoveIndexXForRight(moveIndexForFrame, cubePlayFrame, cubePlayForFrameScale, moveIndexForX);
+                    return moveIndexForFrame;
                 }
             }
 
             // move to the left - x
             if (tagArrow == tagArrowLeft)
             {
-                if (currentMoveIndexForColumns > 0)
+                if (moveIndexForFrame[0] > 0)
                 {
-                    newMoveIndexForFrame = SetUpNewMoveIndexBySubtraction(moveIndexForFrame, moveIndexForX, currentMoveIndexForColumns);
-                    return newMoveIndexForFrame;
-                }
-                else
-                {
-                    newMoveIndexForFrame = moveIndexForFrame;
-                    return newMoveIndexForFrame;
+                    moveIndexForFrame = SetUpNewMoveIndexXForLeft(moveIndexForFrame, cubePlayFrame, cubePlayForFrameScale, moveIndexForX);
+                    return moveIndexForFrame;
                 }
             }
 
             // move to down - y
             if (tagArrow == tagArrowDown)
             {
-                if (currentMoveIndexForRows > 0)
+                if (moveIndexForFrame[1] > 0)
                 {
-                    newMoveIndexForFrame = SetUpNewMoveIndexBySubtraction(moveIndexForFrame, moveIndexForY, currentMoveIndexForColumns);
-                    return newMoveIndexForFrame;
-                }
-                else
-                {
-                    newMoveIndexForFrame = moveIndexForFrame;
-                    return newMoveIndexForFrame;
+                    moveIndexForFrame = SetUpNewMoveIndexYForDown(moveIndexForFrame, cubePlayFrame, cubePlayForFrameScale, moveIndexForY);
+                    return moveIndexForFrame;
                 }
             }
 
-
-            // move to down + y
+            // move up + y
             if (tagArrow == tagArrowUp)
             {
-                if (currentMoveIndexForRows < numberOfRows)
+                if (moveIndexForFrame[1] < numberOfRows - 1)
                 {
-                    newMoveIndexForFrame = SetUpNewMoveIndexByAddition(moveIndexForFrame, moveIndexForY, currentMoveIndexForColumns);
-                    return newMoveIndexForFrame;
-                }
-                else
-                {
-                    newMoveIndexForFrame = moveIndexForFrame;
-                    return newMoveIndexForFrame;
+                    moveIndexForFrame = SetUpNewMoveIndexYForUp(moveIndexForFrame, cubePlayFrame, cubePlayForFrameScale, moveIndexForY);
+                    return moveIndexForFrame;
                 }
             }
 
@@ -141,18 +141,6 @@ namespace Assets.Scripts.PlayGame
                 float y = cubePlay.transform.position.y;
                 float z = cubePlayFrame.transform.position.z;
 
-                //float newCoordinateX = cubePlayIndexX * cubePlayForFrameScale;
-                //Debug.Log("cubePlayIndexX = " + cubePlayIndexX);
-                //Debug.Log("cubePlayForFrameScale = " + cubePlayForFrameScale);
-                //Debug.Log("newCoordinateX = " + newCoordinateX);
-
-                //float newCoordinateY = cubePlayIndexY * cubePlayForFrameScale;
-
-                //float newCoordinateX = cubePlayIndexX * cubePlayForFrameScale - cubePlayForFrameScale;
-                //float newCoordinateY = cubePlayIndexY * cubePlayForFrameScale - cubePlayForFrameScale;
-
-                // it works
-                //gameObject.transform.position = new Vector3(x + newCoordinateX, y + newCoordinateY, z);
                 cubePlayFrame.transform.position = new Vector3(x, y, z);
             }
         }
