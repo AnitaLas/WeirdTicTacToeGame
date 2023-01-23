@@ -145,5 +145,11 @@ namespace Assets.Scripts.PlayGame
             }
         }
 
+        public static void SetUpNewZForCubePlayFrame(GameObject cubePlayFrame)
+        {
+            float newCoordinateZ = 1;
+            CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
+        }
+
     }
 }

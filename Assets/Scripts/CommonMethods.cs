@@ -9,6 +9,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.XR;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
 
@@ -335,9 +336,28 @@ namespace Assets.Scripts
             return table;
         }
 
+        public static string GetObjectName(GameObject gameObject)
+        {
+            string name = gameObject.name;
+            return name;
+        }
 
+        public static string GetObjectName(RaycastHit touchGameObject)
+        {
+            string name = touchGameObject.collider.transform.name;
+            return name;
+        }
 
+        public static string GetObjectTag(GameObject gameObject)
+        {
+            string tag = gameObject.tag;
+            return tag;
+        }
 
-
+        public static string GetObjectTag(RaycastHit touchGameObject)
+        {
+            string tag = touchGameObject.collider.transform.tag;
+            return tag;
+        }
     }
 }
