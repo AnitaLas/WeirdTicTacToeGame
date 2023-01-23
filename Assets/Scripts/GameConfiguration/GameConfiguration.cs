@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts.GameConfiguration
 {
@@ -24,8 +27,13 @@ namespace Assets.Scripts.GameConfiguration
 
         public static string[] CreatetableWithPlayersSymbols()
         {
-            string[] newPlayersSymbols = { "x", "o", "i"};
-            return newPlayersSymbols;
+            string[] playersSymbols = { "x", "o", "i", "y", "z", "t" };
+
+            for (int i = 0; i < playersSymbols.Length; i++)
+            {
+                Debug.Log($"playersSymbols[{i}] = " + playersSymbols[i]);
+            }
+            return playersSymbols;
         }
 
         public static string[,] CreateEmptyTable2D(int numberOfRows, int numberOfColumns)
