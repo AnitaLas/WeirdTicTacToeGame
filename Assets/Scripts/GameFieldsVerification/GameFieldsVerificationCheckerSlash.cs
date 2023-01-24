@@ -9,11 +9,11 @@ namespace Assets.Scripts.GameFieldsVerification
     internal class GameFieldsVerificationCheckerSlash
     {
 
-        public static bool CheckerSlash(string[,] boardToCheck)
+        public static bool CheckerSlash(string[,] boardToCheck, int lenghtToCheck)
         {
 
             string[,] board = boardToCheck;
-
+            Console.WriteLine("lenghtToCheck: " + lenghtToCheck);
 
             int boardRowLength = board.GetLength(0) - 1;
             int boardColumnLength = board.GetLength(1) - 1;
@@ -38,8 +38,8 @@ namespace Assets.Scripts.GameFieldsVerification
                     //Console.WriteLine("nextRowIndexToCheck: " + nextRowIndexToCheck);
                     //Console.BackgroundColor = ConsoleColor.Black;
 
-
-                    checker = CheckerFromLeftBottomToRightTopForOne(board, nextRowIndexToCheck, nextColumnIndexToCheck);
+                    checker = CheckerFromLeftBottomToRightTopForOne(board, nextRowIndexToCheck, nextColumnIndexToCheck, lenghtToCheck);
+                    //checker = CheckerFromLeftBottomToRightTopForOne(board, nextRowIndexToCheck, nextColumnIndexToCheck);
 
 
 
@@ -73,11 +73,11 @@ namespace Assets.Scripts.GameFieldsVerification
 
 
 
-        public static bool CheckerFromLeftBottomToRightTopForOne(string[,] boardToCheck, int startRowIndexToCheck, int startColumnIndexToCheck)
+        public static bool CheckerFromLeftBottomToRightTopForOne(string[,] boardToCheck, int startRowIndexToCheck, int startColumnIndexToCheck, int lenghtToCheck)
         {
             string[,] board = boardToCheck;
 
-
+            Console.WriteLine("lenghtToCheck: " + lenghtToCheck);
             //Console.BackgroundColor = ConsoleColor.DarkBlue;
             // Console.WriteLine("startRowIndex: " + startRowIndex);
             // Console.BackgroundColor = ConsoleColor.Black;
@@ -94,7 +94,9 @@ namespace Assets.Scripts.GameFieldsVerification
             //Console.WriteLine("boardRowLength: " + boardRowLength);
             //Console.WriteLine("boardColumnLength: " + boardColumnLength);
 
-            int lenghtToCheck = GameFieldsVerificationCheckerLenght.CheckerLenght(boardColumnLength, boardRowLength);
+            //int lenghtToCheck = GameFieldsVerificationCheckerLenght.CheckerLenght(boardColumnLength, boardRowLength);
+           //int lenghtToCheck = 3 - 1; // 3 = 3x index, number to check given by ueser = 3 - 1
+            //int lenghtToCheck = 3;
             // Console.WriteLine("lenghtToCheck: " + lenghtToCheck);
             bool checker = false;
             int columnIndex;

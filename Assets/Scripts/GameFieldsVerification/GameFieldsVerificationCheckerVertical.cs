@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.GameFieldsVerification
 {
     internal class GameFieldsVerificationCheckerVertical
     {
 
-        public static bool CheckerVerticall(string[,] boardToCheck)
+        public static bool CheckerVerticall(string[,] boardToCheck, int lenghtToCheck)
         {
-            string[,] board = boardToCheck;
+            //string[,] board = boardToCheck;
 
-            int boardRowLength = board.GetLength(0) - 1;
-            int boardColumnLength = board.GetLength(1) - 1;
+            int boardRowLength = boardToCheck.GetLength(0) - 1;
+            int boardColumnLength = boardToCheck.GetLength(1) - 1;
             //Console.WriteLine("boardRowLength: " + boardRowLength);
             //Console.WriteLine("boardColumnLength: " + boardColumnLength);
 
-            int lenghtToCheck = GameFieldsVerificationCheckerLenght.CheckerLenght(boardColumnLength, boardRowLength);
-            //Console.WriteLine("lenghtToCheck: " + lenghtToCheck);
+            //int lenghtToCheck = GameFieldsVerificationCheckerLenght.CheckerLenght(boardColumnLength, boardRowLength);
+            Debug.Log("lenghtToCheck = " + lenghtToCheck);
+
             bool checker = false;
             int columnIndex;
             int rowIndex;
@@ -55,7 +57,7 @@ namespace Assets.Scripts.GameFieldsVerification
                     if (checkArray[0].Equals(""))
                     {
 
-                        checkArray[0] = board[rowIndex, columnIndex];
+                        checkArray[0] = boardToCheck[rowIndex, columnIndex];
                         //countedMatching = 1;
                         matchingArray[0] = 1;
                         // Console.WriteLine("------------------------------------------------");
@@ -65,7 +67,7 @@ namespace Assets.Scripts.GameFieldsVerification
                         // Console.WriteLine($"board[{rowIndex}, {columnIndex}]: " + board[rowIndex, columnIndex]);
                         // Console.WriteLine("------------------------------------------------");
                     }
-                    else if (checkArray[0].Equals(board[rowIndex, columnIndex]))
+                    else if (checkArray[0].Equals(boardToCheck[rowIndex, columnIndex]))
                     {
                         // Console.WriteLine("------------------------------------------------");
                         // Console.WriteLine("matchingArray[0] < lenghtToCheck-----------------------------------------------");
@@ -78,7 +80,7 @@ namespace Assets.Scripts.GameFieldsVerification
                             // Console.WriteLine("columnIndex: " + columnIndex);
                             // Console.WriteLine($"board[{rowIndex}, {columnIndex}]: " + board[rowIndex, columnIndex]);
                             //  Console.WriteLine("------------------------------------------------");
-                            checkArray[0] = board[rowIndex, columnIndex];
+                            checkArray[0] = boardToCheck[rowIndex, columnIndex];
 
                             // Console.WriteLine("------------------------------------------------");
                             //  Console.WriteLine("matchingArray[0] < lenghtToCheck-----------------------------------------------");
@@ -98,7 +100,7 @@ namespace Assets.Scripts.GameFieldsVerification
                             return checker;
                         }
                     }
-                    else if (checkArray[0] != board[rowIndex, columnIndex])
+                    else if (checkArray[0] != boardToCheck[rowIndex, columnIndex])
                     {
                         // Console.WriteLine("------------------------------------------------");
                         // Console.WriteLine("else if (checkArray[0] != board[rowIndex, columnIndex])----------------------------------------");
@@ -113,7 +115,7 @@ namespace Assets.Scripts.GameFieldsVerification
                         if ((boardRowLength - rowIndex) >= lenghtToCheck)
                         //if ((boardColumnLength - matchingArray[0]) >= lenghtToCheck)
                         {
-                            checkArray[0] = board[rowIndex, columnIndex];
+                            checkArray[0] = boardToCheck[rowIndex, columnIndex];
 
                             matchingArray[0] = 1;
                             //Console.WriteLine("------------------------------------------------");

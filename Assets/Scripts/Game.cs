@@ -41,18 +41,23 @@ internal class Game : MonoBehaviour
 
     //public TextMeshProUGUI cubePlayChangeText;
 
-    private int playersNumberGivenForConfiguration = 3;
+    private int playersNumberGivenForConfiguration = 1;
 
     private int _minNumberOfRows = 3;
     private int _minNumberOfColumns = 3;
     private int _minNumbersCubesForDepthZ = 3;
 
     private static int numberOfRows = 7;
-    private static int  numberOfColumns = 6;
+    private static int  numberOfColumns = 4;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
     private static int numberOfDepths = 1;
+
+    private static int lenghtToCheckMax;
+    private static int lenghtToCheck;
+    private static int lenghtToCheckGivenByUser = 3;
+
     private static bool isGame2D = true;
 
     private int maxCubePlayNumber = numberOfRows * numberOfColumns * numberOfDepths;
@@ -109,9 +114,15 @@ internal class Game : MonoBehaviour
 
         _index = 0;
 
-         //Debug.Log("_tagArrowDown = " + _tagArrowDown);
+        lenghtToCheckMax = GameFieldsVerificationCheckerLenght.SetUpMaxLenghtToCheck(numberOfRows, numberOfColumns);
+        lenghtToCheck = GameFieldsVerificationCheckerLenght.SetUpLenghtToCheck(lenghtToCheckMax, lenghtToCheckGivenByUser);
+       // Debug.Log("lenghtToCheck = " + lenghtToCheck);
 
-         gameBoardVerification2D = GameConfiguration.CreateEmptyTable2D(numberOfRows, numberOfColumns);
+       //int lenghtToCheck = GameFieldsVerificationCheckerLenght.CheckerLenght(numberOfRows-1, numberOfColumns-1);
+      // Debug.Log("lenghtToCheck = " + lenghtToCheck);
+
+
+        gameBoardVerification2D = GameConfiguration.CreateEmptyTable2D(numberOfRows, numberOfColumns);
 
         // does it need it?
         playerNumber = GameConfiguration.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration);
@@ -188,10 +199,10 @@ internal class Game : MonoBehaviour
                         int indexY = moveIndexForFrame[_moveIndexForFrameY];
 
                         GameObject cubePlayMarkByFrame = CommonMethods.GetCubePlay(gameBoard, indexY, indexX);
-                        string cubePlayMarkByFrameName = cubePlayMarkByFrame.name;
-                        string cubePlayMarkByFrameTag = cubePlayMarkByFrame.tag;
-                        //string cubePlayMarkByFrameName = CommonMethods.GetObjectName(cubePlayMarkByFrame);
-                        //string cubePlayMarkByFrameTag = CommonMethods.GetObjectTag(cubePlayMarkByFrame);
+                        //string cubePlayMarkByFrameName = cubePlayMarkByFrame.name;
+                        //string cubePlayMarkByFrameTag = cubePlayMarkByFrame.tag;
+                        string cubePlayMarkByFrameName = CommonMethods.GetObjectName(cubePlayMarkByFrame);
+                        string cubePlayMarkByFrameTag = CommonMethods.GetObjectTag(cubePlayMarkByFrame);
 
                         if (cubePlayMarkByFrameTag == _tagCubePlayFree)
                         {
@@ -204,14 +215,14 @@ internal class Game : MonoBehaviour
 
                             gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
-                            winner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D);
+                            winner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
 
 
                             if (winner == true)
                             {
                                 //float newCoordinateZ = 1;
                                 //CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
-                                //PlayGameMethods.ChangeCoordinateZForAllCubePlay(gameBoard);
+                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayTaken);
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
                             }
@@ -221,7 +232,7 @@ internal class Game : MonoBehaviour
                                 currentPlayer = PlayGameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
                                 //cubePlayMarkByFrame.transform.tag = _tagCubePlayTaken;
-                                PlayGameMethods.ChangeTagForGameObject(cubePlayMarkByFrame, _tagCubePlayTaken);
+                                CommonMethods.ChangeTagForGameObject(cubePlayMarkByFrame, _tagCubePlayTaken);
                                 currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);
 
                                 countedTagCubePlayTaken = currentCountedTagCubePlayTaken[_index];
@@ -265,7 +276,7 @@ internal class Game : MonoBehaviour
                             moveIndexForFrame[_moveIndexForFrameX] = cubePlayIndexX;
                             moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
 
-                            winner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D);
+                            winner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
 
 
                             if (winner == true)
@@ -273,7 +284,7 @@ internal class Game : MonoBehaviour
                                 //float newCoordinateZ = 1;
                                 //CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
-                                //PlayGameMethods.ChangeCoordinateZForAllCubePlay(gameBoard);
+                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayTaken);
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
                             }
@@ -284,8 +295,8 @@ internal class Game : MonoBehaviour
 
                                 currentPlayer = PlayGameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
-                                touch.collider.transform.tag = _tagCubePlayTaken;
-                                //PlayGameMethods.ChangeTagForGameObject(touch, _tagCubePlayTaken);
+                                //touch.collider.transform.tag = _tagCubePlayTaken;
+                                CommonMethods.ChangeTagForGameObject(touch, _tagCubePlayTaken);
                                 currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);
 
                                 countedTagCubePlayTaken = currentCountedTagCubePlayTaken[_index];
