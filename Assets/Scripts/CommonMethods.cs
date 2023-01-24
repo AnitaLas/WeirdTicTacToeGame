@@ -338,26 +338,61 @@ namespace Assets.Scripts
 
         public static string GetObjectName(GameObject gameObject)
         {
-            string name = gameObject.name;
-            return name;
+            string gameObjectName = gameObject.name;
+            return gameObjectName;
         }
 
         public static string GetObjectName(RaycastHit touchGameObject)
         {
-            string name = touchGameObject.collider.transform.name;
-            return name;
+            string gameObjectName = touchGameObject.collider.transform.name;
+            return gameObjectName;
         }
 
         public static string GetObjectTag(GameObject gameObject)
         {
-            string tag = gameObject.tag;
-            return tag;
+            string gameObjectTagName = gameObject.tag;
+            return gameObjectTagName;
         }
 
         public static string GetObjectTag(RaycastHit touchGameObject)
         {
-            string tag = touchGameObject.collider.transform.tag;
-            return tag;
+            string gameObjectTagName = touchGameObject.collider.transform.tag;
+            return gameObjectTagName;
         }
+
+        public static void ChangeTagForGameObject(GameObject gameObject, string gameObjectTagName)
+        {
+            gameObject.transform.tag = gameObjectTagName;
+        }
+
+        public static void ChangeTagForGameObject(RaycastHit touchGameObject, string gameObjectTagName)
+        {
+            touchGameObject.collider.transform.tag = gameObjectTagName;
+        }
+
+        public static int CheckAndReturnLowerNumber(int numberOne, int numberTwo)
+        {
+
+            if (numberTwo > numberOne)
+            {
+                return numberOne;
+            }
+            else if (numberTwo < numberOne)
+            {
+                return numberTwo;
+            }
+            else
+            {
+                // verticalLenght = horizontalLenght
+                return numberTwo;
+            }
+
+        }
+
+        public static void ChangeEnableForGameObject(GameObject gameObject, bool isEnable)
+        {
+            gameObject.SetActive(isEnable);
+        }
+
     }
 }

@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.GameFieldsVerification
 {
     internal class GameFieldsVerificationCheckerBackslash
     {
 
-        public static bool CheckerBackslash(string[,] boardToCheck)
+        public static bool CheckerBackslash(string[,] boardToCheck, int lenghtToCheck)
         {
 
             string[,] board = boardToCheck;
 
-
+            //Debug.Log("lenghtToCheck = " + lenghtToCheck);
             int boardRowLength = board.GetLength(0) - 1;
             int boardColumnLength = board.GetLength(1) - 1;
 
@@ -36,8 +37,8 @@ namespace Assets.Scripts.GameFieldsVerification
                     //Console.WriteLine("nextRowIndexToCheck: " + nextRowIndexToCheck);
                     //Console.BackgroundColor = ConsoleColor.Black;
 
-
-                    checker = CheckerFromLefTopToRightBottomForOne(board, nextRowIndexToCheck, nextColumnIndexToCheck);
+                    checker = CheckerFromLefTopToRightBottomForOne(board, nextRowIndexToCheck, nextColumnIndexToCheck, lenghtToCheck);
+                    //checker = CheckerFromLefTopToRightBottomForOne(board, nextRowIndexToCheck, nextColumnIndexToCheck);
 
 
 
@@ -87,9 +88,9 @@ namespace Assets.Scripts.GameFieldsVerification
 
 
 
-        public static bool CheckerFromLefTopToRightBottomForOne(string[,] boardToCheck, int startRowIndexToCheck, int startColumnIndexToCheck)
+        public static bool CheckerFromLefTopToRightBottomForOne(string[,] boardToCheck, int startRowIndexToCheck, int startColumnIndexToCheck, int lenghtToCheck)
         {
-            string[,] board = boardToCheck;
+            //string[,] board = boardToCheck;
             int startRowIndex = startRowIndexToCheck;
             int startColumnIndex = startColumnIndexToCheck;
 
@@ -97,12 +98,13 @@ namespace Assets.Scripts.GameFieldsVerification
             //Console.WriteLine("startRowIndex: " + startRowIndex);
             //Console.BackgroundColor = ConsoleColor.Black;
 
-            int boardRowLength = board.GetLength(0) - 1;
-            int boardColumnLength = board.GetLength(1) - 1;
+            int boardRowLength = boardToCheck.GetLength(0) - 1;
+            int boardColumnLength = boardToCheck.GetLength(1) - 1;
             //Console.WriteLine("boardRowLength: " + boardRowLength);
             //Console.WriteLine("boardColumnLength: " + boardColumnLength);
 
-            int lenghtToCheck = GameFieldsVerificationCheckerLenght.CheckerLenght(boardColumnLength, boardRowLength);
+            //int lenghtToCheck = GameFieldsVerificationCheckerLenght.CheckerLenght(boardColumnLength, boardRowLength);
+            //int lenghtToCheck = 3;
             // Console.WriteLine("lenghtToCheck: " + lenghtToCheck);
             bool checker = false;
             int columnIndex;
@@ -175,7 +177,7 @@ namespace Assets.Scripts.GameFieldsVerification
                     if (checkArray[0].Equals(""))
                     {
 
-                        checkArray[0] = board[rowIndex, columnIndex];
+                        checkArray[0] = boardToCheck[rowIndex, columnIndex];
                         matchingArray[0] = 1;
                         crossedOutLeftCorner[0] = startRowIndex + crossedOutRow;
                         crossedOutLeftCorner[1] = startColumnIndex + crossedOutColumn;
@@ -195,7 +197,7 @@ namespace Assets.Scripts.GameFieldsVerification
 
 
 
-                            if (checkArray[0].Equals(board[rowIndex, columnIndex]))
+                            if (checkArray[0].Equals(boardToCheck[rowIndex, columnIndex]))
                             {
 
 
@@ -228,7 +230,7 @@ namespace Assets.Scripts.GameFieldsVerification
                                     return checker;
                                 }
                             }
-                            else if (checkArray[0] != board[rowIndex, columnIndex])
+                            else if (checkArray[0] != boardToCheck[rowIndex, columnIndex])
                             {
 
                                 if ((boardColumnLength - columnIndex) >= lenghtToCheck)

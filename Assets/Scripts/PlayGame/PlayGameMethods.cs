@@ -32,18 +32,10 @@ namespace Assets.Scripts
             return table;
         }
 
-        public static void ChangeTagForGameObject(GameObject gameObject , string tagName)
-        {
-            gameObject.transform.tag = tagName;
-        }
-
-        public static void ChangeTagForGameObject(RaycastHit touchGameObject, string tagName)
-        {
-            touchGameObject.collider.transform.tag = tagName;
-        }
 
 
-        public static void ChangeCoordinateZForAllCubePlay(GameObject[,,] table)
+
+        public static void ChangeAllCubePlay(GameObject[,,] table, string tagName)
         {
             GameObject cubePlay;
             float newCoordinateZ = 0;
@@ -60,13 +52,17 @@ namespace Assets.Scripts
                     {
                         cubePlay = table[indexDepth, indexRow, indexColumn];
 
-                        
+                        bool test = false;
                         CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZ);
+                        CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
+                        //CommonMethods.ChangeEnableForGameObject(cubePlay, test);
                     }
                 }
             }
 
         }
+
+  
 
     }
 }

@@ -28,11 +28,7 @@ namespace Assets.Scripts.GameConfiguration
         public static string[] CreatetableWithPlayersSymbols()
         {
             string[] playersSymbols = { "x", "o", "i", "y", "z", "t" };
-
-            for (int i = 0; i < playersSymbols.Length; i++)
-            {
-                Debug.Log($"playersSymbols[{i}] = " + playersSymbols[i]);
-            }
+            //string[] playersSymbols = { "x", "0" };
             return playersSymbols;
         }
 
