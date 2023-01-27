@@ -13,6 +13,7 @@ TagManager:
   - ArrowDown
   - ArrowUp
   - ButtonConfirm
+  - CubePlayGameOver
   layers:
   - Default
   - TransparentFX
