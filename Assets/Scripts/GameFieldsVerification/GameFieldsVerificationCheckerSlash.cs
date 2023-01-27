@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.GameFieldsVerification
 {
@@ -11,59 +12,35 @@ namespace Assets.Scripts.GameFieldsVerification
 
         public static bool CheckerSlash(string[,] boardToCheck, int lenghtToCheck)
         {
+            int boardRowLength = boardToCheck.GetLength(0) - 1;
+            int boardColumnLength = boardToCheck.GetLength(1) - 1;
 
-            string[,] board = boardToCheck;
-            Console.WriteLine("lenghtToCheck: " + lenghtToCheck);
-
-            int boardRowLength = board.GetLength(0) - 1;
-            int boardColumnLength = board.GetLength(1) - 1;
-            // Console.WriteLine("boardRowLength: " + boardRowLength);
-            //  Console.WriteLine("boardColumnLength: " + boardColumnLength);
             int nextRowIndexToCheck;
             int nextColumnIndexToCheck;
 
             bool checker = false;
 
-            // int rowIndex;
-
             for (nextRowIndexToCheck = 0; nextRowIndexToCheck < boardRowLength; nextRowIndexToCheck++)
             {
 
-                for (nextColumnIndexToCheck = boardColumnLength; nextColumnIndexToCheck >= 0; nextColumnIndexToCheck--)
+                for (nextColumnIndexToCheck = 0; nextColumnIndexToCheck < boardColumnLength; nextColumnIndexToCheck++)
                 {
-
-
-                    //Console.BackgroundColor = ConsoleColor.DarkCyan;
-                    //Console.WriteLine("nextRowIndexToCheck: " + nextColumnIndexToCheck);
-                    //Console.WriteLine("nextRowIndexToCheck: " + nextRowIndexToCheck);
-                    //Console.BackgroundColor = ConsoleColor.Black;
-
-                    checker = CheckerFromLeftBottomToRightTopForOne(board, nextRowIndexToCheck, nextColumnIndexToCheck, lenghtToCheck);
-                    //checker = CheckerFromLeftBottomToRightTopForOne(board, nextRowIndexToCheck, nextColumnIndexToCheck);
-
-
-
-                    //Console.BackgroundColor = ConsoleColor.DarkRed;
-                    //Console.WriteLine(" if (checker == false) ");
-                    //Console.WriteLine("nextRowIndexToCheck: " + nextRowIndexToCheck);
-                    ////Console.WriteLine("nextRowIndexToCheck: " + nextColumnIndexToCheck);
-                    //Console.WriteLine("checker: " + checker);
-                    //Console.BackgroundColor = ConsoleColor.Black;
+                    //
+                    checker = CheckerFromLeftBottomToRightTopForOne(boardToCheck, nextRowIndexToCheck, nextColumnIndexToCheck, lenghtToCheck);
 
                     if (checker == true)
                     {
                         checker = true;
                         return checker;
+
                     }
-                    else if (checker == false && (nextRowIndexToCheck == boardRowLength)) // || nextColumnIndexToCheck == boardColumnLength))
+                    else if (checker == false && (nextRowIndexToCheck == boardRowLength || nextColumnIndexToCheck == boardColumnLength))
                     {
                         checker = false;
                         return checker;
+
                     }
-
-
                 }
-
             }
 
             return checker;
@@ -71,277 +48,168 @@ namespace Assets.Scripts.GameFieldsVerification
         }
 
 
-
-
+        //
         public static bool CheckerFromLeftBottomToRightTopForOne(string[,] boardToCheck, int startRowIndexToCheck, int startColumnIndexToCheck, int lenghtToCheck)
         {
-            string[,] board = boardToCheck;
-
-            Console.WriteLine("lenghtToCheck: " + lenghtToCheck);
-            //Console.BackgroundColor = ConsoleColor.DarkBlue;
-            // Console.WriteLine("startRowIndex: " + startRowIndex);
-            // Console.BackgroundColor = ConsoleColor.Black;
-
-            int boardRowLength = board.GetLength(0) - 1;
-            int boardColumnLength = board.GetLength(1) - 1;
-            // Console.WriteLine("boardRowLength : " + boardRowLength);
-            // Console.WriteLine("boardColumnLength : " + boardColumnLength);
             int startRowIndex = startRowIndexToCheck;
             int startColumnIndex = startColumnIndexToCheck;
-            //int startRowIndex = 1;
-            //int startColumnIndex = boardColumnLength;
 
-            //Console.WriteLine("boardRowLength: " + boardRowLength);
-            //Console.WriteLine("boardColumnLength: " + boardColumnLength);
+            int boardRowLength = boardToCheck.GetLength(0) - 1;
+            int boardColumnLength = boardToCheck.GetLength(1) - 1;
 
-            //int lenghtToCheck = GameFieldsVerificationCheckerLenght.CheckerLenght(boardColumnLength, boardRowLength);
-           //int lenghtToCheck = 3 - 1; // 3 = 3x index, number to check given by ueser = 3 - 1
-            //int lenghtToCheck = 3;
-            // Console.WriteLine("lenghtToCheck: " + lenghtToCheck);
             bool checker = false;
             int columnIndex;
             int rowIndex;
 
-            // check string
-            string[] checkArray = new string[1];
+            // CubePlay symbol
+            string[] matchingSymbol = new string[1];
+            matchingSymbol[0] = "";
 
-            // incoment only for crossed, for hor and vet must be commented
-            checkArray[0] = "";
+            //
+            int[] numberOfMatchingSymbols = new int[1];
+            int increaseNumberForMatchingSymbol = 1;
 
-            // count matching
-            int[] matchingArray = new int[1];
-            //int countedMatching = 0;
-            //matchingArray[0] = countedMatching;
-            //matchingArray[0] = 0;
+            //
+            int[] crossedOut = new int[2];
+            int increaseNumberForCrossedOutRww = 1;
+            int increaseNumberForCrossedOutColumn = 1;
 
-            // idex 0 = row, idex 1 = column
-            int[] crossedOutLeftCorner = new int[2];
-            //crossedOutLeftCorner[0] = 0;
-            //crossedOutLeftCorner[1] = 0;
-            int nextColumnIndex;
-            int nextRowIndex;
-
-            int crossedOutRow = 1;
-            int crossedOutColumn = 1;
-
-
-            // for cross left, top -> right bottom - start 
             for (rowIndex = startRowIndex; rowIndex <= boardRowLength; rowIndex++)
             {
-                // Console.WriteLine("------------------------------------------------");
 
-                //checkArray[0] = "";
-                //matchingArray[0] = 0;
-                //Console.WriteLine("checkArray[0]: " + checkArray[0]);
-                //Console.WriteLine("matchingArray[0]: " + matchingArray[0]);
-                //Console.WriteLine("------------------------------------------------");
-                //  Console.BackgroundColor = ConsoleColor.DarkYellow;
-                //Console.WriteLine("ROW INDEX rowIndex: " + rowIndex);
-                // Console.WriteLine("crossedOutLeftCorner[0]  = " + crossedOutLeftCorner[0]);
-                //Console.WriteLine("crossedOutLeftCorner[1] " + columnIndex + " == " + crossedOutLeftCorner[1]);
-                //  Console.BackgroundColor = ConsoleColor.Black;
-
-                for (columnIndex = startColumnIndex; columnIndex >= 0; columnIndex--)
+                for (columnIndex = startColumnIndex; columnIndex <= boardColumnLength; columnIndex++)
                 {
-                    //checkArray[0] = "";
-                    // matchingArray[0] = 0;
-                    //Console.WriteLine("rowIndex : " + rowIndex);
-                    //Console.WriteLine("columnIndex : " + columnIndex);
-                    //Console.WriteLine("------------------------------------------------");
-                    //Console.BackgroundColor = ConsoleColor.DarkMagenta;
-                    //Console.WriteLine("COLUMNIndex: " + columnIndex);
 
-                    //Console.WriteLine("for (columnIndex = 0; columnIndex <= boardColumnLength; columnIndex++)");
-                    //Console.WriteLine("checkArray[0] = " + checkArray[0]);
-                    //Console.WriteLine("matchingArray[0] = " + matchingArray[0]);
-                    //Console.WriteLine("crossedOutLeftCorner[0] = rowIndex = " + crossedOutLeftCorner[0]);
-                    //Console.WriteLine("crossedOutLeftCorner[1] = columnIndex = " + crossedOutLeftCorner[1]);
-                    //Console.WriteLine("board value = " + board[rowIndex, columnIndex] + ", rowIndex = " + rowIndex + ", columnIndex = " + columnIndex);
-                    //Console.BackgroundColor = ConsoleColor.Black;
-                    //Console.WriteLine("------------------------------------------------");
-                    //Console.WriteLine("------------------------------------------------");
+                    Debug.Log("0 checkArray[0]: " + matchingSymbol[0]);
+                    Debug.Log("0 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
+                    Debug.Log("0 crossedOut[0]: " + crossedOut[0]);
+                    Debug.Log("0 crossedOut[1]: " + crossedOut[1]);
+                    Debug.Log("0 startRowIndex: " + startRowIndex);
+                    Debug.Log("0 startColumnIndex: " + startColumnIndex);
+                    Debug.Log("0 ------------------------------------------------------------------ ");
 
-
-                    //int numberRowsToCheck = boardRowLength - rowIndex;
-                    //for (/nextRowIndex = 0; nextRowIndex < numberRowsToCheck; nextRowIndex++)
-                    //{
-                    //Console.WriteLine("------------------------------------------------");
-
-
-                    if (checkArray[0].Equals(""))
+                    if (matchingSymbol[0].Equals(""))
                     {
+                        Debug.Log(" 1                    if (checkArray[0].Equals(\"\"))");
+                        matchingSymbol[0] = boardToCheck[rowIndex, columnIndex];
+                        numberOfMatchingSymbols[0] = increaseNumberForMatchingSymbol;
+                        crossedOut[0] = rowIndex + increaseNumberForCrossedOutRww;
+                        crossedOut[1] = columnIndex + increaseNumberForCrossedOutColumn;
 
-                        checkArray[0] = board[rowIndex, columnIndex];
-                        matchingArray[0] = 1;
-                        crossedOutLeftCorner[0] = startRowIndex + crossedOutRow;
-                        crossedOutLeftCorner[1] = startColumnIndex - crossedOutColumn;
-                        //Console.WriteLine("------------------------------------------------");
-                        //Console.WriteLine("(checkArray[0].Equals( empty ))");
-                        //Console.WriteLine("checkArray[0] = " + checkArray[0]);
-                        //Console.WriteLine("matchingArray[0] = " + matchingArray[0]);
-                        //Console.WriteLine("crossedOutLeftCorner[0] = rowIndex = " + crossedOutLeftCorner[0]);
-                        //Console.WriteLine("crossedOutLeftCorner[1] = columnIndex = " + crossedOutLeftCorner[1]);
-                        //Console.WriteLine("board value = " + board[rowIndex, columnIndex] + ", rowIndex = " + rowIndex + ", columnIndex = " + columnIndex);
+                        Debug.Log("1 checkArray[0]: " + matchingSymbol[0]);
+                        Debug.Log("1 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
+                        Debug.Log("1 crossedOut[0]: " + crossedOut[0]);
+                        Debug.Log("1 crossedOut[1]: " + crossedOut[1]);
+                        Debug.Log("1 ------------------------------------------------");
+
                     }
-                    else
+                    else if (rowIndex == crossedOut[0] && columnIndex == crossedOut[1])
                     {
+                        Debug.Log(" 2        else if (rowIndex == crossedOut[0] && columnIndex == crossedOut[1])");
+                        Debug.Log("2 checkArray[0]: " + matchingSymbol[0]);
+                        Debug.Log("2 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
+                        Debug.Log("2 crossedOut[0]: " + crossedOut[0]);
+                        Debug.Log("2 rowIndex: " + rowIndex);
+                        Debug.Log("2 crossedOut[1]: " + crossedOut[1]);
+                        Debug.Log("2 columnIndex: " + columnIndex);
+                        Debug.Log("2 ------------------------------------------------");
 
-                        if (rowIndex == crossedOutLeftCorner[0] && columnIndex == crossedOutLeftCorner[1])
+
+                        if (matchingSymbol[0].Equals(boardToCheck[rowIndex, columnIndex]))
                         {
 
+                            Debug.Log(" 3   if (checkArray[0].Equals(boardToCheck[rowIndex, columnIndex]))");
+                            Debug.Log($"3 boardToCheck[{rowIndex}, {columnIndex}]: " + boardToCheck[rowIndex, columnIndex]);
+                            Debug.Log("3 checkArray[0]: " + matchingSymbol[0]);
+                            Debug.Log("3 lenghtToCheck " + lenghtToCheck);
+                            Debug.Log("3 ------------------------------------------------");
 
-
-                            if (checkArray[0].Equals(board[rowIndex, columnIndex]))
+                            if (numberOfMatchingSymbols[0] < lenghtToCheck)
                             {
+                                Debug.Log(" 4          if (numberOfMatchingSymbols[0] < lenghtToCheck)");
+                                Debug.Log("4 checkArray[0]: " + matchingSymbol[0]);
+                                Debug.Log("4 lenghtToCheck " + lenghtToCheck);
+                                Debug.Log("2 checkArray[0]: " + matchingSymbol[0]);
+                                Debug.Log("2 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
+                                Debug.Log("2 crossedOut[0]: " + crossedOut[0]);
+                                Debug.Log("2 crossedOut[1]: " + crossedOut[1]);
+                                Debug.Log("4 --------------------------------");
+                                numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
+                                crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
+                                crossedOut[1] = crossedOut[1] + increaseNumberForCrossedOutColumn;
+
+                                Debug.Log("4 checkArray[0]: " + matchingSymbol[0]);
+                                Debug.Log("4 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
+                                Debug.Log("4 crossedOut[0]: " + crossedOut[0]);
+                                Debug.Log("4 crossedOut[1]: " + crossedOut[1]);
+                                Debug.Log("4 ------------------------------------------------");
 
 
-                                if (matchingArray[0] < lenghtToCheck)
-                                {
-                                    // an update is not necessary to remove from hor and ver check!!!
-                                    // checkArray[0] = board[rowIndex + crossedOutRow, columnIndex + crossedOutColumn];
-
-                                    matchingArray[0] = matchingArray[0] + 1;
-                                    // new row
-                                    crossedOutLeftCorner[0] = rowIndex + crossedOutRow;
-                                    // new column
-                                    crossedOutLeftCorner[1] = columnIndex - crossedOutColumn;
-                                    //Console.WriteLine("------------------------------------------------");
-                                    //Console.WriteLine(" if (matchingArray[0] < lenghtToCheck)");
-                                    //Console.WriteLine("checkArray[0] = " + checkArray[0]);
-                                    //Console.WriteLine("matchingArray[0] = " + matchingArray[0]);
-                                    //Console.WriteLine("crossedOutLeftCorner[0] = rowIndex = " + crossedOutLeftCorner[0]);
-                                    //Console.WriteLine("crossedOutLeftCorner[1] = columnIndex = " + crossedOutLeftCorner[1]);
-                                    //Console.WriteLine("board value = " + board[rowIndex, columnIndex] + ", rowIndex = " + rowIndex + ", columnIndex = " + columnIndex);
-
-
-
-
-                                }
-                                else if (matchingArray[0] == lenghtToCheck)
-                                {
-                                    checker = true;
-                                    //Console.WriteLine("checker: " + checker);
-                                    return checker;
-                                }
                             }
-                            else if (checkArray[0] != board[rowIndex, columnIndex])
+                            else if (numberOfMatchingSymbols[0] == lenghtToCheck)
                             {
-
-                                if ((boardColumnLength - columnIndex) >= lenghtToCheck)
-                                {
-                                    // Console.WriteLine("------------------------------------------------");
-                                    //Console.WriteLine("(boardColumnLength - columnIndex) >= lenghtToCheck) " + (boardColumnLength - columnIndex) + " >= " + lenghtToCheck);
-
-                                    if ((boardRowLength - rowIndex) >= lenghtToCheck)
-                                    {
-                                        //Console.WriteLine("------------------------------------------------");
-                                        //Console.WriteLine("(boardColumnLength - (lenghtToCheck - columnIndex)) =  " + (boardRowLength - rowIndex) + " >= " + lenghtToCheck);
-                                        checkArray[0] = checkArray[0];
-                                        matchingArray[0] = matchingArray[0] + 1;
-                                        crossedOutLeftCorner[0] = crossedOutLeftCorner[0] + crossedOutRow;
-                                        crossedOutLeftCorner[1] = crossedOutLeftCorner[1] - crossedOutColumn;
-                                        //Console.WriteLine("------------------------------------------------");
-                                        //Console.WriteLine(" else if (rowIndex != crossedOutLeftCorner[0] || columnIndex != crossedOutLeftCorner[1]");
-                                        //Console.WriteLine("checkArray[0] = " + checkArray[0]);
-                                        //Console.WriteLine("matchingArray[0] = " + matchingArray[0]);
-                                        //Console.WriteLine("crossedOutLeftCorner[0] = rowIndex = " + crossedOutLeftCorner[0]);
-                                        //Console.WriteLine("crossedOutLeftCorner[1] = columnIndex = " + crossedOutLeftCorner[1]);
-                                        //Console.WriteLine("board value = " + board[rowIndex, columnIndex] + ", rowIndex = " + rowIndex + ", columnIndex = " + columnIndex);
-
-                                    }
-                                    else if ((boardRowLength - rowIndex) < lenghtToCheck)
-                                    {
-                                        checker = false;
-                                        //Console.WriteLine("checker: " + checker);
-                                        return checker;
-                                    }
-                                }
-                                else if ((boardColumnLength - lenghtToCheck) < lenghtToCheck)
-                                {
-
-                                    checker = false;
-                                    //Console.WriteLine("checker: " + checker);
-                                    return checker;
-
-
-
-                                }
-
-
-
+                                Debug.Log(" 5 ");
+                                checker = true;
+                                return checker;
 
                             }
                         }
-
-                        else if (rowIndex != crossedOutLeftCorner[0] || columnIndex != crossedOutLeftCorner[1])
+                        else if (matchingSymbol[0] != boardToCheck[rowIndex, columnIndex])
                         {
+                            Debug.Log(" 6 ");
+                            Debug.Log("6 ------------------------------------------------");
 
-                            if (lenghtToCheck >= matchingArray[0])
+                            if ((boardColumnLength - columnIndex) < lenghtToCheck)
                             {
-                                checkArray[0] = checkArray[0];
-                                matchingArray[0] = matchingArray[0];
-                                crossedOutLeftCorner[0] = crossedOutLeftCorner[0];
-                                crossedOutLeftCorner[1] = crossedOutLeftCorner[1];
-                                //Console.WriteLine("------------------------------------------------");
-                                //Console.WriteLine(" else if (rowIndex != crossedOutLeftCorner[0] || columnIndex != crossedOutLeftCorner[1]");
-                                //Console.WriteLine("checkArray[0] = " + checkArray[0]);
-                                //Console.WriteLine("matchingArray[0] = " + matchingArray[0]);
-                                //Console.WriteLine("crossedOutLeftCorner[0] = rowIndex = " + crossedOutLeftCorner[0]);
-                                //Console.WriteLine("crossedOutLeftCorner[1] = columnIndex = " + crossedOutLeftCorner[1]);
-                            }
-                            else if (lenghtToCheck < matchingArray[0])
-                            {
-                                if ((boardColumnLength - columnIndex) >= lenghtToCheck)
+                                Debug.Log(" 7  if ((boardColumnLength - columnIndex) < lenghtToCheck)");
+                                Debug.Log("7 boardColumnLength =  " + boardColumnLength);
+                                Debug.Log("7 columnIndex =  " + columnIndex);
+                                Debug.Log("7 boardColumnLength - columnIndex = " + (boardColumnLength - columnIndex) + " >  " + lenghtToCheck + " = lenghtToCheck");
+                                Debug.Log("8 ------------------------------------------------");
+
+                                if ((boardRowLength - rowIndex) < lenghtToCheck)
                                 {
-                                    //Console.WriteLine("------------------------------------------------");
-                                    //Console.WriteLine("(boardColumnLength - columnIndex) >= lenghtToCheck) " + (boardColumnLength - columnIndex) + " >= " + lenghtToCheck);
+                                    Debug.Log(" 8     if ((boardRowLength - rowIndex) < lenghtToCheck)");
+                                    Debug.Log("8 checkArray[0]: " + matchingSymbol[0]);
+                                    Debug.Log("8 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
+                                    Debug.Log("8 crossedOut[0]: " + crossedOut[0]);
+                                    Debug.Log("8 rowIndex: " + rowIndex);
+                                    Debug.Log("8 crossedOut[1]: " + crossedOut[1]);
+                                    Debug.Log("8 columnIndex: " + columnIndex);
+                                    Debug.Log("8 --------------------");
 
-                                    if ((boardRowLength - rowIndex) >= lenghtToCheck)
-                                    {
-                                        //Console.WriteLine("------------------------------------------------");
-                                        //Console.WriteLine("(boardColumnLength - (lenghtToCheck - columnIndex)) =  " + (boardRowLength - rowIndex) + " >= " + lenghtToCheck);
+                                    matchingSymbol[0] = matchingSymbol[0];
+                                    numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
+                                    crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
+                                    crossedOut[1] = crossedOut[1] - increaseNumberForCrossedOutColumn;
 
-
-
-                                    }
-                                    else if ((boardRowLength - rowIndex) < lenghtToCheck)
-                                    {
-                                        checker = false;
-                                        //Console.WriteLine("checker: " + checker);
-                                        return checker;
-                                    }
-                                }
-                                else if ((boardColumnLength - lenghtToCheck) < lenghtToCheck)
-                                {
-
+                                    Debug.Log("8 checkArray[0]: " + matchingSymbol[0]);
+                                    Debug.Log("8 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
+                                    Debug.Log("8 crossedOut[0]: " + crossedOut[0]);
+                                    Debug.Log("8 rowIndex: " + rowIndex);
+                                    Debug.Log("8 crossedOut[1]: " + crossedOut[1]);
+                                    Debug.Log("8 columnIndex: " + columnIndex);
+                                    Debug.Log("8 ------------------------------------------------");
                                     checker = false;
-                                    //Console.WriteLine("checker: " + checker);
                                     return checker;
-
                                 }
 
                             }
+                            else if ((boardColumnLength - lenghtToCheck) < lenghtToCheck)
+                            {
+                                Debug.Log(" 9 ");
+                                checker = false;
+                                return checker;
 
+                            }
                         }
                     }
-
-
-
-
-                }
-                //checkArray[0] = "";
+                }        
             }
 
             return checker;
+
         }
-
-
-
-
-
-
-
-
 
     }
 }

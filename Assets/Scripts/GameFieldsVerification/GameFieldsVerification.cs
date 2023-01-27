@@ -14,62 +14,35 @@ namespace Assets.Scripts.GameFieldsVerification
 
         public static bool FieldsVerification(string[,] boardToCheck, int lenghtToCheck)
         {
-            //string[,] board = boardToCheck;
-
             bool checker;
+
+            //
             bool checkerHorizontal = GameFieldsVerificationCheckerHorizontal.CheckerHorizontal(boardToCheck, lenghtToCheck);
-            //Console.WriteLine("checkerHorizontal: " + checkerHorizontal);
 
+            //
             bool checkerVerticall = GameFieldsVerificationCheckerVertical.CheckerVerticall(boardToCheck, lenghtToCheck);
-            //Console.WriteLine("checkerVerticall: " + checkerVerticall);
 
-            bool checkerFromLefTopToRightBottomForAll = GameFieldsVerificationCheckerBackslash.CheckerBackslash(boardToCheck, lenghtToCheck);
-            //Console.WriteLine("checkerFromLefTopToRightBottomForAll: " + checkerFromLefTopToRightBottomForAll);
+            //
+            bool checkerSlash = GameFieldsVerificationCheckerSlash.CheckerSlash(boardToCheck, lenghtToCheck);
 
-            bool checkerFromLeftBottomToRightTopForAll = GameFieldsVerificationCheckerSlash.CheckerSlash(boardToCheck, lenghtToCheck);
-            //Console.WriteLine("checkerFromLeftBottomToRightTopForAll: " + checkerFromLeftBottomToRightTopForAll);
+            //
+            bool checkerBackslash = GameFieldsVerificationCheckerBackslash.CheckerBackslash(boardToCheck, lenghtToCheck);
 
-            //if (checkerHorizontal == true || checkerVerticall == true || checkerFromLefTopToRightBottomForAll == true || checkerFromLeftBottomToRightTopForAll == true)
 
-            if  (checkerFromLefTopToRightBottomForAll == true )
+            //
+            if (checkerHorizontal == true || checkerVerticall == true || checkerSlash == true || checkerBackslash == true)
             {
                 checker = true;
-                Debug.Log("checker = " + checker);
                 return checker;
-                //return true
             }
             else
             {
                 checker = false;
-                //Console.WriteLine("checker = false: " + checker);
                 return checker;
             }
 
-            /*
-            else if (checkerVerticall == true)
-            {
-                checker = checkerVerticall;
-                return checker;
-            }
-            else if (checkerFromLefTopToRightBottomForAll == true)
-            {
-                checker = checkerFromLefTopToRightBottomForAll;
-                return checker;
-            }
-            else if (checkerFromLeftBottomToRightTopForAll == true)
-            {
-                checker = checkerFromLeftBottomToRightTopForAll;
-                return checker;
-            } else
-            {
-                checker = false;
-                return checker;
-            }
-            */
-
-            // return checker;
+           
         }
-
 
 
     }

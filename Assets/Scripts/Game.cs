@@ -73,6 +73,7 @@ internal class Game : MonoBehaviour
     private string _tagCubePlayFree;
     private string _tagCubePlayTaken;
     private string _tagCubePlayFrame;
+    private string _tagCubePlayGameOver;
 
     Dictionary<int, string> tagArrowDictionary = GameDictionariesCommon.DictionaryTagHelpButtons();
 
@@ -105,6 +106,7 @@ internal class Game : MonoBehaviour
         _tagCubePlayFree = tagCubePlayDictionary[1];
         _tagCubePlayTaken = tagCubePlayDictionary[2];
         _tagCubePlayFrame = tagCubePlayDictionary[3];
+        _tagCubePlayGameOver = tagCubePlayDictionary[4];
 
         _tagArrowRight = tagArrowDictionary[1];
         _tagArrowLeft = tagArrowDictionary[3];
@@ -222,7 +224,7 @@ internal class Game : MonoBehaviour
                             {
                                 //float newCoordinateZ = 1;
                                 //CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
-                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayTaken);
+                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver);
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
                             }
@@ -284,7 +286,7 @@ internal class Game : MonoBehaviour
                                 //float newCoordinateZ = 1;
                                 //CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
-                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayTaken);
+                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver);
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
                             }
