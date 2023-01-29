@@ -16,7 +16,7 @@ namespace Assets.Scripts.GameDictionaries
             tagArrowDictionary.Add(2, "CubePlayTaken");
             tagArrowDictionary.Add(3, "CubePlayFrame");
             tagArrowDictionary.Add(4, "CubePlayGameOver");
-
+            tagArrowDictionary.Add(5, "CubePlayGameWin");
 
             return tagArrowDictionary;
         }

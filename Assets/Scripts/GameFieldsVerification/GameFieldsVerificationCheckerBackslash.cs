@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +12,17 @@ namespace Assets.Scripts.GameFieldsVerification
     internal class GameFieldsVerificationCheckerBackslash
     {
 
-        public static bool CheckerBackslash(string[,] boardToCheck, int lenghtToCheck)
+        public static ArrayList CheckerBackslash(string[,] boardToCheck, int lenghtToCheck)
         {
+            ArrayList listCheckerBackslash = new ArrayList();
+
             int boardRowLength = boardToCheck.GetLength(0) - 1;
             int boardColumnLength = boardToCheck.GetLength(1) - 1;
 
             int nextRowIndexToCheck;
             int nextColumnIndexToCheck;
 
-            bool checker = false;
+            //bool checker;
 
             for (nextRowIndexToCheck = 0; nextRowIndexToCheck < boardRowLength; nextRowIndexToCheck++)
             {
@@ -27,30 +30,34 @@ namespace Assets.Scripts.GameFieldsVerification
                 for (nextColumnIndexToCheck = boardColumnLength; nextColumnIndexToCheck >= 0; nextColumnIndexToCheck--)
                 {
 
-                    checker = CheckerBackslashForOne(boardToCheck, nextRowIndexToCheck, nextColumnIndexToCheck, lenghtToCheck);
+                    listCheckerBackslash = CheckerBackslashForOne(boardToCheck, nextRowIndexToCheck, nextColumnIndexToCheck, lenghtToCheck);
 
-                    if (checker == true)
+                    bool isBackslashWin = (bool)listCheckerBackslash[0];
+
+                    if (isBackslashWin == true)
                     {
-                        checker = true;
-                        return checker;
+                        //checker = true;
+                        return listCheckerBackslash;
                     }
-                    else if (checker == false && (nextRowIndexToCheck == boardRowLength)) 
+                    else if (isBackslashWin == false && (nextRowIndexToCheck == boardRowLength)) 
                     {
-                        checker = false;
-                        return checker;
+                        //checker = false;
+                        return listCheckerBackslash;
                     }
                 }
             }
 
-            return checker;
+            return listCheckerBackslash;
 
         }
 
 
 
 
-        public static bool CheckerBackslashForOne(string[,] boardToCheck, int startRowIndexToCheck, int startColumnIndexToCheck, int lenghtToCheck)
+        public static ArrayList CheckerBackslashForOne(string[,] boardToCheck, int startRowIndexToCheck, int startColumnIndexToCheck, int lenghtToCheck)
         {
+            ArrayList listCheckerBackslash = new ArrayList();
+
             int boardRowLength = boardToCheck.GetLength(0) - 1;
             int boardColumnLength = boardToCheck.GetLength(1) - 1;
 
@@ -71,6 +78,10 @@ namespace Assets.Scripts.GameFieldsVerification
             int increaseNumberForCrossedOutRww = 1;
             int decreaseNumberForCrossedOutColumn = 1;
 
+            //
+            int[,] coordinateXYToMark = new int[lenghtToCheck + 1, 2];
+            int[] indexYToMark = new int[1];
+            int increaseIndexXY = 1;
 
             for (rowIndex = startRowIndexToCheck; rowIndex <= boardRowLength; rowIndex++)
             {
@@ -80,8 +91,15 @@ namespace Assets.Scripts.GameFieldsVerification
                     {
                         matchingSymbol[0] = boardToCheck[rowIndex, columnIndex];
                         numberOfMatchingSymbols[0] = increaseNumberForMatchingSymbol;
+
                         crossedOut[0] = rowIndex + increaseNumberForCrossedOutRww;
                         crossedOut[1] = columnIndex - decreaseNumberForCrossedOutColumn;
+
+                        coordinateXYToMark[0, 0] = rowIndex;
+                        coordinateXYToMark[0, 1] = columnIndex;
+                        indexYToMark[0] = 1;
+
+                        listCheckerBackslash.Insert(0, checker);
 
                     }
                     else if (rowIndex == crossedOut[0] && columnIndex == crossedOut[1])
@@ -94,14 +112,30 @@ namespace Assets.Scripts.GameFieldsVerification
                                 if (numberOfMatchingSymbols[0] < lenghtToCheck)
                                 {
                                     numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
+
                                     crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
                                     crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
 
-                                }
+                                    int currentIndexY = indexYToMark[0];
+                                    coordinateXYToMark[currentIndexY, 0] = rowIndex;
+                                    coordinateXYToMark[currentIndexY, 1] = columnIndex;
+                                    indexYToMark[0] = currentIndexY + increaseIndexXY;
+
+                                    listCheckerBackslash.Insert(0, checker);
+
+                            }
                                 else if (numberOfMatchingSymbols[0] == lenghtToCheck)
                                 {
                                     checker = true;
-                                    return checker;
+                                //return checker;
+
+                                    int currentIndexY = indexYToMark[0];
+                                    coordinateXYToMark[currentIndexY, 0] = rowIndex;
+                                    coordinateXYToMark[currentIndexY, 1] = columnIndex;
+
+                                    listCheckerBackslash.Insert(0, checker);
+                                    listCheckerBackslash.Insert(1, coordinateXYToMark);
+
                                 }
                             }
                             else if (matchingSymbol[0] != boardToCheck[rowIndex, columnIndex])
@@ -116,17 +150,24 @@ namespace Assets.Scripts.GameFieldsVerification
                                         crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
 
                                         checker = false;
-                                        return checker;
+                                  
+                                        checker = false;
+                                        listCheckerBackslash.Insert(0, checker);
+                                        return listCheckerBackslash;
 
-                                    }
-
+                                    //return checker;
                                 }
+
+                            }
                                 else if ((boardColumnLength - lenghtToCheck) < lenghtToCheck)
                                 {
-                                    checker = false;
-                                    return checker;
+                                
+                                checker = false;
+                                //return checker;
+                                listCheckerBackslash.Insert(0, checker);
+                                return listCheckerBackslash;
 
-                                }
+                            }
 
                             }
                     }
@@ -135,7 +176,7 @@ namespace Assets.Scripts.GameFieldsVerification
 
             }
         
-            return checker;
+            return listCheckerBackslash;
         }
 
 

@@ -74,6 +74,7 @@ internal class Game : MonoBehaviour
     private string _tagCubePlayTaken;
     private string _tagCubePlayFrame;
     private string _tagCubePlayGameOver;
+    private string _tagCubePlayGameWin;
 
     Dictionary<int, string> tagArrowDictionary = GameDictionariesCommon.DictionaryTagHelpButtons();
 
@@ -90,7 +91,9 @@ internal class Game : MonoBehaviour
     int[] currentPlayer;
     int[] currentCountedTagCubePlayTaken;
 
-    bool winner = false;
+    private ArrayList _listCheckerForWinner = new ArrayList();
+    private int[,] _winnerCoordinateXYForCubePlay;
+    private bool _winner = false;
 
     GameObject[,,] gameBoard;
     string[,] gameBoardVerification2D;
@@ -107,6 +110,7 @@ internal class Game : MonoBehaviour
         _tagCubePlayTaken = tagCubePlayDictionary[2];
         _tagCubePlayFrame = tagCubePlayDictionary[3];
         _tagCubePlayGameOver = tagCubePlayDictionary[4];
+        _tagCubePlayGameWin = tagCubePlayDictionary[5];
 
         _tagArrowRight = tagArrowDictionary[1];
         _tagArrowLeft = tagArrowDictionary[3];
@@ -217,16 +221,25 @@ internal class Game : MonoBehaviour
 
                             gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
-                            winner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
+                            //Debug.Log(" 0 ");
+                            _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
+                            //Debug.Log(" 1 ");
+                            _winner = (bool)_listCheckerForWinner[0];
 
-
-                            if (winner == true)
+                            if (_winner == true)
                             {
-                                //float newCoordinateZ = 1;
-                                //CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
-                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver);
+                                //Debug.Log(" 2 ");
+                                _winnerCoordinateXYForCubePlay = (int[,])_listCheckerForWinner[1];
+                                //Debug.Log(" 3 ");
+
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
+                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
+                                PlayGameMethods.ChangeWinnerCubePlay(gameBoard, _tagCubePlayGameOver, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
+
+
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
+
+
                             }
                             else
                             {
@@ -278,15 +291,22 @@ internal class Game : MonoBehaviour
                             moveIndexForFrame[_moveIndexForFrameX] = cubePlayIndexX;
                             moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
 
-                            winner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
+                           // Debug.Log(" 0 ");
+                            _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
+
+                            //Debug.Log(" 1 ");
+                            _winner = (bool)_listCheckerForWinner[0];
 
 
-                            if (winner == true)
+                            if (_winner == true)
                             {
-                                //float newCoordinateZ = 1;
-                                //CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
+                               // Debug.Log(" 2 ");
+                                _winnerCoordinateXYForCubePlay = (int[,])_listCheckerForWinner[1];
+                               // Debug.Log(" 3 ");
+
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
-                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver);
+                                PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
+                                PlayGameMethods.ChangeWinnerCubePlay(gameBoard, _tagCubePlayGameOver, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
                             }
