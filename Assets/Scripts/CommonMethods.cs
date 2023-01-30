@@ -389,6 +389,15 @@ namespace Assets.Scripts
 
         }
 
+        public static string GetCubePlayPlayerSymbol(GameObject cubePlay)
+        {
+            var cubePlayText = cubePlay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            string playerSymbol = cubePlayText.text;
+            return playerSymbol;
+        }
+
+
+        //-- remove ?
         public static void ChangeEnableForGameObject(GameObject gameObject, bool isEnable)
         {
             gameObject.SetActive(isEnable);

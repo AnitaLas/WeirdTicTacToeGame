@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.GameDictionaries;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,21 +37,15 @@ namespace Assets.Scripts
 
 
 
-        public static void ChangeAllCubePlay(GameObject[,,] gameBoard, string _tagCubePlayGameOver, int[,] _winnerCoordinateXYForCubePlay, string _tagCubePlayGameWin)
+        public static void ChangeAllCubePlay(GameObject[,,] gameBoard, string _tagCubePlayGameOver)
         {
             GameObject cubePlay;
             float newCoordinateZForAll = 0;
-            float newCoordinateZForWinner = -0.5f;
 
-            //Debug.Log(" 4 ");
-            // gameBoard
             int lenghtForDepths = gameBoard.GetLength(0);
             int lenghtForRows = gameBoard.GetLength(1);
             int lenghtForColumns = gameBoard.GetLength(2);
 
-            // _winnerCoordinateXYForCubePlay
-            int winnerLenghtForRows = _winnerCoordinateXYForCubePlay.GetLength(0);
-            int winnerLenghtForColumns = _winnerCoordinateXYForCubePlay.GetLength(1);
 
             for (int indexDepth = 0; indexDepth < lenghtForDepths; indexDepth++)
             {
@@ -60,119 +55,266 @@ namespace Assets.Scripts
                     {
 
                         cubePlay = gameBoard[indexDepth, indexRow, indexColumn];
-                       // Debug.Log($"gameBoard[{indexDepth}, {indexRow}, {indexColumn}] = " + gameBoard[indexDepth, indexRow, indexColumn]);
-
+                       
                         CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForAll);
                         CommonMethods.ChangeTagForGameObject(cubePlay, _tagCubePlayGameOver);
-
 
                     }
                 }
             }
 
 
-
-            /*
-            for (int indexRowWinner = 0; indexRowWinner < winnerLenghtForRows; indexRowWinner++)
-            {
-                for (int indexColumnWinner = 0; indexColumnWinner < winnerLenghtForColumns; indexColumnWinner++)
-                {
-
-                    Debug.Log($"winner[{indexRowWinner}, {indexColumnWinner}] = " + _winnerCoordinateXYForCubePlay[indexRowWinner, indexColumnWinner]);
-
-
-
-                }
-            }
-            */
-
-
-
-
-
-
-
-
         }
 
-        public static void ChangeWinnerCubePlay(GameObject[,,] gameBoard, string _tagCubePlayGameOver, int[,] _winnerCoordinateXYForCubePlay, string _tagCubePlayGameWin)
+
+
+
+
+
+        public static void ChangeWinnerCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, int[,] _winnerCoordinateXYForCubePlay, string _tagCubePlayGameWin)
         {
             GameObject cubePlay;
-            float newCoordinateZForAll = 0;
             float newCoordinateZForWinner = -0.5f;
             int indexDepth = 0;
 
-            //Debug.Log(" 4 ");
             // gameBoard
-            int lenghtForDepths = gameBoard.GetLength(0);
-            int lenghtForRows = gameBoard.GetLength(1);
-            int lenghtForColumns = gameBoard.GetLength(2);
+            // int lenghtForDepths = gameBoard.GetLength(0);
+            //int lenghtForRows = gameBoard.GetLength(1);
+            //int lenghtForColumns = gameBoard.GetLength(2);
 
             // _winnerCoordinateXYForCubePlay
-            int winnerLenghtForRows = _winnerCoordinateXYForCubePlay.GetLength(0);
+            //int winnerLenghtForRows = _winnerCoordinateXYForCubePlay.GetLength(0);
             int winnerLenghtForColumns = _winnerCoordinateXYForCubePlay.GetLength(1);
 
-
-
-            for (int indexRowWinner = 0; indexRowWinner < winnerLenghtForRows; indexRowWinner++)
+            for (int indexColumnsWinner = 0; indexColumnsWinner < winnerLenghtForColumns; indexColumnsWinner++)
             {
-                //for (int indexColumnWinner = 0; indexColumnWinner < winnerLenghtForColumns; indexColumnWinner++)
-                //{
-                    int coordinateYToMark = _winnerCoordinateXYForCubePlay[indexRowWinner, 0];
-                    int coordinateXToMark = _winnerCoordinateXYForCubePlay[indexRowWinner, 1];
+                int coordinateYToMark = _winnerCoordinateXYForCubePlay[indexColumnsWinner, 0];
+                int coordinateXToMark = _winnerCoordinateXYForCubePlay[indexColumnsWinner, 1];
+                Debug.Log("coordinateYToMark = " + coordinateYToMark);
+                Debug.Log("coordinateXToMark = " + coordinateXToMark);
+                Debug.Log(" ----------------------------------------------- ");
 
-                    cubePlay = gameBoard[indexDepth, coordinateYToMark, coordinateXToMark];
-                     //Debug.Log($"gameBoard[{indexDepth}, {indexRow}, {indexColumn}] = " + gameBoard[indexDepth, indexRow, indexColumn]);
+                cubePlay = gameBoard[indexDepth, coordinateYToMark, coordinateXToMark];
+                
 
-                     //Debug.Log("indexColumn -> " + indexColumn + " = " + indexColumnWinner + " <- indexColumnWinner");
-
-                     //Debug.Log($"winner[{indexRowWinner}, {indexColumnWinner}] = " + _winnerCoordinateXYForCubePlay[indexRowWinner, indexColumnWinner]);
-
-                     CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
-                     CommonMethods.ChangeTagForGameObject(cubePlay, _tagCubePlayGameWin);
+                CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
+                CommonMethods.ChangeTagForGameObject(cubePlay, _tagCubePlayGameWin);
 
             }
 
-            // start
-            int coordinateYToMarkOther = _winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 0];
-            Debug.Log("coordinateYToMarkOther = " + coordinateYToMarkOther);
+        }
 
-            int coordinateXToMarkOther = _winnerCoordinateXYForCubePlay[0, 1];
-            Debug.Log("coordinateXToMarkOther = " + coordinateXToMarkOther);
+        public static void ChangeOtherCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        {
+            GameObject cubePlay;
+            float newCoordinateZForWinner = -0.5f;
+            int indexDepth = 0;
+            // string playerSymbol = "x";
 
-            //Debug.Log("winnerLenghtForRows - 1 = " + (winnerLenghtForRows - 1));
-            //Debug.Log("lenghtForRows - 1  = " + (lenghtForRows - 1));
-            //Debug.Log("winnerLenghtForRows - 1 = " + (winnerLenghtForRows - 1));
-            string playerSymbol = "x";
+            // gameBoard
+            //int lenghtForRows = gameBoard.GetLength(1);
+            int lenghtForColumns = gameBoard.GetLength(2);
 
-            if (_winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 0] < lenghtForRows - 1)
+            // _winnerCoordinateXYForCubePlay
+            //int winnerLenghtForRows = winnerCoordinateXYForCubePlay.GetLength(0);
+            int winnerLenghtForColumns = winnerCoordinateXYForCubePlay.GetLength(1);
+
+            int coordinateYToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForColumns - 1, 0];
+            int coordinateXToMarkOther = winnerCoordinateXYForCubePlay[0, 1];
+
+
+            int startIndexXForOtherCubePlay = coordinateXToMarkOther + 1;
+            int maxIndexXForLenghtForColumns = lenghtForColumns - 1;
+            int maxIndexXForWinnerLenghtForColumns = winnerLenghtForColumns - 1;
+
+            if (winnerCoordinateXYForCubePlay[0, maxIndexXForWinnerLenghtForColumns] < maxIndexXForLenghtForColumns)
             {
-                for (int i = coordinateYToMarkOther + 1; i < (lenghtForRows); i++)
+                for (int i = startIndexXForOtherCubePlay; i < lenghtForColumns; i++)
                 {
-                    Debug.Log("i = " + i);
+                    cubePlay = gameBoard[indexDepth, coordinateYToMarkOther, i];
 
-                    cubePlay = gameBoard[indexDepth, i, coordinateXToMarkOther];
-                    var cubePlayText = cubePlay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                    string symbolToCompare = cubePlayText.text;
-                    Debug.Log("symbolToCompare = " + symbolToCompare);
+                    string symbolToCompare = CommonMethods.GetCubePlayPlayerSymbol(cubePlay);
 
                     if (playerSymbol.Equals(symbolToCompare))
                     {
                         CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
-                        CommonMethods.ChangeTagForGameObject(cubePlay, _tagCubePlayGameWin);
-                    }
+                        CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
 
-                   
+                    }
+                    else
+                    {
+                        break;
+
+                    }
 
                 }
             }
 
+        }
 
-
-
-
+        public static void ChangeAllCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        {
+            ChangeWinnerCubePlayForCheckerHorizontal(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            ChangeOtherCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
         }
 
 
+
+
+
+
+
+
+        public static void ChangeWinnerCubePlayForCheckerVertical(GameObject[,,] gameBoard, int[,] _winnerCoordinateXYForCubePlay, string _tagCubePlayGameWin)
+        {
+            GameObject cubePlay;
+            float newCoordinateZForWinner = -0.5f;
+            int indexDepth = 0;
+
+            // gameBoard
+            // int lenghtForDepths = gameBoard.GetLength(0);
+            //int lenghtForRows = gameBoard.GetLength(1);
+            //int lenghtForColumns = gameBoard.GetLength(2);
+
+            // _winnerCoordinateXYForCubePlay
+            int winnerLenghtForRows = _winnerCoordinateXYForCubePlay.GetLength(0);
+            //int winnerLenghtForColumns = _winnerCoordinateXYForCubePlay.GetLength(1);
+
+            for (int indexRowWinner = 0; indexRowWinner < winnerLenghtForRows; indexRowWinner++)
+            {
+                int coordinateYToMark = _winnerCoordinateXYForCubePlay[indexRowWinner, 0];
+                int coordinateXToMark = _winnerCoordinateXYForCubePlay[indexRowWinner, 1];
+
+                cubePlay = gameBoard[indexDepth, coordinateYToMark, coordinateXToMark];
+  
+                CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
+                CommonMethods.ChangeTagForGameObject(cubePlay, _tagCubePlayGameWin);
+
+            }
+
+            //for (int y = 0; y < _winnerCoordinateXYForCubePlay.GetLength(0) -1 ; y++)
+            //{
+            //    for (int x = 0; x < _winnerCoordinateXYForCubePlay.GetLength(1) - 1; x++)
+            //    {
+            //        Debug.Log($"coordinateXYToMark [{y},{x}] = " + _winnerCoordinateXYForCubePlay[y, x]);
+
+            //    }
+            //    Debug.Log($"----------------------------------------");
+            //}
+            //Debug.Log($"---------- ************************************  ------------------------------");
+
+        }
+
+        public static void ChangeOtherCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        {
+            GameObject cubePlay;
+            float newCoordinateZForWinner = -0.5f;
+            int indexDepth = 0;
+            // string playerSymbol = "x";
+
+            // gameBoard
+            int lenghtForRows = gameBoard.GetLength(1);
+            // int lenghtForColumns = gameBoard.GetLength(2);
+
+            // _winnerCoordinateXYForCubePlay
+            int winnerLenghtForRows = winnerCoordinateXYForCubePlay.GetLength(0);
+            //int winnerLenghtForColumns = _winnerCoordinateXYForCubePlay.GetLength(1);
+
+            int coordinateYToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 0];
+            int coordinateXToMarkOther = winnerCoordinateXYForCubePlay[0, 1];
+
+
+            int startIndexYForOtherCubePlay = coordinateYToMarkOther + 1;
+            int maxIndexYForLenghtForRows = lenghtForRows - 1;
+            int maxIndexYForWinnerLenghtForRows = winnerLenghtForRows - 1;
+
+            if (winnerCoordinateXYForCubePlay[maxIndexYForWinnerLenghtForRows, 0] < maxIndexYForLenghtForRows)
+            {
+                for (int i = startIndexYForOtherCubePlay; i < lenghtForRows; i++)
+                {
+                    cubePlay = gameBoard[indexDepth, i, coordinateXToMarkOther];
+
+                    string symbolToCompare = CommonMethods.GetCubePlayPlayerSymbol(cubePlay);
+
+                    if (playerSymbol.Equals(symbolToCompare))
+                    {
+                        CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
+                        CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
+
+                    }
+                    else
+                    {
+                        break;
+
+                    }
+
+                }
+            }
+
+        }
+
+        public static void ChangeAllCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        {
+            ChangeWinnerCubePlayForCheckerVertical(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            ChangeOtherCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+        }
+
+
+
+
+
+
+        public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string winnerKindOfChecker, string tagCubePlayGameWin, string tagCubePlayGameOver)
+        {
+            Dictionary<int, string> checkerDictionary = GameDictionariesCommon.DictionaryChecker();
+
+            string checkerHorizontal = checkerDictionary[1];
+            string checkerVertical = checkerDictionary[2];
+            string checkerSlash = checkerDictionary[3];
+            string checkerBackslash = checkerDictionary[4];
+
+
+            ChangeAllCubePlay(gameBoard, tagCubePlayGameOver);
+
+            // checkerHorizontal
+            if (winnerKindOfChecker.Equals(checkerHorizontal))
+            {
+                ChangeAllCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            }
+
+            // checkerVertical
+            if (winnerKindOfChecker.Equals(checkerVertical))
+            {
+                ChangeAllCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            }
+
+
+            // checkerSlash
+            if (winnerKindOfChecker.Equals(checkerSlash))
+            {
+
+            }
+
+            // checkerBackslash
+            if (winnerKindOfChecker.Equals(checkerBackslash))
+            {
+
+            }
+           
+        }
+
+
+
+
+
+
+
+
+
+
+
+
     }
+
+
 }

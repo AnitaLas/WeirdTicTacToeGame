@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,28 +11,41 @@ namespace Assets.Scripts.GameDictionaries
     {
         public static Dictionary<int, string> DictionaryTagCubePlay()
         {
-            Dictionary<int, string> tagArrowDictionary = new Dictionary<int, string>();
+            Dictionary<int, string> tagCubePlayDictionary = new Dictionary<int, string>();
 
-            tagArrowDictionary.Add(1, "CubePlayFree");
-            tagArrowDictionary.Add(2, "CubePlayTaken");
-            tagArrowDictionary.Add(3, "CubePlayFrame");
-            tagArrowDictionary.Add(4, "CubePlayGameOver");
-            tagArrowDictionary.Add(5, "CubePlayGameWin");
+            tagCubePlayDictionary.Add(1, "CubePlayFree");
+            tagCubePlayDictionary.Add(2, "CubePlayTaken");
+            tagCubePlayDictionary.Add(3, "CubePlayFrame");
+            tagCubePlayDictionary.Add(4, "CubePlayGameOver");
+            tagCubePlayDictionary.Add(5, "CubePlayGameWin");
 
-            return tagArrowDictionary;
+            return tagCubePlayDictionary;
         }
 
         public static Dictionary<int, string> DictionaryTagHelpButtons()
         {
-            Dictionary<int, string> tagArrowDictionary = new Dictionary<int, string>();
+            Dictionary<int, string> tagHelpButtonDictionary = new Dictionary<int, string>();
 
-            tagArrowDictionary.Add(1, "ArrowRight");
-            tagArrowDictionary.Add(2, "ArrowDown");
-            tagArrowDictionary.Add(3, "ArrowLeft");
-            tagArrowDictionary.Add(4, "ArrowUp");
-            tagArrowDictionary.Add(5, "ButtonConfirm");
+            tagHelpButtonDictionary.Add(1, "ArrowRight");
+            tagHelpButtonDictionary.Add(2, "ArrowDown");
+            tagHelpButtonDictionary.Add(3, "ArrowLeft");
+            tagHelpButtonDictionary.Add(4, "ArrowUp");
+            tagHelpButtonDictionary.Add(5, "ButtonConfirm");
 
-            return tagArrowDictionary;
+            return tagHelpButtonDictionary;
+        }
+
+        public static Dictionary<int, string> DictionaryChecker()
+        {
+            Dictionary<int, string> checkerDictionary = new Dictionary<int, string>();
+
+            checkerDictionary.Add(1, "Horizontal");
+            checkerDictionary.Add(2, "Vertical");
+            checkerDictionary.Add(3, "Slash");
+            checkerDictionary.Add(4, "Backslash");
+
+            return checkerDictionary;
+
         }
         
         
