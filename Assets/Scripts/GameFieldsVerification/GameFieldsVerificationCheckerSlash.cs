@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.GameDictionaries;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -137,6 +138,10 @@ namespace Assets.Scripts.GameFieldsVerification
 
                                 listCheckerSlash.Insert(0, checker);
                                 listCheckerSlash.Insert(1, coordinateXYToMark);
+
+                                Dictionary<int, string> checkerDictionary = GameDictionariesCommon.DictionaryChecker();
+                                string kindOfChecker = checkerDictionary[3];
+                                listCheckerSlash.Insert(2, kindOfChecker);
 
                             }
                         }

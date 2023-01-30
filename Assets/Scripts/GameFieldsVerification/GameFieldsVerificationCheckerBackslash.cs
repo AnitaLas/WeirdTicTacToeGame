@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.GameDictionaries;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -136,7 +137,11 @@ namespace Assets.Scripts.GameFieldsVerification
                                     listCheckerBackslash.Insert(0, checker);
                                     listCheckerBackslash.Insert(1, coordinateXYToMark);
 
-                                }
+                                    Dictionary<int, string> checkerDictionary = GameDictionariesCommon.DictionaryChecker();
+                                    string kindOfChecker = checkerDictionary[4];
+                                    listCheckerBackslash.Insert(2, kindOfChecker);
+
+                            }
                             }
                             else if (matchingSymbol[0] != boardToCheck[rowIndex, columnIndex])
                             {
@@ -149,8 +154,6 @@ namespace Assets.Scripts.GameFieldsVerification
                                         crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
                                         crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
 
-                                        checker = false;
-                                  
                                         checker = false;
                                         listCheckerBackslash.Insert(0, checker);
                                         return listCheckerBackslash;
