@@ -47,8 +47,8 @@ internal class Game : MonoBehaviour
     private int _minNumberOfColumns = 3;
     private int _minNumbersCubesForDepthZ = 3;
 
-    private static int numberOfRows = 5;
-    private static int  numberOfColumns = 5;
+    private static int numberOfRows = 6;
+    private static int  numberOfColumns = 7;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI

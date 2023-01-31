@@ -124,7 +124,7 @@ namespace Assets.Scripts.GameFieldsVerification
 
                                     listCheckerBackslash.Insert(0, checker);
 
-                            }
+                                }
                                 else if (numberOfMatchingSymbols[0] == lenghtToCheck)
                                 {
                                     checker = true;
@@ -141,38 +141,68 @@ namespace Assets.Scripts.GameFieldsVerification
                                     string kindOfChecker = checkerDictionary[4];
                                     listCheckerBackslash.Insert(2, kindOfChecker);
 
+
+
+                                //for (int y = 0; y < coordinateXYToMark.GetLength(0); y++)
+                                //{
+                                //    for (int x = 0; x < coordinateXYToMark.GetLength(1); x++)
+                                //    {
+                                //        Debug.Log($"coordinateXYToMark [{y},{x}] = " + coordinateXYToMark[y, x]);
+
+                                //    }
+                                //    Debug.Log($"----------------------------------------");
+                                //}
+                                //Debug.Log($"---------- ************************************  ------------------------------");
+
                             }
-                            }
+                        }
                             else if (matchingSymbol[0] != boardToCheck[rowIndex, columnIndex])
                             {
 
                                 if ((boardColumnLength - columnIndex) > lenghtToCheck)
                                 {
-                                    if ((boardRowLength - rowIndex) > lenghtToCheck)
-                                    {
-                                        numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
-                                        crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
-                                        crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
+                                     if ((boardRowLength - rowIndex) > lenghtToCheck)
+                                     {
+                                            numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
+                                            crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
+                                            crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
 
-                                        checker = false;
-                                        listCheckerBackslash.Insert(0, checker);
-                                        return listCheckerBackslash;
+                                    //indexYToMark[0] = 1;
+                                    //coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                    //coordinateXYToMark[0, 0] = rowIndex;
+                                    //coordinateXYToMark[0, 1] = columnIndex;
 
-                                    //return checker;
+                                    checker = false;
+                                            listCheckerBackslash.Insert(0, checker);
+                                            return listCheckerBackslash;
+
+                                     }
+                                     //else if ((boardRowLength - rowIndex) < lenghtToCheck)
+                                     //{
+                                     //   checker = false;
+                                     //   listCheckerBackslash.Insert(0, checker);
+                                     //   return listCheckerBackslash;
+
+                                     //}
+
+
+
+                                      //return checker;
+                            
+
                                 }
-
-                            }
                                 else if ((boardColumnLength - lenghtToCheck) < lenghtToCheck)
                                 {
                                 
-                                checker = false;
-                                //return checker;
-                                listCheckerBackslash.Insert(0, checker);
-                                return listCheckerBackslash;
+                                    checker = false;
+                                     //return checker;
+                                    listCheckerBackslash.Insert(0, checker);
+                                    return listCheckerBackslash;
+
+                                }
 
                             }
-
-                            }
+                   
                     }
 
                 }
