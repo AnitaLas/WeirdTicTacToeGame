@@ -100,9 +100,9 @@ namespace Assets.Scripts.GameFieldsVerification
                             coordinateXYToMark[0, 0] = rowIndex;
                             coordinateXYToMark[0, 1] = columnIndex;
                             //Debug.Log($"coordinateXYToMark [{coordinateXYToMark[0, 0]},{columnIndex}] = " + coordinateXYToMark[rowIndex, columnIndex]);
-                            Debug.Log("row = " + coordinateXYToMark[0, 0]);
-                            Debug.Log("column = " + coordinateXYToMark[0, 1]);
-                            Debug.Log(" ------------------------------------------------------ ");
+                            //Debug.Log("row = " + coordinateXYToMark[0, 0]);
+                           // Debug.Log("column = " + coordinateXYToMark[0, 1]);
+                            //Debug.Log(" ------------------------------------------------------ ");
                         }
                         else if ((boardRowLength - rowIndex) < lenghtToCheck)
                         {
