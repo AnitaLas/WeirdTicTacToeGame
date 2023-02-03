@@ -56,7 +56,7 @@ internal class Game : MonoBehaviour
 
     private static int lenghtToCheckMax;
     private static int lenghtToCheck;
-    private static int lenghtToCheckGivenByUser = 3;
+    private static int lenghtToCheckGivenByUser = 4;
 
     private static bool isGame2D = true;
 

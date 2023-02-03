@@ -432,7 +432,7 @@ namespace Assets.Scripts
 
             int minIndexXToCheck;
 
-            int lowerNumber = CommonMethods.CheckAndReturnLowerNumber(lenghtForRows, lenghtForColumns);
+            //int lowerNumber = CommonMethods.CheckAndReturnLowerNumber(lenghtForRows, lenghtForColumns);
 
 
             int maxIndexYCountedForOtherCubePlay = firstIndexYForOtherCubePlay + maxIndexXForGameBoard;
@@ -461,9 +461,9 @@ namespace Assets.Scripts
                 else
                 {
                     int difference = maxIndexYCountedForOtherCubePlay - maxIndexYForGameBoard;
-                    Debug.Log("maxIndexYCountedForOtherCubePlay = " + maxIndexYCountedForOtherCubePlay);
-                    Debug.Log("maxIndexXForGameBoard = " + maxIndexXForGameBoard);
-                    Debug.Log("difference = " + difference);
+                   // Debug.Log("maxIndexYCountedForOtherCubePlay = " + maxIndexYCountedForOtherCubePlay);
+                    //Debug.Log("maxIndexXForGameBoard = " + maxIndexXForGameBoard);
+                   // Debug.Log("difference = " + difference);
                     minIndexXToCheck = difference;
                     return minIndexXToCheck;
 
@@ -575,14 +575,16 @@ namespace Assets.Scripts
 
             int[] newIndexY = new int[1];
             newIndexY[0] = startIndexYForOtherCubePlay;
+            //newIndexY[0] = 0;
 
             int[] newIndexX = new int[1];
             newIndexX[0] = startIndexXForOtherCubePlay;
+            //newIndexX[0] = 0;
 
             //  for (int i = startIndexXForOtherCubePlay - 1; i >= minIndexXToCheck; i--)
-            for (int i = 0; i <= minIndexXToCheck; i++)
+            for (int i = startIndexXForOtherCubePlay; i < minIndexXToCheck; i++)
             {
-                // Debug.Log(" newIndexY[0]  = " + newIndexY[0]);
+                Debug.Log(" i  = " + i);
                 y = newIndexY[0] + 1;
                 newIndexY[0] = y;
 
@@ -592,7 +594,7 @@ namespace Assets.Scripts
                 //Debug.Log(" y " + y);
 
                 // Debug.Log(" newIndexX[0]  = " + newIndexX[0]);
-                x = newIndexX[0] - 1;
+                x = newIndexX[0] + 1;
                 newIndexX[0] = x;
                 //x = newIndexX[0];
                 //newIndexX[0] = newIndexX[0] + 1;
@@ -631,21 +633,21 @@ namespace Assets.Scripts
            // int lowerNumber = CommonMethods.CheckAndReturnLowerNumber(lenghtForRows, lenghtForColumns);
            // 22/ 29 /15
 
-            int maxIndexYCountedForOtherCubePlay = firstIndexYForOtherCubePlay + maxIndexXForGameBoard;
+            int maxIndexXCountedForOtherCubePlay = firstIndexXForOtherCubePlay + maxIndexXForGameBoard;
 
-            Debug.Log("maxIndexYCountedForOtherCubePlay = " + maxIndexYCountedForOtherCubePlay);
-            Debug.Log("firstIndexYForOtherCubePlay = " + firstIndexYForOtherCubePlay);
+            Debug.Log("maxIndexYCountedForOtherCubePlay = " + maxIndexXCountedForOtherCubePlay);
+            Debug.Log("firstIndexXForOtherCubePlay = " + firstIndexXForOtherCubePlay);
             Debug.Log("maxIndexXForGameBoard = " + maxIndexXForGameBoard);
             Debug.Log("maxIndexYForGameBoard = " + maxIndexYForGameBoard);
-            //Debug.Log("difference = " + difference);
+            Debug.Log(" ---------------------------- ");
 
             //if (firstIndexXForOtherCubePlay == maxIndexXForGameBoard)
             if (firstIndexXForOtherCubePlay > 0)
             {
-
-                if (maxIndexYCountedForOtherCubePlay <= maxIndexYForGameBoard)
+                Debug.Log("  1  ");
+                if (maxIndexXCountedForOtherCubePlay <= maxIndexYForGameBoard)
                 {
-                    
+                    Debug.Log("  2  ");
                     //if (maxIndexYCountedForOtherCubePlay <= lowerNumber)
                     //{
                     int difference = 0;
@@ -664,10 +666,16 @@ namespace Assets.Scripts
                 }
                 else
                 {
-                    int difference = maxIndexYCountedForOtherCubePlay - maxIndexYForGameBoard;
-                    //Debug.Log("maxIndexYCountedForOtherCubePlay = " + maxIndexYCountedForOtherCubePlay);
-                    //Debug.Log("maxIndexXForGameBoard = " + maxIndexXForGameBoard);
-                    //Debug.Log("difference = " + difference);
+                    Debug.Log("  3  ");
+                    //int difference = maxIndexYCountedForOtherCubePlay - maxIndexYForGameBoard;
+
+                    //int difference = maxIndexXCountedForOtherCubePlay - maxIndexXForGameBoard; // + firstIndexYForOtherCubePlay;
+                    //int difference = maxIndexXCountedForOtherCubePlay - firstIndexXForOtherCubePlay;
+                    int difference = maxIndexXForGameBoard;
+
+                    Debug.Log("maxIndexXCountedForOtherCubePlay = " + maxIndexXCountedForOtherCubePlay);
+                    Debug.Log("maxIndexXForGameBoard = " + maxIndexXForGameBoard);
+                    Debug.Log("difference = " + difference);
                     minIndexXToCheck = difference;
                     return minIndexXToCheck;
 
@@ -676,7 +684,8 @@ namespace Assets.Scripts
             }
             else
             {
-                return minIndexXToCheck = lenghtForRows - firstIndexYForOtherCubePlay - 1;
+                Debug.Log("  4  " );
+                return minIndexXToCheck = lenghtForRows - firstIndexYForOtherCubePlay; // - 1
 
             }
 
