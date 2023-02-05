@@ -237,7 +237,7 @@ internal class Game : MonoBehaviour
                                 //PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver);
                                 //PlayGameMethods.ChangeWinnerCubePlay(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
                                 //PlayGameMethods.ChangeAllCubePlayForCheckerVertical(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
-                                PlayGameMethods.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver);
+                                PlayGameMethods.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame);
 
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
@@ -312,7 +312,7 @@ internal class Game : MonoBehaviour
                                 //PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver);
                                 //PlayGameMethods.ChangeWinnerCubePlay(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
                                 //PlayGameMethods.ChangeAllCubePlayForCheckerVertical(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
-                                PlayGameMethods.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver);
+                                PlayGameMethods.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame);
 
 
 

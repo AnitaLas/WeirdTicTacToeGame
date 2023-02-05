@@ -235,14 +235,9 @@ namespace Assets.Scripts
         {
             if (isGame2D == true)
             {
-                //float zs = 0.0f;
                 float cubePlayScaleX = cubePlayForFrame.transform.localScale.x;
                 float cubePlayScaleY = cubePlayForFrame.transform.localScale.y;
                 float cubePlayScaleZ = cubePlayForFrame.transform.localScale.z;
-                //Debug.Log("cubePlayScale = " + cubePlayScale);
-               // Debug.Log("cubePlayForFrame.transform.position.x = " + cubePlayForFrame.transform.position.x);
-               // Debug.Log("cubePlayForFrame.transform.position.y = " + cubePlayForFrame.transform.position.y);
-               // Debug.Log("cubePlayForFrame.transform.position.z = " + cubePlayForFrame.transform.position.z);
 
                 CreateGameBoardPrefabCalculateScale.TransformGameObjectPrefabToNewScale(prefabCubePlayFrame, cubePlayScaleX, cubePlayScaleY, cubePlayScaleZ);
 
