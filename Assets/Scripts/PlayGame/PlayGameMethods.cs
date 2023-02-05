@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.GameDictionaries;
+using Assets.Scripts.PlayGame;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,9 @@ namespace Assets.Scripts
 {
     internal class PlayGameMethods
     {
+
+        private static float _newCoordinateZForWinner = -0.5f;
+
 
         public static string GetPlayerSymbol(string[] playersSymbols, int currentPlayer)
         {
@@ -32,8 +36,6 @@ namespace Assets.Scripts
             table[1] = numberOfRows - 1;
             return table;
        }
-
-
 
 
         public static void ChangeAllCubePlay(GameObject[,,] gameBoard, string _tagCubePlayGameOver)
@@ -65,11 +67,30 @@ namespace Assets.Scripts
 
         }
 
+        public static void ChangeWinnerCubePlayForChecker(GameObject[,,] gameBoard, int[,] _winnerCoordinateXYForCubePlay, string _tagCubePlayGameWin, GameObject prefabCubePlayFrame)
+        {
+            GameObject cubePlay;
+            int indexDepth = 0;
+
+            int winnerLenghtForColumns = _winnerCoordinateXYForCubePlay.GetLength(0);
+
+            for (int indexColumnsWinner = 0; indexColumnsWinner < winnerLenghtForColumns; indexColumnsWinner++)
+            {
+                int coordinateYToMark = _winnerCoordinateXYForCubePlay[indexColumnsWinner, 0];
+                int coordinateXToMark = _winnerCoordinateXYForCubePlay[indexColumnsWinner, 1];
+                cubePlay = gameBoard[indexDepth, coordinateYToMark, coordinateXToMark];
+
+                CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
+                CommonMethods.ChangeTagForGameObject(cubePlay, _tagCubePlayGameWin);
+                CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
+
+            }
+
+        }
 
 
 
-
-
+        /*
         public static void ChangeWinnerCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, int[,] _winnerCoordinateXYForCubePlay, string _tagCubePlayGameWin)
         {
             GameObject cubePlay;
@@ -77,7 +98,8 @@ namespace Assets.Scripts
             int indexDepth = 0;
 
             // _winnerCoordinateXYForCubePlay
-            int winnerLenghtForColumns = _winnerCoordinateXYForCubePlay.GetLength(1);
+            //  int winnerLenghtForColumns = _winnerCoordinateXYForCubePlay.GetLength(1);
+            int winnerLenghtForColumns = _winnerCoordinateXYForCubePlay.GetLength(0);
 
             for (int indexColumnsWinner = 0; indexColumnsWinner < winnerLenghtForColumns; indexColumnsWinner++)
             {
@@ -96,24 +118,22 @@ namespace Assets.Scripts
             }
 
         }
+        */
 
-        public static void ChangeOtherCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        public static void ChangeOtherCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame)
         {
             GameObject cubePlay;
-            float newCoordinateZForWinner = -0.5f;
             int indexDepth = 0;
 
-            // gameBoard
             int lenghtForColumns = gameBoard.GetLength(2);
 
-            // _winnerCoordinateXYForCubePlay
             int winnerLenghtForColumns = winnerCoordinateXYForCubePlay.GetLength(1);
 
             int coordinateYToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForColumns - 1, 0];
             int coordinateXToMarkOther = winnerCoordinateXYForCubePlay[0, 1];
 
-
             int startIndexXForOtherCubePlay = coordinateXToMarkOther + 1;
+
             int maxIndexXForLenghtForColumns = lenghtForColumns - 1;
             int maxIndexXForWinnerLenghtForColumns = winnerLenghtForColumns - 1;
 
@@ -127,8 +147,9 @@ namespace Assets.Scripts
 
                     if (playerSymbol.Equals(symbolToCompare))
                     {
-                        CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
+                        CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
                         CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
+                        CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
 
                     }
                     else
@@ -142,10 +163,11 @@ namespace Assets.Scripts
 
         }
 
-        public static void ChangeAllCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        public static void ChangeAllCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame)
         {
-            ChangeWinnerCubePlayForCheckerHorizontal(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
-            ChangeOtherCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            //ChangeWinnerCubePlayForCheckerHorizontal(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
+            ChangeOtherCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
         }
 
 
@@ -154,7 +176,7 @@ namespace Assets.Scripts
 
 
 
-
+        /*
         public static void ChangeWinnerCubePlayForCheckerVertical(GameObject[,,] gameBoard, int[,] _winnerCoordinateXYForCubePlay, string _tagCubePlayGameWin)
         {
             GameObject cubePlay;
@@ -177,25 +199,23 @@ namespace Assets.Scripts
             }
 
         }
+        */
 
-        public static void ChangeOtherCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        public static void ChangeOtherCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame)
         {
             GameObject cubePlay;
-            float newCoordinateZForWinner = -0.5f;
             int indexDepth = 0;
 
-            // gameBoard
             int lenghtForRows = gameBoard.GetLength(1);
 
-            // _winnerCoordinateXYForCubePlay
             int winnerLenghtForRows = winnerCoordinateXYForCubePlay.GetLength(0);
 
             int coordinateYToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 0];
             int coordinateXToMarkOther = winnerCoordinateXYForCubePlay[0, 1];
 
-
             int startIndexYForOtherCubePlay = coordinateYToMarkOther + 1;
             int maxIndexYForLenghtForRows = lenghtForRows - 1;
+
             int maxIndexYForWinnerLenghtForRows = winnerLenghtForRows - 1;
 
             if (winnerCoordinateXYForCubePlay[maxIndexYForWinnerLenghtForRows, 0] < maxIndexYForLenghtForRows)
@@ -208,9 +228,9 @@ namespace Assets.Scripts
 
                     if (playerSymbol.Equals(symbolToCompare))
                     {
-                        CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
+                        CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
                         CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
-
+                        CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
                     }
                     else
                     {
@@ -223,21 +243,23 @@ namespace Assets.Scripts
 
         }
 
-        public static void ChangeAllCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        public static void ChangeAllCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame)
         {
-            ChangeWinnerCubePlayForCheckerVertical(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
-            ChangeOtherCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            //ChangeWinnerCubePlayForCheckerVertical(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
+
+            ChangeOtherCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
         }
 
 
 
 
 
-
+        /*
         public static void ChangeWinnerCubePlayForCheckerBackslash(GameObject[,,] gameBoard, int[,] _winnerCoordinateXYForCubePlay, string _tagCubePlayGameWin)
         {
             GameObject cubePlay;
-            float newCoordinateZForWinner = -0.5f;
+            //float newCoordinateZForWinner = -0.5f;
             int indexDepth = 0;
 
             int winnerLenghtForRows = _winnerCoordinateXYForCubePlay.GetLength(0);
@@ -249,39 +271,37 @@ namespace Assets.Scripts
 
                 cubePlay = gameBoard[indexDepth, coordinateYToMark, coordinateXToMark];
 
-                CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
+                CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
                 CommonMethods.ChangeTagForGameObject(cubePlay, _tagCubePlayGameWin);
 
             }
         }
+        */
 
-        public static void ChangeOtherCubePlayForCheckerBackslash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        public static void ChangeOtherCubePlayForCheckerBackslash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame)
         {
             GameObject cubePlay;
-            float newCoordinateZForWinner = -0.5f;
             int indexDepth = 0;
 
-            // gameBoard
             int lenghtForRows = gameBoard.GetLength(1);
             int lenghtForColumns = gameBoard.GetLength(2);
 
-            // _winnerCoordinateXYForCubePlay
             int winnerLenghtForRows = winnerCoordinateXYForCubePlay.GetLength(0);
 
-            int coordinateYToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 0];
-            int coordinateXToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 1];
+            int startIndexYForOtherCubePlay = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 0];
+            int startIndexXForOtherCubePlay = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 1];
 
             int firstIndexYForOtherCubePlay = winnerCoordinateXYForCubePlay[0, 0];
             int firstIndexXForOtherCubePlay = winnerCoordinateXYForCubePlay[0, 1];
 
-            int maxIndexXForGameBoard = gameBoard.GetLength(2) - 1;
-            int maxIndexYForGameBoard = gameBoard.GetLength(1) - 1;
+            int maxIndexXForGameBoard = lenghtForColumns - 1;
+            int maxIndexYForGameBoard = lenghtForRows - 1;
 
-            int minIndexXToCheck = SetUpMinIndexXForCheckerBackslash(lenghtForRows, lenghtForColumns, firstIndexYForOtherCubePlay, firstIndexXForOtherCubePlay, maxIndexYForGameBoard, maxIndexXForGameBoard);
+            int minIndexXToCheck = SetUpMinIndexXForCheckerBackslash( firstIndexYForOtherCubePlay, firstIndexXForOtherCubePlay, maxIndexYForGameBoard, maxIndexXForGameBoard);
             Debug.Log("minIndexXToCheck = " + minIndexXToCheck);
 
-            int startIndexYForOtherCubePlay = coordinateYToMarkOther;
-            int startIndexXForOtherCubePlay = coordinateXToMarkOther;
+            //int startIndexYForOtherCubePlay = coordinateYToMarkOther;
+            //int startIndexXForOtherCubePlay = coordinateXToMarkOther;
 
             int y;
             int x;
@@ -306,8 +326,9 @@ namespace Assets.Scripts
 
                 if (playerSymbol.Equals(symbolToCompare))
                 {
-                   CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
+                   CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
                    CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
+                   CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
 
                 }
                 else
@@ -320,7 +341,7 @@ namespace Assets.Scripts
 
         }
 
-        public static int SetUpMinIndexXForCheckerBackslash(int lenghtForRows, int lenghtForColumns, int firstIndexYForOtherCubePlay, int firstIndexXForOtherCubePlay, int maxIndexYForGameBoard, int maxIndexXForGameBoard)
+        public static int SetUpMinIndexXForCheckerBackslash( int firstIndexYForOtherCubePlay, int firstIndexXForOtherCubePlay, int maxIndexYForGameBoard, int maxIndexXForGameBoard)
         {
             int minIndexXToCheck;
 
@@ -353,10 +374,12 @@ namespace Assets.Scripts
 
         }
 
-        public static void ChangeAllCubePlayForCheckerBackslash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        public static void ChangeAllCubePlayForCheckerBackslash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame)
         {
-            ChangeWinnerCubePlayForCheckerBackslash(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
-            ChangeOtherCubePlayForCheckerBackslash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            //ChangeWinnerCubePlayForCheckerBackslash(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
+
+            ChangeOtherCubePlayForCheckerBackslash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
         }
 
 
@@ -376,7 +399,7 @@ namespace Assets.Scripts
 
 
 
-
+        /*
         public static void ChangeWinnerCubePlayForCheckerSlash(GameObject[,,] gameBoard, int[,] _winnerCoordinateXYForCubePlay, string _tagCubePlayGameWin)
         {
             GameObject cubePlay;
@@ -396,34 +419,28 @@ namespace Assets.Scripts
 
             }
         }
-
-        public static void ChangeOtherCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        */
+        public static void ChangeOtherCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame)
         {
             GameObject cubePlay;
-            float newCoordinateZForWinner = -0.5f;
             int indexDepth = 0;
 
-            // gameBoard
             int lenghtForRows = gameBoard.GetLength(1);
             int lenghtForColumns = gameBoard.GetLength(2);
 
-            // _winnerCoordinateXYForCubePlay
             int winnerLenghtForRows = winnerCoordinateXYForCubePlay.GetLength(0);
 
-            int coordinateYToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 0];
-            int coordinateXToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 1];
+            int startIndexYForOtherCubePlay = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 0];
+            int startIndexXForOtherCubePlay = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 1];
 
             int firstIndexYForOtherCubePlay = winnerCoordinateXYForCubePlay[0, 0];
             int firstIndexXForOtherCubePlay = winnerCoordinateXYForCubePlay[0, 1];
 
-            int lastIndexYForOtherCubePlay = coordinateYToMarkOther;
-            int maxIndexXForGameBoard = gameBoard.GetLength(2) - 1;
-            int maxIndexYForGameBoard = gameBoard.GetLength(1) - 1;
+            int maxIndexXForGameBoard = lenghtForColumns - 1;
+            int maxIndexYForGameBoard = lenghtForRows - 1;
 
-            int maxIndexXToCheck = SetUpMinIndexXForCheckerSlash(lenghtForRows, lenghtForColumns, firstIndexYForOtherCubePlay, firstIndexXForOtherCubePlay, lastIndexYForOtherCubePlay, maxIndexYForGameBoard, maxIndexXForGameBoard);
-
-            int startIndexYForOtherCubePlay = coordinateYToMarkOther;
-            int startIndexXForOtherCubePlay = coordinateXToMarkOther;
+            int maxIndexXToCheck = SetUpMinIndexXForCheckerSlash(lenghtForColumns, firstIndexYForOtherCubePlay, firstIndexXForOtherCubePlay, maxIndexYForGameBoard, maxIndexXForGameBoard);
+            Debug.Log("maxIndexXToCheck = " + maxIndexXToCheck);
 
             int y;
             int x;
@@ -451,8 +468,9 @@ namespace Assets.Scripts
 
                 if (playerSymbol.Equals(symbolToCompare))
                 {
-                    CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForWinner);
+                    CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
                     CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
+                    CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
 
                 }
                 else
@@ -465,15 +483,17 @@ namespace Assets.Scripts
 
         }
 
-        public static int SetUpMinIndexXForCheckerSlash(int lenghtForRows, int lenghtForColumns, int firstIndexYForOtherCubePlay, int firstIndexXForOtherCubePlay, int lastIndexYForOtherCubePlay, int maxIndexYForGameBoard, int maxIndexXForGameBoard)
+        public static int SetUpMinIndexXForCheckerSlash(int lenghtForColumns, int firstIndexYForOtherCubePlay, int firstIndexXForOtherCubePlay, int maxIndexYForGameBoard, int maxIndexXForGameBoard)
         {
             int maxIndexXToCheck;
             int maxIndexXCountedForOtherCubePlay = firstIndexXForOtherCubePlay + maxIndexXForGameBoard;
 
             if (firstIndexXForOtherCubePlay > 0)
             {
+                Debug.Log(" 1 ");
                 if (maxIndexXCountedForOtherCubePlay <= maxIndexYForGameBoard)
                 {
+                    Debug.Log(" 2 ");
                     int difference = 0;
                     maxIndexXToCheck = difference;
                     return maxIndexXToCheck;
@@ -481,6 +501,7 @@ namespace Assets.Scripts
                 }
                 else
                 {
+                    Debug.Log(" 3 ");
                     int difference = maxIndexXForGameBoard;
                     maxIndexXToCheck = difference;
                     return maxIndexXToCheck;
@@ -490,16 +511,20 @@ namespace Assets.Scripts
             }
             else
             {
+                Debug.Log(" 4 ");
                 maxIndexXToCheck = (lenghtForColumns - 1 ) - firstIndexYForOtherCubePlay - 1;
                 return maxIndexXToCheck;
 
             }
         }
 
-        public static void ChangeAllCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin)
+        public static void ChangeAllCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame)
         {
-            ChangeWinnerCubePlayForCheckerSlash(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
-            ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+            //ChangeWinnerCubePlayForCheckerSlash(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+
+            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
+
+            ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
         }
 
 
@@ -507,7 +532,7 @@ namespace Assets.Scripts
 
 
 
-        public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string winnerKindOfChecker, string tagCubePlayGameWin, string tagCubePlayGameOver)
+        public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string winnerKindOfChecker, string tagCubePlayGameWin, string tagCubePlayGameOver, GameObject prefabCubePlayFrame)
         {
             Dictionary<int, string> checkerDictionary = GameDictionariesCommon.DictionaryChecker();
 
@@ -522,26 +547,26 @@ namespace Assets.Scripts
             // checkerHorizontal
             if (winnerKindOfChecker.Equals(checkerHorizontal))
             {
-                ChangeAllCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+                ChangeAllCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
             }
 
             // checkerVertical
             if (winnerKindOfChecker.Equals(checkerVertical))
             {
-                ChangeAllCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+                ChangeAllCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
             }
 
 
             // checkerSlash
             if (winnerKindOfChecker.Equals(checkerSlash))
             {
-                ChangeAllCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+                ChangeAllCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
             }
 
             // checkerBackslash
             if (winnerKindOfChecker.Equals(checkerBackslash))
             {
-                ChangeAllCubePlayForCheckerBackslash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin);
+                ChangeAllCubePlayForCheckerBackslash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame);
             }
            
         }
