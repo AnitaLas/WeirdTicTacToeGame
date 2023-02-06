@@ -47,8 +47,8 @@ internal class Game : MonoBehaviour
     private int _minNumberOfColumns = 3;
     private int _minNumbersCubesForDepthZ = 3;
 
-    private static int numberOfRows = 6;
-    private static int  numberOfColumns = 7;
+    private static int numberOfRows = 6;// 4;
+    private static int numberOfColumns = 7;// 8;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
@@ -56,7 +56,7 @@ internal class Game : MonoBehaviour
 
     private static int lenghtToCheckMax;
     private static int lenghtToCheck;
-    private static int lenghtToCheckGivenByUser = 4;
+    private static int lenghtToCheckGivenByUser = 3; //2
 
     private static bool isGame2D = true;
 
