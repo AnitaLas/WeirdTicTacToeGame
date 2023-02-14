@@ -374,6 +374,7 @@
 "Assets/Scripts/GameFieldsVerification/GameFieldsVerificationCheckerSlash.cs"
 "Assets/Scripts/GameFieldsVerification/GameFieldsVerificationCheckerVertical.cs"
 "Assets/Scripts/GameFieldsVerification/GameFieldsVerificationMessages.cs"
+"Assets/Scripts/PlayGame/Class1.cs"
 "Assets/Scripts/PlayGame/PlayGameChangeText.cs"
 "Assets/Scripts/PlayGame/PlayGameFrameMove.cs"
 "Assets/Scripts/PlayGame/PlayGameMethods.cs"

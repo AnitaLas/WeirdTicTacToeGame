@@ -82,15 +82,23 @@ namespace Assets.Scripts.GameFieldsVerification
             //
             int[,] coordinateXYToMark = new int[lenghtToCheck + 1, 2];
             int[] indexYToMark = new int[1];
+            indexYToMark[0] = 0;
             int increaseIndexXY = 1;
 
             for (rowIndex = startRowIndexToCheck; rowIndex <= boardRowLength; rowIndex++)
             {
                 for (columnIndex = startColumnIndexToCheck; columnIndex >= 0; columnIndex--)
                 {
+
+
                     if (matchingSymbol[0].Equals(""))
                     {
+                        //Debug.Log(" test 1 ");
+                       // Debug.Log(" rowIndex = " + rowIndex);
+                        //Debug.Log(" columnIndex = " + columnIndex);
+
                         matchingSymbol[0] = boardToCheck[rowIndex, columnIndex];
+                       // Debug.Log($" 1 boardToCheck[{rowIndex}, {columnIndex}] = " + boardToCheck[rowIndex, columnIndex]);
                         numberOfMatchingSymbols[0] = increaseNumberForMatchingSymbol;
 
                         crossedOut[0] = rowIndex + increaseNumberForCrossedOutRww;
@@ -98,43 +106,96 @@ namespace Assets.Scripts.GameFieldsVerification
 
                         coordinateXYToMark[0, 0] = rowIndex;
                         coordinateXYToMark[0, 1] = columnIndex;
+
+                        //crossedOut[0] = startRowIndexToCheck + increaseNumberForCrossedOutRww;
+                        //crossedOut[1] = startColumnIndexToCheck - decreaseNumberForCrossedOutColumn;
+
+                        //coordinateXYToMark[0, 0] = startRowIndexToCheck;
+                        //coordinateXYToMark[0, 1] = startColumnIndexToCheck;
                         indexYToMark[0] = 1;
+
+                        //Debug.Log(" crossedOut[0] = " + crossedOut[ 0]);
+                        //Debug.Log(" crossedOut[1] = " + crossedOut[ 1]);
+
+                        //Debug.Log($" SYMBOL matchingSymbol[0] = " + matchingSymbol[0]);
+                        //Debug.Log($" SYMBOL boardToCheck[{rowIndex}, {columnIndex}] = " + boardToCheck[rowIndex, columnIndex]);
+                        //Debug.Log(" ---------------------------------- ");
+
+                        // Debug.Log(" coordinateXYToMark[0] = " + coordinateXYToMark[0, 0]);
+                        //Debug.Log(" coordinateXYToMark[1] = " + coordinateXYToMark[0, 1]);
+
+                        
 
                         listCheckerBackslash.Insert(0, checker);
 
                     }
                     else if (rowIndex == crossedOut[0] && columnIndex == crossedOut[1])
                     {
+                        //Debug.Log(" test 2  ");
+                        if (matchingSymbol[0].Equals(boardToCheck[rowIndex, columnIndex]))
+                        {
+                            //Debug.Log(" 3 ");
 
-                            if (matchingSymbol[0].Equals(boardToCheck[rowIndex, columnIndex]))
+                            if (numberOfMatchingSymbols[0] < lenghtToCheck)
                             {
+                               // Debug.Log(" test 4 ");
+                               //// Debug.Log(" rowIndex = " + rowIndex);
+                               //// Debug.Log(" columnIndex = " + columnIndex);
+                               // Debug.Log($" SYMBOL boardToCheck[{rowIndex}, {columnIndex}] = " + boardToCheck[rowIndex, columnIndex]);
+                               // Debug.Log(" ---------------------------------- ");
 
-
-                                if (numberOfMatchingSymbols[0] < lenghtToCheck)
-                                {
-                                    numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
+                                numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
 
                                     crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
                                     crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
+                              
 
-                                    int currentIndexY = indexYToMark[0];
-                                    coordinateXYToMark[currentIndexY, 0] = rowIndex;
-                                    coordinateXYToMark[currentIndexY, 1] = columnIndex;
-                                    indexYToMark[0] = currentIndexY + increaseIndexXY;
 
-                                    listCheckerBackslash.Insert(0, checker);
+                                int currentIndexY = indexYToMark[0];
+                                coordinateXYToMark[currentIndexY, 0] = rowIndex;
+                                coordinateXYToMark[currentIndexY, 1] = columnIndex;
+                                //Debug.Log(" coordinateXYToMark[0] = " + coordinateXYToMark[currentIndexY, 0]);
+                               // Debug.Log(" coordinateXYToMark[1] = " + coordinateXYToMark[currentIndexY, 1]);
+
+                                indexYToMark[0] = currentIndexY + increaseIndexXY;
+
+
+
+
+
+
+
+
+
+
+                                //int currentIndexY = indexYToMark[0];
+                                //coordinateXYToMark[currentIndexY, 0] = rowIndex;
+                                //coordinateXYToMark[currentIndexY, 1] = columnIndex;
+                                //indexYToMark[0] = currentIndexY + increaseIndexXY;
+
+                                listCheckerBackslash.Insert(0, checker);
 
                                 }
                                 else if (numberOfMatchingSymbols[0] == lenghtToCheck)
                                 {
-                                    checker = true;
+                                //Debug.Log(" test 5 ");
+                                ////Debug.Log(" rowIndex = " + rowIndex);
+                                ////Debug.Log(" columnIndex = " + columnIndex);
+                                //Debug.Log($" SYMBOL boardToCheck[{rowIndex}, {columnIndex}] = " + boardToCheck[rowIndex, columnIndex]);
+                                //Debug.Log(" ---------------------------------- ");
+
+                                checker = true;
                                 //return checker;
 
                                     int currentIndexY = indexYToMark[0];
                                     coordinateXYToMark[currentIndexY, 0] = rowIndex;
                                     coordinateXYToMark[currentIndexY, 1] = columnIndex;
 
-                                    listCheckerBackslash.Insert(0, checker);
+                                //Debug.Log(" coordinateXYToMark[0] = " + coordinateXYToMark[currentIndexY, 0]);
+                                //Debug.Log(" coordinateXYToMark[1] = " + coordinateXYToMark[currentIndexY, 1]);
+
+
+                                listCheckerBackslash.Insert(0, checker);
                                     listCheckerBackslash.Insert(1, coordinateXYToMark);
 
                                     Dictionary<int, string> checkerDictionary = GameDictionariesCommon.DictionaryChecker();
@@ -154,47 +215,68 @@ namespace Assets.Scripts.GameFieldsVerification
                                 //}
                                 //Debug.Log($"---------- ************************************  ------------------------------");
 
-                            }
+                                }
                         }
-                            else if (matchingSymbol[0] != boardToCheck[rowIndex, columnIndex])
-                            {
+                        else if (matchingSymbol[0] != boardToCheck[rowIndex, columnIndex])
+                        {
 
-                                if ((boardColumnLength - columnIndex) > lenghtToCheck)
+                            if ((boardColumnLength - columnIndex) > lenghtToCheck)
+                            {
+                                if ((boardRowLength - rowIndex) > lenghtToCheck)
                                 {
-                                     if ((boardRowLength - rowIndex) > lenghtToCheck)
-                                     {
-                                            numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
-                                            crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
-                                            crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
+                                    //Debug.Log(" test 5 ");
+                                    //numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
+                                    //crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
+                                    //crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
 
                                     //indexYToMark[0] = 1;
-                                    //coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                    //coordinateXYToMark = new int[lenghtToCheck + 1, 2];
                                     //coordinateXYToMark[0, 0] = rowIndex;
                                     //coordinateXYToMark[0, 1] = columnIndex;
 
                                     checker = false;
-                                            listCheckerBackslash.Insert(0, checker);
-                                            return listCheckerBackslash;
-
-                                     }
-                                     //else if ((boardRowLength - rowIndex) < lenghtToCheck)
-                                     //{
-                                     //   checker = false;
-                                     //   listCheckerBackslash.Insert(0, checker);
-                                     //   return listCheckerBackslash;
-
-                                     //}
+                                    listCheckerBackslash.Insert(0, checker);
+                                    return listCheckerBackslash;
 
 
-
-                                      //return checker;
-                            
 
                                 }
-                                else if ((boardColumnLength - lenghtToCheck) < lenghtToCheck)
-                                {
-                                
-                                    checker = false;
+
+                            }
+                            else if ((boardRowLength - rowIndex) < lenghtToCheck)
+                            {
+
+                               // Debug.Log(" test 6 ");
+                                //matchingSymbol[0] = "";
+
+                                checker = false;
+                                listCheckerBackslash.Insert(0, checker);
+                                return listCheckerBackslash;
+
+                            }
+
+
+
+                                //return checker;
+
+
+                        }
+                        else if ((boardColumnLength - lenghtToCheck) < lenghtToCheck)
+                       {
+
+                                Debug.Log(" test 7 ");
+
+                                //numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
+                                //crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
+                                //crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
+
+                                //indexYToMark[0] = 1;
+                                ////int currentIndexY = 0;
+                                //coordinateXYToMark[0, 0] = rowIndex;
+                                //coordinateXYToMark[0, 1] = columnIndex;
+
+
+                                checker = false;
                                      //return checker;
                                     listCheckerBackslash.Insert(0, checker);
                                     return listCheckerBackslash;
@@ -207,7 +289,7 @@ namespace Assets.Scripts.GameFieldsVerification
 
                 }
 
-            }
+            
         
             return listCheckerBackslash;
         }

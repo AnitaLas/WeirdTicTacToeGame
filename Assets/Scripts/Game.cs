@@ -47,8 +47,8 @@ internal class Game : MonoBehaviour
     private int _minNumberOfColumns = 3;
     private int _minNumbersCubesForDepthZ = 3;
 
-    private static int numberOfRows = 6;// 4;
-    private static int numberOfColumns = 7;// 8;
+    private static int numberOfRows = 6;// 3;
+    private static int numberOfColumns = 7;// 6;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
@@ -56,7 +56,7 @@ internal class Game : MonoBehaviour
 
     private static int lenghtToCheckMax;
     private static int lenghtToCheck;
-    private static int lenghtToCheckGivenByUser = 3; //2
+    private static int lenghtToCheckGivenByUser = 4; 
 
     private static bool isGame2D = true;
 
@@ -183,8 +183,6 @@ internal class Game : MonoBehaviour
                 if (touch.collider != null)
                 {
                     int countedTagCubePlayTaken;
-                    //string gameObjectTag = touch.collider.transform.tag;
-                    //string gameObjectName = touch.collider.transform.name;
                     string gameObjectTag = CommonMethods.GetObjectTag(touch);
                     string gameObjectName = CommonMethods.GetObjectName(touch);
 
@@ -206,8 +204,6 @@ internal class Game : MonoBehaviour
                         int indexY = moveIndexForFrame[_moveIndexForFrameY];
 
                         GameObject cubePlayMarkByFrame = CommonMethods.GetCubePlay(gameBoard, indexY, indexX);
-                        //string cubePlayMarkByFrameName = cubePlayMarkByFrame.name;
-                        //string cubePlayMarkByFrameTag = cubePlayMarkByFrame.tag;
                         string cubePlayMarkByFrameName = CommonMethods.GetObjectName(cubePlayMarkByFrame);
                         string cubePlayMarkByFrameTag = CommonMethods.GetObjectTag(cubePlayMarkByFrame);
 
@@ -231,12 +227,8 @@ internal class Game : MonoBehaviour
                             {
                                 _winnerCoordinateXYForCubePlay = (int[,])_listCheckerForWinner[1];
                                 _winnerKindOfChecker = (string)_listCheckerForWinner[2];
-                                //Debug.Log(" _winnerKindOfChecker " + _winnerKindOfChecker);
 
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
-                                //PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver);
-                                //PlayGameMethods.ChangeWinnerCubePlay(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
-                                //PlayGameMethods.ChangeAllCubePlayForCheckerVertical(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
                                 PlayGameMethods.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame);
 
 
@@ -256,9 +248,7 @@ internal class Game : MonoBehaviour
                                 countedTagCubePlayTaken = currentCountedTagCubePlayTaken[_index];
 
                                 if (countedTagCubePlayTaken >= maxCubePlayNumber)
-                                {
-                                    //float newCoordinateZ = 1;
-                                    //CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
+                                { 
                                     PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
                                     Debug.Log("Game Over :) Would you like to start new game? Yes No");
                                 }
@@ -271,8 +261,6 @@ internal class Game : MonoBehaviour
                         }
                     }
                     
-
-                    // to fix currentCountedTagCubePlayTaken[0]
 
                     if (gameObjectTag == _tagCubePlayFree || gameObjectTag == _tagCubePlayTaken)
                     {
@@ -306,16 +294,9 @@ internal class Game : MonoBehaviour
                                // Debug.Log(" 2 ");
                                 _winnerCoordinateXYForCubePlay = (int[,])_listCheckerForWinner[1];
                                 _winnerKindOfChecker = (string)_listCheckerForWinner[2];
-                                //Debug.Log(" _winnerKindOfChecker " + _winnerKindOfChecker);
 
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
-                                //PlayGameMethods.ChangeAllCubePlay(gameBoard, _tagCubePlayGameOver);
-                                //PlayGameMethods.ChangeWinnerCubePlay(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
-                                //PlayGameMethods.ChangeAllCubePlayForCheckerVertical(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _tagCubePlayGameWin);
                                 PlayGameMethods.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame);
-
-
-
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
@@ -327,7 +308,6 @@ internal class Game : MonoBehaviour
 
                                 currentPlayer = PlayGameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
-                                //touch.collider.transform.tag = _tagCubePlayTaken;
                                 CommonMethods.ChangeTagForGameObject(touch, _tagCubePlayTaken);
                                 currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);
 
@@ -337,8 +317,6 @@ internal class Game : MonoBehaviour
 
                                 if (countedTagCubePlayTaken >= maxCubePlayNumber)
                                 {
-                                    //float newCoordinateZ = 1;
-                                    //CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
                                     PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
                                     Debug.Log("Game Over :) Would you like to start new game? Yes No");
                                 }
