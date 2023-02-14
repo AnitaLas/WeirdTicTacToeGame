@@ -100,6 +100,9 @@ namespace Assets.Scripts.GameFieldsVerification
                         crossedOut[0] = rowIndex + increaseNumberForCrossedOutRww;
                         crossedOut[1] = columnIndex + increaseNumberForCrossedOutColumn;
 
+                        //crossedOut[0] = startRowIndexToCheck + increaseNumberForCrossedOutRww;
+                        //crossedOut[1] = startColumnIndexToCheck + increaseNumberForCrossedOutColumn;
+
                         coordinateXYToMark[0, 0] = rowIndex;
                         coordinateXYToMark[0, 1] = columnIndex;
                         indexYToMark[0] = 1;
@@ -152,11 +155,17 @@ namespace Assets.Scripts.GameFieldsVerification
 
                                 if ((boardRowLength - rowIndex) < lenghtToCheck)
                                 {
-                                    matchingSymbol[0] = matchingSymbol[0];
-                                    numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
+                                    //matchingSymbol[0] = matchingSymbol[0];
+                                    //numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
 
-                                    crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
-                                    crossedOut[1] = crossedOut[1] - increaseNumberForCrossedOutColumn;
+                                    //crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
+                                    //crossedOut[1] = crossedOut[1] - increaseNumberForCrossedOutColumn;
+
+                                    //crossedOut[0] = crossedOut[0];
+                                    //crossedOut[1] = crossedOut[1];
+
+                                    //Debug.Log("crossedOut[0] = " + crossedOut[0]);
+                                    //Debug.Log("crossedOut[1] = " + crossedOut[1]);
 
                                     checker = false;
                                     listCheckerSlash.Insert(0, checker);

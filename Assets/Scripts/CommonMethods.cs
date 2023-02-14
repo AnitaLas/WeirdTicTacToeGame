@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Assets.Scripts.GameDictionaries;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -119,13 +120,59 @@ namespace Assets.Scripts
 
         // --------------------------------------------------------------------------------------------------------------------------------------------------------------
         // [TextChange] - start
-        public static void ChangeTextForCubePlay(GameObject gameObject, string gameObjectText)
+        public static TextMeshProUGUI GetCubePlayText(GameObject gameObject)
         {
             // game object: prefab CubePlay -> CubePlayCanvas ->
             var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);
             // game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
             var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            return newPrefabCubePlayCanvasText;
+        }
+
+        public static void ChangeTextForCubePlay(GameObject gameObject, string gameObjectText)
+        {
+            //// game object: prefab CubePlay -> CubePlayCanvas ->
+            //var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);
+            //// game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
+            //var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            var newPrefabCubePlayCanvasText = GetCubePlayText(gameObject);
             newPrefabCubePlayCanvasText.text = gameObjectText;
+        }
+
+        public static void ChangeTextColourForCubePlay(GameObject gameObject, Color textColor)
+        {
+            //// game object: prefab CubePlay -> CubePlayCanvas ->
+            //var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);
+            //// game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
+            //var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+            var newPrefabCubePlayCanvasText = GetCubePlayText(gameObject);
+
+            //newPrefabCubePlayCanvasText.color = new Color(200, 33, 33, 0.7f);
+            // newPrefabCubePlayCanvasText.color = new Color(12f, 0f, 0f, 0.6f);
+            newPrefabCubePlayCanvasText.color = textColor;
+            //newPrefabCubePlayCanvasText.fontSize = 0.7f;
+        }
+
+        public static void ChangeTextFontSize(GameObject gameObject, float fontSize)
+        {
+            var newPrefabCubePlayCanvasText = GetCubePlayText(gameObject);
+            newPrefabCubePlayCanvasText.fontSize = fontSize;
+           // newPrefabCubePlayCanvasText.fontWeight = TMPro.FontWeight.Heavy;
+        }
+
+        public static Color GetNewColor(int dictionaryColorId)
+        {
+            Dictionary<int, Tuple<float, float, float, float>> colorDictionary = GameDictionariesCommon.DictionaryColor();
+            var newColor = colorDictionary[dictionaryColorId];
+
+            float r = newColor.Item1;
+            float g = newColor.Item2;
+            float b = newColor.Item3;
+            float a = newColor.Item4;
+
+            Color newTextColor = new Color(r, g, b, a);
+            return newTextColor;
         }
 
         //[TextChange] - end
