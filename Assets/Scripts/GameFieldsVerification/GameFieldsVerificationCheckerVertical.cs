@@ -79,7 +79,7 @@ namespace Assets.Scripts.GameFieldsVerification
                             listCheckerVertical.Insert(0, checker);
                             listCheckerVertical.Insert(1, coordinateXYToMark);
 
-                            Dictionary<int, string> checkerDictionary = GameDictionariesCommon.DictionaryChecker();
+                            Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesCommon.DictionaryChecker();
                             string kindOfChecker = checkerDictionary[2];
                             listCheckerVertical.Insert(2, kindOfChecker);
 

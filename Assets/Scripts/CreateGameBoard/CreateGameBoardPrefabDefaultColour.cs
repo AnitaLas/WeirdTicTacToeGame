@@ -36,7 +36,8 @@ namespace Assets.Scripts
         public static void ChangeColourForPrefabCubePlay(GameObject prefab, Material[] cubePlayColour, int indexForNewColour)
         {
             Material cubeColour = NewColourForPrefabCubePlay(cubePlayColour, indexForNewColour);
-            prefab.GetComponent<Renderer>().material = cubeColour;
+            //prefab.GetComponent<Renderer>().material = cubeColour;
+            CommonMethods.ChangeColourForGameObject(prefab, cubeColour);
         }
 
 

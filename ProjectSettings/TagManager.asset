@@ -15,6 +15,9 @@ TagManager:
   - ButtonConfirm
   - CubePlayGameOver
   - CubePlayGameWin
+  - PlayerSymbolNext
+  - PlayerSymbolCurrent
+  - PlayerSymbolPrevious
   layers:
   - Default
   - TransparentFX
