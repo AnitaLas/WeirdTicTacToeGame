@@ -31,24 +31,26 @@ internal class Game : MonoBehaviour
     // prefab "CubePlay" - colour 
     public Material[] prefabCubePlayDefaultColour;
 
+    public Material[] cubePlayColourWin;
 
-  
 
 
-   
+
+
+
     public Touch touch;
     private Camera mainCamera;
 
     //public TextMeshProUGUI cubePlayChangeText;
 
-    private int playersNumberGivenForConfiguration = 2;
+    public int playersNumberGivenForConfiguration = 4;
 
     private int _minNumberOfRows = 3;
     private int _minNumberOfColumns = 3;
     private int _minNumbersCubesForDepthZ = 3;
 
-    private static int numberOfRows = 6;// 3;
-    private static int numberOfColumns = 7;// 6;
+    private static int numberOfRows = 9;// 3;
+    private static int numberOfColumns = 6;// 6;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
@@ -56,7 +58,7 @@ internal class Game : MonoBehaviour
 
     private static int lenghtToCheckMax;
     private static int lenghtToCheck;
-    private static int lenghtToCheckGivenByUser = 4; 
+    private static int lenghtToCheckGivenByUser = 3; 
 
     private static bool isGame2D = true;
 
@@ -104,6 +106,8 @@ internal class Game : MonoBehaviour
     private int _moveIndexForFrameX = 0;
     private int _moveIndexForFrameY = 1;
 
+    GameObject[] playerSymbolMove;
+
     void Start()
     {
 
@@ -137,8 +141,17 @@ internal class Game : MonoBehaviour
         
 
 
-        playersSymbols = GameConfiguration.CreatetableWithPlayersSymbols();
+        playersSymbols = GameConfiguration.CreateTableWithPlayersSymbols();
         currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
+
+        playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(playersSymbols);
+
+
+
+
+
+
+
 
         currentCountedTagCubePlayTaken = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
@@ -151,7 +164,7 @@ internal class Game : MonoBehaviour
         // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
         _cubePlayForFrameScale = cubePlayForFrame.transform.localScale.x;
 
-        moveIndexForFrame = PlayGameMethods.CreateTableForMoveIndexForFrame(numberOfRows);
+        moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
         //moveIndexForFrame[1] = numberOfRows - 1;
         //Debug.Log("moveIndexForFrame[0] = " + moveIndexForFrame[0]);
         //Debug.Log("moveIndexForFrame[1] = " + moveIndexForFrame[1]);
@@ -209,7 +222,7 @@ internal class Game : MonoBehaviour
 
                         if (cubePlayMarkByFrameTag == _tagCubePlayFree)
                         {
-                            var cubePlayDataZYXSymbol = PlayGameChangeText.SetUpPlayerSymbolForCubePlay(gameBoard, cubePlayMarkByFrameName, playersSymbols, currentPlayerNumber);
+                            var cubePlayDataZYXSymbol = PlayGameChangeCubePlaySymbol.SetUpPlayerSymbolForCubePlay(gameBoard, cubePlayMarkByFrameName, playersSymbols, currentPlayerNumber);
                             PlayGameMethods.ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(cubePlayMarkByFrame);
 
                             int cubePlayIndexY = cubePlayDataZYXSymbol.Item1.Item2;
@@ -229,7 +242,7 @@ internal class Game : MonoBehaviour
                                 _winnerKindOfChecker = (string)_listCheckerForWinner[2];
 
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
-                                PlayGameMethods.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame);
+                                PlayGameChangeCubePlaForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
 
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
@@ -239,7 +252,7 @@ internal class Game : MonoBehaviour
                             else
                             {
 
-                                currentPlayer = PlayGameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
+                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
                                 //cubePlayMarkByFrame.transform.tag = _tagCubePlayTaken;
                                 CommonMethods.ChangeTagForGameObject(cubePlayMarkByFrame, _tagCubePlayTaken);
@@ -267,7 +280,7 @@ internal class Game : MonoBehaviour
                         if (gameObjectTag == _tagCubePlayFree)
                         {
                             
-                            var cubePlayDataZYXSymbol = PlayGameChangeText.SetUpPlayerSymbolForCubePlay(gameBoard, gameObjectName, playersSymbols, currentPlayerNumber);
+                            var cubePlayDataZYXSymbol = PlayGameChangeCubePlaySymbol.SetUpPlayerSymbolForCubePlay(gameBoard, gameObjectName, playersSymbols, currentPlayerNumber);
 
                             PlayGameMethods.ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(cubePlay);
 
@@ -296,7 +309,7 @@ internal class Game : MonoBehaviour
                                 _winnerKindOfChecker = (string)_listCheckerForWinner[2];
 
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
-                                PlayGameMethods.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame);
+                                PlayGameChangeCubePlaForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
@@ -306,7 +319,7 @@ internal class Game : MonoBehaviour
                             {
 
 
-                                currentPlayer = PlayGameChangeText.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
+                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
                                 CommonMethods.ChangeTagForGameObject(touch, _tagCubePlayTaken);
                                 currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);

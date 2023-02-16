@@ -10,34 +10,14 @@ namespace Assets.Scripts.PlayGame
 {
     internal class PlayGameFrameMove
     {
-        /*
-        /// <summary>
-        /// move to the right or move up frame if we start with position 0,5 for CubePlayFrame
-        /// </summary>
-        /// <param name="moveIndexTable"></param>
-        /// <returns></returns>
-        public static int[] SetUpNewMoveIndexByAddition(int[] moveIndexTable, int moveIndexForXorY)
+
+        public static int[] CreateTableForMoveIndexForFrame(int numberOfRows)
         {
-            int newMoveIndex = moveIndexTable[moveIndexForXorY] + 1;
-            moveIndexTable[moveIndexForXorY] = newMoveIndex;
-            return moveIndexTable;
+            int[] table = CommonMethods.CreateTableWithGivenLengthAndGivenValue(2, 0);
+            table[1] = numberOfRows - 1;
+            return table;
         }
 
-
-        /// <summary>
-        /// move to the left or move down frame if we start with position 0,5 for CubePlayFrame
-        /// </summary>
-        /// <param name="moveIndexTable"></param>
-        /// <returns></returns>
-        public static int[] SetUpNewMoveIndexBySubtraction(int[] moveIndexTable, int moveIndexForXorY)
-        {
-            int newMoveIndex = moveIndexTable[moveIndexForXorY] - 1;
-            moveIndexTable[moveIndexForXorY] = newMoveIndex;
-            return moveIndexTable;
-        }
-        */
-
-        
         public static int[] SetUpNewMoveIndexXForRight(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForYorX)
         {
             moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberByAddition(moveIndexForFrame, moveIndexForYorX);
@@ -77,7 +57,7 @@ namespace Assets.Scripts.PlayGame
         public static int[] SetUpNewMoveIndexXYForCubePlayFrame(int[] moveIndexForFrame, string tagArrow, GameObject cubePlayFrame, float cubePlayForFrameScale, int numberOfRows, int numberOfColumns)
         {
 
-            Dictionary<int, string> tagArrowDictionary = GameDictionariesCommon.DictionaryTagHelpButtons();
+            Dictionary<int, string> tagArrowDictionary = GameDictionaries.GameDictionariesCommon.DictionaryTagHelpButtons();
 
             string tagArrowRight = tagArrowDictionary[1];
             string tagArrowLeft = tagArrowDictionary[3];

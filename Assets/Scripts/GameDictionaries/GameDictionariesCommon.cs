@@ -36,6 +36,23 @@ namespace Assets.Scripts.GameDictionaries
             return tagHelpButtonDictionary;
         }
 
+        public static Dictionary<int, string> DictionaryTagPlayerSymbol()
+        {
+            Dictionary<int, string> tagPlayerSymbolDictionary = new Dictionary<int, string>();
+
+            //tagPlayerSymbolDictionary.Add(1, "PlayerSymbolNext");
+            //tagPlayerSymbolDictionary.Add(2, "PlayerSymbolCurrent");
+            //tagPlayerSymbolDictionary.Add(3, "PlayerSymbolPrevious");
+
+            tagPlayerSymbolDictionary.Add(1, "PlayerSymbolCurrent");
+            tagPlayerSymbolDictionary.Add(2, "PlayerSymbolPrevious");
+            tagPlayerSymbolDictionary.Add(3, "PlayerSymbolNext");
+
+
+            return tagPlayerSymbolDictionary;
+        }
+
+
         public static Dictionary<int, string> DictionaryChecker()
         {
             Dictionary<int, string> checkerDictionary = new Dictionary<int, string>();
@@ -52,17 +69,13 @@ namespace Assets.Scripts.GameDictionaries
         
         public static Dictionary<int, Tuple<float, float, float, float>> DictionaryColor()
         {
-            //ArrayList colorDictionaryValue = new ArrayList();
-            //Dictionary<int, ArrayList> colorDictionary = new Dictionary<int, ArrayList>();
-
-            // r g b a
+            // Tuple<float, float, float, float> => r g b a
             Dictionary<int, Tuple<float, float, float, float>> colorDictionary = new Dictionary<int, Tuple<float, float, float, float>>();
 
             // text colour for all cubePlay - when game is over
             var colorValue1 = Tuple.Create(200f, 33f, 33f, 0.6f);
 
             // test colour for winner cubePlay - when game is over
-            //var colorValue2 = Tuple.Create(33f, 11f, 1f, 1f);
             var colorValue2 = Tuple.Create(3f, 0f, 1f, 1f);
 
 
@@ -76,7 +89,9 @@ namespace Assets.Scripts.GameDictionaries
         }
         
 
-        
+
+
+
 
     }
 }

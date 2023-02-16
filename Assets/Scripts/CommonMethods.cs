@@ -163,7 +163,7 @@ namespace Assets.Scripts
 
         public static Color GetNewColor(int dictionaryColorId)
         {
-            Dictionary<int, Tuple<float, float, float, float>> colorDictionary = GameDictionariesCommon.DictionaryColor();
+            Dictionary<int, Tuple<float, float, float, float>> colorDictionary = GameDictionaries.GameDictionariesCommon.DictionaryColor();
             var newColor = colorDictionary[dictionaryColorId];
 
             float r = newColor.Item1;
@@ -401,6 +401,12 @@ namespace Assets.Scripts
             return gameObjectTagName;
         }
 
+        public static GameObject[] GetObjectByTagName(string tagName)
+        {
+            GameObject[] gameObject = GameObject.FindGameObjectsWithTag(tagName);
+            return gameObject;
+        }
+
         public static string GetObjectTag(RaycastHit touchGameObject)
         {
             string gameObjectTagName = touchGameObject.collider.transform.tag;
@@ -444,10 +450,16 @@ namespace Assets.Scripts
         }
 
 
-        //-- remove ?
-        public static void ChangeEnableForGameObject(GameObject gameObject, bool isEnable)
+        public static void ChangeColourForGameObject(GameObject gameObject, Material newColour)
         {
-            gameObject.SetActive(isEnable);
+            gameObject.GetComponent<Renderer>().material = newColour;
+        }
+
+        // do I need it?
+        public static string ChangeToCapitalLetter(string symbol)
+        {
+            string text = symbol.ToUpper();
+            return text;
         }
 
     }

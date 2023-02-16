@@ -51,9 +51,14 @@ namespace Assets.Scripts
             double newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYPhone);
             double newScaleForZ = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleZ, numberOfDepths, _prefabCubePlayMaxNumberDetphZPhone);
 
-            float floatNewScaleForX = CommonMethods.ConvertDoubleToFloat(newScaleForX);
-            float floatNewScaleForY = CommonMethods.ConvertDoubleToFloat(newScaleForY);
-            float floatNewScaleForZ = CommonMethods.ConvertDoubleToFloat(newScaleForZ);
+            int roundDouble = 6;
+            //float floatNewScaleForX = CommonMethods.ConvertDoubleToFloat(newScaleForX);
+            //float floatNewScaleForY = CommonMethods.ConvertDoubleToFloat(newScaleForY);
+            //float floatNewScaleForZ = CommonMethods.ConvertDoubleToFloat(newScaleForZ);
+
+            float floatNewScaleForX = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
+            float floatNewScaleForY = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
+            float floatNewScaleForZ = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
 
             float[] newScaleForXYZ = { floatNewScaleForX, floatNewScaleForY, floatNewScaleForZ };
 

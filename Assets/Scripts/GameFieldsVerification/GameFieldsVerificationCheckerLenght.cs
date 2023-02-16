@@ -27,9 +27,6 @@ namespace Assets.Scripts.GameFieldsVerification
             return tableIndex;
         }
 
- 
-
-
 
 
         public static int CheckerLenght(int numberOfRows, int numberOfColumns)
