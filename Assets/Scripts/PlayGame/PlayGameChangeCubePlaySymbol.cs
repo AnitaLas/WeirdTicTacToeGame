@@ -20,16 +20,22 @@ namespace Assets.Scripts
 
         public static int[] SetUpCurrentPlayer(int[] currentPlayer, int currentPlayerNumber, int playersNumberGivenForConfiguration)
         {
-            // int[] newCurrentPlayer = new int[1];
+            //int[] newCurrentPlayer = new int[1];
             //   if (currentPlayerNumber < playersNumberGivenForConfiguration - 1)
-            if (currentPlayerNumber < playersNumberGivenForConfiguration)
+            //if (currentPlayerNumber < playersNumberGivenForConfiguration)
+            //Debug.Log("CC currentPlayerNumber = " + currentPlayerNumber);
+            //Debug.Log("CC playersNumberGivenForConfiguration = " + (playersNumberGivenForConfiguration  - 1));
+
+            if (currentPlayerNumber < playersNumberGivenForConfiguration - 1)
             {
                 currentPlayer[0] = currentPlayer[0] + 1;
+                //Debug.Log("CC if currentPlayer[0] = " + currentPlayer[0]);
                 return currentPlayer;
             } 
             else
             {
                 currentPlayer[0] = 0;
+                //Debug.Log("CC else currentPlayer[0] = " + currentPlayer[0]);
                 return currentPlayer;
             }
 
@@ -38,6 +44,7 @@ namespace Assets.Scripts
         public static Tuple<Tuple<int, int, int>, string> SetUpPlayerSymbolForCubePlay(GameObject[,,] gameBoard, string cubePlayName, string[] playersSymbols, int currentPlayerNumber)
         {
             //int currentPlayerNumber = currentPlayer[playersNumber];
+            //Debug.Log("currentPlayerNumber = " + currentPlayerNumber);
             string symbol = PlayGameMethods.GetPlayerSymbol(playersSymbols, currentPlayerNumber);
 
             var cubePlayDataZYX = CommonMethods.GetIndexZYXForGameObject(gameBoard, cubePlayName);

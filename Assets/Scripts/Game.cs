@@ -43,7 +43,11 @@ internal class Game : MonoBehaviour
 
     //public TextMeshProUGUI cubePlayChangeText;
 
+    //public int playersNumberGivenForConfiguration = 2;
+
     public int playersNumberGivenForConfiguration = 4;
+
+
 
     private int _minNumberOfRows = 3;
     private int _minNumberOfColumns = 3;
@@ -106,11 +110,11 @@ internal class Game : MonoBehaviour
     private int _moveIndexForFrameX = 0;
     private int _moveIndexForFrameY = 1;
 
-    GameObject[] playerSymbolMove;
+    string[] playerSymbolMove;
 
     void Start()
     {
-
+        Debug.Log("playersNumberGivenForConfiguration = " + playersNumberGivenForConfiguration);
         _tagCubePlayFree = tagCubePlayDictionary[1];
         _tagCubePlayTaken = tagCubePlayDictionary[2];
         _tagCubePlayFrame = tagCubePlayDictionary[3];
@@ -143,6 +147,8 @@ internal class Game : MonoBehaviour
 
         playersSymbols = GameConfiguration.CreateTableWithPlayersSymbols();
         currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
+
+        PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMove(playersSymbols);
 
         playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(playersSymbols);
 
@@ -231,6 +237,8 @@ internal class Game : MonoBehaviour
 
                             gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
+                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration, currentPlayer);
+
                             //Debug.Log(" 0 ");
                             _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
                             //Debug.Log(" 1 ");
@@ -295,7 +303,9 @@ internal class Game : MonoBehaviour
                             moveIndexForFrame[_moveIndexForFrameX] = cubePlayIndexX;
                             moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
 
-                           // Debug.Log(" 0 ");
+                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration, currentPlayer);
+
+                            // Debug.Log(" 0 ");
                             _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
 
                             //Debug.Log(" 1 ");
