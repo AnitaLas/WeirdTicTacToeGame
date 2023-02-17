@@ -40,14 +40,9 @@ namespace Assets.Scripts.GameDictionaries
         {
             Dictionary<int, string> tagPlayerSymbolDictionary = new Dictionary<int, string>();
 
-            //tagPlayerSymbolDictionary.Add(1, "PlayerSymbolNext");
-            //tagPlayerSymbolDictionary.Add(2, "PlayerSymbolCurrent");
-            //tagPlayerSymbolDictionary.Add(3, "PlayerSymbolPrevious");
-
             tagPlayerSymbolDictionary.Add(1, "PlayerSymbolCurrent");
             tagPlayerSymbolDictionary.Add(2, "PlayerSymbolPrevious");
             tagPlayerSymbolDictionary.Add(3, "PlayerSymbolNext");
-
 
             return tagPlayerSymbolDictionary;
         }
