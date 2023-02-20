@@ -18,6 +18,16 @@ TagManager:
   - PlayerSymbolNext
   - PlayerSymbolCurrent
   - PlayerSymbolPrevious
+  - ConfigurationBoardGameButtonSave
+  - ConfigurationBoardGameButtonBack
+  - ConfigurationBoardGameTableNumber
+  - ConfigurationBoardGameRows
+  - ConfigurationBoardGameColumns
+  - ConfigurationBoardGameInactiveField
+  - ConfigurationBoardGameTableNumberRows
+  - ConfigurationBoardGameTableNumberColumns
+  - ConfigurationBoardGameChangeNumberRows
+  - ConfigurationBoardGameChangeNumberColumns
   layers:
   - Default
   - TransparentFX

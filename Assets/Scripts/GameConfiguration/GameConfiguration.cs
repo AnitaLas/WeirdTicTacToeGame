@@ -30,8 +30,8 @@ namespace Assets.Scripts.GameConfiguration
             //string[] playersSymbols = { "x", "o", "H", "y", "z", "t" };
             //string[] playersSymbols = { "x", "00" };
             //string[] playersSymbols = { "x", "0", "3" };
-            //string[] playersSymbols = { "x", "o", "H", "Z"};
-            string[] playersSymbols = { "1", "2", "3", "4" };
+            string[] playersSymbols = { "x", "o", "H", "Z"};
+            //string[] playersSymbols = { "1", "2", "3", "4" };
             return playersSymbols;
         }
 

@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
+
+namespace Assets.Scripts.GameConfiguration
+{
+    internal class GameConfigurationTableForSetUp : MonoBehaviour
+    {
+
+        
+        public static GameObject[,,] CreateTableWithNumbers(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            GameObject[,,] tableWithNumber;
+            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);
+            tableWithNumber = CreateTableMainMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
+
+
+            return tableWithNumber;
+
+        }
+
+        public static string[] CreateTableWithNumbersForPrefabCubePlay(int numberOfRows, int numberOfColumns)
+        {
+            int allNumbers = numberOfRows * numberOfColumns;
+            string[] numbers = new string[allNumbers];
+            string numberString;
+
+            for (int number = 1; number <= allNumbers; number++)
+            {
+                numberString = CommonMethods.ConverIntToString(number);
+                int indexNumber = number - 1;
+                numbers[indexNumber] = numberString;
+            }
+
+            return numbers;
+
+        }
+
+
+        public static string[,,] CreateTableForDefaultTextWithNumbers(string[] table, int numberOfDepths, int numberOfRows, int numberOfColumns)
+        {
+            string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
+            int[] index = new int[1];
+            index[0] = 0;
+            int currentIndex;
+
+            for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
+            {
+                for (int indexRow = numberOfRows - 1; indexRow >= 0; indexRow--)
+                {
+                    //currentIndex = index[0];
+
+                    for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
+                    {
+                        currentIndex = index[0];
+                        string stringNumber = table[currentIndex];
+                        
+                        newTable[indexDepth, indexRow, indexColumn] = stringNumber;
+                        index[0] = index[0] + 1;
+                    }
+
+                    //index[0] = index[0] + 1;
+                }
+
+                index[0] = 0;
+            }
+
+            return newTable;
+        }
+
+
+
+        public static string[,,] CreateTableWithTextForPrefabCubePlay(int numberOfDepths, int numberOfRows, int numberOfColumns)
+        {
+            string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
+
+            //string[] alphabet = CreateTableWithCharactersForPrefabCubePlay(numberOfRows, numberOfColumns);
+            string[] numbers = CreateTableWithNumbersForPrefabCubePlay(numberOfRows, numberOfColumns);
+
+           // string[,,] alphabet3D = CreateTableForDefaultTextWithCharacters(alphabet, numberOfDepths, numberOfRows, numberOfColumns);
+            string[,,] numbers3D = CreateTableForDefaultTextWithNumbers(numbers, numberOfDepths, numberOfRows, numberOfColumns);
+
+            for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
+            {
+                for (int indexRow = 0; indexRow < numberOfRows; indexRow++)
+                {
+                    for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
+                    {
+                        string stringNumber = numbers3D[indexDepth, indexRow, indexColumn];
+                        //string stringAlphabet = alphabet3D[indexDepth, indexRow, indexColumn];
+                        //string textForPrebaCubePlay = stringAlphabet + stringNumber;
+
+                        newTable[indexDepth, indexRow, indexColumn] = stringNumber;
+                    }
+                }
+            }
+
+            return newTable;
+        }
+
+
+        public static void SetUpNewNumberForConfiguration(GameObject objectWithNumber)
+        {
+
+
+        }
+    }
+}
