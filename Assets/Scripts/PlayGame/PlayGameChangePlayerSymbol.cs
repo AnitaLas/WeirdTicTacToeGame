@@ -12,50 +12,69 @@ namespace Assets.Scripts.PlayGame
     internal class PlayGameChangePlayerSymbol
     {
 
-        public static void SetUpPlayerSymbol(string[] playersSymbols, Dictionary<int, string> tagPlayerSymbolDictionary, int indexForDictionary, int indexForPlayerSymbol)
+        public static void SetUpPlayerSymbol(string playerSymbol, string tagPlayerSymbol)
         {
-            string gameObjectTagName = tagPlayerSymbolDictionary[indexForDictionary];
-            GameObject[] gameObjectForPlayerSymbol = CommonMethods.GetObjectByTagName(gameObjectTagName);
+            //string gameObjectTagName = tagPlayerSymbolDictionary[indexForDictionary];
+            GameObject[] gameObjectForPlayerSymbol = CommonMethods.GetObjectByTagName(tagPlayerSymbol);
 
-            string playerSymbol = playersSymbols[indexForPlayerSymbol];
+            //string playerSymbol = playersSymbols[indexForPlayerSymbol];
 
             GameObject playerSymbolMove = gameObjectForPlayerSymbol[0];
             CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
         }
 
-        public static void SetUpPlayerSymbolCurrent(string[] playersSymbols, Dictionary<int, string> tagPlayerSymbolDictionary)
-        {
-            int indexForDictionaryCurrent = 1;
-            int indexForPlayerSymbolCurrent = 0;
-            SetUpPlayerSymbol(playersSymbols, tagPlayerSymbolDictionary, indexForDictionaryCurrent, indexForPlayerSymbolCurrent);
-        }
+        //public static void SetUpPlayerSymbolCurrent(string playerSymbol, string tagPlayerSymbolCurrent)
+        //{
+        //    //int indexForDictionaryCurrent = 1;
+        //    //int indexForPlayerSymbolCurrent = 0;
+        //    SetUpPlayerSymbol(playerSymbol, tagPlayerSymbolCurrent);
+        //}
 
-        public static void SetUpPlayerSymbolPrevious(string[] playersSymbols, Dictionary<int, string> tagPlayerSymbolDictionary)
-        {
-            int indexForDictionaryPrevious = 2;
-            int indexForPlayerSymbolPrevious = playersSymbols.Length - 1;
-            SetUpPlayerSymbol(playersSymbols, tagPlayerSymbolDictionary, indexForDictionaryPrevious, indexForPlayerSymbolPrevious);
-        }
+        //public static void SetUpPlayerSymbolPrevious(string playerSymbol, string tagPlayerSymbolPrevious)
+        //{
+        //    //int indexForDictionaryPrevious = 2;
+        //   //int indexForPlayerSymbolPrevious = playersSymbols.Length - 1;
+        //    SetUpPlayerSymbol(playerSymbol, tagPlayerSymbolPrevious);
+        //}
 
-        public static void SetUpPlayerSymbolNext(string[] playersSymbols, Dictionary<int, string> tagPlayerSymbolDictionary)
-        {
-            int indexForDictionaryNext = 3;
-            int indexForPlayerSymbolNext = 1;
-            SetUpPlayerSymbol(playersSymbols, tagPlayerSymbolDictionary, indexForDictionaryNext, indexForPlayerSymbolNext);
-        }
+        //public static void SetUpPlayerSymbolNext(string playerSymbol, string tagPlayerSymbolNext)
+        //{
+        //    //int indexForDictionaryNext = 3;
+        //    //int indexForPlayerSymbolNext = 1;
+        //    SetUpPlayerSymbol(playerSymbol, tagPlayerSymbolNext);
+        //}
 
-        public static void SetUpPlayerSymbolForMove(string[] playersSymbols)
+        public static void SetUpPlayerSymbolForMove(string[] playersSymbols, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
         {
-            Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesCommon.DictionaryTagPlayerSymbol();
+            //Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesCommon.DictionaryTagPlayerSymbol();
             int playersNumber = playersSymbols.Length;
+            int indexForPlayerSymbolPrevious = playersSymbols.Length - 1;
 
-            SetUpPlayerSymbolCurrent(playersSymbols, tagPlayerSymbolDictionary);
+            // use only when number players = 2
+            string defaultSymbol = "-";
+
+            // when players number >= 3 
+            string firstPlayerSymbol = playersSymbols[0];
+            string secondPlayerSymbol = playersSymbols[1];
+            string lastPlayerSymbol = playersSymbols[indexForPlayerSymbolPrevious];
+
+            // SetUpPlayerSymbolCurrent
+            SetUpPlayerSymbol(firstPlayerSymbol, tagPlayerSymbolCurrent);
 
             if (playersNumber >= 3)
             {
-                SetUpPlayerSymbolPrevious(playersSymbols, tagPlayerSymbolDictionary);
-                SetUpPlayerSymbolNext(playersSymbols, tagPlayerSymbolDictionary);
+                // SetUpPlayerSymbolPrevious
+                SetUpPlayerSymbol(lastPlayerSymbol, tagPlayerSymbolPrevious);
+                // SetUpPlayerSymbolNext
+                SetUpPlayerSymbol(secondPlayerSymbol, tagPlayerSymbolNext);
 
+            } 
+            else
+            {
+                // SetUpPlayerSymbolPrevious
+                SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
+                // SetUpPlayerSymbolNext
+                SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
             }
         }
 
@@ -107,30 +126,46 @@ namespace Assets.Scripts.PlayGame
         */
 
 
-        public static string[] ChangeCurrentPlayersSymbolsMove(string[] playerSymbolMove, string[] playersSymbols, int playersNumberGivenForConfiguration, int[] currentPlayer)
+        public static string[] ChangeCurrentPlayersSymbolsMove(string[] playerSymbolMove, string[] playersSymbols, int playersNumberGivenForConfiguration, int[] currentPlayer, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
         {
             int playerSymbolMoveLenght = 3;
             int currentPlayerNumber = currentPlayer[0];
             Debug.Log("currentPlayerNumber = " + currentPlayerNumber);
 
             string[] newPlayerSymbolMove = new string[playerSymbolMoveLenght];
+            string newPlayerSymbolCurrent;
+            string newPlayerSymbolPrevious;
+            string newPlayerSymbolNext;
 
-            Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesCommon.DictionaryTagPlayerSymbol();
+            // Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesCommon.DictionaryTagPlayerSymbol();
 
-            string tagPlayerSymbolCurrent = tagPlayerSymbolDictionary[1];
-            string tagPlayerSymbolPrevious = tagPlayerSymbolDictionary[2];
-            string tagPlayerSymbolNext = tagPlayerSymbolDictionary[3];
+            //string tagPlayerSymbolCurrent = tagPlayerSymbolDictionary[1];
+            // string tagPlayerSymbolPrevious = tagPlayerSymbolDictionary[2];
+            // string tagPlayerSymbolNext = tagPlayerSymbolDictionary[3];
 
             if (playersNumberGivenForConfiguration == 2)
             {
+               
+                if (playersSymbols[0] == playerSymbolMove[1])
+                {
+                    newPlayerSymbolCurrent = playersSymbols[1];
+                    newPlayerSymbolMove[1] = newPlayerSymbolCurrent;
+                    //ChangePlayerSymbol(newPlayerSymbolCurrent, tagPlayerSymbolCurrent);
+                }
+                else
+                {
+                    newPlayerSymbolCurrent = playersSymbols[0];
+                    newPlayerSymbolMove[1] = newPlayerSymbolCurrent;
+                    //ChangePlayerSymbol(newPlayerSymbolCurrent, tagPlayerSymbolCurrent);
+                }
 
 
-
+                ChangePlayerSymbol(newPlayerSymbolCurrent, tagPlayerSymbolCurrent);
             }
             else
             {
-                string newPlayerSymbolCurrent = playerSymbolMove[2];
-                string newPlayerSymbolPrevious = playerSymbolMove[1];
+                newPlayerSymbolCurrent = playerSymbolMove[2];
+                newPlayerSymbolPrevious = playerSymbolMove[1];
 
                 newPlayerSymbolMove[0] = newPlayerSymbolPrevious;
                 newPlayerSymbolMove[1] = newPlayerSymbolCurrent;
@@ -149,34 +184,27 @@ namespace Assets.Scripts.PlayGame
                     {
                         Debug.Log("  1  ");
                         Debug.Log("test = " + nextPlayersSymbolsIndex);
-                        string newPlayerSymbolNext = playersSymbols[0];
+                        newPlayerSymbolNext = playersSymbols[0];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
                         ChangePlayerSymbol(newPlayerSymbolNext, tagPlayerSymbolNext);
+
                     }
-                //else if (nextPlayersSymbolsIndex == playersSymbols.Length - 1)
-                //{
-                //    Debug.Log("  2  ");
-                //    Debug.Log("test = " + nextPlayersSymbolsIndex);
-                //    string newPlayerSymbolNext = playersSymbols[2];
-                //    newPlayerSymbolMove[2] = newPlayerSymbolNext;
-                //    ChangePlayerSymbol(newPlayerSymbolNext, tagPlayerSymbolNext);
-                //}
-                else
-                {
+                    else
+                    {
                         Debug.Log("  3  ");
                         Debug.Log("test = " + nextPlayersSymbolsIndex);
-                        string newPlayerSymbolNext = playersSymbols[currentPlayerNumber + 2];
+                        newPlayerSymbolNext = playersSymbols[currentPlayerNumber + 2];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
                         ChangePlayerSymbol(newPlayerSymbolNext, tagPlayerSymbolNext);
-                    }
 
-            }
+                    }
+                }
                 else
-            {
+                {
                     if (currentPlayerNumber == playersSymbols.Length - 1)
                     {
                         Debug.Log("  4  ");
-                        string newPlayerSymbolNext = playersSymbols[1];
+                        newPlayerSymbolNext = playersSymbols[1];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
                         ChangePlayerSymbol(newPlayerSymbolNext, tagPlayerSymbolNext);
 
@@ -184,22 +212,17 @@ namespace Assets.Scripts.PlayGame
                     else
                     {
                         Debug.Log("  5  ");
-                        string newPlayerSymbolNext = playersSymbols[2];
+                        newPlayerSymbolNext = playersSymbols[2];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
                         ChangePlayerSymbol(newPlayerSymbolNext, tagPlayerSymbolNext);
+
                     }
-
-
                 }
 
-            Debug.Log(" ----------------------------------------------------- ");
+                Debug.Log(" ----------------------------------------------------- ");
 
                 return newPlayerSymbolMove;
             }
-
-
-
-
 
             return newPlayerSymbolMove;
 
@@ -208,38 +231,21 @@ namespace Assets.Scripts.PlayGame
 
 
 
-
-
-
-
-
-        /*
-        public static GameObject[] CreateTableWithPlayersSymbolsMove(string[] playersSymbols)
+        public static void SetUpPlayerSymbolForWinner(string winnerPlayerSymbol, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
         {
-            Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesCommon.DictionaryTagPlayerSymbol();
-
-            int dictionaryLenght = tagPlayerSymbolDictionary.Count;
-            int playersNumber = playersSymbols.Length;
-
-            GameObject[] playerSymbolMove = new GameObject[dictionaryLenght];
+            // use for smaller green cube for player symbol move
+            string defaultSymbol = "-";
 
 
-            SetUpPlayerSymbolCurrent(playersSymbols, tagPlayerSymbolDictionary);
+            // SetUpPlayerSymbolCurrent
+           SetUpPlayerSymbol(winnerPlayerSymbol, tagPlayerSymbolCurrent);
 
-            if(playersNumber >= 3)
-            {
-
-                SetUpPlayerSymbolPrevious(playersSymbols, tagPlayerSymbolDictionary);
-                SetUpPlayerSymbolNext(playersSymbols, tagPlayerSymbolDictionary);
-
-
-
-            }
-
-
-            return playerSymbolMove;
+           // SetUpPlayerSymbolPrevious
+           SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
+           // SetUpPlayerSymbolNext
+           SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
+           
         }
 
-        */
     }
 }

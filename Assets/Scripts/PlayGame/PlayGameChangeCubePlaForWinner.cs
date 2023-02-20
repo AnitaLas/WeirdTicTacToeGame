@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts.CreateFrame;
+using Assets.Scripts.GameDictionaries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,9 +44,6 @@ namespace Assets.Scripts.PlayGame
 
                         cubePlay = gameBoard[indexDepth, indexRow, indexColumn];
 
-                        //CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForAll);
-                        //CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameOver);
-                        //CommonMethods.ChangeTextColourForCubePlay(cubePlay, newTextColor);
                         ChangeOneCubePlay(cubePlay, newCoordinateZForAll, tagCubePlayGameOver, newTextColor);
                     }
                 }
@@ -63,17 +61,17 @@ namespace Assets.Scripts.PlayGame
             CommonMethods.ChangeTextColourForCubePlay(cubePlay, newTextColor);
             CommonMethods.ChangeTextFontSize(cubePlay, newFontSize);
 
-            CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, _isGame2D);
+            CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, _isGame2D);
         }
 
-        public static void ChangeWinnerCubePlayForChecker(GameObject[,,] gameBoard, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay)
+        public static void ChangeWinnerCubePlayForChecker(GameObject[,,] gameBoard, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
             GameObject cubePlay;
             int indexDepth = 0;
-            float newFontSize = 0.65f;
+            //float newFontSize = 0.65f;
 
-            int dictionaryColorId = 2;
-            Color newTextColor = CommonMethods.GetNewColor(dictionaryColorId);
+            //int dictionaryColorId = 2;
+            //Color newTextColor = CommonMethods.GetNewColor(dictionaryColorId);
 
             int winnerLenghtForColumns = winnerCoordinateXYForCubePlay.GetLength(0);
 
@@ -81,29 +79,29 @@ namespace Assets.Scripts.PlayGame
             {
                 int coordinateYToMark = winnerCoordinateXYForCubePlay[indexColumnsWinner, 0];
                 int coordinateXToMark = winnerCoordinateXYForCubePlay[indexColumnsWinner, 1];
+
                 cubePlay = gameBoard[indexDepth, coordinateYToMark, coordinateXToMark];
 
-                //CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
-                //CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
-                //CommonMethods.ChangeTextColourForCubePlay(cubePlay, newTextColor);
-                //CommonMethods.ChangeTextFontSize(cubePlay, newFontSize);
-                //CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, _isGame2D);
-                //CommonMethods.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
                 ChangeOneWinnerCubePlayForChecker(cubePlay, prefabCubePlayFrame, newTextColor, winColourForCubePlay, _isGame2D, newFontSize, tagCubePlayGameWin);
 
             }
 
         }
 
-        public static void ChangeOneOtherCubePlay(GameObject prefabCubePlayFrame, GameObject cubePlay, Material winColourForCubePlay, string tagCubePlayGameWin)
+        public static void ChangeOneOtherCubePlay(GameObject prefabCubePlayFrame, GameObject cubePlay, Material winColourForCubePlay, string tagCubePlayGameWin, Color newTextColor, float newFontSize)
         {
             CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
             CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
-            CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
             CommonMethods.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
+
+            CommonMethods.ChangeTextColourForCubePlay(cubePlay, newTextColor);
+            CommonMethods.ChangeTextFontSize(cubePlay, newFontSize);
+
+            CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
+            
         }
 
-        public static void ChangeOtherCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay)
+        public static void ChangeOtherCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
             GameObject cubePlay;
             int indexDepth = 0;
@@ -130,11 +128,7 @@ namespace Assets.Scripts.PlayGame
 
                     if (playerSymbol.Equals(symbolToCompare))
                     {
-                        //CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
-                        //CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
-                        //CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
-                        //CommonMethods.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
-                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin);
+                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
 
                     }
                     else
@@ -148,16 +142,16 @@ namespace Assets.Scripts.PlayGame
 
         }
 
-        public static void ChangeAllCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay)
+        public static void ChangeAllCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
-            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
-            ChangeOtherCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
+            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
+            ChangeOtherCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
         }
 
 
 
 
-        public static void ChangeOtherCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay)
+        public static void ChangeOtherCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
             GameObject cubePlay;
             int indexDepth = 0;
@@ -184,11 +178,8 @@ namespace Assets.Scripts.PlayGame
 
                     if (playerSymbol.Equals(symbolToCompare))
                     {
-                        //CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
-                        //CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
-                        //CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
-                        //CommonMethods.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
-                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin);
+                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+                    
                     }
                     else
                     {
@@ -201,10 +192,10 @@ namespace Assets.Scripts.PlayGame
 
         }
 
-        public static void ChangeAllCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay)
+        public static void ChangeAllCubePlayForCheckerVertical(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
-            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
-            ChangeOtherCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
+            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
+            ChangeOtherCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
         }
 
 
@@ -212,7 +203,7 @@ namespace Assets.Scripts.PlayGame
 
 
 
-        public static void ChangeOtherCubePlayForCheckerBackslash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay)
+        public static void ChangeOtherCubePlayForCheckerBackslash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
             GameObject cubePlay;
             int indexDepth = 0;
@@ -258,11 +249,7 @@ namespace Assets.Scripts.PlayGame
 
                 if (playerSymbol.Equals(symbolToCompare))
                 {
-                    //CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
-                    //CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
-                    //CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
-                    //CommonMethods.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
-                    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin);
+                    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
 
                 }
                 else
@@ -312,10 +299,10 @@ namespace Assets.Scripts.PlayGame
             }
         }
 
-        public static void ChangeAllCubePlayForCheckerBackslash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay)
+        public static void ChangeAllCubePlayForCheckerBackslash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
-            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
-            ChangeOtherCubePlayForCheckerBackslash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
+            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
+            ChangeOtherCubePlayForCheckerBackslash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
         }
 
 
@@ -336,7 +323,7 @@ namespace Assets.Scripts.PlayGame
 
 
 
-        public static void ChangeOtherCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay)
+        public static void ChangeOtherCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
             GameObject cubePlay;
             int indexDepth = 0;
@@ -380,11 +367,7 @@ namespace Assets.Scripts.PlayGame
 
                 if (playerSymbol.Equals(symbolToCompare))
                 {
-                    //CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
-                    //CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
-                    //CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
-                    //CommonMethods.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
-                    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin);
+                    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
 
                 }
                 else
@@ -436,10 +419,10 @@ namespace Assets.Scripts.PlayGame
             }
         }
 
-        public static void ChangeAllCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay)
+        public static void ChangeAllCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
-            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
-            ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
+            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
+            ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
         }
 
 
@@ -458,31 +441,36 @@ namespace Assets.Scripts.PlayGame
 
             Material winColourForCubePlay = cubePlayColourWin[0];
 
+            int dictionaryColorId = 2;
+            Color newTextColor = CommonMethods.GetNewColor(dictionaryColorId);
+
+            float newFontSize = 0.65f;
+
             ChangeAllCubePlay(gameBoard, tagCubePlayGameOver);
 
             // checkerHorizontal
             if (winnerKindOfChecker.Equals(checkerHorizontal))
             {
-                ChangeAllCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
+                ChangeAllCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
             }
 
             // checkerVertical
             if (winnerKindOfChecker.Equals(checkerVertical))
             {
-                ChangeAllCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
+                ChangeAllCubePlayForCheckerVertical(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
             }
 
 
             // checkerSlash
             if (winnerKindOfChecker.Equals(checkerSlash))
             {
-                ChangeAllCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
+                ChangeAllCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
             }
 
             // checkerBackslash
             if (winnerKindOfChecker.Equals(checkerBackslash))
             {
-                ChangeAllCubePlayForCheckerBackslash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay);
+                ChangeAllCubePlayForCheckerBackslash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
             }
 
         }

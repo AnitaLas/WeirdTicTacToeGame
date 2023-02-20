@@ -21,6 +21,8 @@ using Assets.Scripts.GameFieldsVerification;
 using Assets.Scripts.PlayGame;
 using Assets.Scripts.GameDictionaries;
 using System.Reflection;
+using UnityEngine.SceneManagement;
+using Assets.Scripts.CreateFrame;
 
 internal class Game : MonoBehaviour
 {
@@ -43,9 +45,9 @@ internal class Game : MonoBehaviour
 
     //public TextMeshProUGUI cubePlayChangeText;
 
-    //public int playersNumberGivenForConfiguration = 2;
+    //public int playersNumberGivenForConfiguration1 = 2;
 
-    public int playersNumberGivenForConfiguration = 4;
+    public int playersNumberGivenForConfiguration1 = 4;
 
 
 
@@ -53,8 +55,8 @@ internal class Game : MonoBehaviour
     private int _minNumberOfColumns = 3;
     private int _minNumbersCubesForDepthZ = 3;
 
-    private static int numberOfRows = 9;// 3;
-    private static int numberOfColumns = 6;// 6;
+    private static int numberOfRows = 3;// 3;
+    private static int numberOfColumns = 3;// 6;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
@@ -90,6 +92,13 @@ internal class Game : MonoBehaviour
     private string _tagArrowDown;
     private string _tagButtonConfirm;
 
+    Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesCommon.DictionaryTagPlayerSymbol();
+
+    private string _tagPlayerSymbolCurrent;
+    private string _tagPlayerSymbolPrevious;
+    private string _tagPlayerSymbolNext;
+
+
     private int _index;
 
     int[] playerNumber;
@@ -114,7 +123,8 @@ internal class Game : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("playersNumberGivenForConfiguration = " + playersNumberGivenForConfiguration);
+        Debug.Log("playersNumberGivenForConfiguration1 = " + playersNumberGivenForConfiguration1);
+
         _tagCubePlayFree = tagCubePlayDictionary[1];
         _tagCubePlayTaken = tagCubePlayDictionary[2];
         _tagCubePlayFrame = tagCubePlayDictionary[3];
@@ -126,6 +136,10 @@ internal class Game : MonoBehaviour
         _tagArrowUp = tagArrowDictionary[4];
         _tagArrowDown = tagArrowDictionary[2];
         _tagButtonConfirm = tagArrowDictionary[5];
+
+        _tagPlayerSymbolCurrent = tagPlayerSymbolDictionary[1];
+        _tagPlayerSymbolPrevious = tagPlayerSymbolDictionary[2];
+        _tagPlayerSymbolNext = tagPlayerSymbolDictionary[3];
 
         _index = 0;
 
@@ -140,7 +154,7 @@ internal class Game : MonoBehaviour
         gameBoardVerification2D = GameConfiguration.CreateEmptyTable2D(numberOfRows, numberOfColumns);
 
         // does it need it?
-        playerNumber = GameConfiguration.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration);
+        playerNumber = GameConfiguration.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration1);
 
         
 
@@ -148,7 +162,7 @@ internal class Game : MonoBehaviour
         playersSymbols = GameConfiguration.CreateTableWithPlayersSymbols();
         currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
-        PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMove(playersSymbols);
+        PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMove(playersSymbols, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
         playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(playersSymbols);
 
@@ -176,7 +190,7 @@ internal class Game : MonoBehaviour
         //Debug.Log("moveIndexForFrame[1] = " + moveIndexForFrame[1]);
         //Debug.Log(" --------------------------------- " );
 
-        cubePlayFrame = CreateGameBoard.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, isGame2D);
+        cubePlayFrame = CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, isGame2D);
 
 
 
@@ -204,6 +218,14 @@ internal class Game : MonoBehaviour
                     int countedTagCubePlayTaken;
                     string gameObjectTag = CommonMethods.GetObjectTag(touch);
                     string gameObjectName = CommonMethods.GetObjectName(touch);
+
+                    Debug.Log(" test 0 ");
+                    if (gameObjectTag == "ConfigurationBoardGameSave")
+                    {
+                        Debug.Log(" test 1 ");
+                        // GameConfigurationChangeScence.GoToPlayersSymbolsSetUp();
+                        SceneManager.LoadScene("SceneGame");
+                    }
 
                     int currentPlayerNumber = currentPlayer[0];
                     GameObject cubePlay = CommonMethods.GetCubePlay(gameBoard, gameObjectName);
@@ -237,7 +259,7 @@ internal class Game : MonoBehaviour
 
                             gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
-                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration, currentPlayer);
+                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration1, currentPlayer, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
                             //Debug.Log(" 0 ");
                             _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
@@ -251,7 +273,7 @@ internal class Game : MonoBehaviour
 
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
                                 PlayGameChangeCubePlaForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
-
+                                PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
@@ -260,7 +282,7 @@ internal class Game : MonoBehaviour
                             else
                             {
 
-                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
+                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration1);
 
                                 //cubePlayMarkByFrame.transform.tag = _tagCubePlayTaken;
                                 CommonMethods.ChangeTagForGameObject(cubePlayMarkByFrame, _tagCubePlayTaken);
@@ -303,7 +325,7 @@ internal class Game : MonoBehaviour
                             moveIndexForFrame[_moveIndexForFrameX] = cubePlayIndexX;
                             moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
 
-                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration, currentPlayer);
+                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration1, currentPlayer, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
                             // Debug.Log(" 0 ");
                             _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
@@ -321,6 +343,8 @@ internal class Game : MonoBehaviour
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
                                 PlayGameChangeCubePlaForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
 
+                                PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
+
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
                             }
@@ -329,7 +353,7 @@ internal class Game : MonoBehaviour
                             {
 
 
-                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
+                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration1);
 
                                 CommonMethods.ChangeTagForGameObject(touch, _tagCubePlayTaken);
                                 currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);

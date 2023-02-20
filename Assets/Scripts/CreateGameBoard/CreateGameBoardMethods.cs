@@ -21,125 +21,343 @@ namespace Assets.Scripts
     internal class CreateGameBoardMethods : MonoBehaviour
     {
 
-        // --------------------------------------------------------------------
-        // GameBoardCreate - start
-
         /// <summary>
-        /// <para> Calculate the min X or Y or Z for first prefab "cubePlay" </para>
-        /// <para> Calculate the max X or Y or Z for last prefab "cubePlay" </para>
-        /// <para> e.g  number = 14, device = 34, round = 2, result = 0,411</para>
+        /// <para> e.g. string = "ABCDEFGHI" </para>
+        /// <para> table = { A, B, C, D, E, F, G, H, I} </para>
+        /// <para>  |   A   |   B   |   C   |    D   |   E   |   F   |   G   |   H   |   I   | </para>
         /// </summary>
-        /// <param name="lengthForAllPrefabCubePlayInOneLine"></param>
-        /// <param name="divide"></param>
-        /// <param name="round"></param>
         /// <returns></returns>
-
-        public static double PositionMinOrMaxXYZForCubePlayCalculate(double lengthForAllPrefabCubePlayInOneLine, int divide, int round)
+        public static string[] CreateTableWithCharactersByGivenString()
         {
-            double result = lengthForAllPrefabCubePlayInOneLine / divide;
-            double roundedNumber = Math.Round(result, round);
-            return roundedNumber;
-        }
+            string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            //string characters = "ABC";
+            int alphabetLenght = characters.Length;
+            string[] allSeparatedCharacters = new string[alphabetLenght];
 
-        public static float PositionMinOrMaxXYZForCubePlayConvertResultInDoubleToFloat(double lengthForAllPrefabCubePlayInOneLine)
-        {
-            int round = 2;
-            // default divide = 2 to find half of length, point [0,0] in Unity
-            int divide = 2;
-            double doubleNumber = PositionMinOrMaxXYZForCubePlayCalculate(lengthForAllPrefabCubePlayInOneLine, divide, round);
-            // float floatNumber = CommonMethods.ConvertDoubleToFloat(doubleNumber);
-            float floatNumber = CommonMethods.RoundAndConvertDoubleToFloat(doubleNumber, 6);
-            return floatNumber;         
+            for (int i = 0; i < alphabetLenght; i++)
+            {
+                string character = characters.Substring(i, 1);
+                allSeparatedCharacters[i] = character;
+            }
+
+            return allSeparatedCharacters;
         }
 
         /// <summary>
-        /// <para> return the first position for X, Y, and Z for the first prefab, e.g. prefab "CubePlay"  </para>
-        /// <para> e.g. prefab "CubePlay" - on the screen, the first cube/ square on the left down the bottom </para>
-        /// </summary>
-        /// <param name="lengthForAllPrefabCubePlayInOneLine"></param>
-        /// <param name="startPositionXYZ"></param>
-        /// <returns></returns>
-        public static float PositionForFirstPrefab(double lengthForAllPrefabCubePlayInOneLine, float startPositionXYZ)
-        {
-            float floatNumber = PositionMinOrMaxXYZForCubePlayConvertResultInDoubleToFloat(lengthForAllPrefabCubePlayInOneLine);
-            float positionForFirstCubePlay = startPositionXYZ - floatNumber;
-            return positionForFirstCubePlay;
-        }
-
-        /// <summary>
-        /// <para> return the last position for X, Y, and Z for the last prefab, e.g. prefab "CubePlay" </para>
-        /// <para> e.g. prefab "CubePlay" - on the screen, the first cube/ square on the right top </para>
-        /// </summary>
-        /// <param name="lengthForAllPrefabCubePlayInOneLine"></param>
-        /// <returns></returns>
-        public static float PositionForLastPrefab(double lengthForAllPrefabCubePlayInOneLine)
-        {
-            float positionForLastPrefab = PositionMinOrMaxXYZForCubePlayConvertResultInDoubleToFloat(lengthForAllPrefabCubePlayInOneLine);
-            return positionForLastPrefab;
-        }
-
-        /// <summary>
-        /// <para> calculate length for all prefab in one line for X or Y or Z (number column, number rows) </para>
-        /// <para> calculate length according to new scale </para>
-        /// <para> number = numberOfRows or numberOfColumns </para>
-        /// </summary>
-        /// <param name="number"></param>
-        /// <param name="newScale"></param>
-        /// <returns></returns>
-        public static float CalculateLengthForAllPrefabInOneLineXYZ(int number, float newScale)
-        {
-            float floatNumber = CommonMethods.ConvertIntToFloat(number); 
-            float lenght = floatNumber * newScale;
-            return lenght;
-        }
-
-        /// <summary>
-        /// <para> calculate data for first prefab "CubaPlay" X and Y and Z </para>
-        /// </summary>
-        /// <param name="newScale"></param>
-        /// <returns></returns>
-        public static float StartPositionXYZ(float newScale)
-        {
-            float startPositionXYZ = newScale / 2;
-            return startPositionXYZ;
-        }
-       
-
-        /// <summary>
-        /// <para> cubes/ squares are created from the left bottom to the right top in the UI</para>
-        /// <para> e.g. board game 3x3, numbers assigned to cube </para>
-        /// <para>  |   3   |   6   |   9   | </para>
-        /// <para>  |   2   |   5   |   8   | </para>
-        /// <para>  |   1   |   4   |   7   | </para>
-        /// <para> --------------------------- </para>
-        /// <para>  int [,] numbers = { { 3, 6, 9 },    </para>
-        /// <para>                      { 2, 5, 8 },    </para>
-        /// <para>                      { 1, 4, 7 } };  </para>
+        /// <para> e.g. for table 3x3 </para>
+        /// <para> table = { 1, 2, 3, 4, 5, 6, 7, 8, 9} </para>
+        /// <para>  |   1   |   2   |   3   |    4   |   5   |   6   |   7   |   8   |   9   | </para>
         /// </summary>
         /// <param name="numberOfRows"></param>
         /// <param name="numberOfColumns"></param>
         /// <returns></returns>
-        public static int[,,] CreateTableWithNumbersBasedOnMethodCreatingBoardGameforUI(int numberOfDepths, int numberOfRows, int numberOfColumns)
+        public static string[] CreateTableWithNumbersForPrefabCubePlay(int numberOfRows, int numberOfColumns)
         {
-            int[,,] PrefabCubePlayNumbers = new int[numberOfDepths, numberOfRows, numberOfColumns];
-            int number = 0;
+            int allNumbers = numberOfRows * numberOfColumns;
+            string[] numbers = new string[allNumbers];
+            string numberString;
 
-            for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
+            for (int number = 1; number <= allNumbers; number++)
             {
+                numberString = CommonMethods.ConverIntToString(number);
+                int indexNumber = number - 1;
+                numbers[indexNumber] = numberString;
+            }
 
-                for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
+            return numbers;
+        }
+
+        /// <summary>
+        /// <para>It returns the difference (e.g. 4) between the numbers for rows given by the player (e.g. 30) 
+        /// and the length for the string set in the method CreateTableWithCharactersByGivenString() (e.g. 26 lengths of the alphabet) </para>
+        /// </summary>
+        /// <param name="numberOfRows"></param>
+        /// <param name="tableWithCharacters"></param>
+        /// <returns></returns>
+        public static int ChecksDifferenceBetweenLengthOfTableWithCharactersAndNumberOfRows(int numberOfRows, string[] tableWithCharacters)
+        {
+            int tableCharacters = tableWithCharacters.Length;
+            int result = numberOfRows - tableCharacters;
+            return result;
+        }
+
+        /// <summary>
+        /// <para> e.g. for table 3x3, string = "ABC" </para>
+        /// <para>  table = { A, B, C, AA, BB, CC, DD, AAA, BBB } </para>
+        /// <para>  |   A   |   B   |   C   |  AA  |  BB  |  CC  |  DD  |  AAA  |  BBB  | </para>
+        /// </summary>
+        /// <param name="baseTableWithCharacters"></param>
+        /// <param name="numberOfRows"></param>
+        /// <param name="numberOfColumns"></param>
+        /// <returns></returns>
+        public static string[] CreateNewTableWithCharactersBasedOntheExistingTableWithCharacters(string[] baseTableWithCharacters, int numberOfRows, int numberOfColumns)
+        {
+            int newTableWithCharactersLenght = numberOfRows * numberOfColumns;
+            int oldTableLenght = baseTableWithCharacters.Length;
+
+            string[] oldTable = new string[oldTableLenght];
+            string[] newTableWithCharacters = new string[newTableWithCharactersLenght];
+            string[] newString = new string[oldTableLenght];
+
+            int[] newStringIndex = new int[1];
+            newStringIndex[0] = 0;
+            int indexForNewString;
+
+            int[] oldTableIndex = new int[1];
+            oldTableIndex[0] = 0;
+            //int indexForOldTable;
+
+            int[] indexForNewTableWithCharacters = new int[1];
+            indexForNewTableWithCharacters[0] = 0;
+
+            int indexBase;
+            int indexNew;
+            string baseText;
+            string currentText;
+            string newText;
+
+            for (int i = 0; i < newTableWithCharactersLenght; i++)
+            {
+                //indexForOldTable = oldTableIndex[0];
+                indexForNewString = newStringIndex[0];
+
+                if (i < (oldTableLenght - 1))
                 {
-                    for (int indexRow = 0; indexRow < numberOfRows; indexRow++)
+                    newTableWithCharacters[i] = baseTableWithCharacters[i];
+                    newString[i] = baseTableWithCharacters[i];
+                    oldTable[i] = baseTableWithCharacters[i];
+
+                    oldTableIndex[0] = oldTableIndex[0] + 1;
+                    newStringIndex[0] = newStringIndex[0] + 1;
+                }
+                else if (i == oldTableLenght - 1)
+                {
+                    newTableWithCharacters[i] = baseTableWithCharacters[i];
+                    newString[i] = baseTableWithCharacters[i];
+                    oldTable[i] = baseTableWithCharacters[i];
+
+                    oldTableIndex[0] = 0;
+                    newStringIndex[0] = 0;
+                }
+                else
+                {
+                    if (indexForNewString < oldTableLenght - 1)
                     {
-                        number = number + 1;
-                        PrefabCubePlayNumbers[indexDepth, indexRow, indexColumn] = number;
-                        
+                        indexBase = oldTableIndex[0];
+                        indexNew = newStringIndex[0];
+
+                        baseText = oldTable[indexBase]; ;
+                        currentText = newString[indexNew];
+                        newText = baseText + currentText;
+
+                        newString[indexNew] = newText;
+                        newTableWithCharacters[i] = newText;
+
+                        oldTableIndex[0] = oldTableIndex[0] + 1;
+                        newStringIndex[0] = newStringIndex[0] + 1;
+                    }
+                    else
+                    {
+                        indexBase = oldTableIndex[0];
+                        indexNew = newStringIndex[0];
+
+                        baseText = oldTable[indexBase]; ;
+                        currentText = newString[indexNew];
+                        newText = baseText + currentText;
+
+                        newString[indexNew] = newText;
+                        newTableWithCharacters[i] = newText;
+
+                        oldTableIndex[0] = 0;
+                        newStringIndex[0] = 0;
                     }
                 }
             }
 
-            return PrefabCubePlayNumbers;
+            return newTableWithCharacters;
         }
+
+        /// <summary>
+        /// <para> e.g. for table 3x3, string = "ABCDEFGHI" </para>
+        /// <para> table = { A, B, C, D, E, F, G, H, I} </para>
+        /// <para>  |   A   |   B   |   C   |    D   |   E   |   F   |   G   |   H   |   I   | </para>
+        /// <para> --------------------------------------------------------------------------- </para>
+        /// <para> e.g. for table 3x3, string = "ABC" </para>
+        /// <para>  table = { A, B, C, AA, BB, CC, DD, AAA, BBB } </para>
+        /// <para>  |   A   |   B   |   C   |  AA  |  BB  |  CC  |  DD  |  AAA  |  BBB  | </para>
+        /// </summary>
+        /// <param name="numberOfRows"></param>
+        /// <param name="numberOfColumns"></param>
+        /// <returns></returns>
+        public static string[] CreateTableWithCharactersForPrefabCubePlay(int numberOfRows, int numberOfColumns)
+        {
+            string[] newTableWithCharacters = new string[numberOfRows];
+            string[] tableWithCharacters = CreateTableWithCharactersByGivenString();
+            int difference = ChecksDifferenceBetweenLengthOfTableWithCharactersAndNumberOfRows(numberOfRows, tableWithCharacters);
+
+            if (difference <= 0)
+            {
+                return tableWithCharacters;
+            }
+            else
+            {
+                newTableWithCharacters = CreateNewTableWithCharactersBasedOntheExistingTableWithCharacters(tableWithCharacters, numberOfRows, numberOfColumns);
+                return newTableWithCharacters;
+            }
+        }
+
+        /// <summary>
+        /// <para> e.g. for table 3x3 </para>
+        /// <para>  |   A   |   B   |   C   | </para>
+        /// <para>  |   A   |   B   |   C   | </para>
+        /// <para>  |   A   |   B   |   C   | </para>
+        /// <para> --------------------------- </para>
+        /// <para>  string [,] text = { { A, B, C },    </para>
+        /// <para>                      { A, B, C },    </para>
+        /// <para>                      { A, B, C } };  </para>
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="numberOfRows"></param>
+        /// <param name="numberOfColumns"></param>
+        /// <returns></returns>
+        public static string[,,] CreateTableForDefaultTextWithCharacters(string[] table, int numberOfDepths, int numberOfRows, int numberOfColumns)
+        {
+            string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
+            string[] baseTable = table;
+
+            int[] index = new int[1];
+            index[0] = 0;
+            int currentIndex;
+
+
+            for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
+            {
+                for (int indexRow = numberOfRows - 1; indexRow >= 0; indexRow--)
+                {
+                    for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
+                    {
+                        currentIndex = index[0];
+
+                        string stringAlphabet = baseTable[currentIndex];
+                        string textForPrebaCubePlay = stringAlphabet;
+                        newTable[indexDepth, indexRow, indexColumn] = textForPrebaCubePlay;
+
+                        index[0] = index[0] + 1;
+                    }
+
+                    index[0] = 0;
+                }
+            }
+
+            return newTable;
+        }
+
+
+        /// <summary>
+        /// <para> e.g. for table 3x3 </para> 
+        /// <para>  |   1   |   1   |   1   | </para>
+        /// <para>  |   2   |   2   |   2   | </para>
+        /// <para>  |   3   |   3   |   3   | </para>
+        /// <para> --------------------------- </para>
+        /// <para>  string [,] text = { { 1, 1, 1 },    </para>
+        /// <para>                      { 2, 3, 3 },    </para>
+        /// <para>                      { 3, 3, 3 } };  </para>
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="numberOfRows"></param>
+        /// <param name="numberOfColumns"></param>
+        /// <returns></returns>
+        public static string[,,] CreateTableForDefaultTextWithNumbers(string[] table, int numberOfDepths, int numberOfRows, int numberOfColumns)
+        {
+            string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
+            int[] index = new int[1];
+            index[0] = 0;
+            int currentIndex;
+
+            for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
+            {
+                for (int indexRow = numberOfRows - 1; indexRow >= 0; indexRow--)
+                {
+                    currentIndex = index[0];
+
+                    for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
+                    {
+                        string stringAlphabet = table[currentIndex];
+                        string textForPrebaCubePlay = stringAlphabet;
+                        newTable[indexDepth, indexRow, indexColumn] = textForPrebaCubePlay;
+                    }
+
+                    index[0] = index[0] + 1;
+                }
+
+                index[0] = 0;
+            }
+
+            return newTable;
+        }
+
+        /// <summary>
+        /// <para> e.g. for table 3x3 </para> 
+        /// <para>  |   A1   |   B1   |   C1   | </para>
+        /// <para>  |   A1   |   B2   |   C2   | </para>
+        /// <para>  |   A1   |   B2   |   C3   | </para>
+        /// <para> --------------------------- </para>
+        /// <para>  string [,] text = { { A1, A2, A3 },    </para>
+        /// <para>                      { B1, B2, B3 },    </para>
+        /// <para>                      { C1, C2, C3 } };  </para>
+        /// </summary>
+        /// <param name="numberOfRows"></param>
+        /// <param name="numberOfColumns"></param>
+        /// <returns></returns>
+        public static string[,,] CreateTableWithTextForPrefabCubePlay(int numberOfDepths, int numberOfRows, int numberOfColumns)
+        {
+            string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
+
+            string[] alphabet = CreateTableWithCharactersForPrefabCubePlay(numberOfRows, numberOfColumns);
+            string[] numbers = CreateTableWithNumbersForPrefabCubePlay(numberOfRows, numberOfColumns);
+
+            string[,,] alphabet3D = CreateTableForDefaultTextWithCharacters(alphabet, numberOfDepths, numberOfRows, numberOfColumns);
+            string[,,] numbers3D = CreateTableForDefaultTextWithNumbers(numbers, numberOfDepths, numberOfRows, numberOfColumns);
+
+            for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
+            {
+                for (int indexRow = 0; indexRow < numberOfRows; indexRow++)
+                {
+                    for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
+                    {
+                        string stringNumber = numbers3D[indexDepth, indexRow, indexColumn];
+                        string stringAlphabet = alphabet3D[indexDepth, indexRow, indexColumn];
+                        string textForPrebaCubePlay = stringAlphabet + stringNumber;
+
+                        newTable[indexDepth, indexRow, indexColumn] = textForPrebaCubePlay;
+                    }
+                }
+            }
+
+            return newTable;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         // it can be remove in future - rong interpretation
@@ -217,135 +435,6 @@ namespace Assets.Scripts
             }
         }
 
-        public static float[] CreateTableWithCoordinatesZ()
-        {
-            //float[] table = new float[3];
-            float[] table = new float[2];
-            table[0] = -0.05f;
-            table[1] = 0.05f;
-           //table[2] = 1; and that is an interesting idea!
-            return table;
-        }
-
-        
-        /// <summary>
-        /// <para> cubePlayDataLenght: </para>
-        /// <para> lenght of array colour assigned to object "GameBoard" </para>
-        /// <para> lenght of array with coordinates "Z" </para>
-        /// <para> ----------------------------------------------------- </para>
-        /// </summary>
-        /// <param name="cubePlayDataLenght"></param>
-        /// <param name="indexForPreviousColour"></param>
-        /// <param name="numberOfRows"></param>
-        /// <param name="currentCountedNumberForCubeRows"></param>
-        /// <param name="isNumberOfRowsEven"></param>
-        /// <returns></returns>
-        public static Tuple<int, int> GetnewCountedNumberForCubeRowsAndNewIndexForTheTableSetting(int cubePlayDataLenght, int indexForPreviousColour, int numberOfRows, int currentCountedNumberForCubeRows, bool isNumberOfRowsEven)
-        {
-            int maxIndexForCubePlayData = cubePlayDataLenght - 1;
-            int newIndexForCubePlayData;
-
-            int currentCountedNumberOfRows;
-
-            if (indexForPreviousColour == 0)
-            {
-
-                if (currentCountedNumberForCubeRows == numberOfRows)
-                {
-                    currentCountedNumberOfRows = 1;
-
-                    if (isNumberOfRowsEven == true)
-                    {
-                        newIndexForCubePlayData = indexForPreviousColour;
-                    }
-                    else
-                    {
-                        newIndexForCubePlayData = indexForPreviousColour + 1;
-                    }
-
-                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
-                    return newDataForCubePlayColour;
-
-                }
-                else
-                {
-                    currentCountedNumberOfRows = currentCountedNumberForCubeRows + 1;
-                    newIndexForCubePlayData = indexForPreviousColour + 1;
-
-                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
-                    return newDataForCubePlayColour;
-                }
-            }
-
-            else if (indexForPreviousColour == maxIndexForCubePlayData)
-            {
-
-                if (currentCountedNumberForCubeRows == numberOfRows)
-                {
-                    currentCountedNumberOfRows = 1;
-
-                    if (isNumberOfRowsEven == true)
-                    {
-                        newIndexForCubePlayData = indexForPreviousColour;
-                    }
-                    else
-                    {
-                        newIndexForCubePlayData = 0;
-                    }
-
-                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
-                    return newDataForCubePlayColour;
-
-                }
-                else
-                {
-                    currentCountedNumberOfRows = currentCountedNumberForCubeRows + 1;
-                    newIndexForCubePlayData = 0;
-
-                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
-                    return newDataForCubePlayColour;
-                }
-
-            }
-            else if (indexForPreviousColour < maxIndexForCubePlayData)
-            {
-
-                if (currentCountedNumberForCubeRows == numberOfRows)
-                {
-                    currentCountedNumberOfRows = 0;
-
-                    if (isNumberOfRowsEven == true)
-                    {
-                        newIndexForCubePlayData = indexForPreviousColour;
-                    }
-                    else
-                    {
-                        newIndexForCubePlayData = indexForPreviousColour + 1;
-                    }
-
-                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
-                    return newDataForCubePlayColour;
-                }
-                else
-                {
-                    currentCountedNumberOfRows = currentCountedNumberForCubeRows + 1;
-                    newIndexForCubePlayData = indexForPreviousColour + 1;
-
-                    var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
-                    return newDataForCubePlayColour;
-                }
-            }
-            else
-            {
-                currentCountedNumberOfRows = 0;
-                newIndexForCubePlayData = 0;
-
-                var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
-                return newDataForCubePlayColour;
-            }
-        }
-        
-
-
+       
     }
 }

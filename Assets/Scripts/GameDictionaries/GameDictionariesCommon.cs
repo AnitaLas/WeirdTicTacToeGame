@@ -61,7 +61,26 @@ namespace Assets.Scripts.GameDictionaries
 
         }
         
-        
+
+        public static Dictionary<int, string> DictionaryConfiguration()
+        {
+            Dictionary<int, string> configurationDictionaryTag = new Dictionary<int, string>();
+
+            configurationDictionaryTag.Add(1, "ConfigurationBoardGameButtonSave");
+            configurationDictionaryTag.Add(2, "ConfigurationBoardGameButtonBack");
+            configurationDictionaryTag.Add(3, "ConfigurationBoardGameTableNumberRows");
+            configurationDictionaryTag.Add(4, "ConfigurationBoardGameTableNumberColumns");
+            configurationDictionaryTag.Add(5, "ConfigurationBoardGameRows");
+            configurationDictionaryTag.Add(6, "ConfigurationBoardGameColumns");
+            configurationDictionaryTag.Add(7, "ConfigurationBoardGameChangeNumberRows");
+            configurationDictionaryTag.Add(8, "ConfigurationBoardGameChangeNumberColumns");
+            configurationDictionaryTag.Add(20, "ConfigurationBoardGameInactiveField");
+
+
+            return configurationDictionaryTag;
+
+        }
+
         public static Dictionary<int, Tuple<float, float, float, float>> DictionaryColor()
         {
             // Tuple<float, float, float, float> => r g b a
