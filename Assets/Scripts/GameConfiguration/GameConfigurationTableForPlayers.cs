@@ -10,6 +10,18 @@ namespace Assets.Scripts.GameConfiguration
     internal class GameConfigurationTableForPlayers
     {
 
+        public static int[] CreateTableWithPlayersNumber(int playersNumber)
+        {
+            int[] players = new int[playersNumber];
+
+            for (int i = 0; i < playersNumber; i++)
+            {
+                players[i] = i;
+            }
+
+            return players;
+        }
+
         public static GameObject[,,] CreateTableForPlayers(GameObject[,,] tableWtithNumber, string configurationBoardGameInactiveField)
         {
             string text = "-";
