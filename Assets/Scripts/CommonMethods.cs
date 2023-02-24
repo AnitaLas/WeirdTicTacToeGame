@@ -42,6 +42,12 @@ namespace Assets.Scripts
             return intToString;
         }
 
+        public static int ConvertStringToInt(string number)
+        {
+            int numberInt = Int32.Parse(number);
+            return numberInt;
+        }
+
         public static float RoundAndConvertDoubleToFloat(double number, int round)
         {
             double roundedNumber = Math.Round(number, round);

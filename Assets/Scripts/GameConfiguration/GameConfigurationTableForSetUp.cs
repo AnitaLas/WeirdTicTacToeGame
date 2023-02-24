@@ -102,10 +102,5 @@ namespace Assets.Scripts.GameConfiguration
         }
 
 
-        public static void SetUpNewNumberForConfiguration(GameObject objectWithNumber)
-        {
-
-
-        }
     }
 }

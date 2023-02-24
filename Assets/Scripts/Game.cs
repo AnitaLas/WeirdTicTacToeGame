@@ -36,10 +36,16 @@ internal class Game : MonoBehaviour
     public Material[] cubePlayColourWin;
 
 
+    private static int _configurationBoardGameNumberOfRows;
 
-
-
-
+    public void Awake()
+    {
+        //dataFromScenece1 = GameConfigurationSetUpBoardGame.scence1.test;
+        //int teeeee = Int32.Parse(dataFromScenece1);
+        //numberOfRows = teeeee;
+    }
+   
+    //private static int teeeee = Int32.Parse(dataFromScenece1);
     public Touch touch;
     private Camera mainCamera;
 
@@ -55,7 +61,7 @@ internal class Game : MonoBehaviour
     private int _minNumberOfColumns = 3;
     private int _minNumbersCubesForDepthZ = 3;
 
-    private static int numberOfRows = 3;// 3;
+    private static int numberOfRows;// = 4; //3;// 3;
     private static int numberOfColumns = 3;// 6;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
@@ -121,6 +127,12 @@ internal class Game : MonoBehaviour
 
     string[] playerSymbolMove;
 
+
+
+
+
+
+
     void Start()
     {
         Debug.Log("playersNumberGivenForConfiguration1 = " + playersNumberGivenForConfiguration1);
@@ -143,18 +155,22 @@ internal class Game : MonoBehaviour
 
         _index = 0;
 
+
+        _configurationBoardGameNumberOfRows = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfRows;
+        //Debug.Log("dataFromScenece1 = " + dataFromScenece1);
+       // numberOfRows = CommonMethods.ConvertStringToInt(_configurationBoardGameNumberOfRows);
+        numberOfRows = _configurationBoardGameNumberOfRows;
+
+
         lenghtToCheckMax = GameFieldsVerificationCheckerLenght.SetUpMaxLenghtToCheck(numberOfRows, numberOfColumns);
         lenghtToCheck = GameFieldsVerificationCheckerLenght.SetUpLenghtToCheck(lenghtToCheckMax, lenghtToCheckGivenByUser);
-       // Debug.Log("lenghtToCheck = " + lenghtToCheck);
 
-       //int lenghtToCheck = GameFieldsVerificationCheckerLenght.CheckerLenght(numberOfRows-1, numberOfColumns-1);
-      // Debug.Log("lenghtToCheck = " + lenghtToCheck);
 
 
         gameBoardVerification2D = GameConfiguration.CreateEmptyTable2D(numberOfRows, numberOfColumns);
 
         // does it need it?
-        playerNumber = GameConfiguration.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration1);
+        playerNumber = GameConfigurationTableForPlayers.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration1);
 
         
 
