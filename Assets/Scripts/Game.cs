@@ -37,6 +37,8 @@ internal class Game : MonoBehaviour
 
 
     private static int _configurationBoardGameNumberOfRows;
+    private static int _configurationBoardGameNumberOfColumns;
+    private static int _configurationBoardGameNumberOfPlayers;
 
     public void Awake()
     {
@@ -62,7 +64,7 @@ internal class Game : MonoBehaviour
     private int _minNumbersCubesForDepthZ = 3;
 
     private static int numberOfRows;// = 4; //3;// 3;
-    private static int numberOfColumns = 3;// 6;
+    private static int numberOfColumns; // = 3;// 6;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
@@ -74,7 +76,7 @@ internal class Game : MonoBehaviour
 
     private static bool isGame2D = true;
 
-    private int maxCubePlayNumber = numberOfRows * numberOfColumns * numberOfDepths;
+    private int maxCubePlayNumber; // = numberOfRows * numberOfColumns * numberOfDepths;
 
 
     private float _cubePlayForFrameScale;
@@ -135,7 +137,7 @@ internal class Game : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("playersNumberGivenForConfiguration1 = " + playersNumberGivenForConfiguration1);
+        //Debug.Log("playersNumberGivenForConfiguration1 = " + playersNumberGivenForConfiguration1);
 
         _tagCubePlayFree = tagCubePlayDictionary[1];
         _tagCubePlayTaken = tagCubePlayDictionary[2];
@@ -161,6 +163,10 @@ internal class Game : MonoBehaviour
        // numberOfRows = CommonMethods.ConvertStringToInt(_configurationBoardGameNumberOfRows);
         numberOfRows = _configurationBoardGameNumberOfRows;
 
+        _configurationBoardGameNumberOfColumns = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfColumns;
+        numberOfColumns = _configurationBoardGameNumberOfColumns;
+
+        maxCubePlayNumber = numberOfRows * numberOfColumns * numberOfDepths;
 
         lenghtToCheckMax = GameFieldsVerificationCheckerLenght.SetUpMaxLenghtToCheck(numberOfRows, numberOfColumns);
         lenghtToCheck = GameFieldsVerificationCheckerLenght.SetUpLenghtToCheck(lenghtToCheckMax, lenghtToCheckGivenByUser);
@@ -235,10 +241,10 @@ internal class Game : MonoBehaviour
                     string gameObjectTag = CommonMethods.GetObjectTag(touch);
                     string gameObjectName = CommonMethods.GetObjectName(touch);
 
-                    Debug.Log(" test 0 ");
+                    ///Debug.Log(" test 0 ");
                     if (gameObjectTag == "ConfigurationBoardGameSave")
                     {
-                        Debug.Log(" test 1 ");
+                        //Debug.Log(" test 1 ");
                         // GameConfigurationChangeScence.GoToPlayersSymbolsSetUp();
                         SceneManager.LoadScene("SceneGame");
                     }

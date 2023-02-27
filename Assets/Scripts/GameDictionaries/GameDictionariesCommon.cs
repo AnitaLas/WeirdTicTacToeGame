@@ -74,6 +74,12 @@ namespace Assets.Scripts.GameDictionaries
             configurationDictionaryTag.Add(6, "ConfigurationBoardGameColumns");
             configurationDictionaryTag.Add(7, "ConfigurationBoardGameChangeNumberRows");
             configurationDictionaryTag.Add(8, "ConfigurationBoardGameChangeNumberColumns");
+            configurationDictionaryTag.Add(9, "ConfigurationBoardGamePlayers");
+            configurationDictionaryTag.Add(10, "ConfigurationBoardGameChangeNumberPlayers");
+            configurationDictionaryTag.Add(11, "ConfigurationBoardGameTableNumberPlayers");
+            configurationDictionaryTag.Add(12, "ConfigurationBoardGameLenghtToCheck");
+            configurationDictionaryTag.Add(13, "ConfigurationBoardGameChangeNumberLenghtToCheck");
+            configurationDictionaryTag.Add(14, "ConfigurationBoardGameTableNumberLenghtToCheck");
             configurationDictionaryTag.Add(20, "ConfigurationBoardGameInactiveField");
 
 

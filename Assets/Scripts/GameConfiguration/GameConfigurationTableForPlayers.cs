@@ -22,40 +22,22 @@ namespace Assets.Scripts.GameConfiguration
             return players;
         }
 
-        public static GameObject[,,] CreateTableForPlayers(GameObject[,,] tableWtithNumber, string configurationBoardGameInactiveField)
+        public static GameObject[,,] CreateTableForPlayers(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField)
         {
-            string text = "-";
-            string one = "1";
+            GameObject[,,] table;
+            int start = 1;
+            int end = 8;
+            float newCoordinateY = 100f; 
+            string inactiveText = "-";
 
-            int maxIndexDepth = 1;
-            int maxIndexColumn = tableWtithNumber.GetLength(2);
-            int maxIndexRow = tableWtithNumber.GetLength(1);
-
-            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
-            {
-                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
-                {
-                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
-                    {
-                        GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
-
-                        if (cubePlayText.Equals(one))
-                        {
-                            CommonMethods.ChangeTextForCubePlay(cubePlay, text);
-                            CommonMethods.ChangeTagForGameObject(cubePlay, configurationBoardGameInactiveField);
-                        }
-
-                    }
-
-                }
-            }
-
-            return tableWtithNumber;
+            table = GameConfigurationTableForSetUp.ChangeDataForTableWithNumbers( tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
+            return table;
 
         }
 
 
 
     }
+
 }
+
