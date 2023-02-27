@@ -9,15 +9,16 @@ namespace Assets.Scripts.GameConfiguration
 {
     internal class GameConfigurationTableForRowsAndColumns
     {
-
+        /*
         public static GameObject[,,] CreateTableForRowsAndColumns(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField)
         {
             string text = "-";
             string one = "1";
             string two = "2";
 
-            float newCoordinateZ = 0.75f;
-           // float newCoordinateZ = 0.05f;
+            // float newCoordinateZ = 0.75f;
+            //float newCoordinateZ = 0.05f;
+            float newCoordinateY = 100f;
 
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
@@ -33,7 +34,8 @@ namespace Assets.Scripts.GameConfiguration
                         string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
 
                         CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameTableNumberForAll);
-                        CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZ);
+                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        //CommonMethods.ChangeYForGameObject(cubePlay, newCoordinateY);
 
                         if (cubePlayText.Equals(one) || cubePlayText.Equals(two))
                         {
@@ -47,6 +49,21 @@ namespace Assets.Scripts.GameConfiguration
             }
 
             return tableWtithNumber;
+
+        }
+        */
+
+
+        public static GameObject[,,] CreateTableForRowsAndColumns(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField)
+        {
+            GameObject[,,] table;
+            int start = 2;
+            int end = 10;
+            float newCoordinateY = 100f;
+            string inactiveText = "-";
+
+            table = GameConfigurationTableForSetUp.ChangeDataForTableWithNumbers(tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
+            return table;
 
         }
 

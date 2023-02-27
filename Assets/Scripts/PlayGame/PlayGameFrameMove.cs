@@ -114,12 +114,15 @@ namespace Assets.Scripts.PlayGame
         public static void SetUpNewXYForCubePlayFrame(GameObject cubePlayFrame, GameObject cubePlay)
         {
             bool isGame2D = true;
-
+           
             if (isGame2D == true)
             {
                 float x = cubePlay.transform.position.x;
                 float y = cubePlay.transform.position.y;
                 float z = cubePlayFrame.transform.position.z;
+                //float z = -0.6f;
+                //float z = cubePlay.transform.position.z;
+                Debug.Log(" z = " + z);
 
                 cubePlayFrame.transform.position = new Vector3(x, y, z);
             }
@@ -128,6 +131,7 @@ namespace Assets.Scripts.PlayGame
         public static void SetUpNewZForCubePlayFrame(GameObject cubePlayFrame)
         {
             float newCoordinateZ = 1;
+            //float newCoordinateZ = -0.6f;
             CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
         }
 

@@ -332,6 +332,7 @@ namespace Assets.Scripts
                 float z = cubePlay.transform.position.z;
 
                 // it works
+                //cubePlay.transform.position = new Vector3(x, y, z + newCoordinateZ);
                 cubePlay.transform.position = new Vector3(x, y, newCoordinateZ);
 
                 //newPrefabCubePlay.transform.position = new Vector3(x, y, currentCoordinateZ * Time.deltaTime);
@@ -339,11 +340,11 @@ namespace Assets.Scripts
                 //newPrefabCubePlay.transform.position =  Vector3.MoveTowards(newPrefabCubePlay.transform.position, (new Vector3(x, y, currentCoordinateZ)), transformSpeed * Time.deltaTime);
 
                 //cubePlay.transform.Translate(Vector3.forward * Time.deltaTime);
-              
 
 
-                    //Vector3 test = new Vector3(x, y, newCoordinateZ);
-                    //cubePlay.transform.position = Vector3.Lerp(cubePlay.transform.position, test, 0.1f);
+
+                //Vector3 test = new Vector3(x, y, newCoordinateZ);
+                //cubePlay.transform.position = Vector3.Lerp(cubePlay.transform.position, test, 0.1f);
 
                 //cubePlay.transform.position += cubePlay.transform.forward * Time.deltaTime;
 
@@ -387,7 +388,22 @@ namespace Assets.Scripts
                 gameObject.transform.position = new Vector3(x, y + newCoordinateY, z);
             }
         }
+        /*
+        public static void ChangeYForGameObject(GameObject gameObject, float newCoordinateY)
+        {
+            bool isGame2D = true;
 
+            if (isGame2D == true)
+            {
+                float x = gameObject.transform.position.x;
+                float y = gameObject.transform.position.y;
+                float z = gameObject.transform.position.z;
+
+                // it works
+                gameObject.transform.position = new Vector3(x, newCoordinateY, z);
+            }
+        }
+        */
         public static int[] CreateTableWithGivenLengthAndGivenValue(int tableLenght, int value)
         {
             int[] table = new int[tableLenght];

@@ -28,6 +28,12 @@ TagManager:
   - ConfigurationBoardGameTableNumberColumns
   - ConfigurationBoardGameChangeNumberRows
   - ConfigurationBoardGameChangeNumberColumns
+  - ConfigurationBoardGamePlayers
+  - ConfigurationBoardGameChangeNumberPlayers
+  - ConfigurationBoardGameTableNumberPlayers
+  - ConfigurationBoardGameLenghtToCheck
+  - ConfigurationBoardGameChangeNumberLenghtToCheck
+  - ConfigurationBoardGameTableNumberLenghtToCheck
   layers:
   - Default
   - TransparentFX
