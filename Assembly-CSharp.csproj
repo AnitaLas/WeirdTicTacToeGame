@@ -97,6 +97,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabCalculateScale.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTableForLenghtToCheck.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTableForSetUp.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlaySymbol.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

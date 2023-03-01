@@ -369,6 +369,7 @@
 "Assets/Scripts/CreateTable/CreateTablePrefabName.cs"
 "Assets/Scripts/Game.cs"
 "Assets/Scripts/GameConfiguration/GameConfiguration.cs"
+"Assets/Scripts/GameConfiguration/GameConfigurationTableForLenghtToCheck.cs"
 "Assets/Scripts/GameConfiguration/GameConfigurationTableForPlayers.cs"
 "Assets/Scripts/GameConfiguration/GameConfigurationTableForRowsAndColumns.cs"
 "Assets/Scripts/GameConfiguration/GameConfigurationTableForSetUp.cs"

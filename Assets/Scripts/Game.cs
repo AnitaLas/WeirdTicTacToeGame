@@ -39,6 +39,7 @@ internal class Game : MonoBehaviour
     private static int _configurationBoardGameNumberOfRows;
     private static int _configurationBoardGameNumberOfColumns;
     private static int _configurationBoardGameNumberOfPlayers;
+    private static int _configurationBoardGameNumberForLenghtToCheck;
 
     public void Awake()
     {
@@ -72,7 +73,7 @@ internal class Game : MonoBehaviour
 
     private static int lenghtToCheckMax;
     private static int lenghtToCheck;
-    private static int lenghtToCheckGivenByUser = 3; 
+    //private static int lenghtToCheckGivenByUser = 3; 
 
     private static bool isGame2D = true;
 
@@ -168,9 +169,11 @@ internal class Game : MonoBehaviour
 
         maxCubePlayNumber = numberOfRows * numberOfColumns * numberOfDepths;
 
-        lenghtToCheckMax = GameFieldsVerificationCheckerLenght.SetUpMaxLenghtToCheck(numberOfRows, numberOfColumns);
-        lenghtToCheck = GameFieldsVerificationCheckerLenght.SetUpLenghtToCheck(lenghtToCheckMax, lenghtToCheckGivenByUser);
+        // lenghtToCheckMax = GameFieldsVerificationCheckerLenght.SetUpMaxLenghtToCheck(numberOfRows, numberOfColumns);
+        //lenghtToCheck = GameFieldsVerificationCheckerLenght.SetUpLenghtToCheck(lenghtToCheckMax, lenghtToCheckGivenByUser);
 
+        _configurationBoardGameNumberForLenghtToCheck = GameConfigurationSetUpBoardGame.ConfigurationBoardGameLenghtToCheck;
+        lenghtToCheck = _configurationBoardGameNumberForLenghtToCheck - 1;
 
 
         gameBoardVerification2D = GameConfiguration.CreateEmptyTable2D(numberOfRows, numberOfColumns);
