@@ -475,6 +475,25 @@ namespace Assets.Scripts
 
         }
 
+        public static int CheckAndReturnBiggerNumber(int numberOne, int numberTwo)
+        {
+
+            if (numberTwo > numberOne)
+            {
+                return numberTwo;
+            }
+            else if (numberTwo < numberOne)
+            {
+                return numberOne;
+            }
+            else
+            {
+                // verticalLenght = horizontalLenght
+                return numberOne;
+            }
+
+        }
+
         public static string GetCubePlayPlayerSymbol(GameObject cubePlay)
         {
             var cubePlayText = cubePlay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();

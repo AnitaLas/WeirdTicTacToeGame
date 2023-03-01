@@ -43,7 +43,6 @@ namespace Assets.Scripts.GameConfiguration
 
         public static GameObject[,,] ChangeDataForTableWithNumbers(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, int start, int end, float newCoordinateY, string inactiveText )
         {
-            //float newCoordinateY = 100f;
 
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
@@ -62,8 +61,6 @@ namespace Assets.Scripts.GameConfiguration
                         CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameTableNumberForAll);
                         CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
 
-                        // if (start == cubePlayTextInt || end <= cubePlayTextInt)
-                        //if (start >= cubePlayTextInt && end >= cubePlayTextInt)
                         if (start >= cubePlayTextInt || end <= cubePlayTextInt)
                         {
                             CommonMethods.ChangeTextForCubePlay(cubePlay, inactiveText);
@@ -71,7 +68,6 @@ namespace Assets.Scripts.GameConfiguration
                         }
 
                     }
-
                 }
             }
 
@@ -143,58 +139,8 @@ namespace Assets.Scripts.GameConfiguration
 
 
 
-        // max lenght to check
-
-        public static int GetNumberFromConfiguration(string tagName)
-        {
-            GameObject[] objectsNumber = CommonMethods.GetObjectByTagName(tagName);
-            GameObject objectNumber = objectsNumber[0];
-            string numberString = CommonMethods.GetCubePlayText(objectNumber);
-            int numberInt = CommonMethods.ConvertStringToInt(numberString);
-            return numberInt;
-        }
-
-        public static int[] CreateTableWithNumberFromConfiguration(string tagNameRows, string tagNameColumns)
-        {
-            string[] tagsName = { tagNameRows, tagNameColumns};
-            int tagsNameLenght = tagsName.Length;
-
-            string tagName;
-            int[] numbers = new int[tagsNameLenght];
-
-            for (int i = 0; i < tagsNameLenght; i++)
-            {
-                tagName = tagsName[i];
-                int number = GetNumberFromConfiguration(tagName);
-                numbers[i] = number;
-            }
-
-            return numbers;
-        }
-
-        public static string GetLenghtToCheckMax(string tagNameRows, string tagNameColumns)
-        {
-            int[] numbers = CreateTableWithNumberFromConfiguration( tagNameRows, tagNameColumns);
-            int rows = numbers[0];
-            int columns = numbers[1];
-
-            int maxNumber = GameFieldsVerificationCheckerLenght.SetUpMaxLenghtToCheck(rows, columns);
-            string numberString = CommonMethods.ConverIntToString(maxNumber);
-
-            return numberString;
-
-        }
-
-        /*
-        public static int SetUpLenghtToCheckMax(string tagNameRows, string tagNameColumns, string tagNameLenghtToCheck)
-        {
-            string number = GetLenghtToCheckMax(tagNameRows, tagNameColumns);
-            GameObject[] numbersToChange = CommonMethods.GetObjectByTagName(tagNameLenghtToCheck);
-            GameObject numberToChange = numbersToChange[0];
-            CommonMethods.ChangeTextForCubePlay(numberToChange, number);
-
-        }
-        */
+       
+        
 
 
     }
