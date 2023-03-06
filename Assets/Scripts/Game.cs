@@ -245,12 +245,10 @@ internal class Game : MonoBehaviour
                     string gameObjectName = CommonMethods.GetObjectName(touch);
 
                     ///Debug.Log(" test 0 ");
-                    if (gameObjectTag == "ConfigurationBoardGameSave")
-                    {
-                        //Debug.Log(" test 1 ");
-                        // GameConfigurationChangeScence.GoToPlayersSymbolsSetUp();
-                        SceneManager.LoadScene("SceneGame");
-                    }
+                    //if (gameObjectTag == "ConfigurationBoardGameSave")
+                    //{
+                    //    SceneManager.LoadScene("SceneGame");
+                    //}
 
                     int currentPlayerNumber = currentPlayer[0];
                     GameObject cubePlay = CommonMethods.GetCubePlay(gameBoard, gameObjectName);
