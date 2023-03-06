@@ -117,10 +117,10 @@ namespace Assets.Scripts.GameConfiguration
         public static int SetUpChosenNumberForConfiguration(GameObject[,,] tableWithNumber, string gameObjectName, string tagName)
         {
             int number;
-
+            //Debug.Log(" test 2c  ");
             GameObject cubePlay = CommonMethods.GetCubePlay(tableWithNumber, gameObjectName);
             string numberString = CommonMethods.GetCubePlayText(cubePlay);
-            //Debug.Log(" 3 ");
+            //Debug.Log(" numberString = " + numberString);
 
             GameObject[] cubePlayForChange = CommonMethods.GetObjectByTagName(tagName);
             GameObject cubePlayToChange = cubePlayForChange[0];

@@ -34,6 +34,9 @@ TagManager:
   - ConfigurationBoardGameLenghtToCheck
   - ConfigurationBoardGameChangeNumberLenghtToCheck
   - ConfigurationBoardGameTableNumberLenghtToCheck
+  - ConfigurationPlayerSymbolDefaultNumber
+  - ConfigurationPlayerSymbolDefaultSymbol
+  - ConfigurationPlayerSymbolChange
   layers:
   - Default
   - TransparentFX

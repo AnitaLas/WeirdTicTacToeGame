@@ -115,6 +115,12 @@ namespace Assets.Scripts.GameConfiguration
 
             //string[] alphabet = CreateTableWithCharactersForPrefabCubePlay(numberOfRows, numberOfColumns);
             string[] numbers = CreateTableWithNumbersForPrefabCubePlay(numberOfRows, numberOfColumns);
+            /*
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Debug.Log(" i = " + numbers[i]);
+            }
+            */
 
            // string[,,] alphabet3D = CreateTableForDefaultTextWithCharacters(alphabet, numberOfDepths, numberOfRows, numberOfColumns);
             string[,,] numbers3D = CreateTableForDefaultTextWithNumbers(numbers, numberOfDepths, numberOfRows, numberOfColumns);
@@ -128,7 +134,7 @@ namespace Assets.Scripts.GameConfiguration
                         string stringNumber = numbers3D[indexDepth, indexRow, indexColumn];
                         //string stringAlphabet = alphabet3D[indexDepth, indexRow, indexColumn];
                         //string textForPrebaCubePlay = stringAlphabet + stringNumber;
-
+                        //Debug.Log("stringNumber = " + stringNumber);
                         newTable[indexDepth, indexRow, indexColumn] = stringNumber;
                     }
                 }

@@ -13,6 +13,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
+using Random = System.Random;
 
 namespace Assets.Scripts
 {
@@ -65,7 +66,7 @@ namespace Assets.Scripts
         }
 
         // even number - 2 4 6 
-        // odd number - 3 5 7 444
+        // odd number - 3 5 7
 
         public static bool IsNumberEven(int number)
         {
@@ -81,6 +82,43 @@ namespace Assets.Scripts
                 isNumberEven = false;
                 return isNumberEven;
             }
+        }
+
+        public static int ChooseRandomNumber(int maxNumber)
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(0, maxNumber);
+            return randomNumber;
+        }
+
+        public static int ConvertIntToDecimal(decimal number)
+        {
+            int result = decimal.ToInt32(number);
+            return result;
+        }
+
+        public static float ConvertDecimalToFloat(decimal number)
+        {
+            float result = decimal.ToSingle(number);
+            return result;
+        }
+
+        public static decimal RoundDown(decimal number)
+        {
+            decimal result = Math.Floor(number);
+            return result;
+        }
+
+        public static decimal RoundUp(decimal number)
+        {
+            decimal result = Math.Ceiling(number);
+            return result;
+        }
+
+        public static float GetObjectScaleX(GameObject gameObject)
+        {
+            float gameObjectScale = gameObject.transform.localScale.x;
+            return gameObjectScale;
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -128,6 +166,7 @@ namespace Assets.Scripts
         // [TextChange] - start
         public static TextMeshProUGUI GetCubePlayTextMeshProUGUI(GameObject gameObject)
         {
+            string gameObjectName = GetObjectName(gameObject);
             // game object: prefab CubePlay -> CubePlayCanvas ->
             var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);
             // game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
@@ -135,14 +174,54 @@ namespace Assets.Scripts
             return newPrefabCubePlayCanvasText;
         }
 
+        public static TextMeshProUGUI GetTextMeshProUGUIForPlayerSymbolChild(GameObject gameObject, int childNumber)
+        {
+            string gameObjectName = GetObjectName(gameObject);
+            // game object: prefab PlayerSymbol -> PlayerSymbolText -> PlayerSymbolCanvas ->
+            var newPrefabCubePlayCanvas = gameObject.transform.GetChild(childNumber).transform.GetChild(0);
+            // game object: prefab PlayerSymbol -> PlayerSymbolCanvas -> PlayerSymbolText
+            var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            return newPrefabCubePlayCanvasText;
+        }
+        /*
+        public static TextMeshProUGUI GetTextMeshProUGUIForPlayerSymbolSecondChild(GameObject gameObject)
+        {
+            string gameObjectName = GetObjectName(gameObject);
+            // 
+            var newPrefabCubePlayCanvas = gameObject.transform.GetChild(1).transform.GetChild(0);
+            //
+            var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            return newPrefabCubePlayCanvasText;
+        }
+        */
+
+        // TO FIX ?????????????????????????????????????????????????
         public static void ChangeTextForCubePlay(GameObject gameObject, string gameObjectText)
         {
-            //// game object: prefab CubePlay -> CubePlayCanvas ->
-            //var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);
-            //// game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
-            //var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-            var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
-            newPrefabCubePlayCanvasText.text = gameObjectText;
+            string gameObjectFullName = GetObjectName(gameObject);
+            //Debug.Log("gameObjectName = " + gameObjectName);
+
+            string gameObjectName = gameObjectFullName.Substring(0, 8);
+
+            TextMeshProUGUI newPrefabGameObjectText;
+
+            if (gameObjectName.Equals("CubePlay"))
+            {
+                newPrefabGameObjectText = GetCubePlayTextMeshProUGUI(gameObject);
+                newPrefabGameObjectText.text = gameObjectText;
+            }
+
+
+            if (gameObjectName.Equals("PlayerSymbol"))
+            {
+                int childNumber = 0;
+                newPrefabGameObjectText = GetTextMeshProUGUIForPlayerSymbolChild(gameObject, childNumber);
+                newPrefabGameObjectText.text = gameObjectText;
+            }
+
+            //var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
+            //Debug.Log("newPrefabCubePlayCanvasText = " + newPrefabCubePlayCanvasText);
+            //newPrefabCubePlayCanvasText.text = gameObjectText;
         }
 
         public static string GetCubePlayText(GameObject gameObject)
@@ -388,7 +467,7 @@ namespace Assets.Scripts
                 gameObject.transform.position = new Vector3(x, y + newCoordinateY, z);
             }
         }
-        /*
+        
         public static void ChangeYForGameObject(GameObject gameObject, float newCoordinateY)
         {
             bool isGame2D = true;
@@ -403,7 +482,7 @@ namespace Assets.Scripts
                 gameObject.transform.position = new Vector3(x, newCoordinateY, z);
             }
         }
-        */
+        
         public static int[] CreateTableWithGivenLengthAndGivenValue(int tableLenght, int value)
         {
             int[] table = new int[tableLenght];

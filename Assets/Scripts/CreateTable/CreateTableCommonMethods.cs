@@ -57,7 +57,6 @@ namespace Assets.Scripts.CreateTable
             // default divide = 2 to find half of length, point [0,0] in Unity
             int divide = 2;
             double doubleNumber = PositionMinOrMaxXYZForCubePlayCalculate(lengthForAllPrefabCubePlayInOneLine, divide, round);
-            // float floatNumber = CommonMethods.ConvertDoubleToFloat(doubleNumber);
             float floatNumber = CommonMethods.RoundAndConvertDoubleToFloat(doubleNumber, 6);
             return floatNumber;
         }

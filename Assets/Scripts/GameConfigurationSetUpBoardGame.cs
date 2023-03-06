@@ -14,7 +14,7 @@ namespace Assets.Scripts.GameConfiguration
         public static int ConfigurationBoardGameNumberOfColumns { get; set; }
 
         public static int ConfigurationBoardGameLenghtToCheck { get; set; }
-        public static int ConfigurationBoardGameLenghtToCheckMax { get; set; }
+       // public static int ConfigurationBoardGameLenghtToCheckMax { get; set; }
 
         public static int numberOfPlayers = 2;
         public static int numberOfRows = 3;
@@ -40,7 +40,7 @@ namespace Assets.Scripts.GameConfiguration
 
         public Material[] prefabCubePlayDefaultColour;
 
-        Dictionary<int, string> configurationDictionaryTag = GameDictionariesCommon.DictionaryConfiguration();
+        Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesCommon.DictionaryTagConfigurationBoardGame();
 
         private string _tagConfigurationBoardGameButtonSave;
         private string _tagConfigurationBoardGameButtonBack;
@@ -59,6 +59,9 @@ namespace Assets.Scripts.GameConfiguration
         private string _tagConfigurationBoardGameTableNumberLenghtToCheck;
         // private string numberOfRows2;
 
+        Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
+
+        private string _sceneConfigurationPlayersSymbols;
 
         private static bool isGame2D = true;
 
@@ -79,29 +82,26 @@ namespace Assets.Scripts.GameConfiguration
 
         void Start()
         {
-            _tagConfigurationBoardGameButtonSave = configurationDictionaryTag[1];
-            _tagConfigurationBoardGameButtonBack = configurationDictionaryTag[2];
-            _tagConfigurationBoardGameTableNumberRows = configurationDictionaryTag[3];
-            _tagConfigurationBoardGameTableNumberColumns = configurationDictionaryTag[4];
-            _tagConfigurationBoardGameRows = configurationDictionaryTag[5];
-            _tagConfigurationBoardGameColumns = configurationDictionaryTag[6];
-            _tagConfigurationBoardGameChangeNumberRows = configurationDictionaryTag[7];
-            _tagConfigurationBoardGameChangeNumberColumns = configurationDictionaryTag[8];
+            _tagConfigurationBoardGameButtonSave = configurationBoardGameDictionaryTag[1];
+            _tagConfigurationBoardGameButtonBack = configurationBoardGameDictionaryTag[2];
+            _tagConfigurationBoardGameTableNumberRows = configurationBoardGameDictionaryTag[3];
+            _tagConfigurationBoardGameTableNumberColumns = configurationBoardGameDictionaryTag[4];
+            _tagConfigurationBoardGameRows = configurationBoardGameDictionaryTag[5];
+            _tagConfigurationBoardGameColumns = configurationBoardGameDictionaryTag[6];
+            _tagConfigurationBoardGameChangeNumberRows = configurationBoardGameDictionaryTag[7];
+            _tagConfigurationBoardGameChangeNumberColumns = configurationBoardGameDictionaryTag[8];
 
-            _tagConfigurationBoardGamePlayers = configurationDictionaryTag[9];
-            _tagConfigurationBoardGameChangeNumberPlayers = configurationDictionaryTag[10];
-            _tagConfigurationBoardGameTableNumberPlayers = configurationDictionaryTag[11];
+            _tagConfigurationBoardGamePlayers = configurationBoardGameDictionaryTag[9];
+            _tagConfigurationBoardGameChangeNumberPlayers = configurationBoardGameDictionaryTag[10];
+            _tagConfigurationBoardGameTableNumberPlayers = configurationBoardGameDictionaryTag[11];
 
-            _tagConfigurationBoardGameLenghtToCheck = configurationDictionaryTag[12];
-            _tagConfigurationBoardGameChangeNumberLenghtToCheck = configurationDictionaryTag[13];
-            _tagConfigurationBoardGameTableNumberLenghtToCheck = configurationDictionaryTag[14];
+            _tagConfigurationBoardGameLenghtToCheck = configurationBoardGameDictionaryTag[12];
+            _tagConfigurationBoardGameChangeNumberLenghtToCheck = configurationBoardGameDictionaryTag[13];
+            _tagConfigurationBoardGameTableNumberLenghtToCheck = configurationBoardGameDictionaryTag[14];
 
-            _tagConfigurationBoardGameInactiveField = configurationDictionaryTag[20];
+            _tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
 
-            
-            //tagConfigurationBoardGame[0] = _tagConfigurationBoardGameButtonSave;
-            //tagConfigurationBoardGame[1] = _tagConfigurationBoardGameButtonBack;
-            //tagConfigurationBoardGame[2] = _tagConfigurationBoardGameTableNumberRows;
+            _sceneConfigurationPlayersSymbols = scenceDictionary[2];
 
             // configuration player
             tableWithNumberForPlayersBase = GameConfigurationTableForSetUp.CreateTableWithNumbers(prefabCubePlayForTableNumber, numberOfDepths, numberOfRowsForTableNumber, numberOfColumnsForTableNumber, prefabCubePlayDefaultColour, isGame2D);
@@ -158,7 +158,7 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberPlayers)
                         {
-
+                            //Debug.Log(" test 2a  ");
                             numberOfPlayers = GameConfiguration.SetUpChosenNumberForConfiguration(tableWithNumberForPlayers, gameObjectName, _tagConfigurationBoardGameChangeNumberPlayers);
 
                             GameConfiguration.HideTableWithNumber(tableWithNumberForPlayers);
@@ -273,8 +273,8 @@ namespace Assets.Scripts.GameConfiguration
                             ConfigurationBoardGameNumberOfColumns = numberOfColumns;
                             ConfigurationBoardGameNumberOfPlayers = numberOfPlayers;
                             ConfigurationBoardGameLenghtToCheck = lenghtToCheck;
-                            ConfigurationBoardGameLenghtToCheckMax = lenghtToCheckMax;
-                            SceneManager.LoadScene("SceneGame");
+                            //ConfigurationBoardGameLenghtToCheckMax = lenghtToCheckMax;
+                            SceneManager.LoadScene(_sceneConfigurationPlayersSymbols);
 
                            
 

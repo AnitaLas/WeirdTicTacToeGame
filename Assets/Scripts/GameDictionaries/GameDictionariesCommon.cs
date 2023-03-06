@@ -62,30 +62,54 @@ namespace Assets.Scripts.GameDictionaries
         }
         
 
-        public static Dictionary<int, string> DictionaryConfiguration()
+        public static Dictionary<int, string> DictionaryTagConfigurationBoardGame()
         {
-            Dictionary<int, string> configurationDictionaryTag = new Dictionary<int, string>();
+            Dictionary<int, string> configurationBoardGameDictionaryTag = new Dictionary<int, string>();
 
-            configurationDictionaryTag.Add(1, "ConfigurationBoardGameButtonSave");
-            configurationDictionaryTag.Add(2, "ConfigurationBoardGameButtonBack");
-            configurationDictionaryTag.Add(3, "ConfigurationBoardGameTableNumberRows");
-            configurationDictionaryTag.Add(4, "ConfigurationBoardGameTableNumberColumns");
-            configurationDictionaryTag.Add(5, "ConfigurationBoardGameRows");
-            configurationDictionaryTag.Add(6, "ConfigurationBoardGameColumns");
-            configurationDictionaryTag.Add(7, "ConfigurationBoardGameChangeNumberRows");
-            configurationDictionaryTag.Add(8, "ConfigurationBoardGameChangeNumberColumns");
-            configurationDictionaryTag.Add(9, "ConfigurationBoardGamePlayers");
-            configurationDictionaryTag.Add(10, "ConfigurationBoardGameChangeNumberPlayers");
-            configurationDictionaryTag.Add(11, "ConfigurationBoardGameTableNumberPlayers");
-            configurationDictionaryTag.Add(12, "ConfigurationBoardGameLenghtToCheck");
-            configurationDictionaryTag.Add(13, "ConfigurationBoardGameChangeNumberLenghtToCheck");
-            configurationDictionaryTag.Add(14, "ConfigurationBoardGameTableNumberLenghtToCheck");
-            configurationDictionaryTag.Add(20, "ConfigurationBoardGameInactiveField");
+            configurationBoardGameDictionaryTag.Add(1, "ConfigurationBoardGameButtonSave");
+            configurationBoardGameDictionaryTag.Add(2, "ConfigurationBoardGameButtonBack");
+            configurationBoardGameDictionaryTag.Add(3, "ConfigurationBoardGameTableNumberRows");
+            configurationBoardGameDictionaryTag.Add(4, "ConfigurationBoardGameTableNumberColumns");
+            configurationBoardGameDictionaryTag.Add(5, "ConfigurationBoardGameRows");
+            configurationBoardGameDictionaryTag.Add(6, "ConfigurationBoardGameColumns");
+            configurationBoardGameDictionaryTag.Add(7, "ConfigurationBoardGameChangeNumberRows");
+            configurationBoardGameDictionaryTag.Add(8, "ConfigurationBoardGameChangeNumberColumns");
+            configurationBoardGameDictionaryTag.Add(9, "ConfigurationBoardGamePlayers");
+            configurationBoardGameDictionaryTag.Add(10, "ConfigurationBoardGameChangeNumberPlayers");
+            configurationBoardGameDictionaryTag.Add(11, "ConfigurationBoardGameTableNumberPlayers");
+            configurationBoardGameDictionaryTag.Add(12, "ConfigurationBoardGameLenghtToCheck");
+            configurationBoardGameDictionaryTag.Add(13, "ConfigurationBoardGameChangeNumberLenghtToCheck");
+            configurationBoardGameDictionaryTag.Add(14, "ConfigurationBoardGameTableNumberLenghtToCheck");
+            configurationBoardGameDictionaryTag.Add(20, "ConfigurationBoardGameInactiveField");
+
+            return configurationBoardGameDictionaryTag;
+        }
 
 
-            return configurationDictionaryTag;
+        public static Dictionary<int, string> DictionaryTagConfigurationPlayersSymbols()
+        {
+            Dictionary<int, string> configurationPlayersSymbolsDictionaryTag = new Dictionary<int, string>();
+
+            configurationPlayersSymbolsDictionaryTag.Add(1, "ConfigurationPlayerSymbolDefaultNumber");
+            configurationPlayersSymbolsDictionaryTag.Add(2, "ConfigurationPlayerSymbolDefaultSymbol");
+            configurationPlayersSymbolsDictionaryTag.Add(3, "ConfigurationPlayerSymbolChange");
+
+            return configurationPlayersSymbolsDictionaryTag;
+        }
+
+        public static Dictionary<int, string> DictionaryScence()
+        {
+            Dictionary<int, string> scenceDictionary = new Dictionary<int, string>();
+
+            scenceDictionary.Add(1, "SceneGame");
+            scenceDictionary.Add(2, "SceneConfigurationPlayersSymbols");
+            scenceDictionary.Add(3, "SceneConfigurationBoardGame");
+
+            return scenceDictionary;
 
         }
+
+
 
         public static Dictionary<int, Tuple<float, float, float, float>> DictionaryColor()
         {
@@ -98,14 +122,10 @@ namespace Assets.Scripts.GameDictionaries
             // test colour for winner cubePlay - when game is over
             var colorValue2 = Tuple.Create(3f, 0f, 1f, 1f);
 
-
             colorDictionary.Add(1, colorValue1);
             colorDictionary.Add(2, colorValue2);
 
-
             return colorDictionary;
-
-
         }
         
 
