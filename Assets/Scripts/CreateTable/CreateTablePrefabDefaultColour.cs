@@ -23,7 +23,7 @@ namespace Assets.Scripts
         public static Material NewColourForPrefabCubePlay(Material[] cubePlayColour, int indexForNewColour)
         {
             Material cubeColour = cubePlayColour[indexForNewColour];
-            return cubeColour;         
+            return cubeColour;
         }
 
         /// <summary>
@@ -35,7 +35,9 @@ namespace Assets.Scripts
         /// <param name="indexForNewColour"></param>
         public static void ChangeColourForPrefabCubePlay(GameObject prefab, Material[] cubePlayColour, int indexForNewColour)
         {
+            //Debug.Log(" test 1 ");
             Material cubeColour = NewColourForPrefabCubePlay(cubePlayColour, indexForNewColour);
+           //Debug.Log(" test 2 ");
             //prefab.GetComponent<Renderer>().material = cubeColour;
             CommonMethods.ChangeColourForGameObject(prefab, cubeColour);
         }

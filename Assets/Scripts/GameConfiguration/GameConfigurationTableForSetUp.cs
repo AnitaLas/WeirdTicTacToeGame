@@ -63,7 +63,7 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (start >= cubePlayTextInt || end <= cubePlayTextInt)
                         {
-                            CommonMethods.ChangeTextForCubePlay(cubePlay, inactiveText);
+                             CommonMethods.ChangeTextForCubePlay(cubePlay, inactiveText);
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveField);
                         }
 

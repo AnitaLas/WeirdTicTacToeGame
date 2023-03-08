@@ -93,6 +93,8 @@ namespace Assets.Scripts.GameDictionaries
             configurationPlayersSymbolsDictionaryTag.Add(1, "ConfigurationPlayerSymbolDefaultNumber");
             configurationPlayersSymbolsDictionaryTag.Add(2, "ConfigurationPlayerSymbolDefaultSymbol");
             configurationPlayersSymbolsDictionaryTag.Add(3, "ConfigurationPlayerSymbolChange");
+            configurationPlayersSymbolsDictionaryTag.Add(4, "ConfigurationPlayerSymbolChooseSymbol");
+            configurationPlayersSymbolsDictionaryTag.Add(5, "ConfigurationPlayerSymbolInactiveField");
 
             return configurationPlayersSymbolsDictionaryTag;
         }

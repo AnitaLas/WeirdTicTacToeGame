@@ -37,6 +37,8 @@ TagManager:
   - ConfigurationPlayerSymbolDefaultNumber
   - ConfigurationPlayerSymbolDefaultSymbol
   - ConfigurationPlayerSymbolChange
+  - ConfigurationPlayerSymbolChooseSymbol
+  - ConfigurationPlayerSymbolInactiveField
   layers:
   - Default
   - TransparentFX

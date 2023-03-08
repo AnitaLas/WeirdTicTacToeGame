@@ -195,6 +195,31 @@ namespace Assets.Scripts
         }
         */
 
+
+
+
+
+
+
+
+
+
+
+
+        public static void ChangeTextForFirstChild(GameObject gameObject, string gameObjectText)
+        {
+            TextMeshProUGUI newPrefabGameObjectText;
+            newPrefabGameObjectText = GetCubePlayTextMeshProUGUI(gameObject);
+            newPrefabGameObjectText.text = gameObjectText;
+        }
+
+        public static void ChangeTextForSecondChild(GameObject gameObject, string gameObjectText)
+        {
+            TextMeshProUGUI newPrefabGameObjectText;
+            int childNumber = 0;
+            newPrefabGameObjectText = GetTextMeshProUGUIForPlayerSymbolChild(gameObject, childNumber);
+            newPrefabGameObjectText.text = gameObjectText;
+        }
         // TO FIX ?????????????????????????????????????????????????
         public static void ChangeTextForCubePlay(GameObject gameObject, string gameObjectText)
         {
@@ -203,20 +228,27 @@ namespace Assets.Scripts
 
             string gameObjectName = gameObjectFullName.Substring(0, 8);
 
-            TextMeshProUGUI newPrefabGameObjectText;
+            //TextMeshProUGUI newPrefabGameObjectText;
 
             if (gameObjectName.Equals("CubePlay"))
             {
-                newPrefabGameObjectText = GetCubePlayTextMeshProUGUI(gameObject);
-                newPrefabGameObjectText.text = gameObjectText;
+                //newPrefabGameObjectText = GetCubePlayTextMeshProUGUI(gameObject);
+                //newPrefabGameObjectText.text = gameObjectText;
+
+
+                ChangeTextForFirstChild(gameObject, gameObjectText);
+
+
             }
 
 
             if (gameObjectName.Equals("PlayerSymbol"))
             {
-                int childNumber = 0;
-                newPrefabGameObjectText = GetTextMeshProUGUIForPlayerSymbolChild(gameObject, childNumber);
-                newPrefabGameObjectText.text = gameObjectText;
+                //int childNumber = 0;
+                //newPrefabGameObjectText = GetTextMeshProUGUIForPlayerSymbolChild(gameObject, childNumber);
+                //newPrefabGameObjectText.text = gameObjectText;
+
+                ChangeTextForSecondChild( gameObject, gameObjectText);
             }
 
             //var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);

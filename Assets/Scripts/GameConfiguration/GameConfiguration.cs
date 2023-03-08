@@ -124,7 +124,8 @@ namespace Assets.Scripts.GameConfiguration
 
             GameObject[] cubePlayForChange = CommonMethods.GetObjectByTagName(tagName);
             GameObject cubePlayToChange = cubePlayForChange[0];
-            CommonMethods.ChangeTextForCubePlay(cubePlayToChange, numberString);
+            //CommonMethods.ChangeTextForCubePlay(cubePlayToChange, numberString);
+            CommonMethods.ChangeTextForFirstChild(cubePlayToChange, numberString);
 
             number = CommonMethods.ConvertStringToInt(numberString);
 
