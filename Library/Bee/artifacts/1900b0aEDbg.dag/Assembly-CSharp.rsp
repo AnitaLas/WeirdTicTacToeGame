@@ -376,6 +376,7 @@
 "Assets/Scripts/GameConfiguration/GameConfigurationTableForSetUp.cs"
 "Assets/Scripts/GameConfigurationPlayerSymbol/GameConfigurationPlayerSymbolMainMethods.cs"
 "Assets/Scripts/GameConfigurationPlayerSymbol/GameConfigurationPlayerSymbolTableWithPlayerNumber.cs"
+"Assets/Scripts/GameConfigurationPlayerSymbol/GameConfigurationPlayerSymbolTableWithSymbols.cs"
 "Assets/Scripts/GameConfigurationSetUpBoardGame.cs"
 "Assets/Scripts/GameConfigurationSetUpPlayersSymbols.cs"
 "Assets/Scripts/GameDictionaries/GameDictionariesCommon.cs"

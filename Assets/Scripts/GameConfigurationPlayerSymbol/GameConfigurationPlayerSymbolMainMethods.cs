@@ -17,17 +17,25 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             Dictionary<int, string> dictionaryTag = GameDictionariesCommon.DictionaryTagConfigurationPlayersSymbols();
 
             string tagNameFirstChild = dictionaryTag[1];
-            //string tagNameSecondChild = dictionaryTag[2];
+            Debug.Log("1 tagNameFirstChild = " + tagNameFirstChild);
+
+            string tagNameSecondChild = dictionaryTag[2];
+            Debug.Log("2 tagNameSecondChild = " + tagNameSecondChild);
+
             if (gameObjectTagNameTouched.Equals(tagNameFirstChild))
             {
-                gameObject.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
+                Debug.Log("2 child");
+                gameObject.transform.GetChild(0).transform.tag = gameObjectTagNameToChange;
             } 
-            else
+            else if (gameObjectTagNameTouched.Equals(tagNameSecondChild))
             {
+                Debug.Log("1 child");
                 gameObject.transform.tag = gameObjectTagNameToChange;
             }    
            
         }
+
+
 
 
     }

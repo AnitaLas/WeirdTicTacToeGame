@@ -20,7 +20,8 @@ namespace Assets.Scripts.PlayGame
             //string playerSymbol = playersSymbols[indexForPlayerSymbol];
 
             GameObject playerSymbolMove = gameObjectForPlayerSymbol[0];
-            CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
+            //CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
+            CommonMethods.ChangeTextForFirstChild(playerSymbolMove, playerSymbol);
         }
 
         //public static void SetUpPlayerSymbolCurrent(string playerSymbol, string tagPlayerSymbolCurrent)
@@ -116,7 +117,8 @@ namespace Assets.Scripts.PlayGame
             //string playerSymbol = playersSymbols[indexForPlayerSymbol];
 
             GameObject playerSymbolMove = gameObjectForPlayerSymbol[0];
-            CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
+           CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
+            //CommonMethods.ChangeTextForSecondChild(playerSymbolMove, playerSymbol);
         }
         /*
         public static void ChangePlayerSymbolCurrent(string playerSymbol, string tagPlayerSymbolDictionary)

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 181315035805942974}
   m_Layer: 0
   m_Name: PlayerSymbol
-  m_TagString: ConfigurationPlayerSymbolDefaultNumber
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 536923865370535750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7960884821579760975}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
+  - {fileID: 2100000, guid: 92154e8fc314d4446ba5f033d1e2ee37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

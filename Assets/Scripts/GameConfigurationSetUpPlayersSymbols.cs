@@ -15,6 +15,8 @@ namespace Assets.Scripts
     {
 
         public  GameObject prefabSymbolPlayer;
+        public GameObject prefabCubePlay;
+
         public Material[] prefabSymbolPlayerMaterial;
 
         private bool isGame2D = true;
@@ -24,12 +26,20 @@ namespace Assets.Scripts
         private string _tagConfiguratioPlayerSymbolDefaultNumber;
         private string _tagConfigurationPlayerSymbolDefaultSymbol;
         private string _tagConfigurationPlayerSymbolChange;
+        private string _tagConfigurationPlayerSymbolChooseSymbol;
+        private string _tagConfigurationPlayerSymbolInactiveField;
 
         private int numberOfDepths = 1;
         private int numberOfColumns = 1;
         private int numberOfRows = 7;
 
-        GameObject[,,] tableWithPlayers;
+        private int numberOfDepthsForTableWithSymbols = 1;
+        private int numberOfColumnsForTableSymbols = 4;
+        //private int numberOfRowsForTableWithSymbol = 6;
+        private int numberOfRowsForTableWithSymbols = 7;
+
+        GameObject[,,] tableWithPlayersAndSymbolsBase;
+        GameObject[,,] tableWithSymbolsBase;
 
 
         void Start()
@@ -38,11 +48,21 @@ namespace Assets.Scripts
             _tagConfiguratioPlayerSymbolDefaultNumber = configurationPlayersSymbolsDictionaryTag[1];
             _tagConfigurationPlayerSymbolDefaultSymbol = configurationPlayersSymbolsDictionaryTag[2];
             _tagConfigurationPlayerSymbolChange = configurationPlayersSymbolsDictionaryTag[3];
+            _tagConfigurationPlayerSymbolChooseSymbol = configurationPlayersSymbolsDictionaryTag[4];
+            _tagConfigurationPlayerSymbolInactiveField = configurationPlayersSymbolsDictionaryTag[5];
 
 
-        //tableWithPlayers =
-        tableWithPlayers = GameConfigurationPlayerSymbolTableWithPlayerNumber.CreateTableWithPlayers(prefabSymbolPlayer, numberOfDepths, numberOfRows, numberOfColumns, prefabSymbolPlayerMaterial, isGame2D);
-        GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayersSymbol(tableWithPlayers);
+            //tableWithPlayers =
+            tableWithPlayersAndSymbolsBase = GameConfigurationPlayerSymbolTableWithPlayerNumber.CreateTableWithPlayers(prefabSymbolPlayer, numberOfDepths, numberOfRows, numberOfColumns, prefabSymbolPlayerMaterial, isGame2D);
+            GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayersAndSymbols(tableWithPlayersAndSymbolsBase);
+
+            tableWithSymbolsBase = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithSymbols(prefabCubePlay, numberOfDepthsForTableWithSymbols, numberOfRowsForTableWithSymbols, numberOfColumnsForTableSymbols, prefabSymbolPlayerMaterial, isGame2D);
+            GameConfigurationPlayerSymbolTableWithSymbols.ChangeDataForTableWithSymbols(tableWithSymbolsBase, _tagConfigurationPlayerSymbolChooseSymbol, _tagConfigurationPlayerSymbolInactiveField);
+
+
+
+
+
 
         }
 

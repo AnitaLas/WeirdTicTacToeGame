@@ -143,8 +143,10 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         {
            
             float scaleDevidedByTwo = scale / 2;
+            float scaleDevidedByFour = scale / 4;
             float yForFirstPrefabPlayerSymbol;
             int playersNumberDevidedByTwo = playersNumber / 2;
+            
 
             bool isPlayersNumberEven = CommonMethods.IsNumberEven(playersNumber);
 
@@ -152,9 +154,9 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             {
                 decimal playersNumberDecimal = CommonMethods.ConvertIntToDecimal(playersNumberDevidedByTwo);
                 decimal playersNumberRoundUp = CommonMethods.RoundUp(playersNumberDecimal);
-                float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);             
+                float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);
 
-                yForFirstPrefabPlayerSymbol = -playersNumberFloat - scaleDevidedByTwo;
+                yForFirstPrefabPlayerSymbol = -playersNumberFloat;// - scaleDevidedByTwo;
                // Debug.Log("playersNumberFloat = " + playersNumberFloat);
                 //Debug.Log("scale = " + scale);
 
@@ -164,6 +166,15 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             else
             {
                 //2468
+                decimal playersNumberDecimal = CommonMethods.ConvertIntToDecimal(playersNumberDevidedByTwo);
+                decimal playersNumberRoundUp = CommonMethods.RoundUp(playersNumberDecimal);
+                float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);
+
+                yForFirstPrefabPlayerSymbol = -playersNumberFloat; // - scaleDevidedByTwo + scaleDevidedByFour;
+                // Debug.Log("playersNumberFloat = " + playersNumberFloat);
+                //Debug.Log("scale = " + scale);
+
+                return yForFirstPrefabPlayerSymbol;
             }
 
             return 0;
@@ -196,8 +207,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         }
 
 
-        //public static GameObject[,,] ChangeDataForTableWithPlayersSymbol(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, int start, int end, float newCoordinateY, string inactiveText)
-        public static GameObject[,,] ChangeDataForTableWithPlayersSymbol(GameObject[,,] tableWtithNumber)
+        public static GameObject[,,] ChangeDataForTableWithPlayersAndSymbols(GameObject[,,] tableWtithNumber)
         {
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
@@ -206,7 +216,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
             GameObject prefabPlayerSymbol = tableWtithNumber[0, 0, 0];
             string[] defaultPlayersSymbols = CreateGameBoardMethods.CreateTableWithCharactersByGivenString();
-            float[]tableWithNewCordinateForY = GetTableWithNewYForPrefabPlayerSymbol(prefabPlayerSymbol, maxIndexRow);
+            float[] tableWithNewCordinateForY = GetTableWithNewYForPrefabPlayerSymbol(prefabPlayerSymbol, maxIndexRow);
 
             float yForFirstPrefabPlayerSymbol;
 
@@ -225,55 +235,18 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                 {
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
-                       // Debug.Log("indexRow = " + indexRow);
                         GameObject playerSymbol = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        //yForFirstPrefabPlayerSymbol = SetUpFirstPositionForPrefabPlayerSymbol(playerSymbol, maxIndexRow);
-                        //Debug.Log("yForFirstPrefabPlayerSymbol = " + yForFirstPrefabPlayerSymbol);
 
                         playerNumber = maxIndexRow - indexRow;
                         firstChildDefaultText = $"PLAYER {playerNumber}";
                         ChangePlayerSymbolForChildText(playerSymbol, firstChildText, firstChildDefaultText);
-                        //TextMeshProUGUI test1 = CommonMethods.GetTextMeshProUGUIForPlayerSymbolSecondChild(cubePlay);
-                        //Debug.Log("test1 = " + test1);
-                        //test1.text = "?";
+
                         defaultSymbolNumber = maxIndexRow - indexRow - 1;
                         secondChildDefaultText = defaultPlayersSymbols[defaultSymbolNumber];
-                        //defaulSymbolIndex = ChooseRandomPlayerSymbol(defaultPlayersSymbols);
-
-                       // secondChildDefaultText = defaultPlayersSymbols[defaulSymbolIndex];
-
-                        
-
-
                         ChangePlayerSymbolForChildText(playerSymbol, secondChildSymbol, secondChildDefaultText);
-
-                        //CommonMethods.SetUpNewYForGameObject(playerSymbol, 1);
-
-                        //string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
-                        //int cubePlayTextInt = CommonMethods.ConvertStringToInt(cubePlayText);
-
-                        //CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameTableNumberForAll);
-                        //CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-
-                        //if (start >= cubePlayTextInt || end <= cubePlayTextInt)
-                        //{
-                        //    CommonMethods.ChangeTextForCubePlay(cubePlay, inactiveText);
-                        //    CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveField);
-                        //}
-                        // even 1 3 5 
-                        //if (isRowNumberEven = true)
-                        //{
-                        //    if (true)
-                        //    {
-                        //        CommonMethods.ChangeYForGameObject(playerSymbol, 0.5f);
-                        //    }
-
-
-                        //}
 
                         yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[indexRow];
                         CommonMethods.ChangeYForGameObject(playerSymbol , yForFirstPrefabPlayerSymbol);
-
 
                     }
                 }
@@ -282,8 +255,5 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             return tableWtithNumber;
 
         }
-
-
-
     }
 }
