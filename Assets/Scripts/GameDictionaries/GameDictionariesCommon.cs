@@ -108,7 +108,6 @@ namespace Assets.Scripts.GameDictionaries
             scenceDictionary.Add(3, "SceneConfigurationBoardGame");
 
             return scenceDictionary;
-
         }
 
 

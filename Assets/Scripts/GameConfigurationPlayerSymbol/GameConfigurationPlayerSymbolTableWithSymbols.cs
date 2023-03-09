@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts.GameConfigurationPlayerSymbol
@@ -85,14 +86,17 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             return newTable;
         }
 
-        public static GameObject[,,] ChangeDataForTableWithSymbols(GameObject[,,] tableWtithNumber, string tagConfigurationPlayerSymbolChooseSymbol, string tagConfigurationBoardGameInactiveFieldt)
-        {
-            Debug.Log(" test 1 ");
-            int maxIndexDepth = 1;
-            int maxIndexColumn = tableWtithNumber.GetLength(2);
-            int maxIndexRow = tableWtithNumber.GetLength(1);
 
-            string inactiveField = "-";
+
+        public static string[] CreateTableWithPlayersChosenSymbols(GameObject[,,] tableWithPlayersAndSymbols)
+        {
+            //Debug.Log(" test 1 ");
+            
+            int maxIndexDepth = 1;
+            int maxIndexColumn = tableWithPlayersAndSymbols.GetLength(2);
+            int maxIndexRow = tableWithPlayersAndSymbols.GetLength(1);
+
+            string[] tableWitPlayersChosenSymbols = new string[maxIndexRow];
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
@@ -100,30 +104,81 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                 {
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
-                        GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
+
+                        GameObject chosenPlayerSymbol = tableWithPlayersAndSymbols[indexDepth, indexRow, indexColumn];
+                        string chosenPlayerSymbolText = CommonMethods.GetTextForPlayerSymbolChild(chosenPlayerSymbol, 1);
+                        
+
+                        tableWitPlayersChosenSymbols[indexRow] = chosenPlayerSymbolText;
+                       // Debug.Log($"tableWitPlayersChosenSymbols[{indexRow}] = " + tableWitPlayersChosenSymbols[indexRow]);
+
+                    }
+                }
+            }
+
+            return tableWitPlayersChosenSymbols;
+
+        }
+        public static GameObject[,,] ChangeDataForTableWithSymbols(GameObject[,,] tableWithSymbolsBase, string[] tableWitPlayersChosenSymbols, string tagConfigurationPlayerSymbolChooseSymbol, string tagConfigurationBoardGameInactiveFieldt)
+        {
+            Debug.Log(" test 1 ");
+            int maxIndexDepth = 1;
+            int maxIndexColumn = tableWithSymbolsBase.GetLength(2);
+            int maxIndexRow = tableWithSymbolsBase.GetLength(1);
+
+            string inactiveField = "-";
+            string chosenPlayerSymbol;
+
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay = tableWithSymbolsBase[indexDepth, indexRow, indexColumn];
                         string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
-                        Debug.Log("cubePlayText = " + cubePlayText);
+                        //Debug.Log(" cubePlayText = " + cubePlayText);
+
+                        //chosenPlayerSymbol = tableWitPlayersChosenSymbols[indexRow];
 
                         if (!cubePlayText.Equals(inactiveField))
                         {
                             Debug.Log(" test 2 ");
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationPlayerSymbolChooseSymbol);
-                        } 
+                        }
                         else
                         {
                             Debug.Log(" test 3 ");
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
                         }
 
-                       
-                       
+                        for (int i = 0; i < tableWitPlayersChosenSymbols.Length; i++)
+                        {
+                            chosenPlayerSymbol = tableWitPlayersChosenSymbols[i];
+                            //Debug.Log("cubePlayText = " + cubePlayText + "  =?  " + chosenPlayerSymbol + " chosenPlayerSymbol");
+
+                            if (cubePlayText.Equals(chosenPlayerSymbol))
+                            {
+                                //Debug.Log(" TEST 1  =? -----------------------------");
+                                Debug.Log("cubePlayText = " + cubePlayText + "  =?  " + chosenPlayerSymbol + " chosenPlayerSymbol");
+                                CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
+                                //Debug.Log(" TEST 2  =? -----------------------------");
+                            }
+                        }
+
+
+
+
+
+
 
 
                     }
                 }
             }
 
-            return tableWtithNumber;
+            return tableWithSymbolsBase;
 
         }
 
