@@ -39,8 +39,10 @@ namespace Assets.Scripts
         private int numberOfRowsForTableWithSymbols = 7;
 
         GameObject[,,] tableWithPlayersAndSymbolsBase;
+        GameObject[,,] tableWithPlayersAndSymbols;
         GameObject[,,] tableWithSymbolsBase;
-
+        GameObject[,,] tableWitSymbols;
+        string[] tableWitPlayersChosenSymbols;
 
         void Start()
         {
@@ -54,11 +56,12 @@ namespace Assets.Scripts
 
             //tableWithPlayers =
             tableWithPlayersAndSymbolsBase = GameConfigurationPlayerSymbolTableWithPlayerNumber.CreateTableWithPlayers(prefabSymbolPlayer, numberOfDepths, numberOfRows, numberOfColumns, prefabSymbolPlayerMaterial, isGame2D);
-            GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayersAndSymbols(tableWithPlayersAndSymbolsBase);
+            tableWithPlayersAndSymbols = GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayersAndSymbols(tableWithPlayersAndSymbolsBase);
+
+            tableWitPlayersChosenSymbols = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithPlayersChosenSymbols(tableWithPlayersAndSymbols);
 
             tableWithSymbolsBase = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithSymbols(prefabCubePlay, numberOfDepthsForTableWithSymbols, numberOfRowsForTableWithSymbols, numberOfColumnsForTableSymbols, prefabSymbolPlayerMaterial, isGame2D);
-            GameConfigurationPlayerSymbolTableWithSymbols.ChangeDataForTableWithSymbols(tableWithSymbolsBase, _tagConfigurationPlayerSymbolChooseSymbol, _tagConfigurationPlayerSymbolInactiveField);
-
+            tableWitSymbols = GameConfigurationPlayerSymbolTableWithSymbols.ChangeDataForTableWithSymbols(tableWithSymbolsBase, tableWitPlayersChosenSymbols, _tagConfigurationPlayerSymbolChooseSymbol, _tagConfigurationPlayerSymbolInactiveField);
 
 
 

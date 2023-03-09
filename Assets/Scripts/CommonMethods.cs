@@ -266,6 +266,15 @@ namespace Assets.Scripts
             return text;
         }
 
+        public static string GetTextForPlayerSymbolChild(GameObject gameObject, int childNumber)
+        {
+            //string gameObjectName = GetObjectName(gameObject);
+            // game object: prefab PlayerSymbol -> PlayerSymbolText -> PlayerSymbolCanvas ->
+            var newPrefabPlayerSymbolCanvas = gameObject.transform.GetChild(childNumber).transform.GetChild(0);
+            // game object: prefab PlayerSymbol -> PlayerSymbolCanvas -> PlayerSymbolText
+            string newPrefabCubePlayCanvasText = newPrefabPlayerSymbolCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
+            return newPrefabCubePlayCanvasText;
+        }
 
         public static void ChangeTextColourForCubePlay(GameObject gameObject, Color textColor)
         {
