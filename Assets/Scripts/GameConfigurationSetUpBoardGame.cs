@@ -151,18 +151,18 @@ namespace Assets.Scripts.GameConfiguration
                         {
                            // Debug.Log(" test 1  ");
                             // tableWithNumberForRows = GameConfigurationTableForRowsAndColumns.CreateTableForRowsAndColumns(tableWithNumber, _tagConfigurationBoardGameTableNumberRows, _tagConfigurationBoardGameInactiveField);
-                            GameConfiguration.UnhideTableWithNumber(tableWithNumberForPlayers);
-                            GameConfiguration.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            GameConfigurationCommonMethods.UnhideTableWithNumber(tableWithNumberForPlayers);
+                            GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                         }
 
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberPlayers)
                         {
                             //Debug.Log(" test 2a  ");
-                            numberOfPlayers = GameConfiguration.SetUpChosenNumberForConfiguration(tableWithNumberForPlayers, gameObjectName, _tagConfigurationBoardGameChangeNumberPlayers);
+                            numberOfPlayers = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(tableWithNumberForPlayers, gameObjectName, _tagConfigurationBoardGameChangeNumberPlayers);
 
-                            GameConfiguration.HideTableWithNumber(tableWithNumberForPlayers);
-                            GameConfiguration.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            GameConfigurationCommonMethods.HideTableWithNumber(tableWithNumberForPlayers);
+                            GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
                         }
 
@@ -171,20 +171,44 @@ namespace Assets.Scripts.GameConfiguration
                         {
                            // Debug.Log(" test 1  ");
                            // tableWithNumberForRows = GameConfigurationTableForRowsAndColumns.CreateTableForRowsAndColumns(tableWithNumber, _tagConfigurationBoardGameTableNumberRows, _tagConfigurationBoardGameInactiveField);
-                            GameConfiguration.UnhideTableWithNumber(tableWithNumberForRows);
-                            GameConfiguration.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            GameConfigurationCommonMethods.UnhideTableWithNumber(tableWithNumberForRows);
+                            GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                         }
-
+  
+                       
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberRows)
                         {
-                            numberOfRows = GameConfiguration.SetUpChosenNumberForConfiguration(tableWithNumberForRows, gameObjectName, _tagConfigurationBoardGameChangeNumberRows);
+                            numberOfRows = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(tableWithNumberForRows, gameObjectName, _tagConfigurationBoardGameChangeNumberRows);
 
                            
 
-                            GameConfiguration.HideTableWithNumber(tableWithNumberForRows);
-                            GameConfiguration.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            GameConfigurationCommonMethods.HideTableWithNumber(tableWithNumberForRows);
+                            GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
+                            Debug.Log("test 1");
+                            GameObject[] GameObjectsRowsNumber = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberRows);
+                            GameObject GameObjectRowsNumber = GameObjectsRowsNumber[0];
+                            string rowsNumberString = CommonMethods.GetCubePlayText(GameObjectRowsNumber);
+
+                            int rowsNumber = CommonMethods.ConvertStringToInt(rowsNumberString);
+
+
+
+                            GameObject[] GameObjectsColumnsNumber = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberColumns);
+                            GameObject GameObjectColumnsNumber = GameObjectsColumnsNumber[0];
+                            string columnsNumberString = CommonMethods.GetCubePlayText(GameObjectColumnsNumber);
+
+                            int columnsNumber = CommonMethods.ConvertStringToInt(columnsNumberString);
+
+
+                            GameObject[] GameObjectsLenghtToCheck = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            GameObject GameObjectLenghtToCheck = GameObjectsLenghtToCheck[0];
+                            string lenghtToCheckString = CommonMethods.GetCubePlayText(GameObjectLenghtToCheck);
+                            int currentLenghtToCheck = CommonMethods.ConvertStringToInt(lenghtToCheckString);
+
+
+                            GameConfigurationTableForLenghtToCheck.VerifyAndSetUpNewMaxLength(rowsNumber, columnsNumber, currentLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                         }
 
                         
@@ -193,17 +217,17 @@ namespace Assets.Scripts.GameConfiguration
                         {
                             //Debug.Log(" test 1  ");
                             
-                            GameConfiguration.UnhideTableWithNumber(tableWithNumberForColumns);
-                            GameConfiguration.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            GameConfigurationCommonMethods.UnhideTableWithNumber(tableWithNumberForColumns);
+                            GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                         }
 
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberColumns)
                         {
-                            numberOfColumns = GameConfiguration.SetUpChosenNumberForConfiguration(tableWithNumberForColumns, gameObjectName, _tagConfigurationBoardGameChangeNumberColumns);
+                            numberOfColumns = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(tableWithNumberForColumns, gameObjectName, _tagConfigurationBoardGameChangeNumberColumns);
 
-                            GameConfiguration.HideTableWithNumber(tableWithNumberForColumns);
-                            GameConfiguration.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            GameConfigurationCommonMethods.HideTableWithNumber(tableWithNumberForColumns);
+                            GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
                         }
 
@@ -247,18 +271,18 @@ namespace Assets.Scripts.GameConfiguration
                             tableWithNumberForLenghtToCheck = GameConfigurationTableForLenghtToCheck.CreateTableForMaxLenghtToCheck(tableWithNumberForLenghtToCheckBase, _tagConfigurationBoardGameTableNumberLenghtToCheck, _tagConfigurationBoardGameInactiveField, lenghtToCheckMax);
                             
                             
-                           GameConfiguration.UnhideTableWithNumber(tableWithNumberForLenghtToCheck);
-                           GameConfiguration.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                           GameConfigurationCommonMethods.UnhideTableWithNumber(tableWithNumberForLenghtToCheck);
+                           GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                         
                         }
 
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberLenghtToCheck)
                         {
-                            lenghtToCheck = GameConfiguration.SetUpChosenNumberForConfiguration(tableWithNumberForLenghtToCheck, gameObjectName, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            lenghtToCheck = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(tableWithNumberForLenghtToCheck, gameObjectName, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
-                            GameConfiguration.HideTableWithNumber(tableWithNumberForLenghtToCheck);
-                            GameConfiguration.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            GameConfigurationCommonMethods.HideTableWithNumber(tableWithNumberForLenghtToCheck);
+                            GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
                         }
 

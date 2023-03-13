@@ -58,14 +58,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CreateGameBoard\CreateGameBoardMethods.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationSetUpPlayersSymbols.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfiguration.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerification.cs" />
     <Compile Include="Assets\Scripts\CommonMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\Scripts\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolMainMethods.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckerBackslash.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTableMainMethods.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolTableWithPlayerNumber.cs" />
@@ -98,6 +96,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTableForRowsAndColumns.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Scripts\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolCommonMethods.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabCalculateScale.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTableForLenghtToCheck.cs" />
@@ -125,6 +124,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\CreateFrame\CreateFrameForMove.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationCommonMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

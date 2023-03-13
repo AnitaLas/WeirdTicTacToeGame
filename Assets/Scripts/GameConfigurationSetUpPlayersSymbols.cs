@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.GameConfiguration;
 using Assets.Scripts.GameConfigurationPlayerSymbol;
 using Assets.Scripts.GameDictionaries;
+using Assets.Scripts.GameConfiguration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -93,13 +94,26 @@ namespace Assets.Scripts
                         if (gameObjectTag == _tagConfiguratioPlayerSymbolDefaultNumber || gameObjectTag == _tagConfigurationPlayerSymbolDefaultSymbol)
                         {
                             Debug.Log(" 1 ");
-                            GameConfigurationPlayerSymbolMainMethods.ChangeTagForDefaultPlayerSymbol(gameObject, gameObjectTag, _tagConfigurationPlayerSymbolChange);
+                            GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol(gameObject, gameObjectTag, _tagConfigurationPlayerSymbolChange);
 
+
+                            GameConfigurationPlayerSymbolCommonMethods.UnhideTableWithNumber(tableWitSymbols);
+                            GameConfigurationPlayerSymbolCommonMethods.HideTableWithNumber(tableWithPlayersAndSymbols);
 
                         }
 
 
 
+                        if (gameObjectTag == _tagConfigurationPlayerSymbolChooseSymbol)
+                        {
+                            Debug.Log(" 1 ");
+                            GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol(gameObject, gameObjectTag, _tagConfigurationPlayerSymbolChange);
+
+
+                            GameConfigurationPlayerSymbolCommonMethods.UnhideTableWithNumber(tableWithPlayersAndSymbols);
+                            GameConfigurationPlayerSymbolCommonMethods.HideTableWithNumber(tableWitSymbols);
+
+                        }
 
 
 
