@@ -87,5 +87,33 @@ namespace Assets.Scripts.GameConfiguration
             }
         }
 
+        public static void VerifyAndSetUpNewMaxLength(int rowsNumber, int columnsNumber, int currentLenghtToCheck, string tagConfigurationBoardGameLenghtToCheck)
+        {
+            //Debug.Log("test 2");
+            GameObject[] gameObjects = CommonMethods.GetObjectByTagName(tagConfigurationBoardGameLenghtToCheck);
+            GameObject gameObject = gameObjects[0];
+
+            Debug.Log("rowsNumber = " + rowsNumber);
+            Debug.Log("columnsNumber = " + columnsNumber);
+            Debug.Log("currentLenghtToCheck = " + currentLenghtToCheck);
+
+            int lowerNumber = CommonMethods.CheckAndReturnLowerNumber(rowsNumber, columnsNumber);
+            Debug.Log("lowerNumber = " + lowerNumber);
+           
+
+            string defaulNumber = "3";
+
+
+
+            if (lowerNumber < currentLenghtToCheck)
+            {
+               // Debug.Log("test 3");
+               CommonMethods.ChangeTextForFirstChild(gameObject, defaulNumber);
+               //CommonMethods.ChangeTextForFirstChild(gameObject, lowerNumberString);
+
+            }
+
+        }
+
     }
 }

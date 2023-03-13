@@ -176,7 +176,7 @@ internal class Game : MonoBehaviour
         lenghtToCheck = _configurationBoardGameNumberForLenghtToCheck - 1;
 
 
-        gameBoardVerification2D = GameConfiguration.CreateEmptyTable2D(numberOfRows, numberOfColumns);
+        gameBoardVerification2D = GameConfigurationCommonMethods.CreateEmptyTable2D(numberOfRows, numberOfColumns);
 
         // does it need it?
         playerNumber = GameConfigurationTableForPlayers.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration1);
@@ -184,7 +184,7 @@ internal class Game : MonoBehaviour
         
 
 
-        playersSymbols = GameConfiguration.CreateTableWithPlayersSymbols();
+        playersSymbols = GameConfigurationCommonMethods.CreateTableWithPlayersSymbols();
         currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMove(playersSymbols, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);

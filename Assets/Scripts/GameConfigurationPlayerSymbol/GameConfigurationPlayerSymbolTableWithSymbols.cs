@@ -126,6 +126,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int maxIndexColumn = tableWithSymbolsBase.GetLength(2);
             int maxIndexRow = tableWithSymbolsBase.GetLength(1);
 
+            float newCoordinateZ = 100;
             string inactiveField = "-";
             string chosenPlayerSymbol;
 
@@ -168,7 +169,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         }
 
 
-
+                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateZ);
 
 
 
