@@ -91,8 +91,8 @@ namespace Assets.Scripts.GameConfiguration
             for (int i = 0; i < tagNameLenght; i++)
             {
                 string tag = tagName[i];
-                GameObject[] gameObjectForChange = CommonMethods.GetObjectByTagName(tag);
-                GameObject gameObjectToChange = gameObjectForChange[0];
+                //GameObject[] gameObjectForChange = CommonMethods.GetObjectByTagName(tag);
+                GameObject gameObjectToChange = CommonMethods.GetObjectByTagName(tag);
                 //CommonMethods.SetUpNewZForGameObject(gameObjectToChange, newCoordinateZ);
                 CommonMethods.SetUpNewYForGameObject(gameObjectToChange, newCoordinateZ);
 
@@ -120,8 +120,8 @@ namespace Assets.Scripts.GameConfiguration
             GameObject cubePlay = CommonMethods.GetCubePlay(tableWithNumber, gameObjectName);
             string numberString = CommonMethods.GetCubePlayText(cubePlay);
 
-            GameObject[] cubePlayForChange = CommonMethods.GetObjectByTagName(tagName);
-            GameObject cubePlayToChange = cubePlayForChange[0];
+            //GameObject[] cubePlayForChange = CommonMethods.GetObjectByTagName(tagName);
+            GameObject cubePlayToChange = CommonMethods.GetObjectByTagName(tagName);
             CommonMethods.ChangeTextForFirstChild(cubePlayToChange, numberString);
 
             number = CommonMethods.ConvertStringToInt(numberString);

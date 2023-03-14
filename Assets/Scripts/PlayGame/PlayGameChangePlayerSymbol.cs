@@ -15,11 +15,11 @@ namespace Assets.Scripts.PlayGame
         public static void SetUpPlayerSymbol(string playerSymbol, string tagPlayerSymbol)
         {
             //string gameObjectTagName = tagPlayerSymbolDictionary[indexForDictionary];
-            GameObject[] gameObjectForPlayerSymbol = CommonMethods.GetObjectByTagName(tagPlayerSymbol);
+            //GameObject[] gameObjectForPlayerSymbol = CommonMethods.GetObjectByTagName(tagPlayerSymbol);
 
             //string playerSymbol = playersSymbols[indexForPlayerSymbol];
 
-            GameObject playerSymbolMove = gameObjectForPlayerSymbol[0];
+            GameObject playerSymbolMove = CommonMethods.GetObjectByTagName(tagPlayerSymbol);
             //CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
             CommonMethods.ChangeTextForFirstChild(playerSymbolMove, playerSymbol);
         }
@@ -112,12 +112,12 @@ namespace Assets.Scripts.PlayGame
         public static void ChangePlayerSymbol(string playerSymbol, string tagPlayerSymbolDictionary)
         {
             //string gameObjectTagName = tagPlayerSymbolDictionary[indexForDictionary];
-            GameObject[] gameObjectForPlayerSymbol = CommonMethods.GetObjectByTagName(tagPlayerSymbolDictionary);
+            //GameObject[] gameObjectForPlayerSymbol = CommonMethods.GetObjectByTagName(tagPlayerSymbolDictionary);
 
             //string playerSymbol = playersSymbols[indexForPlayerSymbol];
 
-            GameObject playerSymbolMove = gameObjectForPlayerSymbol[0];
-           CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
+            GameObject playerSymbolMove = CommonMethods.GetObjectByTagName(tagPlayerSymbolDictionary);
+            CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
             //CommonMethods.ChangeTextForSecondChild(playerSymbolMove, playerSymbol);
         }
         /*

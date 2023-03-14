@@ -57,7 +57,7 @@ namespace Assets.Scripts.GameConfiguration
         private string _tagConfigurationBoardGameLenghtToCheck;
         private string _tagConfigurationBoardGameChangeNumberLenghtToCheck;
         private string _tagConfigurationBoardGameTableNumberLenghtToCheck;
-        // private string numberOfRows2;
+        private string[] _tableWithChangedNumber = new string[3];
 
         Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
 
@@ -100,6 +100,12 @@ namespace Assets.Scripts.GameConfiguration
             _tagConfigurationBoardGameTableNumberLenghtToCheck = configurationBoardGameDictionaryTag[14];
 
             _tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
+
+            _tableWithChangedNumber[0] = _tagConfigurationBoardGameChangeNumberRows;
+            _tableWithChangedNumber[1] = _tagConfigurationBoardGameChangeNumberColumns;
+            _tableWithChangedNumber[2] = _tagConfigurationBoardGameChangeNumberLenghtToCheck;
+            
+            
 
             _sceneConfigurationPlayersSymbols = scenceDictionary[2];
 
@@ -187,28 +193,40 @@ namespace Assets.Scripts.GameConfiguration
                             GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
                             Debug.Log("test 1");
-                            GameObject[] GameObjectsRowsNumber = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberRows);
-                            GameObject GameObjectRowsNumber = GameObjectsRowsNumber[0];
-                            string rowsNumberString = CommonMethods.GetCubePlayText(GameObjectRowsNumber);
+                            //GameObject[] GameObjectsRowsNumber = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberRows);
+                           // GameObject GameObjectRowsNumber = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberRows);
+                            //string rowsNumberString = CommonMethods.GetCubePlayText(GameObjectRowsNumber);
 
-                            int rowsNumber = CommonMethods.ConvertStringToInt(rowsNumberString);
-
-
-
-                            GameObject[] GameObjectsColumnsNumber = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberColumns);
-                            GameObject GameObjectColumnsNumber = GameObjectsColumnsNumber[0];
-                            string columnsNumberString = CommonMethods.GetCubePlayText(GameObjectColumnsNumber);
-
-                            int columnsNumber = CommonMethods.ConvertStringToInt(columnsNumberString);
+                            //int rowsNumber = CommonMethods.ConvertStringToInt(rowsNumberString);
+                            
 
 
-                            GameObject[] GameObjectsLenghtToCheck = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberLenghtToCheck);
-                            GameObject GameObjectLenghtToCheck = GameObjectsLenghtToCheck[0];
-                            string lenghtToCheckString = CommonMethods.GetCubePlayText(GameObjectLenghtToCheck);
-                            int currentLenghtToCheck = CommonMethods.ConvertStringToInt(lenghtToCheckString);
+
+                           //GameObject[] GameObjectsColumnsNumber = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberColumns);
+                            //GameObject GameObjectColumnsNumber = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberColumns);
+                            //string columnsNumberString = CommonMethods.GetCubePlayText(GameObjectColumnsNumber);
+
+                            //int columnsNumber = CommonMethods.ConvertStringToInt(columnsNumberString);
+                            
 
 
-                            GameConfigurationTableForLenghtToCheck.VerifyAndSetUpNewMaxLength(rowsNumber, columnsNumber, currentLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            // GameObject[] GameObjectsLenghtToCheck = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            //GameObject GameObjectLenghtToCheck = CommonMethods.GetObjectByTagName(_tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            //string lenghtToCheckString = CommonMethods.GetCubePlayText(GameObjectLenghtToCheck);
+                            //int currentLenghtToCheck = CommonMethods.ConvertStringToInt(lenghtToCheckString);
+
+                            //int rowsNumber = GameConfigurationTableForLenghtToCheck.GetNumberGivenByUser(_tagConfigurationBoardGameChangeNumberRows);
+                            //int columnsNumber = GameConfigurationTableForLenghtToCheck.GetNumberGivenByUser(_tagConfigurationBoardGameChangeNumberColumns);
+                            //int currentLenghtToCheck = GameConfigurationTableForLenghtToCheck.GetNumberGivenByUser(_tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            //GameConfigurationTableForLenghtToCheck.VerifyAndSetUpNewMaxLength(rowsNumber, columnsNumber, currentLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            
+                            
+                            
+                            
+                            GameConfigurationTableForLenghtToCheck.VerifyAndSetUpNewMaxLength(_tableWithChangedNumber);
+                        
+                        
+                        
                         }
 
                         
@@ -229,6 +247,7 @@ namespace Assets.Scripts.GameConfiguration
                             GameConfigurationCommonMethods.HideTableWithNumber(tableWithNumberForColumns);
                             GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
+                            GameConfigurationTableForLenghtToCheck.VerifyAndSetUpNewMaxLength(_tableWithChangedNumber);
                         }
 
 
