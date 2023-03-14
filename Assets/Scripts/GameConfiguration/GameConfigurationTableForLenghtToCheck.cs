@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts.GameConfiguration
@@ -12,8 +13,7 @@ namespace Assets.Scripts.GameConfiguration
     {
         public static int GetNumberFromConfiguration(string tagName)
         {
-            GameObject[] objectsNumber = CommonMethods.GetObjectByTagName(tagName);
-            GameObject objectNumber = objectsNumber[0];
+            GameObject objectNumber = CommonMethods.GetObjectByTagName(tagName);
             string numberString = CommonMethods.GetCubePlayText(objectNumber);
             int numberInt = CommonMethods.ConvertStringToInt(numberString);
             return numberInt;
@@ -76,44 +76,64 @@ namespace Assets.Scripts.GameConfiguration
                     for (int z = 0; z < table.GetLength(2); z++)
                     {
                         GameObject toRemove = table[i, j, z];
-
-                       // if (toRemove != null) 
-                       // {
-                            Destroy(toRemove);
-                        //}
+                        Destroy(toRemove);
 
                     }
                 }
             }
         }
 
-        public static void VerifyAndSetUpNewMaxLength(int rowsNumber, int columnsNumber, int currentLenghtToCheck, string tagConfigurationBoardGameLenghtToCheck)
-        {
-            //Debug.Log("test 2");
-            GameObject[] gameObjects = CommonMethods.GetObjectByTagName(tagConfigurationBoardGameLenghtToCheck);
-            GameObject gameObject = gameObjects[0];
 
-            Debug.Log("rowsNumber = " + rowsNumber);
-            Debug.Log("columnsNumber = " + columnsNumber);
-            Debug.Log("currentLenghtToCheck = " + currentLenghtToCheck);
+        public static int GetNumberGivenByUser(string tagName)
+        {
+            GameObject gameObject = CommonMethods.GetObjectByTagName(tagName);
+            string gameObjectText = CommonMethods.GetCubePlayText(gameObject);
+
+            int number = CommonMethods.ConvertStringToInt(gameObjectText);
+            return number;
+
+        }
+
+
+        //public static void VerifyAndSetUpNewMaxLength(int rowsNumber, int columnsNumber, int currentLenghtToCheck, string tagConfigurationBoardGameLenghtToCheck)
+        //{
+        //    GameObject gameObject = CommonMethods.GetObjectByTagName(tagConfigurationBoardGameLenghtToCheck);
+
+        //    int lowerNumber = CommonMethods.CheckAndReturnLowerNumber(rowsNumber, columnsNumber);
+
+        //    string defaulNumber = "3";
+
+        //    if (lowerNumber < currentLenghtToCheck)
+        //    {
+        //       CommonMethods.ChangeTextForFirstChild(gameObject, defaulNumber);
+        //    }
+
+        //}
+
+        public static void VerifyAndSetUpNewMaxLength(string[] tableWithChangedNumber)
+        {
+            string tagConfigurationBoardGameChangeNumberRows = tableWithChangedNumber[0];
+            string tagConfigurationBoardGameChangeNumberColumns = tableWithChangedNumber[1];
+            string tagConfigurationBoardGameChangeNumberLenghtToCheck = tableWithChangedNumber[2];
+
+            GameObject gameObject = CommonMethods.GetObjectByTagName(tagConfigurationBoardGameChangeNumberLenghtToCheck);
+
+
+            int rowsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberRows);
+            int columnsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberColumns);
+            int currentLenghtToCheck = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
             int lowerNumber = CommonMethods.CheckAndReturnLowerNumber(rowsNumber, columnsNumber);
-            Debug.Log("lowerNumber = " + lowerNumber);
-           
 
             string defaulNumber = "3";
 
-
-
             if (lowerNumber < currentLenghtToCheck)
             {
-               // Debug.Log("test 3");
-               CommonMethods.ChangeTextForFirstChild(gameObject, defaulNumber);
-               //CommonMethods.ChangeTextForFirstChild(gameObject, lowerNumberString);
-
+                CommonMethods.ChangeTextForFirstChild(gameObject, defaulNumber);
             }
 
         }
+
 
     }
 }

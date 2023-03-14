@@ -87,8 +87,8 @@ namespace Assets.Scripts
                     if (touch.collider != null)
                     {
                         string gameObjectTag = CommonMethods.GetObjectTag(touch);
-                        GameObject[] gameObjects = CommonMethods.GetObjectByTagName(gameObjectTag);
-                        GameObject gameObject = gameObjects[0];
+                       // GameObject[] gameObjects = CommonMethods.GetObjectByTagName(gameObjectTag);
+                        GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
 
 
                         if (gameObjectTag == _tagConfiguratioPlayerSymbolDefaultNumber || gameObjectTag == _tagConfigurationPlayerSymbolDefaultSymbol)

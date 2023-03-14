@@ -220,40 +220,23 @@ namespace Assets.Scripts
             newPrefabGameObjectText = GetTextMeshProUGUIForPlayerSymbolChild(gameObject, childNumber);
             newPrefabGameObjectText.text = gameObjectText;
         }
-        // TO FIX ?????????????????????????????????????????????????
+
         public static void ChangeTextForCubePlay(GameObject gameObject, string gameObjectText)
         {
             string gameObjectFullName = GetObjectName(gameObject);
-            //Debug.Log("gameObjectName = " + gameObjectName);
-
             string gameObjectName = gameObjectFullName.Substring(0, 8);
-
-            //TextMeshProUGUI newPrefabGameObjectText;
 
             if (gameObjectName.Equals("CubePlay"))
             {
-                //newPrefabGameObjectText = GetCubePlayTextMeshProUGUI(gameObject);
-                //newPrefabGameObjectText.text = gameObjectText;
-
-
                 ChangeTextForFirstChild(gameObject, gameObjectText);
 
-
             }
-
 
             if (gameObjectName.Equals("PlayerSymbol"))
             {
-                //int childNumber = 0;
-                //newPrefabGameObjectText = GetTextMeshProUGUIForPlayerSymbolChild(gameObject, childNumber);
-                //newPrefabGameObjectText.text = gameObjectText;
-
                 ChangeTextForSecondChild( gameObject, gameObjectText);
-            }
 
-            //var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
-            //Debug.Log("newPrefabCubePlayCanvasText = " + newPrefabCubePlayCanvasText);
-            //newPrefabCubePlayCanvasText.text = gameObjectText;
+            }
         }
 
         public static string GetCubePlayText(GameObject gameObject)
@@ -278,24 +261,16 @@ namespace Assets.Scripts
 
         public static void ChangeTextColourForCubePlay(GameObject gameObject, Color textColor)
         {
-            //// game object: prefab CubePlay -> CubePlayCanvas ->
-            //var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);
-            //// game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
-            //var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-
             var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
-
-            //newPrefabCubePlayCanvasText.color = new Color(200, 33, 33, 0.7f);
-            // newPrefabCubePlayCanvasText.color = new Color(12f, 0f, 0f, 0.6f);
             newPrefabCubePlayCanvasText.color = textColor;
-            //newPrefabCubePlayCanvasText.fontSize = 0.7f;
+
         }
 
         public static void ChangeTextFontSize(GameObject gameObject, float fontSize)
         {
             var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
             newPrefabCubePlayCanvasText.fontSize = fontSize;
-           // newPrefabCubePlayCanvasText.fontWeight = TMPro.FontWeight.Heavy;
+
         }
 
         public static Color GetNewColor(int dictionaryColorId)
@@ -554,9 +529,10 @@ namespace Assets.Scripts
             return gameObjectTagName;
         }
 
-        public static GameObject[] GetObjectByTagName(string tagName)
+        public static GameObject GetObjectByTagName(string tagName)
         {
-            GameObject[] gameObject = GameObject.FindGameObjectsWithTag(tagName);
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tagName);
+            GameObject gameObject = gameObjects[0];
             return gameObject;
         }
 
