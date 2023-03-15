@@ -82,15 +82,17 @@ namespace Assets.Scripts.GameConfiguration
 
         //-------------------------
 
-        public static void ChangeCoordinateYForConfiguration(float newCoordinateZ, string tagName1, string tagName2, string tagName3, string tagName4, string tagName5, string tagName6, string tagName7, string tagName8, string tagName9, string tagName10)
+        public static void ChangeCoordinateYForConfiguration(float newCoordinateZ, string[] tagConfigurationBoardGameHideOrUnhide)
         {
-            string[] tagName = { tagName1, tagName2, tagName3, tagName4, tagName5, tagName6, tagName7, tagName8, tagName9, tagName10 };
-            int tagNameLenght = tagName.Length;
+            //string[] tagName = { tagName1, tagName2, tagName3, tagName4, tagName5, tagName6, tagName7, tagName8, tagName9, tagName10 };
+            //int tagNameLenght = tagName.Length;
+
+            int tagNameLenght = tagConfigurationBoardGameHideOrUnhide.Length;
             //float newCoordinateZ = 0.75f;
 
             for (int i = 0; i < tagNameLenght; i++)
             {
-                string tag = tagName[i];
+                string tag = tagConfigurationBoardGameHideOrUnhide[i];
                 //GameObject[] gameObjectForChange = CommonMethods.GetObjectByTagName(tag);
                 GameObject gameObjectToChange = CommonMethods.GetObjectByTagName(tag);
                 //CommonMethods.SetUpNewZForGameObject(gameObjectToChange, newCoordinateZ);
@@ -100,21 +102,22 @@ namespace Assets.Scripts.GameConfiguration
             }
         }
 
-        public static void UnhideConfiguration(string tagName1, string tagName2, string tagName3, string tagName4, string tagName5, string tagName6, string tagName7, string tagName8, string tagName9, string tagName10)
+        //public static void UnhideConfiguration(string tagName1, string tagName2, string tagName3, string tagName4, string tagName5, string tagName6, string tagName7, string tagName8, string tagName9, string tagName10)
+        public static void UnhideConfiguration( string[] tagConfigurationBoardGameHideOrUnhide)
         {
             float newCoordinateY = -100f;
-            ChangeCoordinateYForConfiguration(newCoordinateY, tagName1, tagName2, tagName3, tagName4, tagName5, tagName6, tagName7, tagName8, tagName9, tagName10);
+            ChangeCoordinateYForConfiguration(newCoordinateY, tagConfigurationBoardGameHideOrUnhide);
         }
 
 
-        public static void HideConfiguration(string tagName1, string tagName2, string tagName3, string tagName4, string tagName5, string tagName6, string tagName7, string tagName8, string tagName9, string tagName10)
+        public static void HideConfiguration( string[] tagConfigurationBoardGameHideOrUnhide)
         {
             float newCoordinateY = 100f;
-            ChangeCoordinateYForConfiguration(newCoordinateY, tagName1, tagName2, tagName3, tagName4, tagName5, tagName6, tagName7, tagName8, tagName9, tagName10);
+            ChangeCoordinateYForConfiguration(newCoordinateY, tagConfigurationBoardGameHideOrUnhide);
         }
 
 
-        public static int SetUpChosenNumberForConfiguration(GameObject[,,] tableWithNumber, string gameObjectName, string tagName)
+        public static int SetUpChosenNumberForConfiguration( GameObject[,,] tableWithNumber, string gameObjectName, string tagName)
         {
             int number;
             GameObject cubePlay = CommonMethods.GetCubePlay(tableWithNumber, gameObjectName);
