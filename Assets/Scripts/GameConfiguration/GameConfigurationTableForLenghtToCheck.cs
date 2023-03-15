@@ -44,11 +44,8 @@ namespace Assets.Scripts.GameConfiguration
             int columns = numbers[1];
 
             int maxNumberInt = CommonMethods.CheckAndReturnLowerNumber(rows, columns);
-            string numberString = CommonMethods.ConverIntToString(maxNumberInt);
-
-            var numberKind = Tuple.Create(maxNumberInt, numberString);
-
-            Debug.Log("maxNumberInt = " + maxNumberInt);
+           //string numberString = CommonMethods.ConverIntToString(maxNumberInt);
+           //var numberKind = Tuple.Create(maxNumberInt, numberString);
 
             return maxNumberInt;
 
@@ -94,21 +91,6 @@ namespace Assets.Scripts.GameConfiguration
 
         }
 
-
-        //public static void VerifyAndSetUpNewMaxLength(int rowsNumber, int columnsNumber, int currentLenghtToCheck, string tagConfigurationBoardGameLenghtToCheck)
-        //{
-        //    GameObject gameObject = CommonMethods.GetObjectByTagName(tagConfigurationBoardGameLenghtToCheck);
-
-        //    int lowerNumber = CommonMethods.CheckAndReturnLowerNumber(rowsNumber, columnsNumber);
-
-        //    string defaulNumber = "3";
-
-        //    if (lowerNumber < currentLenghtToCheck)
-        //    {
-        //       CommonMethods.ChangeTextForFirstChild(gameObject, defaulNumber);
-        //    }
-
-        //}
 
         public static void VerifyAndSetUpNewMaxLength(string[] tableWithChangedNumber)
         {
