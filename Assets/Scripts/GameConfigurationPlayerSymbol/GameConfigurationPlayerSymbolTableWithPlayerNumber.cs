@@ -177,7 +177,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                 return yForFirstPrefabPlayerSymbol;
             }
 
-            return 0;
+            //return 0;
         }
 
 
@@ -204,6 +204,14 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
 
             return table;
+        }
+
+        public static void ChangeNameForPrefabPlayerSymbol(GameObject prefabPlayerSymbol, int currentPrefabPlayerSymbol)
+        {
+            string prefabPlayerSymbolName = $"PlayerSymbol_No_{currentPrefabPlayerSymbol}";
+            //string cubePlayName = $"CubePlayUI_No_{currentNumberCubePlayName}";
+            prefabPlayerSymbol.name = prefabPlayerSymbolName;
+            //return cubePlayName;
         }
 
 
@@ -248,6 +256,9 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[indexRow];
                         CommonMethods.ChangeYForGameObject(playerSymbol , yForFirstPrefabPlayerSymbol);
 
+                        CommonMethods.ChangeTextForSecondChild(playerSymbol, firstChildDefaultText);
+
+                        ChangeNameForPrefabPlayerSymbol(playerSymbol, playerNumber);
                     }
                 }
             }

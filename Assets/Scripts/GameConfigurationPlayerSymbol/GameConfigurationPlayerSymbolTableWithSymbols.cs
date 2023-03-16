@@ -145,12 +145,12 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
                         if (!cubePlayText.Equals(inactiveField))
                         {
-                            Debug.Log(" test 2 ");
+                           // Debug.Log(" test 2 ");
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationPlayerSymbolChooseSymbol);
                         }
                         else
                         {
-                            Debug.Log(" test 3 ");
+                            //Debug.Log(" test 3 ");
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
                         }
 
@@ -162,7 +162,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                             if (cubePlayText.Equals(chosenPlayerSymbol))
                             {
                                 //Debug.Log(" TEST 1  =? -----------------------------");
-                                Debug.Log("cubePlayText = " + cubePlayText + "  =?  " + chosenPlayerSymbol + " chosenPlayerSymbol");
+                                //Debug.Log("cubePlayText = " + cubePlayText + "  =?  " + chosenPlayerSymbol + " chosenPlayerSymbol");
                                 CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
                                 //Debug.Log(" TEST 2  =? -----------------------------");
                             }

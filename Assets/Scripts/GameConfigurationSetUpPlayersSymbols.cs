@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace Assets.Scripts
 {
@@ -88,14 +89,41 @@ namespace Assets.Scripts
                     if (touch.collider != null)
                     {
                         string gameObjectTag = CommonMethods.GetObjectTag(touch);
-                       // GameObject[] gameObjects = CommonMethods.GetObjectByTagName(gameObjectTag);
+                        //Debug.Log("gameObjectTag = " + gameObjectTag);
                         GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
+
+                        //string gameObjectName = CommonMethods.Get(touch);
+                        //Debug.Log("gameObjectParentName = " + gameObjectParentName);
+
+                        //TextMeshProUGUI gameObjectPlayerNumber = GameConfigurationPlayerSymbolCommonMethods.GetTextForPlayerSymbolFirstChild(gameObject);
+
+
 
 
                         if (gameObjectTag == _tagConfiguratioPlayerSymbolDefaultNumber || gameObjectTag == _tagConfigurationPlayerSymbolDefaultSymbol)
                         {
-                            Debug.Log(" 1 ");
-                            GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol(gameObject, gameObjectTag, _tagConfigurationPlayerSymbolChange);
+                            //Debug.Log(" 1 ");
+                           // if (gameObjectTag == _tagConfiguratioPlayerSymbolDefaultNumber)
+                           // {
+                                string gameObjectParentName = CommonMethods.GetParentObjectName(touch);
+                                Debug.Log("gameObjectParentName = " + gameObjectParentName);
+                            //}
+
+                            GameObject gameObjectParent = CommonMethods.GetObjectByName(gameObjectParentName);
+                            //Debug.Log("gameObjectParent = " + gameObjectParent);
+
+                          //  if (gameObjectTag == _tagConfiguratioPlayerSymbolDefaultNumber)
+                           // {
+                                GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol(gameObjectParent, _tagConfigurationPlayerSymbolChange);
+
+                            //}
+
+                            //if (gameObjectTag == _tagConfigurationPlayerSymbolDefaultSymbol)
+                            //{
+                            //    GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol(gameObjectParent, _tagConfigurationPlayerSymbolChange);
+
+                            //}
+
 
 
                             GameConfigurationPlayerSymbolCommonMethods.UnhideTableWithNumber(tableWitSymbols);
@@ -107,12 +135,15 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagConfigurationPlayerSymbolChooseSymbol)
                         {
-                            Debug.Log(" 1 ");
-                            GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol(gameObject, gameObjectTag, _tagConfigurationPlayerSymbolChange);
+                           // Debug.Log(" 1 ");
+                            //GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol(gameObject, gameObjectTag, _tagConfigurationPlayerSymbolChange);
 
 
                             GameConfigurationPlayerSymbolCommonMethods.UnhideTableWithNumber(tableWithPlayersAndSymbols);
                             GameConfigurationPlayerSymbolCommonMethods.HideTableWithNumber(tableWitSymbols);
+
+                          // GameConfigurationPlayerSymbolCommonMethods.ChangeSymbolForPlayer(gameObjectTag, _tagConfigurationPlayerSymbolChange);
+
 
                         }
 
