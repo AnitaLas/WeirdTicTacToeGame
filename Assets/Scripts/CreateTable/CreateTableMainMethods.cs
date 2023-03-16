@@ -17,7 +17,7 @@ namespace Assets.Scripts
         {
             // [prefabCubePlay][prefabCubePlayNewZ]
             bool isNumberOfRowsEven = CommonMethods.IsNumberEven(numberOfRows);
-
+            //string prefabName = "CubePlayUI";
             // [prefabCubePlayColor] lenght of array colour assigned to object "GameBoard"
             int cubePlayColourLenght = prefabCubePlayDefaultColour.Length;
 

@@ -523,6 +523,18 @@ namespace Assets.Scripts
             return gameObjectName;
         }
 
+        public static string GetParentObjectName(RaycastHit touchGameObject)
+        {
+            string gameObjectParentName = touchGameObject.collider.transform.parent.name;
+            return gameObjectParentName;
+        }
+
+        public static string GetParentObjectName(GameObject gameObject)
+        {
+            string gameObjectParentName = gameObject.transform.parent.name;
+            return gameObjectParentName;
+        }
+
         public static string GetObjectTag(GameObject gameObject)
         {
             string gameObjectTagName = gameObject.tag;
@@ -533,6 +545,12 @@ namespace Assets.Scripts
         {
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tagName);
             GameObject gameObject = gameObjects[0];
+            return gameObject;
+        }
+
+        public static GameObject GetObjectByName(string objectName)
+        {         
+            GameObject gameObject = GameObject.Find(objectName);
             return gameObject;
         }
 
