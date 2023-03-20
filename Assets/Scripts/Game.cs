@@ -183,8 +183,13 @@ internal class Game : MonoBehaviour
 
         
 
+        // static
+        //playersSymbols = GameConfigurationCommonMethods.CreateTableWithPlayersSymbols();
 
-        playersSymbols = GameConfigurationCommonMethods.CreateTableWithPlayersSymbols();
+        playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
+
+
+
         currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMove(playersSymbols, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);

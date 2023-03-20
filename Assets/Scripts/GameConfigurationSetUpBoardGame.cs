@@ -158,7 +158,6 @@ namespace Assets.Scripts.GameConfiguration
                         if (gameObjectTag == _tagConfigurationBoardGamePlayers || gameObjectTag == _tagConfigurationBoardGameChangeNumberPlayers)
                         {
                             GameConfigurationCommonMethods.UnhideTableWithNumber(_tableWithNumberForPlayers);
-                           // GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                             GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
                         }
 
@@ -168,7 +167,6 @@ namespace Assets.Scripts.GameConfiguration
                             numberOfPlayers = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_tableWithNumberForPlayers, gameObjectName, _tagConfigurationBoardGameChangeNumberPlayers);
 
                             GameConfigurationCommonMethods.HideTableWithNumber(_tableWithNumberForPlayers);
-                           // GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                             GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
 
                         }
@@ -177,7 +175,6 @@ namespace Assets.Scripts.GameConfiguration
                         if (gameObjectTag == _tagConfigurationBoardGameRows || gameObjectTag == _tagConfigurationBoardGameChangeNumberRows)
                         {                        
                             GameConfigurationCommonMethods.UnhideTableWithNumber(_tableWithNumberForRows);
-                            //GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
                             GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
                         }
   
@@ -188,7 +185,6 @@ namespace Assets.Scripts.GameConfiguration
                             numberOfRows = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_tableWithNumberForRows, gameObjectName, _tagConfigurationBoardGameChangeNumberRows);
 
                             GameConfigurationCommonMethods.HideTableWithNumber(_tableWithNumberForRows);
-                            // GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                             GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
 
                             GameConfigurationTableForLenghtToCheck.VerifyAndSetUpNewMaxLength(_tableWithChangedNumber);
@@ -199,7 +195,6 @@ namespace Assets.Scripts.GameConfiguration
                         if (gameObjectTag == _tagConfigurationBoardGameColumns || gameObjectTag == _tagConfigurationBoardGameChangeNumberColumns)
                         {
                             GameConfigurationCommonMethods.UnhideTableWithNumber(_tableWithNumberForColumns);
-                            //GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                             GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
                         
                         }
@@ -210,7 +205,6 @@ namespace Assets.Scripts.GameConfiguration
                             numberOfColumns = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_tableWithNumberForColumns, gameObjectName, _tagConfigurationBoardGameChangeNumberColumns);
 
                             GameConfigurationCommonMethods.HideTableWithNumber(_tableWithNumberForColumns);
-                            //GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                             GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
 
                             GameConfigurationTableForLenghtToCheck.VerifyAndSetUpNewMaxLength(_tableWithChangedNumber);
@@ -235,7 +229,6 @@ namespace Assets.Scripts.GameConfiguration
                             
                             
                            GameConfigurationCommonMethods.UnhideTableWithNumber(_tableWithNumberForLenghtToCheck);
-                          // GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
                            GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
                         
                         }

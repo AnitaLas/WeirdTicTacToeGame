@@ -39,6 +39,9 @@ TagManager:
   - ConfigurationPlayerSymbolChange
   - ConfigurationPlayerSymbolChooseSymbol
   - ConfigurationPlayerSymbolInactiveField
+  - ConfigurationPlayerSymbolButtonSave
+  - ConfigurationPlayerSymbolButtonBack
+  - ConfigurationPlayerSymbolButtonBackTableWithSymbolsToChoose
   layers:
   - Default
   - TransparentFX
