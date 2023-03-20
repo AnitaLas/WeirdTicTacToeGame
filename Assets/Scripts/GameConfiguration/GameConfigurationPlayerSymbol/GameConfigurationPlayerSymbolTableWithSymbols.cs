@@ -103,6 +103,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                 for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
                 {
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    //for (int indexRow = maxIndexRow - 1; indexRow >= 0; indexRow--)
                     {
 
                         GameObject chosenPlayerSymbol = tableWithPlayersAndSymbols[indexDepth, indexRow, indexColumn];
@@ -110,18 +111,23 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         
 
                         tableWitPlayersChosenSymbols[indexRow] = chosenPlayerSymbolText;
-                       // Debug.Log($"tableWitPlayersChosenSymbols[{indexRow}] = " + tableWitPlayersChosenSymbols[indexRow]);
+                         Debug.Log($"tableWitPlayersChosenSymbols[{indexRow}] = " + tableWitPlayersChosenSymbols[indexRow]);
 
                     }
                 }
             }
 
+            Debug.Log(" ------------------------ ");
+
             return tableWitPlayersChosenSymbols;
 
         }
-        public static GameObject[,,] ChangeDataForTableWithSymbols(GameObject[,,] tableWithSymbolsBase, string[] tableWitPlayersChosenSymbols, string tagConfigurationPlayerSymbolChooseSymbol, string tagConfigurationBoardGameInactiveFieldt)
+
+        public static GameObject[,,] ChangeDataForTableWithSymbols(GameObject[,,] tableWithSymbolsBase, string[] tableWitPlayersChosenSymbols, Material[] prefabSymbolPlayerMaterialInactiveField, string tagConfigurationPlayerSymbolChooseSymbol, string tagConfigurationBoardGameInactiveFieldt)
         {
             Debug.Log(" test 1 ");
+            Material cubeColourInactiveField = prefabSymbolPlayerMaterialInactiveField[0];
+;           
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWithSymbolsBase.GetLength(2);
             int maxIndexRow = tableWithSymbolsBase.GetLength(1);
@@ -147,11 +153,14 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         {
                            // Debug.Log(" test 2 ");
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationPlayerSymbolChooseSymbol);
+                            
                         }
                         else
                         {
                             //Debug.Log(" test 3 ");
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
+                            CommonMethods.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
+
                         }
 
                         for (int i = 0; i < tableWitPlayersChosenSymbols.Length; i++)
@@ -164,6 +173,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                                 //Debug.Log(" TEST 1  =? -----------------------------");
                                 //Debug.Log("cubePlayText = " + cubePlayText + "  =?  " + chosenPlayerSymbol + " chosenPlayerSymbol");
                                 CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
+                                CommonMethods.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
                                 //Debug.Log(" TEST 2  =? -----------------------------");
                             }
                         }

@@ -95,6 +95,9 @@ namespace Assets.Scripts.GameDictionaries
             configurationPlayersSymbolsDictionaryTag.Add(3, "ConfigurationPlayerSymbolChange");
             configurationPlayersSymbolsDictionaryTag.Add(4, "ConfigurationPlayerSymbolChooseSymbol");
             configurationPlayersSymbolsDictionaryTag.Add(5, "ConfigurationPlayerSymbolInactiveField");
+            configurationPlayersSymbolsDictionaryTag.Add(6, "ConfigurationPlayerSymbolButtonSave");
+            configurationPlayersSymbolsDictionaryTag.Add(7, "ConfigurationPlayerSymbolButtonBack");
+            configurationPlayersSymbolsDictionaryTag.Add(8, "ConfigurationPlayerSymbolButtonBackTableWithSymbolsToChoose");
 
             return configurationPlayersSymbolsDictionaryTag;
         }

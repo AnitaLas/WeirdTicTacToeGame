@@ -130,6 +130,7 @@ namespace Assets.Scripts.PlayGame
 
         public static string[] ChangeCurrentPlayersSymbolsMove(string[] playerSymbolMove, string[] playersSymbols, int playersNumberGivenForConfiguration, int[] currentPlayer, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
         {
+            Debug.Log("ChangeCurrentPlayersSymbolsMove ");
             int playerSymbolMoveLenght = 3;
             int currentPlayerNumber = currentPlayer[0];
            // Debug.Log("currentPlayerNumber = " + currentPlayerNumber);
