@@ -105,19 +105,22 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     //for (int indexRow = maxIndexRow - 1; indexRow >= 0; indexRow--)
                     {
-
+                        int index = maxIndexRow - indexRow - 1;
                         GameObject chosenPlayerSymbol = tableWithPlayersAndSymbols[indexDepth, indexRow, indexColumn];
                         string chosenPlayerSymbolText = CommonMethods.GetTextForPlayerSymbolChild(chosenPlayerSymbol, 1);
-                        
 
-                        tableWitPlayersChosenSymbols[indexRow] = chosenPlayerSymbolText;
-                         Debug.Log($"tableWitPlayersChosenSymbols[{indexRow}] = " + tableWitPlayersChosenSymbols[indexRow]);
+
+                        //tableWitPlayersChosenSymbols[indexRow] = chosenPlayerSymbolText;
+                        //Debug.Log($"tableWitPlayersChosenSymbols[{indexRow}] = " + tableWitPlayersChosenSymbols[indexRow]);
+
+                        tableWitPlayersChosenSymbols[index] = chosenPlayerSymbolText;
+                        //Debug.Log($"tableWitPlayersChosenSymbols[{index}] = " + tableWitPlayersChosenSymbols[index]);
 
                     }
                 }
             }
 
-            Debug.Log(" ------------------------ ");
+            //Debug.Log(" ------------------------ ");
 
             return tableWitPlayersChosenSymbols;
 
@@ -125,7 +128,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
         public static GameObject[,,] ChangeDataForTableWithSymbols(GameObject[,,] tableWithSymbolsBase, string[] tableWitPlayersChosenSymbols, Material[] prefabSymbolPlayerMaterialInactiveField, string tagConfigurationPlayerSymbolChooseSymbol, string tagConfigurationBoardGameInactiveFieldt)
         {
-            Debug.Log(" test 1 ");
+            //Debug.Log(" test 1 ");
             Material cubeColourInactiveField = prefabSymbolPlayerMaterialInactiveField[0];
 ;           
             int maxIndexDepth = 1;

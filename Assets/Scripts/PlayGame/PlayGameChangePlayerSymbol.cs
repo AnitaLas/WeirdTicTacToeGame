@@ -117,7 +117,8 @@ namespace Assets.Scripts.PlayGame
             //string playerSymbol = playersSymbols[indexForPlayerSymbol];
 
             GameObject playerSymbolMove = CommonMethods.GetObjectByTagName(tagPlayerSymbolDictionary);
-            CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
+           // CommonMethods.ChangeTextForCubePlay(playerSymbolMove, playerSymbol);
+            CommonMethods.ChangeTextForFirstChild(playerSymbolMove, playerSymbol);
             //CommonMethods.ChangeTextForSecondChild(playerSymbolMove, playerSymbol);
         }
         /*
@@ -140,11 +141,13 @@ namespace Assets.Scripts.PlayGame
             string newPlayerSymbolPrevious;
             string newPlayerSymbolNext;
 
-            // Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesCommon.DictionaryTagPlayerSymbol();
+            //for (int i = 0; i < playerSymbolMove.Length; i++)
+            //{
+            //    Debug.Log($"playerSymbolMove[{i}] = " + playerSymbolMove[i]);
+            //}
 
-            //string tagPlayerSymbolCurrent = tagPlayerSymbolDictionary[1];
-            // string tagPlayerSymbolPrevious = tagPlayerSymbolDictionary[2];
-            // string tagPlayerSymbolNext = tagPlayerSymbolDictionary[3];
+           // Debug.Log(" -------------------------------- = ");
+
 
             if (playersNumberGivenForConfiguration == 2)
             {
@@ -185,7 +188,7 @@ namespace Assets.Scripts.PlayGame
 
                     if (nextPlayersSymbolsIndex > playersSymbols.Length - 1)
                     {
-                       // Debug.Log("  1  ");
+                        Debug.Log("  1  ");
                        // Debug.Log("test = " + nextPlayersSymbolsIndex);
                         newPlayerSymbolNext = playersSymbols[0];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
@@ -194,7 +197,7 @@ namespace Assets.Scripts.PlayGame
                     }
                     else
                     {
-                        //Debug.Log("  3  ");
+                       Debug.Log("  3  ");
                        // Debug.Log("test = " + nextPlayersSymbolsIndex);
                         newPlayerSymbolNext = playersSymbols[currentPlayerNumber + 2];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
@@ -206,7 +209,7 @@ namespace Assets.Scripts.PlayGame
                 {
                     if (currentPlayerNumber == playersSymbols.Length - 1)
                     {
-                       // Debug.Log("  4  ");
+                        Debug.Log("  4  ");
                         newPlayerSymbolNext = playersSymbols[1];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
                         ChangePlayerSymbol(newPlayerSymbolNext, tagPlayerSymbolNext);
@@ -214,15 +217,23 @@ namespace Assets.Scripts.PlayGame
                     }
                     else
                     {
-                        //Debug.Log("  5  ");
+                        Debug.Log("  5  ");
                         newPlayerSymbolNext = playersSymbols[2];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
+                       // Debug.Log("  newPlayerSymbolNext = " + newPlayerSymbolNext);
+                        //Debug.Log("  tagPlayerSymbolNext = " + tagPlayerSymbolNext);
+
                         ChangePlayerSymbol(newPlayerSymbolNext, tagPlayerSymbolNext);
 
                     }
                 }
 
-                //Debug.Log(" ----------------------------------------------------- ");
+                ////Debug.Log(" ----------------------------------------------------- ");
+                //for (int i = 0; i < newPlayerSymbolMove.Length; i++)
+                //{
+                //    Debug.Log($"newPlayerSymbolMove[{i}] = " + newPlayerSymbolMove[i]);
+                //}
+
 
                 return newPlayerSymbolMove;
             }
