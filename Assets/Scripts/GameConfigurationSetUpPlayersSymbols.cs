@@ -134,6 +134,8 @@ namespace Assets.Scripts
                             }
                             */
                             //--
+                            Debug.Log(" 1 ");
+
                             string gameObjectParentName = CommonMethods.GetParentObjectName(touch);
                             _gameObjectParentNameChanged = gameObjectParentName;
 
@@ -161,22 +163,19 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagConfigurationPlayerSymbolChooseSymbol)
                         {
-                            // Debug.Log(" 1 ");
                             string gameObjectNameForChosenSymbol = CommonMethods.GetObjectName(touch);
                             GameObject gameObjectForChosenSymbol = CommonMethods.GetObjectByName(gameObjectNameForChosenSymbol);
                            
                             string newSymbol = CommonMethods.GetCubePlayText(gameObjectForChosenSymbol);
                             GameConfigurationPlayerSymbolCommonMethods.ChangeSymbolForPlayer(newSymbol, _tagConfigurationPlayerSymbolChange);
 
-
                             GameObject gameObjectParent = CommonMethods.GetObjectByName(_gameObjectParentNameChanged);
                             GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol(gameObjectParent, _tagConfigurationPlayerSymbolDefaultSymbol);
 
-
                             GameConfigurationPlayerSymbolCommonMethods.UnhideTableWithNumber(tableWithPlayersAndSymbols);
 
-                            //GameConfigurationTableForLenghtToCheck.DestroyTable(tableWithSymbolsBase);
-                            //GameConfigurationTableForLenghtToCheck.DestroyTable(tableWitSymbols);
+                            GameConfigurationTableForLenghtToCheck.DestroyTable(tableWithSymbolsBase);
+                            GameConfigurationTableForLenghtToCheck.DestroyTable(tableWitSymbols);
 
                             GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationDefaultButton);
                             GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationButtonBackTableWithSymbolsToChoose);

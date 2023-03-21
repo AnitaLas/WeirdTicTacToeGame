@@ -16,9 +16,10 @@ namespace Assets.Scripts.GameConfiguration
         public static string[] CreateTableWithPlayersSymbols()
         {
             //string[] playersSymbols = { "x", "o", "H", "y", "z", "t" };
+            string[] playersSymbols = { "x", "00" };
             //string[] playersSymbols = { "x", "00" };
             //string[] playersSymbols = { "x", "0", "3" };
-            string[] playersSymbols = { "x", "o", "H", "Z"};
+            //string[] playersSymbols = { "x", "o", "H", "Z"};
             //string[] playersSymbols = { "1", "2", "3", "4" };
             return playersSymbols;
         }

@@ -56,7 +56,7 @@ internal class Game : MonoBehaviour
 
     //public int playersNumberGivenForConfiguration1 = 2;
 
-    public int playersNumberGivenForConfiguration1 = 4;
+    public int playersNumberGivenForConfiguration; // = 4;
 
 
 
@@ -159,6 +159,9 @@ internal class Game : MonoBehaviour
         _index = 0;
 
 
+        _configurationBoardGameNumberOfPlayers = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfPlayers;
+        playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
+
         _configurationBoardGameNumberOfRows = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfRows;
         //Debug.Log("dataFromScenece1 = " + dataFromScenece1);
        // numberOfRows = CommonMethods.ConvertStringToInt(_configurationBoardGameNumberOfRows);
@@ -179,7 +182,7 @@ internal class Game : MonoBehaviour
         gameBoardVerification2D = GameConfigurationCommonMethods.CreateEmptyTable2D(numberOfRows, numberOfColumns);
 
         // does it need it?
-        playerNumber = GameConfigurationTableForPlayers.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration1);
+        playerNumber = GameConfigurationTableForPlayers.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration);
 
         
 
@@ -187,7 +190,6 @@ internal class Game : MonoBehaviour
         //playersSymbols = GameConfigurationCommonMethods.CreateTableWithPlayersSymbols();
 
         playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
-
 
 
         currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
@@ -249,11 +251,6 @@ internal class Game : MonoBehaviour
                     string gameObjectTag = CommonMethods.GetObjectTag(touch);
                     string gameObjectName = CommonMethods.GetObjectName(touch);
 
-                    ///Debug.Log(" test 0 ");
-                    //if (gameObjectTag == "ConfigurationBoardGameSave")
-                    //{
-                    //    SceneManager.LoadScene("SceneGame");
-                    //}
 
                     int currentPlayerNumber = currentPlayer[0];
                     GameObject cubePlay = CommonMethods.GetCubePlay(gameBoard, gameObjectName);
@@ -287,11 +284,10 @@ internal class Game : MonoBehaviour
 
                             gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
-                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration1, currentPlayer, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
+                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration, currentPlayer, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
-                            //Debug.Log(" 0 ");
                             _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
-                            //Debug.Log(" 1 ");
+
                             _winner = (bool)_listCheckerForWinner[0];
 
                             if (_winner == true)
@@ -310,7 +306,7 @@ internal class Game : MonoBehaviour
                             else
                             {
 
-                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration1);
+                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
                                 //cubePlayMarkByFrame.transform.tag = _tagCubePlayTaken;
                                 CommonMethods.ChangeTagForGameObject(cubePlayMarkByFrame, _tagCubePlayTaken);
@@ -353,18 +349,16 @@ internal class Game : MonoBehaviour
                             moveIndexForFrame[_moveIndexForFrameX] = cubePlayIndexX;
                             moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
 
-                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration1, currentPlayer, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
+                            playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration, currentPlayer, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
-                            // Debug.Log(" 0 ");
                             _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
 
-                            //Debug.Log(" 1 ");
                             _winner = (bool)_listCheckerForWinner[0];
 
 
                             if (_winner == true)
                             {
-                               // Debug.Log(" 2 ");
+
                                 _winnerCoordinateXYForCubePlay = (int[,])_listCheckerForWinner[1];
                                 _winnerKindOfChecker = (string)_listCheckerForWinner[2];
 
@@ -381,7 +375,7 @@ internal class Game : MonoBehaviour
                             {
 
 
-                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration1);
+                                currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
                                 CommonMethods.ChangeTagForGameObject(touch, _tagCubePlayTaken);
                                 currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);
