@@ -36,15 +36,17 @@ namespace Assets.Scripts
         private string _tagConfigurationPlayerSymbolButtonBack;
         private string _tagConfigurationPlayerSymbolButtonBackTableWithSymbolsToChoose;
 
+        Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
+
+        private string _sceneGame;
+        private string _sceneConfigurationPlayersSymbols;
+
         private int numberOfDepths = 1;
         private int numberOfColumns = 1;
-        //private int numberOfRows = 7;
-        //private int numberOfRows;
         private int numberOfPlayers;
 
         private int numberOfDepthsForTableWithSymbols = 1;
         private int numberOfColumnsForTableSymbols = 4;
-        //private int numberOfRowsForTableWithSymbol = 6;
         private int numberOfRowsForTableWithSymbols = 7;
 
         GameObject[,,] tableWithPlayersAndSymbolsBase;
@@ -72,6 +74,10 @@ namespace Assets.Scripts
             _tagConfigurationPlayerSymbolButtonBackTableWithSymbolsToChoose = configurationPlayersSymbolsDictionaryTag[8];
 
             // ---
+            _sceneGame = scenceDictionary[1];
+            _sceneConfigurationPlayersSymbols = scenceDictionary[3];
+            
+            // ---
             _tagConfigurationDefaultButton[0] = _tagConfigurationPlayerSymbolButtonSave;
             _tagConfigurationDefaultButton[1] = _tagConfigurationPlayerSymbolButtonBack;
 
@@ -80,15 +86,10 @@ namespace Assets.Scripts
 
             // ---
             numberOfPlayers = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfPlayers;
+
             // configuration table with players and defaul symbol
             tableWithPlayersAndSymbolsBase = GameConfigurationPlayerSymbolTableWithPlayerNumber.CreateTableWithPlayers(prefabSymbolPlayer, numberOfDepths, numberOfPlayers, numberOfColumns, prefabSymbolPlayerMaterial, isGame2D);
             tableWithPlayersAndSymbols = GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayersAndSymbols(tableWithPlayersAndSymbolsBase);
-
-            //tableWitPlayersChosenSymbols = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithPlayersChosenSymbols(tableWithPlayersAndSymbols);
-
-            //// configuration table with the symbol which may be chosen by users
-            //tableWithSymbolsBase = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithSymbols(prefabCubePlay, numberOfDepthsForTableWithSymbols, numberOfRowsForTableWithSymbols, numberOfColumnsForTableSymbols, prefabSymbolPlayerMaterial, isGame2D);
-            //tableWitSymbols = GameConfigurationPlayerSymbolTableWithSymbols.ChangeDataForTableWithSymbols(tableWithSymbolsBase, tableWitPlayersChosenSymbols, prefabSymbolPlayerMaterialInactiveField, _tagConfigurationPlayerSymbolChooseSymbol, _tagConfigurationPlayerSymbolInactiveField);
 
             GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationButtonBackTableWithSymbolsToChoose);
 
@@ -113,16 +114,14 @@ namespace Assets.Scripts
                     if (touch.collider != null)
                     {
                         string gameObjectTag = CommonMethods.GetObjectTag(touch);
+                        //GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
                         //Debug.Log("gameObjectTag = " + gameObjectTag);
-                        GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
 
-                        //string gameObjectName = CommonMethods.Get(touch);
-                        //Debug.Log("gameObjectParentName = " + gameObjectParentName);
-
-                        //TextMeshProUGUI gameObjectPlayerNumber = GameConfigurationPlayerSymbolCommonMethods.GetTextForPlayerSymbolFirstChild(gameObject);
-
-
-
+                        if (gameObjectTag != "Untagged")
+                        {
+                            GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
+                        }
+                        
 
                         if (gameObjectTag == _tagConfiguratioPlayerSymbolDefaultNumber || gameObjectTag == _tagConfigurationPlayerSymbolDefaultSymbol)
                         {
@@ -133,8 +132,6 @@ namespace Assets.Scripts
                                 GameConfigurationTableForLenghtToCheck.DestroyTable(tableWitSymbols);
                             }
                             */
-                            //--
-                            Debug.Log(" 1 ");
 
                             string gameObjectParentName = CommonMethods.GetParentObjectName(touch);
                             _gameObjectParentNameChanged = gameObjectParentName;
@@ -201,9 +198,19 @@ namespace Assets.Scripts
                             ConfigurationPlayerSymbolTableWitPlayersChosenSymbols = tableWitPlayersChosenSymbols;
 
 
-                            SceneManager.LoadScene("SceneGame");
+                           // SceneManager.LoadScene("SceneGame");
+                           // CommonMethods.ChangeScene(_sceneGame);
+                            CommonMethods.ChangeScene(_sceneGame);
 
 
+
+                        }
+
+
+                        if (gameObjectTag == _tagConfigurationPlayerSymbolButtonBack)
+                        {
+                            Debug.Log(" 1 ");
+                            CommonMethods.ChangeScene(_sceneConfigurationPlayersSymbols);
 
                         }
 

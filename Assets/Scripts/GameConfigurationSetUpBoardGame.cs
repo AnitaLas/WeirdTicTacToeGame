@@ -255,11 +255,14 @@ namespace Assets.Scripts.GameConfiguration
                             ConfigurationBoardGameNumberOfPlayers = numberOfPlayers;
                             ConfigurationBoardGameLenghtToCheck = lenghtToCheck;
 
-                            SceneManager.LoadScene(_sceneConfigurationPlayersSymbols);
+                            //SceneManager.LoadScene(_sceneConfigurationPlayersSymbols);
+                            CommonMethods.ChangeScene(_sceneConfigurationPlayersSymbols);
 
-                           
+
 
                         }
+
+
 
                     }
                 }

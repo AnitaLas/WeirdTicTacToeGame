@@ -102,6 +102,19 @@ namespace Assets.Scripts.GameDictionaries
             return configurationPlayersSymbolsDictionaryTag;
         }
 
+        public static Dictionary<int, string> DictionaryTagGame()
+        {
+            Dictionary<int, string> tagGameDictionary = new Dictionary<int, string>();
+
+            tagGameDictionary.Add(1, "GameButtonMenuConfiguration");
+            tagGameDictionary.Add(1, "GameButtonNewGame");
+            tagGameDictionary.Add(1, "GameButtonHideHelpButtons");
+            tagGameDictionary.Add(1, "GameButtonUnhideHelpButtons");
+
+            return tagGameDictionary;
+        }
+
+
         public static Dictionary<int, string> DictionaryScence()
         {
             Dictionary<int, string> scenceDictionary = new Dictionary<int, string>();

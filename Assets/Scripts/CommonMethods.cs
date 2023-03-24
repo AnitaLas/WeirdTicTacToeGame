@@ -11,6 +11,7 @@ using Unity.VisualScripting;
 using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
 using Random = System.Random;
@@ -636,9 +637,12 @@ namespace Assets.Scripts
 
 
 
+        //-------------------------------------------
 
-
-
+        public static void ChangeScene(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
 
 
 
