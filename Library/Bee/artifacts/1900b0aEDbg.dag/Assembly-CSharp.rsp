@@ -361,6 +361,7 @@
 "Assets/Scripts/CreateFrame/CreateFrameForMove.cs"
 "Assets/Scripts/CreateGameBoard/CreateGameBoard.cs"
 "Assets/Scripts/CreateGameBoard/CreateGameBoardMethods.cs"
+"Assets/Scripts/CreateGameBoard/CreateGameHelpButton.cs"
 "Assets/Scripts/CreateTable/CreateTableCommonMethods.cs"
 "Assets/Scripts/CreateTable/CreateTableMainMethods.cs"
 "Assets/Scripts/CreateTable/CreateTablePrefabCalculateScale.cs"

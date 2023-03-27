@@ -10,6 +10,14 @@ namespace Assets.Scripts.GameDictionaries
 {
     internal class GameDictionariesCommon
     {
+        public static Dictionary<int, string> DictionaryTagCommon()
+        {
+            Dictionary<int, string> tagCommonDictionary = new Dictionary<int, string>();
+
+            tagCommonDictionary.Add(1, "Untagged");
+            return tagCommonDictionary;
+
+        }
         public static Dictionary<int, string> DictionaryTagCubePlay()
         {
             Dictionary<int, string> tagCubePlayDictionary = new Dictionary<int, string>();
@@ -107,9 +115,9 @@ namespace Assets.Scripts.GameDictionaries
             Dictionary<int, string> tagGameDictionary = new Dictionary<int, string>();
 
             tagGameDictionary.Add(1, "GameButtonMenuConfiguration");
-            tagGameDictionary.Add(1, "GameButtonNewGame");
-            tagGameDictionary.Add(1, "GameButtonHideHelpButtons");
-            tagGameDictionary.Add(1, "GameButtonUnhideHelpButtons");
+            tagGameDictionary.Add(2, "GameButtonNewGame");
+            tagGameDictionary.Add(3, "GameButtonHideHelpButtons");
+            tagGameDictionary.Add(4, "GameButtonUnhideHelpButtons");
 
             return tagGameDictionary;
         }
