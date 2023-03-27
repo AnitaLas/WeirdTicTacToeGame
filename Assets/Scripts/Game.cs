@@ -107,6 +107,10 @@ internal class Game : MonoBehaviour
     private string _tagPlayerSymbolPrevious;
     private string _tagPlayerSymbolNext;
 
+    Dictionary<int, string> tagDictionaryGame = GameDictionariesCommon.DictionaryTagGame();
+
+    private string _tagGameButtonMenuConfiguration;
+
 
     private int _index;
 
@@ -155,6 +159,11 @@ internal class Game : MonoBehaviour
         _tagPlayerSymbolCurrent = tagPlayerSymbolDictionary[1];
         _tagPlayerSymbolPrevious = tagPlayerSymbolDictionary[2];
         _tagPlayerSymbolNext = tagPlayerSymbolDictionary[3];
+
+
+        _tagGameButtonMenuConfiguration = tagDictionaryGame[1];
+
+
 
         _index = 0;
 
@@ -402,12 +411,15 @@ internal class Game : MonoBehaviour
                     }
 
 
-                    
+                    if (gameObjectTag == _tagGameButtonMenuConfiguration)
+                    {
+                        Debug.Log("  1  ");
+                    }
 
 
 
 
-                }
+            }
             }
 
            

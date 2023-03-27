@@ -41,6 +41,11 @@ namespace Assets.Scripts
         private string _sceneGame;
         private string _sceneConfigurationPlayersSymbols;
 
+        Dictionary<int, string> tagCommonDictionary = GameDictionariesCommon.DictionaryTagCommon();
+
+        private string _tagUntagged;
+
+
         private int numberOfDepths = 1;
         private int numberOfColumns = 1;
         private int numberOfPlayers;
@@ -76,7 +81,9 @@ namespace Assets.Scripts
             // ---
             _sceneGame = scenceDictionary[1];
             _sceneConfigurationPlayersSymbols = scenceDictionary[3];
-            
+
+            // ---
+            _tagUntagged = tagCommonDictionary[1];
             // ---
             _tagConfigurationDefaultButton[0] = _tagConfigurationPlayerSymbolButtonSave;
             _tagConfigurationDefaultButton[1] = _tagConfigurationPlayerSymbolButtonBack;
@@ -117,7 +124,8 @@ namespace Assets.Scripts
                         //GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
                         //Debug.Log("gameObjectTag = " + gameObjectTag);
 
-                        if (gameObjectTag != "Untagged")
+                        //if (gameObjectTag != "Untagged")
+                        if (gameObjectTag != _tagUntagged)
                         {
                             GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
                         }
