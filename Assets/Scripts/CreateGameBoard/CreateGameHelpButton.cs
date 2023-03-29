@@ -9,14 +9,18 @@ namespace Assets.Scripts.CreateGameHelpButton
 {
     internal class CreateGameHelpButton : MonoBehaviour
     {
-        public static void CreateHelpButtons(GameObject prefabCubePlay)
+        public static void CreateHelpButtons(GameObject prefabHelpButtons)
         {
            // GameObject prefabCubePlay;
             // create arrow or confirm button
-            var newPrefabCubePlay = Instantiate(prefabCubePlay);
+            var newPrefabCubePlay = Instantiate(prefabHelpButtons);
         }
 
-       
+        public static void DestroyHelpButtons (GameObject prefabHelpButtons)
+        {
+            Destroy(prefabHelpButtons);
+
+        }
 
 
     }

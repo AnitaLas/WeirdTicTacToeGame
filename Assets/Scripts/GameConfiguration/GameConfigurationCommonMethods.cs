@@ -43,7 +43,7 @@ namespace Assets.Scripts.GameConfiguration
 
 
 
-
+        
         public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateZ)
         {
 
@@ -65,6 +65,7 @@ namespace Assets.Scripts.GameConfiguration
                 }
             }
         }
+        
 
         public static void UnhideTableWithNumber(GameObject[,,] tableWtithNumber)
         {

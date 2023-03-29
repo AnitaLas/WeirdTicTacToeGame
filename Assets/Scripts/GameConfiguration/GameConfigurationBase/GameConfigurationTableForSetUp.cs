@@ -63,7 +63,7 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (start >= cubePlayTextInt || end <= cubePlayTextInt)
                         {
-                             CommonMethods.ChangeTextForCubePlay(cubePlay, inactiveText);
+                            CommonMethods.ChangeTextForCubePlay(cubePlay, inactiveText);
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveField);
                         }
 
@@ -87,7 +87,6 @@ namespace Assets.Scripts.GameConfiguration
             {
                 for (int indexRow = numberOfRows - 1; indexRow >= 0; indexRow--)
                 {
-                    //currentIndex = index[0];
 
                     for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
                     {
@@ -97,8 +96,6 @@ namespace Assets.Scripts.GameConfiguration
                         newTable[indexDepth, indexRow, indexColumn] = stringNumber;
                         index[0] = index[0] + 1;
                     }
-
-                    //index[0] = index[0] + 1;
                 }
 
                 index[0] = 0;
@@ -113,16 +110,8 @@ namespace Assets.Scripts.GameConfiguration
         {
             string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
 
-            //string[] alphabet = CreateTableWithCharactersForPrefabCubePlay(numberOfRows, numberOfColumns);
             string[] numbers = CreateTableWithNumbersForPrefabCubePlay(numberOfRows, numberOfColumns);
-            /*
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                Debug.Log(" i = " + numbers[i]);
-            }
-            */
 
-           // string[,,] alphabet3D = CreateTableForDefaultTextWithCharacters(alphabet, numberOfDepths, numberOfRows, numberOfColumns);
             string[,,] numbers3D = CreateTableForDefaultTextWithNumbers(numbers, numberOfDepths, numberOfRows, numberOfColumns);
 
             for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
@@ -132,9 +121,6 @@ namespace Assets.Scripts.GameConfiguration
                     for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
                     {
                         string stringNumber = numbers3D[indexDepth, indexRow, indexColumn];
-                        //string stringAlphabet = alphabet3D[indexDepth, indexRow, indexColumn];
-                        //string textForPrebaCubePlay = stringAlphabet + stringNumber;
-                        //Debug.Log("stringNumber = " + stringNumber);
                         newTable[indexDepth, indexRow, indexColumn] = stringNumber;
                     }
                 }
