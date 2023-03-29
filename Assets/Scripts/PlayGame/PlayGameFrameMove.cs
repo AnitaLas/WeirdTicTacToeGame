@@ -122,7 +122,7 @@ namespace Assets.Scripts.PlayGame
                 float z = cubePlayFrame.transform.position.z;
                 //float z = -0.6f;
                 //float z = cubePlay.transform.position.z;
-                Debug.Log(" z = " + z);
+                //Debug.Log(" z = " + z);
 
                 cubePlayFrame.transform.position = new Vector3(x, y, z);
             }

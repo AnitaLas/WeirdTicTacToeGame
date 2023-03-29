@@ -23,12 +23,19 @@ using Assets.Scripts.GameDictionaries;
 using System.Reflection;
 using UnityEngine.SceneManagement;
 using Assets.Scripts.CreateFrame;
+using Assets.Scripts.CreateGameHelpButton;
 
 internal class Game : MonoBehaviour
 {
     // prefab "CybePlay"
     public GameObject prefabCubePlay;
+
+    // prefab "CybePlayFrame"
     public GameObject prefabCubePlayFrame;
+
+    // prefab "CybePlayFrame"
+    public GameObject prefabHelpButtons;
+
 
     // prefab "CubePlay" - colour 
     public Material[] prefabCubePlayDefaultColour;
@@ -110,6 +117,8 @@ internal class Game : MonoBehaviour
     Dictionary<int, string> tagDictionaryGame = GameDictionariesCommon.DictionaryTagGame();
 
     private string _tagGameButtonMenuConfiguration;
+    private string _tagGameButtonUnhideHelpButtons;
+    private string _tagGameButtonHideHelpButtons;
 
 
     private int _index;
@@ -162,6 +171,8 @@ internal class Game : MonoBehaviour
 
 
         _tagGameButtonMenuConfiguration = tagDictionaryGame[1];
+        _tagGameButtonHideHelpButtons = tagDictionaryGame[3];
+        _tagGameButtonUnhideHelpButtons = tagDictionaryGame[4];
 
 
 
@@ -233,7 +244,12 @@ internal class Game : MonoBehaviour
 
         cubePlayFrame = CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, isGame2D);
 
+        //float x = cubePlayFrame.transform.position.x;
+        //float y = cubePlayFrame.transform.position.y;
+        //float z = cubePlayFrame.transform.position.z;
 
+        //Debug.Log("set up y =  " + y);
+       // Debug.Log(" y + newCoordinateY =  " + (y + newCoordinateY));
 
 
     }
@@ -411,22 +427,67 @@ internal class Game : MonoBehaviour
                     }
 
 
-                    if (gameObjectTag == _tagGameButtonMenuConfiguration)
+                    if (gameObjectTag == _tagGameButtonUnhideHelpButtons)
                     {
-                        Debug.Log("  1  ");
+                        // Debug.Log("  1  ");
+
+                            CreateGameHelpButton.CreateHelpButtons(prefabHelpButtons);                   
+                    }
+
+                    if ( gameObjectTag == _tagGameButtonHideHelpButtons)
+                    {
+                        // Debug.Log("  1  ");
+                        CreateGameHelpButton.DestroyHelpButtons(prefabHelpButtons);
                     }
 
 
 
 
-            }
+                    if (gameObjectTag == _tagGameButtonMenuConfiguration)
+                    {
+                        // Debug.Log("  1  ");
+                        //CreateGameConfigurationMenu.HideBoardGame(gameBoard);
+                        CreateGameConfigurationMenu.HideBoardGame(gameBoard);
+
+                        //float x = cubePlayFrame.transform.position.x;
+                        //float y = cubePlayFrame.transform.position.y;
+                        //float z = cubePlayFrame.transform.position.z;
+                        //Debug.Log("tag y =  " + y);
+
+                        //CreateGameConfigurationMenu.HideCubePlayFrame2(cubePlayFrame);
+                        CreateGameConfigurationMenu.HideCubePlayFrame(_tagCubePlayFrame);
+
+                       // CreateGameConfigurationMenu.HideCubePlayFrame2(cubePlayFrame);
+
+
+
+
+                        CreateGameConfigurationMenu.CreateConfigurationButton(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+
+                    }
+
+                    // --------------------------------------------
+                    // --- test
+
+                    //CreateGameConfigurationMenu.CreateConfigurationButton(prefabCubePlay, cubePlayColourWin, isGame2D);
+                    
+
+
+
+
+
+
+
+
+
+                }
             }
 
            
         }
-        
 
-        
+
+       
 
 
 

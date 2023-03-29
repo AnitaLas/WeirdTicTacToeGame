@@ -415,7 +415,7 @@ namespace Assets.Scripts
             return cubePlayName;
         }
 
-        public static void SetUpNewZForGameObject(GameObject cubePlay, float newCoordinateZ)
+        public static void SetUpNewZForGameObject(GameObject gameObject, float newCoordinateZ)
         {
             //float transformSpeed = 1.0f;
             //float newZ = 0.05f;
@@ -423,13 +423,13 @@ namespace Assets.Scripts
 
             if (isGame2D == true)
             {
-                float x = cubePlay.transform.position.x;
-                float y = cubePlay.transform.position.y;
-                float z = cubePlay.transform.position.z;
+                float x = gameObject.transform.position.x;
+                float y = gameObject.transform.position.y;
+                float z = gameObject.transform.position.z;
 
                 // it works
                 //cubePlay.transform.position = new Vector3(x, y, z + newCoordinateZ);
-                cubePlay.transform.position = new Vector3(x, y, newCoordinateZ);
+                gameObject.transform.position = new Vector3(x, y, newCoordinateZ);
 
                 //newPrefabCubePlay.transform.position = new Vector3(x, y, currentCoordinateZ * Time.deltaTime);
 
