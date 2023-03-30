@@ -132,12 +132,12 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             text.text = newText;
         }
 
-        public static int ChooseRandomPlayerSymbol(string[] tableSymbols)
-        {
-            int tableSymbolsLenght = tableSymbols.Length;
-            int randomIndex = CommonMethods.ChooseRandomNumber(tableSymbolsLenght);
-            return randomIndex;
-        }
+        //public static int ChooseRandomPlayerSymbol(string[] tableSymbols)
+        //{
+        //    int tableSymbolsLenght = tableSymbols.Length;
+        //    int randomIndex = CommonMethods.ChooseRandomNumber(tableSymbolsLenght);
+        //    return randomIndex;
+        //}
 
         public static float GetFirstPositionForPrefabPlayerSymbol(float scale, int playersNumber)
         {

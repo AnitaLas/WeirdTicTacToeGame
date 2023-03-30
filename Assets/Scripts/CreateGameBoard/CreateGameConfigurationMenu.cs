@@ -12,19 +12,179 @@ namespace Assets.Scripts
 
         // ---
 
-        public static GameObject[,,] CreateConfigurationButton(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        public static void CreateConfigurationButtons(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+
+            // CreateConfigurationButtonHide(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            // GameObject[,,] tableConfigurationButtonShow = CreateConfigurationButtonShow(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            // GameObject[,,] tableConfigurationButtonNewGame = CreateConfigurationButtonNewGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            //  GameObject[,,] tableConfigurationButtonBackToGame = CreateConfigurationButtonBackToGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            
+            //string[] textForHelpButtonLines = new string[3];
+            //textForHelpButtonLines[0] = "    SHOW    ";
+            //textForHelpButtonLines[1] = "            ";
+            //textForHelpButtonLines[2] = "HELP BUTTONS";
+
+            string[] tableWithTextConfigurationButtonShow = new string[3];
+            tableWithTextConfigurationButtonShow[0] = "    HIDE    ";
+            tableWithTextConfigurationButtonShow[1] = "            ";
+            tableWithTextConfigurationButtonShow[2] = "HELP BUTTONS";
+
+            string[] tableWithTextConfigurationButtonNewGame = new string[3];
+            tableWithTextConfigurationButtonNewGame[0] = "            ";
+            tableWithTextConfigurationButtonNewGame[1] = "  NEW GAME  ";
+            tableWithTextConfigurationButtonNewGame[2] = "            ";
+
+            string[] tableWithTextConfigurationButtonBackToGame = new string[3];
+            tableWithTextConfigurationButtonBackToGame[0] = "    BACK    ";
+            tableWithTextConfigurationButtonBackToGame[1] = "            ";
+            tableWithTextConfigurationButtonBackToGame[2] = "   TO GAME  ";
+
+
+            GameObject[,,] tableConfigurationButtonShow = CreateSingleConfigurationButton(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tableWithTextConfigurationButtonShow);
+            GameObject[,,] tableConfigurationButtonNewGame = CreateSingleConfigurationButton(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tableWithTextConfigurationButtonNewGame);
+            GameObject[,,] tableConfigurationButtonBackToGame = CreateSingleConfigurationButton(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tableWithTextConfigurationButtonBackToGame);
+
+            float newCoordinateYUp = 2;
+            ChangeDataForSingleConfigurationButton(tableConfigurationButtonShow, newCoordinateYUp);
+
+            float newCoordinateYDown = -newCoordinateYUp;
+            ChangeDataForSingleConfigurationButton(tableConfigurationButtonBackToGame, newCoordinateYDown);
+
+
+        }
+
+        public static GameObject[,,] CreateSingleConfigurationButton(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string[] textForHelpButtonLines)
         {
             int numberOfDepths = 1;
             int numberOfRows = 3;
             int numberOfColumns = 12;
+
+            //string[] textForHelpButtonLines1 = new string[3];
+            //textForHelpButtonLines1[0] = "    HIDE    ";
+            //textForHelpButtonLines1[1] = "            ";
+            //textForHelpButtonLines1[2] = "HELP BUTTONS";
+
             GameObject[,,] tableWithNumber;
-            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);
+            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns, textForHelpButtonLines);
             tableWithNumber = CreateTableMainMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
 
 
             return tableWithNumber;
 
         }
+
+        public static void ChangeDataForSingleConfigurationButton(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY)
+        {
+            int maxIndexDepth = 1;
+            int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
+            int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
+
+            float newCoordinateZ = 0.175f;
+            float fontSize = 0.8f;
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay= singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
+
+                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+
+                        CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZ);
+
+                        CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
+
+
+
+                    }
+                }
+            }
+
+        }
+        public static GameObject[,,] CreateConfigurationButtonHide(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 12;
+
+            string[] textForHelpButtonLines = new string[3];
+            textForHelpButtonLines[0] = "    HIDE    ";
+            textForHelpButtonLines[1] = "            ";
+            textForHelpButtonLines[2] = "HELP BUTTONS";
+
+            GameObject[,,] tableWithNumber;
+            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns, textForHelpButtonLines);
+            tableWithNumber = CreateTableMainMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
+
+
+            return tableWithNumber;
+
+        }
+
+        public static GameObject[,,] CreateConfigurationButtonShow(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 12;
+
+            string[] textForHelpButtonLines = new string[3];
+            textForHelpButtonLines[0] = "    SHOW    ";
+            textForHelpButtonLines[1] = "            ";
+            textForHelpButtonLines[2] = "HELP BUTTONS";
+
+            GameObject[,,] tableWithNumber;
+            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns, textForHelpButtonLines);
+            tableWithNumber = CreateTableMainMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
+
+
+            return tableWithNumber;
+
+        }
+
+        public static GameObject[,,] CreateConfigurationButtonNewGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 12;
+
+            string[] textForHelpButtonLines = new string[3];
+            textForHelpButtonLines[0] = "            ";
+            textForHelpButtonLines[1] = "  NEW GAME  ";
+            textForHelpButtonLines[2] = "            ";
+
+            GameObject[,,] tableWithNumber;
+            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns, textForHelpButtonLines);
+            tableWithNumber = CreateTableMainMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
+
+
+            return tableWithNumber;
+
+        }
+
+        public static GameObject[,,] CreateConfigurationButtonBackToGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 12;
+
+            string[] textForHelpButtonLines = new string[3];
+            textForHelpButtonLines[0] = "    BACK    ";
+            textForHelpButtonLines[1] = "            ";
+            textForHelpButtonLines[2] = "   TO GAME  ";
+
+            GameObject[,,] tableWithNumber;
+            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns, textForHelpButtonLines);
+            tableWithNumber = CreateTableMainMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
+
+
+            return tableWithNumber;
+
+        }
+
+        // ---
 
         public static string[,,] CreateTableForDefaultTextWithNumbers(string[] table, int numberOfDepths, int numberOfRows, int numberOfColumns)
         {
@@ -54,17 +214,22 @@ namespace Assets.Scripts
             return newTable;
         }
 
-        public static string[] CreateTableWithTextForPrefabCubePlay(int numberOfRows, int numberOfColumns)
+        public static string[] CreateTableWithTextForPrefabCubePlay(int numberOfRows, int numberOfColumns, string[] textForHelpButtonLines)
         {
             int indexNumber = 0;
             int indexTextLineOne = 0;
+            int indexTextLineTwo = 0;
             int indexTextLineThree = 0;
             int allNumbers = numberOfRows * numberOfColumns;
             string[] numbers = new string[allNumbers];
             string symbol;
-            string textForHelpButtonLineOne = "    HIDE    ";
-            string textForHelpButtonLineTwo = "";
-            string textForHelpButtonLineThree = "HELP BUTTONS";
+            //string textForHelpButtonLineOne = "    HIDE    ";
+            //string textForHelpButtonLineTwo = "            ";
+            //string textForHelpButtonLineThree = "HELP BUTTONS";
+            
+            string textForHelpButtonLineOne = textForHelpButtonLines[0];
+            string textForHelpButtonLineTwo = textForHelpButtonLines[1];
+            string textForHelpButtonLineThree = textForHelpButtonLines[2];
 
             for (int number = 1; number <= allNumbers; number++)
             {
@@ -80,12 +245,17 @@ namespace Assets.Scripts
 
                  if (number <= numberOfColumns * 2 && number > numberOfColumns)
                 {
-                    symbol = textForHelpButtonLineTwo;
-                    //symbol = "v";
+                    //symbol = textForHelpButtonLineTwo;
+                    ////symbol = "v";
+                    //indexNumber = number - 1;
+                    //numbers[indexNumber] = symbol;
+                    //indexNumber = indexNumber + 1;
+                   
+                    symbol = textForHelpButtonLineTwo.Substring(indexTextLineTwo, 1);
                     indexNumber = number - 1;
                     numbers[indexNumber] = symbol;
+                    indexTextLineTwo = indexTextLineTwo + 1;
                     indexNumber = indexNumber + 1;
-
 
                 }
 
@@ -143,11 +313,11 @@ namespace Assets.Scripts
 
         }
 
-        public static string[,,] CreateTableWithTextForPrefabCubePlay(int numberOfDepths, int numberOfRows, int numberOfColumns)
+        public static string[,,] CreateTableWithTextForPrefabCubePlay(int numberOfDepths, int numberOfRows, int numberOfColumns, string[] textForHelpButtonLines)
         {
             string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
 
-            string[] numbers = CreateTableWithTextForPrefabCubePlay(numberOfRows, numberOfColumns);
+            string[] numbers = CreateTableWithTextForPrefabCubePlay(numberOfRows, numberOfColumns, textForHelpButtonLines);
             /*
             for (int i = 0; i < numbers.Length; i++)
             {
