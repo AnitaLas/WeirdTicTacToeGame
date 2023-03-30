@@ -462,7 +462,12 @@ internal class Game : MonoBehaviour
 
 
 
-                        CreateGameConfigurationMenu.CreateConfigurationButton(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+                        //CreateGameConfigurationMenu.CreateConfigurationButtonHide(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+                        //CreateGameConfigurationMenu.CreateConfigurationButtonShow(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+                        //CreateGameConfigurationMenu.CreateConfigurationButtonNewGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+                        //CreateGameConfigurationMenu.CreateConfigurationButtonBackToGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+
+                        CreateGameConfigurationMenu.CreateConfigurationButtons(prefabCubePlay, cubePlayColourWin, isGame2D);
 
                     }
 
