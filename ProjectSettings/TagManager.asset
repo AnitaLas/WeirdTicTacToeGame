@@ -43,9 +43,13 @@ TagManager:
   - ConfigurationPlayerSymbolButtonBack
   - ConfigurationPlayerSymbolButtonBackTableWithSymbolsToChoose
   - GameButtonNewGame
-  - GameButtonHideHelpButtons
-  - GameButtonUnhideHelpButtons
+  - GameButtonHelpButtons
+  - GameButtonMenuBack
+  - GameButtonParentObjectHelpButtons
+  - GameButtonMenuConfigurationLeft
+  - GameButtonMenuConfigurationRight
   - GameButtonMenuConfiguration
+  - GameButtonMenuConfigurationDisactivate
   layers:
   - Default
   - TransparentFX

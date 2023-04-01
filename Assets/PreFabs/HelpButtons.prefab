@@ -1737,7 +1737,7 @@ GameObject:
   - component: {fileID: 5721555290312791929}
   m_Layer: 0
   m_Name: HelpButtons
-  m_TagString: Untagged
+  m_TagString: GameButtonParentObjectHelpButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 21701817}
   m_Layer: 0
   m_Name: GameButtonMenuConfigurationLineLeftBetween
-  m_TagString: GameButtonMenuConfiguration
+  m_TagString: GameButtonMenuConfigurationLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 100986263}
   m_Layer: 0
   m_Name: GameButtonMenuConfigurationRightBottom
-  m_TagString: GameButtonMenuConfiguration
+  m_TagString: GameButtonMenuConfigurationRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 230625729}
   m_Layer: 0
   m_Name: GameButtonMenuConfigurationRightTop
-  m_TagString: GameButtonMenuConfiguration
+  m_TagString: GameButtonMenuConfigurationRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,11 +539,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776127172700, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_TagString
-      value: GameButtonMenuConfiguration
+      value: GameButtonMenuConfigurationRight
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075970, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_Name
       value: PlayerSymbolNextText
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239705776628075970, guid: d04175f188a775647983c3b246bb8d98, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075972, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_text
@@ -808,7 +812,7 @@ GameObject:
   - component: {fileID: 324213693}
   m_Layer: 0
   m_Name: GameButtonMenuConfigurationLineLeftDot
-  m_TagString: GameButtonMenuConfiguration
+  m_TagString: GameButtonMenuConfigurationLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -909,11 +913,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776127172700, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_TagString
-      value: GameButtonMenuConfiguration
+      value: GameButtonMenuConfigurationLeft
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075970, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_Name
       value: PlayerSymbolNextText
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239705776628075970, guid: d04175f188a775647983c3b246bb8d98, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6239705776628075971, guid: d04175f188a775647983c3b246bb8d98, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1447,7 +1455,7 @@ GameObject:
   - component: {fileID: 1588119347}
   m_Layer: 0
   m_Name: GameButtonMenuConfigurationRightBetween
-  m_TagString: GameButtonMenuConfiguration
+  m_TagString: GameButtonMenuConfigurationRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1549,7 +1557,7 @@ GameObject:
   - component: {fileID: 1602541604}
   m_Layer: 0
   m_Name: GameButtonMenuConfigurationLineLeftTop
-  m_TagString: GameButtonMenuConfiguration
+  m_TagString: GameButtonMenuConfigurationLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1936,7 +1944,7 @@ GameObject:
   - component: {fileID: 1982904715}
   m_Layer: 0
   m_Name: GameButtonMenuConfigurationLineLeftBottom
-  m_TagString: GameButtonMenuConfiguration
+  m_TagString: GameButtonMenuConfigurationLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2167,7 +2175,7 @@ GameObject:
   - component: {fileID: 2134409114}
   m_Layer: 0
   m_Name: GameButtonMenuConfigurationRightDot
-  m_TagString: GameButtonMenuConfiguration
+  m_TagString: GameButtonMenuConfigurationRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

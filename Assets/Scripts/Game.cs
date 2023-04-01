@@ -24,6 +24,7 @@ using System.Reflection;
 using UnityEngine.SceneManagement;
 using Assets.Scripts.CreateFrame;
 using Assets.Scripts.CreateGameHelpButton;
+using Assets.Scripts.Buttons;
 
 internal class Game : MonoBehaviour
 {
@@ -35,7 +36,6 @@ internal class Game : MonoBehaviour
 
     // prefab "CybePlayFrame"
     public GameObject prefabHelpButtons;
-
 
     // prefab "CubePlay" - colour 
     public Material[] prefabCubePlayDefaultColour;
@@ -114,14 +114,25 @@ internal class Game : MonoBehaviour
     private string _tagPlayerSymbolPrevious;
     private string _tagPlayerSymbolNext;
 
-    Dictionary<int, string> tagDictionaryGame = GameDictionariesCommon.DictionaryTagGame();
 
-    private string _tagGameButtonMenuConfiguration;
-    private string _tagGameButtonUnhideHelpButtons;
-    private string _tagGameButtonHideHelpButtons;
 
+    Dictionary<int, string> tagGameDictionary = GameDictionariesCommon.DictionaryTagGame();
+
+    private string _tagGameButtonMenuConfigurationLeft;
+    private string _tagGameButtonMenuConfigurationRight;
+    private string _tagGameButtonNewGame;
+    private string _tagGameButtonHelpButtons;
+    private string _tagGameButtonMenuBack;
+    private string _tagGameButtonParentObjectHelpButtons;
+    private string _tagGameButtonMenuConfigurationDisactivate;
+
+
+    Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
+
+    private string _sceneSceneConfigurationBoardGame;
 
     private int _index;
+   
 
     int[] playerNumber;
     string[] playersSymbols;
@@ -143,9 +154,12 @@ internal class Game : MonoBehaviour
 
     string[] playerSymbolMove;
 
+    string[] helpButtonsTag = new string[6];
+    string[] buttonsMenuConfiguration = new string[3];
+    string[] topObject = new string[5];
+    string[] tagDisactivateConfigurationMenu = new string[3];
 
-
-
+    private List<GameObject[,,]> gameButtonsMenu;
 
 
 
@@ -159,22 +173,51 @@ internal class Game : MonoBehaviour
         _tagCubePlayGameOver = tagCubePlayDictionary[4];
         _tagCubePlayGameWin = tagCubePlayDictionary[5];
 
+
         _tagArrowRight = tagArrowDictionary[1];
         _tagArrowLeft = tagArrowDictionary[3];
         _tagArrowUp = tagArrowDictionary[4];
         _tagArrowDown = tagArrowDictionary[2];
         _tagButtonConfirm = tagArrowDictionary[5];
 
+
         _tagPlayerSymbolCurrent = tagPlayerSymbolDictionary[1];
         _tagPlayerSymbolPrevious = tagPlayerSymbolDictionary[2];
         _tagPlayerSymbolNext = tagPlayerSymbolDictionary[3];
 
 
-        _tagGameButtonMenuConfiguration = tagDictionaryGame[1];
-        _tagGameButtonHideHelpButtons = tagDictionaryGame[3];
-        _tagGameButtonUnhideHelpButtons = tagDictionaryGame[4];
+        _tagGameButtonMenuConfigurationLeft = tagGameDictionary[1]; ;
+        _tagGameButtonMenuConfigurationRight = tagGameDictionary[2]; ;
+        _tagGameButtonNewGame = tagGameDictionary[3];
+        _tagGameButtonHelpButtons = tagGameDictionary[4];
+        _tagGameButtonMenuBack = tagGameDictionary[5];
+        _tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
+        _tagGameButtonMenuConfigurationDisactivate = tagGameDictionary[7];
 
 
+        helpButtonsTag[0] = _tagArrowRight;
+        helpButtonsTag[1] = _tagArrowLeft;
+        helpButtonsTag[2] = _tagArrowUp;
+        helpButtonsTag[3] = _tagArrowDown;
+        helpButtonsTag[4] = _tagButtonConfirm;
+        helpButtonsTag[5] = _tagGameButtonParentObjectHelpButtons;
+
+        buttonsMenuConfiguration[0] = _tagGameButtonHelpButtons;
+        buttonsMenuConfiguration[1] = _tagGameButtonNewGame;
+        buttonsMenuConfiguration[2] = _tagGameButtonMenuBack;
+
+        topObject[0] = _tagPlayerSymbolCurrent;
+        topObject[1] = _tagPlayerSymbolPrevious;
+        topObject[2] = _tagPlayerSymbolNext;
+        topObject[3] = _tagGameButtonMenuConfigurationLeft;  
+        topObject[4] = _tagGameButtonMenuConfigurationRight;
+
+        tagDisactivateConfigurationMenu[0] = _tagGameButtonMenuConfigurationDisactivate;
+        tagDisactivateConfigurationMenu[1] = _tagGameButtonMenuConfigurationRight;
+        tagDisactivateConfigurationMenu[2] = _tagGameButtonMenuConfigurationLeft;  
+
+
+        _sceneSceneConfigurationBoardGame = scenceDictionary[3];
 
         _index = 0;
 
@@ -249,8 +292,7 @@ internal class Game : MonoBehaviour
         //float z = cubePlayFrame.transform.position.z;
 
         //Debug.Log("set up y =  " + y);
-       // Debug.Log(" y + newCoordinateY =  " + (y + newCoordinateY));
-
+        // Debug.Log(" y + newCoordinateY =  " + (y + newCoordinateY));
 
     }
 
@@ -258,8 +300,6 @@ internal class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
 
 
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
@@ -326,6 +366,8 @@ internal class Game : MonoBehaviour
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
+                                PlayGameMenuActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
+                                PlayGameMenuButtons.CreateNewGameButton(prefabCubePlay, cubePlayColourWin, isGame2D);
 
                             }
                             else
@@ -394,6 +436,15 @@ internal class Game : MonoBehaviour
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
+                                bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+
+                                if (isGameObjectWithTagExsist == true)
+                                {
+                                    PlayGameHelpButtons.DestroyHelpButtons(helpButtonsTag);
+                                }
+
+                                PlayGameMenuActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
+                                PlayGameMenuButtons.CreateNewGameButton(prefabCubePlay, cubePlayColourWin, isGame2D);
                             }
 
                             else
@@ -427,27 +478,11 @@ internal class Game : MonoBehaviour
                     }
 
 
-                    if (gameObjectTag == _tagGameButtonUnhideHelpButtons)
-                    {
-                        // Debug.Log("  1  ");
-
-                            CreateGameHelpButton.CreateHelpButtons(prefabHelpButtons);                   
-                    }
-
-                    if ( gameObjectTag == _tagGameButtonHideHelpButtons)
-                    {
-                        // Debug.Log("  1  ");
-                        CreateGameHelpButton.DestroyHelpButtons(prefabHelpButtons);
-                    }
-
-
-
-
-                    if (gameObjectTag == _tagGameButtonMenuConfiguration)
+                    if (gameObjectTag == _tagGameButtonMenuConfigurationLeft |gameObjectTag == _tagGameButtonMenuConfigurationRight)
                     {
                         // Debug.Log("  1  ");
                         //CreateGameConfigurationMenu.HideBoardGame(gameBoard);
-                        CreateGameConfigurationMenu.HideBoardGame(gameBoard);
+                        PlayGameMenuActions.HideBoardGame(gameBoard);
 
                         //float x = cubePlayFrame.transform.position.x;
                         //float y = cubePlayFrame.transform.position.y;
@@ -455,9 +490,21 @@ internal class Game : MonoBehaviour
                         //Debug.Log("tag y =  " + y);
 
                         //CreateGameConfigurationMenu.HideCubePlayFrame2(cubePlayFrame);
-                        CreateGameConfigurationMenu.HideCubePlayFrame(_tagCubePlayFrame);
+                        PlayGameMenuActions.HideGameObjectWithTag(_tagCubePlayFrame);
 
-                       // CreateGameConfigurationMenu.HideCubePlayFrame2(cubePlayFrame);
+                        bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+
+                        if (isGameObjectWithTagExsist == true)
+                        {
+                            PlayGameMenuActions.HideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
+                        }
+
+                        PlayGameMenuActions.HideTopObject(topObject);
+                        //CreateGameConfigurationMenu.HideHelpButtons(helpButtonsTag);
+
+                        //CreateGameConfigurationMenu.HideTopObject(topObject);
+
+                        // CreateGameConfigurationMenu.HideCubePlayFrame2(cubePlayFrame);
 
 
 
@@ -467,15 +514,75 @@ internal class Game : MonoBehaviour
                         //CreateGameConfigurationMenu.CreateConfigurationButtonNewGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
                         //CreateGameConfigurationMenu.CreateConfigurationButtonBackToGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
 
-                        CreateGameConfigurationMenu.CreateConfigurationButtons(prefabCubePlay, cubePlayColourWin, isGame2D);
+                        gameButtonsMenu = PlayGameMenuButtons.CreateConfigurationButtons(prefabCubePlay, cubePlayColourWin, isGame2D);
 
                     }
+
+
+                    if (gameObjectTag == _tagGameButtonHelpButtons)
+                    {
+                        //GameObject[] numberOfTags = GameObject.FindGameObjectsWithTag(_tagGameButtonParentObjectHelpButtons);
+                        //int numberOfTagsLength = numberOfTags.Length;
+                        bool isGameButtonParentObjectHelpButtons = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+
+                        if (isGameButtonParentObjectHelpButtons == true)
+                        {
+                            PlayGameHelpButtons.DestroyHelpButtons(helpButtonsTag);
+                        }
+                        else
+                        {
+                            PlayGameHelpButtons.CreateHelpButtons(prefabHelpButtons);
+                        }
+
+                        //if (isGameObjectWithTagExsist == true)
+                        //{
+                        //    CreateGameConfigurationMenu.UnhideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
+                        //}
+
+                        PlayGameMenuActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
+
+                        PlayGameMenuActions.UnhideTopObject(topObject);
+                        PlayGameMenuActions.UnhideBoardGame(gameBoard);
+                        PlayGameMenuActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
+                    }
+
+
+                    if (gameObjectTag == _tagGameButtonMenuBack)
+                    {
+                        PlayGameMenuActions.UnhideTopObject(topObject);
+                        PlayGameMenuActions.UnhideBoardGame(gameBoard);
+                        PlayGameMenuActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
+
+                        bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+
+                        if (isGameObjectWithTagExsist == true)
+                        {
+                            PlayGameMenuActions.UnhideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
+                        }
+
+                        PlayGameMenuActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
+
+                        // --- test
+                        ButtonsText.CreateTableWithGivenString(14, "");
+
+
+                    }
+
+
+                    if (gameObjectTag ==  _tagGameButtonNewGame)
+                    {
+
+                        CommonMethods.ChangeScene(_sceneSceneConfigurationBoardGame);
+                    }
+
+
+
 
                     // --------------------------------------------
                     // --- test
 
                     //CreateGameConfigurationMenu.CreateConfigurationButton(prefabCubePlay, cubePlayColourWin, isGame2D);
-                    
+
 
 
 
