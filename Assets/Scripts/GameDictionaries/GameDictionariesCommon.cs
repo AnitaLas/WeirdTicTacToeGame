@@ -114,10 +114,15 @@ namespace Assets.Scripts.GameDictionaries
         {
             Dictionary<int, string> tagGameDictionary = new Dictionary<int, string>();
 
-            tagGameDictionary.Add(1, "GameButtonMenuConfiguration");
-            tagGameDictionary.Add(2, "GameButtonNewGame");
-            tagGameDictionary.Add(3, "GameButtonHideHelpButtons");
-            tagGameDictionary.Add(4, "GameButtonUnhideHelpButtons");
+            tagGameDictionary.Add(1, "GameButtonMenuConfigurationLeft");
+            tagGameDictionary.Add(2, "GameButtonMenuConfigurationRight");
+            tagGameDictionary.Add(3, "GameButtonNewGame");
+            tagGameDictionary.Add(4, "GameButtonHelpButtons");
+            tagGameDictionary.Add(5, "GameButtonMenuBack");
+            tagGameDictionary.Add(6, "GameButtonParentObjectHelpButtons");
+            tagGameDictionary.Add(7, "GameButtonMenuConfigurationDisactivate");
+            //tagGameDictionary.Add(4, "GameButtonHideHelpButtons");
+            //tagGameDictionary.Add(5, "GameButtonUnhideHelpButtons");
 
             return tagGameDictionary;
         }

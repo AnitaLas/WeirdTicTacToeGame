@@ -105,9 +105,7 @@
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlaySymbol.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTableCommonMethods.cs" />
-    <Compile Include="Assets\Scripts\CreateGameBoard\CreateGameConfigurationMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\Scripts\CreateGameBoard\CreateGameHelpButton.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckerSlash.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -127,6 +125,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\CreateFrame\CreateFrameForMove.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\PlayGameMenu\PlayGameMenuButtons.cs" />
+    <Compile Include="Assets\Scripts\PlayGameHelpButtons\PlayGameHelpButtons.cs" />
+    <Compile Include="Assets\Scripts\PlayGameMenu\PlayGameMenuActions.cs" />
+    <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethods.cs" />
+    <Compile Include="Assets\Scripts\Buttons\ButtonsText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

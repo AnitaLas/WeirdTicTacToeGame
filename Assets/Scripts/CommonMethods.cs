@@ -12,6 +12,8 @@ using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
 using Random = System.Random;
@@ -120,6 +122,11 @@ namespace Assets.Scripts
         {
             float gameObjectScale = gameObject.transform.localScale.x;
             return gameObjectScale;
+        }
+
+        public static void TransformGameObjectToNewScale(GameObject prefab, float newScaleX, float newScaleY, float newScaleZ)
+        {
+            prefab.transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
         }
 
         // --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -271,7 +278,18 @@ namespace Assets.Scripts
         {
             var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
             newPrefabCubePlayCanvasText.fontSize = fontSize;
+        }
 
+        public static void ChangeTextAlignmentBottom(GameObject gameObject)
+        {
+            var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
+            newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Bottom;
+        }
+
+        public static void ChangeTextAlignmenTop(GameObject gameObject)
+        {
+            var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
+            newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Top;
         }
 
         public static Color GetNewColor(int dictionaryColorId)
@@ -512,6 +530,18 @@ namespace Assets.Scripts
             return table;
         }
 
+        public static string[] CreateTableWithGivenLengthAndGivenValue(int tableLenght, string value)
+        {
+            string[] table = new string[tableLenght];
+
+            for (int i = 0; i < tableLenght; i++)
+            {
+                table[i] = value;
+            }
+
+            return table;
+        }
+
         public static string GetObjectName(GameObject gameObject)
         {
             string gameObjectName = gameObject.name;
@@ -644,6 +674,25 @@ namespace Assets.Scripts
             SceneManager.LoadScene(sceneName);
         }
 
+        //-------------------------------------------
+
+        public static bool IsGameObjectWithTagExsist(string tagName)
+        {
+            GameObject[] numberOfTags = GameObject.FindGameObjectsWithTag(tagName);
+            int numberOfTagsLength = numberOfTags.Length;
+
+            if (numberOfTagsLength > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+  
 
 
     }
