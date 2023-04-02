@@ -17,7 +17,7 @@ namespace Assets.Scripts.PlayGame
 
         public static void ChangeOneCubePlay(GameObject cubePlay, float newCoordinateZForAll, string tagCubePlayGameOver, Color newTextColor)
         {
-            CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZForAll);
+            CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZForAll);
             CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameOver);
             CommonMethods.ChangeTextColourForCubePlay(cubePlay, newTextColor);
         }
@@ -55,7 +55,7 @@ namespace Assets.Scripts.PlayGame
         public static void ChangeOneWinnerCubePlayForChecker(GameObject cubePlay, GameObject prefabCubePlayFrame, Color newTextColor, Material winColourForCubePlay, bool _isGame2D, float newFontSize, string tagCubePlayGameWin)
         {
             CommonMethods.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
-            CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
+            CommonMethods.ChangeZForGameObject(cubePlay, _newCoordinateZForWinner);
             CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
 
             CommonMethods.ChangeTextColourForCubePlay(cubePlay, newTextColor);
@@ -90,7 +90,7 @@ namespace Assets.Scripts.PlayGame
 
         public static void ChangeOneOtherCubePlay(GameObject prefabCubePlayFrame, GameObject cubePlay, Material winColourForCubePlay, string tagCubePlayGameWin, Color newTextColor, float newFontSize)
         {
-            CommonMethods.SetUpNewZForGameObject(cubePlay, _newCoordinateZForWinner);
+            CommonMethods.ChangeZForGameObject(cubePlay, _newCoordinateZForWinner);
             CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
             CommonMethods.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
 

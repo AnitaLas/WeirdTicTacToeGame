@@ -20,7 +20,7 @@ namespace Assets.Scripts.Buttons
         /// <returns></returns>
         public static string[] CreateTableWithGivenString(int stringLength, string buttonText)
         {
-            Debug.Log(" 1 ");
+            //Debug.Log(" 1 ");
 
             string[] table = new string[stringLength];
 

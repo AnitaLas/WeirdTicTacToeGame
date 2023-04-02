@@ -24,7 +24,7 @@ namespace Assets.Scripts
         public static void ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(GameObject cubePlay)
         {
             float newCoordinateZ = 0;
-            CommonMethods.SetUpNewZForGameObject(cubePlay, newCoordinateZ);
+            CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
         }
 
 

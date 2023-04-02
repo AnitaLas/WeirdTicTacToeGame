@@ -139,7 +139,26 @@ namespace Assets.Scripts.GameDictionaries
             return scenceDictionary;
         }
 
+        public static Dictionary<int, string> DictionaryButtonsGameName()
+        {
+            Dictionary<int, string> scenceDictionary = new Dictionary<int, string>();
 
+            scenceDictionary.Add(1, "NEW GAME");
+            scenceDictionary.Add(2, "BACK");
+            scenceDictionary.Add(3, "HELP BUTTONS");
+
+            return scenceDictionary;
+        }
+
+        public static Dictionary<int, string> DictionaryButtonsGameConfigurationCommonButtons()
+        {
+            Dictionary<int, string> scenceDictionary = new Dictionary<int, string>();
+
+            scenceDictionary.Add(1, "SAVE");
+            scenceDictionary.Add(2, "BACK");
+
+            return scenceDictionary;
+        }
 
         public static Dictionary<int, Tuple<float, float, float, float>> DictionaryColor()
         {

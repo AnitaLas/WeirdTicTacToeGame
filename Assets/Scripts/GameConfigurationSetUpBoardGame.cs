@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts.GameConfiguration.GameConfigurationBase;
+using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -39,6 +40,8 @@ namespace Assets.Scripts.GameConfiguration
         public GameObject prefabCubePlayForTableNumber;
 
         public Material[] prefabCubePlayDefaultColour;
+
+        public Material[] prefabCubePlayButtonsDefaultColour;
 
         Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesCommon.DictionaryTagConfigurationBoardGame();
 
@@ -134,7 +137,7 @@ namespace Assets.Scripts.GameConfiguration
             _tableWithNumberForColumnsBase = GameConfigurationTableForSetUp.CreateTableWithNumbers(prefabCubePlayForTableNumber, _numberOfDepths, _numberOfRowsForTableNumber, _numberOfColumnsForTableNumber, prefabCubePlayDefaultColour, isGame2D);
             _tableWithNumberForColumns = GameConfigurationTableForRowsAndColumns.CreateTableForRowsAndColumns(_tableWithNumberForColumnsBase, _tagConfigurationBoardGameTableNumberColumns, _tagConfigurationBoardGameInactiveField);
 
-
+            GameConfigurationCommonButtons.CreateButtonGameMenuNewGame(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, isGame2D);
         }
 
 

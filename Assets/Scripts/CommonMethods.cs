@@ -129,6 +129,60 @@ namespace Assets.Scripts
             prefab.transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
         }
 
+        public static void ChangeCoordinateXYForPrefabCubePlay(GameObject[,,] singleConfigurationButtonTable, float newScale)
+        {
+            int maxIndexDepth = 1;
+            int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
+            int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
+
+            //float baseScale = 1;
+            //float difference = baseScale - newScale;
+            float difference = newScale;
+
+            //float increaseDifference = difference;
+
+            GameObject cubePlay;
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+
+                        cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
+
+                        if(indexColumn == 1)
+                        {
+                            //cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
+                            float x = cubePlay.transform.position.x;
+                           // float newX = x - increaseDifference;
+                            //float newX = x - (difference * indexColumn);
+                            float newX = x - (difference/2);
+                            ChangeXForGameObject(cubePlay, newX);
+                        }
+
+                        if (indexColumn > 1)
+                        {
+                            GameObject cubePlayGivenX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
+                            float x = cubePlayGivenX.transform.position.x;
+                            // float newX = x - increaseDifference;
+                            //float newX = x - (difference * indexColumn);
+                            float newX = x - (difference / 2);
+                            ChangeXForGameObject(cubePlay, newX);
+                        }
+
+
+                    }
+                }
+            }
+
+
+        }
+
+
+
+
         // --------------------------------------------------------------------------------------------------------------------------------------------------------------
         // [CurrentNumber] - start
 
@@ -433,42 +487,7 @@ namespace Assets.Scripts
             return cubePlayName;
         }
 
-        public static void SetUpNewZForGameObject(GameObject gameObject, float newCoordinateZ)
-        {
-            //float transformSpeed = 1.0f;
-            //float newZ = 0.05f;
-            bool isGame2D = true;
 
-            if (isGame2D == true)
-            {
-                float x = gameObject.transform.position.x;
-                float y = gameObject.transform.position.y;
-                float z = gameObject.transform.position.z;
-
-                // it works
-                //cubePlay.transform.position = new Vector3(x, y, z + newCoordinateZ);
-                gameObject.transform.position = new Vector3(x, y, newCoordinateZ);
-
-                //newPrefabCubePlay.transform.position = new Vector3(x, y, currentCoordinateZ * Time.deltaTime);
-
-                //newPrefabCubePlay.transform.position =  Vector3.MoveTowards(newPrefabCubePlay.transform.position, (new Vector3(x, y, currentCoordinateZ)), transformSpeed * Time.deltaTime);
-
-                //cubePlay.transform.Translate(Vector3.forward * Time.deltaTime);
-
-
-
-                //Vector3 test = new Vector3(x, y, newCoordinateZ);
-                //cubePlay.transform.position = Vector3.Lerp(cubePlay.transform.position, test, 0.1f);
-
-                //cubePlay.transform.position += cubePlay.transform.forward * Time.deltaTime;
-
-
-            }
-
-
-
-
-        }
 
 
 
@@ -502,9 +521,11 @@ namespace Assets.Scripts
                 gameObject.transform.position = new Vector3(x, y + newCoordinateY, z);
             }
         }
-        
-        public static void ChangeYForGameObject(GameObject gameObject, float newCoordinateY)
+
+        public static void ChangeZForGameObject(GameObject gameObject, float newCoordinateZ)
         {
+            //float transformSpeed = 1.0f;
+            //float newZ = 0.05f;
             bool isGame2D = true;
 
             if (isGame2D == true)
@@ -514,10 +535,56 @@ namespace Assets.Scripts
                 float z = gameObject.transform.position.z;
 
                 // it works
+                //cubePlay.transform.position = new Vector3(x, y, z + newCoordinateZ);
+                gameObject.transform.position = new Vector3(x, y, newCoordinateZ);
+
+                //newPrefabCubePlay.transform.position = new Vector3(x, y, currentCoordinateZ * Time.deltaTime);
+
+                //newPrefabCubePlay.transform.position =  Vector3.MoveTowards(newPrefabCubePlay.transform.position, (new Vector3(x, y, currentCoordinateZ)), transformSpeed * Time.deltaTime);
+
+                //cubePlay.transform.Translate(Vector3.forward * Time.deltaTime);
+
+
+
+                //Vector3 test = new Vector3(x, y, newCoordinateZ);
+                //cubePlay.transform.position = Vector3.Lerp(cubePlay.transform.position, test, 0.1f);
+
+                //cubePlay.transform.position += cubePlay.transform.forward * Time.deltaTime;
+
+
+            }
+
+        }
+        public static void ChangeYForGameObject(GameObject gameObject, float newCoordinateY)
+        {
+            bool isGame2D = true;
+
+            if (isGame2D == true)
+            {
+                float x = gameObject.transform.position.x;
+               // float y = gameObject.transform.position.y;
+                float z = gameObject.transform.position.z;
+
+                // it works
                 gameObject.transform.position = new Vector3(x, newCoordinateY, z);
             }
         }
-        
+
+        public static void ChangeXForGameObject(GameObject gameObject, float newCoordinateX)
+        {
+            bool isGame2D = true;
+
+            if (isGame2D == true)
+            {
+               // float x = gameObject.transform.position.x;
+                float y = gameObject.transform.position.y;
+                float z = gameObject.transform.position.z;
+
+                // it works
+                gameObject.transform.position = new Vector3(newCoordinateX, y, z);
+            }
+        }
+
         public static int[] CreateTableWithGivenLengthAndGivenValue(int tableLenght, int value)
         {
             int[] table = new int[tableLenght];
