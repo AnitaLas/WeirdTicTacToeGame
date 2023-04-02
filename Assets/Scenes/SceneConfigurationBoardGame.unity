@@ -467,6 +467,9 @@ MonoBehaviour:
   prefabCubePlayDefaultColour:
   - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
   - {fileID: 2100000, guid: 92154e8fc314d4446ba5f033d1e2ee37, type: 2}
+  prefabCubePlayButtonsDefaultColour:
+  - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
+  - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
 --- !u!224 &237597992
 RectTransform:
   m_ObjectHideFlags: 0

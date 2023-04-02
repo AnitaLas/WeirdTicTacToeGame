@@ -132,7 +132,7 @@ namespace Assets.Scripts.PlayGame
         {
             float newCoordinateZ = 1;
             //float newCoordinateZ = -0.6f;
-            CommonMethods.SetUpNewZForGameObject(cubePlayFrame, newCoordinateZ);
+            CommonMethods.ChangeZForGameObject(cubePlayFrame, newCoordinateZ);
         }
 
     }

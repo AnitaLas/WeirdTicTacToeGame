@@ -207,7 +207,7 @@ namespace Assets.Scripts
                         indexForCubePlayCoordinateZ[0] = newIndexPrefabCubePlayForCoordinateZ;
                         countedNumberCubePlayForRowsForCoordinateZ[0] = newCountedNumberOfRows;
                         float currentCoordinateZ = coordinateZForPrefabCubePlay[newIndexPrefabCubePlayForCoordinateZ];
-                        CommonMethods.SetUpNewZForGameObject(newPrefabCubePlay, currentCoordinateZ);
+                        CommonMethods.ChangeZForGameObject(newPrefabCubePlay, currentCoordinateZ);
                     }
                 }
             }

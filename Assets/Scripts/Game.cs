@@ -366,8 +366,15 @@ internal class Game : MonoBehaviour
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
-                                PlayGameMenuActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
-                                PlayGameMenuButtons.CreateNewGameButton(prefabCubePlay, cubePlayColourWin, isGame2D);
+                                bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+
+                                if (isGameObjectWithTagExsist == true)
+                                {
+                                    PlayGameHelpButtons.DestroyHelpButtons(helpButtonsTag);
+                                }
+
+                                PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
+                                PlayGameMenuButtons.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
 
                             }
                             else
@@ -443,8 +450,8 @@ internal class Game : MonoBehaviour
                                     PlayGameHelpButtons.DestroyHelpButtons(helpButtonsTag);
                                 }
 
-                                PlayGameMenuActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
-                                PlayGameMenuButtons.CreateNewGameButton(prefabCubePlay, cubePlayColourWin, isGame2D);
+                                PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
+                                PlayGameMenuButtons.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
                             }
 
                             else
@@ -482,7 +489,7 @@ internal class Game : MonoBehaviour
                     {
                         // Debug.Log("  1  ");
                         //CreateGameConfigurationMenu.HideBoardGame(gameBoard);
-                        PlayGameMenuActions.HideBoardGame(gameBoard);
+                        PlayGameMenuButtonsActions.HideBoardGame(gameBoard);
 
                         //float x = cubePlayFrame.transform.position.x;
                         //float y = cubePlayFrame.transform.position.y;
@@ -490,16 +497,16 @@ internal class Game : MonoBehaviour
                         //Debug.Log("tag y =  " + y);
 
                         //CreateGameConfigurationMenu.HideCubePlayFrame2(cubePlayFrame);
-                        PlayGameMenuActions.HideGameObjectWithTag(_tagCubePlayFrame);
+                        PlayGameMenuButtonsActions.HideGameObjectWithTag(_tagCubePlayFrame);
 
                         bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
 
                         if (isGameObjectWithTagExsist == true)
                         {
-                            PlayGameMenuActions.HideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
+                            PlayGameMenuButtonsActions.HideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
                         }
 
-                        PlayGameMenuActions.HideTopObject(topObject);
+                        PlayGameMenuButtonsActions.HideTopObject(topObject);
                         //CreateGameConfigurationMenu.HideHelpButtons(helpButtonsTag);
 
                         //CreateGameConfigurationMenu.HideTopObject(topObject);
@@ -514,7 +521,7 @@ internal class Game : MonoBehaviour
                         //CreateGameConfigurationMenu.CreateConfigurationButtonNewGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
                         //CreateGameConfigurationMenu.CreateConfigurationButtonBackToGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
 
-                        gameButtonsMenu = PlayGameMenuButtons.CreateConfigurationButtons(prefabCubePlay, cubePlayColourWin, isGame2D);
+                        gameButtonsMenu = PlayGameMenuButtons.CreateButtonsMenu(prefabCubePlay, cubePlayColourWin, isGame2D);
 
                     }
 
@@ -539,31 +546,31 @@ internal class Game : MonoBehaviour
                         //    CreateGameConfigurationMenu.UnhideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
                         //}
 
-                        PlayGameMenuActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
+                        PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
 
-                        PlayGameMenuActions.UnhideTopObject(topObject);
-                        PlayGameMenuActions.UnhideBoardGame(gameBoard);
-                        PlayGameMenuActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
+                        PlayGameMenuButtonsActions.UnhideTopObject(topObject);
+                        PlayGameMenuButtonsActions.UnhideBoardGame(gameBoard);
+                        PlayGameMenuButtonsActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
                     }
 
 
                     if (gameObjectTag == _tagGameButtonMenuBack)
                     {
-                        PlayGameMenuActions.UnhideTopObject(topObject);
-                        PlayGameMenuActions.UnhideBoardGame(gameBoard);
-                        PlayGameMenuActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
+                        PlayGameMenuButtonsActions.UnhideTopObject(topObject);
+                        PlayGameMenuButtonsActions.UnhideBoardGame(gameBoard);
+                        PlayGameMenuButtonsActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
 
                         bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
 
                         if (isGameObjectWithTagExsist == true)
                         {
-                            PlayGameMenuActions.UnhideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
+                            PlayGameMenuButtonsActions.UnhideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
                         }
 
-                        PlayGameMenuActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
+                        PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
 
                         // --- test
-                        ButtonsText.CreateTableWithGivenString(14, "");
+                        //ButtonsText.CreateTableWithGivenStringFor3Rows(14, "");
 
 
                     }
