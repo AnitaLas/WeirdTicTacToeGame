@@ -18,20 +18,20 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
 
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesCommon.DictionaryButtonsGameConfigurationCommonButtons();
 
-            //string buttonText = buttonsGameNameDictionary[1];
-            string buttonText = "X";
+            string buttonText = buttonsGameNameDictionary[1];
+            //string buttonText = "X";
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
-            int numberOfColumns = 3;
+            int numberOfColumns = 6;
 
-            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfColumns, buttonText);
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfRows, numberOfColumns, buttonText);
 
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
             //float newCoordinateY = -4.5f;
-            float newCoordinateY = -4.1f;
-            float newCoordinateX = 2f;
+            float newCoordinateY = -4.5f;
+            float newCoordinateX = 1.75f;
 
             ButtonsCommonMethods.ChangeDataForSingleCommonButton(tableButtonNewGame, newCoordinateY, newCoordinateX, tagNameDictionary);
 
@@ -51,12 +51,12 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
             int numberOfRows = 3;
             int numberOfColumns = 6;
 
-            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfColumns, buttonText);
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfRows, numberOfColumns, buttonText);
 
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
             float newCoordinateY = -4.5f;
-            float newCoordinateX = -0.5f;
+            float newCoordinateX = -1f;
 
             ButtonsCommonMethods.ChangeDataForSingleCommonButton(tableButtonNewGame, newCoordinateY, newCoordinateX, tagNameDictionary);
 

@@ -43,7 +43,7 @@ namespace Assets.Scripts.PlayGameMenu
         //--
 
 
-        public static GameObject[,,] CreateSingleConfigurationButton(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns,Material[] prefabCubePlayDefaultColour, bool isGame2D, string[] textForHelpButtonLines)
+        public static GameObject[,,] CreateSingleConfigurationButton(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D, string[] textForHelpButtonLines)
         {
             GameObject[,,] tableWithNumber;
             string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns, textForHelpButtonLines);
@@ -52,8 +52,8 @@ namespace Assets.Scripts.PlayGameMenu
             return tableWithNumber;
         }
 
-      
-        
+
+
         public static void ChangeDataForSingleGameButtons(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, string tagToSetUp)
         {
             int maxIndexDepth = 1;
@@ -87,19 +87,29 @@ namespace Assets.Scripts.PlayGameMenu
             }
 
         }
-        
 
         public static void ChangeDataForSingleCommonButton(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX, string tagToSetUp)
+        {
+            float newScale = 0.45f;
+
+            ChangeBaseDataForSingleCommonButton(singleConfigurationButtonTable, newScale, tagToSetUp);
+            CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
+            ChangingCoordinatesXYForBoundaryPrefabCubePlay(singleConfigurationButtonTable, newScale);
+            SetUpFinalCoordinatesXYFoPrefabCubePlay(singleConfigurationButtonTable, newCoordinateY, newCoordinateX);
+
+        }
+
+        public static void ChangeBaseDataForSingleCommonButton(GameObject[,,] singleConfigurationButtonTable, float newScale, string tagToSetUp)
         {
             int maxIndexDepth = 1;
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
 
             float newCoordinateZ = 0.175f;
-            float fontSize = 0.5f;
-            float newScale = 0.5f;
+            float fontSize = 0.7f;
+            //float newScale = 0.5f;
 
-           
+
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
@@ -107,14 +117,10 @@ namespace Assets.Scripts.PlayGameMenu
                 {
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
-
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
 
                         CommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
 
-                        // to do -> create a different method that will set up only those two parameters
-                        //CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                        //CommonMethods.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                         CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
 
                         CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
@@ -125,10 +131,30 @@ namespace Assets.Scripts.PlayGameMenu
                 }
             }
 
-            // --- works only for 4x cubePlay - to fix
-            ChangeCoordinateXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
-            ChangeCoordinateXYForPrefabCubePlay2(singleConfigurationButtonTable, newScale);
+        }
 
+
+        public static void SetUpFinalCoordinatesXYFoPrefabCubePlay(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX)
+        {
+            int maxIndexDepth = 1;
+            int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
+            int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
+
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
+
+                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        CommonMethods.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+
+                    }
+                }
+            }
 
         }
 
@@ -243,7 +269,7 @@ namespace Assets.Scripts.PlayGameMenu
         }
 
 
-        public static void ChangeCoordinateXYForPrefabCubePlay(GameObject[,,] singleConfigurationButtonTable, float newScale)
+        public static void CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(GameObject[,,] singleConfigurationButtonTable, float newScale)
         {
             int maxIndexDepth = 1;
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
@@ -265,313 +291,30 @@ namespace Assets.Scripts.PlayGameMenu
             {
                 for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
                 {
-                    //float newStartX = 
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
 
                         cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //float x = cubePlay.transform.position.x;
-                        //Debug.Log(" x = " + x);
 
+                        if (indexRow >= 1)
+                        {
+                            cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow - 1, indexColumn];
+                            float y = cubePlayForX.transform.position.y;
+                            newStartY = y + newScale;
 
-
-                        //if (maxIndexColumn > 4)
-                       // {
-
-                            //if (indexColumn == 1)
-                            //{
-                            //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                            //    float x = cubePlayForX.transform.position.x;
-                            //    // float newX = x - increaseDifference;
-                            //    //float newX = x - (difference * indexColumn);
-                            //    //float newX = x - (difference/2);
-                            //    newStartX = x - newScale * 1.1f;
-                            //    //newStartX = x - 0.5f;
-                            //    //Debug.Log(" newScale = " + newScale);
-                            //    //Debug.Log(" x = " + x);
-                            //    //Debug.Log(" newStartX = " + newStartX);
-
-                            //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                            //}
-                        
-                        
-                            //if (indexColumn == 1)
-                            //{
-                            //Debug.Log(" 1 ");
-                            //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                            //    float x = cubePlayForX.transform.position.x;
-                            //    // float newX = x - increaseDifference;
-                            //    //float newX = x - (difference * indexColumn);
-                            //    //float newX = x - (difference/2);
-                            //    newStartX = x - newScale * 1.1f;
-                            //    //newStartX = x - 0.5f;
-                            //    //Debug.Log(" newScale = " + newScale);
-                            //    //Debug.Log(" x = " + x);
-                            //    //Debug.Log(" newStartX = " + newStartX);
-
-                            //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                            //}
-
-                            
-                            //if (indexColumn >= 2 && indexColumn < maxIndexColumn - 1)
-                            //{
-                            //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
-                            //    float x = cubePlayForX.transform.position.x;
-                            //    // float newX = x - increaseDifference;
-                            //    //float newX = x - (difference * indexColumn);
-                            //    //float newX = x - (difference/2);
-                            //    newStartX = x + newScale;
-                            //    //Debug.Log(" newScale = " + newScale);
-                            //    //Debug.Log(" x = " + x);
-                            //    //Debug.Log(" newStartX = " + newStartX);
-
-                            //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                            //}
-
-
-                            //if (indexColumn > 1 && indexColumn < maxIndexColumn - 1)
-                            //{
-                            //    Debug.Log(" 2 ");
-                            //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
-                            //    float x = cubePlayForX.transform.position.x;
-                            //    // float newX = x - increaseDifference;
-                            //    //float newX = x - (difference * indexColumn);
-                            //    //float newX = x - (difference/2);
-                            //    newStartX = x + newScale;
-                            //    //Debug.Log(" newScale = " + newScale);
-                            //    //Debug.Log(" x = " + x);
-                            //    //Debug.Log(" newStartX = " + newStartX);
-
-                            //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                            //}
-
-
-
-                            //if (maxIndexColumn - 1 <= 4)
-                            //{
-                            //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                            //    float x = cubePlayForX.transform.position.x;
-
-                            //    newStartX = x + newScale;
-                            //    //Debug.Log(" newScale = " + newScale);
-                            //    //Debug.Log(" x = " + x);
-                            //    //Debug.Log(" newStartX = " + newStartX);
-
-                            //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                            //}
-
-
-
-
-                            //if (indexColumn == maxIndexColumn - 1)
-                            //{
-                            //    Debug.Log(" 3 ");
-                            //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
-                            //    float x = cubePlayForX.transform.position.x;
-                            //    // float newX = x - increaseDifference;
-                            //    //float newX = x - (difference * indexColumn);
-                            //    //float newX = x - (difference/2);
-                            //    newStartX = x + newScale * 0.5f;
-                            //    //newStartX = x - 0.5f;
-                            //    //Debug.Log(" newScale = " + newScale);
-                            //    //Debug.Log(" x = " + x);
-                            //    //Debug.Log(" newStartX = " + newStartX);
-
-                            //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                            //}
-
-
-                            if (indexRow >= 1)
-                            {
-                                Debug.Log(" 4 ");
-                                cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow - 1, indexColumn];
-                                float y = cubePlayForX.transform.position.y;
-
-                                //newStartY = y + newScale / 2.5f;
-                                newStartY = y + newScale;
-
-                                //Debug.Log(" newScale = " + newScale);
-                                //Debug.Log(" y = " + y);
-                                //Debug.Log(" newStartX = " + newStartX);
-
-                                CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
-                            }
-
+                            CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
+                        }
 
 
                         if (indexColumn >= 1)
                         {
-                            Debug.Log(" 3 ");
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
                             float x = cubePlayForX.transform.position.x;
-
-                            //newStartX = x + newScale * 0.5f;
                             newStartX = x + newScale;
-                            //newStartX = x + newScale / 2.5f;
-            
-                            //Debug.Log(" newScale = " + newScale);
-                            //Debug.Log(" x = " + x);
-                            //Debug.Log(" newStartX = " + newStartX);
 
                             CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
                         }
-                        // }
-
-
-                        //if (indexColumn == 0)
-                        //{
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x + 1f;
-                        //    //newStartX = x - 0.5f;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-                        //if (indexColumn == maxIndexColumn - 1)
-                        //{
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x - newScale * 1.1f;
-                        //    //newStartX = x - 0.5f;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-                        //if (maxIndexColumn <= 4)
-                        //{
-
-                        //    if (indexRow >= 0)
-                        //    {
-                        //        cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //        float y = cubePlayForX.transform.position.y;
-                        //        // float newX = x - increaseDifference;
-                        //        //float newX = x - (difference * indexColumn);
-                        //        //float newX = x - (difference/2);
-                        //        newStartY = y - newScale;
-                        //        //Debug.Log(" newScale = " + newScale);
-                        //        //Debug.Log(" y = " + y);
-                        //        //Debug.Log(" newStartX = " + newStartX);
-
-                        //        CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
-                        //    }
-
-
-                        //    if (indexColumn >= 0)
-                        //    {
-                        //        cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //        float x = cubePlayForX.transform.position.x;
-                        //        // float newX = x - increaseDifference;
-                        //        //float newX = x - (difference * indexColumn);
-                        //        //float newX = x - (difference/2);
-                        //        newStartX = x - newScale;
-                        //        //Debug.Log(" newScale = " + newScale);
-                        //        //Debug.Log(" y = " + y);
-                        //        //Debug.Log(" newStartX = " + newStartX);
-
-                        //        CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //    }
-                        //}
-
-
-
-
-
-
-
-                        //if (indexColumn == 1)
-                        //{
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x - newScale * 1.1f;
-                        //    //newStartX = x - 0.5f;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-
-                        //if (indexColumn >= 2 && indexColumn < maxIndexColumn - 1)
-                        //{
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x + newScale;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-                        //if (indexColumn == maxIndexColumn - 1)
-                        //{
-                        //    //Debug.Log(" 1 ");
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x + newScale * 0.5f;
-                        //    //newStartX = x - 0.5f;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-                        //if (indexRow >= 1)
-                        //{
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow - 1, indexColumn];
-                        //    float y = cubePlayForX.transform.position.y;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartY = y + newScale / 2.5f;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" y = " + y);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
-                        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        
                     }
                 }
             }
@@ -579,161 +322,33 @@ namespace Assets.Scripts.PlayGameMenu
 
         }
 
-        public static void ChangeCoordinateXYForPrefabCubePlay2(GameObject[,,] singleConfigurationButtonTable, float newScale)
+        public static void ChangingCoordinatesXYForBoundaryPrefabCubePlay(GameObject[,,] singleConfigurationButtonTable, float newScale)
         {
             int maxIndexDepth = 1;
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
-
-            //float baseScale = 1;
-            //float difference = baseScale - newScale;
-            float difference = newScale;
-
-            //float increaseDifference = difference;
 
             GameObject cubePlay;
             GameObject cubePlayForX;
 
             float newStartX;
             float newStartY;
+            float percetageOfNewScale = 0.75f;
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
                 for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
                 {
-                    //float newStartX = 
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
-
                         cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //float x = cubePlay.transform.position.x;
-                        //Debug.Log(" x = " + x);
-
-
-
-                        //if (maxIndexColumn > 4)
-                        // {
-
-                        //if (indexColumn == 1)
-                        //{
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x - newScale * 1.1f;
-                        //    //newStartX = x - 0.5f;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-                        //if (indexColumn == 1)
-                        //{
-                        //Debug.Log(" 1 ");
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x - newScale * 1.1f;
-                        //    //newStartX = x - 0.5f;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-                        //if (indexColumn >= 2 && indexColumn < maxIndexColumn - 1)
-                        //{
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x + newScale;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-                        //if (indexColumn > 1 && indexColumn < maxIndexColumn - 1)
-                        //{
-                        //    Debug.Log(" 2 ");
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x + newScale;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-
-                        //if (maxIndexColumn - 1 <= 4)
-                        //{
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        //    float x = cubePlayForX.transform.position.x;
-
-                        //    newStartX = x + newScale;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-
-
-                        //if (indexColumn == maxIndexColumn - 1)
-                        //{
-                        //    Debug.Log(" 3 ");
-                        //    cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
-                        //    float x = cubePlayForX.transform.position.x;
-                        //    // float newX = x - increaseDifference;
-                        //    //float newX = x - (difference * indexColumn);
-                        //    //float newX = x - (difference/2);
-                        //    newStartX = x + newScale * 0.5f;
-                        //    //newStartX = x - 0.5f;
-                        //    //Debug.Log(" newScale = " + newScale);
-                        //    //Debug.Log(" x = " + x);
-                        //    //Debug.Log(" newStartX = " + newStartX);
-
-                        //    CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
-                        //}
-
-
-
-                        // }
 
 
                         if (indexColumn == 0)
                         {
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float x = cubePlayForX.transform.position.x;
-
-                            // float newX = x - increaseDifference;
-                            //float newX = x - (difference * indexColumn);
-                            //float newX = x - (difference/2);
-                            newStartX = x + newScale * 0.75f;
-                            //newStartX = x - 0.5f;
-                            //Debug.Log(" newScale = " + newScale);
-                            //Debug.Log(" x = " + x);
-                            //Debug.Log(" newStartX = " + newStartX);
+                            newStartX = x + newScale * percetageOfNewScale;
 
                             CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
                         }
@@ -743,15 +358,7 @@ namespace Assets.Scripts.PlayGameMenu
                         {
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float x = cubePlayForX.transform.position.x;
-
-                            // float newX = x - increaseDifference;
-                            //float newX = x - (difference * indexColumn);
-                            //float newX = x - (difference/2);
-                            newStartX = x - newScale * 0.75f;
-                            //newStartX = x - 0.5f;
-                            //Debug.Log(" newScale = " + newScale);
-                            //Debug.Log(" x = " + x);
-                            //Debug.Log(" newStartX = " + newStartX);
+                            newStartX = x - newScale * percetageOfNewScale;
 
                             CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
                         }
@@ -760,13 +367,7 @@ namespace Assets.Scripts.PlayGameMenu
                         {
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float y = cubePlayForX.transform.position.y;
-                            // float newX = x - increaseDifference;
-                            //float newX = x - (difference * indexColumn);
-                            //float newX = x - (difference/2);
-                            newStartY = y + newScale * 0.75f;
-                            //Debug.Log(" newScale = " + newScale);
-                            //Debug.Log(" y = " + y);
-                            //Debug.Log(" newStartX = " + newStartX);
+                            newStartY = y + newScale * percetageOfNewScale;
 
                             CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
                         }
@@ -775,13 +376,7 @@ namespace Assets.Scripts.PlayGameMenu
                         {
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float y = cubePlayForX.transform.position.y;
-                            // float newX = x - increaseDifference;
-                            //float newX = x - (difference * indexColumn);
-                            //float newX = x - (difference/2);
-                            newStartY = y - newScale * 0.75f;
-                            //Debug.Log(" newScale = " + newScale);
-                            //Debug.Log(" y = " + y);
-                            //Debug.Log(" newStartX = " + newStartX);
+                            newStartY = y - newScale * percetageOfNewScale;
 
                             CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
                         }
