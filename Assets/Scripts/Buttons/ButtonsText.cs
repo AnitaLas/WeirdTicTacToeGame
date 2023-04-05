@@ -15,25 +15,38 @@ namespace Assets.Scripts.Buttons
         /// <summary>
         /// currently, it works only for even column numbers e.g. 14
         /// </summary>
-        /// <param name="stringLength1"></param>
-        /// <param name="text1"></param>
         /// <returns></returns>
-        public static string[] CreateTableWithGivenString(int stringLength, string buttonText)
+        public static string[] CreateTableWithGivenString(int numberOfRows, int numberOfColumns, string buttonText)
         {
             //Debug.Log(" 1 ");
 
-            string[] table = new string[stringLength];
+            string[] table = new string[numberOfColumns];
 
             string emptyString = "";
 
-            int stringHalfLength = stringLength / 2;
+            int stringHalfLength = numberOfColumns / 2;
+
+            //int textLenght = buttonText.Length;
 
             int textLenght = buttonText.Length;
+
+            //float textLenghtFloat = CommonMethods.ConvertIntToFloat(textLenght);
+            Debug.Log(" textLenght = " + textLenght);
+
             int textHalfLength = textLenght / 2;
+            //float textHalfLength = textLenghtFloat / 2;
+
+
+
+            Debug.Log(" textHalfLength = " + textHalfLength);
+
+            int differenceBetweenHalves;
+            //float differenceBetweenHalves;
+
 
             bool isButtonTextEven = CommonMethods.IsNumberEven(textLenght);
 
-            int differenceBetweenHalves; // = stringHalfLength - textHalfLength; ;
+            
 
             if (isButtonTextEven == true)
             {
@@ -41,12 +54,20 @@ namespace Assets.Scripts.Buttons
             }
             else
             {
-                differenceBetweenHalves = stringHalfLength - textHalfLength - 1; 
+                if (numberOfRows > 3)
+                {
+                    differenceBetweenHalves = stringHalfLength - textHalfLength - 1;
+                }
+                else
+                {
+                    differenceBetweenHalves = stringHalfLength - textHalfLength;
+                }
+                
             }
 
             //Debug.Log($"differenceBetweenHalves = " + differenceBetweenHalves);
 
-            for (int i = 0; i < stringLength; i++)
+            for (int i = 0; i < numberOfColumns; i++)
             {
                 int indexText = i - differenceBetweenHalves;
 

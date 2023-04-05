@@ -87,6 +87,22 @@ namespace Assets.Scripts
             }
         }
 
+        public static bool IsNumberEven(float number)
+        {
+            bool isNumberEven;
+
+            if (number % 2 == 0)
+            {
+                isNumberEven = true;
+                return isNumberEven;
+            }
+            else
+            {
+                isNumberEven = false;
+                return isNumberEven;
+            }
+        }
+
         public static int ChooseRandomNumber(int maxNumber)
         {
             Random random = new Random();

@@ -107,7 +107,7 @@ namespace Assets.Scripts.PlayGame
 
             //string buttonText = "NEW GAME";
 
-            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfColumns, buttonText);
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfRows, numberOfColumns, buttonText);
 
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
@@ -135,7 +135,7 @@ namespace Assets.Scripts.PlayGame
 
             //string buttonText = "NEW GAME";
 
-            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfColumns, buttonText);
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfRows, numberOfColumns, buttonText);
 
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
@@ -164,7 +164,7 @@ namespace Assets.Scripts.PlayGame
 
             //string buttonText = "HELP BUTTONS";
 
-            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfColumns, buttonText);
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfRows, numberOfColumns, buttonText);
 
             tableButtonHelpButtons = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
        
@@ -192,7 +192,7 @@ namespace Assets.Scripts.PlayGame
 
             //string buttonText = "BACK";
 
-            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfColumns, buttonText);
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithGivenString(numberOfRows, numberOfColumns, buttonText);
 
             tableButtonHelpButtons = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
