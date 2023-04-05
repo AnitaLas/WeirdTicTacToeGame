@@ -113,6 +113,7 @@ namespace Assets.Scripts.PlayGame
 
             float newCoordinateY = 0;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
+            //ButtonsCommonMethods.ChangeDataForSingleCommonButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
 
             return tableButtonNewGame;
 
@@ -140,6 +141,7 @@ namespace Assets.Scripts.PlayGame
 
             float newCoordinateY = -4;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
+            //ButtonsCommonMethods.ChangeDataForSingleCommonButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
 
             //return tableButtonNewGame;
 
@@ -168,6 +170,7 @@ namespace Assets.Scripts.PlayGame
        
             float newCoordinateY = 2;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonHelpButtons, newCoordinateY, tagGameButtonHelpButtons);
+            //ButtonsCommonMethods.ChangeDataForSingleCommonButtons(tableButtonHelpButtons, newCoordinateY, tagGameButtonHelpButtons);
 
             return tableButtonHelpButtons;
         }
@@ -195,6 +198,7 @@ namespace Assets.Scripts.PlayGame
 
             float newCoordinateY = -2;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonHelpButtons, newCoordinateY, tagGameButtonHelpButtons);
+            //ButtonsCommonMethods.ChangeDataForSingleCommonButtons(tableButtonHelpButtons, newCoordinateY, tagGameButtonHelpButtons);
 
             return tableButtonHelpButtons;
         }
