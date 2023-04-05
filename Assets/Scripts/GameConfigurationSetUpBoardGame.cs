@@ -42,6 +42,7 @@ namespace Assets.Scripts.GameConfiguration
         public Material[] prefabCubePlayDefaultColour;
 
         public Material[] prefabCubePlayButtonsDefaultColour;
+        public Material[] prefabCubePlayButtonsBackColour;
 
         Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesCommon.DictionaryTagConfigurationBoardGame();
 
@@ -137,7 +138,8 @@ namespace Assets.Scripts.GameConfiguration
             _tableWithNumberForColumnsBase = GameConfigurationTableForSetUp.CreateTableWithNumbers(prefabCubePlayForTableNumber, _numberOfDepths, _numberOfRowsForTableNumber, _numberOfColumnsForTableNumber, prefabCubePlayDefaultColour, isGame2D);
             _tableWithNumberForColumns = GameConfigurationTableForRowsAndColumns.CreateTableForRowsAndColumns(_tableWithNumberForColumnsBase, _tagConfigurationBoardGameTableNumberColumns, _tagConfigurationBoardGameInactiveField);
 
-            GameConfigurationCommonButtons.CreateButtonGameMenuNewGame(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, isGame2D);
+            GameConfigurationButtons.GameConfigurationCreateBattons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, isGame2D);
+
         }
 
 

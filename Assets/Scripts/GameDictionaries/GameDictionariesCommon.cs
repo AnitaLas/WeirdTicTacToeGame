@@ -141,23 +141,35 @@ namespace Assets.Scripts.GameDictionaries
 
         public static Dictionary<int, string> DictionaryButtonsGameName()
         {
-            Dictionary<int, string> scenceDictionary = new Dictionary<int, string>();
+            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
 
-            scenceDictionary.Add(1, "NEW GAME");
-            scenceDictionary.Add(2, "BACK");
-            scenceDictionary.Add(3, "HELP BUTTONS");
+            buttonsNameDictionary.Add(1, "NEW GAME");
+            buttonsNameDictionary.Add(2, "BACK");
+            buttonsNameDictionary.Add(3, "HELP BUTTONS");
 
-            return scenceDictionary;
+            return buttonsNameDictionary;
         }
 
         public static Dictionary<int, string> DictionaryButtonsGameConfigurationCommonButtons()
         {
-            Dictionary<int, string> scenceDictionary = new Dictionary<int, string>();
+            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
 
-            scenceDictionary.Add(1, "SAVE");
-            scenceDictionary.Add(2, "BACK");
+            buttonsNameDictionary.Add(1, "SAVE");
+            buttonsNameDictionary.Add(2, "BACK");
 
-            return scenceDictionary;
+            return buttonsNameDictionary;
+        }
+
+        public static Dictionary<int, string> DictionaryButtonsConfigurationBoardGame()
+        {
+            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
+
+            buttonsNameDictionary.Add(1, "PLAYER");
+            buttonsNameDictionary.Add(2, "ROW");
+            buttonsNameDictionary.Add(3, "COLUMN");
+            buttonsNameDictionary.Add(4, "CROSS OUT");
+
+            return buttonsNameDictionary;
         }
 
         public static Dictionary<int, Tuple<float, float, float, float>> DictionaryColor()

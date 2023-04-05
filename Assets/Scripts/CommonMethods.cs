@@ -129,60 +129,6 @@ namespace Assets.Scripts
             prefab.transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
         }
 
-        public static void ChangeCoordinateXYForPrefabCubePlay(GameObject[,,] singleConfigurationButtonTable, float newScale)
-        {
-            int maxIndexDepth = 1;
-            int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
-            int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
-
-            //float baseScale = 1;
-            //float difference = baseScale - newScale;
-            float difference = newScale;
-
-            //float increaseDifference = difference;
-
-            GameObject cubePlay;
-
-            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
-            {
-                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
-                {
-                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
-                    {
-
-                        cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-
-                        if(indexColumn == 1)
-                        {
-                            //cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                            float x = cubePlay.transform.position.x;
-                           // float newX = x - increaseDifference;
-                            //float newX = x - (difference * indexColumn);
-                            float newX = x - (difference/2);
-                            ChangeXForGameObject(cubePlay, newX);
-                        }
-
-                        if (indexColumn > 1)
-                        {
-                            GameObject cubePlayGivenX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
-                            float x = cubePlayGivenX.transform.position.x;
-                            // float newX = x - increaseDifference;
-                            //float newX = x - (difference * indexColumn);
-                            float newX = x - (difference / 2);
-                            ChangeXForGameObject(cubePlay, newX);
-                        }
-
-
-                    }
-                }
-            }
-
-
-        }
-
-
-
-
         // --------------------------------------------------------------------------------------------------------------------------------------------------------------
         // [CurrentNumber] - start
 

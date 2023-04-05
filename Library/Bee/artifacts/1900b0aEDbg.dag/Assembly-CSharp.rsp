@@ -370,6 +370,7 @@
 "Assets/Scripts/CreateTable/CreateTablePrefabDefaultText.cs"
 "Assets/Scripts/CreateTable/CreateTablePrefabName.cs"
 "Assets/Scripts/Game.cs"
+"Assets/Scripts/GameConfiguration/GameConfigurationBase/GameConfigurationButtons.cs"
 "Assets/Scripts/GameConfiguration/GameConfigurationBase/GameConfigurationTableForLenghtToCheck.cs"
 "Assets/Scripts/GameConfiguration/GameConfigurationBase/GameConfigurationTableForPlayers.cs"
 "Assets/Scripts/GameConfiguration/GameConfigurationBase/GameConfigurationTableForPlayersSymbols.cs"
