@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Buttons;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -66,7 +67,7 @@ namespace Assets.Scripts.GameConfiguration
             }
         }
         
-
+        /*
         public static void UnhideTableWithNumber(GameObject[,,] tableWtithNumber)
         {
             float newCoordinateZ = -100f;
@@ -78,7 +79,7 @@ namespace Assets.Scripts.GameConfiguration
             float newCoordinateY = 100f;
             ChangeCoordinateYForTable(tableWtithNumber, newCoordinateY);
         }
-
+        */
         //-------------------------
 
         public static void ChangeCoordinateYForConfiguration(float newCoordinateZ, string[] tagConfigurationHideOrUnhide)
@@ -101,7 +102,6 @@ namespace Assets.Scripts.GameConfiguration
             ChangeCoordinateYForConfiguration(newCoordinateY, tagConfigurationHideOrUnhide);
         }
 
-
         public static void HideConfiguration( string[] tagConfigurationHideOrUnhide)
         {
             float newCoordinateY = 100f;
@@ -115,7 +115,6 @@ namespace Assets.Scripts.GameConfiguration
             GameObject cubePlay = CommonMethods.GetCubePlay(tableWithNumber, gameObjectName);
             string numberString = CommonMethods.GetCubePlayText(cubePlay);
 
-            //GameObject[] cubePlayForChange = CommonMethods.GetObjectByTagName(tagName);
             GameObject cubePlayToChange = CommonMethods.GetObjectByTagName(tagName);
             CommonMethods.ChangeTextForFirstChild(cubePlayToChange, numberString);
 

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameConfiguration.GameConfigurationBase;
+﻿using Assets.Scripts.Buttons;
+using Assets.Scripts.GameConfiguration.GameConfigurationBase;
 using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
@@ -9,19 +10,16 @@ namespace Assets.Scripts.GameConfiguration
 {
     internal class GameConfigurationSetUpBoardGame : MonoBehaviour
     {
-
         public static int ConfigurationBoardGameNumberOfPlayers { get; set; }
         public static int ConfigurationBoardGameNumberOfRows { get; set; }
         public static int ConfigurationBoardGameNumberOfColumns { get; set; }
-
         public static int ConfigurationBoardGameLenghtToCheck { get; set; }
-       // public static int ConfigurationBoardGameLenghtToCheckMax { get; set; }
 
         public static int numberOfPlayers = 2;
         public static int numberOfRows = 3;
         public static int numberOfColumns = 3;
         public static int lenghtToCheck = 3;
-        public static int lenghtToCheckMax;// = 3;
+        public static int lenghtToCheckMax;
 
 
 
@@ -44,6 +42,8 @@ namespace Assets.Scripts.GameConfiguration
         public Material[] prefabCubePlayButtonsDefaultColour;
         public Material[] prefabCubePlayButtonsBackColour;
 
+        public Material[] prefabCubePlayButtonsNumberColour;
+
         Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesCommon.DictionaryTagConfigurationBoardGame();
 
         private string _tagConfigurationBoardGameButtonSave;
@@ -61,6 +61,7 @@ namespace Assets.Scripts.GameConfiguration
         private string _tagConfigurationBoardGameLenghtToCheck;
         private string _tagConfigurationBoardGameChangeNumberLenghtToCheck;
         private string _tagConfigurationBoardGameTableNumberLenghtToCheck;
+        private string _tagConfigurationBoardGameButtonBackToConfiguration;
         private string[] _tagConfigurationBoardGameHideOrUnhide = new string[10];
         private string[] _tableWithChangedNumber = new string[3];
 
@@ -77,7 +78,9 @@ namespace Assets.Scripts.GameConfiguration
         public Touch touch;
         private Camera mainCamera;
 
-
+        private List<GameObject[,,]> _buttonsAll;
+        private List<GameObject[,,]> _tablesWithNumberAll;
+        private GameObject[,,] _buttonBackToConfiguration;
         //private void Awake()
         //{
         //    DontDestroyOnLoad(gameObject);
@@ -104,6 +107,7 @@ namespace Assets.Scripts.GameConfiguration
             _tagConfigurationBoardGameTableNumberLenghtToCheck = configurationBoardGameDictionaryTag[14];
 
             _tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
+            _tagConfigurationBoardGameButtonBackToConfiguration = configurationBoardGameDictionaryTag[21];
  
             // ---
             _tagConfigurationBoardGameHideOrUnhide[0] = _tagConfigurationBoardGameButtonSave;
@@ -138,8 +142,15 @@ namespace Assets.Scripts.GameConfiguration
             _tableWithNumberForColumnsBase = GameConfigurationTableForSetUp.CreateTableWithNumbers(prefabCubePlayForTableNumber, _numberOfDepths, _numberOfRowsForTableNumber, _numberOfColumnsForTableNumber, prefabCubePlayDefaultColour, isGame2D);
             _tableWithNumberForColumns = GameConfigurationTableForRowsAndColumns.CreateTableForRowsAndColumns(_tableWithNumberForColumnsBase, _tagConfigurationBoardGameTableNumberColumns, _tagConfigurationBoardGameInactiveField);
 
-            GameConfigurationButtons.GameConfigurationCreateBattons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, isGame2D);
+            //_buttonsText = new List<GameObject[,,]>();
+            _buttonsAll = GameConfigurationButtonsCreate.GameConfigurationCreateButtons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, isGame2D);
+            _buttonBackToConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonBackToConfiguration(prefabCubePlayForTableNumber, prefabCubePlayButtonsBackColour, isGame2D);
 
+            _tablesWithNumberAll = new List<GameObject[,,]>();
+            _tablesWithNumberAll.Insert(0, _tableWithNumberForPlayers);
+            _tablesWithNumberAll.Insert(1, _tableWithNumberForRows);
+            _tablesWithNumberAll.Insert(2, _tableWithNumberForColumns);
+            //_tablesWithNumberAll.Insert(3, _tableWithNumberForColumns);
         }
 
 
@@ -162,8 +173,9 @@ namespace Assets.Scripts.GameConfiguration
                         // players
                         if (gameObjectTag == _tagConfigurationBoardGamePlayers || gameObjectTag == _tagConfigurationBoardGameChangeNumberPlayers)
                         {
-                            GameConfigurationCommonMethods.UnhideTableWithNumber(_tableWithNumberForPlayers);
-                            GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
+                            GameConfigurationButtonsAction.UnhideTableWithNumber(_tableWithNumberForPlayers);
+                            GameConfigurationButtonsAction.UnhideButtonBackToConfiguration(_buttonBackToConfiguration);
+                            GameConfigurationButtonsAction.HideConfiguration(_buttonsAll);
                         }
 
 
@@ -171,16 +183,18 @@ namespace Assets.Scripts.GameConfiguration
                         {
                             numberOfPlayers = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_tableWithNumberForPlayers, gameObjectName, _tagConfigurationBoardGameChangeNumberPlayers);
 
-                            GameConfigurationCommonMethods.HideTableWithNumber(_tableWithNumberForPlayers);
-                            GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
+                            GameConfigurationButtonsAction.HideTableWithNumber(_tableWithNumberForPlayers);
+                            GameConfigurationButtonsAction.HideButtonBackToConfiguration(_buttonBackToConfiguration);
+                            GameConfigurationButtonsAction.UnhideConfiguration(_buttonsAll);
 
                         }
 
                         // rows
                         if (gameObjectTag == _tagConfigurationBoardGameRows || gameObjectTag == _tagConfigurationBoardGameChangeNumberRows)
-                        {                        
-                            GameConfigurationCommonMethods.UnhideTableWithNumber(_tableWithNumberForRows);
-                            GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
+                        {
+                            GameConfigurationButtonsAction.UnhideTableWithNumber(_tableWithNumberForRows);
+                            GameConfigurationButtonsAction.UnhideButtonBackToConfiguration(_buttonBackToConfiguration);
+                            GameConfigurationButtonsAction.HideConfiguration(_buttonsAll);
                         }
   
                        
@@ -189,8 +203,9 @@ namespace Assets.Scripts.GameConfiguration
                         {
                             numberOfRows = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_tableWithNumberForRows, gameObjectName, _tagConfigurationBoardGameChangeNumberRows);
 
-                            GameConfigurationCommonMethods.HideTableWithNumber(_tableWithNumberForRows);
-                            GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
+                            GameConfigurationButtonsAction.HideTableWithNumber(_tableWithNumberForRows);
+                            GameConfigurationButtonsAction.HideButtonBackToConfiguration(_buttonBackToConfiguration);
+                            GameConfigurationButtonsAction.UnhideConfiguration(_buttonsAll);
 
                             GameConfigurationTableForLenghtToCheck.VerifyAndSetUpNewMaxLength(_tableWithChangedNumber);
                                 
@@ -199,9 +214,11 @@ namespace Assets.Scripts.GameConfiguration
                         // columns
                         if (gameObjectTag == _tagConfigurationBoardGameColumns || gameObjectTag == _tagConfigurationBoardGameChangeNumberColumns)
                         {
-                            GameConfigurationCommonMethods.UnhideTableWithNumber(_tableWithNumberForColumns);
-                            GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
-                        
+                            GameConfigurationButtonsAction.UnhideTableWithNumber(_tableWithNumberForColumns);
+                            GameConfigurationButtonsAction.HideConfiguration(_buttonsAll);
+                            GameConfigurationButtonsAction.UnhideButtonBackToConfiguration(_buttonBackToConfiguration);
+
+
                         }
 
 
@@ -209,8 +226,9 @@ namespace Assets.Scripts.GameConfiguration
                         {
                             numberOfColumns = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_tableWithNumberForColumns, gameObjectName, _tagConfigurationBoardGameChangeNumberColumns);
 
-                            GameConfigurationCommonMethods.HideTableWithNumber(_tableWithNumberForColumns);
-                            GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
+                            GameConfigurationButtonsAction.HideTableWithNumber(_tableWithNumberForColumns);
+                            GameConfigurationButtonsAction.HideButtonBackToConfiguration(_buttonBackToConfiguration);
+                            GameConfigurationButtonsAction.UnhideConfiguration(_buttonsAll);
 
                             GameConfigurationTableForLenghtToCheck.VerifyAndSetUpNewMaxLength(_tableWithChangedNumber);
                         }
@@ -224,17 +242,20 @@ namespace Assets.Scripts.GameConfiguration
                             {
                                 GameConfigurationTableForLenghtToCheck.DestroyTable(_tableWithNumberForLenghtToCheckBase);
                                 GameConfigurationTableForLenghtToCheck.DestroyTable(_tableWithNumberForLenghtToCheck);
+                                _tablesWithNumberAll.RemoveAt(3);
                             }
                             
 
                             _tableWithNumberForLenghtToCheckBase = GameConfigurationTableForSetUp.CreateTableWithNumbers(prefabCubePlayForTableNumber, _numberOfDepths, _numberOfRowsForTableNumber, _numberOfColumnsForTableNumber, prefabCubePlayDefaultColour, isGame2D);
+                           
 
                             lenghtToCheckMax = GameConfigurationTableForLenghtToCheck.GetLenghtToCheckMax(_tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameChangeNumberColumns);
                             _tableWithNumberForLenghtToCheck = GameConfigurationTableForLenghtToCheck.CreateTableForMaxLenghtToCheck(_tableWithNumberForLenghtToCheckBase, _tagConfigurationBoardGameTableNumberLenghtToCheck, _tagConfigurationBoardGameInactiveField, lenghtToCheckMax);
-                            
-                            
-                           GameConfigurationCommonMethods.UnhideTableWithNumber(_tableWithNumberForLenghtToCheck);
-                           GameConfigurationCommonMethods.HideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
+                            _tablesWithNumberAll.Insert(3, _tableWithNumberForLenghtToCheck);
+
+                            GameConfigurationButtonsAction.UnhideTableWithNumber(_tableWithNumberForLenghtToCheck);
+                            GameConfigurationButtonsAction.UnhideButtonBackToConfiguration(_buttonBackToConfiguration);
+                            GameConfigurationButtonsAction.HideConfiguration(_buttonsAll);
                         
                         }
 
@@ -243,9 +264,9 @@ namespace Assets.Scripts.GameConfiguration
                         {
                             lenghtToCheck = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_tableWithNumberForLenghtToCheck, gameObjectName, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
-                            GameConfigurationCommonMethods.HideTableWithNumber(_tableWithNumberForLenghtToCheck);
-                            //GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameButtonSave, _tagConfigurationBoardGameButtonBack, _tagConfigurationBoardGameRows, _tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameColumns, _tagConfigurationBoardGameChangeNumberColumns, _tagConfigurationBoardGamePlayers, _tagConfigurationBoardGameChangeNumberPlayers, _tagConfigurationBoardGameLenghtToCheck, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
-                            GameConfigurationCommonMethods.UnhideConfiguration(_tagConfigurationBoardGameHideOrUnhide);
+                            GameConfigurationButtonsAction.HideTableWithNumber(_tableWithNumberForLenghtToCheck);
+                            GameConfigurationButtonsAction.HideButtonBackToConfiguration(_buttonBackToConfiguration);
+                            GameConfigurationButtonsAction.UnhideConfiguration(_buttonsAll);
 
                         }
 
@@ -267,7 +288,13 @@ namespace Assets.Scripts.GameConfiguration
 
                         }
 
+                        if (gameObjectTag == _tagConfigurationBoardGameButtonBackToConfiguration)
+                        {
+                            GameConfigurationButtonsAction.HideVisibleTablesWithNumber(_tablesWithNumberAll);
+                            GameConfigurationButtonsAction.HideButtonBackToConfiguration(_buttonBackToConfiguration);
+                            GameConfigurationButtonsAction.UnhideConfiguration(_buttonsAll);
 
+                        }
 
                     }
                 }

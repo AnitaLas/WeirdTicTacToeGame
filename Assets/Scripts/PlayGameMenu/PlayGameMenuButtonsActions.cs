@@ -10,6 +10,8 @@ namespace Assets.Scripts
 {
     internal class PlayGameMenuButtonsActions : MonoBehaviour
     {
+
+        // to change class -> ButtonsCommonMethodsAction
         public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateZ)
         {
             int maxIndexDepth = 1;

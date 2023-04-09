@@ -41,7 +41,6 @@ TagManager:
   - ConfigurationPlayerSymbolInactiveField
   - ConfigurationPlayerSymbolButtonSave
   - ConfigurationPlayerSymbolButtonBack
-  - ConfigurationPlayerSymbolButtonBackTableWithSymbolsToChoose
   - GameButtonNewGame
   - GameButtonHelpButtons
   - GameButtonMenuBack
@@ -50,6 +49,8 @@ TagManager:
   - GameButtonMenuConfigurationRight
   - GameButtonMenuConfiguration
   - GameButtonMenuConfigurationDisactivate
+  - ConfigurationBoardGameButtonBackToConfiguration
+  - ConfigurationPlayerSymbolButtonBackToConfiguration
   layers:
   - Default
   - TransparentFX

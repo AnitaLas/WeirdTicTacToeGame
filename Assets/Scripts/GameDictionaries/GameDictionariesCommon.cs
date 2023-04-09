@@ -89,6 +89,7 @@ namespace Assets.Scripts.GameDictionaries
             configurationBoardGameDictionaryTag.Add(13, "ConfigurationBoardGameChangeNumberLenghtToCheck");
             configurationBoardGameDictionaryTag.Add(14, "ConfigurationBoardGameTableNumberLenghtToCheck");
             configurationBoardGameDictionaryTag.Add(20, "ConfigurationBoardGameInactiveField");
+            configurationBoardGameDictionaryTag.Add(21, "ConfigurationBoardGameButtonBackToConfiguration");
 
             return configurationBoardGameDictionaryTag;
         }
@@ -105,7 +106,7 @@ namespace Assets.Scripts.GameDictionaries
             configurationPlayersSymbolsDictionaryTag.Add(5, "ConfigurationPlayerSymbolInactiveField");
             configurationPlayersSymbolsDictionaryTag.Add(6, "ConfigurationPlayerSymbolButtonSave");
             configurationPlayersSymbolsDictionaryTag.Add(7, "ConfigurationPlayerSymbolButtonBack");
-            configurationPlayersSymbolsDictionaryTag.Add(8, "ConfigurationPlayerSymbolButtonBackTableWithSymbolsToChoose");
+            configurationPlayersSymbolsDictionaryTag.Add(8, "ConfigurationPlayerSymbolButtonBackToConfiguration");
 
             return configurationPlayersSymbolsDictionaryTag;
         }
@@ -160,16 +161,28 @@ namespace Assets.Scripts.GameDictionaries
             return buttonsNameDictionary;
         }
 
-        public static Dictionary<int, string> DictionaryButtonsConfigurationBoardGame()
+        public static Dictionary<int, string> DictionaryButtonsConfigurationBoardGameDefaultText()
         {
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
 
-            buttonsNameDictionary.Add(1, "PLAYER");
-            buttonsNameDictionary.Add(2, "ROW");
-            buttonsNameDictionary.Add(3, "COLUMN");
-            buttonsNameDictionary.Add(4, "CROSS OUT");
+            buttonsNameDictionary.Add(1, "PLAYERS");
+            buttonsNameDictionary.Add(2, "ROWS");
+            buttonsNameDictionary.Add(3, "COLUMNS");
+            //buttonsNameDictionary.Add(4, "CROSS OUT");
+            buttonsNameDictionary.Add(4, "MARK TO WIN");
+            //buttonsNameDictionary.Add(4, "LENGTH TO CHECK");
 
             return buttonsNameDictionary;
+        }
+
+        public static Dictionary<int, string> DictionaryButtonsConfigurationBoardGameDefaultNumbers()
+        {
+            Dictionary<int, string> buttonsDefaultNumberDictionary = new Dictionary<int, string>();
+
+            buttonsDefaultNumberDictionary.Add(1, "2");
+            buttonsDefaultNumberDictionary.Add(2, "3");
+
+            return buttonsDefaultNumberDictionary;
         }
 
         public static Dictionary<int, Tuple<float, float, float, float>> DictionaryColor()

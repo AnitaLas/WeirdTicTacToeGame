@@ -88,6 +88,43 @@ namespace Assets.Scripts.PlayGameMenu
 
         }
 
+        public static void ChangeDataForSingleGameConfigurationButtons(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, string tagToSetUp)
+        {
+            int maxIndexDepth = 1;
+            int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
+            int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
+
+            float newCoordinateZ = 0.175f;
+            float fontSize = 0.7f;
+            float newScale = 0.3f;
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+
+                        GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
+
+                        CommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+
+                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
+
+                        CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
+
+                        CommonMethods.ChangeTagForGameObject(cubePlay, tagToSetUp);
+
+                    }
+                }
+            }
+
+            CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale); 
+        }
+
+
+
         public static void ChangeDataForSingleCommonButton(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX, string tagToSetUp)
         {
             float newScale = 0.45f;
@@ -95,7 +132,21 @@ namespace Assets.Scripts.PlayGameMenu
             ChangeBaseDataForSingleCommonButton(singleConfigurationButtonTable, newScale, tagToSetUp);
             CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
             ChangingCoordinatesXYForBoundaryPrefabCubePlay(singleConfigurationButtonTable, newScale);
-            SetUpFinalCoordinatesXYFoPrefabCubePlay(singleConfigurationButtonTable, newCoordinateY, newCoordinateX);
+            SetUpFinalCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newCoordinateY, newCoordinateX);
+
+        }
+
+
+
+        //public static void ChangeDataForSingleGameConfigurationCommonButton(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX, string tagToSetUp)
+        public static void ChangeDataForSingleGameConfigurationCommonButton(GameObject[,,] singleConfigurationButtonTable, string tagToSetUp)
+        {
+            float newScale = 0.5f;
+
+            ChangeBaseDataForSingleCommonButton(singleConfigurationButtonTable, newScale, tagToSetUp);
+            CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
+            ChangingCoordinatesXYForBoundaryPrefabCubePlay(singleConfigurationButtonTable, newScale);
+            //SetUpFinalCoordinatesXYFoPrefabCubePlay(singleConfigurationButtonTable, newCoordinateY, newCoordinateX);
 
         }
 
@@ -134,7 +185,7 @@ namespace Assets.Scripts.PlayGameMenu
         }
 
 
-        public static void SetUpFinalCoordinatesXYFoPrefabCubePlay(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX)
+        public static void SetUpFinalCoordinatesXYForPrefabCubePlay(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX)
         {
             int maxIndexDepth = 1;
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
@@ -157,7 +208,6 @@ namespace Assets.Scripts.PlayGameMenu
             }
 
         }
-
         // ----------------------------
 
         public static GameObject[,,] CreateSingleConfigurationButton2(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D, string[] nameForButton)
@@ -379,25 +429,106 @@ namespace Assets.Scripts.PlayGameMenu
                             newStartY = y - newScale * percetageOfNewScale;
 
                             CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
+
                         }
-
-
-
-
-
-
-
-
-
-
-
-
                     }
                 }
             }
-
-
         }
 
+        // --- 
+
+        public static void ChangeColourForButtonsWithNumbers(List<GameObject[,,]> gameObjects, Material[] materialColour)
+        {
+            ChangeColourForSpecificGameObjects(gameObjects, materialColour);
+        }
+
+        public static void ChangeColourForSpecificGameObjects(List<GameObject[,,]> gameObjects, Material[] materialColour)
+        {
+            int gameObjectNumber = gameObjects.Count;
+            GameObject[,,] table;
+
+            for (int i = 0; i < gameObjectNumber; i++)
+            {
+                table = gameObjects[i];
+                ChangeColourForGameObjectWithNumber(table, materialColour);
+
+            }
+        }
+
+        public static void ChangeColourForGameObjectWithNumber(GameObject[,,] tableWtithNumber, Material[] materialColour)
+        {
+            Material newColour = materialColour[0];
+            int maxIndexDepth = 1;
+            int maxIndexColumn = tableWtithNumber.GetLength(2);
+            int maxIndexRow = tableWtithNumber.GetLength(1);
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
+                        CommonMethods.ChangeColourForGameObject(cubePlay, newColour);
+                    }
+
+                }
+            }
+        }
+
+        public static bool IsTableWithNumberVisible(GameObject[,,] tableWithNumber)
+        {
+            bool isTableVisible;
+            float y = 70f; // reason -> hide/unkide 100/ -100
+
+            GameObject gameObject = tableWithNumber[0, 0, 0];
+            float gameObjectY = gameObject.transform.position.y;
+
+            if (y > gameObjectY)
+            {
+                isTableVisible = true;
+            }
+            else
+            {
+                isTableVisible = false;
+            }
+
+            return isTableVisible;
+        }
+
+        // --
+        public static void ChangeCoordinateYForSpecificTags(List<GameObject[,,]> gameObjects, float newCoordinateY)
+        {
+            int gameObjectNumber = gameObjects.Count;
+            GameObject[,,] table;
+
+            for (int i = 0; i < gameObjectNumber; i++)
+            {
+                table = gameObjects[i];
+                ChangeCoordinateYForTable(table, newCoordinateY);
+
+            }
+        }
+
+        public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateY)
+        {
+            int maxIndexDepth = 1;
+            int maxIndexColumn = tableWtithNumber.GetLength(2);
+            int maxIndexRow = tableWtithNumber.GetLength(1);
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
+                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                    }
+
+                }
+            }
+        }
     }
 }
