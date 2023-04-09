@@ -26,31 +26,11 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
         public static string[] CreateTableWithTextForPrefabPlayerNumber(int numberOfRows)
         {
-            //int allNumbers = numberOfRows * 2;
             string[] numbers = new string[numberOfRows];
             string numberString;
 
             for (int number = 1; number <= numberOfRows; number++)
             {
-               // int indexNumber = number - 1;
-
-                //numberString = $"PLAYER {number}";
-                //numbers[indexNumber] = numberString;
-
-
-                //int indexNumber = number - 1;
-                //if (number <= numberOfRows)
-                //{
-                //    numberString = $"PLAYER {number}";
-                //    numbers[indexNumber] = numberString;
-                //}
-
-                //else
-                //{
-                //    numberString = "-";
-                //    numbers[indexNumber] = numberString;
-                //}
-
                 numberString = CommonMethods.ConverIntToString(number);
                 int indexNumber = number - 1;
                 numbers[indexNumber] = numberString;
@@ -74,8 +54,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             {
                 for (int indexRow = numberOfRows - 1; indexRow >= 0; indexRow--)
                 {
-                    //currentIndex = index[0];
-
                     for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
                     {
                         currentIndex = index[0];
@@ -84,8 +62,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         newTable[indexDepth, indexRow, indexColumn] = stringNumber;
                         index[0] = index[0] + 1;
                     }
-
-                    //index[0] = index[0] + 1;
                 }
 
                 index[0] = 0;
@@ -100,10 +76,8 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         {
             string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
 
-            //string[] alphabet = CreateTableWithCharactersForPrefabCubePlay(numberOfRows, numberOfColumns);
             string[] numbers = CreateTableWithTextForPrefabPlayerNumber(numberOfRows);
 
-            // string[,,] alphabet3D = CreateTableForDefaultTextWithCharacters(alphabet, numberOfDepths, numberOfRows, numberOfColumns);
             string[,,] numbers3D = CreateTableForDefaultTextForPlayersSymbol(numbers, numberOfRows);
 
             for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
@@ -113,8 +87,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                     for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
                     {
                         string stringNumber = numbers3D[indexDepth, indexRow, indexColumn];
-                        //string stringAlphabet = alphabet3D[indexDepth, indexRow, indexColumn];
-                        //string textForPrebaCubePlay = stringAlphabet + stringNumber;
 
                         newTable[indexDepth, indexRow, indexColumn] = stringNumber;
                     }
@@ -127,17 +99,10 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         // ---
         public static void ChangePlayerSymbolForChildText(GameObject gameObject, int childNumber, string newText)
         {
-            //int childNumber = 0;
             TextMeshProUGUI text = CommonMethods.GetTextMeshProUGUIForPlayerSymbolChild(gameObject, childNumber);
             text.text = newText;
         }
 
-        //public static int ChooseRandomPlayerSymbol(string[] tableSymbols)
-        //{
-        //    int tableSymbolsLenght = tableSymbols.Length;
-        //    int randomIndex = CommonMethods.ChooseRandomNumber(tableSymbolsLenght);
-        //    return randomIndex;
-        //}
 
         public static float GetFirstPositionForPrefabPlayerSymbol(float scale, int playersNumber)
         {
@@ -147,7 +112,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             float yForFirstPrefabPlayerSymbol;
             int playersNumberDevidedByTwo = playersNumber / 2;
             
-
             bool isPlayersNumberEven = CommonMethods.IsNumberEven(playersNumber);
 
             if (isPlayersNumberEven == false)
@@ -156,10 +120,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                 decimal playersNumberRoundUp = CommonMethods.RoundUp(playersNumberDecimal);
                 float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);
 
-                yForFirstPrefabPlayerSymbol = -playersNumberFloat;// - scaleDevidedByTwo;
-               // Debug.Log("playersNumberFloat = " + playersNumberFloat);
-                //Debug.Log("scale = " + scale);
-
+                yForFirstPrefabPlayerSymbol = -playersNumberFloat;
                 return yForFirstPrefabPlayerSymbol;
 
             } 
@@ -170,14 +131,10 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                 decimal playersNumberRoundUp = CommonMethods.RoundUp(playersNumberDecimal);
                 float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);
 
-                yForFirstPrefabPlayerSymbol = -playersNumberFloat; // - scaleDevidedByTwo + scaleDevidedByFour;
-                // Debug.Log("playersNumberFloat = " + playersNumberFloat);
-                //Debug.Log("scale = " + scale);
-
+                yForFirstPrefabPlayerSymbol = -playersNumberFloat;
                 return yForFirstPrefabPlayerSymbol;
-            }
 
-            //return 0;
+            }
         }
 
 
@@ -185,8 +142,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         {
             float[] table = new float[playersNumber];
             float scale = CommonMethods.GetObjectScaleX(prefabPlayerSymbol);
-            //float scale = 1;
-            float halfScale = scale/ 2;
+            float halfScale = scale / 2;
             float firstY = GetFirstPositionForPrefabPlayerSymbol(scale, playersNumber);
             table[0] = firstY;
             float result;
@@ -220,7 +176,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
             int maxIndexRow = tableWtithNumber.GetLength(1);
-            bool isRowNumberEven = CommonMethods.IsNumberEven(maxIndexRow);
+            //bool isRowNumberEven = CommonMethods.IsNumberEven(maxIndexRow);
 
             GameObject prefabPlayerSymbol = tableWtithNumber[0, 0, 0];
             string[] defaultPlayersSymbols = CreateGameBoardMethods.CreateTableWithCharactersByGivenString();
@@ -234,7 +190,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int defaultSymbolNumber;
 
             string firstChildDefaultText;
-            string secondChildDefaultText; // = "?";
+            string secondChildDefaultText;
 
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)

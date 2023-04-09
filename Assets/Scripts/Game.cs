@@ -374,7 +374,7 @@ internal class Game : MonoBehaviour
                                 }
 
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
-                                PlayGameMenuButtons.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
+                                PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
 
                             }
                             else
@@ -451,7 +451,7 @@ internal class Game : MonoBehaviour
                                 }
 
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
-                                PlayGameMenuButtons.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
+                                PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
                             }
 
                             else
@@ -521,7 +521,7 @@ internal class Game : MonoBehaviour
                         //CreateGameConfigurationMenu.CreateConfigurationButtonNewGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
                         //CreateGameConfigurationMenu.CreateConfigurationButtonBackToGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
 
-                        gameButtonsMenu = PlayGameMenuButtons.CreateButtonsMenu(prefabCubePlay, cubePlayColourWin, isGame2D);
+                        gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, cubePlayColourWin, isGame2D);
 
                     }
 

@@ -12,45 +12,59 @@ namespace Assets.Scripts.Buttons
     internal class ButtonsText 
     {
 
-        /// <summary>
-        /// currently, it works only for even column numbers e.g. 14
-        /// </summary>
-        /// <returns></returns>
-        public static string[] CreateTableWithGivenString(int numberOfRows, int numberOfColumns, string buttonText)
+        public static string[] CreateTableWithButtonNameForGameConfiguration(int numberOfRows, int numberOfColumns, string buttonText)
         {
-            //Debug.Log(" 1 ");
-
             string[] table = new string[numberOfColumns];
-
             string emptyString = "";
-
-            int stringHalfLength = numberOfColumns / 2;
-
-            //int textLenght = buttonText.Length;
 
             int textLenght = buttonText.Length;
 
-            //float textLenghtFloat = CommonMethods.ConvertIntToFloat(textLenght);
-            Debug.Log(" textLenght = " + textLenght);
+            for (int i = 0; i < numberOfColumns; i++)
+            {
+                if (numberOfColumns > 1)
+                {
+                    if (i == 0)
+                    {
+                        table[i] = emptyString;
+                        //table[i] = "x";
+                    }
+                    else if (i <= textLenght)
+                    {
+                        string symbol = buttonText.Substring(i - 1, 1);
+                        table[i] = symbol;
 
+                    }
+                    else
+                    {
+                        table[i] = emptyString;
+                        //table[i] = "o";
+                    }
+                } 
+                else
+                {
+                    string symbol = buttonText.Substring(0, 1);
+                    table[i] = symbol;
+                }
+            }
+
+            return table;
+        }
+
+        public static string[] CreateTableWithButtonNameForGame(int numberOfRows, int numberOfColumns, string buttonText)
+        {
+            string[] table = new string[numberOfColumns];
+            string emptyString = "";
+
+            int stringHalfLength = numberOfColumns / 2;
+            int textLenght = buttonText.Length;
             int textHalfLength = textLenght / 2;
-            //float textHalfLength = textLenghtFloat / 2;
-
-
-
-            Debug.Log(" textHalfLength = " + textHalfLength);
-
             int differenceBetweenHalves;
-            //float differenceBetweenHalves;
-
 
             bool isButtonTextEven = CommonMethods.IsNumberEven(textLenght);
 
-            
-
             if (isButtonTextEven == true)
             {
-                differenceBetweenHalves = stringHalfLength - textHalfLength ; 
+                differenceBetweenHalves = stringHalfLength - textHalfLength;
             }
             else
             {
@@ -61,11 +75,10 @@ namespace Assets.Scripts.Buttons
                 else
                 {
                     differenceBetweenHalves = stringHalfLength - textHalfLength;
+                    //differenceBetweenHalves = stringHalfLength - textHalfLength - 1 ;
                 }
-                
-            }
 
-            //Debug.Log($"differenceBetweenHalves = " + differenceBetweenHalves);
+            }
 
             for (int i = 0; i < numberOfColumns; i++)
             {
@@ -74,36 +87,27 @@ namespace Assets.Scripts.Buttons
                 if (i < differenceBetweenHalves)
                 {
                     table[i] = emptyString;
-                    //Debug.Log($"table[{i}] = " + table[i]);
                 }
 
                 else if (i >= differenceBetweenHalves && indexText < textLenght)
                 {
                     string symbol = buttonText.Substring(indexText, 1);
-                    //Debug.Log($"symbol = " + symbol);
                     table[i] = symbol;
                 }
 
-                else 
+                else
                 {
                     table[i] = emptyString;
                 }
 
 
+
+
             }
 
-
-            //for (int i = 0; i < stringLength; i++)
-            //{
-            //    Debug.Log($"table[{i}]" + table[i]);
-            //}
-
-
-
-
             return table;
-        }
 
+        }
 
     }
 }
