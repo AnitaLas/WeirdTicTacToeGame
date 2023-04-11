@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Assets.Scripts.Buttons;
+using Assets.Scripts.GameConfiguration.GameConfigurationBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -120,7 +122,7 @@ namespace Assets.Scripts.PlayGameMenu
                 }
             }
 
-            CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale); 
+            CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
         }
 
 
@@ -288,7 +290,7 @@ namespace Assets.Scripts.PlayGameMenu
                         indexNumber = indexNumber + 1;
 
                     }
-                }              
+                }
             }
 
             return numbers;
@@ -364,7 +366,7 @@ namespace Assets.Scripts.PlayGameMenu
 
                             CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
                         }
-                        
+
                     }
                 }
             }
@@ -497,6 +499,7 @@ namespace Assets.Scripts.PlayGameMenu
             return isTableVisible;
         }
 
+
         // --
         public static void ChangeCoordinateYForSpecificTags(List<GameObject[,,]> gameObjects, float newCoordinateY)
         {
@@ -530,5 +533,23 @@ namespace Assets.Scripts.PlayGameMenu
                 }
             }
         }
+
+        public static string[] CreateTableWithefaultTextForButtons(int playersNumber, string buttonText)
+        {
+            string[] defaultTextForButtons = new string[playersNumber];
+            string defaultTextForButton;
+            int playerNumber;
+
+            for (int i = 0; i < playersNumber; i++)
+            {
+                playerNumber = i + 1;
+                defaultTextForButton = buttonText + $" {playerNumber}";
+                defaultTextForButtons[i] = defaultTextForButton;
+            }
+
+            return defaultTextForButtons;
+        }
+
+
     }
 }

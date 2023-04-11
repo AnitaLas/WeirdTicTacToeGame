@@ -82,6 +82,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabDefaultColour.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationSetUpBoardGame.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsAction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabName.cs" />
     <Compile Include="Assets\Scripts\CreateGameBoard\CreateGameBoard.cs" />
@@ -118,24 +119,25 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsAction.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolTableWithSymbols.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckerLenght.cs" />
+    <Compile Include="Assets\Scripts\Buttons\ButtonGameConfigurationPlayerSymbolMethods.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonGameConfigurationMethods.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameFrameMove.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationBase\GameConfigurationTableForPlayersSymbols.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayerSymbol.cs" />
+    <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsAction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\PlayGameMenu\PlayGameMenuButtonsActions.cs" />
     <Compile Include="Assets\Scripts\CreateFrame\CreateFrameForMove.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsAction.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsAction.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsCreate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

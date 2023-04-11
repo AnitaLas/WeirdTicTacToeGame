@@ -38,7 +38,33 @@ namespace Assets.Scripts.Buttons
             ButtonsCommonMethods.ChangeCoordinateYForTable(tableWtithNumber, newCoordinateY);
         }
 
+        // ---
 
+        public static void HideVisibleTablesWithNumber(List<GameObject[,,]> tablesWithNumber)
+        {
+            GameObject[,,] table;
+            GameObject gameObject;
+
+            bool isTableVisible;
+            string tagName;
+            int tableNumber = tablesWithNumber.Count;
+
+            for (int i = 0; i < tableNumber; i++)
+            {
+                table = tablesWithNumber[i];
+                gameObject = table[0, 0, 0];
+                isTableVisible = ButtonsCommonMethods.IsTableWithNumberVisible(table);
+                tagName = CommonMethods.GetObjectTag(gameObject);
+
+                if (tagName != null)
+                {
+                    if (isTableVisible == true)
+                    {
+                        ButtonsCommonMethodsAction.GameObjectToHide(table);
+                    }
+                }
+            }
+        }
 
     }
 }

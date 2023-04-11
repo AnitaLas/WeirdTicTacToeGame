@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.GameConfiguration;
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -119,6 +120,58 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                     }
                 }
             }
+
+            //Debug.Log(" ------------------------ ");
+
+            return tableWitPlayersChosenSymbols;
+
+        }
+
+        public static string[] CreateTableWithPlayersChosenSymbols(List<GameObject[,,]> tableWithPlayersAndSymbols)
+        {
+            //Debug.Log(" test 1 ");
+            int elements = tableWithPlayersAndSymbols.Count;
+            //Debug.Log("elements = " + elements);
+
+            int maxIndexDepth = 1;
+            int maxIndexColumn;
+            int maxIndexRow;
+            int index;
+
+            GameObject[,,] table;
+
+            string[] tableWitPlayersChosenSymbols = new string[elements];
+
+            for (int i = 0; i < elements; i++)
+            {
+                table = tableWithPlayersAndSymbols[i];
+                maxIndexColumn = table.GetLength(2);
+                maxIndexRow = table.GetLength(1);
+                index = i;
+
+                for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+                {
+                    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                    {
+                        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                        {
+                            //int index = maxIndexRow - indexRow - 1;
+                            GameObject chosenPlayerSymbol = table[indexDepth, indexRow, indexColumn];
+                            string chosenPlayerSymbolText = CommonMethods.GetCubePlayText(chosenPlayerSymbol);
+
+                            tableWitPlayersChosenSymbols[index] = chosenPlayerSymbolText;
+                            
+                        }
+                    }
+                }
+            }
+
+            //for (int i = 0; i < tableWitPlayersChosenSymbols.Length; i++)
+            //{
+            //    Debug.Log($"tableWitPlayersChosenSymbols[{i}] = " + tableWitPlayersChosenSymbols[i]);
+            //} 
+
+           
 
             //Debug.Log(" ------------------------ ");
 
