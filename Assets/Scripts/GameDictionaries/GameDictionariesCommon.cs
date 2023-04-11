@@ -185,6 +185,14 @@ namespace Assets.Scripts.GameDictionaries
             return buttonsDefaultNumberDictionary;
         }
 
+        public static Dictionary<int, string> DictionaryButtonsConfigurationPlayerSymbolDefaultText()
+        {
+            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
+
+            buttonsNameDictionary.Add(1, "PLAYER");
+
+            return buttonsNameDictionary;
+        }
         public static Dictionary<int, Tuple<float, float, float, float>> DictionaryColor()
         {
             // Tuple<float, float, float, float> => r g b a

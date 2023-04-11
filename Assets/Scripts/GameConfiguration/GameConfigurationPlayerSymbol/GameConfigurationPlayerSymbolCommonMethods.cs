@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
@@ -12,13 +13,86 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 {
     internal class GameConfigurationPlayerSymbolCommonMethods
     {
-
+        
         public static void ChangeTagForDefaultPlayerSymbol(GameObject gameObjectParent, string gameObjectTagNameToChange)
         {
             //Debug.Log(" ChangeTagForDefaultPlayerSymbol child");
             gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
 
         }
+
+        public static void ChangeTagForDefaultPlayerSymbol2(string gameObjectName, string gameObjectTagNameToChange, string tagConfigurationPlayerSymbolDefaultSymbol)
+        {
+            //gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
+            //GameObject[] chosenPlayer;
+
+            //List<GameObject[,,]> listOfCubePlayWithSymbol = new List<GameObject[,,]>();
+
+
+            GameObject[] listOfSymbol = CommonMethods.GetObjectsListWithTagName(tagConfigurationPlayerSymbolDefaultSymbol);
+            int tagNumber = listOfSymbol.Length;
+            Debug.Log("tagNumber = " + tagNumber);
+
+            int maxIndexDepth = 1;
+            int maxIndexColumn;
+            int maxIndexRow;
+
+
+            for (int i = 0; i < tagNumber; i++)
+            {
+                Debug.Log(" 1 ");
+                GameObject cubePlay = listOfSymbol[i];
+                string gameObjectNameToCompare = CommonMethods.GetObjectName(cubePlay);
+                Debug.Log("gameObjectNameToCompare = " + gameObjectNameToCompare);
+
+                if (true)
+                {
+                    CommonMethods.ChangeTagForGameObject(cubePlay, gameObjectTagNameToChange);
+                }
+
+            }
+
+                //for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+                //{
+                //    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                //    {
+                //        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                //        {
+
+                //            GameObject cubePlay = gameObject[indexDepth, indexRow, indexColumn];
+
+
+
+                //        }
+                //    }
+                //}
+            
+
+            //for (int i = 0; i < tagNumber; i++)
+            //{
+            //    GameObject[] oneSymbol = listOfSymbol[i];
+            //    maxIndexColumn = oneSymbol.GetLength(2);
+            //    maxIndexRow = oneSymbol.GetLength(1);
+
+
+            //    for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            //    {
+            //        for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+            //        {
+            //            for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+            //            {
+
+            //                GameObject cubePlay = oneSymbol[indexDepth, indexRow, indexColumn];
+
+
+
+            //            }
+            //        }
+            //    }
+            //}
+
+        }
+
 
         public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateZ)
         {

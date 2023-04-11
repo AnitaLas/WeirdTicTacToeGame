@@ -620,6 +620,19 @@ namespace Assets.Scripts
             return gameObjectTagName;
         }
 
+
+        public static string GetCubePlayPlayerSymbol(GameObject cubePlay)
+        {
+            var cubePlayText = cubePlay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            string playerSymbol = cubePlayText.text;
+            return playerSymbol;
+        }
+        public static GameObject[] GetObjectsListWithTagName(string tagName)
+        {
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tagName);
+            return gameObjects;
+        }
+
         public static void ChangeTagForGameObject(GameObject gameObject, string gameObjectTagName)
         {
             gameObject.transform.tag = gameObjectTagName;
@@ -628,6 +641,11 @@ namespace Assets.Scripts
         public static void ChangeTagForGameObject(RaycastHit touchGameObject, string gameObjectTagName)
         {
             touchGameObject.collider.transform.tag = gameObjectTagName;
+        }
+
+        public static void ChangeGameObjectName(GameObject gameObject, string gameObjectName)
+        {
+            gameObject.name = gameObjectName;
         }
 
         public static int CheckAndReturnLowerNumber(int numberOne, int numberTwo)
@@ -668,12 +686,6 @@ namespace Assets.Scripts
 
         }
 
-        public static string GetCubePlayPlayerSymbol(GameObject cubePlay)
-        {
-            var cubePlayText = cubePlay.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-            string playerSymbol = cubePlayText.text;
-            return playerSymbol;
-        }
 
 
         public static void ChangeColourForGameObject(GameObject gameObject, Material newColour)

@@ -48,69 +48,12 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
 
         // ---
 
-        public static bool IsTableWithNumberVisible(GameObject[,,] tableWithNumber)
+        public static void HideVisibleTablesWithNumber(List<GameObject[,,]> gameObjects)
         {
-            bool isTableVisible = ButtonsCommonMethods.IsTableWithNumberVisible(tableWithNumber);
-            return isTableVisible;
+            ButtonsCommonMethodsAction.HideVisibleTablesWithNumber(gameObjects);
+  
         }
 
-        public static void HideVisibleTablesWithNumber(List<GameObject[,,]> tablesWithNumber)
-        {
-            GameObject[,,] table;
-            GameObject gameObject;
 
-            bool isTableVisible;
-            string tagName;
-            int tableNumber = tablesWithNumber.Count;
-
-            for (int i = 0; i < tableNumber; i++)
-            {
-                table = tablesWithNumber[i];
-                gameObject = table[0, 0, 0];
-                isTableVisible = IsTableWithNumberVisible(table);
-                tagName = CommonMethods.GetObjectTag(gameObject);
-
-                if (tagName != null)
-                {                   
-                    if (isTableVisible == true)
-                    {
-                        GameConfigurationButtonsAction.HideTableWithNumber(table);
-                    }
-                }
-            }
-
-            //bool isTableWithNumberForPlayersVisible = GameConfigurationButtonsAction.IsTableWithNumberVisible(_tableWithNumberForPlayers);
-            //bool isTableWithNumberForRowsVisible = GameConfigurationButtonsAction.IsTableWithNumberVisible(_tableWithNumberForRows);
-            //bool isTableWithNumberForColumnsVisible = GameConfigurationButtonsAction.IsTableWithNumberVisible(_tableWithNumberForColumns);
-            //bool isTableWithNumberForLenghtToCheckVisible;
-
-
-
-            //if (isTableWithNumberForPlayersVisible == true)
-            //{
-            //    GameConfigurationButtonsAction.HideTableWithNumber(_tableWithNumberForPlayers);
-            //}
-
-            //if (isTableWithNumberForRowsVisible == true)
-            //{
-            //    GameConfigurationButtonsAction.HideTableWithNumber(_tableWithNumberForRows);
-            //}
-
-            //if (isTableWithNumberForColumnsVisible == true)
-            //{
-            //    GameConfigurationButtonsAction.HideTableWithNumber(_tableWithNumberForColumns);
-            //}
-
-            //if (_tableWithNumberForLenghtToCheckBase != null)
-            //{
-            //    bool isTableWithNumberForLenghtToCheckVisible = GameConfigurationButtonsAction.IsTableWithNumberVisible(_tableWithNumberForLenghtToCheck);
-
-            //    if (isTableWithNumberForLenghtToCheckVisible == true)
-            //    {
-            //        GameConfigurationButtonsAction.HideTableWithNumber(_tableWithNumberForLenghtToCheck);
-            //    }
-            //}
-
-        }
     }
 }
