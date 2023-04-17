@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.XR;
+//using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
@@ -44,6 +44,12 @@ namespace Assets.Scripts
         {
             string intToString = number.ToString();
             return intToString;
+        }
+
+        public static string GetSubstringFromText(string gameObjectName, int startIndex, int searchedTextLength)
+        {
+            string text = gameObjectName.Substring(startIndex, searchedTextLength);
+            return text;
         }
 
         public static int ConvertStringToInt(string number)

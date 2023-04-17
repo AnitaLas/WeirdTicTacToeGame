@@ -550,6 +550,19 @@ namespace Assets.Scripts.PlayGameMenu
             return defaultTextForButtons;
         }
 
+        public static string GetSubstringFromCubePlayName(string gameObjectName)
+        {
+            int textLength = gameObjectName.Length;
+            //Debug.Log("textLength = " + textLength);
 
+            int startIndex = textLength - 2;
+           // Debug.Log("startIndex = " + startIndex);
+
+            int searchedTextLength = 2;
+
+            string text = CommonMethods.GetSubstringFromText(gameObjectName, startIndex, searchedTextLength);
+            //Debug.Log("text = " + text);
+            return text;
+        }
     }
 }
