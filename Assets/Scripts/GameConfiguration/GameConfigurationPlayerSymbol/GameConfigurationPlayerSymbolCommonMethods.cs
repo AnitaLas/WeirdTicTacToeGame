@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.GameDictionaries;
+using Assets.Scripts.PlayGameMenu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,22 +32,31 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
             GameObject[] listOfSymbol = CommonMethods.GetObjectsListWithTagName(tagConfigurationPlayerSymbolDefaultSymbol);
             int tagNumber = listOfSymbol.Length;
-            Debug.Log("tagNumber = " + tagNumber);
+            //Debug.Log("tagNumber = " + tagNumber);
 
             int maxIndexDepth = 1;
             int maxIndexColumn;
             int maxIndexRow;
 
+           
+            string gameObjectNameEndNumber = ButtonsCommonMethods.GetSubstringFromCubePlayName(gameObjectName);
+            Debug.Log("gameObjectName = " + gameObjectName);
+            Debug.Log("gameObjectNameEndNumber = " + gameObjectNameEndNumber);
 
             for (int i = 0; i < tagNumber; i++)
             {
-                Debug.Log(" 1 ");
+                //Debug.Log(" 1 ");
                 GameObject cubePlay = listOfSymbol[i];
                 string gameObjectNameToCompare = CommonMethods.GetObjectName(cubePlay);
-                Debug.Log("gameObjectNameToCompare = " + gameObjectNameToCompare);
+                //Debug.Log("gameObjectNameToCompare = " + gameObjectNameToCompare);
+                string gameObjectNameNumberToCompare = ButtonsCommonMethods.GetSubstringFromCubePlayName(gameObjectNameToCompare);
 
-                if (true)
+
+
+                if (gameObjectNameEndNumber.Equals(gameObjectNameNumberToCompare))
                 {
+                    Debug.Log("gameObjectNameToCompare = " + gameObjectNameToCompare);
+                    Debug.Log("gameObjectNameNumberToCompare = " + gameObjectNameNumberToCompare);
                     CommonMethods.ChangeTagForGameObject(cubePlay, gameObjectTagNameToChange);
                 }
 
