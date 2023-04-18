@@ -2,7 +2,7 @@
 using Assets.Scripts.GameConfiguration.GameConfigurationBase;
 using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
+//using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

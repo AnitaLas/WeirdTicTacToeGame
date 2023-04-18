@@ -137,6 +137,7 @@ namespace Assets.Scripts
 
                     for (float z = positionForFirstCubePlayZ; z < positionForLastCubePlayZ; z = z + newScale)
                     {
+
                         // [prefabCubePlayColorDefaul] old data - change colour for new prefab "CubePlay"
                         int currentIndexForPreviousColour = indexForPreviousCubePlayColour[0];
                         int currentCountedNumberForCubeRows = countedNumberCubePlayForRowsForColour[0];
@@ -163,10 +164,15 @@ namespace Assets.Scripts
                         //[prefabCubePlayTextDefault] - set up new currentNumberForPrefabCubePlay
                         countedPrefabCubePlay = CommonMethods.SetUpNewCurrentNumberByAddition(countedPrefabCubePlay, index);
 
-
                         // create new prefab "CubePlay"
-                        var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(x, y, z), Quaternion.identity);
-                        ;
+                        //var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(x, y, z), Quaternion.identity);
+
+                        float newX = CommonMethods.RoundCoordinateXYZ(x);
+                        float newY = CommonMethods.RoundCoordinateXYZ(y);
+                        float newZ = CommonMethods.RoundCoordinateXYZ(z);
+
+                        var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(newX, newY, newZ), Quaternion.identity);
+                        
                         // [prefabCubePlayName] chcange the name for new prefab "CubePlay"
                         int currentNumberCubePlayName = numbersCubePlayName[0];
                         var currentIndexXYForPrefabCubePlay = CommonMethods.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberCubePlayName);
