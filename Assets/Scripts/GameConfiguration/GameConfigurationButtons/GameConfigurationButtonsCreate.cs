@@ -116,6 +116,9 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
             string buttonText = buttonsGameNameDictionary[1];
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            string frontTextToAdd = "ButtonPlayer_";
+            ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
             return button;;
         }
 
@@ -128,6 +131,10 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
             string buttonText = buttonsGameNameDictionary[2];
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            string frontTextToAdd = "ButtonRow_";
+            ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
+
             return button;
         }
 
@@ -140,6 +147,10 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
             string buttonText = buttonsGameNameDictionary[3];
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            string frontTextToAdd = "ButtonColumn_";
+            ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
+
             return button;
         }
 
@@ -152,6 +163,10 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
             string buttonText = buttonsGameNameDictionary[4];
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            string frontTextToAdd = "ButtonLenghtToCheck_";
+            ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
+
             return button;
         }
 

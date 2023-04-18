@@ -106,7 +106,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
 
             float newCoordinateY = 0f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
-
+            
             return tableButtonNewGame;
 
         }

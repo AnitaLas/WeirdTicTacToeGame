@@ -204,7 +204,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                 CommonMethods.ChangeGameObjectName(gameObject, gameObjectName);
             }
 
-
         }
 
         public static void ChangeNameForPrefabPlayerSymbol(GameObject gameObject, int currentNumber)

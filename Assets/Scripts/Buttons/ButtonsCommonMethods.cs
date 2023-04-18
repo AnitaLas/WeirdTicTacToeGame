@@ -3,6 +3,7 @@ using Assets.Scripts.GameConfiguration.GameConfigurationBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -125,7 +126,7 @@ namespace Assets.Scripts.PlayGameMenu
             CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
         }
 
-
+       
 
         public static void ChangeDataForSingleCommonButton(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX, string tagToSetUp)
         {
@@ -563,6 +564,34 @@ namespace Assets.Scripts.PlayGameMenu
             string text = CommonMethods.GetSubstringFromText(gameObjectName, startIndex, searchedTextLength);
             //Debug.Log("text = " + text);
             return text;
+        }
+
+        public static void ChangeNameForGameConfigurationButtons(GameObject[,,] singleConfigurationButtonTable, string frontTextToAdd)
+        {
+            int maxIndexDepth = 1;
+            int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
+            int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
+
+            float newCoordinateZ = 0.175f;
+            float fontSize = 0.7f;
+            float newScale = 0.3f;
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+
+                        GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
+                        string oldName = CommonMethods.GetObjectName(cubePlay);
+                        string newName = frontTextToAdd + oldName;
+                        CommonMethods.ChangeGameObjectName(cubePlay, newName);
+                    }
+                }
+            }
+
+            CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
         }
     }
 }

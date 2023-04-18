@@ -74,6 +74,17 @@ namespace Assets.Scripts
             return resul;
         }
 
+        public static float RoundCoordinateXYZ(float coordinate)
+        {
+            double roundedCoordinate = coordinate;
+            double test = Math.Round(roundedCoordinate, 2);
+            float test2 = ConvertDoubleToFloat(test);
+
+            //float roundedCoordinate = (float)Math.Round(coordinate, 2);
+            return test2;
+        }
+
+
         // even number - 2 4 6 
         // odd number - 3 5 7
 
@@ -485,8 +496,14 @@ namespace Assets.Scripts
                 float y = gameObject.transform.position.y;
                 float z = gameObject.transform.position.z;
 
+                // must be change for oher methods SetUpNew...
+                Debug.Log("Y = " + y);
+                //float newY= y + newCoordinateY;
+                float newY= RoundCoordinateXYZ( y + newCoordinateY);
+                Debug.Log("newY = " + newY);
                 // it works
-                gameObject.transform.position = new Vector3(x, y + newCoordinateY, z);
+                //gameObject.transform.position = new Vector3(x, y + newCoordinateY, z);
+                gameObject.transform.position = new Vector3(x, newY, z);
             }
         }
 
@@ -691,8 +708,6 @@ namespace Assets.Scripts
             }
 
         }
-
-
 
         public static void ChangeColourForGameObject(GameObject gameObject, Material newColour)
         {

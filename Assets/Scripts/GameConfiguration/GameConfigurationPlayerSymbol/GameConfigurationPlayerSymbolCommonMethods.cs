@@ -15,10 +15,18 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
     internal class GameConfigurationPlayerSymbolCommonMethods
     {
         
-        public static void ChangeTagForDefaultPlayerSymbol(GameObject gameObjectParent, string gameObjectTagNameToChange)
+        //public static void ChangeTagForDefaultPlayerSymbol(GameObject gameObjectParent, string gameObjectTagNameToChange)
+        //{
+        //    //Debug.Log(" ChangeTagForDefaultPlayerSymbol child");
+        //    gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
+
+        //}
+
+        public static void ChangeTagForDefaultPlayerSymbol(GameObject gameObject, string gameObjectTagNameToChange)
         {
             //Debug.Log(" ChangeTagForDefaultPlayerSymbol child");
-            gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
+            CommonMethods.ChangeTagForGameObject(gameObject, gameObjectTagNameToChange);
+            //gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
 
         }
 
