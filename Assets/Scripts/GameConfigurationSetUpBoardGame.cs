@@ -1,6 +1,9 @@
 ﻿using Assets.Scripts.Buttons;
 using Assets.Scripts.GameConfiguration.GameConfigurationBase;
 using Assets.Scripts.GameDictionaries;
+using Assets.Scripts.Scenes;
+//using NUnit.Framework;
+//using NUnit.Framework.Internal;
 using System.Collections.Generic;
 //using UnityEditor.SearchService;
 using UnityEngine;
@@ -15,14 +18,20 @@ namespace Assets.Scripts.GameConfiguration
         public static int ConfigurationBoardGameNumberOfColumns { get; set; }
         public static int ConfigurationBoardGameLenghtToCheck { get; set; }
 
-        public static int numberOfPlayers = 2;
-        public static int numberOfRows = 3;
-        public static int numberOfColumns = 3;
-        public static int lenghtToCheck = 3;
+
+        //public static int numberOfPlayers = 2;
+        //public static int numberOfRows = 3;
+        //public static int numberOfColumns = 3;
+        //public static int lenghtToCheck = 3;
         public static int lenghtToCheckMax;
 
+        public static int numberOfPlayers;
+        public static int numberOfRows;
+        public static int numberOfColumns;
+        public static int lenghtToCheck;
 
 
+        // ---
 
         private GameObject[,,] _tableWithNumberForRowsBase;
         private GameObject[,,] _tableWithNumberForRows;
@@ -44,7 +53,7 @@ namespace Assets.Scripts.GameConfiguration
 
         public Material[] prefabCubePlayButtonsNumberColour;
 
-        Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesCommon.DictionaryTagConfigurationBoardGame();
+        Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
 
         private string _tagConfigurationBoardGameButtonSave;
         private string _tagConfigurationBoardGameButtonBack;
@@ -65,9 +74,9 @@ namespace Assets.Scripts.GameConfiguration
         private string[] _tagConfigurationBoardGameHideOrUnhide = new string[10];
         private string[] _tableWithChangedNumber = new string[3];
 
-        Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
+        //Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
 
-        private string _sceneConfigurationPlayersSymbols;
+        //private string _sceneConfigurationPlayersSymbols;
 
         private static bool isGame2D = true;
 
@@ -89,6 +98,11 @@ namespace Assets.Scripts.GameConfiguration
 
         void Start()
         {
+            numberOfPlayers = 2;
+            numberOfRows = 3;
+            numberOfColumns = 3;
+            lenghtToCheck = 3;
+
             _tagConfigurationBoardGameButtonSave = configurationBoardGameDictionaryTag[1];
             _tagConfigurationBoardGameButtonBack = configurationBoardGameDictionaryTag[2];
             _tagConfigurationBoardGameTableNumberRows = configurationBoardGameDictionaryTag[3];
@@ -128,7 +142,7 @@ namespace Assets.Scripts.GameConfiguration
             
             
 
-            _sceneConfigurationPlayersSymbols = scenceDictionary[2];
+            //_sceneConfigurationPlayersSymbols = scenceDictionary[2];
 
             // configuration player
             _tableWithNumberForPlayersBase = GameConfigurationTableForSetUp.CreateTableWithNumbers(prefabCubePlayForTableNumber, _numberOfDepths, _numberOfRowsForTableNumber, _numberOfColumnsForTableNumber, prefabCubePlayDefaultColour, isGame2D);
@@ -282,9 +296,16 @@ namespace Assets.Scripts.GameConfiguration
                             ConfigurationBoardGameLenghtToCheck = lenghtToCheck;
 
                             //SceneManager.LoadScene(_sceneConfigurationPlayersSymbols);
-                            CommonMethods.ChangeScene(_sceneConfigurationPlayersSymbols);
+                            //CommonMethods.ChangeScene(_sceneConfigurationPlayersSymbols);
 
+                            ScenesChange.GoToSceneConfigurationPlayersSymbols();
 
+                        }
+
+                        if (gameObjectTag == _tagConfigurationBoardGameButtonBack)
+                        {
+ 
+                            ScenesChange.GoToSceneStartGame();
 
                         }
 

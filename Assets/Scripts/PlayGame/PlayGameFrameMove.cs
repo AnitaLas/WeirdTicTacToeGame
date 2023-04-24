@@ -57,7 +57,7 @@ namespace Assets.Scripts.PlayGame
         public static int[] SetUpNewMoveIndexXYForCubePlayFrame(int[] moveIndexForFrame, string tagArrow, GameObject cubePlayFrame, float cubePlayForFrameScale, int numberOfRows, int numberOfColumns)
         {
 
-            Dictionary<int, string> tagArrowDictionary = GameDictionaries.GameDictionariesCommon.DictionaryTagHelpButtons();
+            Dictionary<int, string> tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
 
             string tagArrowRight = tagArrowDictionary[1];
             string tagArrowLeft = tagArrowDictionary[3];

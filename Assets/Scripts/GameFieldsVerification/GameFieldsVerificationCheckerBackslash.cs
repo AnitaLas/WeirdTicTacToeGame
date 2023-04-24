@@ -198,7 +198,7 @@ namespace Assets.Scripts.GameFieldsVerification
                                 listCheckerBackslash.Insert(0, checker);
                                     listCheckerBackslash.Insert(1, coordinateXYToMark);
 
-                                Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesCommon.DictionaryChecker();
+                                Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesGameFieldsVerification.DictionaryChecker();
                                     string kindOfChecker = checkerDictionary[4];
                                     listCheckerBackslash.Insert(2, kindOfChecker);
 

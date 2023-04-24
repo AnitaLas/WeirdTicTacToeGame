@@ -113,7 +113,7 @@ namespace Assets.Scripts.GameFieldsVerification
 
 
 
-                            Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesCommon.DictionaryChecker();
+                            Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesGameFieldsVerification.DictionaryChecker();
                             string kindOfChecker = checkerDictionary[1];
                             listCheckerHorizontal.Insert(2, kindOfChecker);
 

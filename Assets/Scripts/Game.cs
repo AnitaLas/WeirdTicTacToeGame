@@ -25,6 +25,7 @@ using UnityEngine.SceneManagement;
 using Assets.Scripts.CreateFrame;
 using Assets.Scripts.CreateGameHelpButton;
 using Assets.Scripts.Buttons;
+using Assets.Scripts.Scenes;
 
 internal class Game : MonoBehaviour
 {
@@ -92,7 +93,7 @@ internal class Game : MonoBehaviour
     //public string tagCubePlayFree2 = "CubePlayFree";
     //public string tagCubePlayTaken = "CubePlayTaken";
 
-    Dictionary<int, string> tagCubePlayDictionary = GameDictionariesCommon.DictionaryTagCubePlay();
+    Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
 
     private string _tagCubePlayFree;
     private string _tagCubePlayTaken;
@@ -100,7 +101,7 @@ internal class Game : MonoBehaviour
     private string _tagCubePlayGameOver;
     private string _tagCubePlayGameWin;
 
-    Dictionary<int, string> tagArrowDictionary = GameDictionariesCommon.DictionaryTagHelpButtons();
+    Dictionary<int, string> tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
 
     private string _tagArrowRight;
     private string _tagArrowLeft;
@@ -108,7 +109,7 @@ internal class Game : MonoBehaviour
     private string _tagArrowDown;
     private string _tagButtonConfirm;
 
-    Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesCommon.DictionaryTagPlayerSymbol();
+    Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesSceneGame.DictionaryTagPlayerSymbol();
 
     private string _tagPlayerSymbolCurrent;
     private string _tagPlayerSymbolPrevious;
@@ -116,7 +117,7 @@ internal class Game : MonoBehaviour
 
 
 
-    Dictionary<int, string> tagGameDictionary = GameDictionariesCommon.DictionaryTagGame();
+    Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
 
     private string _tagGameButtonMenuConfigurationLeft;
     private string _tagGameButtonMenuConfigurationRight;
@@ -127,9 +128,9 @@ internal class Game : MonoBehaviour
     private string _tagGameButtonMenuConfigurationDisactivate;
 
 
-    Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
+    //Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
 
-    private string _sceneSceneConfigurationBoardGame;
+    //private string _sceneSceneConfigurationBoardGame;
 
     private int _index;
    
@@ -217,7 +218,7 @@ internal class Game : MonoBehaviour
         tagDisactivateConfigurationMenu[2] = _tagGameButtonMenuConfigurationLeft;  
 
 
-        _sceneSceneConfigurationBoardGame = scenceDictionary[3];
+        //_sceneSceneConfigurationBoardGame = scenceDictionary[3];
 
         _index = 0;
 
@@ -578,8 +579,8 @@ internal class Game : MonoBehaviour
 
                     if (gameObjectTag ==  _tagGameButtonNewGame)
                     {
-
-                        CommonMethods.ChangeScene(_sceneSceneConfigurationBoardGame);
+                        ScenesChange.GoToSceneConfigurationBoardGame();
+                        //CommonMethods.ChangeScene(_sceneSceneConfigurationBoardGame);
                     }
 
 

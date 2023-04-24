@@ -37,8 +37,8 @@ namespace Assets.Scripts.PlayGame
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesCommon.DictionaryTagGame();
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesCommon.DictionaryButtonsGameName();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
 
             string tagGameButtonNewGame = tagCubePlayDictionary[3];
             string buttonText = buttonsGameNameDictionary[1];
@@ -65,8 +65,8 @@ namespace Assets.Scripts.PlayGame
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesCommon.DictionaryTagGame();
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesCommon.DictionaryButtonsGameName();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
 
             string tagGameButtonNewGame = tagCubePlayDictionary[3];
             string buttonText = buttonsGameNameDictionary[1];
@@ -94,8 +94,8 @@ namespace Assets.Scripts.PlayGame
         {
             GameObject[,,] tableButtonHelpButtons;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesCommon.DictionaryTagGame();
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesCommon.DictionaryButtonsGameName();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
 
             string tagGameButtonHelpButtons = tagCubePlayDictionary[4];
             string buttonText = buttonsGameNameDictionary[3];
@@ -122,8 +122,8 @@ namespace Assets.Scripts.PlayGame
         {
             GameObject[,,] tableButtonHelpButtons;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesCommon.DictionaryTagGame();
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesCommon.DictionaryButtonsGameName();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
 
             string tagGameButtonHelpButtons = tagCubePlayDictionary[5];
             string buttonText = buttonsGameNameDictionary[2];

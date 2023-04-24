@@ -123,6 +123,7 @@ namespace Assets.Scripts.PlayGameMenu
                 }
             }
 
+            /// it must be remove from here !!!
             CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
         }
 
@@ -572,8 +573,6 @@ namespace Assets.Scripts.PlayGameMenu
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
 
-            float newCoordinateZ = 0.175f;
-            float fontSize = 0.7f;
             float newScale = 0.3f;
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)

@@ -14,34 +14,8 @@ namespace Assets.Scripts.GameFieldsVerification
         public static void WinMessage(string playerSymbol)
         {
             Debug.Log($"{playerSymbol} - You win!");
-            //Console.WriteLine($"{playerSymbol} - You win!");
+
         }
-
-
-
-        //public static bool WinOrGameOn(string[,] boardToCheck)
-        //{
-        //    string[,] board = boardToCheck;
-
-        //    bool winner = GameFieldsVerification.FieldsVerification(board);
-
-        //    /*
-        //    if (winer == true)
-        //    {
-        //        Console.WriteLine("You win!");
-        //    } 
-        //    */
-        //    /*
-        //    else if (winer == false)
-        //    {
-        //        Console.WriteLine("You will win next time!");
-        //    }
-        //    */
-        //    return winner;
-        //}
-
- 
-
 
     }
 }
