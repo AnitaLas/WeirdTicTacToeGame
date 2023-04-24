@@ -142,7 +142,7 @@ namespace Assets.Scripts.GameFieldsVerification
                                 listCheckerSlash.Insert(0, checker);
                                 listCheckerSlash.Insert(1, coordinateXYToMark);
 
-                                Dictionary<int, string> checkerDictionary = GameDictionariesCommon.DictionaryChecker();
+                                Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
                                 string kindOfChecker = checkerDictionary[3];
                                 listCheckerSlash.Insert(2, kindOfChecker);
 

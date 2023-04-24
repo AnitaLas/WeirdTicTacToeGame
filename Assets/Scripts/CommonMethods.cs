@@ -327,7 +327,7 @@ namespace Assets.Scripts
 
         public static Color GetNewColor(int dictionaryColorId)
         {
-            Dictionary<int, Tuple<float, float, float, float>> colorDictionary = GameDictionaries.GameDictionariesCommon.DictionaryColor();
+            Dictionary<int, Tuple<float, float, float, float>> colorDictionary = GameDictionariesScenesCommon.DictionaryColor();
             var newColor = colorDictionary[dictionaryColorId];
 
             float r = newColor.Item1;

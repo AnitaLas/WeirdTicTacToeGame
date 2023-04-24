@@ -432,7 +432,7 @@ namespace Assets.Scripts.PlayGame
 
         public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string winnerKindOfChecker, string tagCubePlayGameWin, string tagCubePlayGameOver, GameObject prefabCubePlayFrame, Material[] cubePlayColourWin)
         {
-            Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesCommon.DictionaryChecker();
+            Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesGameFieldsVerification.DictionaryChecker();
 
             string checkerHorizontal = checkerDictionary[1];
             string checkerVertical = checkerDictionary[2];

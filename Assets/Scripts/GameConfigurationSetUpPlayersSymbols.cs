@@ -12,12 +12,19 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Assets.Scripts.GameConfiguration.GameConfigurationBase;
 using Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons;
+using Assets.Scripts.Scenes;
 
 namespace Assets.Scripts
 {
     internal class GameConfigurationSetUpPlayersSymbols : MonoBehaviour
     {
         public static string[] ConfigurationPlayerSymbolTableWitPlayersChosenSymbols { get; set; }
+        //public static int ConfigurationBoardGameNumberOfPlayers { get; set; }
+        //public static int ConfigurationBoardGameNumberOfRows { get; set; }
+        //public static int ConfigurationBoardGameNumberOfColumns { get; set; }
+        //public static int ConfigurationBoardGameLenghtToCheck { get; set; }
+
+        // ---
 
         public GameObject prefabSymbolPlayer;
         public GameObject prefabCubePlay;
@@ -32,7 +39,7 @@ namespace Assets.Scripts
 
         private bool isGame2D = true;
 
-        Dictionary<int, string> configurationPlayersSymbolsDictionaryTag = GameDictionariesCommon.DictionaryTagConfigurationPlayersSymbols();
+        Dictionary<int, string> configurationPlayersSymbolsDictionaryTag = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
 
         private string _tagConfiguratioPlayerSymbolDefaultNumber;
         private string _tagConfigurationPlayerSymbolDefaultSymbol;
@@ -43,12 +50,12 @@ namespace Assets.Scripts
         private string _tagConfigurationPlayerSymbolButtonBack;
         private string _tagConfigurationPlayerSymbolButtonBackToConfiguration;
 
-        Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
+        //Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
 
-        private string _sceneGame;
-        private string _sceneConfigurationPlayersSymbols;
+        //private string _sceneGame;
+        //private string _sceneConfigurationPlayersSymbols;
 
-        Dictionary<int, string> tagCommonDictionary = GameDictionariesCommon.DictionaryTagCommon();
+        Dictionary<int, string> tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
 
         private string _tagUntagged;
 
@@ -92,8 +99,8 @@ namespace Assets.Scripts
             _tagConfigurationPlayerSymbolButtonBackToConfiguration = configurationPlayersSymbolsDictionaryTag[8];
 
             // ---
-            _sceneGame = scenceDictionary[1];
-            _sceneConfigurationPlayersSymbols = scenceDictionary[3];
+            //_sceneGame = scenceDictionary[1];
+            //_sceneConfigurationPlayersSymbols = scenceDictionary[3];
 
             // ---
             _tagUntagged = tagCommonDictionary[1];
@@ -261,13 +268,20 @@ namespace Assets.Scripts
                             tableWitPlayersChosenSymbols = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithPlayersChosenSymbols(_buttonsWithSymbols);
                             ConfigurationPlayerSymbolTableWitPlayersChosenSymbols = tableWitPlayersChosenSymbols;
 
-                            CommonMethods.ChangeScene(_sceneGame);
+                            ScenesChange.GoToSceneGame();
+                            //CommonMethods.ChangeScene(_sceneGame);
 
                         }
 
                         if (gameObjectTag == _tagConfigurationPlayerSymbolButtonBack)
                         {
-                            CommonMethods.ChangeScene(_sceneConfigurationPlayersSymbols);
+                            //ConfigurationBoardGameNumberOfRows = 3;
+                            //ConfigurationBoardGameNumberOfColumns = 3;
+                           // ConfigurationBoardGameNumberOfPlayers = 2;
+                            //ConfigurationBoardGameLenghtToCheck = 3;
+
+                            ScenesChange.GoToSceneConfigurationBoardGame();
+                           // CommonMethods.ChangeScene(_sceneConfigurationPlayersSymbols);
 
                         }
 

@@ -17,7 +17,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesCommon.DictionaryButtonsGameConfigurationCommonButtons();
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
 
             string buttonText = buttonsGameNameDictionary[1];
             //string buttonText = "X";
@@ -44,7 +44,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesCommon.DictionaryButtonsGameConfigurationCommonButtons();
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
 
             string buttonText = buttonsGameNameDictionary[2];
 
@@ -69,7 +69,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesCommon.DictionaryButtonsGameConfigurationCommonButtons();
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
 
             string buttonText = buttonsGameNameDictionary[2];
 
