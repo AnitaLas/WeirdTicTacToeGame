@@ -1,9 +1,12 @@
 ﻿using Assets.Scripts.GameDictionaries;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts.Scenes
 {
@@ -16,11 +19,20 @@ namespace Assets.Scripts.Scenes
             CommonMethods.ChangeScene(_sceneSceneConfigurationBoardGame);
         }
 
-        public static void GoToSceneInformations()
+        //public static void GoToSceneInformations()
+        //{
+        //    Dictionary<int, string> scenceDictionary = GameDictionariesScenesCommon.DictionaryScencesName();
+        //    //string _sceneInformations = scenceDictionary[4];
+        //    string _sceneInformations = "SceneInformations";
+        //    Debug.Log("2");
+        //    CommonMethods.ChangeScene(_sceneInformations);
+        //}
+
+        public static void GoToSceneInformations2()
         {
             Dictionary<int, string> scenceDictionary = GameDictionariesScenesCommon.DictionaryScencesName();
-            string _sceneGame = scenceDictionary[4];
-            CommonMethods.ChangeScene(_sceneGame);
+            string _sceneInformations = scenceDictionary[4];
+            CommonMethods.ChangeScene(_sceneInformations);
         }
 
         public static void GoToSceneConfigurationBoardGame()

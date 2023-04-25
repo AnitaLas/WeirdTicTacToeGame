@@ -17,7 +17,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
 
         public static List<GameObject[,,]> GameConfigurationCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
         {
-            int numberOfButton = 4;
+            //int numberOfButton = 4;
 
             // buttons with text
             GameObject[,,] battonPlayerText = GameConfigurationCreateButtonPlayerText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
@@ -46,6 +46,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
             ButtonsCommonMethods.ChangeColourForButtonsWithNumbers(buttonsNumber, prefabCubePlayButtonsNumberColour);
 
             GameObject gameObjectBase = battonPlayerText[0, 0, 0];
+            int numberOfButton = buttonsText.Count;
 
             float[] newYForButtons = ButtonsGameConfigurationMethods.GetTableWithNewYForGameConfigurationButtons(gameObjectBase, numberOfButton);
 

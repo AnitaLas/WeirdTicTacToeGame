@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\CreateGameBoard\CreateGameBoardMethods.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationSetUpPlayersSymbols.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\Scripts\Buttons\ButtonsStartGameMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationSetUpKindOfGame.cs" />
     <Compile Include="Assets\Scripts\PlayGameHelpButtons\PlayGameHelpButtons.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckerBackslash.cs" />
+    <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneStartGame.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsText.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTableMainMethods.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolTableWithPlayerNumber.cs" />
@@ -145,8 +147,10 @@
     <Compile Include="Assets\Scripts\CreateFrame\CreateFrameForMove.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesGameFieldsVerification.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneStartGame.cs" />
-    <Compile Include="Assets\Scripts\Buttons\ButtonsStartGameMethods.cs" />
+    <Compile Include="Assets\Scripts\GameInformations.cs" />
+    <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneInformations.cs" />
+    <Compile Include="Assets\Scripts\GameInformationsButtons\GameInformationsButtonsCreate.cs" />
+    <Compile Include="Assets\Scripts\GameInformationsButtons\GameInformationsButtonsAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

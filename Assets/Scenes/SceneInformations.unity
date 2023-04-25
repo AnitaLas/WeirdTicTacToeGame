@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 237597992}
   - component: {fileID: 237597993}
   m_Layer: 0
-  m_Name: StartGame
+  m_Name: GameInformations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,16 +266,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 237597989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1cdc59eb3365104d8a505c630dd5732, type: 3}
+  m_Script: {fileID: 11500000, guid: 572373eaae0c2964ebd5ecadaa5f39aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabCubePlay: {fileID: 6239705776127172700, guid: d04175f188a775647983c3b246bb8d98, type: 3}
   prefabCubePlayButtonsDefaultColour:
   - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
   - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
-  prefabCubePlayButtonsInformationColour:
-  - {fileID: 2100000, guid: 80409c1508248834c9d8aa645ccf17c5, type: 2}
-  - {fileID: 2100000, guid: 80409c1508248834c9d8aa645ccf17c5, type: 2}
+  prefabCubePlayButtonsBackColour:
+  - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
+  - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
 --- !u!1 &844971349
 GameObject:
   m_ObjectHideFlags: 0

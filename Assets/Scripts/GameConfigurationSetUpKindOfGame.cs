@@ -23,15 +23,17 @@ namespace Assets.Scripts
 
         private string _tagUntagged;
         private string _tagStartGameButtonStartGame;
+        private string _tagStartGameButtonInformations;
 
         Dictionary<int, string> tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        Dictionary<int, string> startGameButtonsDictionaryTag = GameDictionariesSceneStartGame.DictionaryTagStartGame();
+        Dictionary<int, string> tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
 
 
         void Start()
         {
             _tagUntagged = tagCommonDictionary[1];
-            _tagStartGameButtonStartGame = startGameButtonsDictionaryTag[1];
+            _tagStartGameButtonStartGame = tagStartGameButtonsDictionary[1];
+            _tagStartGameButtonInformations = tagStartGameButtonsDictionary[3];
 
             GameStartButtons.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
 
@@ -69,10 +71,11 @@ namespace Assets.Scripts
                         }
 
 
-                        //if (gameObjectTag != _tagUntagged)
-                        //{
-                        //    ScenesChange.GoToSceneStartGame();
-                        //}
+                        if (gameObjectTag == _tagStartGameButtonInformations)
+                        {
+                            ScenesChange.GoToSceneInformations2();
+                           // ScenesChange.GoToSceneConfigurationBoardGame();
+                        }
 
 
                     }

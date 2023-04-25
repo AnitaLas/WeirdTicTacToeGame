@@ -34,9 +34,6 @@ namespace Assets.Scripts.Buttons
             int buttonsNumber = buttons.Count;
             int maxButtonNumber = buttonsNumber - 1;
             float newCoordinateY; 
-            //float newCoordinateZ = 0.175f;
-           // float fontSize = 0.5f;
-            //float newScale = 0.5f;
 
             for (int i = 0; i < buttonsNumber; i++)
             {
@@ -53,16 +50,12 @@ namespace Assets.Scripts.Buttons
                     {
                         for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                         {
-
                             GameObject cubePlay = oneButton[indexDepth, indexRow, indexColumn];
-
-                            //ommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
 
                             CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
                             CommonMethods.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                             CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
 
-                            //CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
 
                         }
                     }
@@ -75,7 +68,7 @@ namespace Assets.Scripts.Buttons
             float[] table = new float[playersNumber];
             float scale = CommonMethods.GetObjectScaleX(prefabPlayerSymbol);
             //float scale = 1;
-            float halfScale = scale * 6;
+            float halfScale = scale * 6; // 6 for boardGameConfiguration
             float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber) - 0.5f;
             table[0] = firstY;
             float result;
