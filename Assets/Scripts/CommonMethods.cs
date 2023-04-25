@@ -497,10 +497,10 @@ namespace Assets.Scripts
                 float z = gameObject.transform.position.z;
 
                 // must be change for oher methods SetUpNew...
-                Debug.Log("Y = " + y);
+                //Debug.Log("Y = " + y);
                 //float newY= y + newCoordinateY;
                 float newY= RoundCoordinateXYZ( y + newCoordinateY);
-                Debug.Log("newY = " + newY);
+               // Debug.Log("newY = " + newY);
                 // it works
                 //gameObject.transform.position = new Vector3(x, y + newCoordinateY, z);
                 gameObject.transform.position = new Vector3(x, newY, z);

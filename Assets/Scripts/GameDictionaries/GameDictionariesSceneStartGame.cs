@@ -25,7 +25,9 @@ namespace Assets.Scripts.GameDictionaries
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
 
             buttonsNameDictionary.Add(1, "START GAME");
-            buttonsNameDictionary.Add(2, "i");
+            //buttonsNameDictionary.Add(1, "GAME");
+            buttonsNameDictionary.Add(2, "TEAM GAME");
+            buttonsNameDictionary.Add(3, "i");
 
             return buttonsNameDictionary;
         }

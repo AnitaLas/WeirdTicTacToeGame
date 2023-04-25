@@ -54,6 +54,10 @@ TagManager:
   - StartGameButtonStartGame
   - StartGameButtonStartTeamGame
   - StartGameButtonInformations
+  - GameInformationButtonBack
+  - GameInformationButtonBackToMenu
+  - GameInformationButtonContact
+  - GameInformationButtonNextVersions
   layers:
   - Default
   - TransparentFX

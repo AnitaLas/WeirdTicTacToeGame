@@ -33,13 +33,13 @@ namespace Assets.Scripts.GameStart
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
-            int numberOfColumns = 14;
+            int numberOfColumns = 18;
 
             string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
 
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
-            float newCoordinateY = 0;
+            float newCoordinateY = 0.25f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
 
             return tableButtonNewGame;
@@ -55,7 +55,7 @@ namespace Assets.Scripts.GameStart
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
 
             string tagName = tagCubePlayDictionary[3];
-            string buttonText = buttonsGameNameDictionary[2];
+            string buttonText = buttonsGameNameDictionary[3];
 
             GameObject[,,] button = ButtonsStartGameMethods.CreateButtonForInformations(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
