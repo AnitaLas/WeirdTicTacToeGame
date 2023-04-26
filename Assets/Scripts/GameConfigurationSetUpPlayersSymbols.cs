@@ -171,7 +171,7 @@ namespace Assets.Scripts
                             //_gameObjectParentNameChanged = gameObjectParentName;
 
                             //GameObject gameObjectParent = CommonMethods.GetObjectByName(gameObjectParentName);
-                            GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol2(gameObjectName, _tagConfigurationPlayerSymbolChange, _tagConfigurationPlayerSymbolDefaultSymbol);
+                            GameConfigurationPlayerSymbolCommonMethods.ChangeTagForDefaultPlayerSymbol(gameObjectName, _tagConfigurationPlayerSymbolChange, _tagConfigurationPlayerSymbolDefaultSymbol);
 
 
 

@@ -17,8 +17,8 @@ namespace Assets.Scripts.GameDictionaries
             tagGameInformationsDictionary.Add(2, "GameInformationButtonContact");
             tagGameInformationsDictionary.Add(3, "GameInformationButtonNextVersions");
             tagGameInformationsDictionary.Add(4, "GameInformationButtonBackToMenu");
-
-
+            tagGameInformationsDictionary.Add(5, "GameInformationTextContact");
+            tagGameInformationsDictionary.Add(6, "GameInformationTextNextVersions");
 
             return tagGameInformationsDictionary;
         }
@@ -28,7 +28,8 @@ namespace Assets.Scripts.GameDictionaries
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
 
             buttonsNameDictionary.Add(1, "CONTACT");
-            buttonsNameDictionary.Add(2, "NEXT VERSIONS");
+            //buttonsNameDictionary.Add(2, "NEXT VERSIONS");
+            buttonsNameDictionary.Add(2, "GAME VERSIONS");
 
             return buttonsNameDictionary;
         }

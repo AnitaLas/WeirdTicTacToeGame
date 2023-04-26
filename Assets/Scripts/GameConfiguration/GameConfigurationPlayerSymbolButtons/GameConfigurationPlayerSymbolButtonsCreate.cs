@@ -84,7 +84,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
 
             string[] defaultTextForButtons = ButtonsCommonMethods.CreateTableWithefaultTextForButtons(playersNumber, buttonText);
 
-            buttonsList = ButtonsGameConfigurationPlayerSymbolMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultTextForButtons);
+            buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultTextForButtons);
 
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerNumber(buttonsList);
             
@@ -104,7 +104,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
 
             string[] defaultPlayersSymbols = CreateGameBoardMethods.CreateTableWithCharactersByGivenString();
 
-            buttonsList = ButtonsGameConfigurationPlayerSymbolMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultPlayersSymbols);
+            buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultPlayersSymbols);
 
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
 

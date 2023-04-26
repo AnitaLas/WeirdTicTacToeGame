@@ -650,6 +650,7 @@ namespace Assets.Scripts
             string playerSymbol = cubePlayText.text;
             return playerSymbol;
         }
+
         public static GameObject[] GetObjectsListWithTagName(string tagName)
         {
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tagName);

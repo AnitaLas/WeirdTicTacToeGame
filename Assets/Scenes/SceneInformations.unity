@@ -270,6 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabCubePlay: {fileID: 6239705776127172700, guid: d04175f188a775647983c3b246bb8d98, type: 3}
+  gameInformationsVersionsText: {fileID: 5186521671604172439, guid: 65b4e1dd1d8c9db41bd02a8c3bda59d2, type: 3}
+  gameInformationsTextContact: {fileID: 5186521671604172439, guid: 82496759a83e38546841f341cc1764a3, type: 3}
   prefabCubePlayButtonsDefaultColour:
   - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
   - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
