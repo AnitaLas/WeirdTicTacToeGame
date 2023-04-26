@@ -58,6 +58,8 @@ TagManager:
   - GameInformationButtonBackToMenu
   - GameInformationButtonContact
   - GameInformationButtonNextVersions
+  - GameInformationTextContact
+  - GameInformationTextNextVersions
   layers:
   - Default
   - TransparentFX

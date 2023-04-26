@@ -48,9 +48,9 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
             GameObject gameObjectBase = battonPlayerText[0, 0, 0];
             int numberOfButton = buttonsText.Count;
 
-            float[] newYForButtons = ButtonsGameConfigurationMethods.GetTableWithNewYForGameConfigurationButtons(gameObjectBase, numberOfButton);
+            float[] newYForButtons = GameConfigurationButtonsMethods.GetTableWithNewYForGameConfigurationButtons(gameObjectBase, numberOfButton);
 
-            ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtons(buttonsText, buttonsNumber, newYForButtons);
+            GameConfigurationButtonsMethods.ChangeDataForGameConfigurationButtons(buttonsText, buttonsNumber, newYForButtons);
 
             // button save and back
             GameObject[,,] buttonSave = GameConfigurationCreateButtonSave(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);

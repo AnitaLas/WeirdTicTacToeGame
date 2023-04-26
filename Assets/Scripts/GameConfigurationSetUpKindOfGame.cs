@@ -35,7 +35,7 @@ namespace Assets.Scripts
             _tagStartGameButtonStartGame = tagStartGameButtonsDictionary[1];
             _tagStartGameButtonInformations = tagStartGameButtonsDictionary[3];
 
-            GameStartButtons.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+            GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
 
         }
 

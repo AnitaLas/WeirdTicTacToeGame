@@ -22,15 +22,15 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
         //}
 
-        public static void ChangeTagForDefaultPlayerSymbol(GameObject gameObject, string gameObjectTagNameToChange)
-        {
-            //Debug.Log(" ChangeTagForDefaultPlayerSymbol child");
-            CommonMethods.ChangeTagForGameObject(gameObject, gameObjectTagNameToChange);
-            //gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
+        //public static void ChangeTagForDefaultPlayerSymbol(GameObject gameObject, string gameObjectTagNameToChange)
+        //{
+        //    //Debug.Log(" ChangeTagForDefaultPlayerSymbol child");
+        //    CommonMethods.ChangeTagForGameObject(gameObject, gameObjectTagNameToChange);
+        //    //gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
 
-        }
+        //}
 
-        public static void ChangeTagForDefaultPlayerSymbol2(string gameObjectName, string gameObjectTagNameToChange, string tagConfigurationPlayerSymbolDefaultSymbol)
+        public static void ChangeTagForDefaultPlayerSymbol(string gameObjectName, string gameObjectTagNameToChange, string tagConfigurationPlayerSymbolDefaultSymbol)
         {
             //gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
             //GameObject[] chosenPlayer;
@@ -42,14 +42,14 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int tagNumber = listOfSymbol.Length;
             //Debug.Log("tagNumber = " + tagNumber);
 
-            int maxIndexDepth = 1;
-            int maxIndexColumn;
-            int maxIndexRow;
+            //int maxIndexDepth = 1;
+            //int maxIndexColumn;
+            //int maxIndexRow;
 
            
             string gameObjectNameEndNumber = ButtonsCommonMethods.GetSubstringFromCubePlayName(gameObjectName);
-            Debug.Log("gameObjectName = " + gameObjectName);
-            Debug.Log("gameObjectNameEndNumber = " + gameObjectNameEndNumber);
+            //Debug.Log("gameObjectName = " + gameObjectName);
+           // Debug.Log("gameObjectNameEndNumber = " + gameObjectNameEndNumber);
 
             for (int i = 0; i < tagNumber; i++)
             {
@@ -63,8 +63,8 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
                 if (gameObjectNameEndNumber.Equals(gameObjectNameNumberToCompare))
                 {
-                    Debug.Log("gameObjectNameToCompare = " + gameObjectNameToCompare);
-                    Debug.Log("gameObjectNameNumberToCompare = " + gameObjectNameNumberToCompare);
+                    //Debug.Log("gameObjectNameToCompare = " + gameObjectNameToCompare);
+                    //Debug.Log("gameObjectNameNumberToCompare = " + gameObjectNameNumberToCompare);
                     CommonMethods.ChangeTagForGameObject(cubePlay, gameObjectTagNameToChange);
                 }
 
