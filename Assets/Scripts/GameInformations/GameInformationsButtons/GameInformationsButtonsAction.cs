@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Buttons;
 using Assets.Scripts.GameDictionaries;
+using Assets.Scripts.GameInformations.GameInformationsBase;
 using Assets.Scripts.GameInformations.GameInformationsButtons;
 using System;
 using System.Collections.Generic;
@@ -51,5 +52,7 @@ namespace Assets.Scripts.GameInformationsButtons
 
             GameInformationsButtonsMethods.ChangeTagForButtonBack(oldTag, newTag);
         }
+
+
     }
 }
