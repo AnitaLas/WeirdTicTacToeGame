@@ -66,7 +66,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TextContact \n\nTextContact\n\nTextContact\n\nTextContact"
+  m_text: "CONTACT\n\ntest@mail.com\n\n-----------------------------------\n\nSEND
+    ME A MAIL\n\nif you want to give a job\n\nif you have any questions about the
+    game\n\nif you found the bug \nin the game\nit would be great if you could attach
+    the screen and description\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}

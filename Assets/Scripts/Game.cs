@@ -392,6 +392,7 @@ internal class Game : MonoBehaviour
                                 if (countedTagCubePlayTaken >= maxCubePlayNumber)
                                 { 
                                     PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
+                                    PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
                                     Debug.Log("Game Over :) Would you like to start new game? Yes No");
                                 }
                             }
@@ -471,6 +472,7 @@ internal class Game : MonoBehaviour
                                 if (countedTagCubePlayTaken >= maxCubePlayNumber)
                                 {
                                     PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
+                                    PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
                                     Debug.Log("Game Over :) Would you like to start new game? Yes No");
                                 }
 
@@ -531,6 +533,8 @@ internal class Game : MonoBehaviour
                     {
                         //GameObject[] numberOfTags = GameObject.FindGameObjectsWithTag(_tagGameButtonParentObjectHelpButtons);
                         //int numberOfTagsLength = numberOfTags.Length;
+
+                        // create method for that one -> eg scene game information
                         bool isGameButtonParentObjectHelpButtons = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
 
                         if (isGameButtonParentObjectHelpButtons == true)

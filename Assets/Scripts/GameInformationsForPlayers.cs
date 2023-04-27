@@ -36,6 +36,7 @@ namespace Assets.Scripts
 
         private GameObject[,,] _buttonBack;
         private List<GameObject[,,]> _buttonsAll;
+        private List<string> _gameObjectsWithText;
 
 
         void Start()
@@ -51,6 +52,7 @@ namespace Assets.Scripts
             _buttonBack = GameInformationsButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
             _buttonsAll = GameInformationsButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, isGame2D);
 
+            _gameObjectsWithText = new List<string>();
         }
 
 
@@ -83,6 +85,7 @@ namespace Assets.Scripts
                             GameInformationsButtonsAction.HideButtons(_buttonsAll);
                             GameInformationsButtonsAction.ChangeTagForButtonBackToSceneInformations();
                             GameInformationsTextCreate.CreateGameInformationsTextNextVersions(gameInformationsVersionsText);
+                            _gameObjectsWithText.Insert(0, _tagGameInformationsTextNextVersions);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonContact)
@@ -90,7 +93,7 @@ namespace Assets.Scripts
                             GameInformationsButtonsAction.HideButtons(_buttonsAll);
                             GameInformationsButtonsAction.ChangeTagForButtonBackToSceneInformations();
                             GameInformationsTextCreate.CreateGameInformationsTextContact(gameInformationsTextContact);
-
+                            _gameObjectsWithText.Insert(0, _tagGameInformationsTextContact);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonBackToMenu)
@@ -98,20 +101,24 @@ namespace Assets.Scripts
                             GameInformationsButtonsAction.UnhideButtons(_buttonsAll);
                             GameInformationsButtonsAction.ChangeTagForButtonBackToSceneStartGame();
 
-                            if (_tagGameInformationsTextNextVersions != null)
-                            {
-                                //Debug.Log(_tagGameInformationsTextNextVersions);
-                                Debug.Log(1);
-                                GameInformationsTextAction.DestroyText(_tagGameInformationsTextNextVersions);
-                            }
+                            //bool isGameObjectWithTagGameInformationsTextNextVersions = CommonMethods.IsGameObjectWithTagExsist(_tagGameInformationsTextNextVersions);
+                            //bool isGameObjectWithTagGameInformationsTextContact = CommonMethods.IsGameObjectWithTagExsist(_tagGameInformationsTextContact);
 
-                            if (_tagGameInformationsTextContact != null)
-                            {
-                               // Debug.Log(_tagGameInformationsTextContact);
-                                Debug.Log(2);
-                                GameInformationsTextAction.DestroyText(_tagGameInformationsTextContact);
-                            }
+                            //if (isGameObjectWithTagGameInformationsTextNextVersions == true)
+                            //{
+                            //    //Debug.Log(_tagGameInformationsTextNextVersions);
+                            //    Debug.Log(1);
+                            //    GameInformationsTextAction.DestroyText(_tagGameInformationsTextNextVersions);
+                            //}
 
+                            //if (isGameObjectWithTagGameInformationsTextContact == true)
+                            //{
+                            //   // Debug.Log(_tagGameInformationsTextContact);
+                            //    Debug.Log(2);
+                            //    GameInformationsTextAction.DestroyText(_tagGameInformationsTextContact);
+                            //}
+
+                            GameInformationsTextAction.DestroyGameObjectsWithText(_gameObjectsWithText);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonBack)
