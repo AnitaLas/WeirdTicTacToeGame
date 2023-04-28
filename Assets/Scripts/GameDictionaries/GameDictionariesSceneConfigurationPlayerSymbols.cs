@@ -10,25 +10,27 @@ namespace Assets.Scripts.GameDictionaries
     {
         public static Dictionary<int, string> DictionaryTagConfigurationPlayersSymbols()
         {
-            Dictionary<int, string> configurationPlayersSymbolsDictionaryTag = new Dictionary<int, string>();
-
-            configurationPlayersSymbolsDictionaryTag.Add(1, "ConfigurationPlayerSymbolDefaultNumber");
-            configurationPlayersSymbolsDictionaryTag.Add(2, "ConfigurationPlayerSymbolDefaultSymbol");
-            configurationPlayersSymbolsDictionaryTag.Add(3, "ConfigurationPlayerSymbolChange");
-            configurationPlayersSymbolsDictionaryTag.Add(4, "ConfigurationPlayerSymbolChooseSymbol");
-            configurationPlayersSymbolsDictionaryTag.Add(5, "ConfigurationPlayerSymbolInactiveField");
-            configurationPlayersSymbolsDictionaryTag.Add(6, "ConfigurationPlayerSymbolButtonSave");
-            configurationPlayersSymbolsDictionaryTag.Add(7, "ConfigurationPlayerSymbolButtonBack");
-            configurationPlayersSymbolsDictionaryTag.Add(8, "ConfigurationPlayerSymbolButtonBackToConfiguration");
+            Dictionary<int, string> configurationPlayersSymbolsDictionaryTag = new Dictionary<int, string>
+            {
+                { 1, "ConfigurationPlayerSymbolDefaultNumber" },
+                { 2, "ConfigurationPlayerSymbolDefaultSymbol" },
+                { 3, "ConfigurationPlayerSymbolChange" },
+                { 4, "ConfigurationPlayerSymbolChooseSymbol" },
+                { 5, "ConfigurationPlayerSymbolInactiveField" },
+                { 6, "ConfigurationPlayerSymbolButtonSave" },
+                { 7, "ConfigurationPlayerSymbolButtonBack" },
+                { 8, "ConfigurationPlayerSymbolButtonBackToConfiguration" }
+            };
 
             return configurationPlayersSymbolsDictionaryTag;
         }
 
         public static Dictionary<int, string> DictionaryButtonsConfigurationPlayerSymbolDefaultText()
         {
-            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
-
-            buttonsNameDictionary.Add(1, "PLAYER");
+            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
+            {
+                { 1, "PLAYER" }
+            };
 
             return buttonsNameDictionary;
         }
