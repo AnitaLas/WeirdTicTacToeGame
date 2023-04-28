@@ -220,58 +220,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         }
 
 
-        //public static GameObject[,,] ChangeDataForTableWithPlayersAndSymbols(GameObject[,,] tableWtithNumber)
-        //{
-        //    int maxIndexDepth = 1;
-        //    int maxIndexColumn = tableWtithNumber.GetLength(2);
-        //    int maxIndexRow = tableWtithNumber.GetLength(1);
-        //    //bool isRowNumberEven = CommonMethods.IsNumberEven(maxIndexRow);
-
-        //    GameObject prefabPlayerSymbol = tableWtithNumber[0, 0, 0];
-        //    string[] defaultPlayersSymbols = CreateGameBoardMethods.CreateTableWithCharactersByGivenString();
-        //    float[] tableWithNewCordinateForY = GetTableWithNewYForPrefabPlayerSymbol(prefabPlayerSymbol, maxIndexRow);
-
-        //    float yForFirstPrefabPlayerSymbol;
-
-        //    int firstChildText = 0;
-        //    int secondChildSymbol = 1;
-        //    int playerNumber;
-        //    int defaultSymbolNumber;
-
-        //    string firstChildDefaultText;
-        //    string secondChildDefaultText;
-
-
-        //    for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
-        //    {
-        //        for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
-        //        {
-        //            for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
-        //            {
-        //                GameObject playerSymbol = tableWtithNumber[indexDepth, indexRow, indexColumn];
-
-        //                playerNumber = maxIndexRow - indexRow;
-        //                firstChildDefaultText = $"PLAYER {playerNumber}";
-        //                ChangePlayerSymbolForChildText(playerSymbol, firstChildText, firstChildDefaultText);
-
-        //                defaultSymbolNumber = maxIndexRow - indexRow - 1;
-        //                secondChildDefaultText = defaultPlayersSymbols[defaultSymbolNumber];
-        //                ChangePlayerSymbolForChildText(playerSymbol, secondChildSymbol, secondChildDefaultText);
-
-        //                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[indexRow];
-        //                CommonMethods.ChangeYForGameObject(playerSymbol , yForFirstPrefabPlayerSymbol);
-
-        //                CommonMethods.ChangeTextForSecondChild(playerSymbol, firstChildDefaultText);
-
-        //                ChangeNameForPrefabPlayerSymbol(playerSymbol, playerNumber);
-        //            }
-        //        }
-        //    }
-
-        //    return tableWtithNumber;
-
-        //}
-
         public static void ChangeDataForTableWithPlayerNumber(List<GameObject[,,]> buttons)
         {
             int maxIndexDepth;

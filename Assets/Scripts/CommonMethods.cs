@@ -287,8 +287,26 @@ namespace Assets.Scripts
             // game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
             var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             string text = newPrefabCubePlayCanvasText.text;
+            //Debug.Log("text = " + text);
             return text;
         }
+
+        //public static string GetCubePlayText2(GameObject gameObject)
+        //{
+        //    string name = GetObjectName(gameObject);
+        //    //Debug.Log("name = " + name);
+
+        //    string tag = GetObjectTag(gameObject);
+        //    Debug.Log("tag = " + tag);
+
+
+        //    var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);
+        //    // game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
+        //    var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        //    string text = newPrefabCubePlayCanvasText.text;
+        //    //Debug.Log("text = " + text);
+        //    return text;
+        //}
 
         public static string GetTextForPlayerSymbolChild(GameObject gameObject, int childNumber)
         {

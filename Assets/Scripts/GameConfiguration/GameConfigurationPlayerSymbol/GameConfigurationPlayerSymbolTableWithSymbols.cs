@@ -187,8 +187,10 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWithSymbolsBase.GetLength(2);
             int maxIndexRow = tableWithSymbolsBase.GetLength(1);
+            int numberForName = 0;
 
             float newCoordinateZ = 100;
+            string frontTextToAdd = "ChooseSymbol_No_";
             string inactiveField = "-";
             string chosenPlayerSymbol;
 
@@ -237,7 +239,9 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
                         CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateZ);
 
-
+                        numberForName = numberForName + 1;
+                        string newName = frontTextToAdd + numberForName;
+                        CommonMethods.ChangeGameObjectName(cubePlay, newName);
 
 
 
@@ -249,7 +253,12 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
         }
 
-
+        //public static void ChangeName(GameObject gameObject)
+        //{
+        //    string oldName = CommonMethods.GetObjectName(gameObject);
+        //    string newName = frontTextToAdd + oldName;
+        //    CommonMethods.ChangeGameObjectName(gameObject, newName);
+        //}
 
 
 

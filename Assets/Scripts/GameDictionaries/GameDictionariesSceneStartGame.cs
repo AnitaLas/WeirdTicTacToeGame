@@ -11,23 +11,25 @@ namespace Assets.Scripts.GameDictionaries
 
         public static Dictionary<int, string> DictionaryTagStartGame()
         {
-            Dictionary<int, string> tagStartGameDictionary = new Dictionary<int, string>();
-
-            tagStartGameDictionary.Add(1, "StartGameButtonStartGame");
-            tagStartGameDictionary.Add(2, "StartGameButtonStartTeamGame");
-            tagStartGameDictionary.Add(3, "StartGameButtonInformations");
+            Dictionary<int, string> tagStartGameDictionary = new Dictionary<int, string>
+            {
+                { 1, "StartGameButtonStartGame" },
+                { 2, "StartGameButtonStartTeamGame" },
+                { 3, "StartGameButtonInformations" }
+            };
 
             return tagStartGameDictionary;
         }
 
         public static Dictionary<int, string> DictionaryButtonsStartGameName()
         {
-            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
-
-            buttonsNameDictionary.Add(1, "START GAME");
-            //buttonsNameDictionary.Add(1, "GAME");
-            buttonsNameDictionary.Add(2, "TEAM GAME");
-            buttonsNameDictionary.Add(3, "i");
+            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
+            {
+                { 1, "START GAME" },
+                //buttonsNameDictionary.Add(1, "GAME");
+                { 2, "TEAM GAME" },
+                { 3, "i" }
+            };
 
             return buttonsNameDictionary;
         }

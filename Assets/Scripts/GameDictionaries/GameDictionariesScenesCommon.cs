@@ -10,32 +10,35 @@ namespace Assets.Scripts.GameDictionaries
     {
         public static Dictionary<int, string> DictionaryScencesName()
         {
-            Dictionary<int, string> scenceDictionary = new Dictionary<int, string>();
-
-            scenceDictionary.Add(1, "SceneGame");
-            scenceDictionary.Add(2, "SceneConfigurationPlayersSymbols");
-            scenceDictionary.Add(3, "SceneConfigurationBoardGame");
-            scenceDictionary.Add(4, "SceneInformations");
-            scenceDictionary.Add(5, "SceneStartGame");
+            Dictionary<int, string> scenceDictionary = new Dictionary<int, string>
+            {
+                { 1, "SceneGame" },
+                { 2, "SceneConfigurationPlayersSymbols" },
+                { 3, "SceneConfigurationBoardGame" },
+                { 4, "SceneInformations" },
+                { 5, "SceneStartGame" }
+            };
 
             return scenceDictionary;
         }
 
         public static Dictionary<int, string> DictionaryTagCommon()
         {
-            Dictionary<int, string> tagCommonDictionary = new Dictionary<int, string>();
-
-            tagCommonDictionary.Add(1, "Untagged");
+            Dictionary<int, string> tagCommonDictionary = new Dictionary<int, string>
+            {
+                { 1, "Untagged" }
+            };
             return tagCommonDictionary;
 
         }
 
         public static Dictionary<int, string> DictionaryButtonsCommonName()
         {
-            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>();
-
-            buttonsNameDictionary.Add(1, "SAVE");
-            buttonsNameDictionary.Add(2, "BACK");
+            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
+            {
+                { 1, "SAVE" },
+                { 2, "BACK" }
+            };
 
             return buttonsNameDictionary;
         }

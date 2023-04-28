@@ -26,6 +26,7 @@ using Assets.Scripts.CreateFrame;
 using Assets.Scripts.CreateGameHelpButton;
 using Assets.Scripts.Buttons;
 using Assets.Scripts.Scenes;
+using Assets.Scripts.PlayGameHelpButtons;
 
 internal class Game : MonoBehaviour
 {
@@ -367,12 +368,14 @@ internal class Game : MonoBehaviour
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
-                                bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+                                //bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
 
-                                if (isGameObjectWithTagExsist == true)
-                                {
-                                    PlayGameHelpButtons.DestroyHelpButtons(helpButtonsTag);
-                                }
+                                //if (isGameObjectWithTagExsist == true)
+                                //{
+                                //    PlayGameHelpButtonsAction.DestroyHelpButtons(helpButtonsTag);
+                                //}
+
+                                PlayGameHelpButtonsAction.HelpButtonsDestroy(prefabHelpButtons, helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
 
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
@@ -392,6 +395,7 @@ internal class Game : MonoBehaviour
                                 if (countedTagCubePlayTaken >= maxCubePlayNumber)
                                 { 
                                     PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
+                                    PlayGameHelpButtonsAction.HelpButtonsDestroy(prefabHelpButtons, helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
                                     Debug.Log("Game Over :) Would you like to start new game? Yes No");
                                 }
@@ -445,12 +449,14 @@ internal class Game : MonoBehaviour
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
-                                bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+                                //bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
 
-                                if (isGameObjectWithTagExsist == true)
-                                {
-                                    PlayGameHelpButtons.DestroyHelpButtons(helpButtonsTag);
-                                }
+                                //if (isGameObjectWithTagExsist == true)
+                                //{
+                                //    PlayGameHelpButtonsAction.DestroyHelpButtons(helpButtonsTag);
+                                //}
+
+                                PlayGameHelpButtonsAction.HelpButtonsDestroy(prefabHelpButtons, helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
 
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
@@ -472,6 +478,7 @@ internal class Game : MonoBehaviour
                                 if (countedTagCubePlayTaken >= maxCubePlayNumber)
                                 {
                                     PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
+                                    PlayGameHelpButtonsAction.HelpButtonsDestroy(prefabHelpButtons, helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
                                     Debug.Log("Game Over :) Would you like to start new game? Yes No");
                                 }
@@ -535,17 +542,21 @@ internal class Game : MonoBehaviour
                         //int numberOfTagsLength = numberOfTags.Length;
 
                         // create method for that one -> eg scene game information
-                        bool isGameButtonParentObjectHelpButtons = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+                        //bool isGameButtonParentObjectHelpButtons = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
 
-                        if (isGameButtonParentObjectHelpButtons == true)
-                        {
-                            PlayGameHelpButtons.DestroyHelpButtons(helpButtonsTag);
-                        }
-                        else
-                        {
-                            PlayGameHelpButtons.CreateHelpButtons(prefabHelpButtons);
-                        }
+                        //if (isGameButtonParentObjectHelpButtons == true)
+                        //{
+                        //    PlayGameHelpButtonsAction.DestroyHelpButtons(helpButtonsTag);
+                        //}
+                        //else
+                        //{
+                        //    PlayGameHelpButtonsCreate.CreateHelpButtons(prefabHelpButtons);
+                        //}
 
+
+                        PlayGameHelpButtonsAction.HelpButtonsActions(prefabHelpButtons, helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
+                        
+                        
                         //if (isGameObjectWithTagExsist == true)
                         //{
                         //    CreateGameConfigurationMenu.UnhideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
