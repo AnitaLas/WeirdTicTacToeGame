@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Game.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckerHorizontal.cs" />
+    <Compile Include="Assets\Scripts\PlayGameHelpButtons\PlayGameHelpButtonsAction.cs" />
     <Compile Include="Assets\Scripts\GameInformationsForPlayers.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
@@ -93,7 +94,7 @@
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabName.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneConfigurationBoardGame.cs" />
     <Compile Include="Assets\Scripts\CreateGameBoard\CreateGameBoard.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlaForWinner.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlayForWinner.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenesCommon.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -154,7 +155,6 @@
     <Compile Include="Assets\Scripts\CreateFrame\CreateFrameForMove.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesGameFieldsVerification.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\PlayGameHelpButtons\PlayGameHelpButtonsAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

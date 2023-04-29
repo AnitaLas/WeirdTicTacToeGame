@@ -42,6 +42,7 @@ internal class Game : MonoBehaviour
     // prefab "CubePlay" - colour 
     public Material[] prefabCubePlayDefaultColour;
 
+    public Material[] prefabCubePlayButtonsBackColour; 
     public Material[] cubePlayColourWin;
 
 
@@ -167,8 +168,6 @@ internal class Game : MonoBehaviour
 
     void Start()
     {
-        //Debug.Log("playersNumberGivenForConfiguration1 = " + playersNumberGivenForConfiguration1);
-
         _tagCubePlayFree = tagCubePlayDictionary[1];
         _tagCubePlayTaken = tagCubePlayDictionary[2];
         _tagCubePlayFrame = tagCubePlayDictionary[3];
@@ -218,9 +217,6 @@ internal class Game : MonoBehaviour
         tagDisactivateConfigurationMenu[1] = _tagGameButtonMenuConfigurationRight;
         tagDisactivateConfigurationMenu[2] = _tagGameButtonMenuConfigurationLeft;  
 
-
-        //_sceneSceneConfigurationBoardGame = scenceDictionary[3];
-
         _index = 0;
 
 
@@ -228,17 +224,13 @@ internal class Game : MonoBehaviour
         playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
 
         _configurationBoardGameNumberOfRows = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfRows;
-        //Debug.Log("dataFromScenece1 = " + dataFromScenece1);
-       // numberOfRows = CommonMethods.ConvertStringToInt(_configurationBoardGameNumberOfRows);
+       
         numberOfRows = _configurationBoardGameNumberOfRows;
 
         _configurationBoardGameNumberOfColumns = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfColumns;
         numberOfColumns = _configurationBoardGameNumberOfColumns;
 
         maxCubePlayNumber = numberOfRows * numberOfColumns * numberOfDepths;
-
-        // lenghtToCheckMax = GameFieldsVerificationCheckerLenght.SetUpMaxLenghtToCheck(numberOfRows, numberOfColumns);
-        //lenghtToCheck = GameFieldsVerificationCheckerLenght.SetUpLenghtToCheck(lenghtToCheckMax, lenghtToCheckGivenByUser);
 
         _configurationBoardGameNumberForLenghtToCheck = GameConfigurationSetUpBoardGame.ConfigurationBoardGameLenghtToCheck;
         lenghtToCheck = _configurationBoardGameNumberForLenghtToCheck - 1;
@@ -249,12 +241,8 @@ internal class Game : MonoBehaviour
         // does it need it?
         playerNumber = GameConfigurationTableForPlayers.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration);
 
-        
-
-        // static
-        //playersSymbols = GameConfigurationCommonMethods.CreateTableWithPlayersSymbols();
-
         playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
+
 
 
         currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
@@ -263,15 +251,7 @@ internal class Game : MonoBehaviour
 
         playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(playersSymbols);
 
-
-
-
-
-
-
-
         currentCountedTagCubePlayTaken = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
-
 
 
         // [gameBoard] - creating the board game with game object "CubePlay"
@@ -282,20 +262,13 @@ internal class Game : MonoBehaviour
         _cubePlayForFrameScale = cubePlayForFrame.transform.localScale.x;
 
         moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
-        //moveIndexForFrame[1] = numberOfRows - 1;
-        //Debug.Log("moveIndexForFrame[0] = " + moveIndexForFrame[0]);
-        //Debug.Log("moveIndexForFrame[1] = " + moveIndexForFrame[1]);
-        //Debug.Log(" --------------------------------- " );
 
         cubePlayFrame = CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, isGame2D);
 
-        //float x = cubePlayFrame.transform.position.x;
-        //float y = cubePlayFrame.transform.position.y;
-        //float z = cubePlayFrame.transform.position.z;
-
-        //Debug.Log("set up y =  " + y);
-        // Debug.Log(" y + newCoordinateY =  " + (y + newCoordinateY));
-
+        PlayGameHelpButtonsCreate.CreateHelpButtonsAtStart(prefabHelpButtons, numberOfRows, numberOfColumns);
+    
+    
+    
     }
 
 
@@ -363,7 +336,7 @@ internal class Game : MonoBehaviour
                                 _winnerKindOfChecker = (string)_listCheckerForWinner[2];
 
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
-                                PlayGameChangeCubePlaForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
+                                PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
                                 PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
@@ -443,7 +416,7 @@ internal class Game : MonoBehaviour
                                 _winnerKindOfChecker = (string)_listCheckerForWinner[2];
 
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
-                                PlayGameChangeCubePlaForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
+                                PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
 
                                 PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
@@ -531,7 +504,7 @@ internal class Game : MonoBehaviour
                         //CreateGameConfigurationMenu.CreateConfigurationButtonNewGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
                         //CreateGameConfigurationMenu.CreateConfigurationButtonBackToGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
 
-                        gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, cubePlayColourWin, isGame2D);
+                        gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, cubePlayColourWin, prefabCubePlayButtonsBackColour, isGame2D);
 
                     }
 

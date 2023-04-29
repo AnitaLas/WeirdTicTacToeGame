@@ -49,8 +49,6 @@ namespace Assets.Scripts.PlayGameHelpButtons
             {
                 DestroyHelpButtons(helpButtonsTag);
             }
-
-
         }
 
 

@@ -63,7 +63,8 @@ namespace Assets.Scripts.PlayGameMenu
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
 
-            float newCoordinateZ = 0.175f;
+            //float newCoordinateZ = 0.175f;
+            float newCoordinateZ = 0.25f;
             float fontSize = 0.5f;
             float newScale = 0.5f;
 
@@ -160,7 +161,8 @@ namespace Assets.Scripts.PlayGameMenu
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
 
-            float newCoordinateZ = 0.175f;
+            //float newCoordinateZ = 0.175f;
+            float newCoordinateZ = 0.2f;
             float fontSize = 0.7f;
             //float newScale = 0.5f;
 

@@ -410,7 +410,7 @@
 "Assets/Scripts/GameInformationsForPlayers.cs"
 "Assets/Scripts/GameStartButtons/GameStartButtonsCreate.cs"
 "Assets/Scripts/GameStartButtons/StartGameButtonsMethods.cs"
-"Assets/Scripts/PlayGame/PlayGameChangeCubePlaForWinner.cs"
+"Assets/Scripts/PlayGame/PlayGameChangeCubePlayForWinner.cs"
 "Assets/Scripts/PlayGame/PlayGameChangeCubePlaySymbol.cs"
 "Assets/Scripts/PlayGame/PlayGameChangePlayerSymbol.cs"
 "Assets/Scripts/PlayGame/PlayGameFrameMove.cs"
