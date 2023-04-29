@@ -89,13 +89,6 @@ namespace Assets.Scripts.GameInformationsButtons
         // ---
         public static GameObject[,,] GameInformationsCreateButtonBack(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
-            //Dictionary<int, string> tagNameDictionary = GameDictionariesScenesInformations.DictionaryTagGameInformations();
-
-            //string tagName = tagNameDictionary[1];
-
-            //GameObject[,,] buttonBack = GameConfigurationButtonsCommonCreate.CreateCommonButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D, tagName);
-            //return buttonBack;
-
             GameObject[,,] tableButtonBack;
 
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformations.DictionaryTagGameInformations();

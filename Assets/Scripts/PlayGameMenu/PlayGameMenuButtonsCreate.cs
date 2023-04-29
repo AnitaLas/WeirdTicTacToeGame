@@ -14,7 +14,7 @@ namespace Assets.Scripts.PlayGame
     internal class PlayGameMenuButtonsCreate : MonoBehaviour
     {
 
-        public static List<GameObject[,,]> CreateButtonsMenu(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        public static List<GameObject[,,]> CreateButtonsMenu(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
             List<GameObject[,,]> buttons = new List<GameObject[,,]>();
 
@@ -24,7 +24,7 @@ namespace Assets.Scripts.PlayGame
 
             tableConfigurationHelpButtons = CreateButtonGameMenuHelpButtons(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
             tableConfigurationButtonNewGame = CreateButtonGameMenuNewGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
-            tableConfigurationButtonBackToGame = CreateButtoGameMenuBack(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            tableConfigurationButtonBackToGame = CreateButtoGameMenuBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
 
             buttons.Insert(0, tableConfigurationHelpButtons);
             buttons.Insert(1, tableConfigurationButtonNewGame);
@@ -136,7 +136,8 @@ namespace Assets.Scripts.PlayGame
 
             tableButtonBack = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
-            float newCoordinateY = -2;
+            //float newCoordinateY = -2;
+            float newCoordinateY = -4.75f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonBack, newCoordinateY, tagGameButtonHelpButtons);
 
             return tableButtonBack;
