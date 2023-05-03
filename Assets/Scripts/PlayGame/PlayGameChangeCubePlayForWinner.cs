@@ -90,15 +90,18 @@ namespace Assets.Scripts.PlayGame
 
         public static void ChangeOneOtherCubePlay(GameObject prefabCubePlayFrame, GameObject cubePlay, Material winColourForCubePlay, string tagCubePlayGameWin, Color newTextColor, float newFontSize)
         {
+            CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
+            //float newCoordinateZForWinner = -1f;
+            //CommonMethods.ChangeZForGameObject(prefabCubePlayFrame, newCoordinateZForWinner);
+
             CommonMethods.ChangeZForGameObject(cubePlay, _newCoordinateZForWinner);
+            
             CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
             CommonMethods.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
 
             CommonMethods.ChangeTextColourForCubePlay(cubePlay, newTextColor);
             CommonMethods.ChangeTextFontSize(cubePlay, newFontSize);
-
-            CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
-            
+     
         }
 
         public static void ChangeOtherCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
@@ -444,7 +447,7 @@ namespace Assets.Scripts.PlayGame
             int dictionaryColorId = 2;
             Color newTextColor = CommonMethods.GetNewColor(dictionaryColorId);
 
-            float newFontSize = 0.65f;
+            float newFontSize = 0.55f;
 
             ChangeAllCubePlay(gameBoard, tagCubePlayGameOver);
 

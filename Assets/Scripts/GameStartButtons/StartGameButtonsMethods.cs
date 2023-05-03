@@ -16,8 +16,8 @@ namespace Assets.Scripts.Buttons
             GameObject[,,] buttonInformation;
 
             int numberOfDepths = 1;
-            int numberOfRows = 1;
-            int numberOfColumns = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 3;
 
             string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
 
@@ -34,7 +34,7 @@ namespace Assets.Scripts.Buttons
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
 
             float newCoordinateZ = 0.4f;
-            float fontSize = 0.7f;
+            float fontSize = 0.5f;
             float newScale = 0.8f;
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)

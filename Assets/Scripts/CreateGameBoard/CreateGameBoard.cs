@@ -20,6 +20,8 @@ namespace Assets.Scripts
             string[,,] defaultTextForPrefabCubePlay = CreateGameBoardMethods.CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);     
             tableWithNumber = CreateTableMainMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
 
+            CreateGameBoardMethods.ChangeDataForBoardGameAtStart(tableWithNumber);
+
             return tableWithNumber;
         }
 

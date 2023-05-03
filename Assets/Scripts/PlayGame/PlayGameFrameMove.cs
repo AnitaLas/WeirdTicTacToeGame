@@ -131,7 +131,7 @@ namespace Assets.Scripts.PlayGame
         public static void SetUpNewZForCubePlayFrame(GameObject cubePlayFrame)
         {
             float newCoordinateZ = 1;
-            //float newCoordinateZ = -0.6f;
+            //float newCoordinateZ = 0.8f;
             CommonMethods.ChangeZForGameObject(cubePlayFrame, newCoordinateZ);
         }
 

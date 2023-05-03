@@ -28,7 +28,7 @@ namespace Assets.Scripts.Scenes
         //    CommonMethods.ChangeScene(_sceneInformations);
         //}
 
-        public static void GoToSceneInformations2()
+        public static void GoToSceneInformations()
         {
             Dictionary<int, string> scenceDictionary = GameDictionariesScenesCommon.DictionaryScencesName();
             string _sceneInformations = scenceDictionary[4];

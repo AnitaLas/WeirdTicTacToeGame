@@ -99,7 +99,7 @@ namespace Assets.Scripts
 
         public static void DisactivateConfigurationMenu(string[] tagConfigurationMenu)
         {
-            Debug.Log(" 1 ");
+            //Debug.Log(" 1 ");
             string tagNameOld;
             string tagNameNew = tagConfigurationMenu[0];
             //Debug.Log("tagNameNew = " + tagNameNew);

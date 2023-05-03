@@ -742,20 +742,12 @@ namespace Assets.Scripts
 
 
         //-------------------------------------------
-        // create board/ table number
-
-
-
-
-
-        //-------------------------------------------
 
         public static void ChangeScene(string sceneName)
         {
             SceneManager.LoadScene(sceneName);
         }
 
-        //-------------------------------------------
 
         public static bool IsGameObjectWithTagExsist(string tagName)
         {
@@ -772,9 +764,6 @@ namespace Assets.Scripts
             }
 
         }
-
-  
-
 
     }
 }
