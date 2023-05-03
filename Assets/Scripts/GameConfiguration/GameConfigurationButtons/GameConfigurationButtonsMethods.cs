@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Assets.Scripts.GameConfiguration.GameConfigurationBase;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtons;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.Buttons
+namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase
 {
     internal class GameConfigurationButtonsMethods
     {

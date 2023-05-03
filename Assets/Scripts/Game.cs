@@ -239,7 +239,7 @@ internal class Game : MonoBehaviour
         gameBoardVerification2D = GameConfigurationCommonMethods.CreateEmptyTable2D(numberOfRows, numberOfColumns);
 
         // does it need it?
-        playerNumber = GameConfigurationTableForPlayers.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration);
+        //playerNumber = GameConfigurationTableForPlayers.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration);
 
         playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
 
