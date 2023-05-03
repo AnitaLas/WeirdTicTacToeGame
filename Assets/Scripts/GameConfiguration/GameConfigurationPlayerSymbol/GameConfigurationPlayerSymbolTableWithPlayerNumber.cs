@@ -14,14 +14,10 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
         public static GameObject[,,] CreateTableWithPlayers(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            //Debug.Log(" 3 ");
             GameObject[,,] tableWithNumber;
             string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);
             tableWithNumber = CreateTableMainMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
-
-
             return tableWithNumber;
-
         }
 
         public static string[] CreateTableWithTextForPrefabPlayerNumber(int numberOfRows)
@@ -126,7 +122,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             } 
             else
             {
-                //2468
                 decimal playersNumberDecimal = CommonMethods.ConvertIntToDecimal(playersNumberDevidedByTwo);
                 decimal playersNumberRoundUp = CommonMethods.RoundUp(playersNumberDecimal);
                 float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);
@@ -147,7 +142,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             table[0] = firstY;
             float result;
             float previousResult;
-            int previousResultIndex; // = 0;
+            int previousResultIndex;
 
             for (int newY = 1; newY < playersNumber; newY++)
             {
@@ -166,14 +161,12 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         {
             float[] table = new float[playersNumber];
             float scale = CommonMethods.GetObjectScaleX(prefabPlayerSymbol);
-            //float halfScale = scale / 2;
-            //float halfScale = scale * 1.5f;
             float halfScale = scale * 3.2f;
             float firstY = GetFirstPositionForPrefabPlayerSymbol(scale, playersNumber) - 0.2f;
             table[0] = firstY;
             float result;
             float previousResult;
-            int previousResultIndex; // = 0;
+            int previousResultIndex;
 
             for (int newY = 1; newY < playersNumber; newY++)
             {
@@ -242,12 +235,11 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
             for (int i = 0; i < buttonsNumber; i++)
             {
-                //Debug.Log($"i =  {i} ");
-                 table = buttons[i];
+                table = buttons[i];
                 playerNumber = i + 1;
                 maxIndexDepth = 1;
-                 maxIndexColumn = table.GetLength(2);
-                 maxIndexRow = table.GetLength(1);
+                maxIndexColumn = table.GetLength(2);
+                maxIndexRow = table.GetLength(1);
 
                 yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
 
@@ -258,8 +250,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                         {
                             GameObject player = table[indexDepth, indexRow, indexColumn];
-
-                            //playerNumber = maxIndexRow - indexRow;
 
                             CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
                             CommonMethods.SetUpNewXForGameObject(player, newCoordinateX);
@@ -278,7 +268,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int maxIndexColumn;
             int maxIndexRow;
             int buttonsNumber = buttons.Count;
-            //Debug.Log($"buttonsNumber =  {buttonsNumber} ");
 
             GameObject[,,] table;
             GameObject[,,] buttonFirst = buttons[0];
@@ -297,7 +286,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
             for (int i = 0; i < buttonsNumber; i++)
             {
-                //Debug.Log($"i =  {i} ");
                 table = buttons[i];
                 playerNumber = i + 1;
                 maxIndexDepth = 1;
@@ -325,9 +313,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                     }
                 }
             }
-
-
-
         }
 
     }

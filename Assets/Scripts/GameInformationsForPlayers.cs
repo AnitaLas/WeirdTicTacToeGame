@@ -73,7 +73,6 @@ namespace Assets.Scripts
                     if (touch.collider != null)
                     {
                         string gameObjectTag = CommonMethods.GetObjectTag(touch);
-                        //string gameObjectName = CommonMethods.GetObjectName(touch);
 
                         if (gameObjectTag != _tagUntagged)
                         {
@@ -82,42 +81,24 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagGameInformationsButtonNextVersions)
                         {
-                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
-                            GameInformationsButtonsAction.ChangeTagForButtonBackToSceneInformations();
+                            GameInformationsButtonsActions.HideButtons(_buttonsAll);
+                            GameInformationsButtonsActions.ChangeTagForButtonBackToSceneInformations();
                             GameInformationsTextCreate.CreateGameInformationsTextNextVersions(gameInformationsVersionsText);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextNextVersions);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonContact)
                         {
-                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
-                            GameInformationsButtonsAction.ChangeTagForButtonBackToSceneInformations();
+                            GameInformationsButtonsActions.HideButtons(_buttonsAll);
+                            GameInformationsButtonsActions.ChangeTagForButtonBackToSceneInformations();
                             GameInformationsTextCreate.CreateGameInformationsTextContact(gameInformationsTextContact);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextContact);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonBackToMenu)
                         {
-                            GameInformationsButtonsAction.UnhideButtons(_buttonsAll);
-                            GameInformationsButtonsAction.ChangeTagForButtonBackToSceneStartGame();
-
-                            //bool isGameObjectWithTagGameInformationsTextNextVersions = CommonMethods.IsGameObjectWithTagExsist(_tagGameInformationsTextNextVersions);
-                            //bool isGameObjectWithTagGameInformationsTextContact = CommonMethods.IsGameObjectWithTagExsist(_tagGameInformationsTextContact);
-
-                            //if (isGameObjectWithTagGameInformationsTextNextVersions == true)
-                            //{
-                            //    //Debug.Log(_tagGameInformationsTextNextVersions);
-                            //    Debug.Log(1);
-                            //    GameInformationsTextAction.DestroyText(_tagGameInformationsTextNextVersions);
-                            //}
-
-                            //if (isGameObjectWithTagGameInformationsTextContact == true)
-                            //{
-                            //   // Debug.Log(_tagGameInformationsTextContact);
-                            //    Debug.Log(2);
-                            //    GameInformationsTextAction.DestroyText(_tagGameInformationsTextContact);
-                            //}
-
+                            GameInformationsButtonsActions.UnhideButtons(_buttonsAll);
+                            GameInformationsButtonsActions.ChangeTagForButtonBackToSceneStartGame();
                             GameInformationsTextAction.DestroyGameObjectsWithText(_gameObjectsWithText);
                         }
 

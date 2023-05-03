@@ -49,13 +49,20 @@ namespace Assets.Scripts.GameDictionaries
             Dictionary<int, Tuple<float, float, float, float>> colorDictionary = new Dictionary<int, Tuple<float, float, float, float>>();
 
             // text colour for all cubePlay - when game is over
-            var colorValue1 = Tuple.Create(200f, 33f, 33f, 0.6f);
+            //var colorValue1 = Tuple.Create(200f, 33f, 33f, 0.6f);
+            var colorValue1 = Tuple.Create(6f, 0f, 2f, 0.4f);
 
             // test colour for winner cubePlay - when game is over
             var colorValue2 = Tuple.Create(3f, 0f, 1f, 1f);
 
+            // etxt colour for all cubePlay - when game start
+            //var colorValue3 = Tuple.Create(6f, 0f, 2f, 110f);
+            //var colorValue3 = Tuple.Create(3f, 0f, 1f, 1f);
+            var colorValue3 = Tuple.Create(6f, 0f, 2f, 0.4f);
+
             colorDictionary.Add(1, colorValue1);
             colorDictionary.Add(2, colorValue2);
+            colorDictionary.Add(3, colorValue3);
 
             return colorDictionary;
         }

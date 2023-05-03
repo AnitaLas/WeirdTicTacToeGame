@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameFieldsVerification;
+﻿using Assets.Scripts.Buttons;
+using Assets.Scripts.GameFieldsVerification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,21 +65,23 @@ namespace Assets.Scripts.GameConfiguration
 
         }
 
-        public static void DestroyTable(GameObject[,,] table)
-        {
-            for (int i = 0; i < table.GetLength(0); i++)
-            {
-                for (int j = 0; j < table.GetLength(1); j++)
-                {
-                    for (int z = 0; z < table.GetLength(2); z++)
-                    {
-                        GameObject toRemove = table[i, j, z];
-                        Destroy(toRemove);
+        //public static void DestroyTable(GameObject[,,] table)
+        //{
+        //    //for (int i = 0; i < table.GetLength(0); i++)
+        //    //{
+        //    //    for (int j = 0; j < table.GetLength(1); j++)
+        //    //    {
+        //    //        for (int z = 0; z < table.GetLength(2); z++)
+        //    //        {
+        //    //            GameObject toRemove = table[i, j, z];
+        //    //            Destroy(toRemove);
 
-                    }
-                }
-            }
-        }
+        //    //        }
+        //    //    }
+        //    //}
+
+        //    ButtonsCommonMethodsActionsDestroy.DestroyTable3D(table);
+        //}
 
 
         public static int GetNumberGivenByUser(string tagName)

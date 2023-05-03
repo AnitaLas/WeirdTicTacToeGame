@@ -1,4 +1,5 @@
 ﻿//using Fare;
+using Assets.Scripts.GameDictionaries;
 using System;
 using System.Buffers.Text;
 using System.Collections.Generic;
@@ -338,28 +339,6 @@ namespace Assets.Scripts
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // it can be remove in future - rong interpretation
         /// <summary>
         /// <para> create table for board game - for logic </para>
@@ -388,7 +367,7 @@ namespace Assets.Scripts
                 return newXYZ;
             }
 
-            else // if(currentNumberOfColumn == numberOfColumns - 1)
+            else
             {
                 if (currentNumberOfColumn < numberOfColumns - 1)
                 {
@@ -399,7 +378,6 @@ namespace Assets.Scripts
                     var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
                     return newXYZ;
                 }
-                //else if(currentNumberOfColumn == numberOfColumns)
                 else
                 {
                     newNumberOfRow = numberOfRows - 1;
@@ -409,32 +387,39 @@ namespace Assets.Scripts
                     var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
                     return newXYZ;
 
-
-                    /*  for 3D need to be added
-                    if (currentNumberOfDepth < numberOfDepths - 1)
-                    {
-                        newNumberOfRow = 0;
-                        newNumberOfColumn = 0;
-                        newNumberOfDepth = currentNumberOfDepth + 1;
-
-                        var newXYZ = Tuple.Create(newNumberOfRow, newNumberOfColumn, newNumberOfDepth);
-                        return newXYZ;
-                    }
-                   // else if (currentNumberOfDepth == numberOfDepths)
-                   else
-                    {
-                        newNumberOfRow = 0;
-                        newNumberOfColumn = 0;
-                        newNumberOfDepth = 0;
-                        var newXYZ = Tuple.Create(newNumberOfRow, newNumberOfColumn, newNumberOfDepth);
-                        return newXYZ;
-                    }
-                    */
-
                 }
             }
         }
 
-       
+        // ---- 
+       public static void ChangeTextColourForCubePlay(GameObject cubePlay)
+       {
+            Color colour = CommonMethods.GetNewColor(3);
+            //Debug.Log(" colour " + colour);
+            CommonMethods.ChangeTextColourForCubePlay(cubePlay, colour);
+       }
+
+        public static void ChangeDataForBoardGameAtStart(GameObject[,,] boardGame)
+        {
+            //Debug.Log(" 1 ");
+            int maxIndexDepth = boardGame.GetLength(0);
+            int maxIndexColumn = boardGame.GetLength(2);
+            int maxIndexRow = boardGame.GetLength(1);
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        //Debug.Log(" 1 ");
+                        GameObject cubePlay = boardGame[indexDepth, indexRow, indexColumn];
+                        ChangeTextColourForCubePlay(cubePlay);
+
+                    }
+                }
+            }
+
+        }
     }
 }

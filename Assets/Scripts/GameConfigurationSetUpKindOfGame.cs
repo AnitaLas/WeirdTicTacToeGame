@@ -73,8 +73,7 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagStartGameButtonInformations)
                         {
-                            ScenesChange.GoToSceneInformations2();
-                           // ScenesChange.GoToSceneConfigurationBoardGame();
+                            ScenesChange.GoToSceneInformations();
                         }
 
 

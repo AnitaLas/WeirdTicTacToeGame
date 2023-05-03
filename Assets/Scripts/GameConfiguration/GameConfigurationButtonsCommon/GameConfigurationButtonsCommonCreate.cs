@@ -85,7 +85,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
             float newCoordinateX = 0.42f;
 
             ButtonsCommonMethods.ChangeDataForSingleCommonButton(tableButtonNewGame, newCoordinateY, newCoordinateX, tagNameDictionary);
-            GameConfigurationButtonsAction.HideButtonBackToConfiguration(tableButtonNewGame);
+            GameConfigurationButtonsActions.HideButtonBackToConfiguration(tableButtonNewGame);
 
             return tableButtonNewGame;
 
