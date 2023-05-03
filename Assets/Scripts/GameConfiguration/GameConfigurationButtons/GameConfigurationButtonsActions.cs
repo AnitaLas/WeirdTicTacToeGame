@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
+namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
 {
     internal class GameConfigurationButtonsActions
     {
@@ -61,9 +61,20 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
             ButtonsCommonMethodsActionsDestroy.DestroyTable3D(table);
         }
 
-        public static void DestroyButtonsInformation(List<GameObject[,,]> gameObjects)
+        public static void DestroyHelpButtons(List<GameObject[,,]> gameObjects)
         {
             ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(gameObjects);
+        }
+
+        public static void DestroyButtonsWithNumber(GameObject[,,] gameObjects)
+        {
+            ButtonsCommonMethodsActionsDestroy.DestroyTable3D(gameObjects);
+        }
+
+        public static void DestroyButtons(List<GameObject[,,]> gameObjectsList, GameObject[,,] gameObjects)
+        {
+            DestroyButtonsWithNumber(gameObjects);
+            DestroyHelpButtons(gameObjectsList);
         }
     }
 }

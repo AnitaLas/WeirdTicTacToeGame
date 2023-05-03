@@ -27,7 +27,8 @@ namespace Assets.Scripts.GameDictionaries
                 { 13, "ConfigurationBoardGameChangeNumberLenghtToCheck" },
                 { 14, "ConfigurationBoardGameTableNumberLenghtToCheck" },
                 { 20, "ConfigurationBoardGameInactiveField" },
-                { 21, "ConfigurationBoardGameButtonBackToConfiguration" }
+                { 21, "ConfigurationBoardGameButtonBackToConfiguration" },
+                { 22, "ConfigurationBoardGameButtonInformation" }
             };
 
             return configurationBoardGameDictionaryTag;

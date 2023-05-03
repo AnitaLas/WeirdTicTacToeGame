@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Buttons;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtons;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.PlayGameMenu;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationBase
+namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
 {
     internal class GameConfigurationButtonsCommonCreate
     {
