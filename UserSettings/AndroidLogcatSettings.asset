@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "5WH6R19722009261",
     "m_SelectedPackage": {
-        "deviceId": "5WH6R19722009261",
-        "name": "com.DefaultCompany.WeirdTicTacToe",
-        "processId": 31224,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,61 +11,31 @@
         {
             "deviceId": "5WH6R19722009261",
             "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 20291,
-            "exited": false
+            "processId": 10618,
+            "exited": true
         },
         {
             "deviceId": "5WH6R19722009261",
             "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 21988,
-            "exited": false
+            "processId": 11138,
+            "exited": true
         },
         {
             "deviceId": "5WH6R19722009261",
             "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 22940,
-            "exited": false
+            "processId": 16577,
+            "exited": true
         },
         {
             "deviceId": "5WH6R19722009261",
             "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 23942,
-            "exited": false
+            "processId": 19276,
+            "exited": true
         },
         {
             "deviceId": "5WH6R19722009261",
-            "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 24749,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 25641,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 26559,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 27679,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 26289,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 31224,
+            "name": "com.google.android.apps.messaging",
+            "processId": 12222,
             "exited": false
         }
     ],

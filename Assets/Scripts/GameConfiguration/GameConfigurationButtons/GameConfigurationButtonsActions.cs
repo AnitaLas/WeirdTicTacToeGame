@@ -63,7 +63,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
 
         public static void DestroyHelpButtons(List<GameObject[,,]> gameObjects)
         {
-            ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(gameObjects);
+            ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(gameObjects);
         }
 
         public static void DestroyButtonsWithNumber(GameObject[,,] gameObjects)

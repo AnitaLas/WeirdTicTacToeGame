@@ -116,7 +116,7 @@ internal class Game : MonoBehaviour
     private int _index;
    
 
-    int[] playerNumber;
+   // int[] playerNumber;
     string[] playersSymbols;
     int[] currentPlayer;
     int[] currentCountedTagCubePlayTaken;
@@ -138,7 +138,8 @@ internal class Game : MonoBehaviour
 
     string[] helpButtonsTag = new string[6];
     string[] buttonsMenuConfiguration = new string[3];
-    string[] topObject = new string[5];
+    string[] topObjectsTag = new string[5];
+    //string[] topObjectsTag = new string[4];
     string[] tagDisactivateConfigurationMenu = new string[3];
 
     private List<GameObject[,,]> gameButtonsMenu;
@@ -186,11 +187,11 @@ internal class Game : MonoBehaviour
         buttonsMenuConfiguration[1] = _tagGameButtonNewGame;
         buttonsMenuConfiguration[2] = _tagGameButtonMenuBack;
 
-        topObject[0] = _tagPlayerSymbolCurrent;
-        topObject[1] = _tagPlayerSymbolPrevious;
-        topObject[2] = _tagPlayerSymbolNext;
-        topObject[3] = _tagGameButtonMenuConfigurationLeft;  
-        topObject[4] = _tagGameButtonMenuConfigurationRight;
+        topObjectsTag[0] = _tagPlayerSymbolCurrent;
+        topObjectsTag[1] = _tagPlayerSymbolPrevious;
+        topObjectsTag[2] = _tagPlayerSymbolNext;
+        topObjectsTag[3] = _tagGameButtonMenuConfigurationLeft;  
+        topObjectsTag[4] = _tagGameButtonMenuConfigurationRight;
 
         tagDisactivateConfigurationMenu[0] = _tagGameButtonMenuConfigurationDisactivate;
         tagDisactivateConfigurationMenu[1] = _tagGameButtonMenuConfigurationRight;
@@ -434,7 +435,7 @@ internal class Game : MonoBehaviour
                     }
 
 
-                    if (gameObjectTag == _tagGameButtonMenuConfigurationLeft |gameObjectTag == _tagGameButtonMenuConfigurationRight)
+                    if (gameObjectTag == _tagGameButtonMenuConfigurationLeft || gameObjectTag == _tagGameButtonMenuConfigurationRight)
                     {
                         PlayGameMenuButtonsActions.HideBoardGame(gameBoard);
                         PlayGameMenuButtonsActions.HideGameObjectWithTag(_tagCubePlayFrame);
@@ -446,7 +447,7 @@ internal class Game : MonoBehaviour
                             PlayGameMenuButtonsActions.HideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
                         }
 
-                        PlayGameMenuButtonsActions.HideTopObject(topObject);
+                        PlayGameMenuButtonsActions.HideTopObject(topObjectsTag);
                         
                         gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, cubePlayColourWin, prefabCubePlayButtonsBackColour, isGame2D);
 
@@ -458,7 +459,7 @@ internal class Game : MonoBehaviour
                         PlayGameHelpButtonsActions.HelpButtonsActions(prefabHelpButtons, helpButtonsTag, _tagGameButtonParentObjectHelpButtons);                 
                         PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
 
-                        PlayGameMenuButtonsActions.UnhideTopObject(topObject);
+                        PlayGameMenuButtonsActions.UnhideTopObject(topObjectsTag);
                         PlayGameMenuButtonsActions.UnhideBoardGame(gameBoard);
                         PlayGameMenuButtonsActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
                     }
@@ -466,7 +467,7 @@ internal class Game : MonoBehaviour
 
                     if (gameObjectTag == _tagGameButtonMenuBack)
                     {
-                        PlayGameMenuButtonsActions.UnhideTopObject(topObject);
+                        PlayGameMenuButtonsActions.UnhideTopObject(topObjectsTag);
                         PlayGameMenuButtonsActions.UnhideBoardGame(gameBoard);
                         PlayGameMenuButtonsActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
 

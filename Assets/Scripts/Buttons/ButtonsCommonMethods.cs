@@ -125,7 +125,8 @@ namespace Assets.Scripts.PlayGameMenu
             }
 
             /// it must be remove from here !!!
-            CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
+            // float newScale = 0.3f;
+            //CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
         }
 
        
@@ -569,7 +570,7 @@ namespace Assets.Scripts.PlayGameMenu
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
 
-            float newScale = 0.3f;
+            //float newScale = 0.3f;
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
@@ -586,7 +587,8 @@ namespace Assets.Scripts.PlayGameMenu
                 }
             }
 
-            CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
+            //float newScale = 0.3f;
+            //CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
         }
     }
 }

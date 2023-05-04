@@ -43,8 +43,7 @@ namespace Assets.Scripts
 
         public static Tuple<Tuple<int, int, int>, string> SetUpPlayerSymbolForCubePlay(GameObject[,,] gameBoard, string cubePlayName, string[] playersSymbols, int currentPlayerNumber)
         {
-            //int currentPlayerNumber = currentPlayer[playersNumber];
-            //Debug.Log("currentPlayerNumber = " + currentPlayerNumber);
+            Color symbolColor = CommonMethods.GetNewColor(2);
             string symbol = PlayGameMethods.GetPlayerSymbol(playersSymbols, currentPlayerNumber);
 
             var cubePlayDataZYX = CommonMethods.GetIndexZYXForGameObject(gameBoard, cubePlayName);
@@ -55,6 +54,7 @@ namespace Assets.Scripts
             GameObject cubePlay = gameBoard[cubePlayIndexZ, cubePlayIndexY, cubePlayIndexX];
 
             CommonMethods.ChangeTextForCubePlay(cubePlay, symbol);
+            CommonMethods.ChangeTextColourForCubePlay(cubePlay, symbolColor);
 
             return Tuple.Create(cubePlayDataZYX, symbol);
         }

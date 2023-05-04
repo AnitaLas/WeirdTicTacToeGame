@@ -280,6 +280,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             float newCoordinateX = 1.6f;
             float newCoordinateZ = 0.45f;
             float newScale = 0.9f;
+            float fontSize = 0.5f;
 
             int start = buttonsNumber - 1;
             int playerNumber;
@@ -307,6 +308,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                             CommonMethods.SetUpNewYForGameObject(cubePlay, yForFirstPrefabPlayerSymbol);
                             CommonMethods.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                             CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                            CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
 
                             ChangeNameForPrefabPlayerSymbol(cubePlay, playerNumber);
                         }

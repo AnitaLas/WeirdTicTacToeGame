@@ -11,6 +11,8 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    Unity.Mobile.AndroidLogcat.Editor.dll:
+    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -263,7 +265,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7106}
     - Class: 114
-      Script: {instanceID: 9388}
+      Script: {instanceID: 7732}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1378,6 +1380,12 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 7d9336ae4c786288193ddfcd1e003d05
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts
+    className: GameInformationsForPlayers
+  - hash:
+      serializedVersion: 2
       Hash: e63944317d2f5958e31963668bb29158
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1628,12 +1636,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 7d9336ae4c786288193ddfcd1e003d05
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts
-    className: GameInformationsForPlayers
   platform: 13
   scenePathNames:
   - Assets/Scenes/SceneStartGame.unity
@@ -1641,4 +1643,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SceneConfigurationBoardGame.unity
   - Assets/Scenes/SceneConfigurationPlayersSymbols.unity
   - Assets/Scenes/SceneGame.unity
-  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230504/WeirdTicTacToeGame_20230504v2.apk
+  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230504/WeirdTicTacToeGame_20230504v10.apk

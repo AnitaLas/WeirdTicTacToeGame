@@ -15,7 +15,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
         public static GameObject[,,] CreateTableWithSymbols(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            //Debug.Log(" 3 ");
             GameObject[,,] tableWithNumber;
             string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);
             tableWithNumber = CreateTableMainMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
@@ -190,6 +189,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int numberForName = 0;
 
             float newCoordinateZ = 100;
+            float fontSize = 0.45f;
             string frontTextToAdd = "ChooseSymbol_No_";
             string inactiveField = "-";
             string chosenPlayerSymbol;
@@ -203,19 +203,15 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                     {
                         GameObject cubePlay = tableWithSymbolsBase[indexDepth, indexRow, indexColumn];
                         string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
-                        //Debug.Log(" cubePlayText = " + cubePlayText);
-
-                        //chosenPlayerSymbol = tableWitPlayersChosenSymbols[indexRow];
+                        CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
 
                         if (!cubePlayText.Equals(inactiveField))
                         {
-                           // Debug.Log(" test 2 ");
-                            CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationPlayerSymbolChooseSymbol);
-                            
+                            CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationPlayerSymbolChooseSymbol);                       
+                        
                         }
                         else
                         {
-                            //Debug.Log(" test 3 ");
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
                             CommonMethods.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
 
@@ -224,15 +220,12 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         for (int i = 0; i < tableWitPlayersChosenSymbols.Length; i++)
                         {
                             chosenPlayerSymbol = tableWitPlayersChosenSymbols[i];
-                            //Debug.Log("cubePlayText = " + cubePlayText + "  =?  " + chosenPlayerSymbol + " chosenPlayerSymbol");
 
                             if (cubePlayText.Equals(chosenPlayerSymbol))
                             {
-                                //Debug.Log(" TEST 1  =? -----------------------------");
-                                //Debug.Log("cubePlayText = " + cubePlayText + "  =?  " + chosenPlayerSymbol + " chosenPlayerSymbol");
                                 CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
                                 CommonMethods.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
-                                //Debug.Log(" TEST 2  =? -----------------------------");
+
                             }
                         }
 
@@ -243,8 +236,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         string newName = frontTextToAdd + numberForName;
                         CommonMethods.ChangeGameObjectName(cubePlay, newName);
 
-
-
                     }
                 }
             }
@@ -253,12 +244,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
         }
 
-        //public static void ChangeName(GameObject gameObject)
-        //{
-        //    string oldName = CommonMethods.GetObjectName(gameObject);
-        //    string newName = frontTextToAdd + oldName;
-        //    CommonMethods.ChangeGameObjectName(gameObject, newName);
-        //}
+
 
 
 

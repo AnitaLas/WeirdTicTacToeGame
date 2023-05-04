@@ -68,7 +68,7 @@ namespace Assets.Scripts
 
         // ---
 
-        public static void ChengeCoordinateYForGameObject(string[] helpButtons, float newCoordinateY)
+        public static void ChangeCoordinateYForGameObject(string[] helpButtons, float newCoordinateY)
         {
             string tagName;
             int helpButtonsLength = helpButtons.Length;
@@ -76,23 +76,34 @@ namespace Assets.Scripts
 
             for (int i = 0; i < helpButtonsLength; i++)
             {
-                tagName = helpButtons[i];
-                topObject = CommonMethods.GetObjectByTagName(tagName);
+                //tagName = helpButtons[i];
+                //topObject = CommonMethods.GetObjectByTagName(tagName);
 
-                CommonMethods.SetUpNewYForGameObject(topObject, newCoordinateY);
+                //CommonMethods.SetUpNewYForGameObject(topObject, newCoordinateY);
+
+                tagName = helpButtons[i];
+                GameObject[] gameObjects = CommonMethods.GetObjectsListWithTagName(tagName);
+                int NumberOfgameObjects = gameObjects.Length;
+
+                for (int j = 0; j < NumberOfgameObjects; j++)
+                {
+                    GameObject gameObject = gameObjects[j];
+                    CommonMethods.SetUpNewYForGameObject(gameObject, newCoordinateY);
+                }
+                
             }
         }
 
         public static void HideTopObject(string[] helpButtons)
         {
             float newCoordinateY = -100f;
-            ChengeCoordinateYForGameObject(helpButtons, newCoordinateY);
+            ChangeCoordinateYForGameObject(helpButtons, newCoordinateY);
         }
 
         public static void UnhideTopObject(string[] helpButtons)
         {
             float newCoordinateY = 100f;
-            ChengeCoordinateYForGameObject(helpButtons, newCoordinateY);
+            ChangeCoordinateYForGameObject(helpButtons, newCoordinateY);
         }
 
         // ---
@@ -146,11 +157,11 @@ namespace Assets.Scripts
 
         // ---
 
-        public static void HideHelpButtons(string[] helpButtons)
-        {
-            float newCoordinateY = 100f;
-            ChengeCoordinateYForGameObject(helpButtons, newCoordinateY);
-        }
+        //public static void HideHelpButtons(string[] helpButtons)
+        //{
+        //    float newCoordinateY = 100f;
+        //    ChengeCoordinateYForGameObject(helpButtons, newCoordinateY);
+        //}
 
         public static void DestroyGameConfigurationMenuButtons(List<GameObject[,,]> helpButtons, string[] buttonsMenuConfiguration)
         {
