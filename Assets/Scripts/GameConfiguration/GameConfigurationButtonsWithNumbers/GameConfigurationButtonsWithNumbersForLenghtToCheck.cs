@@ -1,0 +1,130 @@
+﻿using Assets.Scripts.Buttons;
+using Assets.Scripts.GameFieldsVerification;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtons;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
+using UnityEngine;
+using Assets.Scripts.GameDictionaries;
+
+namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
+{
+    internal class GameConfigurationButtonsWithNumbersForLenghtToCheck : MonoBehaviour
+    {
+        public static int GetNumberFromConfiguration(string tagName)
+        {
+            GameObject objectNumber = CommonMethods.GetObjectByTagName(tagName);
+            string numberString = CommonMethods.GetCubePlayText(objectNumber);
+            int numberInt = CommonMethods.ConvertStringToInt(numberString);
+            return numberInt;
+        }
+
+        public static int[] CreateTableWithNumberFromConfiguration(string tagNameRows, string tagNameColumns)
+        {
+            string[] tagsName = { tagNameRows, tagNameColumns };
+            int tagsNameLenght = tagsName.Length;
+
+            string tagName;
+            int[] numbers = new int[tagsNameLenght];
+
+            for (int i = 0; i < tagsNameLenght; i++)
+            {
+                tagName = tagsName[i];
+                int number = GetNumberFromConfiguration(tagName);
+                numbers[i] = number;
+            }
+
+            return numbers;
+        }
+
+        public static int GetLenghtToCheckMax(string tagNameRows, string tagNameColumns)
+        {
+            int[] numbers = CreateTableWithNumberFromConfiguration(tagNameRows, tagNameColumns);
+            int rows = numbers[0];
+            int columns = numbers[1];
+
+            int maxNumberInt = CommonMethods.CheckAndReturnLowerNumber(rows, columns);
+           //string numberString = CommonMethods.ConverIntToString(maxNumberInt);
+           //var numberKind = Tuple.Create(maxNumberInt, numberString);
+
+            return maxNumberInt;
+
+        }
+
+
+
+        public static int GetNumberGivenByUser(string tagName)
+        {
+            GameObject gameObject = CommonMethods.GetObjectByTagName(tagName);
+            string gameObjectText = CommonMethods.GetCubePlayText(gameObject);
+
+            int number = CommonMethods.ConvertStringToInt(gameObjectText);
+            return number;
+
+        }
+
+
+        public static void VerifyAndSetUpNewMaxLength(string[] tableWithChangedNumber)
+        {
+            string tagConfigurationBoardGameChangeNumberRows = tableWithChangedNumber[0];
+            string tagConfigurationBoardGameChangeNumberColumns = tableWithChangedNumber[1];
+            string tagConfigurationBoardGameChangeNumberLenghtToCheck = tableWithChangedNumber[2];
+
+            GameObject gameObject = CommonMethods.GetObjectByTagName(tagConfigurationBoardGameChangeNumberLenghtToCheck);
+
+
+            int rowsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberRows);
+            int columnsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberColumns);
+            int currentLenghtToCheck = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberLenghtToCheck);
+
+            int lowerNumber = CommonMethods.CheckAndReturnLowerNumber(rowsNumber, columnsNumber);
+
+            string defaulNumber = "3";
+
+            if (lowerNumber < currentLenghtToCheck)
+            {
+                CommonMethods.ChangeTextForFirstChild(gameObject, defaulNumber);
+            }
+
+        }
+
+        public static GameObject[,,] CreateTableForMaxLenghtToCheck(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, int lenghtToCheckMax)
+        {
+            GameObject[,,] table;
+            int start = 2;
+            int end = lenghtToCheckMax + 1;
+            float newCoordinateY = 0f;
+            string inactiveText = "-";
+
+            table = GameConfigurationButtonsWithNumbersCommonMethods.ChangeDataForTableWithNumbers(tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
+            return table;
+
+        }
+
+        public static GameObject[,,] CreateTableForLenghtToCheck(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, int lenghtToCheckMax, bool isGame2D)
+        {
+            GameObject[,,] tableWithNumbers;
+            GameObject[,,] tableWithNumberFinal;
+
+            Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+            string tagConfigurationBoardGameTableNumberLenghtToCheck = configurationBoardGameDictionaryTag[14];
+            string tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
+
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 3;
+
+
+            tableWithNumbers = GameConfigurationButtonsWithNumbersCommonMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
+            tableWithNumberFinal = CreateTableForMaxLenghtToCheck(tableWithNumbers, tagConfigurationBoardGameTableNumberLenghtToCheck, tagConfigurationBoardGameInactiveField, lenghtToCheckMax);
+
+            return tableWithNumberFinal;
+
+        }
+    }
+}

@@ -3,7 +3,7 @@ using Assets.Scripts.GameConfigurationPlayerSymbol;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.PlayGameMenu;
 using System;
-using Assets.Scripts.GameConfiguration.GameConfigurationBase;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
 using Assets.Scripts.GameConfiguration.GameConfigurationButtons;
 using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
 using System.Collections.Generic;
@@ -255,8 +255,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
             string tagName = tagNameDictionary[22];
 
-            //string tagName = "CubePlayFree";
-
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
             string buttonText = buttonsGameNameDictionary[1];
 
@@ -270,7 +268,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             return button; 
         }
 
-        public static List<GameObject[,,]> GameConfigurationCreateButtonsPlayersConfiguration(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
+        public static List<GameObject[,,]> GameConfigurationCreateButtonsBackAndPlayer(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
             GameObject[,,] buttonInformation = GameConfigurationCreateInformationButtonPlayer(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
             GameObject[,,] buttonBack =  GameConfigurationCreateButtonBackToConfiguration(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
@@ -288,8 +286,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
             string tagName = tagNameDictionary[22];
 
-            //string tagName = "CubePlayFree";
-
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
             string buttonText = buttonsGameNameDictionary[2];
 
@@ -303,7 +299,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             return button;
         }
 
-        public static List<GameObject[,,]> GameConfigurationCreateButtonsRowsConfiguration(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
+        public static List<GameObject[,,]> GameConfigurationCreateButtonsBackAndRow(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
             GameObject[,,] buttonInformation = GameConfigurationCreateInformationButtonRow(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
             GameObject[,,] buttonBack = GameConfigurationCreateButtonBackToConfiguration(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
@@ -320,8 +316,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
             string tagName = tagNameDictionary[22];
 
-            //string tagName = "CubePlayFree";
-
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
             string buttonText = buttonsGameNameDictionary[3];
 
@@ -335,7 +329,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             return button;
         }
 
-        public static List<GameObject[,,]> GameConfigurationCreateButtonsColumnsConfiguration(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
+        public static List<GameObject[,,]> GameConfigurationCreateButtonsBackAndColumn(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
             GameObject[,,] buttonInformation = GameConfigurationCreateInformationButtonColumns(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
             GameObject[,,] buttonBack = GameConfigurationCreateButtonBackToConfiguration(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
@@ -347,5 +341,35 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             return buttonsAll;
         }
 
+
+        public static GameObject[,,] GameConfigurationCreateInformationButtonlenghtToCheck(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+            string tagName = tagNameDictionary[22];
+
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
+            string buttonText = buttonsGameNameDictionary[4];
+
+            GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            string frontTextToAdd = "InformationButtonLenghtToCheck_";
+            ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
+
+            ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
+
+            return button;
+        }
+
+        public static List<GameObject[,,]> GameConfigurationCreateButtonsBackAndLenghtToCheck(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
+        {
+            GameObject[,,] buttonInformation = GameConfigurationCreateInformationButtonlenghtToCheck(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            GameObject[,,] buttonBack = GameConfigurationCreateButtonBackToConfiguration(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
+
+            List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
+            buttonsAll.Insert(0, buttonInformation);
+            buttonsAll.Insert(1, buttonBack);
+
+            return buttonsAll;
+        }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.GameConfiguration;
 using Assets.Scripts.GameConfigurationPlayerSymbol;
 using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.GameConfiguration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using Assets.Scripts.GameConfiguration.GameConfigurationBase;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
 using Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons;
 using Assets.Scripts.Scenes;
 

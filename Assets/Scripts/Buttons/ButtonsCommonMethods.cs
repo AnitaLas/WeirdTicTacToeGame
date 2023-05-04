@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameConfiguration.GameConfigurationBase;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

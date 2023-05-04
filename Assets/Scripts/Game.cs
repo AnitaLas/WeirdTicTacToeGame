@@ -51,28 +51,10 @@ internal class Game : MonoBehaviour
     private static int _configurationBoardGameNumberOfPlayers;
     private static int _configurationBoardGameNumberForLenghtToCheck;
 
-    public void Awake()
-    {
-        //dataFromScenece1 = GameConfigurationSetUpBoardGame.scence1.test;
-        //int teeeee = Int32.Parse(dataFromScenece1);
-        //numberOfRows = teeeee;
-    }
-   
-    //private static int teeeee = Int32.Parse(dataFromScenece1);
     public Touch touch;
     private Camera mainCamera;
 
-    //public TextMeshProUGUI cubePlayChangeText;
-
-    //public int playersNumberGivenForConfiguration1 = 2;
-
     public int playersNumberGivenForConfiguration; // = 4;
-
-
-
-    private int _minNumberOfRows = 3;
-    private int _minNumberOfColumns = 3;
-    private int _minNumbersCubesForDepthZ = 3;
 
     private static int numberOfRows;// = 4; //3;// 3;
     private static int numberOfColumns; // = 3;// 6;
@@ -83,7 +65,6 @@ internal class Game : MonoBehaviour
 
     private static int lenghtToCheckMax;
     private static int lenghtToCheck;
-    //private static int lenghtToCheckGivenByUser = 3; 
 
     private static bool isGame2D = true;
 
@@ -91,9 +72,7 @@ internal class Game : MonoBehaviour
 
 
     private float _cubePlayForFrameScale;
-    //public string tagCubePlayFree = "CubePlayFree";
-    //public string tagCubePlayFree2 = "CubePlayFree";
-    //public string tagCubePlayTaken = "CubePlayTaken";
+
 
     Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
 
@@ -105,11 +84,11 @@ internal class Game : MonoBehaviour
 
     Dictionary<int, string> tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
 
-    private string _tagArrowRight;
-    private string _tagArrowLeft;
-    private string _tagArrowUp;
-    private string _tagArrowDown;
-    private string _tagButtonConfirm;
+    private string _tagArrowRight; 
+    private string _tagArrowLeft; 
+    private string _tagArrowUp; 
+    private string _tagArrowDown; 
+    private string _tagButtonConfirm; 
 
     Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesSceneGame.DictionaryTagPlayerSymbol();
 
@@ -341,13 +320,6 @@ internal class Game : MonoBehaviour
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
-                                //bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
-
-                                //if (isGameObjectWithTagExsist == true)
-                                //{
-                                //    PlayGameHelpButtonsAction.DestroyHelpButtons(helpButtonsTag);
-                                //}
-
                                 PlayGameHelpButtonsActions.DestroyHelpButtons(helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
 
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
@@ -359,7 +331,6 @@ internal class Game : MonoBehaviour
 
                                 currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
 
-                                //cubePlayMarkByFrame.transform.tag = _tagCubePlayTaken;
                                 CommonMethods.ChangeTagForGameObject(cubePlayMarkByFrame, _tagCubePlayTaken);
                                 currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);
 
@@ -465,16 +436,7 @@ internal class Game : MonoBehaviour
 
                     if (gameObjectTag == _tagGameButtonMenuConfigurationLeft |gameObjectTag == _tagGameButtonMenuConfigurationRight)
                     {
-                        // Debug.Log("  1  ");
-                        //CreateGameConfigurationMenu.HideBoardGame(gameBoard);
                         PlayGameMenuButtonsActions.HideBoardGame(gameBoard);
-
-                        //float x = cubePlayFrame.transform.position.x;
-                        //float y = cubePlayFrame.transform.position.y;
-                        //float z = cubePlayFrame.transform.position.z;
-                        //Debug.Log("tag y =  " + y);
-
-                        //CreateGameConfigurationMenu.HideCubePlayFrame2(cubePlayFrame);
                         PlayGameMenuButtonsActions.HideGameObjectWithTag(_tagCubePlayFrame);
 
                         bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
@@ -485,20 +447,7 @@ internal class Game : MonoBehaviour
                         }
 
                         PlayGameMenuButtonsActions.HideTopObject(topObject);
-                        //CreateGameConfigurationMenu.HideHelpButtons(helpButtonsTag);
-
-                        //CreateGameConfigurationMenu.HideTopObject(topObject);
-
-                        // CreateGameConfigurationMenu.HideCubePlayFrame2(cubePlayFrame);
-
-
-
-
-                        //CreateGameConfigurationMenu.CreateConfigurationButtonHide(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
-                        //CreateGameConfigurationMenu.CreateConfigurationButtonShow(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
-                        //CreateGameConfigurationMenu.CreateConfigurationButtonNewGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
-                        //CreateGameConfigurationMenu.CreateConfigurationButtonBackToGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
-
+                        
                         gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, cubePlayColourWin, prefabCubePlayButtonsBackColour, isGame2D);
 
                     }
@@ -506,30 +455,7 @@ internal class Game : MonoBehaviour
 
                     if (gameObjectTag == _tagGameButtonHelpButtons)
                     {
-                        //GameObject[] numberOfTags = GameObject.FindGameObjectsWithTag(_tagGameButtonParentObjectHelpButtons);
-                        //int numberOfTagsLength = numberOfTags.Length;
-
-                        // create method for that one -> eg scene game information
-                        //bool isGameButtonParentObjectHelpButtons = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
-
-                        //if (isGameButtonParentObjectHelpButtons == true)
-                        //{
-                        //    PlayGameHelpButtonsAction.DestroyHelpButtons(helpButtonsTag);
-                        //}
-                        //else
-                        //{
-                        //    PlayGameHelpButtonsCreate.CreateHelpButtons(prefabHelpButtons);
-                        //}
-
-
-                        PlayGameHelpButtonsActions.HelpButtonsActions(prefabHelpButtons, helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
-                        
-                        
-                        //if (isGameObjectWithTagExsist == true)
-                        //{
-                        //    CreateGameConfigurationMenu.UnhideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
-                        //}
-
+                        PlayGameHelpButtonsActions.HelpButtonsActions(prefabHelpButtons, helpButtonsTag, _tagGameButtonParentObjectHelpButtons);                 
                         PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
 
                         PlayGameMenuButtonsActions.UnhideTopObject(topObject);
@@ -553,47 +479,22 @@ internal class Game : MonoBehaviour
 
                         PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
 
-                        // --- test
-                        //ButtonsText.CreateTableWithGivenStringFor3Rows(14, "");
-
-
                     }
 
 
                     if (gameObjectTag ==  _tagGameButtonNewGame)
                     {
                         ScenesChange.GoToSceneConfigurationBoardGame();
-                        //CommonMethods.ChangeScene(_sceneSceneConfigurationBoardGame);
+                        
                     }
-
-
-
-
-                    // --------------------------------------------
-                    // --- test
-
-                    //CreateGameConfigurationMenu.CreateConfigurationButton(prefabCubePlay, cubePlayColourWin, isGame2D);
-
-
-
-
-
 
 
 
 
 
                 }
-            }
-
-           
+            }   
         }
-
-
-       
-
-
-
     }
 
 

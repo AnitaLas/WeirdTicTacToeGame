@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5WH6R19722009261",
         "name": "com.DefaultCompany.WeirdTicTacToe",
-        "processId": 27679,
+        "processId": 31224,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -54,6 +54,18 @@
             "deviceId": "5WH6R19722009261",
             "name": "com.DefaultCompany.WeirdTicTacToe",
             "processId": 27679,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.DefaultCompany.WeirdTicTacToe",
+            "processId": 26289,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.DefaultCompany.WeirdTicTacToe",
+            "processId": 31224,
             "exited": false
         }
     ],

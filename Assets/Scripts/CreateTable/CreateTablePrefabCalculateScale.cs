@@ -16,7 +16,7 @@ namespace Assets.Scripts
         private static float _prefabCubePlayDefaultScaleX = 1;
         private static float _prefabCubePlayDefaultScaleY = 1;
         private static float _prefabCubePlayDefaultScaleZ = 1;
-        private static float _prefabCubePlayDefaultLowerScale = 1;
+        //private static float _prefabCubePlayDefaultLowerScale = 1;
 
         // max number cube for phone
         private static int _prefabCubePlayMaxNumberWidthXPhone = 4;
