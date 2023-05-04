@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.GameConfiguration.GameConfigurationBase;
+﻿using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
 using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.PlayGameMenu;
