@@ -47,10 +47,16 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
 
         // --- 
 
-        public static void DestroyTableWithPlayerSymbol(GameObject[,,] table)
+        public static void DestroyButton(GameObject[,,] table)
         {
             ButtonsCommonMethodsActionsDestroy.DestroyTable3D(table);
         }
+
+        public static void DestroyButtons(List<GameObject[,,]> tableList)
+        {
+            ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(tableList);
+        }
+
 
     }
 }

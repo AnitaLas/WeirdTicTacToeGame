@@ -98,17 +98,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             return buttonBack;
         }
 
-
-        //public static GameObject[,,] GameConfigurationCreateButtonBackToConfiguration(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
-        //{
-        //    Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-
-        //    string tagName = tagNameDictionary[21];
-
-        //    GameObject[,,] buttonBack = GameConfigurationButtonsCommonCreate.CreateCommonButtonBackToConfiguration(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D, tagName);
-        //    return buttonBack;
-        //}
-
         public static GameObject[,,] GameConfigurationCreateButtonBackToConfiguration(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
             GameObject[,,] tableButtonBack;
@@ -126,6 +115,9 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
 
             tableButtonBack = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonNewGame);
+
+            //string frontTextToAdd = "InformationButtonBackToConfiguration_";
+            //ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(tableButtonBack, frontTextToAdd);
 
             float newCoordinateY = -4.75f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonBack, newCoordinateY, tagName);

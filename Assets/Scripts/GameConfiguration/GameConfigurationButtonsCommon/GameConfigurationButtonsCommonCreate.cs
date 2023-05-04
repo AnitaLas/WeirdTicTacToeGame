@@ -108,6 +108,9 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             float newCoordinateY = 0f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
             
+            float newScale = 0.3f;
+            ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
+
             return tableButtonNewGame;
 
         }

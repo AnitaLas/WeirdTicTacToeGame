@@ -352,7 +352,6 @@
 "Assets/Scripts/GameConfigurationSetUpBoardGame.cs"
 "Assets/Scripts/GameConfigurationSetUpKindOfGame.cs"
 "Assets/Scripts/GameConfigurationSetUpPlayersSymbols.cs"
-"Assets/Scripts/GameDictionaries/GameDictionariesCommon.cs"
 "Assets/Scripts/GameDictionaries/GameDictionariesGameFieldsVerification.cs"
 "Assets/Scripts/GameDictionaries/GameDictionariesSceneConfigurationBoardGame.cs"
 "Assets/Scripts/GameDictionaries/GameDictionariesSceneConfigurationConfigurationPlayerSymbols.cs"

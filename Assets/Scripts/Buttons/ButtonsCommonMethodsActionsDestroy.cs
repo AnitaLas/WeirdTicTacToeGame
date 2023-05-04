@@ -37,7 +37,7 @@ namespace Assets.Scripts.Buttons
             }
         }
 
-        public static void DestroyGameObjectsWithTag(List<GameObject[,,]> gameObjects)
+        public static void DestroyGameObjectsList(List<GameObject[,,]> gameObjects)
         {
             //Debug.Log(" 1 ");
             //int numberOfGameObjectTagToDestroy = gameObjects.Count;

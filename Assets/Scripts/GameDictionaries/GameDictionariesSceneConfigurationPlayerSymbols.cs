@@ -19,7 +19,8 @@ namespace Assets.Scripts.GameDictionaries
                 { 5, "ConfigurationPlayerSymbolInactiveField" },
                 { 6, "ConfigurationPlayerSymbolButtonSave" },
                 { 7, "ConfigurationPlayerSymbolButtonBack" },
-                { 8, "ConfigurationPlayerSymbolButtonBackToConfiguration" }
+                { 8, "ConfigurationPlayerSymbolButtonBackToConfiguration" },
+                { 9, "ConfigurationBoardGameButtonInformation" }
             };
 
             return configurationPlayersSymbolsDictionaryTag;
