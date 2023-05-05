@@ -566,11 +566,9 @@ namespace Assets.Scripts.PlayGameMenu
 
         public static void ChangeNameForGameConfigurationButtons(GameObject[,,] singleConfigurationButtonTable, string frontTextToAdd)
         {
-            int maxIndexDepth = 1;
+            int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
-
-            //float newScale = 0.3f;
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {

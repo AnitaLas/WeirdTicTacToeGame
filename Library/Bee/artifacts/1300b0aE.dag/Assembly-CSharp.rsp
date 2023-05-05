@@ -358,7 +358,6 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Buttons/ButtonGameConfigurationMethods.cs"
-"Assets/Scripts/Buttons/ButtonGameConfigurationPlayerSymbolMethods.cs"
 "Assets/Scripts/Buttons/ButtonsCommonMethods.cs"
 "Assets/Scripts/Buttons/ButtonsCommonMethodsActions.cs"
 "Assets/Scripts/Buttons/ButtonsCommonMethodsActionsDestroy.cs"

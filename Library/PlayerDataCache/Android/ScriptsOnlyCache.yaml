@@ -94,11 +94,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4348}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5832}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6710}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7104}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -149,11 +149,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5832}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6710}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7104}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -204,11 +204,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3372}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5832}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6710}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7104}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -257,15 +257,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5832}
     - Class: 114
-      Script: {instanceID: 6538}
+      Script: {instanceID: 6536}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6710}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7104}
     - Class: 114
-      Script: {instanceID: 7732}
+      Script: {instanceID: 7730}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -326,11 +326,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4958}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5832}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6710}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7104}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1643,4 +1643,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SceneConfigurationBoardGame.unity
   - Assets/Scenes/SceneConfigurationPlayersSymbols.unity
   - Assets/Scenes/SceneGame.unity
-  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230504/WeirdTicTacToeGame_20230504v10.apk
+  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230505/WeirdTicTacToeGame_20230505v2.apk

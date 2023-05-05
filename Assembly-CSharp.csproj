@@ -109,7 +109,6 @@
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethods.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenesInformations.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\Scripts\Buttons\ButtonGameConfigurationPlayerSymbolMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationCommonMethods.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForPlayers.cs" />
