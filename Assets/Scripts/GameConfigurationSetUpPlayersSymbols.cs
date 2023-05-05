@@ -137,7 +137,7 @@ namespace Assets.Scripts
                             //GameConfigurationPlayerSymbolButtonsActions.UnhideButtonBackToConfiguration(_buttonBackToConfiguration);
                             //_buttonBackToConfiguration = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonBackToConfiguration(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
                             //gameObjectName
-                            _buttonsMoreSpecificConfiguration = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationCreateButtonsBackAndPlayer( prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, isGame2D, gameObjectName);
+                            _buttonsMoreSpecificConfiguration = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationCreateButtonsBackAndPlayer( prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, isGame2D, gameObjectName);
 
                             tableWitPlayersChosenSymbols = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithPlayersChosenSymbols(_buttonsWithSymbols);
 

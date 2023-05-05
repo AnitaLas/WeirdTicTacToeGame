@@ -201,7 +201,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             string buttonText = buttonsGameNameDictionary[1];
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
-            return button; ;
+            return button;
         }
 
         public static GameObject[,,] GameConfigurationCreateButtonRowNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
