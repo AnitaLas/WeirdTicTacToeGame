@@ -14,14 +14,14 @@ namespace Assets.Scripts.Buttons
         public static void GameObjectToHide(List<GameObject[,,]> gameObjects)
         {
             float newCoordinateY = 100f;
-            ButtonsCommonMethods.ChangeCoordinateYForSpecificTags(gameObjects, newCoordinateY);
+            ButtonsCommonMethods.ChangeCoordinateYForGameObjectOneList(gameObjects, newCoordinateY);
 
         }
 
         public static void GameObjectToUnhide(List<GameObject[,,]> gameObjects)
         {
             float newCoordinateY = -100f;
-            ButtonsCommonMethods.ChangeCoordinateYForSpecificTags(gameObjects, newCoordinateY);
+            ButtonsCommonMethods.ChangeCoordinateYForGameObjectOneList(gameObjects, newCoordinateY);
 
         }
 
@@ -40,6 +40,19 @@ namespace Assets.Scripts.Buttons
 
         // ---
 
+        public static void GameObjectToHide(List<List<GameObject[,,]>> gameObjectsLists)
+        {
+            float newCoordinateY = 100f;
+            ButtonsCommonMethods.ChangeCoordinateYForGameObjectLists(gameObjectsLists, newCoordinateY);
+        }
+
+        public static void GameObjectToUnhide(List<List<GameObject[,,]>> gameObjectsLists)
+        {
+            float newCoordinateY = -100f;
+            ButtonsCommonMethods.ChangeCoordinateYForGameObjectLists(gameObjectsLists, newCoordinateY);
+        }
+
+        // ---
         public static void HideVisibleTablesWithNumber(List<GameObject[,,]> tablesWithNumber)
         {
             GameObject[,,] table;

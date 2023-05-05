@@ -27,7 +27,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
         {
             GameObject[,,] table;
             int start = 1;
-            int end = 8;
+            int end = 7;
             //float newCoordinateY = 100f; 
             float newCoordinateY = 0f; 
             string inactiveText = "-";

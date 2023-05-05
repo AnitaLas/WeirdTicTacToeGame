@@ -81,9 +81,9 @@ namespace Assets.Scripts.GameConfiguration
 
         private static bool isGame2D = true;
 
-        private static int _numberOfRowsForTableNumber = 3;
-        private static int _numberOfColumnsForTableNumber = 3;
-        private static int _numberOfDepths = 1;
+        //private static int _numberOfRowsForTableNumber = 3;
+       // private static int _numberOfColumnsForTableNumber = 3;
+        //private static int _numberOfDepths = 1;
 
         public Touch touch;
         private Camera mainCamera;

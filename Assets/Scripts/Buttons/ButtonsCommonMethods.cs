@@ -506,7 +506,28 @@ namespace Assets.Scripts.PlayGameMenu
 
 
         // --
-        public static void ChangeCoordinateYForSpecificTags(List<GameObject[,,]> gameObjects, float newCoordinateY)
+
+
+        public static void ChangeCoordinateYForGameObjectLists(List<List<GameObject[,,]>> gameObjects, float newCoordinateY)
+        {
+            int gameObjectNumber = gameObjects.Count;
+            //List<GameObject[,,]> gameObjectList;
+
+            //for (int i = 0; i < gameObjectNumber; i++)
+            //{
+            //    gameObjectList = gameObjects[i];
+            //    ChangeCoordinateYForGameObjectOneList(gameObjectList, newCoordinateY);
+
+            //}
+
+            foreach (List<GameObject[,,]> gameObjectOneList in gameObjects)
+            {
+                ChangeCoordinateYForGameObjectOneList(gameObjectOneList, newCoordinateY);
+            }
+        }
+
+
+        public static void ChangeCoordinateYForGameObjectOneList(List<GameObject[,,]> gameObjects, float newCoordinateY)
         {
             int gameObjectNumber = gameObjects.Count;
             GameObject[,,] table;

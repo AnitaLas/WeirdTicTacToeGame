@@ -188,7 +188,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int maxIndexRow = tableWithSymbolsBase.GetLength(1);
             int numberForName = 0;
 
-            float newCoordinateZ = 100;
+            //float newCoordinateZ = 100;
             float fontSize = 0.45f;
             string frontTextToAdd = "ChooseSymbol_No_";
             string inactiveField = "-";
@@ -230,7 +230,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         }
 
 
-                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateZ);
+                        //CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateZ);
 
                         numberForName = numberForName + 1;
                         string newName = frontTextToAdd + numberForName;

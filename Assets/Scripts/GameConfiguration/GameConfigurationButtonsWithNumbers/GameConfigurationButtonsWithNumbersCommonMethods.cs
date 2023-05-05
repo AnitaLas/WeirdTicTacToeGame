@@ -48,6 +48,8 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             int maxIndexColumn = tableWtithNumber.GetLength(2);
             int maxIndexRow = tableWtithNumber.GetLength(1);
 
+            //float newCoordinateZ = 0;
+
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
                 for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
@@ -65,6 +67,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
                         {
                             CommonMethods.ChangeTextForCubePlay(cubePlay, inactiveText);
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveField);
+                            //CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         }
 
                     }

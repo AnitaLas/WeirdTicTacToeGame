@@ -15,106 +15,31 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
     internal class GameConfigurationPlayerSymbolCommonMethods
     {
         
-        //public static void ChangeTagForDefaultPlayerSymbol(GameObject gameObjectParent, string gameObjectTagNameToChange)
-        //{
-        //    //Debug.Log(" ChangeTagForDefaultPlayerSymbol child");
-        //    gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
-
-        //}
-
-        //public static void ChangeTagForDefaultPlayerSymbol(GameObject gameObject, string gameObjectTagNameToChange)
-        //{
-        //    //Debug.Log(" ChangeTagForDefaultPlayerSymbol child");
-        //    CommonMethods.ChangeTagForGameObject(gameObject, gameObjectTagNameToChange);
-        //    //gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
-
-        //}
-
-        public static void ChangeTagForDefaultPlayerSymbol(string gameObjectName, string gameObjectTagNameToChange, string tagConfigurationPlayerSymbolDefaultSymbol)
+        public static void ChangeTagForPlayerDefaultSymbol(string gameObjectName, string gameObjectTagNameToChange, string tagConfigurationPlayerSymbolDefaultSymbol)
         {
-            //gameObjectParent.transform.GetChild(1).transform.tag = gameObjectTagNameToChange;
-            //GameObject[] chosenPlayer;
-
-            //List<GameObject[,,]> listOfCubePlayWithSymbol = new List<GameObject[,,]>();
-
-
             GameObject[] listOfSymbol = CommonMethods.GetObjectsListWithTagName(tagConfigurationPlayerSymbolDefaultSymbol);
             int tagNumber = listOfSymbol.Length;
-            //Debug.Log("tagNumber = " + tagNumber);
-
-            //int maxIndexDepth = 1;
-            //int maxIndexColumn;
-            //int maxIndexRow;
-
-           
+      
             string gameObjectNameEndNumber = ButtonsCommonMethods.GetSubstringFromCubePlayName(gameObjectName);
-            //Debug.Log("gameObjectName = " + gameObjectName);
-           // Debug.Log("gameObjectNameEndNumber = " + gameObjectNameEndNumber);
+
 
             for (int i = 0; i < tagNumber; i++)
             {
-                //Debug.Log(" 1 ");
                 GameObject cubePlay = listOfSymbol[i];
                 string gameObjectNameToCompare = CommonMethods.GetObjectName(cubePlay);
-                //Debug.Log("gameObjectNameToCompare = " + gameObjectNameToCompare);
                 string gameObjectNameNumberToCompare = ButtonsCommonMethods.GetSubstringFromCubePlayName(gameObjectNameToCompare);
-
-
 
                 if (gameObjectNameEndNumber.Equals(gameObjectNameNumberToCompare))
                 {
-                    //Debug.Log("gameObjectNameToCompare = " + gameObjectNameToCompare);
-                    //Debug.Log("gameObjectNameNumberToCompare = " + gameObjectNameNumberToCompare);
                     CommonMethods.ChangeTagForGameObject(cubePlay, gameObjectTagNameToChange);
                 }
-
             }
-
-                //for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
-                //{
-                //    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
-                //    {
-                //        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
-                //        {
-
-                //            GameObject cubePlay = gameObject[indexDepth, indexRow, indexColumn];
-
-
-
-                //        }
-                //    }
-                //}
-            
-
-            //for (int i = 0; i < tagNumber; i++)
-            //{
-            //    GameObject[] oneSymbol = listOfSymbol[i];
-            //    maxIndexColumn = oneSymbol.GetLength(2);
-            //    maxIndexRow = oneSymbol.GetLength(1);
-
-
-            //    for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
-            //    {
-            //        for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
-            //        {
-            //            for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
-            //            {
-
-            //                GameObject cubePlay = oneSymbol[indexDepth, indexRow, indexColumn];
-
-
-
-            //            }
-            //        }
-            //    }
-            //}
 
         }
 
 
         public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateZ)
         {
-            //float newCoordinateZ = 0.05f;
 
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
@@ -127,58 +52,62 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        //Debug.Log(" Y ");
-                        //Debug.Log(" newCoordinateZ = " + newCoordinateZ);
                         CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateZ);
 
                     }
-
                 }
             }
         }
 
-        public static void UnhideTableWithNumber(GameObject[,,] tableWtithNumber)
-        {
-            float newCoordinateZ = -100f;
-            ChangeCoordinateYForTable(tableWtithNumber, newCoordinateZ);
-        }
+        //public static void UnhideTableWithNumber(GameObject[,,] tableWtithNumber)
+        //{
+        //    float newCoordinateZ = -100f;
+        //    ChangeCoordinateYForTable(tableWtithNumber, newCoordinateZ);
+        //}
 
-        public static void HideTableWithNumber(GameObject[,,] tableWtithNumber)
-        {
-            //float newCoordinateZ = 0.75f;
-            float newCoordinateY = 100f;
-            ChangeCoordinateYForTable(tableWtithNumber, newCoordinateY);
-        }
+        //public static void HideTableWithNumber(GameObject[,,] tableWtithNumber)
+        //{
+        //    //float newCoordinateZ = 0.75f;
+        //    float newCoordinateY = 100f;
+        //    ChangeCoordinateYForTable(tableWtithNumber, newCoordinateY);
+        //}
 
-        public static TextMeshProUGUI GetTextForPlayerSymbolFirstChild(GameObject gameObject)
-        {
-            int childNumber = 0;
-            TextMeshProUGUI playerText = CommonMethods.GetTextMeshProUGUIForPlayerSymbolChild( gameObject, childNumber);
-            Debug.Log("playerText = " + playerText);
-            return playerText;
-        }
-
-
+        //public static TextMeshProUGUI GetTextForPlayerSymbolFirstChild(GameObject gameObject)
+        //{
+        //    int childNumber = 0;
+        //    TextMeshProUGUI playerText = CommonMethods.GetTextMeshProUGUIForPlayerSymbolChild( gameObject, childNumber);
+        //    Debug.Log("playerText = " + playerText);
+        //    return playerText;
+        //}
 
 
-
-
-
-
-
-
-
-
-
-        public static void ChangeSymbolForPlayer( string newSymbol, string tagConfigurationPlayerSymbolChooseSymbol)
+        public static void ChangeSymbolForPlayer(string newSymbol, string tagConfigurationPlayerSymbolChooseSymbol)
         {
             GameObject objectWithChosenSymbol = CommonMethods.GetObjectByTagName(tagConfigurationPlayerSymbolChooseSymbol);
-
             CommonMethods.ChangeTextForFirstChild(objectWithChosenSymbol, newSymbol);
-            //string chosenSymbol = CommonMethods.GetCubePlayText(objectWithChosenSymbol);
-            //Debug.Log("chosenSymbol = " + chosenSymbol);
-
-            //CommonMethods.ChangeTextForCubePlay(objectToChange, chosenSymbol);
         }
+
+
+        public static void ChangeGameObjectTag(string currentTag, string newTag)
+        {
+            GameObject gameObject = CommonMethods.GetObjectByTagName(currentTag);
+            CommonMethods.ChangeTagForGameObject(gameObject, newTag);
+        }
+
+        public static void ChangeChosenSymbolForPlayer(RaycastHit touch, string tagConfigurationPlayerSymbolChange, string tagConfigurationPlayerSymbolDefaultSymbol)
+        {
+            string gameObjectNameForChosenSymbol = CommonMethods.GetObjectName(touch);
+            GameObject gameObjectForChosenSymbol = CommonMethods.GetObjectByName(gameObjectNameForChosenSymbol);
+
+            string newSymbol = CommonMethods.GetCubePlayText(gameObjectForChosenSymbol);
+
+            ChangeSymbolForPlayer(newSymbol, tagConfigurationPlayerSymbolChange);
+
+            //GameObject gameObject = CommonMethods.GetObjectByTagName(_tagConfigurationPlayerSymbolChange);
+            //CommonMethods.ChangeTagForGameObject(gameObject, _tagConfigurationPlayerSymbolDefaultSymbol);
+            ChangeGameObjectTag(tagConfigurationPlayerSymbolChange, tagConfigurationPlayerSymbolDefaultSymbol);
+
+        }
+
     }
 }
