@@ -69,7 +69,7 @@ namespace Assets.Scripts.Buttons
 
             GameObject gameObject = CommonMethods.GetObjectByTagName(tagName);
             string gameObjectName = CommonMethods.GetObjectName(gameObject);
-            Debug.Log("gameObjectName = " + gameObjectName);
+            //Debug.Log("gameObjectName = " + gameObjectName);
 
             int gameObjectNameLenght = gameObjectName.Length;
             //Debug.Log("gameObjectNameLenght = " + gameObjectNameLenght);
@@ -82,18 +82,19 @@ namespace Assets.Scripts.Buttons
             //Debug.Log("playerNumber = " + playerNumber);
 
             string zeroNumber = playerNumber.Substring(0, 1);
-
+            string stringToCompare = "0";
             string playerNumberToSetUp;
 
-            if (zeroNumber.Equals("0"))
+            if (zeroNumber.Equals(stringToCompare))
             {
                 playerNumberToSetUp = playerNumber.Substring(1,1);
-                Debug.Log("playerNumberToSetUp = " + playerNumberToSetUp);
+                //Debug.Log("playerNumberToSetUp = " + playerNumberToSetUp);
             }
             else
             {
                 playerNumberToSetUp = playerNumber;
             }
+           // Debug.Log("---------------------------------- ");
 
             int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
@@ -117,8 +118,8 @@ namespace Assets.Scripts.Buttons
                         CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         CommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
                         CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
-                        CommonMethods.ChangeTextForCubePlay(cubePlay, playerNumber);
-                        //CommonMethods.ChangeTextForCubePlay(cubePlay, playerNumberToSetUp);
+                        //CommonMethods.ChangeTextForCubePlay(cubePlay, playerNumber);
+                        CommonMethods.ChangeTextForCubePlay(cubePlay, playerNumberToSetUp);
 
                     }
                 }

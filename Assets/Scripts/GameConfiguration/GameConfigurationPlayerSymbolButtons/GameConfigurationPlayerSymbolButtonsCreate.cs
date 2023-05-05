@@ -15,6 +15,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
 {
     internal class GameConfigurationPlayerSymbolButtonsCreate
     {
+
         public static List<GameObject[,,]> GameConfigurationPlayerSymbolCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, int playersNumber)
         {
             // button save and back
@@ -88,6 +89,45 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
             return buttonsList;
 
         }
+
+
+        public static GameObject[,,] GameConfigurationPlayerSymbolCreateButtonsWithSymbolsToChose(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabSymbolPlayerMaterialInactiveField, string[] tableWitPlayersChosenSymbols,  bool isGame2D)
+        {
+            GameObject[,,] buttons;
+
+            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
+            string tagConfigurationPlayerSymbolChooseSymbol = tagNameDictionary[4];
+            string tagConfigurationPlayerSymbolInactiveField = tagNameDictionary[5];
+
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryButtonsConfigurationPlayerSymbolDefaultText();
+            string buttonText = buttonsGameNameDictionary[1];
+
+            int numberOfDepths = 1;
+            int numberOfColumns = 4;
+            int numberOfRows= 7;
+
+
+            //string[] defaultPlayersSymbols = CreateGameBoardMethods.CreateTableWithCharactersByGivenString();
+
+            buttons = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithSymbols(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
+
+            GameConfigurationPlayerSymbolTableWithSymbols.ChangeDataForTableWithSymbols(buttons, tableWitPlayersChosenSymbols, prefabSymbolPlayerMaterialInactiveField, tagConfigurationPlayerSymbolChooseSymbol, tagConfigurationPlayerSymbolInactiveField);
+
+            return buttons;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
         // --- information buttons
 
