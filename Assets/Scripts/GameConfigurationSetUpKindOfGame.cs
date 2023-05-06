@@ -40,8 +40,6 @@ namespace Assets.Scripts
         }
 
 
-
-
         void Update()
         {
 
@@ -57,7 +55,6 @@ namespace Assets.Scripts
                     if (touch.collider != null)
                     {
                         string gameObjectTag = CommonMethods.GetObjectTag(touch);
-                        //string gameObjectName = CommonMethods.GetObjectName(touch);
 
                         if (gameObjectTag != _tagUntagged)
                         {
@@ -76,16 +73,9 @@ namespace Assets.Scripts
                             ScenesChange.GoToSceneInformations();
                         }
 
-
                     }
-
-
-
-
-
                 }
             }
         }
-    }
-                
+    }                
 }

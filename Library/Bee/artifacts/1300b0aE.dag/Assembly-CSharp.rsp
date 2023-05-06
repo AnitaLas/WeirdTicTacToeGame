@@ -366,7 +366,6 @@
 "Assets/Scripts/Buttons/ButtonsStartGameMethods.cs"
 "Assets/Scripts/Buttons/ButtonsText.cs"
 "Assets/Scripts/CommonMethods.cs"
-"Assets/Scripts/ConfigurationBoardGame.cs"
 "Assets/Scripts/CreateFrame/CreateFrameForMove.cs"
 "Assets/Scripts/CreateGameBoard/CreateGameBoard.cs"
 "Assets/Scripts/CreateGameBoard/CreateGameBoardMethods.cs"

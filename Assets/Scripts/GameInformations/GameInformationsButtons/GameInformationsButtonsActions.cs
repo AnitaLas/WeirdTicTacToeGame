@@ -16,24 +16,17 @@ namespace Assets.Scripts.GameInformationsButtons
         public static void UnhideButtons(List<GameObject[,,]> gameObjects)
         {
             ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
+            ChangeTagForButtonBackToSceneStartGame();
         }
 
         public static void HideButtons(List<GameObject[,,]> gameObjects)
         {
             ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
+            ChangeTagForButtonBackToSceneInformations();
+
         }
 
         // ---
-
-        //public static void HideTableWithNumber(GameObject[,,] gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
-        //}
-
-        //public static void UnhideTableWithNumber(GameObject[,,] gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
-        //}
 
         public static void ChangeTagForButtonBackToSceneInformations()
         {

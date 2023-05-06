@@ -244,21 +244,44 @@ namespace Assets.Scripts.PlayGame
 
 
 
-        public static void SetUpPlayerSymbolForWinner(string winnerPlayerSymbol, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
+        //public static void SetUpPlayerSymbolForWinnerV1(string winnerPlayerSymbol, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
+        //{
+        //    // use for smaller green cube for player symbol move
+        //    string defaultSymbol = "-";
+
+
+        //    // SetUpPlayerSymbolCurrent
+        //   SetUpPlayerSymbol(winnerPlayerSymbol, tagPlayerSymbolCurrent);
+
+        //   // SetUpPlayerSymbolPrevious
+        //   SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
+        //   // SetUpPlayerSymbolNext
+        //   SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
+           
+        //}
+
+
+        public static void SetUpPlayerSymbolForWinner(bool isWinner, string winnerPlayerSymbol, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
         {
             // use for smaller green cube for player symbol move
             string defaultSymbol = "-";
 
+            if (isWinner == true)
+            {
+                // SetUpPlayerSymbolCurrent
+                SetUpPlayerSymbol(winnerPlayerSymbol, tagPlayerSymbolCurrent);
+            }
+            else
+            {
+                SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolCurrent);
+            }
 
-            // SetUpPlayerSymbolCurrent
-           SetUpPlayerSymbol(winnerPlayerSymbol, tagPlayerSymbolCurrent);
 
-           // SetUpPlayerSymbolPrevious
-           SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
-           // SetUpPlayerSymbolNext
-           SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
-           
+            // SetUpPlayerSymbolPrevious
+            SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
+            // SetUpPlayerSymbolNext
+            SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
+
         }
-
     }
 }

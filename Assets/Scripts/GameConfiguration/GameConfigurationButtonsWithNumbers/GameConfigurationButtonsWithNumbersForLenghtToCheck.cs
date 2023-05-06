@@ -42,9 +42,14 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             return numbers;
         }
 
-        public static int GetLenghtToCheckMax(string tagNameRows, string tagNameColumns)
+       // public static int GetLenghtToCheckMax(string tagNameRows, string tagNameColumns)
+        public static int GetLenghtToCheckMax()
         {
-            int[] numbers = CreateTableWithNumberFromConfiguration(tagNameRows, tagNameColumns);
+            Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+            string tagConfigurationBoardGameChangeNumberRows = configurationBoardGameDictionaryTag[7];
+            string tagConfigurationBoardGameChangeNumberColumns = configurationBoardGameDictionaryTag[8];
+
+            int[] numbers = CreateTableWithNumberFromConfiguration(tagConfigurationBoardGameChangeNumberRows, tagConfigurationBoardGameChangeNumberColumns);
             int rows = numbers[0];
             int columns = numbers[1];
 
@@ -55,9 +60,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             return maxNumberInt;
 
         }
-
-
-
         public static int GetNumberGivenByUser(string tagName)
         {
             GameObject gameObject = CommonMethods.GetObjectByTagName(tagName);
@@ -76,7 +78,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             string tagConfigurationBoardGameChangeNumberLenghtToCheck = tableWithChangedNumber[2];
 
             GameObject gameObject = CommonMethods.GetObjectByTagName(tagConfigurationBoardGameChangeNumberLenghtToCheck);
-
 
             int rowsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberRows);
             int columnsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberColumns);
