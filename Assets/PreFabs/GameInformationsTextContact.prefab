@@ -67,7 +67,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "CONTACT\n\ntest@mail.com\n\n-----------------------------------\n\nSEND
-    ME A MAIL\n\nif you want to give a job\n\nif you have any questions about the
+    ME A MAIL\n\nif you want to give a job\n\nif you have any questions \nabout the
     game\n\nif you found the bug \nin the game\nit would be great if you could attach
     the screen and description\n\n"
   m_isRightToLeft: 0

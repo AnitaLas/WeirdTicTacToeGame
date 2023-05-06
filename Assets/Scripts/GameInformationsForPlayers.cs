@@ -15,7 +15,7 @@ namespace Assets.Scripts
     {
 
         public GameObject prefabCubePlay;
-        public GameObject gameInformationsVersionsText;
+        public GameObject gameInformationsTextNextVersions;
         public GameObject gameInformationsTextContact;
 
         public Material[] prefabCubePlayButtonsDefaultColour;
@@ -82,15 +82,17 @@ namespace Assets.Scripts
                         if (gameObjectTag == _tagGameInformationsButtonNextVersions)
                         {
                             GameInformationsButtonsActions.HideButtons(_buttonsAll);
-                            GameInformationsButtonsActions.ChangeTagForButtonBackToSceneInformations();
-                            GameInformationsTextCreate.CreateGameInformationsTextNextVersions(gameInformationsVersionsText);
+                            //GameInformationsButtonsActions.ChangeTagForButtonBackToSceneInformations();
+
+                            GameInformationsTextCreate.CreateGameInformationsTextNextVersions(gameInformationsTextNextVersions);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextNextVersions);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonContact)
                         {
                             GameInformationsButtonsActions.HideButtons(_buttonsAll);
-                            GameInformationsButtonsActions.ChangeTagForButtonBackToSceneInformations();
+                            //GameInformationsButtonsActions.ChangeTagForButtonBackToSceneInformations();
+
                             GameInformationsTextCreate.CreateGameInformationsTextContact(gameInformationsTextContact);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextContact);
                         }
@@ -98,7 +100,8 @@ namespace Assets.Scripts
                         if (gameObjectTag == _tagGameInformationsButtonBackToMenu)
                         {
                             GameInformationsButtonsActions.UnhideButtons(_buttonsAll);
-                            GameInformationsButtonsActions.ChangeTagForButtonBackToSceneStartGame();
+                            //GameInformationsButtonsActions.ChangeTagForButtonBackToSceneStartGame();
+
                             GameInformationsTextAction.DestroyGameObjectsWithText(_gameObjectsWithText);
                         }
 

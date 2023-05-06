@@ -108,15 +108,8 @@ internal class Game : MonoBehaviour
     private string _tagGameButtonParentObjectHelpButtons;
     private string _tagGameButtonMenuConfigurationDisactivate;
 
-
-    //Dictionary<int, string> scenceDictionary = GameDictionariesCommon.DictionaryScence();
-
-    //private string _sceneSceneConfigurationBoardGame;
-
     private int _index;
    
-
-   // int[] playerNumber;
     string[] playersSymbols;
     int[] currentPlayer;
     int[] currentCountedTagCubePlayTaken;
@@ -136,11 +129,10 @@ internal class Game : MonoBehaviour
 
     string[] playerSymbolMove;
 
-    string[] helpButtonsTag = new string[6];
-    string[] buttonsMenuConfiguration = new string[3];
-    string[] topObjectsTag = new string[5];
-    //string[] topObjectsTag = new string[4];
-    string[] tagDisactivateConfigurationMenu = new string[3];
+    private string[] helpButtonsTag = new string[6];
+    private string[] buttonsMenuConfiguration = new string[3];
+    private string[] topObjectsTag = new string[5];
+    private string[] tagDisactivateConfigurationMenu = new string[3];
 
     private List<GameObject[,,]> gameButtonsMenu;
 
@@ -218,9 +210,6 @@ internal class Game : MonoBehaviour
 
         gameBoardVerification2D = GameConfigurationCommonMethods.CreateEmptyTable2D(numberOfRows, numberOfColumns);
 
-        // does it need it?
-        //playerNumber = GameConfigurationTableForPlayers.CreateTableWithPlayersNumber(playersNumberGivenForConfiguration);
-
         playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
 
 
@@ -252,7 +241,6 @@ internal class Game : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -304,6 +292,7 @@ internal class Game : MonoBehaviour
 
                             gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
+                            // remove tag from method?
                             playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration, currentPlayer, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
                             _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
@@ -316,13 +305,18 @@ internal class Game : MonoBehaviour
                                 _winnerKindOfChecker = (string)_listCheckerForWinner[2];
 
                                 PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
+
+                                // remove tag from method
                                 PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
-                                PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
+                                //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
+                                PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_winner, cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
+                                // remove tag from method
                                 PlayGameHelpButtonsActions.DestroyHelpButtons(helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
 
+                                // remove tag from method
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
 
@@ -331,8 +325,10 @@ internal class Game : MonoBehaviour
                             {
 
                                 currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
-
+                               
+                                // remove tag from method
                                 CommonMethods.ChangeTagForGameObject(cubePlayMarkByFrame, _tagCubePlayTaken);
+
                                 currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(currentCountedTagCubePlayTaken, _index);
 
                                 countedTagCubePlayTaken = currentCountedTagCubePlayTaken[_index];
@@ -340,8 +336,15 @@ internal class Game : MonoBehaviour
                                 if (countedTagCubePlayTaken >= maxCubePlayNumber)
                                 { 
                                     PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
+
+                                    // remove tag from method
                                     PlayGameHelpButtonsActions.DestroyHelpButtons(helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
+
+                                    // remove tag from method
+                                    PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
+                                    PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_winner, cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
+
                                     Debug.Log("Game Over :) Would you like to start new game? Yes No");
                                 }
                             }
@@ -369,11 +372,13 @@ internal class Game : MonoBehaviour
 
                             gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
+                            // remove tag from method
                             cubePlayFrame = GameObject.FindWithTag(_tagCubePlayFrame);
                             PlayGameFrameMove.SetUpNewXYForCubePlayFrame(cubePlayFrame, cubePlay);
                             moveIndexForFrame[_moveIndexForFrameX] = cubePlayIndexX;
                             moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
 
+                            // remove tag from method
                             playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(playerSymbolMove, playersSymbols, playersNumberGivenForConfiguration, currentPlayer, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
                             _listCheckerForWinner = GameFieldsVerification.FieldsVerification(gameBoardVerification2D, lenghtToCheck);
@@ -392,16 +397,18 @@ internal class Game : MonoBehaviour
 
                                 PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(gameBoard, cubePlaySymbol, _winnerCoordinateXYForCubePlay, _winnerKindOfChecker, _tagCubePlayGameWin, _tagCubePlayGameOver, prefabCubePlayFrame, cubePlayColourWin);
 
-                                PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
+                                // remove tag from method
+                                //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
+                                PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_winner, cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
 
                                 GameFieldsVerificationMessages.WinMessage(cubePlaySymbol);
 
+                                // remove tag from method
                                 PlayGameHelpButtonsActions.DestroyHelpButtons(helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
 
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
                             }
-
                             else
                             {
 
@@ -418,8 +425,13 @@ internal class Game : MonoBehaviour
                                 if (countedTagCubePlayTaken >= maxCubePlayNumber)
                                 {
                                     PlayGameFrameMove.SetUpNewZForCubePlayFrame(cubePlayFrame);
+
+                                    // remove tag from method
                                     PlayGameHelpButtonsActions.DestroyHelpButtons(helpButtonsTag, _tagGameButtonParentObjectHelpButtons);
+                                    PlayGameMenuButtonsActions.DisactivateConfigurationMenu(tagDisactivateConfigurationMenu);
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, isGame2D);
+                                    PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_winner, cubePlaySymbol, _tagPlayerSymbolCurrent, _tagPlayerSymbolPrevious, _tagPlayerSymbolNext);
+
                                     Debug.Log("Game Over :) Would you like to start new game? Yes No");
                                 }
 
@@ -438,14 +450,18 @@ internal class Game : MonoBehaviour
                     if (gameObjectTag == _tagGameButtonMenuConfigurationLeft || gameObjectTag == _tagGameButtonMenuConfigurationRight)
                     {
                         PlayGameMenuButtonsActions.HideBoardGame(gameBoard);
+
+                        // remove tag from method
                         PlayGameMenuButtonsActions.HideGameObjectWithTag(_tagCubePlayFrame);
 
+                        // remove tag from method + create one method for that
                         bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
 
                         if (isGameObjectWithTagExsist == true)
                         {
                             PlayGameMenuButtonsActions.HideGameObjectWithTag(_tagGameButtonParentObjectHelpButtons);
                         }
+
 
                         PlayGameMenuButtonsActions.HideTopObject(topObjectsTag);
                         
@@ -456,21 +472,28 @@ internal class Game : MonoBehaviour
 
                     if (gameObjectTag == _tagGameButtonHelpButtons)
                     {
+                        // remove tag from method
                         PlayGameHelpButtonsActions.HelpButtonsActions(prefabHelpButtons, helpButtonsTag, _tagGameButtonParentObjectHelpButtons);                 
                         PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(gameButtonsMenu, buttonsMenuConfiguration);
 
                         PlayGameMenuButtonsActions.UnhideTopObject(topObjectsTag);
                         PlayGameMenuButtonsActions.UnhideBoardGame(gameBoard);
+
+                        // remove tag from method
                         PlayGameMenuButtonsActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
                     }
 
 
                     if (gameObjectTag == _tagGameButtonMenuBack)
                     {
+                        // remove tag from method
                         PlayGameMenuButtonsActions.UnhideTopObject(topObjectsTag);
                         PlayGameMenuButtonsActions.UnhideBoardGame(gameBoard);
+
+                        // remove tag from method
                         PlayGameMenuButtonsActions.UnhideGameObjectWithTag(_tagCubePlayFrame);
 
+                        // remove tag from method + one method for that
                         bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
 
                         if (isGameObjectWithTagExsist == true)

@@ -26,7 +26,7 @@ namespace Assets.Scripts.GameConfiguration
         public static int ConfigurationBoardGameNumberOfColumns { get; set; }
         public static int ConfigurationBoardGameLenghtToCheck { get; set; }
 
-        public static int lenghtToCheckMax;
+        private static int _lenghtToCheckMax;
 
         public static int numberOfPlayers;
         public static int numberOfRows;
@@ -36,17 +36,7 @@ namespace Assets.Scripts.GameConfiguration
 
         // ---
 
-        //private GameObject[,,] _tableWithNumberForRowsBase;
-        //private GameObject[,,] _buttonsNumberForRows;
-        //private GameObject[,,] _tableWithNumberForColumnsBase;
-       // private GameObject[,,] _buttonsNumberForColumns;
         private GameObject[,,] _buttonsWithNumbers;
-        //private GameObject[,,] _tableWithNumberForPlayersBase;
-        //private GameObject[,,] _buttonsNumberForPlayers;
-        //private GameObject[,,] _tableWithNumberForLenghtToCheckBase;
-        //private GameObject[,,] _tableWithNumberForLenghtToCheck;
-        //private GameObject[,,] _tableWithNumberForLenghtToCheck2;
-
 
         public GameObject prefabCubePlayForTableNumber;
 
@@ -80,10 +70,6 @@ namespace Assets.Scripts.GameConfiguration
 
 
         private static bool isGame2D = true;
-
-        //private static int _numberOfRowsForTableNumber = 3;
-       // private static int _numberOfColumnsForTableNumber = 3;
-        //private static int _numberOfDepths = 1;
 
         public Touch touch;
         private Camera mainCamera;
@@ -171,7 +157,9 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberPlayers)
                         {
-                            numberOfPlayers = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberPlayers);
+                            // remove tag from method
+                            //numberOfPlayers = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberPlayers);
+                            numberOfPlayers = GameConfigurationCommonMethods.SetUpChosenNumberForConfigurationPlayers(_buttonsWithNumbers, gameObjectName);
                             
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
@@ -190,7 +178,9 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberRows)
                         {
-                            numberOfRows = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberRows);
+                            // remove tag from method
+                            //numberOfRows = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberRows);
+                            numberOfRows = GameConfigurationCommonMethods.SetUpChosenNumberForConfigurationRows(_buttonsWithNumbers, gameObjectName);
 
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
@@ -210,7 +200,9 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberColumns)
                         {
-                            numberOfColumns = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberColumns);
+                            // remove tag from method
+                            //numberOfColumns = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberColumns);
+                            numberOfColumns = GameConfigurationCommonMethods.SetUpChosenNumberForConfigurationColumns(_buttonsWithNumbers, gameObjectName);
                             
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
@@ -222,25 +214,11 @@ namespace Assets.Scripts.GameConfiguration
                         // lenght to check
                         if (gameObjectTag == _tagConfigurationBoardGameLenghtToCheck || gameObjectTag == _tagConfigurationBoardGameChangeNumberLenghtToCheck)
                         {
-                            //if (_tableWithNumberForLenghtToCheckBase != null)
-                            //{
-                            //    GameConfigurationButtonsActions.DestroyTableWithLenghtToCheckBase(_tableWithNumberForLenghtToCheckBase);
-                            //    GameConfigurationButtonsActions.DestroyTableWithLenghtToCheckBase(_tableWithNumberForLenghtToCheck);
-                            //}
-                            
-                           // _tableWithNumberForLenghtToCheckBase = GameConfigurationButtonsWithNumbersCommonMethods.CreateTableWithNumbers(prefabCubePlayForTableNumber, _numberOfDepths, _numberOfRowsForTableNumber, _numberOfColumnsForTableNumber, prefabCubePlayDefaultColour, isGame2D);
-                           
-                            lenghtToCheckMax = GameConfigurationButtonsWithNumbersForLenghtToCheck.GetLenghtToCheckMax(_tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameChangeNumberColumns);
-
-
-
-                            //_tableWithNumberForLenghtToCheck = GameConfigurationButtonsWithNumbersForLenghtToCheck.CreateTableForMaxLenghtToCheck(_tableWithNumberForLenghtToCheckBase, _tagConfigurationBoardGameTableNumberLenghtToCheck, _tagConfigurationBoardGameInactiveField, lenghtToCheckMax);
-                            //_buttonsWithNumbers = GameConfigurationButtonsWithNumbersForLenghtToCheck.CreateTableForLenghtToCheck(_tableWithNumberForLenghtToCheckBase, _tagConfigurationBoardGameTableNumberLenghtToCheck, _tagConfigurationBoardGameInactiveField, lenghtToCheckMax);
-                            _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForLenghtToCheck.CreateTableForLenghtToCheck(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, lenghtToCheckMax, isGame2D);
-                            
+                            // remove tags from method
+                            //lenghtToCheckMax = GameConfigurationButtonsWithNumbersForLenghtToCheck.GetLenghtToCheckMax(_tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameChangeNumberColumns);
+                            _lenghtToCheckMax = GameConfigurationButtonsWithNumbersForLenghtToCheck.GetLenghtToCheckMax();
+                            _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForLenghtToCheck.CreateTableForLenghtToCheck(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _lenghtToCheckMax, isGame2D);
                             _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndLenghtToCheck(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, isGame2D);
-
-                            //GameConfigurationButtonsActions.UnhideTableWithNumber(_tableWithNumberForLenghtToCheck);
 
                             GameConfigurationButtonsActions.HideConfiguration(_buttonsAll);
                         
@@ -248,10 +226,11 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberLenghtToCheck)
                         {
-                            lenghtToCheck = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            // remove tag from method
+                            //lenghtToCheck = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
+                            lenghtToCheck = GameConfigurationCommonMethods.SetUpChosenNumberForConfigurationLenghtToCheck(_buttonsWithNumbers, gameObjectName);
                             
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
-                            //GameConfigurationButtonsActions.HideTableWithNumber(_tableWithNumberForLenghtToCheck);
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
 
                         }

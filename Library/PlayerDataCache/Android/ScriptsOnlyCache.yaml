@@ -90,9 +90,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2802}
     - Class: 114
-      Script: {instanceID: 4348}
+      Script: {instanceID: 4350}
     - Class: 114
       Script: {instanceID: 5832}
     - Class: 114
@@ -145,9 +145,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 1686}
+      Script: {instanceID: 1688}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2802}
     - Class: 114
       Script: {instanceID: 5832}
     - Class: 114
@@ -200,9 +200,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2802}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3374}
     - Class: 114
       Script: {instanceID: 5832}
     - Class: 114
@@ -255,7 +255,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2802}
     - Class: 114
       Script: {instanceID: 5832}
     - Class: 114
@@ -314,17 +314,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2016}
+      Script: {instanceID: 2018}
     - Class: 114
-      Script: {instanceID: 2294}
+      Script: {instanceID: 2296}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2802}
     - Class: 114
-      Script: {instanceID: 4508}
+      Script: {instanceID: 4510}
     - Class: 114
-      Script: {instanceID: 4640}
+      Script: {instanceID: 4642}
     - Class: 114
-      Script: {instanceID: 4958}
+      Script: {instanceID: 4960}
     - Class: 114
       Script: {instanceID: 5832}
     - Class: 114
@@ -378,7 +378,7 @@ ScriptsOnlyBuild:
     className: CreateGameBoardMethods
   - hash:
       serializedVersion: 2
-      Hash: c38cb6166f6b56f18d145d13ecc2f60b
+      Hash: a7a86f74f83076002547e3bf8d3177e7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts
     className: GameConfigurationSetUpPlayersSymbols
@@ -1380,7 +1380,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 7d9336ae4c786288193ddfcd1e003d05
+      Hash: 67f438ca55057e9e8770d8820392931b
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts
     className: GameInformationsForPlayers
@@ -1643,4 +1643,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SceneConfigurationBoardGame.unity
   - Assets/Scenes/SceneConfigurationPlayersSymbols.unity
   - Assets/Scenes/SceneGame.unity
-  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230505/WeirdTicTacToeGame_20230505v2.apk
+  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230506/WeirdTicTacToeGame_20230506v2.apk

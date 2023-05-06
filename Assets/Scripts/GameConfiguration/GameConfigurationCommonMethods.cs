@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Buttons;
+using Assets.Scripts.GameDictionaries;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -123,7 +124,42 @@ namespace Assets.Scripts.GameConfiguration
 
         }
 
+        // ---
+        public static int SetUpChosenNumberForConfigurationPlayers(GameObject[,,] _buttonsWithNumbers, string gameObjectName)
+        {
+            Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+            string tagConfigurationBoardGameChangeNumberPlayers = configurationBoardGameDictionaryTag[10];
 
+            int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberPlayers);
+            return number;
+        }
+
+        public static int SetUpChosenNumberForConfigurationRows(GameObject[,,] _buttonsWithNumbers, string gameObjectName)
+        {
+            Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+            string tagConfigurationBoardGameChangeNumberRows = configurationBoardGameDictionaryTag[7];
+
+            int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberRows);
+            return number;
+        }
+
+        public static int SetUpChosenNumberForConfigurationColumns(GameObject[,,] _buttonsWithNumbers, string gameObjectName)
+        {
+            Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+            string tagConfigurationBoardGameChangeNumberColumns = configurationBoardGameDictionaryTag[8];
+
+            int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberColumns);
+            return number;
+        }
+
+        public static int SetUpChosenNumberForConfigurationLenghtToCheck(GameObject[,,] _buttonsWithNumbers, string gameObjectName)
+        {
+            Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+            string tagConfigurationBoardGameChangeNumberLenghtToCheck = configurationBoardGameDictionaryTag[13];
+
+            int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberLenghtToCheck);
+            return number;
+        }
 
 
 

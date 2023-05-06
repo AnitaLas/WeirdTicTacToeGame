@@ -94,7 +94,6 @@
     <Compile Include="Assets\Scripts\GameConfigurationSetUpBoardGame.cs" />
     <Compile Include="Assets\Scripts\GameInformations\GameInformationsText\GameInformationsTextCreate.cs" />
     <Compile Include="Assets\Scripts\GameInformations\GameInformationsButtons\GameInformationsButtonsMethods.cs" />
-    <Compile Include="Assets\Scripts\ConfigurationBoardGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabName.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsGameConfigurationMethods.cs" />
