@@ -189,6 +189,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int numberForName = 0;
 
             //float newCoordinateZ = 100;
+            float newCoordinateZ = 0;
             float fontSize = 0.45f;
             string frontTextToAdd = "ChooseSymbol_No_";
             string inactiveField = "-";
@@ -214,6 +215,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         {
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
                             CommonMethods.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
+                            CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
 
                         }
 
@@ -225,6 +227,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                             {
                                 CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
                                 CommonMethods.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
+                                CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
 
                             }
                         }

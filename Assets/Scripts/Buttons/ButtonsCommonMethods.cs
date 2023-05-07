@@ -163,8 +163,9 @@ namespace Assets.Scripts.PlayGameMenu
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
 
             //float newCoordinateZ = 0.175f;
-            float newCoordinateZ = 0.2f;
-            float fontSize = 0.7f;
+            //float newCoordinateZ = 0.2f;
+            float newCoordinateZ = 0.225f;
+            float fontSize = 0.55f;
             //float newScale = 0.5f;
 
 
@@ -540,6 +541,12 @@ namespace Assets.Scripts.PlayGameMenu
             }
         }
 
+        public static void ChangeCoordinateYForOneGameObjectByTagName(string gameObjectTagName, float newCoordinateY)
+        {
+            GameObject gameOject = CommonMethods.GetObjectByTagName(gameObjectTagName);
+            CommonMethods.SetUpNewYForGameObject(gameOject, newCoordinateY);
+        }
+
         public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateY)
         {
             int maxIndexDepth = 1;
@@ -557,6 +564,58 @@ namespace Assets.Scripts.PlayGameMenu
                     }
 
                 }
+            }
+        }
+
+        public static void ChangeCoordinateYForGameObjectsTagName(string[] helpButtons, float newCoordinateY)
+        {
+            string tagName;
+            int helpButtonsLength = helpButtons.Length;
+            //GameObject topObject;
+
+            for (int i = 0; i < helpButtonsLength; i++)
+            {
+                //tagName = helpButtons[i];
+                //topObject = CommonMethods.GetObjectByTagName(tagName);
+
+                //CommonMethods.SetUpNewYForGameObject(topObject, newCoordinateY);
+
+                tagName = helpButtons[i];
+                GameObject[] gameObjects = CommonMethods.GetObjectsListWithTagName(tagName);
+                int NumberOfgameObjects = gameObjects.Length;
+
+                for (int j = 0; j < NumberOfgameObjects; j++)
+                {
+                    GameObject gameObject = gameObjects[j];
+                    CommonMethods.SetUpNewYForGameObject(gameObject, newCoordinateY);
+                }
+
+            }
+        }
+
+        public static void ChangeCoordinateYForGameObjectsTagName(Dictionary<int,string> tagsNameDictionary, float newCoordinateY)
+        {
+            string tagName;
+            int helpButtonsLength = tagsNameDictionary.Count;
+            //GameObject topObject;
+
+            for (int i = 1; i <= helpButtonsLength; i++)
+            {
+                //tagName = helpButtons[i];
+                //topObject = CommonMethods.GetObjectByTagName(tagName);
+
+                //CommonMethods.SetUpNewYForGameObject(topObject, newCoordinateY);
+
+                tagName = tagsNameDictionary[i];
+                GameObject[] gameObjects = CommonMethods.GetObjectsListWithTagName(tagName);
+                int NumberOfgameObjects = gameObjects.Length;
+
+                for (int j = 0; j < NumberOfgameObjects; j++)
+                {
+                    GameObject gameObject = gameObjects[j];
+                    CommonMethods.SetUpNewYForGameObject(gameObject, newCoordinateY);
+                }
+
             }
         }
 

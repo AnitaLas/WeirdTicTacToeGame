@@ -53,6 +53,39 @@ namespace Assets.Scripts.Buttons
         }
 
         // ---
+
+        public static void GameObjectToHide(string gameObjectTagName)
+        {
+            float newCoordinateY = 100f;
+            ButtonsCommonMethods.ChangeCoordinateYForOneGameObjectByTagName(gameObjectTagName, newCoordinateY);
+        }
+
+        public static void GameObjectToUnhide(string gameObjectTagName)
+        {
+            float newCoordinateY = -100f;;
+            ButtonsCommonMethods.ChangeCoordinateYForOneGameObjectByTagName(gameObjectTagName, newCoordinateY);
+        }
+
+        // ---
+
+        public static void GameObjectToHide(Dictionary<int, string> gameObjectTagsName)
+        {
+            float newCoordinateY = 100f;
+            ButtonsCommonMethods.ChangeCoordinateYForGameObjectsTagName(gameObjectTagsName, newCoordinateY);
+        }
+
+        public static void GameObjectToUnhide(Dictionary<int, string> gameObjectTagsName)
+        {
+            float newCoordinateY = -100f; ;
+            ButtonsCommonMethods.ChangeCoordinateYForGameObjectsTagName(gameObjectTagsName, newCoordinateY);
+        }
+
+        // ---
+
+
+
+        // ---
+
         public static void HideVisibleTablesWithNumber(List<GameObject[,,]> tablesWithNumber)
         {
             GameObject[,,] table;

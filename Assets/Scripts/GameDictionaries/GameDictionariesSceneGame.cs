@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Buttons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -66,17 +67,33 @@ namespace Assets.Scripts.GameDictionaries
             return tagHelpButtonDictionary;
         }
 
-        public static Dictionary<int, string> DictionaryTagPlayerSymbol()
+        public static Dictionary<int, string> DictionaryTagPlayerSymbolMove()
         {
-            Dictionary<int, string> tagPlayerSymbolDictionary = new Dictionary<int, string>
+            Dictionary<int, string> tagPlayerSymbolMoveDictionary = new Dictionary<int, string>
             {
                 { 1, "PlayerSymbolCurrent" },
                 { 2, "PlayerSymbolPrevious" },
                 { 3, "PlayerSymbolNext" }
             };
 
-            return tagPlayerSymbolDictionary;
+            return tagPlayerSymbolMoveDictionary;
+        }
+
+        public static Dictionary<int, string> DictionaryTagTopObjecs()
+        {
+            Dictionary<int, string> tagTopObjecsDictionary = new Dictionary<int, string>
+            {
+                { 1, "GameButtonMenuConfigurationLeft" },
+                { 2, "GameButtonMenuConfigurationRight" },
+                { 3, "PlayerSymbolCurrent" },
+                { 4, "PlayerSymbolPrevious" },
+                { 5, "PlayerSymbolNext" }
+            };
+
+            return tagTopObjecsDictionary;
         }
 
     }
 }
+
+

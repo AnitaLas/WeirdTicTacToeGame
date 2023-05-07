@@ -103,7 +103,7 @@ namespace Assets.Scripts.GameConfiguration
             _tagConfigurationBoardGameChangeNumberLenghtToCheck = configurationBoardGameDictionaryTag[13];
             _tagConfigurationBoardGameTableNumberLenghtToCheck = configurationBoardGameDictionaryTag[14];
 
-            _tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
+            //_tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
             _tagConfigurationBoardGameButtonBackToConfiguration = configurationBoardGameDictionaryTag[21];
  
             // ---

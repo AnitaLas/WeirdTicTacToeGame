@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.CreateFrame;
 using Assets.Scripts.GameDictionaries;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -433,9 +434,19 @@ namespace Assets.Scripts.PlayGame
 
 
 
-        public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string winnerKindOfChecker, string tagCubePlayGameWin, string tagCubePlayGameOver, GameObject prefabCubePlayFrame, Material[] cubePlayColourWin)
+        //public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string winnerKindOfChecker, string tagCubePlayGameWin, string tagCubePlayGameOver, GameObject prefabCubePlayFrame, Material[] cubePlayColourWin)
+        //public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, ArrayList listCheckerForWinner, string tagCubePlayGameWin, string tagCubePlayGameOver, GameObject prefabCubePlayFrame, Material[] cubePlayColourWin)
+        public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, ArrayList listCheckerForWinner, GameObject prefabCubePlayFrame, Material[] cubePlayColourWin)
         {
-            Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesGameFieldsVerification.DictionaryChecker();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
+
+            string tagCubePlayGameOver = tagCubePlayDictionary[4];
+            string tagCubePlayGameWin = tagCubePlayDictionary[5];
+
+            int[,]  winnerCoordinateXYForCubePlay = (int[,])listCheckerForWinner[1];
+            string winnerKindOfChecker = (string)listCheckerForWinner[2];
+
+            Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
 
             string checkerHorizontal = checkerDictionary[1];
             string checkerVertical = checkerDictionary[2];

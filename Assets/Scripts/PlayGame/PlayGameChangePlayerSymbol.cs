@@ -129,8 +129,14 @@ namespace Assets.Scripts.PlayGame
         */
 
 
-        public static string[] ChangeCurrentPlayersSymbolsMove(string[] playerSymbolMove, string[] playersSymbols, int playersNumberGivenForConfiguration, int[] currentPlayer, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
+        public static string[] ChangeCurrentPlayersSymbolsMove(string[] playerSymbolMove, string[] playersSymbols, int playersNumberGivenForConfiguration, int[] currentPlayer)
         {
+            Dictionary<int, string> tagPlayerSymbolMoveDictionary = GameDictionariesSceneGame.DictionaryTagPlayerSymbolMove();
+
+            string tagPlayerSymbolCurrent = tagPlayerSymbolMoveDictionary[1];
+            string tagPlayerSymbolPrevious = tagPlayerSymbolMoveDictionary[2];
+            string tagPlayerSymbolNext = tagPlayerSymbolMoveDictionary[3];
+
             int playerSymbolMoveLenght = 3;
             int currentPlayerNumber = currentPlayer[0];
            // Debug.Log("currentPlayerNumber = " + currentPlayerNumber);
@@ -187,7 +193,7 @@ namespace Assets.Scripts.PlayGame
 
                     if (nextPlayersSymbolsIndex > playersSymbols.Length - 1)
                     {
-                        Debug.Log("  1  ");
+                       // Debug.Log("  1  ");
                        // Debug.Log("test = " + nextPlayersSymbolsIndex);
                         newPlayerSymbolNext = playersSymbols[0];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
@@ -196,7 +202,7 @@ namespace Assets.Scripts.PlayGame
                     }
                     else
                     {
-                       Debug.Log("  3  ");
+                      // Debug.Log("  3  ");
                        // Debug.Log("test = " + nextPlayersSymbolsIndex);
                         newPlayerSymbolNext = playersSymbols[currentPlayerNumber + 2];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
@@ -208,7 +214,7 @@ namespace Assets.Scripts.PlayGame
                 {
                     if (currentPlayerNumber == playersSymbols.Length - 1)
                     {
-                        Debug.Log("  4  ");
+                        //Debug.Log("  4  ");//
                         newPlayerSymbolNext = playersSymbols[1];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
                         ChangePlayerSymbol(newPlayerSymbolNext, tagPlayerSymbolNext);
@@ -216,7 +222,7 @@ namespace Assets.Scripts.PlayGame
                     }
                     else
                     {
-                        Debug.Log("  5  ");
+                        //Debug.Log("  5  ");
                         newPlayerSymbolNext = playersSymbols[2];
                         newPlayerSymbolMove[2] = newPlayerSymbolNext;
                        // Debug.Log("  newPlayerSymbolNext = " + newPlayerSymbolNext);
@@ -257,13 +263,40 @@ namespace Assets.Scripts.PlayGame
         //   SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
         //   // SetUpPlayerSymbolNext
         //   SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
-           
+
         //}
 
 
-        public static void SetUpPlayerSymbolForWinner(bool isWinner, string winnerPlayerSymbol, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
+        //public static void SetUpPlayerSymbolForWinner(bool isWinner, string winnerPlayerSymbol, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
+        //{
+        //    // use for smaller green cube for player symbol move
+        //    string defaultSymbol = "-";
+
+        //    if (isWinner == true)
+        //    {
+        //        // SetUpPlayerSymbolCurrent
+        //        SetUpPlayerSymbol(winnerPlayerSymbol, tagPlayerSymbolCurrent);
+        //    }
+        //    else
+        //    {
+        //        SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolCurrent);
+        //    }
+
+
+        //    // SetUpPlayerSymbolPrevious
+        //    SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
+        //    // SetUpPlayerSymbolNext
+        //    SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
+
+        //}
+
+        public static void SetUpPlayerSymbolForWinner(bool isWinner, string winnerPlayerSymbol)
         {
-            // use for smaller green cube for player symbol move
+            Dictionary<int, string> tagPlayerSymbolMoveDictionary = GameDictionariesSceneGame.DictionaryTagPlayerSymbolMove();
+
+            string tagPlayerSymbolCurrent = tagPlayerSymbolMoveDictionary[1];
+            string tagPlayerSymbolPrevious = tagPlayerSymbolMoveDictionary[2];
+            string tagPlayerSymbolNext = tagPlayerSymbolMoveDictionary[3];
             string defaultSymbol = "-";
 
             if (isWinner == true)
