@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5WH6R19722009261",
         "name": "com.DefaultCompany.WeirdTicTacToe",
-        "processId": 18059,
+        "processId": 13953,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -60,6 +60,12 @@
             "deviceId": "5WH6R19722009261",
             "name": "com.DefaultCompany.WeirdTicTacToe",
             "processId": 18059,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.DefaultCompany.WeirdTicTacToe",
+            "processId": 13953,
             "exited": false
         }
     ],

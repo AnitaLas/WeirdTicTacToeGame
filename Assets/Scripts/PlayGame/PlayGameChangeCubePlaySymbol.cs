@@ -10,32 +10,16 @@ namespace Assets.Scripts
 {
     internal class PlayGameChangeCubePlaySymbol
     {
-        /*
-        public static void GameChangeTextForCubePlay(GameObject cubePlay, string cubePlayText)
-        {
-                CommonMethods.ChangeTextForCubePlay(cubePlay, cubePlayText);
-        }
-        */
-
-
         public static int[] SetUpCurrentPlayer(int[] currentPlayer, int currentPlayerNumber, int playersNumberGivenForConfiguration)
         {
-            //int[] newCurrentPlayer = new int[1];
-            //   if (currentPlayerNumber < playersNumberGivenForConfiguration - 1)
-            //if (currentPlayerNumber < playersNumberGivenForConfiguration)
-            //Debug.Log("CC currentPlayerNumber = " + currentPlayerNumber);
-            //Debug.Log("CC playersNumberGivenForConfiguration = " + (playersNumberGivenForConfiguration  - 1));
-
             if (currentPlayerNumber < playersNumberGivenForConfiguration - 1)
             {
                 currentPlayer[0] = currentPlayer[0] + 1;
-                //Debug.Log("CC if currentPlayer[0] = " + currentPlayer[0]);
                 return currentPlayer;
             } 
             else
             {
                 currentPlayer[0] = 0;
-                //Debug.Log("CC else currentPlayer[0] = " + currentPlayer[0]);
                 return currentPlayer;
             }
 

@@ -30,7 +30,9 @@ namespace Assets.Scripts.GameDictionaries
         {
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
             {
-                { 1, "PLAYER" }
+                { 1, "PLAYER" },
+                { 2, "PLAYERS" },
+                { 3, "P" } // tabletMode, more than six players
             };
 
             return buttonsNameDictionary;

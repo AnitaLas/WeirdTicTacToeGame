@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Buttons;
 using Assets.Scripts.CreateGameHelpButton;
+using Assets.Scripts.GameDictionaries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,47 +12,77 @@ namespace Assets.Scripts.PlayGameHelpButtons
 {
     internal class PlayGameHelpButtonsActions : MonoBehaviour
     {
-        public static void DestroyHelpButtons(string[] gameObjectsWithTagToDestoy)
+        private static void DestroyHelpButtons(string[] gameObjectsWithTagToDestoy)
         {
-            //string tagName;
-            //int helpButtonsLength = helpButtons.Length;
-            //GameObject helpButton;
-
-            //for (int i = 0; i < helpButtonsLength; i++)
-            //{
-            //    tagName = helpButtons[i];
-            //    helpButton = CommonMethods.GetObjectByTagName(tagName);
-
-            //    Destroy(helpButton);
-            //}
             ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(gameObjectsWithTagToDestoy);
         }
 
-        public static void HelpButtonsActions(GameObject prefabHelpButtons, string[] helpButtonsTag, string _tagGameButtonParentObjectHelpButtons)
+        //public static void HelpButtonsActions(GameObject prefabHelpButtons, string[] helpButtonsTag, string _tagGameButtonParentObjectHelpButtons)
+        //{
+        //    bool isGameButtonParentObjectHelpButtons = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+
+        //    if (isGameButtonParentObjectHelpButtons == true)
+        //    {
+        //        DestroyHelpButtons(helpButtonsTag);
+        //    }
+        //    else
+        //    {
+        //        Debug.Log(" 1 ");
+        //        PlayGameHelpButtonsCreate.CreateHelpButtons(prefabHelpButtons);
+
+        //    }
+        //}
+
+
+        public static void HelpButtonsActionsCreateOrDestroy(GameObject prefabHelpButtons)
         {
-            bool isGameButtonParentObjectHelpButtons = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
+            Dictionary<int, string> tagHelpButtonDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            string tagGameButtonParentObjectHelpButtons = tagHelpButtonDictionary[6];
+
+            bool isGameButtonParentObjectHelpButtons = CommonMethods.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
 
             if (isGameButtonParentObjectHelpButtons == true)
             {
-                DestroyHelpButtons(helpButtonsTag);
+                //DestroyHelpButtons(helpButtonsTag);
+                ButtonsCommonMethodsActionsDestroy.DestroySingleGameObjectWithTag(tagGameButtonParentObjectHelpButtons);
+
             }
             else
             {
                 PlayGameHelpButtonsCreate.CreateHelpButtons(prefabHelpButtons);
 
             }
+
+
         }
 
-        public static void DestroyHelpButtons(string[] helpButtonsTag, string tagGameButtonParentObjectHelpButtons)
-        {
-            //bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(_tagGameButtonParentObjectHelpButtons);
 
-            //if (isGameObjectWithTagExsist == true)
+        //public static void DestroyHelpButtons(string[] helpButtonsTag, string tagGameButtonParentObjectHelpButtons)
+        //{
+        //    ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(helpButtonsTag, tagGameButtonParentObjectHelpButtons);
+        //}
+
+        //public static void DestroyHelpButtons(string[] helpButtonsTag, string tagGameButtonParentObjectHelpButtons)
+        public static void DestroyHelpButtons()
+        {
+            Dictionary<int, string> tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
+            Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+
+            string tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
+
+            ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(tagArrowDictionary, tagGameButtonParentObjectHelpButtons);
+
+            //int tagArrowDictionaryLength = tagArrowDictionary.Count;
+
+            //for (int i = 1; i <= tagArrowDictionaryLength; i++)
             //{
-            //    DestroyHelpButtons(helpButtonsTag);
+            //    string tagName = tagArrowDictionary[i];
+            //    ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(helpButtonsTag, tagGameButtonParentObjectHelpButtons);
+
             //}
 
-            ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(helpButtonsTag, tagGameButtonParentObjectHelpButtons);
+
+
         }
 
 

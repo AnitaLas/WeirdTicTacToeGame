@@ -11,8 +11,6 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
-    Unity.Mobile.AndroidLogcat.Editor.dll:
-    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -90,15 +88,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 4350}
+      Script: {instanceID: 4346}
     - Class: 114
-      Script: {instanceID: 5832}
+      Script: {instanceID: 5826}
     - Class: 114
-      Script: {instanceID: 6710}
+      Script: {instanceID: 6704}
     - Class: 114
-      Script: {instanceID: 7104}
+      Script: {instanceID: 7098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -145,15 +143,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 1688}
+      Script: {instanceID: 1686}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 5832}
+      Script: {instanceID: 5826}
     - Class: 114
-      Script: {instanceID: 6710}
+      Script: {instanceID: 6704}
     - Class: 114
-      Script: {instanceID: 7104}
+      Script: {instanceID: 7098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -200,15 +198,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 3374}
+      Script: {instanceID: 3372}
     - Class: 114
-      Script: {instanceID: 5832}
+      Script: {instanceID: 5826}
     - Class: 114
-      Script: {instanceID: 6710}
+      Script: {instanceID: 6704}
     - Class: 114
-      Script: {instanceID: 7104}
+      Script: {instanceID: 7098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -255,17 +253,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 5832}
+      Script: {instanceID: 5826}
     - Class: 114
-      Script: {instanceID: 6536}
+      Script: {instanceID: 6530}
     - Class: 114
-      Script: {instanceID: 6710}
+      Script: {instanceID: 6704}
     - Class: 114
-      Script: {instanceID: 7104}
+      Script: {instanceID: 7098}
     - Class: 114
-      Script: {instanceID: 7730}
+      Script: {instanceID: 7724}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -314,23 +312,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2018}
+      Script: {instanceID: 2016}
     - Class: 114
-      Script: {instanceID: 2296}
+      Script: {instanceID: 2294}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 4510}
+      Script: {instanceID: 4504}
     - Class: 114
-      Script: {instanceID: 4642}
+      Script: {instanceID: 4636}
     - Class: 114
-      Script: {instanceID: 4960}
+      Script: {instanceID: 4954}
     - Class: 114
-      Script: {instanceID: 5832}
+      Script: {instanceID: 5826}
     - Class: 114
-      Script: {instanceID: 6710}
+      Script: {instanceID: 6704}
     - Class: 114
-      Script: {instanceID: 7104}
+      Script: {instanceID: 7098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1500,6 +1498,12 @@ ScriptsOnlyBuild:
     className: InputSystemUIInputModule
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.PlayGame
+    className: PlayGameFrameMove
+  - hash:
+      serializedVersion: 2
       Hash: 040dd48e3a027d5424519a5fa2009df4
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1643,4 +1647,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SceneConfigurationBoardGame.unity
   - Assets/Scenes/SceneConfigurationPlayersSymbols.unity
   - Assets/Scenes/SceneGame.unity
-  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230506/WeirdTicTacToeGame_20230506v2.apk
+  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230507/WeirdTicTacToeGame_20230507v1.apk

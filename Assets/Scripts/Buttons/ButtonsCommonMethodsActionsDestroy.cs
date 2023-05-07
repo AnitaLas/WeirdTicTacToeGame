@@ -37,7 +37,29 @@ namespace Assets.Scripts.Buttons
             }
         }
 
-        public static void DestroyGameObjectsList(List<GameObject[,,]> gameObjects)
+        public static void DestroyGameObjectsWithTag(Dictionary<int, string> gameObjectsWithTagToDestoy)
+        {
+            int numberOfGameObjectTagToDestroy = gameObjectsWithTagToDestoy.Count;
+
+            for (int i = 1; i <= numberOfGameObjectTagToDestroy; i++)
+            {
+                string gameObjectTagToDestroy = gameObjectsWithTagToDestoy[i];
+                DestroySingleGameObjectWithTagIfExsist(gameObjectTagToDestroy);
+            }
+        }
+
+        public static void DestroyGameObjectsWithTag(Dictionary<int, string> gameObjectsWithTagToDestoy, string parentObjectTagName)
+        {
+            int numberOfGameObjectTagToDestroy = gameObjectsWithTagToDestoy.Count;
+
+            for (int i = 1; i <= numberOfGameObjectTagToDestroy; i++)
+            {
+                string gameObjectTagToDestroy = gameObjectsWithTagToDestoy[i];
+                DestroySingleGameObjectWithTagIfExsist(gameObjectTagToDestroy);
+            }
+        }
+
+            public static void DestroyGameObjectsList(List<GameObject[,,]> gameObjects)
         {
             //Debug.Log(" 1 ");
             //int numberOfGameObjectTagToDestroy = gameObjects.Count;

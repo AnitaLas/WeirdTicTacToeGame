@@ -119,6 +119,48 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
 
 
 
+        // --- 
+        public static List<GameObject[,,]> GameConfigurationCreateInformationBaseButtonPlayers(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+           // GameObject[,,] button;
+
+            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
+            string tagName = tagNameDictionary[9];
+
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryButtonsConfigurationPlayerSymbolDefaultText();
+            string buttonText = buttonsGameNameDictionary[2];
+
+            //GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+            //GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+
+            //int numberOfDepths = 1;
+            //int numberOfColumns = 4;
+            //int numberOfRows = 7;
+
+
+
+            GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            string frontTextToAdd = "InformationButtonPlayer_";
+            ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
+
+            ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
+
+            List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
+            buttonsAll.Insert(0, button);
+
+            return buttonsAll;
+        }
+
+
+
+
+
+
+
+
+
 
 
 

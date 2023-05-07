@@ -175,7 +175,8 @@ namespace Assets.Scripts.Buttons
             int maxIndexRow = button.GetLength(1); 
 
             //float newCoordinateY = 3.75f;
-            float newCoordinateY = 4.25f;
+            //float newCoordinateY = 4.25f;
+            float newCoordinateY = 4.5f;
             float newCoordinateX = -0.65f;
 
                 for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
