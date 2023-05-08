@@ -136,5 +136,13 @@ namespace Assets.Scripts.PlayGame
             Destroy(cubePlayFrame);
         }
 
+
+        public static GameObject GetCubePlayFrame()
+        {
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
+            string tagCubePlayFrame = tagCubePlayDictionary[3];
+            GameObject gameObject = CommonMethods.GetObjectByTagName(tagCubePlayFrame);
+            return gameObject;
+        }
     }
 }

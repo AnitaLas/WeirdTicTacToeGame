@@ -644,6 +644,7 @@ namespace Assets.Scripts
 
         public static GameObject GetObjectByTagName(string tagName)
         {
+            //GameObject gameObject = GameObject.FindWithTag(tagName);
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tagName);
             GameObject gameObject = gameObjects[0];
             return gameObject;

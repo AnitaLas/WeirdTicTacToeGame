@@ -31,7 +31,7 @@ namespace Assets.Scripts
         public Material[] prefabCubePlayButtonsBackColour;
         public Material[] prefabCubePlayButtonsNumberColour;
 
-        private bool isGame2D = true;
+        private bool _isGame2D = true;
 
         Dictionary<int, string> configurationPlayersSymbolsDictionaryTag = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
 
@@ -78,10 +78,10 @@ namespace Assets.Scripts
             // ---
             _numberOfPlayers = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfPlayers;        
 
-            _buttonsWithPlayers = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsForPlayerNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D, _numberOfPlayers);
-            _buttonsWithSymbols = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, _numberOfPlayers);
-            _buttonsBackAndSave = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, isGame2D, _numberOfPlayers);
-            _buttonBasePlayers = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationCreateInformationBaseButtonPlayers(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+            _buttonsWithPlayers = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsForPlayerNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D, _numberOfPlayers);
+            _buttonsWithSymbols = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayButtonsNumberColour, _isGame2D, _numberOfPlayers);
+            _buttonsBackAndSave = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, _numberOfPlayers);
+            _buttonBasePlayers = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationCreateInformationBaseButtonPlayers(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
             _configurationBaseButtons = new List<List<GameObject[,,]>>();
 
@@ -121,9 +121,9 @@ namespace Assets.Scripts
                         {
                             GameConfigurationPlayerSymbolButtonsActions.HideConfigurationBaseButtons(_configurationBaseButtons, gameObjectName);
                             
-                            _buttonsMoreSpecificConfiguration = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationCreateButtonsBackAndPlayer( prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, isGame2D, gameObjectName);
+                            _buttonsMoreSpecificConfiguration = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationCreateButtonsBackAndPlayer( prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, gameObjectName);
                             _tableWitPlayersChosenSymbols = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithPlayersChosenSymbols(_buttonsWithSymbols);
-                            _tableWitSymbols = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsWithSymbolsToChose(prefabCubePlay, prefabSymbolPlayerMaterial, prefabSymbolPlayerMaterialInactiveField, _tableWitPlayersChosenSymbols, isGame2D);
+                            _tableWitSymbols = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsWithSymbolsToChose(prefabCubePlay, prefabSymbolPlayerMaterial, prefabSymbolPlayerMaterialInactiveField, _tableWitPlayersChosenSymbols, _isGame2D);
 
                         }
 

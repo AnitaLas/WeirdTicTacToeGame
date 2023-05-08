@@ -45,14 +45,21 @@ namespace Assets.Scripts.PlayGame
         //    SetUpPlayerSymbol(playerSymbol, tagPlayerSymbolNext);
         //}
 
-        public static void SetUpPlayerSymbolForMove(string[] playersSymbols, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
+        //public static void SetUpPlayerSymbolForMove(string[] playersSymbols, string tagPlayerSymbolCurrent, string tagPlayerSymbolPrevious, string tagPlayerSymbolNext)
+        public static void SetUpPlayerSymbolForMoveAtStart(string[] playersSymbols)
         {
-            //Dictionary<int, string> tagPlayerSymbolDictionary = GameDictionariesCommon.DictionaryTagPlayerSymbol();
-            int playersNumber = playersSymbols.Length;
-            int indexForPlayerSymbolPrevious = playersSymbols.Length - 1;
+            Dictionary<int, string> tagPlayerSymbolMoveDictionary = GameDictionariesSceneGame.DictionaryTagPlayerSymbolMove();
+            string tagPlayerSymbolCurrent = tagPlayerSymbolMoveDictionary[1];
+            string tagPlayerSymbolPrevious = tagPlayerSymbolMoveDictionary[2];
+            string tagPlayerSymbolNext = tagPlayerSymbolMoveDictionary[3];
 
             // use only when number players = 2
             string defaultSymbol = "-";
+
+            int playersNumber = playersSymbols.Length;
+            int indexForPlayerSymbolPrevious = playersSymbols.Length - 1;
+
+
 
             // when players number >= 3 
             string firstPlayerSymbol = playersSymbols[0];

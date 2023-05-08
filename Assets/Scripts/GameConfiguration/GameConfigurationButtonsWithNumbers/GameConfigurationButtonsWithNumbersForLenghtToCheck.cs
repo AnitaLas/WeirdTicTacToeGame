@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 using Assets.Scripts.GameDictionaries;
+using Assets.Scripts.ScreenVerification;
 
 namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 {
@@ -98,7 +99,8 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
         {
             GameObject[,,] table;
             int start = 2;
-            int end = lenghtToCheckMax + 1;
+            //int end = lenghtToCheckMax + 1;
+            int end = lenghtToCheckMax;
             float newCoordinateY = 0f;
             string inactiveText = "-";
 
@@ -107,7 +109,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 
         }
 
-        public static GameObject[,,] CreateTableForLenghtToCheck(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, int lenghtToCheckMax, bool isGame2D)
+        public static GameObject[,,] CreateTableForLenghtToCheck(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, int lenghtToCheckMax, bool isGame2D, bool isCellphoneMode)
         {
             GameObject[,,] tableWithNumbers;
             GameObject[,,] tableWithNumberFinal;
@@ -116,9 +118,12 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             string tagConfigurationBoardGameTableNumberLenghtToCheck = configurationBoardGameDictionaryTag[14];
             string tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
 
+            var numbers = ScreenVerificationMethods.GetNumberOfRowsAndColumnsForDefaulTableWithNumber(isCellphoneMode);
             int numberOfDepths = 1;
-            int numberOfRows = 3;
-            int numberOfColumns = 3;
+            //int numberOfRows = 3;
+            //int numberOfColumns = 3;
+            int numberOfRows = numbers.Item1;
+            int numberOfColumns = numbers.Item2;
 
 
             tableWithNumbers = GameConfigurationButtonsWithNumbersCommonMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);

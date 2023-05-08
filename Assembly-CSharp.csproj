@@ -153,7 +153,6 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsMethods.cs" />
     <Compile Include="Assets\Scripts\PlayGameFrame\PlayGameFrameMove.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsCreate.cs" />
-    <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneConfigurationConfigurationPlayerSymbols.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsMethods.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNNNForPlayersSymbols.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
@@ -166,6 +165,9 @@
     <Compile Include="Assets\Scripts\PlayGameFrame\CreateFrameForMove.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesGameFieldsVerification.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
+    <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethodsModeTablet.cs" />
+    <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethodsModeCellphone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
