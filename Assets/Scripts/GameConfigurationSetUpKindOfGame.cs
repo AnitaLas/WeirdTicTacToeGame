@@ -9,6 +9,9 @@ using UnityEngine;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.Scenes;
 using Assets.Scripts.GameStart;
+using Assets.Scripts.ScreenVerification;
+
+// scene name: SceneStartGame
 
 namespace Assets.Scripts
 {
@@ -19,7 +22,7 @@ namespace Assets.Scripts
         public Material[] prefabCubePlayButtonsDefaultColour;
         public Material[] prefabCubePlayButtonsInformationColour;
 
-        private bool isGame2D = true;
+        private bool _isGame2D = true;
 
         private string _tagUntagged;
         private string _tagStartGameButtonStartGame;
@@ -35,7 +38,7 @@ namespace Assets.Scripts
             _tagStartGameButtonStartGame = tagStartGameButtonsDictionary[1];
             _tagStartGameButtonInformations = tagStartGameButtonsDictionary[3];
 
-            GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+            GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
         }
 

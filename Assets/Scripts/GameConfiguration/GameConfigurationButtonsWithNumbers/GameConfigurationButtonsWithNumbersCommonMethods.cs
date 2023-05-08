@@ -63,7 +63,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
                         CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameTableNumberForAll);
                         CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
 
-                        if (start >= cubePlayTextInt || end <= cubePlayTextInt)
+                        if (start >= cubePlayTextInt || (end + 1)<= cubePlayTextInt)
                         {
                             CommonMethods.ChangeTextForCubePlay(cubePlay, inactiveText);
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveField);

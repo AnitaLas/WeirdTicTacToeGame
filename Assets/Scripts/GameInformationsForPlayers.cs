@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+// scene name: SceneInformations
+
 namespace Assets.Scripts
 {
     internal class GameInformationsForPlayers : MonoBehaviour

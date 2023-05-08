@@ -27,8 +27,21 @@ namespace Assets.Scripts
             CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
         }
 
+        public static void DisactivateChosenCubePlay(GameObject cubePlayMarkByFrame)
+        {
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
+            string tagCubePlayTaken = tagCubePlayDictionary[2];
+            CommonMethods.ChangeTagForGameObject(cubePlayMarkByFrame, tagCubePlayTaken);
+        }
 
-       
+        public static void DisactivateChosenCubePlay(RaycastHit touch)
+        {
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
+            string tagCubePlayTaken = tagCubePlayDictionary[2];
+            CommonMethods.ChangeTagForGameObject(touch, tagCubePlayTaken);
+        }
+
+
 
 
     }
