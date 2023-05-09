@@ -12,15 +12,17 @@ namespace Assets.Scripts.CreateGameHelpButton
     {
         public static void CreateHelpButtons(GameObject prefabHelpButtons)
         {
-            //var newPrefabCubePlay = Instantiate(prefabHelpButtons);
             Instantiate(prefabHelpButtons);
         }
 
-        public static void CreateHelpButtonsAtStart(GameObject prefabHelpButtons, int numberOfRows, int numberOfColumns)
+        public static void CreateHelpButtonsAtStart(GameObject prefabHelpButtons, int numberOfRows, int numberOfColumns, bool isCellphoneMode)
         {
-            if (numberOfColumns > 5 || numberOfRows > 5)
+            if (isCellphoneMode == true)
             {
-                CreateHelpButtons(prefabHelpButtons);
+                if (numberOfColumns > 5 || numberOfRows > 5)
+                {
+                    CreateHelpButtons(prefabHelpButtons);
+                }
             }
 
         }

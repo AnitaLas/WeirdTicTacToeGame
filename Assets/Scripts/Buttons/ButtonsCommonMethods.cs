@@ -133,7 +133,9 @@ namespace Assets.Scripts.PlayGameMenu
 
         public static void ChangeDataForSingleCommonButton(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX, string tagToSetUp)
         {
-            float newScale = 0.45f;
+            //float newScale = 0.45f;
+            float newScale = 0.4f;
+            
 
             ChangeBaseDataForSingleCommonButton(singleConfigurationButtonTable, newScale, tagToSetUp);
             CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);

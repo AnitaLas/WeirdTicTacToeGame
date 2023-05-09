@@ -19,6 +19,7 @@ namespace Assets.Scripts
         public GameObject prefabCubePlay;
         public GameObject gameInformationsTextNextVersions;
         public GameObject gameInformationsTextContact;
+        public GameObject gameInformationsTextSet;
 
         public Material[] prefabCubePlayButtonsDefaultColour;
         public Material[] prefabCubePlayButtonsBackColour;
@@ -30,8 +31,10 @@ namespace Assets.Scripts
         private string _tagGameInformationsButtonBackToMenu;
         private string _tagGameInformationsButtonContact;
         private string _tagGameInformationsButtonNextVersions;
+        private string _tagGameInformationsButtontSet;
         private string _tagGameInformationsTextContact;
         private string _tagGameInformationsTextNextVersions;
+        private string _tagGameInformationsTextSet;
 
         Dictionary<int, string> tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
         Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformations.DictionaryTagGameInformations();
@@ -50,6 +53,8 @@ namespace Assets.Scripts
             _tagGameInformationsButtonNextVersions = tagGameInformations[3];
             _tagGameInformationsTextContact = tagGameInformations[5];
             _tagGameInformationsTextNextVersions = tagGameInformations[6];
+            _tagGameInformationsButtontSet = tagGameInformations[7];
+            _tagGameInformationsTextSet = tagGameInformations[8];
 
             _buttonBack = GameInformationsButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
             _buttonsAll = GameInformationsButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, isGame2D);
@@ -81,29 +86,33 @@ namespace Assets.Scripts
                             GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
                         }
 
+                        if (gameObjectTag == _tagGameInformationsButtonContact)
+                        {
+                            GameInformationsButtonsActions.HideButtons(_buttonsAll);
+                            GameInformationsTextCreate.CreateGameInformationsTextContact(gameInformationsTextContact);
+                            // add mthod clean the list and add the new tag
+                            _gameObjectsWithText.Insert(0, _tagGameInformationsTextContact);
+                        }
+
+
                         if (gameObjectTag == _tagGameInformationsButtonNextVersions)
                         {
                             GameInformationsButtonsActions.HideButtons(_buttonsAll);
-                            //GameInformationsButtonsActions.ChangeTagForButtonBackToSceneInformations();
-
                             GameInformationsTextCreate.CreateGameInformationsTextNextVersions(gameInformationsTextNextVersions);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextNextVersions);
                         }
 
-                        if (gameObjectTag == _tagGameInformationsButtonContact)
+
+                        if (gameObjectTag == _tagGameInformationsButtontSet)
                         {
                             GameInformationsButtonsActions.HideButtons(_buttonsAll);
-                            //GameInformationsButtonsActions.ChangeTagForButtonBackToSceneInformations();
-
-                            GameInformationsTextCreate.CreateGameInformationsTextContact(gameInformationsTextContact);
-                            _gameObjectsWithText.Insert(0, _tagGameInformationsTextContact);
+                            GameInformationsTextCreate.CreateGameInformationsTextSet(gameInformationsTextSet);
+                            _gameObjectsWithText.Insert(0, _tagGameInformationsTextSet);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonBackToMenu)
                         {
                             GameInformationsButtonsActions.UnhideButtons(_buttonsAll);
-                            //GameInformationsButtonsActions.ChangeTagForButtonBackToSceneStartGame();
-
                             GameInformationsTextAction.DestroyGameObjectsWithText(_gameObjectsWithText);
                         }
 
@@ -112,14 +121,9 @@ namespace Assets.Scripts
                             ScenesChange.GoToSceneStartGame();
                         }
 
-
-
-
-
                     }
                 }
             }
-
         }
     }
 }

@@ -11,8 +11,6 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
-    Unity.Mobile.AndroidLogcat.Editor.dll:
-    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -90,15 +88,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 4346}
+      Script: {instanceID: 4352}
     - Class: 114
-      Script: {instanceID: 5826}
+      Script: {instanceID: 5834}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 6712}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 7106}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -145,15 +143,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 1686}
+      Script: {instanceID: 1688}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 5826}
+      Script: {instanceID: 5834}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 6712}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 7106}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -200,15 +198,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3378}
     - Class: 114
-      Script: {instanceID: 5826}
+      Script: {instanceID: 5834}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 6712}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 7106}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -255,17 +253,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 5826}
+      Script: {instanceID: 5834}
     - Class: 114
-      Script: {instanceID: 6530}
+      Script: {instanceID: 6538}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 6712}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 7106}
     - Class: 114
-      Script: {instanceID: 7724}
+      Script: {instanceID: 7732}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -314,23 +312,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2016}
+      Script: {instanceID: 2018}
     - Class: 114
-      Script: {instanceID: 2294}
+      Script: {instanceID: 2296}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 4504}
+      Script: {instanceID: 4510}
     - Class: 114
-      Script: {instanceID: 4636}
+      Script: {instanceID: 4642}
     - Class: 114
-      Script: {instanceID: 4954}
+      Script: {instanceID: 4960}
     - Class: 114
-      Script: {instanceID: 5826}
+      Script: {instanceID: 5834}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 6712}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 7106}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -376,6 +374,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts
     className: CreateGameBoardMethods
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts
+    className: CreateTableMainMethodsForGame
   - hash:
       serializedVersion: 2
       Hash: a7a86f74f83076002547e3bf8d3177e7
@@ -627,7 +631,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts
-    className: CreateTableMainMethods
+    className: CreateTableMainMethodsForButtons
   - hash:
       serializedVersion: 2
       Hash: 5d5b0c61f3ab6ff5f41b1bbe19764526
@@ -1649,4 +1653,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SceneConfigurationBoardGame.unity
   - Assets/Scenes/SceneConfigurationPlayersSymbols.unity
   - Assets/Scenes/SceneGame.unity
-  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230508/WeirdTicTacToeGame_20230508v4.apk
+  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230509/WeirdTicTacToeGame_20230509v2.apk

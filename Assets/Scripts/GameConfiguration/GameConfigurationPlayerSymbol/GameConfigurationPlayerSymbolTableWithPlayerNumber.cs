@@ -229,7 +229,8 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
             float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbol(prefabPlayerSymbol, buttonsNumber);
             float yForFirstPrefabPlayerSymbol;
-            float newCoordinateX = -0.95f;
+            //float newCoordinateX = -0.95f;
+            float newCoordinateX = -0.85f;
             int start = buttonsNumber - 1;
             int playerNumber;
 
@@ -277,7 +278,8 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
             float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbol(prefabPlayerSymbol, buttonsNumber);
             float yForFirstPrefabPlayerSymbol;
-            float newCoordinateX = 1.6f;
+            //float newCoordinateX = 1.6f;
+            float newCoordinateX = 1.65f;
             float newCoordinateZ = 0.45f;
             float newScale = 0.9f;
             float fontSize = 0.5f;
