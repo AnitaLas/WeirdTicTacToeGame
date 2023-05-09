@@ -17,9 +17,12 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase
 
         public static void ChangeDataForGameConfigurationButtons(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber, float[] newYForButtons)
         {
-            float newCoordinateXForButtonWithText = -0.95f;
+            //float newCoordinateXForButtonWithText = -0.95f; // columns -> 14
+            float newCoordinateXForButtonWithText = -0.85f; // columns -> 14
+            //float newCoordinateXForButtonWithText = -0.85f; // // columns -> 15
             float newCoordinateZForButtonWithText = 0.175f;
-            float newCoordinateXForButtonWithNumber = 0f;
+            float newCoordinateXForButtonWithNumber = 0f; // columns -> 14
+            //float newCoordinateXForButtonWithNumber = 0.25f; // // columns -> 15
             float newCoordinateZForButtonWithNumber = 0f;
 
             ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateXForButtonWithText, newCoordinateZForButtonWithText);

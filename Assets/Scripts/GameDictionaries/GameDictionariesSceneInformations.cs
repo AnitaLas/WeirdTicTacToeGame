@@ -18,7 +18,9 @@ namespace Assets.Scripts.GameDictionaries
                 { 3, "GameInformationButtonNextVersions" },
                 { 4, "GameInformationButtonBackToMenu" },
                 { 5, "GameInformationTextContact" },
-                { 6, "GameInformationTextNextVersions" }
+                { 6, "GameInformationTextNextVersions" },
+                { 7, "GameInformationButtontSet" },
+                { 8, "GameInformationTextSet" }
             };
 
             return tagGameInformationsDictionary;
@@ -30,7 +32,8 @@ namespace Assets.Scripts.GameDictionaries
             {
                 { 1, "CONTACT" },
                 //buttonsNameDictionary.Add(2, "NEXT VERSIONS");
-                { 2, "GAME VERSIONS" }
+                { 2, "GAME VERSIONS" },
+                { 3, "SET" }
             };
 
             return buttonsNameDictionary;

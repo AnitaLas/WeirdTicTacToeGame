@@ -28,7 +28,7 @@ namespace Assets.Scripts.GameDictionaries
                 { 1, "START GAME" },
                 //buttonsNameDictionary.Add(1, "GAME");
                 { 2, "TEAM GAME" },
-                { 3, "i" }
+                { 3, "?" }
             };
 
             return buttonsNameDictionary;

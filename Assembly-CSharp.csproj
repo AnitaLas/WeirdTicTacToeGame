@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Buttons\ButtonsGameConfigurationPlayerSymbolMethods.cs" />
     <Compile Include="Assets\Scripts\CreateGameBoard\CreateGameBoardMethods.cs" />
+    <Compile Include="Assets\Scripts\CreateTable\CreateTableMainMethodsForGame.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationSetUpPlayersSymbols.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\GameStartButtons\StartGameButtonsMethods.cs" />
@@ -168,7 +169,6 @@
     <Compile Include="Assets\Scripts\PlayGameFrame\CreateFrameForMove.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesGameFieldsVerification.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\CreateTable\CreateTableMainMethodsForGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

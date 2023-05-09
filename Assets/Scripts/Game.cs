@@ -243,7 +243,8 @@ internal class Game : MonoBehaviour
 
         _cubePlayFrame = CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, _isGame2D);
 
-        PlayGameHelpButtonsCreate.CreateHelpButtonsAtStart(prefabHelpButtons, numberOfRows, numberOfColumns);
+       // PlayGameHelpButtonsCreate.CreateHelpButtonsAtStart(prefabHelpButtons, numberOfRows, numberOfColumns);
+        PlayGameHelpButtonsCreate.CreateHelpButtonsAtStart(prefabHelpButtons, numberOfRows, numberOfColumns, isCellphoneMode);
     
     
     

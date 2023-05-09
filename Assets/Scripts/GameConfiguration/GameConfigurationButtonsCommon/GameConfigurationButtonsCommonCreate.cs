@@ -33,7 +33,9 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
 
             //float newCoordinateY = -4.5f;
             float newCoordinateY = -4.5f;
-            float newCoordinateX = 1.75f;
+            //float newCoordinateX = 1.75f;
+            float newCoordinateX = 1.7f;
+            //float newCoordinateX = 1.45f;
 
             ButtonsCommonMethods.ChangeDataForSingleCommonButton(tableButtonNewGame, newCoordinateY, newCoordinateX, tagNameDictionary);
 
@@ -58,7 +60,8 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
             float newCoordinateY = -4.5f;
-            float newCoordinateX = -1f;
+            //float newCoordinateX = -1f;
+            float newCoordinateX = -0.9f;
 
             ButtonsCommonMethods.ChangeDataForSingleCommonButton(tableButtonNewGame, newCoordinateY, newCoordinateX, tagNameDictionary);
 
@@ -100,6 +103,8 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             int numberOfDepths = 1;
             int numberOfRows = 3;
             int numberOfColumns = 14;
+            //int numberOfColumns = 15;
+            //int numberOfColumns = 16;
 
             string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
 
