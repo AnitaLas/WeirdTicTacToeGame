@@ -18,10 +18,15 @@ namespace Assets.Scripts
         private static float _prefabCubePlayDefaultScaleZ = 1;
         //private static float _prefabCubePlayDefaultLowerScale = 1;
 
-        // max number cube for phone
+        // max number cube for cellphone
         private static int _prefabCubePlayMaxNumberWidthXPhone = 4;
         private static int _prefabCubePlayMaxNumberHeightYPhone = 6;
         private static int _prefabCubePlayMaxNumberDetphZPhone = 1;
+
+        // max number cube for tablet
+        private static int _prefabCubePlayMaxNumberWidthXTablet = 6;
+        private static int _prefabCubePlayMaxNumberHeightYTablet = 8;
+        private static int _prefabCubePlayMaxNumberDetphZTblet = 1;
 
         public static void TransformGameObjectPrefabToNewScale(GameObject prefab, float newScaleX, float newScaleY, float newScaleZ)
         {
@@ -85,6 +90,24 @@ namespace Assets.Scripts
             return newScale;
         }
 
+        //public static double CalculateNewScaleForPrefab2(double defaultScaleForXYZ)
+        //{
+        //    double cubePlayMaxNumberForXYZ = ;
+        //    double numbersCubePlayForXYZ = ;
+
+        //    int sizeWidth = Screen.width;
+        //    int sizeHeight = Screen.height;
+
+        //    Debug.Log(" sizeWidth = " + sizeWidth);
+        //    Debug.Log(" sizeHeight = " + sizeHeight);
+
+
+        //    double resut = (defaultScaleForXYZ * numbersCubePlayForXYZ) / cubePlayMaxNumberForXYZ;
+        //    int numberAfterDecimal = 1;
+        //    double newScale = CommonMethods.RoundDownWithDecimal(resut, numberAfterDecimal);
+        //    return newScale;
+        //}
+
 
         /// <summary>
         /// <para> </para>
@@ -126,6 +149,132 @@ namespace Assets.Scripts
             return newScale;
         }
 
+        // ---
+
+
+        public static float FindSmallestScaleXYZForPrefabCubePlayGameBoard(float[] newScaleForXYZ, double numberOfDepths, double numberOfRows, double numberOfColumns, bool isCellphoneMode)
+        {
+            // maxNumberOfRows = 4, maxNnumberOfColumns = 6 - the max numbers prefab "CubePlay" for phone
+            // to do: add the method checking the screen width and height, than add the method return the max rows and max rows for tablet
+            double maxNumberOfRows = 6;
+            double maxNnumberOfColumns = 4;
+            double maxNnumberOfDepths = 1;
+
+            float newScaleForXYZLenght = newScaleForXYZ.Length;
+
+            float maxValue = 10000;
+            float[] newScaleForPrefabCubePlay = { maxValue };
+
+            Debug.Log(" ------------------------------ ");
+            Debug.Log("isCellphoneMode  = " + isCellphoneMode);
+
+            // cellphone mode
+            if (isCellphoneMode == true)
+            {
+                Debug.Log("phone mode ");
+                if (numberOfRows != maxNumberOfRows || numberOfColumns != maxNnumberOfColumns || numberOfDepths != maxNnumberOfDepths)
+                {
+                    for (int i = 0; i < newScaleForXYZLenght; i++)
+                    {
+                        if (newScaleForXYZ[i] < newScaleForPrefabCubePlay[0])
+                        {
+                            newScaleForPrefabCubePlay[0] = newScaleForXYZ[i];
+                        }
+                    }
+                }
+                else
+                {
+                    newScaleForPrefabCubePlay[0] = newScaleForXYZ[0];
+                }
+            }
+            // tablet mode
+            else
+            {
+                Debug.Log("tablet mode ");
+                if (numberOfRows != 10 || numberOfColumns != 10 || numberOfDepths != maxNnumberOfDepths)
+                {
+                    for (int i = 0; i < newScaleForXYZLenght; i++)
+                    {
+                        if (newScaleForXYZ[i] < newScaleForPrefabCubePlay[0])
+                        {
+                            newScaleForPrefabCubePlay[0] = newScaleForXYZ[i];
+                        }
+                    }
+                }
+                else
+                {
+                    newScaleForPrefabCubePlay[0] = newScaleForXYZ[0];
+                }
+            }
+
+
+
+
+
+            if (numberOfRows != maxNumberOfRows || numberOfColumns != maxNnumberOfColumns || numberOfDepths != maxNnumberOfDepths)
+            {
+                for (int i = 0; i < newScaleForXYZLenght; i++)
+                {
+                    if (newScaleForXYZ[i] < newScaleForPrefabCubePlay[0])
+                    {
+                        newScaleForPrefabCubePlay[0] = newScaleForXYZ[i];
+                    }
+                }
+            }
+            else
+            {
+                newScaleForPrefabCubePlay[0] = newScaleForXYZ[0];
+            }
+
+            float newScale = newScaleForPrefabCubePlay[0];
+            return newScale;
+        }
+
+        public static float ScaleForPrefabCubePlayGameBoard(double numberOfDepths, double numberOfRows, double numberOfColumns, bool isCellphoneMode)
+        {
+            //double newScaleForX = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleX, numberOfColumns, _prefabCubePlayMaxNumberWidthXPhone);
+            //double newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYPhone);
+            //double newScaleForZ = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleZ, numberOfDepths, _prefabCubePlayMaxNumberDetphZPhone);
+
+            //double newScaleForX = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleX, numberOfColumns, _prefabCubePlayMaxNumberWidthXTablet);
+            //double newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYTablet);
+            //double newScaleForZ = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleZ, numberOfDepths, _prefabCubePlayMaxNumberDetphZTblet);
+
+            double newScaleForX;
+            double newScaleForY;
+            double newScaleForZ;
+
+            if (isCellphoneMode == true)
+            {
+                newScaleForX = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleX, numberOfColumns, _prefabCubePlayMaxNumberWidthXPhone);
+                newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYPhone);
+                newScaleForZ = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleZ, numberOfDepths, _prefabCubePlayMaxNumberDetphZPhone);
+            }
+            else
+            {
+                newScaleForX = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleX, numberOfColumns, _prefabCubePlayMaxNumberWidthXTablet);
+                newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYTablet);
+                newScaleForZ = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleZ, numberOfDepths, _prefabCubePlayMaxNumberDetphZTblet);
+
+            }
+
+            int roundDouble = 6;
+            //float floatNewScaleForX = CommonMethods.ConvertDoubleToFloat(newScaleForX);
+            //float floatNewScaleForY = CommonMethods.ConvertDoubleToFloat(newScaleForY);
+            //float floatNewScaleForZ = CommonMethods.ConvertDoubleToFloat(newScaleForZ);
+
+            float floatNewScaleForX = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
+            float floatNewScaleForY = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
+            float floatNewScaleForZ = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
+
+            float[] newScaleForXYZ = { floatNewScaleForX, floatNewScaleForY, floatNewScaleForZ };
+
+            //float newScale = FindSmallestScaleXYZForPrefabCubePlay(newScaleForXYZ, numberOfDepths, numberOfRows, numberOfColumns);
+            float newScale = FindSmallestScaleXYZForPrefabCubePlayGameBoard(newScaleForXYZ, numberOfDepths, numberOfRows, numberOfColumns, isCellphoneMode);
+
+            return newScale;
+
+        }
 
     }
 }
