@@ -32,8 +32,10 @@ namespace Assets.Scripts.ScreenVerification
 
 
             //if (sizeWidth < 1200 && sizeHeight < 2600)
+            //if (sizeWidth < 1000 && sizeHeight < 2600)
+            if (sizeWidth < 1200)
             //if (sizeWidth < 1200)
-            if (sizeWidth < 1400)
+           //if (sizeWidth < 1200)
             {
                 isCellphoneMode = true;
                 

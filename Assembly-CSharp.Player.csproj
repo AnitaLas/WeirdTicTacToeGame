@@ -66,14 +66,16 @@
     <Compile Include="Assets\Scripts\PlayGameHelpButtons\PlayGameHelpButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerification.cs" />
     <Compile Include="Assets\Scripts\CommonMethods.cs" />
+    <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsStartGameMethods.cs" />
+    <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethodsModeTablet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckerBackslash.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneStartGame.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsText.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForColumns.cs" />
-    <Compile Include="Assets\Scripts\CreateTable\CreateTableMainMethods.cs" />
+    <Compile Include="Assets\Scripts\CreateTable\CreateTableMainMethodsForButtons.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolTableWithPlayerNumber.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\PlayGameMenu\PlayGameMenuButtonsCreate.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenesCommon.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
+    <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethodsModeCellphone.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethods.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenesInformations.cs" />
@@ -165,9 +168,7 @@
     <Compile Include="Assets\Scripts\PlayGameFrame\CreateFrameForMove.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesGameFieldsVerification.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
-    <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethodsModeTablet.cs" />
-    <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethodsModeCellphone.cs" />
+    <Compile Include="Assets\Scripts\CreateTable\CreateTableMainMethodsForGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

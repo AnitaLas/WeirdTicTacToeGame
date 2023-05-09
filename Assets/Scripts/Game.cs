@@ -50,6 +50,7 @@ internal class Game : MonoBehaviour
     private static int _configurationBoardGameNumberOfColumns;
     private static int _configurationBoardGameNumberOfPlayers;
     private static int _configurationBoardGameNumberForLenghtToCheck;
+    private static bool _configurationBoardGameDeviceModeKind;
 
     public Touch touch;
     private Camera mainCamera;
@@ -58,6 +59,7 @@ internal class Game : MonoBehaviour
 
     private static int numberOfRows;// = 4; //3;// 3;
     private static int numberOfColumns; // = 3;// 6;
+    private static bool isCellphoneMode; // = 3;// 6;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
@@ -193,6 +195,9 @@ internal class Game : MonoBehaviour
         _index = 0;
 
 
+        _configurationBoardGameDeviceModeKind = GameConfigurationSetUpBoardGame.ConfigurationBoardGameDeviceModeKind;
+        isCellphoneMode = _configurationBoardGameDeviceModeKind;
+
         _configurationBoardGameNumberOfPlayers = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfPlayers;
         playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
 
@@ -227,7 +232,8 @@ internal class Game : MonoBehaviour
 
 
         // [gameBoard] - creating the board game with game object "CubePlay"
-        _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, _isGame2D);
+        //_gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, _isGame2D);
+        _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, isCellphoneMode);
 
         GameObject cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
         // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
