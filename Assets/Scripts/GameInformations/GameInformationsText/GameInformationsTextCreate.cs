@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.GameInformations.GameInformationsBase
+namespace Assets.Scripts.GameInformations.GameInformationsText
 {
     internal class GameInformationsTextCreate : MonoBehaviour
     {
@@ -25,6 +25,11 @@ namespace Assets.Scripts.GameInformations.GameInformationsBase
         }
 
         public static void CreateGameInformationsTextContact(GameObject objectWithtext)
+        {
+            CreateGameInformationsText(objectWithtext);
+        }
+
+        public static void CreateGameInformationsTextSet(GameObject objectWithtext)
         {
             CreateGameInformationsText(objectWithtext);
         }

@@ -1,6 +1,6 @@
 ﻿using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.GameInformations.GameInformationsBase;
-using Assets.Scripts.GameInformationsButtons;
+using Assets.Scripts.GameInformations.GameInformationsButtons;
+using Assets.Scripts.GameInformations.GameInformationsText;
 using Assets.Scripts.Scenes;
 using System;
 using System.Collections.Generic;
@@ -88,7 +88,7 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagGameInformationsButtonContact)
                         {
-                            GameInformationsButtonsActions.HideButtons(_buttonsAll);
+                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
                             GameInformationsTextCreate.CreateGameInformationsTextContact(gameInformationsTextContact);
                             // add mthod clean the list and add the new tag
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextContact);
@@ -97,7 +97,7 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagGameInformationsButtonNextVersions)
                         {
-                            GameInformationsButtonsActions.HideButtons(_buttonsAll);
+                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
                             GameInformationsTextCreate.CreateGameInformationsTextNextVersions(gameInformationsTextNextVersions);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextNextVersions);
                         }
@@ -105,15 +105,15 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagGameInformationsButtontSet)
                         {
-                            GameInformationsButtonsActions.HideButtons(_buttonsAll);
+                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
                             GameInformationsTextCreate.CreateGameInformationsTextSet(gameInformationsTextSet);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextSet);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonBackToMenu)
                         {
-                            GameInformationsButtonsActions.UnhideButtons(_buttonsAll);
-                            GameInformationsTextAction.DestroyGameObjectsWithText(_gameObjectsWithText);
+                            GameInformationsButtonsAction.UnhideButtons(_buttonsAll);
+                            GameInformationsTextActions.DestroyGameObjectsWithText(_gameObjectsWithText);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonBack)

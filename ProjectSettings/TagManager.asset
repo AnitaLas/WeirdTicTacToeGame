@@ -61,6 +61,8 @@ TagManager:
   - GameInformationTextContact
   - GameInformationTextNextVersions
   - ConfigurationBoardGameButtonInformation
+  - GameInformationTextSet
+  - GameInformationButtontSet
   layers:
   - Default
   - TransparentFX

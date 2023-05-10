@@ -62,7 +62,7 @@ namespace Assets.Scripts.PlayGame
             CommonMethods.ChangeTextColourForCubePlay(cubePlay, newTextColor);
             CommonMethods.ChangeTextFontSize(cubePlay, newFontSize);
 
-            CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, _isGame2D);
+            PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, _isGame2D);
         }
 
         public static void ChangeWinnerCubePlayForChecker(GameObject[,,] gameBoard, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
@@ -91,7 +91,7 @@ namespace Assets.Scripts.PlayGame
 
         public static void ChangeOneOtherCubePlay(GameObject prefabCubePlayFrame, GameObject cubePlay, Material winColourForCubePlay, string tagCubePlayGameWin, Color newTextColor, float newFontSize)
         {
-            CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
+            PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, cubePlay, true);
             //float newCoordinateZForWinner = -1f;
             //CommonMethods.ChangeZForGameObject(prefabCubePlayFrame, newCoordinateZForWinner);
 
