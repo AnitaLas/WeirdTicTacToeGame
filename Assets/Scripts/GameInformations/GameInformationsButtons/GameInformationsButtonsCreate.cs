@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.GameInformationsButtons
+namespace Assets.Scripts.GameInformations.GameInformationsButtons
 {
     internal class GameInformationsButtonsCreate
     {

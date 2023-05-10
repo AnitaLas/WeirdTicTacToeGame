@@ -241,7 +241,7 @@ internal class Game : MonoBehaviour
 
         _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
 
-        _cubePlayFrame = CreateFrameForMove.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, _isGame2D);
+        _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, _isGame2D);
 
        // PlayGameHelpButtonsCreate.CreateHelpButtonsAtStart(prefabHelpButtons, numberOfRows, numberOfColumns);
         PlayGameHelpButtonsCreate.CreateHelpButtonsAtStart(prefabHelpButtons, numberOfRows, numberOfColumns, isCellphoneMode);

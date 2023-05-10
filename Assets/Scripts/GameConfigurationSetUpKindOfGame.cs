@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.Scenes;
-using Assets.Scripts.GameStart;
 using Assets.Scripts.ScreenVerification;
+using Assets.Scripts.GameStart;
 
 // scene name: SceneStartGame
 
