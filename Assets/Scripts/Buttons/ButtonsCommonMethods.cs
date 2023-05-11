@@ -637,6 +637,22 @@ namespace Assets.Scripts.PlayGameMenu
             return defaultTextForButtons;
         }
 
+        public static string[] CreateTableWithefaultShortTextForButtons(int playersNumber, string buttonText)
+        {
+            string[] defaultTextForButtons = new string[playersNumber];
+            string defaultTextForButton;
+            int playerNumber;
+
+            for (int i = 0; i < playersNumber; i++)
+            {
+                playerNumber = i + 1;
+                defaultTextForButton = buttonText + $"{playerNumber}";
+                defaultTextForButtons[i] = defaultTextForButton;
+            }
+
+            return defaultTextForButtons;
+        }
+
         public static string GetSubstringFromCubePlayName(string gameObjectName)
         {
             int textLength = gameObjectName.Length;

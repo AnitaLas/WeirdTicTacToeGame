@@ -160,5 +160,32 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
 
         }
 
+        // --- short buttons
+
+        public static GameObject[,,] CreateCommonButtonForShortText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
+        {
+            GameObject[,,] tableButtonNewGame;
+
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 5;
+            //int numberOfColumns = 15;
+            //int numberOfColumns = 16;
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
+
+            tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = 0f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
+
+            float newScale = 0.3f;
+            ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
+
+            return tableButtonNewGame;
+
+        }
+
+
     }
 }
