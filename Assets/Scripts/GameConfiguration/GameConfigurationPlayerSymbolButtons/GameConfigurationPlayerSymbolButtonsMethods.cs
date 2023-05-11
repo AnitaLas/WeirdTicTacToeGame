@@ -21,6 +21,13 @@ namespace Assets.Scripts.Buttons
             return buttonBack;
         }
 
+        public static GameObject[,,] GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumberBiggerThanSix(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagName, string buttonText)
+        {
+
+            GameObject[,,] buttonBack = GameConfigurationButtonsCommonCreate.CreateCommonButtonForShortText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+            return buttonBack;
+        }
+
         //public static List<GameObject[,,]> GameConfigurationPlayerSymbolAllCreateButtonsForPlayerNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagName, int playersNumber, string[] defaultTextForButtons)
         //{
         //    string finalTextForButton;
@@ -45,24 +52,49 @@ namespace Assets.Scripts.Buttons
             List<GameObject[,,]> buttonsList = new List<GameObject[,,]>();
 
             int columnsForPlayers = playersNumber / 2;
-            Debug.Log("columnsForPlayers = " + columnsForPlayers);
+            //Debug.Log("columnsForPlayers = " + columnsForPlayers);
 
-            Debug.Log("playersNumber = " + playersNumber);
+           // Debug.Log("playersNumber = " + playersNumber);
 
             for (int i = 0; i < playersNumber; i++)
             {
                 finalTextForButton = defaultTextForButtons[i];
 
-                Debug.Log("i = " + i);
+                //Debug.Log("i = " + i);
 
-                if (playersNumber <= 6)
-                {
+                //if (playersNumber <= 6)
+                //{
                     buttonBack = GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, finalTextForButton);
                     buttonsList.Insert(i, buttonBack);
-                }
+                //}
+                //else
+                //{
+                //    buttonBack = GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumberBiggerThanSix(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, finalTextForButton);
+                //    buttonsList.Insert(i, buttonBack);
+
+                //}
                 
 
                
+            }
+
+            return buttonsList;
+        }
+
+        public static List<GameObject[,,]> GameConfigurationPlayerSymbolAllCreateButtonsForPlayerNumberBiggerThanSix(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagName, int playersNumber, string[] defaultTextForButtons)
+        {
+            string finalTextForButton;
+            GameObject[,,] buttonBack;
+
+            List<GameObject[,,]> buttonsList = new List<GameObject[,,]>();
+
+            for (int i = 0; i < playersNumber; i++)
+            {
+                finalTextForButton = defaultTextForButtons[i];
+
+                buttonBack = GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumberBiggerThanSix(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, finalTextForButton);
+                buttonsList.Insert(i, buttonBack);
+
             }
 
             return buttonsList;
@@ -91,5 +123,18 @@ namespace Assets.Scripts.Buttons
 
             return buttonsList;
         }
+
+
+        // --- more than 6 players
+
+
+
+
+
+
+
+
+
+
     }
 }

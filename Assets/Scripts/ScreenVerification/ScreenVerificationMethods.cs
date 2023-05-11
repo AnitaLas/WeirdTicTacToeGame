@@ -15,9 +15,9 @@ namespace Assets.Scripts.ScreenVerification
             int sizeWidth = Screen.width;
             int sizeHeight = Screen.height;
 
-            Debug.Log(" sizeWidth = " + sizeWidth);
-            Debug.Log(" sizeHeight = " + sizeHeight);
-            Debug.Log(" ---------------------------- ");
+            //Debug.Log(" sizeWidth = " + sizeWidth);
+            //Debug.Log(" sizeHeight = " + sizeHeight);
+            //Debug.Log(" ---------------------------- ");
            
             var screenSize = new Tuple<int, int>(sizeWidth, sizeHeight);
             return screenSize;
@@ -45,7 +45,7 @@ namespace Assets.Scripts.ScreenVerification
                 isCellphoneMode = false;
             }
 
-           Debug.Log("isCellphoneMode = " + isCellphoneMode);
+           //Debug.Log("isCellphoneMode = " + isCellphoneMode);
            return isCellphoneMode;
 
         }
