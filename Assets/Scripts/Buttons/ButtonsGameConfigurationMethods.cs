@@ -100,7 +100,7 @@ namespace Assets.Scripts.Buttons
 
             if (isPlayersNumberEven == false)
             {
-                decimal playersNumberDecimal = CommonMethods.ConvertIntToDecimal(playersNumberDevidedByTwo);
+                decimal playersNumberDecimal = CommonMethods.ConvertDecimalToInt(playersNumberDevidedByTwo);
                 decimal playersNumberRoundUp = CommonMethods.RoundUp(playersNumberDecimal);
                 float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);
 
@@ -111,7 +111,7 @@ namespace Assets.Scripts.Buttons
             else
             {
                 //2468
-                decimal playersNumberDecimal = CommonMethods.ConvertIntToDecimal(playersNumberDevidedByTwo);
+                decimal playersNumberDecimal = CommonMethods.ConvertDecimalToInt(playersNumberDevidedByTwo);
                 decimal playersNumberRoundUp = CommonMethods.RoundUp(playersNumberDecimal);
                 float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);
 
