@@ -186,7 +186,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         {
             decimal number = CommonMethods.ConvertIntToDecimal(palayersNumber) / 2;
             //int number = palayersNumber / 2;
-            Debug.Log("number = " + number);
+            //Debug.Log("number = " + number);
 
             decimal numberFinal = CommonMethods.RoundUp(number);
             int numberInt = CommonMethods.ConvertDecimalToInt(numberFinal);
@@ -370,10 +370,10 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbol(prefabPlayerSymbol, buttonsNumber);
 
 
-            for (int i = 0; i < tableWithNewCordinateForY.Length; i++)
-            {
-                Debug.Log($" table[{i}]  = " + tableWithNewCordinateForY[i]);
-            }
+            //for (int i = 0; i < tableWithNewCordinateForY.Length; i++)
+            //{
+            //    Debug.Log($" table[{i}]  = " + tableWithNewCordinateForY[i]);
+            //}
 
             float yForFirstPrefabPlayerSymbol;
             //float newCoordinateX = -0.95f;
@@ -416,51 +416,26 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int maxIndexRow;
             int buttonsNumber = buttons.Count;
             int buttonsNumberForOneColumn = buttonsNumber / 2;
-            //Debug.Log($"buttonsNumber =  {buttonsNumber} ");
 
             GameObject[,,] table;
             GameObject[,,] buttonFirst = buttons[0];
 
             GameObject prefabPlayerSymbol = buttonFirst[0, 0, 0];
 
-            bool isButtonsNumberEven = CommonMethods.IsNumberEven(buttonsNumber);
-            //Debug.Log(" 4 ");
-
             float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbolBiggerThanSix(prefabPlayerSymbol, buttonsNumber);
-            //float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbol(prefabPlayerSymbol, buttonsNumber);
+
+            //float[] newCoordinateX = { -0.5f, 2.05f, 0.5f };
+            float[] newCoordinateX = { -0.5f, 2.05f, 0.75f };
+            float coordinateX;
+           float yForFirstPrefabPlayerSymbol;
 
 
-            //Debug.Log(" tableWithNewCordinateForY.Length " + tableWithNewCordinateForY.Length);
-            //for (int i = 0; i < tableWithNewCordinateForY.Length; i++)
-            //{
-            //    Debug.Log($" table[{i}]  = " + tableWithNewCordinateForY[i]);
-            //}
-
-            //float[] newCoordinateX = new float[3];
-            float[] newCoordinateX = { -0.5f, 2.05f, 0.5f };
-            float coordinateX
-;            float yForFirstPrefabPlayerSymbol;
-            //float newCoordinateXForFirstColumn = -0.5f;
-            //float newCoordinateXForSecondColumn = 2.05f;
-            //float newCoordinateXForLastButton = 0f;
-            //float newCoordinateXForFirstColumn;
-            //float newCoordinateXForSecondColumn;
-            //float newCoordinateXForLastButton = newCoordinateX[2];
-
-            Debug.Log("buttonsNumber = " + buttonsNumber);
+            //Debug.Log("buttonsNumber = " + buttonsNumber);
             int buttonsNumberForColumns = SetUpPlayersNumberForColumns(buttonsNumber);
-            Debug.Log("buttonsNumberForColumns = " + buttonsNumberForColumns);
+            //Debug.Log("buttonsNumberForColumns = " + buttonsNumberForColumns);
 
-            //int start = buttonsNumber - 1;
-            //int start = buttonsNumberForColumns - 1;
-            int start = buttonsNumberForColumns - 1; // -1 for index, -1 for start position
+            int start = buttonsNumberForColumns - 1;
             int playerNumber;
-
-            //int playersNumberForFirstColumn = buttonsNumber / 2 + 1; //  playersNumber / 2 = round down
-            
-
-            //Debug.Log("playersNumberForFirstColumn = " + playersNumberForFirstColumn);
-            //int playersNumberForSecondColumn = buttonsNumber - playersNumberForFirstColumn;
 
             int[] buttonsColumnsNumbers = { 1, 2 }; // two columns
             int buttonsColumnsIndex = 0;
@@ -468,7 +443,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int countedButtonsNumberForColumns = 0;
             int currentCountedButtonsNumberForOneColumn = 0;
 
-           
+
             for (int i = 0; i < buttonsNumber; i++)
             {
                 table = buttons[i];
@@ -477,74 +452,152 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                 maxIndexColumn = table.GetLength(2);
                 maxIndexRow = table.GetLength(1);
 
-               // yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
                 yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - currentCountedButtonsNumberForOneColumn];
-                //Debug.Log($"currentCountedButtonsNumberForOneColumn = " + currentCountedButtonsNumberForOneColumn);
                 coordinateX = newCoordinateX[buttonsColumnsIndex];
 
-
-                 //Debug.Log($"currentCountedButtonsNumberForOneColumn = " + currentCountedButtonsNumberForOneColumn);
-                 //Debug.Log($"buttonsNumberForOneColumn = " + buttonsNumberForOneColumn);
-                 //Debug.Log($"buttonsColumnsIndex = " + buttonsColumnsIndex);
-                 //Debug.Log($"buttonsNumberForColumns = " + buttonsNumberForColumns);
-
-                //Debug.Log(" ------------------------ ");
-
-
                 if (currentCountedButtonsNumberForOneColumn < buttonsNumberForOneColumn - 1)
-                //if (currentCountedButtonsNumberForOneColumn < buttonsNumberForOneColumn)
                 {
                     //Debug.Log(" 3 ");
                     ++currentCountedButtonsNumberForOneColumn;
                 }
                 else if (currentCountedButtonsNumberForOneColumn == buttonsNumberForOneColumn - 1 && buttonsColumnsIndex < 1)
-                //else if (currentCountedButtonsNumberForOneColumn == buttonsNumberForOneColumn && buttonsColumnsIndex < 1)
                 {
                     //Debug.Log(" 2 ");
                     currentCountedButtonsNumberForOneColumn = 0;
                     ++buttonsColumnsIndex;
-
-                    //if (i < buttonsNumber - 1)
-                    //{
-                    //    currentCountedButtonsNumberForOneColumn = 0;
-                    //    ++buttonsColumnsIndex;
-                    //} 
-                    //else
-                    //{
-                    //    Debug.Log(" 1a ");
-                    //    currentCountedButtonsNumberForOneColumn = start;
-                    //}
-
-
                 }
                 else
                 {
-                    //Debug.Log(" i  = " + i);
-                    //Debug.Log(" buttonsNumber = " + buttonsNumber);
+
                     if (i == buttonsNumber - 1)
                     {
-                        Debug.Log(" 1 ");
-                        //Debug.Log(" currentCountedButtonsNumberForOneColumn =  " + currentCountedButtonsNumberForOneColumn);
+                        //Debug.Log(" 1 ");
                         currentCountedButtonsNumberForOneColumn = start;
-                        Debug.Log(" currentCountedButtonsNumberForOneColumn =  " + currentCountedButtonsNumberForOneColumn);
-                        //currentCountedButtonsNumberForOneColumn = 3; // p7
-                        //currentCountedButtonsNumberForOneColumn = 4; // p9
+                        //Debug.Log(" currentCountedButtonsNumberForOneColumn =  " + currentCountedButtonsNumberForOneColumn);
+
 
                     }
-                    //currentCountedButtonsNumberForOneColumn = start;
-                    //coordinateX = newCoordinateX[2];
-                    //yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - currentCountedButtonsNumberForOneColumn];
-                    //Debug.Log($"currentCountedButtonsNumberForOneColumn = " + currentCountedButtonsNumberForOneColumn);
-                    // currentCountedButtonsNumberForOneColumn = buttonsNumberForColumns;
-                    //buttonsColumnsIndex = buttonsNumberForColumns;
-                    //buttonsColumnsIndex = buttonsNumberForColumns - 1;
-                    //buttonsColumnsIndex = 3;
-                    //buttonsColumnsIndex = 2;
-                    //coordinateX = newCoordinateX[2];
+
+
+
                 }
 
 
-               
+                    for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+                    {
+                        for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                        {
+                            for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                            {
+                                GameObject player = table[indexDepth, indexRow, indexColumn];
+
+
+                                if (currentCountedButtonsNumberForOneColumn < buttonsNumberForOneColumn)
+                                {
+                                    CommonMethods.SetUpNewXForGameObject(player, coordinateX);
+
+                                    CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
+
+                                }
+                                else
+                                {
+                                    coordinateX = newCoordinateX[2];
+
+                                    CommonMethods.SetUpNewXForGameObject(player, coordinateX);
+
+                                    yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - currentCountedButtonsNumberForOneColumn];
+                                    CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
+                                }
+
+
+                                ChangeNameForPrefabPlayerNumber(player, playerNumber);
+                            }
+                        }
+                    }
+                }
+
+            
+        }
+
+        public static void ChangeDataForTableWithPlayerSymbolBiggerThanSix(List<GameObject[,,]> buttons)
+        {
+            Debug.Log("tablet ");
+            //float newCoordinateX = 1.65f;
+            float newCoordinateZ = 0.45f;
+            float newScale = 0.9f;
+            float fontSize = 0.5f;
+
+            int maxIndexDepth;
+            int maxIndexColumn;
+            int maxIndexRow;
+            int buttonsNumber = buttons.Count;
+            int buttonsNumberForOneColumn = buttonsNumber / 2;
+
+            GameObject[,,] table;
+            GameObject[,,] buttonFirst = buttons[0];
+
+            GameObject prefabPlayerSymbol = buttonFirst[0, 0, 0];
+
+            float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbolBiggerThanSix(prefabPlayerSymbol, buttonsNumber);
+
+            //float[] newCoordinateX = { -0.5f, 2.05f, 0.5f };
+            float[] newCoordinateX = { -0.7f, 1.85f, 0.6f };
+            float coordinateX;
+            float yForFirstPrefabPlayerSymbol;
+            float coordinateYCorrection = -0.65f; // move down
+            //float coordinateXCorrection = -0.2f; // move down
+
+            //Debug.Log("buttonsNumber = " + buttonsNumber);
+            int buttonsNumberForColumns = SetUpPlayersNumberForColumns(buttonsNumber);
+           // Debug.Log("buttonsNumberForColumns = " + buttonsNumberForColumns);
+
+            int start = buttonsNumberForColumns - 1;
+            int playerNumber;
+
+            int[] buttonsColumnsNumbers = { 1, 2 }; // two columns
+            int buttonsColumnsIndex = 0;
+
+            //int countedButtonsNumberForColumns = 0;
+            int currentCountedButtonsNumberForOneColumn = 0;
+
+
+            for (int i = 0; i < buttonsNumber; i++)
+            {
+                table = buttons[i];
+                playerNumber = i + 1;
+                maxIndexDepth = 1;
+                maxIndexColumn = table.GetLength(2);
+                maxIndexRow = table.GetLength(1);
+
+                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - currentCountedButtonsNumberForOneColumn] + coordinateYCorrection;
+                coordinateX = newCoordinateX[buttonsColumnsIndex];
+
+                if (currentCountedButtonsNumberForOneColumn < buttonsNumberForOneColumn - 1)
+                {
+                    //Debug.Log(" 3 ");
+                    ++currentCountedButtonsNumberForOneColumn;
+                }
+                else if (currentCountedButtonsNumberForOneColumn == buttonsNumberForOneColumn - 1 && buttonsColumnsIndex < 1)
+                {
+                    //Debug.Log(" 2 ");
+                    currentCountedButtonsNumberForOneColumn = 0;
+                    ++buttonsColumnsIndex;
+                }
+                else
+                {
+
+                    if (i == buttonsNumber - 1)
+                    {
+                        //Debug.Log(" 1 ");
+                        currentCountedButtonsNumberForOneColumn = start;
+                        //Debug.Log(" currentCountedButtonsNumberForOneColumn =  " + currentCountedButtonsNumberForOneColumn);
+
+
+                    }
+
+
+
+                }
 
 
                 for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
@@ -553,117 +606,36 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                     {
                         for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                         {
-                            GameObject player = table[indexDepth, indexRow, indexColumn];
+                            GameObject playerSymbol = table[indexDepth, indexRow, indexColumn];
 
-                            //Debug.Log("buttonsNumberForOneColumn = " + buttonsNumberForOneColumn);
-                            //if (buttonsColumnsIndex < buttonsNumberForOneColumn)
-                            //{
-                            //    //Debug.Log($"{i} = " + i);
-                            //    float coordinateX = newCoordinateX[0];
-                            //    CommonMethods.SetUpNewXForGameObject(player, coordinateX);
-
-                            //    yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
-                            //    CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
-                            //}
-                            //else if (i <= buttonsNumber && i >= buttonsNumberForOneColumn && buttonsNumberForOneColumn * 2 < buttonsNumber)
-                            //{
-                            //    //Debug.Log($"{i} = " + i);
-                            //    //float coordinateX = newCoordinateX[1];
-                            //    //CommonMethods.SetUpNewXForGameObject(player, coordinateX);
-
-                            //    //yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
-                            //    //CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
-                            //}
-                            //else
-                            //{
-                            //    //Debug.Log($"{i} = " + i);
-                            //    //float newCoordinateXForLastButton = newCoordinateX[2];
-                            //    //CommonMethods.SetUpNewXForGameObject(player, newCoordinateXForLastButton);
-
-                            //    //yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - 1];
-                            //    //CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
-                            //}
-
-                            //Debug.Log($"currentCountedButtonsNumberForOneColumn = " + currentCountedButtonsNumberForOneColumn);
-                            //Debug.Log($"buttonsNumberForOneColumn = " + buttonsNumberForOneColumn);
 
                             if (currentCountedButtonsNumberForOneColumn < buttonsNumberForOneColumn)
                             {
-                                //Debug.Log($"{i} = " + i);
-                                //Debug.Log($"{buttonsColumnsIndex} = " + buttonsColumnsIndex);
-                               
-                                //float coordinateX = newCoordinateX[0];
-                                //float coordinateX = newCoordinateX[buttonsColumnsIndex];
-                                CommonMethods.SetUpNewXForGameObject(player, coordinateX);
+                                CommonMethods.SetUpNewXForGameObject(playerSymbol, coordinateX);
 
-                                //yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
-                                CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
+                                CommonMethods.SetUpNewYForGameObject(playerSymbol, yForFirstPrefabPlayerSymbol);
 
-                            } 
+                            }
                             else
                             {
-                                 coordinateX = newCoordinateX[2];
-                                 //coordinateX = newCoordinateX[buttonsColumnsIndex];
+                                coordinateX = newCoordinateX[2];
 
-                                CommonMethods.SetUpNewXForGameObject(player, coordinateX);
+                                CommonMethods.SetUpNewXForGameObject(playerSymbol, coordinateX);
 
-                                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - currentCountedButtonsNumberForOneColumn];
-                                CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
+                                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - currentCountedButtonsNumberForOneColumn] + coordinateYCorrection;
+                                CommonMethods.SetUpNewYForGameObject(playerSymbol, yForFirstPrefabPlayerSymbol);
                             }
+                            CommonMethods.ChangeZForGameObject(playerSymbol, newCoordinateZ);
+                            CommonMethods.ChangeTextFontSize(playerSymbol, fontSize);
 
-
-
-
-                            //CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
-                            //CommonMethods.SetUpNewXForGameObject(player, newCoordinateXForFirstColumn);
-                            //if (isButtonsNumberEven == true)
-                            //{
-                            //    if (i < playersNumberForFirstColumn)
-                            //    {
-
-                            //        CommonMethods.SetUpNewXForGameObject(player, newCoordinateXForFirstColumn);
-                            //    }
-                            //    else
-                            //    {
-                            //        CommonMethods.SetUpNewXForGameObject(player, newCoordinateXForSecondColumn);
-                            //    }
-                            //}
-                            //else
-                            //{
-                            //    if (i < playersNumberForFirstColumn - 1)
-                            //    {
-
-                            //        CommonMethods.SetUpNewXForGameObject(player, newCoordinateXForFirstColumn);
-                            //    }
-                            //    else
-                            //    {
-                            //        CommonMethods.SetUpNewXForGameObject(player, newCoordinateXForSecondColumn);
-                            //    }
-                            //}
-
-
-                            //if (i < playersNumberForFirstColumn)
-                            //{
-
-                            //    CommonMethods.SetUpNewXForGameObject(player, newCoordinateXForFirstColumn);
-                            //}
-                            //else
-                            //{
-                            //    CommonMethods.SetUpNewXForGameObject(player, newCoordinateXForSecondColumn);
-                            //}
-
-
-                            //CommonMethods.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
-
-
-
-
-                            ChangeNameForPrefabPlayerNumber(player, playerNumber);
+                            CommonMethods.TransformGameObjectToNewScale(playerSymbol, newScale, newScale, newScale);
+                            ChangeNameForPrefabPlayerSymbol(playerSymbol, playerNumber);
                         }
                     }
                 }
             }
-            Debug.Log(" ------------------------ ");
+
+
         }
 
         public static void ChangeDataForTableWithPlayerSymbols(List<GameObject[,,]> buttons)
@@ -699,6 +671,75 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                 maxIndexRow = table.GetLength(1);
 
                 yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
+
+                for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+                {
+                    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                    {
+                        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                        {
+                            GameObject cubePlay = table[indexDepth, indexRow, indexColumn];
+
+                            CommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+
+                            CommonMethods.SetUpNewYForGameObject(cubePlay, yForFirstPrefabPlayerSymbol);
+                            CommonMethods.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                            CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                            CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
+
+                            ChangeNameForPrefabPlayerSymbol(cubePlay, playerNumber);
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void ChangeDataForTableWithPlayersSymbolBiggerThanSix(List<GameObject[,,]> buttons)
+        {
+            int maxIndexDepth;
+            int maxIndexColumn;
+            int maxIndexRow;
+            int buttonsNumberForColumns = buttons.Count;
+
+            GameObject[,,] table;
+            GameObject[,,] buttonFirst = buttons[0];
+
+            GameObject prefabPlayerSymbol = buttonFirst[0, 0, 0];
+
+
+            float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbolBiggerThanSix(prefabPlayerSymbol, buttonsNumberForColumns);
+            float yForFirstPrefabPlayerSymbol;
+            //float newCoordinateX = 1.6f;
+            float newCoordinateX = 1.65f;
+            float newCoordinateZ = 0.45f;
+            float newScale = 0.9f;
+            float fontSize = 0.5f;
+
+            int start = buttonsNumberForColumns - 1; // -1 for index, -1 for start position
+            int playerNumber;
+
+            int[] buttonsColumnsNumbers = { 1, 2 }; // two columns
+            int buttonsColumnsIndex = 0;
+
+            int countedButtonsNumberForColumns = 0;
+            int currentCountedButtonsNumberForOneColumn = 0;
+
+
+
+
+            for (int i = 0; i < buttonsNumberForColumns; i++)
+            {
+                table = buttons[i];
+                playerNumber = i + 1;
+                maxIndexDepth = 1;
+                maxIndexColumn = table.GetLength(2);
+                maxIndexRow = table.GetLength(1);
+
+                // yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
+
+                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - currentCountedButtonsNumberForOneColumn];
+                //Debug.Log($"currentCountedButtonsNumberForOneColumn = " + currentCountedButtonsNumberForOneColumn);
+                //coordinateX = newCoordinateX[buttonsColumnsIndex];
 
                 for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
                 {

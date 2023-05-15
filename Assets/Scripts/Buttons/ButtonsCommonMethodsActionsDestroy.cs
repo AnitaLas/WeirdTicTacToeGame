@@ -33,7 +33,7 @@ namespace Assets.Scripts.Buttons
             for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
             {
                 string gameObjectTagToDestroy = gameObjectsWithTagToDestoy[i];
-                Debug.Log("gameObjectTagToDestroy = " + gameObjectTagToDestroy);
+                //Debug.Log("gameObjectTagToDestroy = " + gameObjectTagToDestroy);
                 DestroySingleGameObjectWithTagIfExsist(gameObjectTagToDestroy);
             }
         }
