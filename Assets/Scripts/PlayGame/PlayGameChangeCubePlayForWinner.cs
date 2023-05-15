@@ -329,6 +329,7 @@ namespace Assets.Scripts.PlayGame
 
         public static void ChangeOtherCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize)
         {
+            Debug.Log(" 3 ");
             GameObject cubePlay;
             int indexDepth = 0;
 
@@ -339,9 +340,13 @@ namespace Assets.Scripts.PlayGame
 
             int startIndexYForOtherCubePlay = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 0];
             int startIndexXForOtherCubePlay = winnerCoordinateXYForCubePlay[winnerLenghtForRows - 1, 1];
+            Debug.Log(" startIndexYForOtherCubePlay = " + startIndexYForOtherCubePlay);
+            Debug.Log(" startIndexXForOtherCubePlay = " + startIndexXForOtherCubePlay);
 
             int firstIndexYForOtherCubePlay = winnerCoordinateXYForCubePlay[0, 0];
             int firstIndexXForOtherCubePlay = winnerCoordinateXYForCubePlay[0, 1];
+            Debug.Log(" firstIndexYForOtherCubePlay = " + firstIndexYForOtherCubePlay);
+            Debug.Log(" firstIndexXForOtherCubePlay = " + firstIndexXForOtherCubePlay);
 
             int maxIndexXForGameBoard = lenghtForColumns - 1;
             int maxIndexYForGameBoard = lenghtForRows - 1;
@@ -359,11 +364,20 @@ namespace Assets.Scripts.PlayGame
 
             for (int i = startIndexXForOtherCubePlay; i < maxIndexXToCheck; i++)
             {
+                //y = newIndexY[0] + 1;
+                //newIndexY[0] = y;
+
+                //x = newIndexX[0] + 1;
+                //newIndexX[0] = x;
+
+                Debug.Log(" 2 -------------------------");
                 y = newIndexY[0] + 1;
                 newIndexY[0] = y;
+                Debug.Log(" y = " + y);
 
                 x = newIndexX[0] + 1;
                 newIndexX[0] = x;
+                Debug.Log(" x = " + x);
 
                 cubePlay = gameBoard[indexDepth, y, x];
 
@@ -371,6 +385,7 @@ namespace Assets.Scripts.PlayGame
 
                 if (playerSymbol.Equals(symbolToCompare))
                 {
+                    Debug.Log(" 1 ");
                     ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
 
                 }
@@ -429,13 +444,6 @@ namespace Assets.Scripts.PlayGame
             ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
         }
 
-
-
-
-
-
-        //public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string winnerKindOfChecker, string tagCubePlayGameWin, string tagCubePlayGameOver, GameObject prefabCubePlayFrame, Material[] cubePlayColourWin)
-        //public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, ArrayList listCheckerForWinner, string tagCubePlayGameWin, string tagCubePlayGameOver, GameObject prefabCubePlayFrame, Material[] cubePlayColourWin)
         public static void ChangeAllCubePlayAfterWin(GameObject[,,] gameBoard, string playerSymbol, ArrayList listCheckerForWinner, GameObject prefabCubePlayFrame, Material[] cubePlayColourWin)
         {
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();

@@ -165,13 +165,13 @@ namespace Assets.Scripts
             float maxValue = 10000;
             float[] newScaleForPrefabCubePlay = { maxValue };
 
-            Debug.Log(" ------------------------------ ");
-            Debug.Log("isCellphoneMode  = " + isCellphoneMode);
+           // Debug.Log(" ------------------------------ ");
+            //Debug.Log("isCellphoneMode  = " + isCellphoneMode);
 
             // cellphone mode
             if (isCellphoneMode == true)
             {
-                Debug.Log("phone mode ");
+                //Debug.Log("phone mode ");
                 if (numberOfRows != maxNumberOfRows || numberOfColumns != maxNnumberOfColumns || numberOfDepths != maxNnumberOfDepths)
                 {
                     for (int i = 0; i < newScaleForXYZLenght; i++)
@@ -190,7 +190,7 @@ namespace Assets.Scripts
             // tablet mode
             else
             {
-                Debug.Log("tablet mode ");
+               // Debug.Log("tablet mode ");
                 if (numberOfRows != 10 || numberOfColumns != 10 || numberOfDepths != maxNnumberOfDepths)
                 {
                     for (int i = 0; i < newScaleForXYZLenght; i++)
