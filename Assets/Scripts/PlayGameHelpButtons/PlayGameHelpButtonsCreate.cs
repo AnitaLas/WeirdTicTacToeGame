@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Assets.Scripts.PlayGameFrame;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +17,7 @@ namespace Assets.Scripts.CreateGameHelpButton
             Instantiate(prefabHelpButtons);
         }
 
-        public static void CreateHelpButtonsAtStart(GameObject prefabHelpButtons, int numberOfRows, int numberOfColumns, bool isCellphoneMode)
+        public static void CreateAtStartHelpButtons(GameObject prefabHelpButtons, int numberOfRows, int numberOfColumns, bool isCellphoneMode)
         {
             if (isCellphoneMode == true)
             {
@@ -26,5 +28,24 @@ namespace Assets.Scripts.CreateGameHelpButton
             }
 
         }
+
+        //public static GameObject CreateAtStartCubePlayFrame(GameObject prefabHelpButtons, int numberOfRows, int numberOfColumns, bool isCellphoneMode, GameObject prefabCubePlayFrame, GameObject cubePlayForFrame, bool isGame2D)
+        //{
+        //    //GameObject cubePlayFrame; 
+
+        //    if (isCellphoneMode == true)
+        //    {
+        //        if (numberOfColumns > 5 || numberOfRows > 5)
+        //        {
+            
+        //            GameObject cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, isGame2D);
+        //            return cubePlayFrame;
+
+        //        }
+        //    } 
+
+
+          
+        //}
     }
 }

@@ -16,17 +16,15 @@ using Vector2 = UnityEngine.Vector2;
 using TouchPhase = UnityEngine.TouchPhase;
 using Assets.Scripts.GameConfiguration;
 using System.Net.NetworkInformation;
-//using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 using Assets.Scripts.GameFieldsVerification;
 using Assets.Scripts.PlayGame;
 using Assets.Scripts.GameDictionaries;
 using System.Reflection;
-using UnityEngine.SceneManagement;
-using Assets.Scripts.CreateFrame;
 using Assets.Scripts.CreateGameHelpButton;
 using Assets.Scripts.Buttons;
 using Assets.Scripts.Scenes;
 using Assets.Scripts.PlayGameHelpButtons;
+using Assets.Scripts.PlayGameFrame;
 
 internal class Game : MonoBehaviour
 {
@@ -106,6 +104,7 @@ internal class Game : MonoBehaviour
 
     private ArrayList _listCheckerForWinner = new ArrayList();
     private bool _winner = false;
+    //private bool _isCubePlayFrameVisible = true;
 
     private GameObject[,,] _gameBoard;
     private string[,] _gameBoardVerification2D;
@@ -119,7 +118,7 @@ internal class Game : MonoBehaviour
 
     private List<GameObject[,,]> _gameButtonsMenu;
 
-
+    private GameObject _cubePlayForFrame;
 
     void Start()
     {
@@ -179,16 +178,36 @@ internal class Game : MonoBehaviour
         // [gameBoard] - creating the board game with game object "CubePlay"
         _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, isCellphoneMode);
 
-        GameObject cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
-        // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
-        _cubePlayForFrameScale = cubePlayForFrame.transform.localScale.x;
+        //GameObject cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
+        // _cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
+        //// scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
+        //_cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
 
-        _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
+        //_moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
 
-        _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, _isGame2D);
 
-        PlayGameHelpButtonsCreate.CreateHelpButtonsAtStart(prefabHelpButtons, numberOfRows, numberOfColumns, isCellphoneMode);
-    
+
+        //_cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, _isGame2D);
+        //_isCubePlayFrameVisible = PlayGameFrameActions.GetCubePlayFrameVisibility(_isCubePlayFrameVisible);
+
+        PlayGameHelpButtonsCreate.CreateAtStartHelpButtons(prefabHelpButtons, numberOfRows, numberOfColumns, isCellphoneMode);
+
+
+
+
+        if (isCellphoneMode == true)
+        {
+            if (numberOfColumns > 5 || numberOfRows > 5)
+            {
+                _cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
+                // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
+                _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
+
+                _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
+
+                _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
+            }
+        }
     
     
     }
@@ -212,6 +231,7 @@ internal class Game : MonoBehaviour
                     string gameObjectTag = CommonMethods.GetObjectTag(touch);
                     string gameObjectName = CommonMethods.GetObjectName(touch);
 
+                    bool isCubePlayFrameExsist = PlayGameFrameActions.IsCubePlayFrameExsist(_cubePlayFrame);
 
                     int currentPlayerNumber = _currentPlayer[0];
                     GameObject cubePlay = CommonMethods.GetCubePlay(_gameBoard, gameObjectName);
@@ -253,7 +273,8 @@ internal class Game : MonoBehaviour
 
                             if (_winner == true)
                             {
-                                PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
+                                //PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
+                                PlayGameMenuButtonsActions.DestroyElements();
 
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu();
                                 PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_winner, cubePlaySymbol);
@@ -278,7 +299,8 @@ internal class Game : MonoBehaviour
 
                                 if (countedTagCubePlayTaken >= _maxCubePlayNumber)
                                 {
-                                    PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
+                                    //PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
+                                    PlayGameMenuButtonsActions.DestroyElements();
 
                                     PlayGameMenuButtonsActions.DisactivateConfigurationMenu();
                                     PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_winner, cubePlaySymbol);
@@ -312,13 +334,20 @@ internal class Game : MonoBehaviour
 
                             _gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
-                            _cubePlayFrame = PlayGameFrameMove.GetCubePlayFrame();
+                            //bool isCubePlayFrameExsist = PlayGameFrameActions.IsCubePlayFrameExsist(_cubePlayFrame);
 
-                            PlayGameFrameMove.SetUpNewXYForCubePlayFrame(_cubePlayFrame, cubePlay);
+                            //Debug.Log(" isCubePlayFrameExsist = " + isCubePlayFrameExsist);
 
+                            if (isCubePlayFrameExsist == true)
+                            {
+                                _cubePlayFrame = PlayGameFrameMove.GetCubePlayFrame();
 
-                            _moveIndexForFrame[_moveIndexForFrameX] = cubePlayIndexX;
-                            _moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
+                                PlayGameFrameMove.SetUpNewXYForCubePlayFrame(_cubePlayFrame, cubePlay);
+
+                                _moveIndexForFrame[_moveIndexForFrameX] = cubePlayIndexX;
+                                _moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
+                            }
+                                
 
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, playersNumberGivenForConfiguration, _currentPlayer);
 
@@ -329,7 +358,8 @@ internal class Game : MonoBehaviour
 
                             if (_winner == true)
                             {
-                                PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
+                                //PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
+                                PlayGameMenuButtonsActions.DestroyElements();
 
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu();
                                 PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_winner, cubePlaySymbol);
@@ -355,7 +385,8 @@ internal class Game : MonoBehaviour
 
                                 if (countedTagCubePlayTaken >= _maxCubePlayNumber)
                                 {
-                                    PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
+                                    //PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
+                                    PlayGameMenuButtonsActions.DestroyElements();
 
                                     PlayGameMenuButtonsActions.DisactivateConfigurationMenu();
                                     PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_winner, cubePlaySymbol);
@@ -390,6 +421,33 @@ internal class Game : MonoBehaviour
                         PlayGameHelpButtonsActions.HelpButtonsActionsCreateOrDestroy(prefabHelpButtons);
                         PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(_gameButtonsMenu);
                         PlayGameMenuButtonsActions.UnhidePlayGameElementsHelpButtons(_gameBoard);
+                        //_isCubePlayFrameVisible = PlayGameMenuButtonsActions.UnhidePlayGameElementsHelpButtons(_gameBoard, _isCubePlayFrameVisible);
+
+                        //bool isCubePlayFrameExsist = PlayGameFrameActions.IsCubePlayFrameExsist(_cubePlayFrame);
+
+                       Debug.Log(" isCubePlayFrameExsist = " + isCubePlayFrameExsist);
+
+                        if (isCubePlayFrameExsist == false)
+                        {
+                            _cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
+                            // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
+                            _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
+
+                            _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
+                            
+                            _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
+                            //_moveIndexForFrame[_moveIndexForFrameX] = 0;
+                            //_moveIndexForFrame[_moveIndexForFrameY] = numberOfRows - 1;
+
+                        }
+                        else
+                        {
+                            Debug.Log(" 1 ");
+                            PlayGameFrameActions.DestroyCubePlayFrame();
+                            PlayGameFrameActions.DestroyMoveIndexForFrame(_moveIndexForFrame);
+                        }
+                        
+
 
                     }
 
