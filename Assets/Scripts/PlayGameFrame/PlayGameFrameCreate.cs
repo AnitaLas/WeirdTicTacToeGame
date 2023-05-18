@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.CreateFrame
-{
+namespace Assets.Scripts.PlayGameFrame
+{ 
     internal class PlayGameFrameCreate : MonoBehaviour
     {
         public static GameObject CreateCubePlayFrame(GameObject prefabCubePlayFrame, GameObject cubePlayForFrame, bool isGame2D)

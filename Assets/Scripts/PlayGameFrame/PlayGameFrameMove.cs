@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts.Buttons;
+using Assets.Scripts.GameDictionaries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.PlayGame
+namespace Assets.Scripts.PlayGameFrame
 {
     internal class PlayGameFrameMove : MonoBehaviour
     {
@@ -128,15 +129,6 @@ namespace Assets.Scripts.PlayGame
             }
         }
 
-        public static void DestroyCubePlayFrame(GameObject cubePlayFrame)
-        {
-            //float newCoordinateZ = 1;
-            //CommonMethods.ChangeZForGameObject(cubePlayFrame, newCoordinateZ);
-
-            Destroy(cubePlayFrame);
-        }
-
-
         public static GameObject GetCubePlayFrame()
         {
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
@@ -144,5 +136,7 @@ namespace Assets.Scripts.PlayGame
             GameObject gameObject = CommonMethods.GetObjectByTagName(tagCubePlayFrame);
             return gameObject;
         }
+
+
     }
 }

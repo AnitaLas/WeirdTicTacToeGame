@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerification.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationSeyUpKindOfGame.cs" />
     <Compile Include="Assets\Scripts\CommonMethods.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlaForWinner.cs" />
     <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsStartGameMethods.cs" />
     <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethodsModeTablet.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Assets\Scripts\GameConfigurationSetUpBoardGame.cs" />
     <Compile Include="Assets\Scripts\GameInformations\GameInformationsText\GameInformationsTextCreate.cs" />
     <Compile Include="Assets\Scripts\GameInformations\GameInformationsButtons\GameInformationsButtonsMethods.cs" />
-    <Compile Include="Assets\Scripts\ConfigurationBoardGame.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsAction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabName.cs" />
@@ -152,13 +152,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneConfigurationPlayerSymbols.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlaForWinner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\GameInformations\GameInformationsButtons\GameInformationsButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsActions.cs" />
     <Compile Include="Assets\Scripts\GameInformationsForPlayers.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Scripts\GameInformations\GameInformationsText\GameInformationsTextAction.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameMethods.cs" />
+    <Compile Include="Assets\Scripts\GameInformations\GameInformationsText\GameInformationsCreateText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\GameInformations\GameInformationsText\GameInformationsTextActions.cs" />
     <Compile Include="Assets\Scripts\GameStartButtons\GameStartButtons.cs" />
@@ -172,10 +173,12 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneConfigurationConfigurationPlayerSymbols.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsMethods.cs" />
+    <Compile Include="Assets\Scripts\PlayGameFrame\PlayGameFrameActions.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNNNForPlayersSymbols.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayerSymbol.cs" />
+    <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsAction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />

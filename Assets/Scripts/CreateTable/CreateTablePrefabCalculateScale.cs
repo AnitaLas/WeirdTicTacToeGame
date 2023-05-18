@@ -25,7 +25,7 @@ namespace Assets.Scripts
 
         // max number cube for tablet
         private static int _prefabCubePlayMaxNumberWidthXTablet = 6;
-        private static int _prefabCubePlayMaxNumberHeightYTablet = 8;
+        private static int _prefabCubePlayMaxNumberHeightYTablet = 7;
         private static int _prefabCubePlayMaxNumberDetphZTblet = 1;
 
         public static void TransformGameObjectPrefabToNewScale(GameObject prefab, float newScaleX, float newScaleY, float newScaleZ)
@@ -165,13 +165,9 @@ namespace Assets.Scripts
             float maxValue = 10000;
             float[] newScaleForPrefabCubePlay = { maxValue };
 
-           // Debug.Log(" ------------------------------ ");
-            //Debug.Log("isCellphoneMode  = " + isCellphoneMode);
-
             // cellphone mode
             if (isCellphoneMode == true)
             {
-                //Debug.Log("phone mode ");
                 if (numberOfRows != maxNumberOfRows || numberOfColumns != maxNnumberOfColumns || numberOfDepths != maxNnumberOfDepths)
                 {
                     for (int i = 0; i < newScaleForXYZLenght; i++)
@@ -190,7 +186,6 @@ namespace Assets.Scripts
             // tablet mode
             else
             {
-               // Debug.Log("tablet mode ");
                 if (numberOfRows != 10 || numberOfColumns != 10 || numberOfDepths != maxNnumberOfDepths)
                 {
                     for (int i = 0; i < newScaleForXYZLenght; i++)
@@ -232,14 +227,6 @@ namespace Assets.Scripts
 
         public static float ScaleForPrefabCubePlayGameBoard(double numberOfDepths, double numberOfRows, double numberOfColumns, bool isCellphoneMode)
         {
-            //double newScaleForX = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleX, numberOfColumns, _prefabCubePlayMaxNumberWidthXPhone);
-            //double newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYPhone);
-            //double newScaleForZ = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleZ, numberOfDepths, _prefabCubePlayMaxNumberDetphZPhone);
-
-            //double newScaleForX = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleX, numberOfColumns, _prefabCubePlayMaxNumberWidthXTablet);
-            //double newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYTablet);
-            //double newScaleForZ = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleZ, numberOfDepths, _prefabCubePlayMaxNumberDetphZTblet);
-
             double newScaleForX;
             double newScaleForY;
             double newScaleForZ;
@@ -259,9 +246,6 @@ namespace Assets.Scripts
             }
 
             int roundDouble = 6;
-            //float floatNewScaleForX = CommonMethods.ConvertDoubleToFloat(newScaleForX);
-            //float floatNewScaleForY = CommonMethods.ConvertDoubleToFloat(newScaleForY);
-            //float floatNewScaleForZ = CommonMethods.ConvertDoubleToFloat(newScaleForZ);
 
             float floatNewScaleForX = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
             float floatNewScaleForY = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
@@ -269,7 +253,6 @@ namespace Assets.Scripts
 
             float[] newScaleForXYZ = { floatNewScaleForX, floatNewScaleForY, floatNewScaleForZ };
 
-            //float newScale = FindSmallestScaleXYZForPrefabCubePlay(newScaleForXYZ, numberOfDepths, numberOfRows, numberOfColumns);
             float newScale = FindSmallestScaleXYZForPrefabCubePlayGameBoard(newScaleForXYZ, numberOfDepths, numberOfRows, numberOfColumns, isCellphoneMode);
 
             return newScale;

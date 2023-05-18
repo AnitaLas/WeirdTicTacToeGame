@@ -81,12 +81,9 @@ namespace Assets.Scripts.PlayGame
 
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
-            float newCoordinateY = -4;
+            //float newCoordinateY = -4;
+            float newCoordinateY = -4.75f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
-            //ButtonsCommonMethods.ChangeDataForSingleCommonButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
-
-            //return tableButtonNewGame;
-
 
         }
 
