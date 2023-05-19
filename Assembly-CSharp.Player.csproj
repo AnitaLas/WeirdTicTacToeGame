@@ -68,13 +68,11 @@
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerification.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationSeyUpKindOfGame.cs" />
     <Compile Include="Assets\Scripts\CommonMethods.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlaForWinner.cs" />
     <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsStartGameMethods.cs" />
     <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethodsModeTablet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\Scripts\PlayGameHelpButtons\PlayGameHelpButtonsAction.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckerBackslash.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneStartGame.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsText.cs" />
@@ -187,6 +185,7 @@
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesGameFieldsVerification.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationTableForSetUp.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlayHelpText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

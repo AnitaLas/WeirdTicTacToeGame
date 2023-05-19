@@ -21,14 +21,17 @@ namespace Assets.Scripts.PlayGame
             GameObject[,,] tableConfigurationHelpButtons;
             GameObject[,,] tableConfigurationButtonNewGame;
             GameObject[,,] tableConfigurationButtonBackToGame;
+            GameObject[,,] tableConfigurationButtonBoarGameHelpText;
 
             tableConfigurationHelpButtons = CreateButtonGameMenuHelpButtons(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
             tableConfigurationButtonNewGame = CreateButtonGameMenuNewGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
             tableConfigurationButtonBackToGame = CreateButtoGameMenuBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
+            tableConfigurationButtonBoarGameHelpText = CreateButtonGameMenunBoarGameHelpText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
 
             buttons.Insert(0, tableConfigurationHelpButtons);
             buttons.Insert(1, tableConfigurationButtonNewGame);
             buttons.Insert(2, tableConfigurationButtonBackToGame);
+            buttons.Insert(3, tableConfigurationButtonBoarGameHelpText);
 
             return buttons;
         }
@@ -53,7 +56,7 @@ namespace Assets.Scripts.PlayGame
 
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
-            float newCoordinateY = 0;
+            float newCoordinateY = -1;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
             //ButtonsCommonMethods.ChangeDataForSingleCommonButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
 
@@ -141,7 +144,33 @@ namespace Assets.Scripts.PlayGame
         }
 
 
+        public static GameObject[,,] CreateButtonGameMenunBoarGameHelpText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            GameObject[,,] tableButtonNewGame;
 
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
+
+            string tagGameButtonNewGame = tagCubePlayDictionary[8];
+            string buttonText = buttonsGameNameDictionary[4];
+
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 14;
+
+            //string buttonText = "NEW GAME";
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
+
+            tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = 0.5f;
+            ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
+            //ButtonsCommonMethods.ChangeDataForSingleCommonButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
+
+            return tableButtonNewGame;
+
+        }
 
 
 
