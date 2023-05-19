@@ -55,9 +55,10 @@ internal class Game : MonoBehaviour
 
     public int playersNumberGivenForConfiguration; // = 4;
 
-    private static int numberOfRows;// = 4; //3;// 3;
-    private static int numberOfColumns; // = 3;// 6;
-    private static bool isCellphoneMode; // = 3;// 6;
+    private static int _numberOfRows;// = 4; //3;// 3;
+    private static int _numberOfColumns; // = 3;// 6;
+    private static bool _isCellphoneMode; // = 3;// 6;
+    private static bool _isBoarGameHelpTextVisible; // = 3;// 6;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
@@ -94,6 +95,7 @@ internal class Game : MonoBehaviour
     private string _tagGameButtonNewGame;
     private string _tagGameButtonHelpButtons;
     private string _tagGameButtonMenuBack;
+    private string _tagGameButtonBoardGameHelpText;
 
     private int _index;
    
@@ -122,6 +124,8 @@ internal class Game : MonoBehaviour
 
     void Start()
     {
+        _isBoarGameHelpTextVisible = false;
+
         _tagCubePlayFree = tagCubePlayDictionary[1];
         _tagCubePlayTaken = tagCubePlayDictionary[2];
 
@@ -137,29 +141,30 @@ internal class Game : MonoBehaviour
         _tagGameButtonNewGame = tagGameDictionary[3];
         _tagGameButtonHelpButtons = tagGameDictionary[4];
         _tagGameButtonMenuBack = tagGameDictionary[5];
+        _tagGameButtonBoardGameHelpText = tagGameDictionary[8];
 
         _index = 0;
 
         _configurationBoardGameDeviceModeKind = GameConfigurationSetUpBoardGame.ConfigurationBoardGameDeviceModeKind;
-        isCellphoneMode = _configurationBoardGameDeviceModeKind;
+        _isCellphoneMode = _configurationBoardGameDeviceModeKind;
 
         _configurationBoardGameNumberOfPlayers = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfPlayers;
         playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
 
         _configurationBoardGameNumberOfRows = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfRows;
        
-        numberOfRows = _configurationBoardGameNumberOfRows;
+        _numberOfRows = _configurationBoardGameNumberOfRows;
 
         _configurationBoardGameNumberOfColumns = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfColumns;
-        numberOfColumns = _configurationBoardGameNumberOfColumns;
+        _numberOfColumns = _configurationBoardGameNumberOfColumns;
 
-        _maxCubePlayNumber = numberOfRows * numberOfColumns * numberOfDepths;
+        _maxCubePlayNumber = _numberOfRows * _numberOfColumns * numberOfDepths;
 
         _configurationBoardGameNumberForLenghtToCheck = GameConfigurationSetUpBoardGame.ConfigurationBoardGameLenghtToCheck;
         lenghtToCheck = _configurationBoardGameNumberForLenghtToCheck - 1;
 
 
-        _gameBoardVerification2D = GameConfigurationCommonMethods.CreateEmptyTable2D(numberOfRows, numberOfColumns);
+        _gameBoardVerification2D = GameConfigurationCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
 
         _playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
 
@@ -170,13 +175,18 @@ internal class Game : MonoBehaviour
         // remove tag from method
         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
 
+        //for (int i = 0; i < _playersSymbols.Length; i++)
+        //{
+        //    Debug.Log($"_playersSymbols[{i}] = " + _playersSymbols[i]);
+        //}
+
         _playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
 
         _currentCountedTagCubePlayTaken = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
 
         // [gameBoard] - creating the board game with game object "CubePlay"
-        _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, isCellphoneMode);
+        _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode);
 
         //GameObject cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
         // _cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
@@ -190,23 +200,30 @@ internal class Game : MonoBehaviour
         //_cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, _isGame2D);
         //_isCubePlayFrameVisible = PlayGameFrameActions.GetCubePlayFrameVisibility(_isCubePlayFrameVisible);
 
-        PlayGameHelpButtonsCreate.CreateAtStartHelpButtons(prefabHelpButtons, numberOfRows, numberOfColumns, isCellphoneMode);
+        PlayGameHelpButtonsCreate.CreateAtStartHelpButtons(prefabHelpButtons, _numberOfRows, _numberOfColumns, _isCellphoneMode);
+
+        //PlayGameChangeCubePlayHelpText.ChangeCubePlayTextToVisible(_gameBoard);
 
 
-
-
-        if (isCellphoneMode == true)
+        if (_isCellphoneMode == true)
         {
-            if (numberOfColumns > 5 || numberOfRows > 5)
+            if (_numberOfColumns > 5 || _numberOfRows > 5)
             {
-                _cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
+                _cubePlayForFrame = _gameBoard[0, _numberOfRows - 1, 0];
                 // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
                 _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
 
                 _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
 
-                _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
+                _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
+
+                _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
             }
+        }
+        else
+        {
+            _isBoarGameHelpTextVisible = true;
+            _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
         }
     
     
@@ -240,7 +257,7 @@ internal class Game : MonoBehaviour
                     if (gameObjectTag == _tagArrowRight || gameObjectTag == _tagArrowLeft || gameObjectTag == _tagArrowDown || gameObjectTag == _tagArrowUp)
                     {
                         _cubePlayFrame = PlayGameFrameMove.GetCubePlayFrame();
-                        _moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(_moveIndexForFrame, gameObjectTag,   _cubePlayFrame, _cubePlayForFrameScale, numberOfRows, numberOfColumns);
+                        _moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(_moveIndexForFrame, gameObjectTag,   _cubePlayFrame, _cubePlayForFrameScale, _numberOfRows, _numberOfColumns);
                    
                     }
                     
@@ -429,13 +446,13 @@ internal class Game : MonoBehaviour
 
                         if (isCubePlayFrameExsist == false)
                         {
-                            _cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
+                            _cubePlayForFrame = _gameBoard[0, _numberOfRows - 1, 0];
                             // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
                             _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
 
                             _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
                             
-                            _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
+                            _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
                             //_moveIndexForFrame[_moveIndexForFrameX] = 0;
                             //_moveIndexForFrame[_moveIndexForFrameY] = numberOfRows - 1;
 
@@ -448,6 +465,14 @@ internal class Game : MonoBehaviour
                         }
                         
 
+
+                    }
+
+                    if (gameObjectTag == _tagGameButtonBoardGameHelpText)
+                    {
+                        PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(_gameButtonsMenu);
+                        PlayGameMenuButtonsActions.UnhidePlayGameElements(_gameBoard);
+                        _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
 
                     }
 

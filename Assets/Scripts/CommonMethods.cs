@@ -520,7 +520,6 @@ namespace Assets.Scripts
                 float y = gameObject.transform.position.y;
                 float z = gameObject.transform.position.z;
 
-                // it works
                 gameObject.transform.position = new Vector3(x + newCoordinateX, y, z);
             }
         }
@@ -536,21 +535,14 @@ namespace Assets.Scripts
                 float y = gameObject.transform.position.y;
                 float z = gameObject.transform.position.z;
 
-                // must be change for oher methods SetUpNew...
-                //Debug.Log("Y = " + y);
-                //float newY= y + newCoordinateY;
                 float newY= RoundCoordinateXYZ( y + newCoordinateY);
-               // Debug.Log("newY = " + newY);
-                // it works
-                //gameObject.transform.position = new Vector3(x, y + newCoordinateY, z);
+
                 gameObject.transform.position = new Vector3(x, newY, z);
             }
         }
 
         public static void ChangeZForGameObject(GameObject gameObject, float newCoordinateZ)
         {
-            //float transformSpeed = 1.0f;
-            //float newZ = 0.05f;
             bool isGame2D = true;
 
             if (isGame2D == true)
@@ -559,26 +551,9 @@ namespace Assets.Scripts
                 float y = gameObject.transform.position.y;
                 float z = gameObject.transform.position.z;
 
-                // it works
-                //cubePlay.transform.position = new Vector3(x, y, z + newCoordinateZ);
                 gameObject.transform.position = new Vector3(x, y, newCoordinateZ);
 
-                //newPrefabCubePlay.transform.position = new Vector3(x, y, currentCoordinateZ * Time.deltaTime);
-
-                //newPrefabCubePlay.transform.position =  Vector3.MoveTowards(newPrefabCubePlay.transform.position, (new Vector3(x, y, currentCoordinateZ)), transformSpeed * Time.deltaTime);
-
-                //cubePlay.transform.Translate(Vector3.forward * Time.deltaTime);
-
-
-
-                //Vector3 test = new Vector3(x, y, newCoordinateZ);
-                //cubePlay.transform.position = Vector3.Lerp(cubePlay.transform.position, test, 0.1f);
-
-                //cubePlay.transform.position += cubePlay.transform.forward * Time.deltaTime;
-
-
             }
-
         }
         public static void ChangeYForGameObject(GameObject gameObject, float newCoordinateY)
         {
@@ -587,10 +562,8 @@ namespace Assets.Scripts
             if (isGame2D == true)
             {
                 float x = gameObject.transform.position.x;
-               // float y = gameObject.transform.position.y;
                 float z = gameObject.transform.position.z;
 
-                // it works
                 gameObject.transform.position = new Vector3(x, newCoordinateY, z);
             }
         }
@@ -601,11 +574,9 @@ namespace Assets.Scripts
 
             if (isGame2D == true)
             {
-               // float x = gameObject.transform.position.x;
                 float y = gameObject.transform.position.y;
                 float z = gameObject.transform.position.z;
 
-                // it works
                 gameObject.transform.position = new Vector3(newCoordinateX, y, z);
             }
         }
@@ -757,11 +728,11 @@ namespace Assets.Scripts
         }
 
         // do I need it?
-        public static string ChangeToCapitalLetter(string symbol)
-        {
-            string text = symbol.ToUpper();
-            return text;
-        }
+        //public static string ChangeToCapitalLetter(string symbol)
+        //{
+        //    string text = symbol.ToUpper();
+        //    return text;
+        //}
 
 
         //-------------------------------------------
