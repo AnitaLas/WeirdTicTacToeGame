@@ -1,4 +1,4 @@
-com.DefaultCompany.WeirdTicTacToe
+com.Alan.WeirdTicTacToe
 id unitySurfaceView
 mipmap app_icon
 mipmap app_icon_round

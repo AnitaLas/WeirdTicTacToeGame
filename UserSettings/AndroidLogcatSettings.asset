@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "R52W10E1F8M",
     "m_SelectedPackage": {
         "deviceId": "R52W10E1F8M",
-        "name": "com.DefaultCompany.WeirdTicTacToe",
-        "processId": 4442,
+        "name": "com.Alan.WeirdTicTacToe",
+        "processId": 10301,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -45,6 +45,18 @@
             "exited": false
         },
         {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 18431,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 13836,
+            "exited": false
+        },
+        {
             "deviceId": "R52W10E1F8M",
             "name": "com.DefaultCompany.WeirdTicTacToe",
             "processId": 32494,
@@ -54,6 +66,18 @@
             "deviceId": "R52W10E1F8M",
             "name": "com.DefaultCompany.WeirdTicTacToe",
             "processId": 4442,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 7900,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 10301,
             "exited": false
         }
     ],

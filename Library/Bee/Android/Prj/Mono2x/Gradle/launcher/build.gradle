@@ -14,9 +14,9 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 22
+        minSdkVersion 28
         targetSdkVersion 30
-        applicationId 'com.DefaultCompany.WeirdTicTacToe'
+        applicationId 'com.Alan.WeirdTicTacToe'
         ndk {
             abiFilters 'armeabi-v7a'
         }

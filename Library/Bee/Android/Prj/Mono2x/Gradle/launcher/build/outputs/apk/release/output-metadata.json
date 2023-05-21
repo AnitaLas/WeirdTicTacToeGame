@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.DefaultCompany.WeirdTicTacToe",
+  "applicationId": "com.Alan.WeirdTicTacToe",
   "variantName": "release",
   "elements": [
     {

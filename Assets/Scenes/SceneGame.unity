@@ -1933,9 +1933,12 @@ MonoBehaviour:
   prefabCubePlayButtonsBackColour:
   - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
   - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
+  prefabCubePlayButtonsDefaultColour:
+  - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
+  - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
   cubePlayColourWin:
-  - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
-  - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
+  - {fileID: 2100000, guid: c54907c3ff7efa349bc69ecb0f15e985, type: 2}
+  - {fileID: 2100000, guid: c54907c3ff7efa349bc69ecb0f15e985, type: 2}
   playersNumberGivenForConfiguration: 3
 --- !u!1 &1982904713
 GameObject:

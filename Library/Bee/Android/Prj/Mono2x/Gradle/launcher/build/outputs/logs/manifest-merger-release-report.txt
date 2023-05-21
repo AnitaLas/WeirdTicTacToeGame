@@ -9,7 +9,7 @@ INJECTED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Librar
 INJECTED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 INJECTED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 	package
-		ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:70-113
+		ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:70-103
 		INJECTED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 	android:versionName
@@ -17,7 +17,7 @@ INJECTED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Librar
 		ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 		INJECTED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:114-160
+		ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:104-150
 	android:versionCode
 		INJECTED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 		ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
@@ -25,7 +25,7 @@ INJECTED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Librar
 	xmlns:android
 		ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:11-69
 	android:installLocation
-		ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:161-201
+		ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:151-191
 supports-screens
 ADDED from C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:3:3-163
 	android:largeScreens
