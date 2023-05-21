@@ -18,7 +18,7 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
         {
             //GameObject[,,] buttonBack = GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
             GameObject[,,] buttonContact = GameInformationsCreateButtonContact(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
-            GameObject[,,] buttonNextVersions = GameInformationsCreateButtonNextVersions(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+            GameObject[,,] buttonNextVersions = GameInformationsCreateButtonGameVersions(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] buttonSet = GameInformationsCreateButtonSet(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
 
             List<GameObject[,,]> buttons = new List<GameObject[,,]>();
@@ -56,13 +56,14 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
             tableButtonContact = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonContact);
 
-            float newCoordinateY = 1.45f;
+            //float newCoordinateY = 1.45f;
+            float newCoordinateY = 2f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonContact, newCoordinateY, tagButtonContact);
 
             return tableButtonContact;
         }
 
-        public static GameObject[,,] GameInformationsCreateButtonNextVersions(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
+        public static GameObject[,,] GameInformationsCreateButtonGameVersions(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
 
             GameObject[,,] tableButtonNextVersions;
@@ -82,7 +83,8 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
             tableButtonNextVersions = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonNextVersions);
 
-            float newCoordinateY = 0f;
+           //float newCoordinateY = 0f;
+            float newCoordinateY = 0.5f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNextVersions, newCoordinateY, tagGameButtonHelpButtons);
 
             return tableButtonNextVersions;
@@ -108,7 +110,8 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
             tableButtonContact = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonContact);
 
-            float newCoordinateY = -1.45f;
+            //float newCoordinateY = -1.45f;
+            float newCoordinateY = -1f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonContact, newCoordinateY, tagButtonContact);
 
             return tableButtonContact;

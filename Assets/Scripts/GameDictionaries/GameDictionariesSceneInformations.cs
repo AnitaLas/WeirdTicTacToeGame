@@ -33,7 +33,8 @@ namespace Assets.Scripts.GameDictionaries
                 { 1, "CONTACT" },
                 //buttonsNameDictionary.Add(2, "NEXT VERSIONS");
                 { 2, "GAME VERSIONS" },
-                { 3, "SET" }
+                //{ 3, "SET" }
+                { 3, "DEFAULT SET" }
             };
 
             return buttonsNameDictionary;

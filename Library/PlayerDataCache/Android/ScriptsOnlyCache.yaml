@@ -11,6 +11,9 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    Unity.Mobile.AndroidLogcat.Editor.dll:
+    - Unity.Android.Logcat.AndroidLogcatConsoleWindow
+    - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -88,15 +91,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 4352}
+      Script: {instanceID: 4360}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -145,13 +148,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1688}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -198,15 +201,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 3378}
+      Script: {instanceID: 3382}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -253,17 +256,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6538}
+      Script: {instanceID: 6554}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7122}
     - Class: 114
-      Script: {instanceID: 7732}
+      Script: {instanceID: 7748}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -314,21 +317,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2018}
     - Class: 114
-      Script: {instanceID: 2296}
+      Script: {instanceID: 2298}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 4510}
+      Script: {instanceID: 4518}
     - Class: 114
-      Script: {instanceID: 4642}
+      Script: {instanceID: 4652}
     - Class: 114
-      Script: {instanceID: 4960}
+      Script: {instanceID: 4972}
     - Class: 114
-      Script: {instanceID: 5834}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7106}
+      Script: {instanceID: 7122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -464,6 +467,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts.CreateGameHelpButton
     className: PlayGameHelpButtonsCreate
+  - hash:
+      serializedVersion: 2
+      Hash: 7793e9cfb0a6cac69296eae956c994ff
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts
+    className: GameConfigurationSeyUpKindOfGame
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -652,7 +661,7 @@ ScriptsOnlyBuild:
     className: PlayGameMenuButtonsCreate
   - hash:
       serializedVersion: 2
-      Hash: 9f6aa47a80979b34e2d655262d099148
+      Hash: 1de53fb72853c388250e1bb079016d34
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Game
@@ -858,7 +867,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts.GameInformations.GameInformationsBase
+    namespaceName: Assets.Scripts.GameInformations.GameInformationsText
     className: GameInformationsTextCreate
   - hash:
       serializedVersion: 2
@@ -946,16 +955,16 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.GameConfiguration
+    className: GameConfigurationTableForLenghtToCheck
+  - hash:
+      serializedVersion: 2
       Hash: 6980e81ddc615a861309d2d659cc3760
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts.GameInformations.GameInformationsBase
-    className: GameInformationsCreateText
   - hash:
       serializedVersion: 2
       Hash: 426e5bd616852254b77531cd1a8e29b6
@@ -1148,6 +1157,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts
+    className: CreateTableMainMethods
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1384,7 +1399,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 67f438ca55057e9e8770d8820392931b
+      Hash: 5870ed44051955b8a40a7f66585879f2
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts
     className: GameInformationsForPlayers
@@ -1403,6 +1418,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.GameInformations.GameInformationsBase
+    className: GameInformationsTextAction
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayModeRunnerCallback
@@ -1412,6 +1433,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: PositionAsUV1
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.GameInformations.GameInformationsBase
+    className: GameInformationsCreateText
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -1434,8 +1461,8 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts.GameInformations.GameInformationsBase
-    className: GameInformationsTextAction
+    namespaceName: Assets.Scripts.GameInformations.GameInformationsText
+    className: GameInformationsTextActions
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1506,7 +1533,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts.PlayGame
+    namespaceName: Assets.Scripts.PlayGameFrame
     className: PlayGameFrameMove
   - hash:
       serializedVersion: 2
@@ -1514,6 +1541,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.CreateGameHelpButton
+    className: PlayGameHelpButtons
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1526,6 +1559,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.UI
     className: MultiplayerEventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.PlayGameFrame
+    className: PlayGameFrameActions
   - hash:
       serializedVersion: 2
       Hash: 72763ba72b43403ee09a4c54b07cb346
@@ -1608,8 +1647,8 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts.CreateFrame
-    className: CreateFrameForMove
+    namespaceName: Assets.Scripts.PlayGameFrame
+    className: PlayGameFrameCreate
   - hash:
       serializedVersion: 2
       Hash: 766d1e816bcaf02d44dc1df06af2bf9a
@@ -1622,6 +1661,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnToggleValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.GameConfiguration
+    className: GameConfigurationTableForSetUp
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1653,4 +1698,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SceneConfigurationBoardGame.unity
   - Assets/Scenes/SceneConfigurationPlayersSymbols.unity
   - Assets/Scenes/SceneGame.unity
-  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230509/WeirdTicTacToeGame_20230509v2.apk
+  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230521/WeirdTicTacToeGame_20230521v2.apk

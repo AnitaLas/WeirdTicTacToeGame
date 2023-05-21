@@ -62,10 +62,15 @@ namespace Assets.Scripts.GameDictionaries
 
             var colorValue4 = Tuple.Create(0f, 0f, 0f, 0.0f);
 
+            // text color  - white - for cubePlay winner
+            //var colorValue5 = Tuple.Create(1f, 1f, 1f, 1f);
+            //var colorValue5 = Tuple.Create(6f, 6f, 6f, 0.4f);
+
             colorDictionary.Add(1, colorValue1);
             colorDictionary.Add(2, colorValue2);
             colorDictionary.Add(3, colorValue3);
             colorDictionary.Add(4, colorValue4);
+            //colorDictionary.Add(5, colorValue5);
 
             return colorDictionary;
         }
