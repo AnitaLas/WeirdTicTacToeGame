@@ -549,7 +549,7 @@ namespace Assets.Scripts
             {
                 float x = gameObject.transform.position.x;
                 float y = gameObject.transform.position.y;
-                float z = gameObject.transform.position.z;
+                //float z = gameObject.transform.position.z;
 
                 gameObject.transform.position = new Vector3(x, y, newCoordinateZ);
 
