@@ -214,7 +214,7 @@ internal class Game : MonoBehaviour
                 // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
                 _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
 
-                _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
+                _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
 
                 _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
 
@@ -454,7 +454,7 @@ internal class Game : MonoBehaviour
                             // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
                             _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
 
-                            _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
+                            _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
                             
                             _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
                             //_moveIndexForFrame[_moveIndexForFrameX] = 0;
