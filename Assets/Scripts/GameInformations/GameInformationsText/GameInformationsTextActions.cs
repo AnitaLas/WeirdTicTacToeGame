@@ -6,40 +6,51 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.GameInformations.GameInformationsText
+namespace Assets.Scripts.GameInformations.GameInformationsBase
 {
     internal class GameInformationsTextActions : MonoBehaviour
     {
-        //public static void DestroyText(string gameObjectTag)
-        //{
-        //    //GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
-        //    //Destroy(gameObject);
-        //    //ButtonsCommonMethodsActionsDestroy.DestroySingleGameObjectWithTag(gameObjectTag);
-        //}
+        public static void DestroyText(string gameObjectTag)
+        {
+            GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
+            Destroy(gameObject);
+        }
 
-        //public static void DestroyOneGameObjectByTag(string gameObjectTagToDestoy)
-        //{
-        //    //bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
+        public static void DestroyOneGameObjectByTag(string gameObjectTagToDestoy)
+        {
+            bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
 
-        //    //if (isGameObjectWithTagExsist == true)
-        //    //{
-        //    //    DestroyText(gameObjectTagToDestoy);
-        //    //}
-        //    //ButtonsCommonMethodsActionsDestroy.DestroySingleGameObjectWithTabIfExsist(gameObjectTagToDestoy);
-
-        //}
+            if (isGameObjectWithTagExsist == true)
+            {
+                DestroyText(gameObjectTagToDestoy);
+            }
+        }
 
         public static void DestroyGameObjectsWithText(List<string> gameObjectTagToDestoy)
         {
-            //int numberOfGameObjectTagToDestroy = gameObjectTagToDestoy.Count;
+            int numberOfGameObjectTagToDestroy = gameObjectTagToDestoy.Count;
 
-            //for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
-            //{
-            //    string gameObjectTagToDestroy = gameObjectTagToDestoy[i];
-            //    DestroyOneGameObjectByTag(gameObjectTagToDestroy);
-            //}
+            for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
+            {
+                string gameObjectTagToDestroy = gameObjectTagToDestoy[i];
+                DestroyOneGameObjectByTag(gameObjectTagToDestroy);
+            }
 
-            ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(gameObjectTagToDestoy);
+
         }
+
+        //public static void DestroyGameObjectsWithText2(List<string> gameObjectTagToDestoy)
+        //{
+        //    //int numberOfGameObjectTagToDestroy = gameObjectTagToDestoy.Count;
+
+        //    //for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
+        //    //{
+        //    //    string gameObjectTagToDestroy = gameObjectTagToDestoy[i];
+        //    //    DestroyOneGameObjectByTag(gameObjectTagToDestroy);
+        //    //}
+
+        //    ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(gameObjectTagToDestoy);
+        //}
+
     }
 }

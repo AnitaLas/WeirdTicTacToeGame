@@ -88,17 +88,17 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1550}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 4360}
+      Script: {instanceID: 4362}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5850}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6730}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -143,17 +143,17 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1550}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 1688}
+      Script: {instanceID: 1690}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5850}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6730}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -198,17 +198,17 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1550}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 3382}
+      Script: {instanceID: 3384}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5850}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6730}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -253,19 +253,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1550}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5850}
     - Class: 114
-      Script: {instanceID: 6554}
+      Script: {instanceID: 6556}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6730}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7124}
     - Class: 114
-      Script: {instanceID: 7748}
+      Script: {instanceID: 7750}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -312,25 +312,25 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1550}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2018}
+      Script: {instanceID: 2020}
     - Class: 114
-      Script: {instanceID: 2298}
+      Script: {instanceID: 2300}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 4518}
+      Script: {instanceID: 4520}
     - Class: 114
-      Script: {instanceID: 4652}
+      Script: {instanceID: 4654}
     - Class: 114
-      Script: {instanceID: 4972}
+      Script: {instanceID: 4974}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5850}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6730}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1697,4 +1697,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SceneConfigurationBoardGame.unity
   - Assets/Scenes/SceneConfigurationPlayersSymbols.unity
   - Assets/Scenes/SceneGame.unity
-  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230523/WeirdTicTacToeGame_20230523v5.apk
+  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230523/WeirdTicTacToeGame_20230523v.apk

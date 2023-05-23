@@ -160,7 +160,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
 
         }
 
-        // --- short buttons
+        // --- short buttons P1, P2, ...
 
         public static GameObject[,,] CreateCommonButtonForShortText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
         {
@@ -169,8 +169,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             int numberOfDepths = 1;
             int numberOfRows = 3;
             int numberOfColumns = 5;
-            //int numberOfColumns = 15;
-            //int numberOfColumns = 16;
 
             string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
 

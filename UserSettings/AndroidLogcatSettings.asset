@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "5WH6R19722009261",
+    "m_SelectedDeviceId": "R52W10E1F8M",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "R52W10E1F8M",
+        "name": "com.Alan.WeirdTicTacToe",
+        "processId": 29541,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -66,6 +66,12 @@
             "deviceId": "R52W10E1F8M",
             "name": "com.Alan.WeirdTicTacToe",
             "processId": 10301,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 29541,
             "exited": false
         }
     ],

@@ -1,19 +1,10 @@
-﻿//using Assets.Scripts.Buttons;
-//using Assets.Scripts.GameConfiguration.GameConfigurationBase;
-//using Assets.Scripts.GameConfiguration;
-//using Assets.Scripts.GameConfiguration.GameConfigurationBase1;
-//using Assets.Scripts.GameConfigurationBase;
-//using Assets.Scripts.GameConfiguration;
+﻿
 using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
 using Assets.Scripts.GameConfiguration.GameConfigurationButtons;
 using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
-//using Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase22;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.Scenes;
-//using NUnit.Framework;
-//using NUnit.Framework.Internal;
 using System.Collections.Generic;
-//using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Assets.Scripts.ScreenVerification;

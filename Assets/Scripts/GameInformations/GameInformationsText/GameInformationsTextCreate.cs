@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.GameName;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,12 @@ namespace Assets.Scripts.GameInformations.GameInformationsText
         public static void CreateGameInformationsTextSet(GameObject objectWithtext)
         {
             CreateGameInformationsText(objectWithtext);
+        }
+
+        public static void CreateGameName(GameObject objectWithtext)
+        {
+            GameNameTextCreate.CreateGameNameForGameInformations(objectWithtext);
+
         }
 
     }
