@@ -424,15 +424,13 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
             float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbolBiggerThanSix(prefabPlayerSymbol, buttonsNumber);
 
-            //float[] newCoordinateX = { -0.5f, 2.05f, 0.5f };
-            float[] newCoordinateX = { -0.5f, 2.05f, 0.75f };
+            //float[] newCoordinateX = { -0.5f, 2.05f, 0.75f };
+            float[] newCoordinateX = { -0.8f, 2.05f, 0.75f }; // {leftColumn, rightColumn, middleSingleButton}
             float coordinateX;
-           float yForFirstPrefabPlayerSymbol;
+            float yForFirstPrefabPlayerSymbol;
 
 
-            //Debug.Log("buttonsNumber = " + buttonsNumber);
             int buttonsNumberForColumns = SetUpPlayersNumberForColumns(buttonsNumber);
-            //Debug.Log("buttonsNumberForColumns = " + buttonsNumberForColumns);
 
             int start = buttonsNumberForColumns - 1;
             int playerNumber;
@@ -440,7 +438,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int[] buttonsColumnsNumbers = { 1, 2 }; // two columns
             int buttonsColumnsIndex = 0;
 
-            int countedButtonsNumberForColumns = 0;
+            //int countedButtonsNumberForColumns = 0;
             int currentCountedButtonsNumberForOneColumn = 0;
 
 
@@ -540,16 +538,13 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
             float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbolBiggerThanSix(prefabPlayerSymbol, buttonsNumber);
 
-            //float[] newCoordinateX = { -0.5f, 2.05f, 0.5f };
-            float[] newCoordinateX = { -0.7f, 1.85f, 0.6f };
+            //float[] newCoordinateX = { -0.7f, 1.85f, 0.6f };
+            float[] newCoordinateX = { -0.95f, 1.95f, 0.6f }; // {leftColumn, rightColumn, middleSingleButton}
             float coordinateX;
             float yForFirstPrefabPlayerSymbol;
             float coordinateYCorrection = -0.65f; // move down
-            //float coordinateXCorrection = -0.2f; // move down
 
-            //Debug.Log("buttonsNumber = " + buttonsNumber);
             int buttonsNumberForColumns = SetUpPlayersNumberForColumns(buttonsNumber);
-           // Debug.Log("buttonsNumberForColumns = " + buttonsNumberForColumns);
 
             int start = buttonsNumberForColumns - 1;
             int playerNumber;

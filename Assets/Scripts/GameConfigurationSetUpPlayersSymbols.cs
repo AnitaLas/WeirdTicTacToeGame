@@ -8,10 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
 using Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons;
 using Assets.Scripts.Scenes;
+using Assets.Scripts.GameInformations.GameInformationsText;
 
 namespace Assets.Scripts
 {

@@ -20,7 +20,8 @@ namespace Assets.Scripts.GameDictionaries
                 { 5, "GameInformationTextContact" },
                 { 6, "GameInformationTextNextVersions" },
                 { 7, "GameInformationButtontSet" },
-                { 8, "GameInformationTextSet" }
+                { 8, "GameInformationTextSet" },
+                { 9, "GameName" }
             };
 
             return tagGameInformationsDictionary;

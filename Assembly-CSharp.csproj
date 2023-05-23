@@ -66,7 +66,6 @@
     <Compile Include="Assets\Scripts\GameConfigurationSetUpKindOfGame.cs" />
     <Compile Include="Assets\Scripts\PlayGameHelpButtons\PlayGameHelpButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerification.cs" />
-    <Compile Include="Assets\Scripts\GameConfigurationSeyUpKindOfGame.cs" />
     <Compile Include="Assets\Scripts\CommonMethods.cs" />
     <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsStartGameMethods.cs" />
@@ -155,11 +154,9 @@
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsActions.cs" />
     <Compile Include="Assets\Scripts\GameInformationsForPlayers.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\Scripts\GameInformations\GameInformationsText\GameInformationsTextAction.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameMethods.cs" />
-    <Compile Include="Assets\Scripts\GameInformations\GameInformationsText\GameInformationsCreateText.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\GameInformations\GameInformationsText\GameInformationsTextActions.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameMethods.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\GameStartButtons\GameStartButtons.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsActions.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolTableWithSymbols.cs" />
@@ -186,6 +183,7 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationTableForSetUp.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlayHelpText.cs" />
+    <Compile Include="Assets\Scripts\GameName\GameNameTextCreate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

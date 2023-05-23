@@ -198,9 +198,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
 
             buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultPlayersSymbols);
 
-             //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
-             //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerNumberBiggerThanSix(buttonsList);
-             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
+            GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
 
             return buttonsList;
 

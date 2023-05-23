@@ -10,6 +10,8 @@ using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.Scenes;
 using Assets.Scripts.ScreenVerification;
 using Assets.Scripts.GameStart;
+using Assets.Scripts.GameInformations.GameInformationsText;
+using Assets.Scripts.GameName;
 
 // scene name: SceneStartGame
 
@@ -18,6 +20,7 @@ namespace Assets.Scripts
     internal class GameConfigurationSetUpKindOfGame : MonoBehaviour
     {
         public GameObject prefabCubePlay;
+        public GameObject gameName;
 
         public Material[] prefabCubePlayButtonsDefaultColour;
         public Material[] prefabCubePlayButtonsInformationColour;
@@ -39,6 +42,7 @@ namespace Assets.Scripts
             _tagStartGameButtonInformations = tagStartGameButtonsDictionary[3];
 
             GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
+            GameNameTextCreate.CreateGameNameForStart(gameName);
 
         }
 
