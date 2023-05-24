@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 28
+        minSdkVersion 22
         targetSdkVersion 30
         applicationId 'com.Alan.WeirdTicTacToe'
         ndk {

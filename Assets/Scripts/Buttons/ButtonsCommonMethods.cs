@@ -682,9 +682,6 @@ namespace Assets.Scripts.PlayGameMenu
                     }
                 }
             }
-
-            //float newScale = 0.3f;
-            //CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
         }
     }
 }

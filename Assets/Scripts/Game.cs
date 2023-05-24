@@ -59,6 +59,7 @@ internal class Game : MonoBehaviour
     private static int _numberOfRows;// = 4; //3;// 3;
     private static int _numberOfColumns; // = 3;// 6;
     private static bool _isCellphoneMode; // = 3;// 6;
+    //private static bool _isBoarGameHelpTextVisible; // = 3;// 6;
     private static bool _isBoarGameHelpTextVisible; // = 3;// 6;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
@@ -125,7 +126,7 @@ internal class Game : MonoBehaviour
 
     void Start()
     {
-        _isBoarGameHelpTextVisible = false;
+        _isBoarGameHelpTextVisible = true;
 
         _tagCubePlayFree = tagCubePlayDictionary[1];
         _tagCubePlayTaken = tagCubePlayDictionary[2];
@@ -169,47 +170,26 @@ internal class Game : MonoBehaviour
 
         _playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
 
-
-
         _currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
-        // remove tag from method
         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
-
-        //for (int i = 0; i < _playersSymbols.Length; i++)
-        //{
-        //    Debug.Log($"_playersSymbols[{i}] = " + _playersSymbols[i]);
-        //}
 
         _playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
 
         _currentCountedTagCubePlayTaken = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
-
         // [gameBoard] - creating the board game with game object "CubePlay"
         _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode);
 
-        //GameObject cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
-        // _cubePlayForFrame = _gameBoard[0, numberOfRows - 1, 0];
-        //// scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
-        //_cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
-
-        //_moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(numberOfRows);
-
-
-
-        //_cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrame(prefabCubePlayFrame, cubePlayForFrame, _isGame2D);
-        //_isCubePlayFrameVisible = PlayGameFrameActions.GetCubePlayFrameVisibility(_isCubePlayFrameVisible);
-
         PlayGameHelpButtonsCreate.CreateAtStartHelpButtons(prefabHelpButtons, _numberOfRows, _numberOfColumns, _isCellphoneMode);
-
-        //PlayGameChangeCubePlayHelpText.ChangeCubePlayTextToVisible(_gameBoard);
 
 
         if (_isCellphoneMode == true)
         {
+          
             if (_numberOfColumns > 5 || _numberOfRows > 5)
             {
+                _isBoarGameHelpTextVisible = false;
                 _cubePlayForFrame = _gameBoard[0, _numberOfRows - 1, 0];
                 // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
                 _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
@@ -217,13 +197,16 @@ internal class Game : MonoBehaviour
                 _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
 
                 _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
+                _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
 
+            } 
+            else
+            {
                 _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
             }
         }
         else
         {
-            _isBoarGameHelpTextVisible = true;
             _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
         }
     
@@ -258,11 +241,9 @@ internal class Game : MonoBehaviour
                     if (gameObjectTag == _tagArrowRight || gameObjectTag == _tagArrowLeft || gameObjectTag == _tagArrowDown || gameObjectTag == _tagArrowUp)
                     {
                         _cubePlayFrame = PlayGameFrameMove.GetCubePlayFrame();
-                        _moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(_moveIndexForFrame, gameObjectTag,   _cubePlayFrame, _cubePlayForFrameScale, _numberOfRows, _numberOfColumns);
-                   
+                        _moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(_moveIndexForFrame, gameObjectTag,   _cubePlayFrame, _cubePlayForFrameScale, _numberOfRows, _numberOfColumns);                  
                     }
                     
-
                     if (gameObjectTag == _tagButtonConfirm)
                     {
                         int indexX = _moveIndexForFrame[_moveIndexForFrameX];
@@ -291,7 +272,6 @@ internal class Game : MonoBehaviour
 
                             if (_isWinnerExists == true)
                             {
-                                //PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
                                 PlayGameMenuButtonsActions.DestroyElements();
 
                                 PlayGameMenuButtonsActions.DisactivateConfigurationMenu();
@@ -299,11 +279,9 @@ internal class Game : MonoBehaviour
 
                                 PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
 
-                                //PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, _isGame2D);
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
                                 GameFieldsVerificationMessages.MessageWin(cubePlaySymbol);
-
                             }
                             else
                             {
@@ -311,28 +289,22 @@ internal class Game : MonoBehaviour
 
                                 PlayGameMethods.DisactivateChosenCubePlay(cubePlayMarkByFrame);
 
-
                                 _currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(_currentCountedTagCubePlayTaken, _index);
 
                                 countedTagCubePlayTaken = _currentCountedTagCubePlayTaken[_index];
 
                                 if (countedTagCubePlayTaken >= _maxCubePlayNumber)
                                 {
-                                    //PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
                                     PlayGameMenuButtonsActions.DestroyElements();
 
                                     PlayGameMenuButtonsActions.DisactivateConfigurationMenu();
                                     PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
 
-                                    //PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, _isGame2D);
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
-
-                                    GameFieldsVerificationMessages.MessageGameOver();
-                                   
+                                    GameFieldsVerificationMessages.MessageGameOver();                           
                                 }
                             }
-
                         }
                         else 
                         {
@@ -345,7 +317,6 @@ internal class Game : MonoBehaviour
                     {
                         if (gameObjectTag == _tagCubePlayFree)
                         {
-                            
                             var cubePlayDataZYXSymbol = PlayGameChangeCubePlaySymbol.SetUpPlayerSymbolForCubePlay(_gameBoard, gameObjectName, _playersSymbols, currentPlayerNumber);
 
                             PlayGameMethods.ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(cubePlay);
@@ -365,14 +336,12 @@ internal class Game : MonoBehaviour
                                 _moveIndexForFrame[_moveIndexForFrameX] = cubePlayIndexX;
                                 _moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
                             }
-                                
 
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, playersNumberGivenForConfiguration, _currentPlayer);
 
                             _listCheckerForWinner = GameFieldsVerification.FieldsVerification(_gameBoardVerification2D, lenghtToCheck);
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
-
 
                             if (_isWinnerExists == true)
                             {
@@ -383,12 +352,9 @@ internal class Game : MonoBehaviour
 
                                 PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
 
-                                //PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, _isGame2D);
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
                                 GameFieldsVerificationMessages.MessageWin(cubePlaySymbol);
-
-
                             }
                             else
                             {
@@ -400,26 +366,18 @@ internal class Game : MonoBehaviour
 
                                 countedTagCubePlayTaken = _currentCountedTagCubePlayTaken[_index];
 
-
-
                                 if (countedTagCubePlayTaken >= _maxCubePlayNumber)
-                                {
-                                    //PlayGameMenuButtonsActions.DestroyElements(_cubePlayFrame);
+                                {;
                                     PlayGameMenuButtonsActions.DestroyElements();
 
                                     PlayGameMenuButtonsActions.DisactivateConfigurationMenu();
                                     PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
 
-                                    //PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, cubePlayColourWin, _isGame2D);
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
                                     GameFieldsVerificationMessages.MessageGameOver();
                                 }
-
                             }
-
-
-
                         }
                         else
                         {
@@ -431,22 +389,15 @@ internal class Game : MonoBehaviour
                     if (gameObjectTag == _tagGameButtonMenuConfigurationLeft || gameObjectTag == _tagGameButtonMenuConfigurationRight)
                     {
                         PlayGameMenuButtonsActions.HidePlayGameElements(_gameBoard);
-                        //_gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, cubePlayColourWin, prefabCubePlayButtonsBackColour, _isGame2D);
                         _gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
                     }
-
 
                     if (gameObjectTag == _tagGameButtonHelpButtons)
                     {
                         PlayGameHelpButtonsActions.HelpButtonsActionsCreateOrDestroy(prefabHelpButtons);
                         PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(_gameButtonsMenu);
                         PlayGameMenuButtonsActions.UnhidePlayGameElementsHelpButtons(_gameBoard);
-                        //_isCubePlayFrameVisible = PlayGameMenuButtonsActions.UnhidePlayGameElementsHelpButtons(_gameBoard, _isCubePlayFrameVisible);
-
-                        //bool isCubePlayFrameExsist = PlayGameFrameActions.IsCubePlayFrameExsist(_cubePlayFrame);
-
-                       //Debug.Log(" isCubePlayFrameExsist = " + isCubePlayFrameExsist);
 
                         if (isCubePlayFrameExsist == false)
                         {
@@ -457,19 +408,12 @@ internal class Game : MonoBehaviour
                             _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
                             
                             _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
-                            //_moveIndexForFrame[_moveIndexForFrameX] = 0;
-                            //_moveIndexForFrame[_moveIndexForFrameY] = numberOfRows - 1;
-
                         }
                         else
                         {
-                            //Debug.Log(" 1 ");
                             PlayGameFrameActions.DestroyCubePlayFrame();
                             PlayGameFrameActions.DestroyMoveIndexForFrame(_moveIndexForFrame);
                         }
-                        
-
-
                     }
 
                     if (gameObjectTag == _tagGameButtonBoardGameHelpText)
@@ -480,24 +424,17 @@ internal class Game : MonoBehaviour
 
                     }
 
-
                     if (gameObjectTag == _tagGameButtonMenuBack)
                     {
                         PlayGameMenuButtonsActions.DestroyGameConfigurationMenuButtons(_gameButtonsMenu);
                         PlayGameMenuButtonsActions.UnhidePlayGameElements(_gameBoard);
-                        
                     }
 
 
                     if (gameObjectTag ==  _tagGameButtonNewGame)
                     {
                         ScenesChange.GoToSceneConfigurationBoardGame();
-                        
                     }
-
-
-
-
 
                 }
             }   

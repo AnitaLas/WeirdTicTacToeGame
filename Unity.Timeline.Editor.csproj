@@ -265,9 +265,9 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\CustomEditors\MarkerEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\Utilities\ClipModifier.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\Signals\SignalReceiverHeader.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\Window\OverlayDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\Audio\AudioClipPropertiesDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\CustomEditors\ClipEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\Window\OverlayDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\Window\TimelineEditorWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\treeview\Snapping\IAttractable.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Editor\treeview\ItemGui\ISelectable.cs" />

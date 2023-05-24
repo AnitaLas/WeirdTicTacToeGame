@@ -359,24 +359,15 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             int maxIndexColumn;
             int maxIndexRow;
             int buttonsNumber = buttons.Count;
-            //Debug.Log($"buttonsNumber =  {buttonsNumber} ");
 
             GameObject[,,] table;         
             GameObject[,,] buttonFirst = buttons[0];
 
             GameObject prefabPlayerSymbol = buttonFirst[0, 0, 0];
 
-
             float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbol(prefabPlayerSymbol, buttonsNumber);
 
-
-            //for (int i = 0; i < tableWithNewCordinateForY.Length; i++)
-            //{
-            //    Debug.Log($" table[{i}]  = " + tableWithNewCordinateForY[i]);
-            //}
-
             float yForFirstPrefabPlayerSymbol;
-            //float newCoordinateX = -0.95f;
             float newCoordinateX = -0.85f;
             int start = buttonsNumber - 1;
             int playerNumber;

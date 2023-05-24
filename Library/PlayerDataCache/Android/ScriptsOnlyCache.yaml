@@ -90,15 +90,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 4362}
+      Script: {instanceID: 4360}
     - Class: 114
-      Script: {instanceID: 5850}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6730}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7124}
+      Script: {instanceID: 7122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -147,13 +147,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1690}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 5850}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6730}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7124}
+      Script: {instanceID: 7122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -200,15 +200,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 3384}
+      Script: {instanceID: 3382}
     - Class: 114
-      Script: {instanceID: 5850}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6730}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7124}
+      Script: {instanceID: 7122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -255,15 +255,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 5850}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6556}
+      Script: {instanceID: 6554}
     - Class: 114
-      Script: {instanceID: 6730}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7124}
+      Script: {instanceID: 7122}
     - Class: 114
       Script: {instanceID: 7750}
     - Class: 115
@@ -316,21 +316,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2020}
     - Class: 114
-      Script: {instanceID: 2300}
+      Script: {instanceID: 2298}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2808}
     - Class: 114
-      Script: {instanceID: 4520}
+      Script: {instanceID: 4518}
     - Class: 114
-      Script: {instanceID: 4654}
+      Script: {instanceID: 4652}
     - Class: 114
-      Script: {instanceID: 4974}
+      Script: {instanceID: 4972}
     - Class: 114
-      Script: {instanceID: 5850}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6730}
+      Script: {instanceID: 6554}
     - Class: 114
-      Script: {instanceID: 7124}
+      Script: {instanceID: 6728}
+    - Class: 114
+      Script: {instanceID: 7122}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -456,7 +458,7 @@ ScriptsOnlyBuild:
     className: SimpleScript
   - hash:
       serializedVersion: 2
-      Hash: 7793e9cfb0a6cac69296eae956c994ff
+      Hash: d4323e3887e4f33037aa705daaeb9f67
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts
     className: GameConfigurationSetUpKindOfGame
@@ -466,12 +468,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts.CreateGameHelpButton
     className: PlayGameHelpButtonsCreate
-  - hash:
-      serializedVersion: 2
-      Hash: 7793e9cfb0a6cac69296eae956c994ff
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts
-    className: GameConfigurationSeyUpKindOfGame
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1315,6 +1311,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.GameName
+    className: GameNameTextCreate
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.EnhancedTouch
     className: TouchSimulation
@@ -1398,7 +1400,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 5870ed44051955b8a40a7f66585879f2
+      Hash: fcc39b9d3663de53e561ce0ecadcba67
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts
     className: GameInformationsForPlayers
@@ -1419,7 +1421,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: Assets.Scripts.GameInformations.GameInformationsBase
-    className: GameInformationsTextAction
+    className: GameInformationsTextActions
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1432,12 +1434,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: PositionAsUV1
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts.GameInformations.GameInformationsBase
-    className: GameInformationsCreateText
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -1456,12 +1452,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro
     className: TMP_TextEventHandler
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts.GameInformations.GameInformationsText
-    className: GameInformationsTextActions
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1697,4 +1687,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SceneConfigurationBoardGame.unity
   - Assets/Scenes/SceneConfigurationPlayersSymbols.unity
   - Assets/Scenes/SceneGame.unity
-  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230523/WeirdTicTacToeGame_20230523v.apk
+  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230524/WeirdTicTacToeGame_20230524_v15.apk

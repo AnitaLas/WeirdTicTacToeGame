@@ -360,7 +360,6 @@
 "Assets/Scripts/Buttons/ButtonGameConfigurationMethods.cs"
 "Assets/Scripts/Buttons/ButtonGameConfigurationPlayerSymbolMethods.cs"
 "Assets/Scripts/Buttons/ButtonsCommonMethods.cs"
-"Assets/Scripts/Buttons/ButtonsCommonMethodsAction.cs"
 "Assets/Scripts/Buttons/ButtonsCommonMethodsActions.cs"
 "Assets/Scripts/Buttons/ButtonsCommonMethodsActionsDestroy.cs"
 "Assets/Scripts/Buttons/ButtonsGameConfigurationMethods.cs"

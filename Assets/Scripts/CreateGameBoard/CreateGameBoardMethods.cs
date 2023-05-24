@@ -4,6 +4,7 @@ using System;
 using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -14,6 +15,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Color = UnityEngine.Color;
 using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts   
@@ -32,6 +34,21 @@ namespace Assets.Scripts
         {
             string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             //string characters = "ABC";
+            int alphabetLenght = characters.Length;
+            string[] allSeparatedCharacters = new string[alphabetLenght];
+
+            for (int i = 0; i < alphabetLenght; i++)
+            {
+                string character = characters.Substring(i, 1);
+                allSeparatedCharacters[i] = character;
+            }
+
+            return allSeparatedCharacters;
+        }
+
+        public static string[] CreateTableWithDefaultPlayerSymbols()
+        {
+            string characters = "OXWTALFUNVCRDEGHIJKLMPQSYZ";
             int alphabetLenght = characters.Length;
             string[] allSeparatedCharacters = new string[alphabetLenght];
 
@@ -392,12 +409,13 @@ namespace Assets.Scripts
         }
 
         // ---- 
-       public static void ChangeTextColourForCubePlay(GameObject cubePlay)
-       {
-            Color colour = CommonMethods.GetNewColor(3);
-            //Debug.Log(" colour " + colour);
-            CommonMethods.ChangeTextColourForCubePlay(cubePlay, colour);
-       }
+       //public static void ChangeTextColourForCubePlay(GameObject cubePlay)
+       //{
+       //     //Color colour = CommonMethods.GetNewColor(3);
+       //     Color colour = CommonMethods.GetNewColor(3);
+       //     //Debug.Log(" colour " + colour);
+       //     CommonMethods.ChangeTextColourForCubePlay(cubePlay, colour);
+       //}
 
         public static void ChangeDataForBoardGameAtStart(GameObject[,,] boardGame)
         {
@@ -405,6 +423,8 @@ namespace Assets.Scripts
             int maxIndexDepth = boardGame.GetLength(0);
             int maxIndexColumn = boardGame.GetLength(2);
             int maxIndexRow = boardGame.GetLength(1);
+
+            Color colour = CommonMethods.GetNewColor(3);
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
@@ -414,8 +434,8 @@ namespace Assets.Scripts
                     {
                         //Debug.Log(" 1 ");
                         GameObject cubePlay = boardGame[indexDepth, indexRow, indexColumn];
-                        ChangeTextColourForCubePlay(cubePlay);
-
+                        //ChangeTextColourForCubePlay(cubePlay);
+                        CommonMethods.ChangeTextColourForCubePlay(cubePlay, colour);
                     }
                 }
             }

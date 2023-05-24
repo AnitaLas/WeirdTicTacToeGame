@@ -6,7 +6,7 @@
 6    android:versionName="2023.0" >
 7
 8    <uses-sdk
-9        android:minSdkVersion="28"
+9        android:minSdkVersion="22"
 9-->C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 10        android:targetSdkVersion="30" />
 10-->C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml

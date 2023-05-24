@@ -37,6 +37,7 @@ namespace Assets.Scripts.PlayGame
         public static void ChangeBoarGameHelpTextToVisible(GameObject[,,] boardGame, string[] playersSymbols)
         {
             int dictionaryColorId = 3;
+            //int dictionaryColorId = 5;
             Color textColour = CommonMethods.GetNewColor(dictionaryColorId);
             ChangeCubePlayTextVisibility(boardGame, playersSymbols, textColour);
 
