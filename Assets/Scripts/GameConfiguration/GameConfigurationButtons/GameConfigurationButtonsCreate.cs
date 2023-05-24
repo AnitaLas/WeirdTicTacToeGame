@@ -116,9 +116,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
 
             tableButtonBack = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonNewGame);
 
-            //string frontTextToAdd = "InformationButtonBackToConfiguration_";
-            //ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(tableButtonBack, frontTextToAdd);
-
             float newCoordinateY = -4.75f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonBack, newCoordinateY, tagName);
 

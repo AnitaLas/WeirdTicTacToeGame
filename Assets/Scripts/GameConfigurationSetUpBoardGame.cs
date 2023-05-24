@@ -101,7 +101,6 @@ namespace Assets.Scripts.GameConfiguration
             _tagConfigurationBoardGameChangeNumberLenghtToCheck = configurationBoardGameDictionaryTag[13];
             _tagConfigurationBoardGameTableNumberLenghtToCheck = configurationBoardGameDictionaryTag[14];
 
-            //_tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
             _tagConfigurationBoardGameButtonBackToConfiguration = configurationBoardGameDictionaryTag[21];
  
             // ---
@@ -155,13 +154,10 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberPlayers)
                         {
-                            // remove tag from method
-                            //numberOfPlayers = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberPlayers);
                             numberOfPlayers = GameConfigurationCommonMethods.SetUpChosenNumberForConfigurationPlayers(_buttonsWithNumbers, gameObjectName);
                             
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
-
                         }
 
 
@@ -176,8 +172,6 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberRows)
                         {
-                            // remove tag from method
-                            //numberOfRows = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberRows);
                             numberOfRows = GameConfigurationCommonMethods.SetUpChosenNumberForConfigurationRows(_buttonsWithNumbers, gameObjectName);
 
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);

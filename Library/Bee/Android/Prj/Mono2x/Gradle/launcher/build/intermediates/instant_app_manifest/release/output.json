@@ -21,7 +21,7 @@
       "properties": {
         "packageId": "com.Alan.WeirdTicTacToe",
         "split": "",
-        "minSdkVersion": "28"
+        "minSdkVersion": "22"
       }
     }
   ]

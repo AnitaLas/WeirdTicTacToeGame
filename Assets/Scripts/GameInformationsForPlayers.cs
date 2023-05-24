@@ -38,7 +38,7 @@ namespace Assets.Scripts
         private string _tagGameInformationsTextContact;
         private string _tagGameInformationsTextNextVersions;
         private string _tagGameInformationsTextSet;
-        private string _tagGameName;
+        //private string _tagGameName;
 
         Dictionary<int, string> tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
         Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformations.DictionaryTagGameInformations();
@@ -59,7 +59,7 @@ namespace Assets.Scripts
             _tagGameInformationsTextNextVersions = tagGameInformations[6];
             _tagGameInformationsButtontSet = tagGameInformations[7];
             _tagGameInformationsTextSet = tagGameInformations[8];
-            _tagGameName = tagGameInformations[9];
+            //_tagGameName = tagGameInformations[9];
 
             _buttonBack = GameInformationsButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsAll = GameInformationsButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);

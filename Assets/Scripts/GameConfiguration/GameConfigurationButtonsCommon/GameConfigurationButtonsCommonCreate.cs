@@ -103,8 +103,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             int numberOfDepths = 1;
             int numberOfRows = 3;
             int numberOfColumns = 14;
-            //int numberOfColumns = 15;
-            //int numberOfColumns = 16;
 
             string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
 

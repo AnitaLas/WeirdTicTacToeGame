@@ -27,7 +27,8 @@ namespace Assets.Scripts.PlayGame
             int dictionaryColorIdForTextInvisible = 4;
             Color textInvisible = CommonMethods.GetNewColor(dictionaryColorIdForTextInvisible);
 
-            int dictionaryColorIdForOtherPlayersSymbols = 3;
+            //int dictionaryColorIdForOtherPlayersSymbols = 3;
+            int dictionaryColorIdForOtherPlayersSymbols = 5;
             Color textForOtherPlayersSymbols = CommonMethods.GetNewColor(dictionaryColorIdForOtherPlayersSymbols);
 
             int maxIndexDepth = boardGame.GetLength(0);
