@@ -1,9 +1,5 @@
 ﻿using Assets.Scripts.PlayGameMenu;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Buttons
@@ -15,14 +11,12 @@ namespace Assets.Scripts.Buttons
         {
             float newCoordinateY = 100f;
             ButtonsCommonMethods.ChangeCoordinateYForGameObjectOneList(gameObjects, newCoordinateY);
-
         }
 
         public static void GameObjectToUnhide(List<GameObject[,,]> gameObjects)
         {
             float newCoordinateY = -100f;
             ButtonsCommonMethods.ChangeCoordinateYForGameObjectOneList(gameObjects, newCoordinateY);
-
         }
 
         // ---
@@ -82,10 +76,6 @@ namespace Assets.Scripts.Buttons
 
         // ---
 
-
-
-        // ---
-
         public static void HideVisibleTablesWithNumber(List<GameObject[,,]> tablesWithNumber)
         {
             GameObject[,,] table;
@@ -111,8 +101,5 @@ namespace Assets.Scripts.Buttons
                 }
             }
         }
-
-
-
     }
 }

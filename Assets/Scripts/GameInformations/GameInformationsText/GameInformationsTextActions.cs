@@ -1,12 +1,7 @@
-﻿using Assets.Scripts.Buttons;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.GameInformations.GameInformationsBase
+namespace Assets.Scripts.GameInformations.GameInformationsText
 {
     internal class GameInformationsTextActions : MonoBehaviour
     {
@@ -35,10 +30,38 @@ namespace Assets.Scripts.GameInformations.GameInformationsBase
                 string gameObjectTagToDestroy = gameObjectTagToDestoy[i];
                 DestroyOneGameObjectByTag(gameObjectTagToDestroy);
             }
-
-
         }
+        /*
+       public static void DestroyText(string gameObjectTag)
+       {
+           GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
+           Destroy(gameObject);
+       }
 
+
+       public static void DestroyOneGameObjectByTag(string gameObjectTagToDestoy)
+       {
+           bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
+
+           if (isGameObjectWithTagExsist == true)
+           {
+               DestroyText(gameObjectTagToDestoy);
+           }
+       }
+
+       public static void DestroyGameObjectsWithText(List<string> gameObjectTagToDestoy)
+       {
+           int numberOfGameObjectTagToDestroy = gameObjectTagToDestoy.Count;
+
+           for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
+           {
+               string gameObjectTagToDestroy = gameObjectTagToDestoy[i];
+               DestroyOneGameObjectByTag(gameObjectTagToDestroy);
+           }
+
+
+       }
+       */
         //public static void DestroyGameObjectsWithText2(List<string> gameObjectTagToDestoy)
         //{
         //    //int numberOfGameObjectTagToDestroy = gameObjectTagToDestoy.Count;
@@ -51,6 +74,5 @@ namespace Assets.Scripts.GameInformations.GameInformationsBase
 
         //    ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(gameObjectTagToDestoy);
         //}
-
     }
 }

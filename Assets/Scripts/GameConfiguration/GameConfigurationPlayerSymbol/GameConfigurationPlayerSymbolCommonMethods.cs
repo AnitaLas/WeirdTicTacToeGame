@@ -1,27 +1,16 @@
-﻿using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.PlayGameMenu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using TMPro;
+﻿using Assets.Scripts.PlayGameMenu;
 using UnityEngine;
-using UnityEngine.InputSystem.EnhancedTouch;
 
 namespace Assets.Scripts.GameConfigurationPlayerSymbol
 {
     internal class GameConfigurationPlayerSymbolCommonMethods
-    {
-        
+    {      
         public static void ChangeTagForPlayerDefaultSymbol(string gameObjectName, string gameObjectTagNameToChange, string tagConfigurationPlayerSymbolDefaultSymbol)
         {
             GameObject[] listOfSymbol = CommonMethods.GetObjectsListWithTagName(tagConfigurationPlayerSymbolDefaultSymbol);
             int tagNumber = listOfSymbol.Length;
       
             string gameObjectNameEndNumber = ButtonsCommonMethods.GetSubstringFromCubePlayName(gameObjectName);
-
 
             for (int i = 0; i < tagNumber; i++)
             {
@@ -34,13 +23,11 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                     CommonMethods.ChangeTagForGameObject(cubePlay, gameObjectTagNameToChange);
                 }
             }
-
         }
 
 
         public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateZ)
         {
-
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
             int maxIndexRow = tableWtithNumber.GetLength(1);
@@ -59,28 +46,6 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             }
         }
 
-        //public static void UnhideTableWithNumber(GameObject[,,] tableWtithNumber)
-        //{
-        //    float newCoordinateZ = -100f;
-        //    ChangeCoordinateYForTable(tableWtithNumber, newCoordinateZ);
-        //}
-
-        //public static void HideTableWithNumber(GameObject[,,] tableWtithNumber)
-        //{
-        //    //float newCoordinateZ = 0.75f;
-        //    float newCoordinateY = 100f;
-        //    ChangeCoordinateYForTable(tableWtithNumber, newCoordinateY);
-        //}
-
-        //public static TextMeshProUGUI GetTextForPlayerSymbolFirstChild(GameObject gameObject)
-        //{
-        //    int childNumber = 0;
-        //    TextMeshProUGUI playerText = CommonMethods.GetTextMeshProUGUIForPlayerSymbolChild( gameObject, childNumber);
-        //    Debug.Log("playerText = " + playerText);
-        //    return playerText;
-        //}
-
-
         public static void ChangeSymbolForPlayer(string newSymbol, string tagConfigurationPlayerSymbolChooseSymbol)
         {
             GameObject objectWithChosenSymbol = CommonMethods.GetObjectByTagName(tagConfigurationPlayerSymbolChooseSymbol);
@@ -98,16 +63,10 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         {
             string gameObjectNameForChosenSymbol = CommonMethods.GetObjectName(touch);
             GameObject gameObjectForChosenSymbol = CommonMethods.GetObjectByName(gameObjectNameForChosenSymbol);
-
             string newSymbol = CommonMethods.GetCubePlayText(gameObjectForChosenSymbol);
 
             ChangeSymbolForPlayer(newSymbol, tagConfigurationPlayerSymbolChange);
-
-            //GameObject gameObject = CommonMethods.GetObjectByTagName(_tagConfigurationPlayerSymbolChange);
-            //CommonMethods.ChangeTagForGameObject(gameObject, _tagConfigurationPlayerSymbolDefaultSymbol);
             ChangeGameObjectTag(tagConfigurationPlayerSymbolChange, tagConfigurationPlayerSymbolDefaultSymbol);
-
         }
-
     }
 }

@@ -1,24 +1,7 @@
-﻿//using Fare;
-using Assets.Scripts.GameDictionaries;
-using System;
-using System.Buffers.Text;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 using Color = UnityEngine.Color;
-using Debug = UnityEngine.Debug;
 
-namespace Assets.Scripts   
+namespace Assets.Scripts
 {
 
     internal class CreateGameBoardMethods : MonoBehaviour
@@ -33,7 +16,6 @@ namespace Assets.Scripts
         public static string[] CreateTableWithCharactersByGivenString()
         {
             string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            //string characters = "ABC";
             int alphabetLenght = characters.Length;
             string[] allSeparatedCharacters = new string[alphabetLenght];
 
@@ -42,7 +24,6 @@ namespace Assets.Scripts
                 string character = characters.Substring(i, 1);
                 allSeparatedCharacters[i] = character;
             }
-
             return allSeparatedCharacters;
         }
 
@@ -57,7 +38,6 @@ namespace Assets.Scripts
                 string character = characters.Substring(i, 1);
                 allSeparatedCharacters[i] = character;
             }
-
             return allSeparatedCharacters;
         }
 
@@ -81,7 +61,6 @@ namespace Assets.Scripts
                 int indexNumber = number - 1;
                 numbers[indexNumber] = numberString;
             }
-
             return numbers;
         }
 
@@ -123,7 +102,6 @@ namespace Assets.Scripts
 
             int[] oldTableIndex = new int[1];
             oldTableIndex[0] = 0;
-            //int indexForOldTable;
 
             int[] indexForNewTableWithCharacters = new int[1];
             indexForNewTableWithCharacters[0] = 0;
@@ -136,7 +114,6 @@ namespace Assets.Scripts
 
             for (int i = 0; i < newTableWithCharactersLenght; i++)
             {
-                //indexForOldTable = oldTableIndex[0];
                 indexForNewString = newStringIndex[0];
 
                 if (i < (oldTableLenght - 1))
@@ -191,7 +168,6 @@ namespace Assets.Scripts
                     }
                 }
             }
-
             return newTableWithCharacters;
         }
 
@@ -247,7 +223,6 @@ namespace Assets.Scripts
             index[0] = 0;
             int currentIndex;
 
-
             for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
             {
                 for (int indexRow = numberOfRows - 1; indexRow >= 0; indexRow--)
@@ -262,14 +237,11 @@ namespace Assets.Scripts
 
                         index[0] = index[0] + 1;
                     }
-
                     index[0] = 0;
                 }
             }
-
             return newTable;
         }
-
 
         /// <summary>
         /// <para> e.g. for table 3x3 </para> 
@@ -307,10 +279,8 @@ namespace Assets.Scripts
 
                     index[0] = index[0] + 1;
                 }
-
                 index[0] = 0;
             }
-
             return newTable;
         }
 
@@ -351,7 +321,6 @@ namespace Assets.Scripts
                     }
                 }
             }
-
             return newTable;
         }
 
@@ -365,61 +334,51 @@ namespace Assets.Scripts
         /// <param name="numberOfRows"></param>
         /// <param name="numberOfColumns"></param>
         /// <returns></returns>
-        public static Tuple<int, int, int> GetXYZForTable3DForBoardGame(int numberOfDepths, int numberOfRows, int numberOfColumns, int currentNumberOfDepth, int currentNumberOfRow, int currentNumberOfColumn)
-        {
+        //public static Tuple<int, int, int> GetXYZForTable3DForBoardGame(int numberOfDepths, int numberOfRows, int numberOfColumns, int currentNumberOfDepth, int currentNumberOfRow, int currentNumberOfColumn)
+        //{
+        //    int[,,] gameBoard = new int[numberOfDepths, numberOfRows, numberOfColumns];
 
-            int[,,] gameBoard = new int[numberOfDepths, numberOfRows, numberOfColumns];
+        //    int newNumberOfRow;
+        //    int newNumberOfColumn;
+        //    int newNumberOfDepth = numberOfDepths;
 
-            int newNumberOfRow;
-            int newNumberOfColumn;
-            int newNumberOfDepth = numberOfDepths;
+        //    if (currentNumberOfRow + numberOfRows - 1 > numberOfRows - currentNumberOfRow)
+        //    {
+        //        newNumberOfRow = Math.Abs(currentNumberOfRow - 1);
+        //        newNumberOfColumn = currentNumberOfColumn;
+        //        newNumberOfDepth = currentNumberOfDepth;
 
-            if (currentNumberOfRow + numberOfRows - 1 > numberOfRows - currentNumberOfRow)
-            {
-                newNumberOfRow = Math.Abs(currentNumberOfRow - 1);
-                newNumberOfColumn = currentNumberOfColumn;
-                newNumberOfDepth = currentNumberOfDepth;
+        //        var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
+        //        return newXYZ;
+        //    }
+        //    else
+        //    {
+        //        if (currentNumberOfColumn < numberOfColumns - 1)
+        //        {
+        //            newNumberOfRow = numberOfRows - 1;
+        //            newNumberOfColumn = currentNumberOfColumn + 1;
+        //            newNumberOfDepth = currentNumberOfDepth;
 
-                var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
-                return newXYZ;
-            }
+        //            var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
+        //            return newXYZ;
+        //        }
+        //        else
+        //        {
+        //            newNumberOfRow = numberOfRows - 1;
+        //            newNumberOfColumn = currentNumberOfColumn + 1;
+        //            newNumberOfDepth = currentNumberOfDepth;
 
-            else
-            {
-                if (currentNumberOfColumn < numberOfColumns - 1)
-                {
-                    newNumberOfRow = numberOfRows - 1;
-                    newNumberOfColumn = currentNumberOfColumn + 1;
-                    newNumberOfDepth = currentNumberOfDepth;
+        //            var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
+        //            return newXYZ;
 
-                    var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
-                    return newXYZ;
-                }
-                else
-                {
-                    newNumberOfRow = numberOfRows - 1;
-                    newNumberOfColumn = currentNumberOfColumn + 1;
-                    newNumberOfDepth = currentNumberOfDepth;
-
-                    var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
-                    return newXYZ;
-
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
         // ---- 
-       //public static void ChangeTextColourForCubePlay(GameObject cubePlay)
-       //{
-       //     //Color colour = CommonMethods.GetNewColor(3);
-       //     Color colour = CommonMethods.GetNewColor(3);
-       //     //Debug.Log(" colour " + colour);
-       //     CommonMethods.ChangeTextColourForCubePlay(cubePlay, colour);
-       //}
 
         public static void ChangeDataForBoardGameAtStart(GameObject[,,] boardGame)
         {
-            //Debug.Log(" 1 ");
             int maxIndexDepth = boardGame.GetLength(0);
             int maxIndexColumn = boardGame.GetLength(2);
             int maxIndexRow = boardGame.GetLength(1);
@@ -432,14 +391,11 @@ namespace Assets.Scripts
                 {
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
-                        //Debug.Log(" 1 ");
                         GameObject cubePlay = boardGame[indexDepth, indexRow, indexColumn];
-                        //ChangeTextColourForCubePlay(cubePlay);
                         CommonMethods.ChangeTextColourForCubePlay(cubePlay, colour);
                     }
                 }
             }
-
         }
     }
 }

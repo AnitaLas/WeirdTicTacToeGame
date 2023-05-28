@@ -1,9 +1,4 @@
 ﻿using Assets.Scripts.GameName;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.GameInformations.GameInformationsText
@@ -17,7 +12,6 @@ namespace Assets.Scripts.GameInformations.GameInformationsText
             float newZ = 0;
 
             var newObject= Instantiate(objectWithtext, new Vector3(newX, newY, newZ), Quaternion.identity);
-
         }
 
         public static void CreateGameInformationsTextNextVersions(GameObject objectWithtext)
@@ -38,8 +32,6 @@ namespace Assets.Scripts.GameInformations.GameInformationsText
         public static void CreateGameName(GameObject objectWithtext)
         {
             GameNameTextCreate.CreateGameNameForGameInformations(objectWithtext);
-
         }
-
     }
 }

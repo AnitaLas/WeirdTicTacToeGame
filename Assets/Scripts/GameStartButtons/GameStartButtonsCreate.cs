@@ -1,24 +1,17 @@
 ﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.PlayGameMenu;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.GameStart
 {
     internal class GameStartButtonsCreate
     {
-
         public static void CreateButtonsStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             CreateButtonStartGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
             CreateButtonStartGameInformations(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
-
         }
 
         public static GameObject[,,] CreateButtonStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
@@ -43,14 +36,11 @@ namespace Assets.Scripts.GameStart
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
 
             return tableButtonNewGame;
-
         }
 
 
         public static GameObject[,,] CreateButtonStartGameInformations(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            //GameObject[,,] tableButtonNewGame;
-
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
 

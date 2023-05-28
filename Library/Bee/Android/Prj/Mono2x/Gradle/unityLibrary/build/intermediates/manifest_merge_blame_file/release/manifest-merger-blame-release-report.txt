@@ -95,7 +95,7 @@
 53-->C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:5-69
 54            android:name="unity.splash-mode"
 54-->C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:16-48
-55            android:value="0" />
+55            android:value="1" />
 55-->C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:49-66
 56        <meta-data
 56-->C:\Users\anita\OneDrive\Dokumenty\GitHub\WeirdTicTacToeGame\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:5-74

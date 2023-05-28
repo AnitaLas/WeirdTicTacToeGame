@@ -1,12 +1,5 @@
-﻿using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
-using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.PlayGameMenu;
-using System;
+﻿using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Buttons
@@ -16,14 +9,12 @@ namespace Assets.Scripts.Buttons
         // --- button name "PLAYER 1"
         public static GameObject[,,] GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagName, string buttonText)
         {
-
             GameObject[,,] buttonBack = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return buttonBack;
         }
 
         public static GameObject[,,] GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumberBiggerThanSix(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagName, string buttonText)
         {
-
             GameObject[,,] buttonBack = GameConfigurationButtonsCommonCreate.CreateCommonButtonForShortText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return buttonBack;
         }
@@ -52,30 +43,13 @@ namespace Assets.Scripts.Buttons
             List<GameObject[,,]> buttonsList = new List<GameObject[,,]>();
 
             int columnsForPlayers = playersNumber / 2;
-            //Debug.Log("columnsForPlayers = " + columnsForPlayers);
-
-           // Debug.Log("playersNumber = " + playersNumber);
 
             for (int i = 0; i < playersNumber; i++)
             {
                 finalTextForButton = defaultTextForButtons[i];
 
-                //Debug.Log("i = " + i);
-
-                //if (playersNumber <= 6)
-                //{
-                    buttonBack = GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, finalTextForButton);
-                    buttonsList.Insert(i, buttonBack);
-                //}
-                //else
-                //{
-                //    buttonBack = GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumberBiggerThanSix(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, finalTextForButton);
-                //    buttonsList.Insert(i, buttonBack);
-
-                //}
-                
-
-               
+                buttonBack = GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, finalTextForButton);
+                buttonsList.Insert(i, buttonBack);             
             }
 
             return buttonsList;
@@ -94,7 +68,6 @@ namespace Assets.Scripts.Buttons
 
                 buttonBack = GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumberBiggerThanSix(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, finalTextForButton);
                 buttonsList.Insert(i, buttonBack);
-
             }
 
             return buttonsList;
@@ -103,7 +76,6 @@ namespace Assets.Scripts.Buttons
         // --- button with symbol "X"
         public static GameObject[,,] GameConfigurationPlayerSymbolCreateOneButtonForPlayerSymbol(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagName, string buttonText)
         {
-
             GameObject[,,] buttonBack = GameConfigurationButtonsCommonCreate.CreateCommonButtonForSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return buttonBack;
         }
@@ -123,18 +95,5 @@ namespace Assets.Scripts.Buttons
 
             return buttonsList;
         }
-
-
-        // --- more than 6 players
-
-
-
-
-
-
-
-
-
-
     }
 }

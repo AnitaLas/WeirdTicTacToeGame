@@ -1,19 +1,10 @@
-﻿using Assets.Scripts.GameDictionaries;
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
-using UnityEngine;
-using Object = System.Object;
 
 namespace Assets.Scripts.GameFieldsVerification
 {
     internal class GameFieldsVerificationCheckerHorizontal
     {
-
         public static ArrayList CheckerHorizontal(string[,] boardToCheck, int lenghtToCheck)
         {
             ArrayList listCheckerHorizontal = new ArrayList();
@@ -48,7 +39,6 @@ namespace Assets.Scripts.GameFieldsVerification
                 {
                     if (checkArray[0].Equals(""))
                     {
-                        //Debug.Log(" 1 rowIndex = " + rowIndex + " , columnIndex = " + columnIndex);
                         checkArray[0] = boardToCheck[rowIndex, columnIndex];
                         matchingArray[0] = 1;
 
@@ -56,18 +46,12 @@ namespace Assets.Scripts.GameFieldsVerification
                         coordinateXYToMark[0, 1] = columnIndex;
                         indexYToMark[0] = 1;
 
-                        //listCheckerHorizontal.Add(checker);
-                        //bool test = (bool)listCheckerHorizontal[0];
                         listCheckerHorizontal.Insert(0, checker);
-                        //Debug.Log("FALSE 0 = test = ");
-                        //return listCheckerHorizontal;
                     }
                     else if (checkArray[0].Equals(boardToCheck[rowIndex, columnIndex]))
-                    {
-                       
+                    {                       
                         if (matchingArray[0] < lenghtToCheck)
                         {
-                            //Debug.Log(" 2 rowIndex = " + rowIndex + " , columnIndex = " + columnIndex);
                             checkArray[0] = boardToCheck[rowIndex, columnIndex];
                             matchingArray[0] = matchingArray[0] + 1;
 
@@ -76,14 +60,7 @@ namespace Assets.Scripts.GameFieldsVerification
                             coordinateXYToMark[currentIndexY, 1] = columnIndex;
                             indexYToMark[0] = currentIndexY + increaseIndexXY;
 
-                            //listCheckerHorizontal[0] = checker;
-                            //listCheckerHorizontal.Add(checker);
                             listCheckerHorizontal.Insert(0, checker);
-                            //listCheckerHorizontal.Add(coordinateXYToMark);
-                            //bool test = (bool)listCheckerHorizontal[0];
-                            // Debug.Log("FALSE 1 = test = ");
-                            //return listCheckerHorizontal;
-
                         }
                         else if (matchingArray[0] == lenghtToCheck)
                         {
@@ -92,37 +69,15 @@ namespace Assets.Scripts.GameFieldsVerification
                             int currentIndexY = indexYToMark[0];
                             coordinateXYToMark[currentIndexY, 0] = rowIndex;
                             coordinateXYToMark[currentIndexY, 1] = columnIndex;
-
-                            //Debug.Log($"----------------------------------------");
-                            //Debug.Log($"----------------------------------------");
-                           // for (int y = 0; y < coordinateXYToMark.GetLength(0); y++)
-                          //  {
-                           //     for (int x = 0; x < coordinateXYToMark.GetLength(1); x++)
-                           //     {
-                                   // Debug.Log($"coordinateXYToMark [{y},{x}] = " + coordinateXYToMark[y, x]);
-
-                            //    }
-                                //Debug.Log($"----------------------------------------");
-                          //  }
-                           // Debug.Log($"----------------------------------------");
-                            //listCheckerHorizontal[0] = checker;
-                            //listCheckerHorizontal.Add(checker);
+                           
                             listCheckerHorizontal.Insert(0, checker);
-                            //listCheckerHorizontal.Add(coordinateXYToMark);
                             listCheckerHorizontal.Insert(1, coordinateXYToMark);
-
-
 
                             Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesGameFieldsVerification.DictionaryChecker();
                             string kindOfChecker = checkerDictionary[1];
                             listCheckerHorizontal.Insert(2, kindOfChecker);
 
-
-                            //Debug.Log("test" + test3);
-
                             return listCheckerHorizontal;
-                            //return checker;
-
                         }
                     }
                     else if (checkArray[0] != boardToCheck[rowIndex, columnIndex])
@@ -136,53 +91,29 @@ namespace Assets.Scripts.GameFieldsVerification
                             coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
                             coordinateXYToMark[0, 0] = rowIndex;
                             coordinateXYToMark[0, 1] = columnIndex;
-
                         }
                         else if ((boardMaxColumnIndex - columnIndex) < lenghtToCheck)
                         {
                             if (rowIndex == boardMaxRowIndex)
                             {
                                 checker = false;
-                                //return checker;
-                                //listCheckerHorizontal[0] = checker;
-                                //listCheckerHorizontal.Add(checker1);
                                 listCheckerHorizontal.Insert(0, checker);
-                               // bool test = (bool)listCheckerHorizontal[0];
-                                //Debug.Log("FALSE = test = ");
+
                                 return listCheckerHorizontal;
-
-
-
-
                             }
                             else if (rowIndex < boardMaxRowIndex)
                             {
                                 checkArray[0] = "";
                                 matchingArray[0] = 0;
                                 indexYToMark[0] = 0;
-                                coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-                                //checker = false;
-                                //return checker;
-
-                                //listCheckerHorizontal.Add(checker);
-                                ////bool test = (bool)listCheckerHorizontal[0];
-                                //Debug.Log("FALSE 2 = test = ");
-                                //return listCheckerHorizontal;
-
-
+                                coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];                              
                             }
                         }
                     }
                 }
             }
 
-
             return listCheckerHorizontal;
-
-            //return listCheckerHorizontal;
-
-
         }
-
     }
 }

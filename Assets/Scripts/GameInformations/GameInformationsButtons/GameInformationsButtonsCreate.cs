@@ -1,22 +1,15 @@
 ﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.PlayGameMenu;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.GameInformations.GameInformationsButtons
 {
     internal class GameInformationsButtonsCreate
     {
-
         public static List<GameObject[,,]> GameInformationsCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
-            //GameObject[,,] buttonBack = GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
             GameObject[,,] buttonContact = GameInformationsCreateButtonContact(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] buttonNextVersions = GameInformationsCreateButtonGameVersions(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] buttonSet = GameInformationsCreateButtonSet(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
@@ -26,20 +19,11 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
             buttons.Insert(1, buttonNextVersions);
             buttons.Insert(1, buttonSet);
 
-
-            //List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
-            //buttonsAll.Insert(0, buttonBack);
-            //buttonsAll.Insert(1, buttonContact);
-            //buttonsAll.Insert(2, buttonNextVersions);
-
-
             return buttons;
-
         }
 
         public static GameObject[,,] GameInformationsCreateButtonContact(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
-
             GameObject[,,] tableButtonContact;
 
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformations.DictionaryTagGameInformations();
@@ -56,7 +40,6 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
             tableButtonContact = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonContact);
 
-            //float newCoordinateY = 1.45f;
             float newCoordinateY = 2f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonContact, newCoordinateY, tagButtonContact);
 
@@ -65,7 +48,6 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
         public static GameObject[,,] GameInformationsCreateButtonGameVersions(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
-
             GameObject[,,] tableButtonNextVersions;
 
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformations.DictionaryTagGameInformations();
@@ -73,7 +55,6 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
             string tagGameButtonHelpButtons = tagCubePlayDictionary[3];
             string buttonText = buttonsNextVersionsNameDictionary[2];
-            //string buttonText = buttonsGameNameDictionary[2];
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
@@ -83,7 +64,6 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
             tableButtonNextVersions = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonNextVersions);
 
-           //float newCoordinateY = 0f;
             float newCoordinateY = 0.5f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNextVersions, newCoordinateY, tagGameButtonHelpButtons);
 
@@ -93,7 +73,6 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
         public static GameObject[,,] GameInformationsCreateButtonSet(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
-
             GameObject[,,] tableButtonContact;
 
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformations.DictionaryTagGameInformations();
@@ -110,7 +89,6 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
             tableButtonContact = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonContact);
 
-            //float newCoordinateY = -1.45f;
             float newCoordinateY = -1f;
             ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonContact, newCoordinateY, tagButtonContact);
 
@@ -141,11 +119,5 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
             return tableButtonBack;
         }
-
-
-
-
-
-
     }
 }

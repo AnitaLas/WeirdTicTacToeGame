@@ -1,18 +1,10 @@
-﻿//using Assets.Scripts.GameConfiguration.GameConfigurationBase;
-using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.ScreenVerification;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Assets.Scripts.ScreenVerification;
 using UnityEngine;
 
 namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 {
     internal class GameConfigurationButtonsWithNumbersForRowsAndColumns
     {
-
         public static GameObject[,,] CreateTableForRowsAndColumns(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, bool isCellphoneMode)
         {
             GameObject[,,] table;
@@ -27,6 +19,5 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             return table;
 
         }
-
     }
 }

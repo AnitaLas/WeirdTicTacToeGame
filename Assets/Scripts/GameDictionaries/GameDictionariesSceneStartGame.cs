@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Assets.Scripts.GameDictionaries
 {
     internal class GameDictionariesSceneStartGame
     {
-
         public static Dictionary<int, string> DictionaryTagStartGame()
         {
             Dictionary<int, string> tagStartGameDictionary = new Dictionary<int, string>
@@ -26,13 +21,11 @@ namespace Assets.Scripts.GameDictionaries
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
             {
                 { 1, "START GAME" },
-                //buttonsNameDictionary.Add(1, "GAME");
                 { 2, "TEAM GAME" },
                 { 3, "?" }
             };
 
             return buttonsNameDictionary;
         }
-
     }
 }

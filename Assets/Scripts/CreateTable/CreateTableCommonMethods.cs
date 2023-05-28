@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assets.Scripts.CreateTable
 {
@@ -113,21 +108,17 @@ namespace Assets.Scripts.CreateTable
 
             for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
             {
-
                 for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
                 {
                     for (int indexRow = 0; indexRow < numberOfRows; indexRow++)
                     {
                         number = number + 1;
                         PrefabCubePlayNumbers[indexDepth, indexRow, indexColumn] = number;
-
                     }
                 }
             }
-
             return PrefabCubePlayNumbers;
         }
-
 
         /// <summary>
         /// <para> calculate data for first prefab "CubaPlay" X and Y and Z </para>
@@ -177,7 +168,6 @@ namespace Assets.Scripts.CreateTable
 
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
                     return newDataForCubePlayColour;
-
                 }
                 else
                 {
@@ -188,10 +178,8 @@ namespace Assets.Scripts.CreateTable
                     return newDataForCubePlayColour;
                 }
             }
-
             else if (indexForPreviousColour == maxIndexForCubePlayData)
             {
-
                 if (currentCountedNumberForCubeRows == numberOfRows)
                 {
                     currentCountedNumberOfRows = 1;
@@ -207,7 +195,6 @@ namespace Assets.Scripts.CreateTable
 
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
                     return newDataForCubePlayColour;
-
                 }
                 else
                 {
@@ -217,11 +204,9 @@ namespace Assets.Scripts.CreateTable
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
                     return newDataForCubePlayColour;
                 }
-
             }
             else if (indexForPreviousColour < maxIndexForCubePlayData)
             {
-
                 if (currentCountedNumberForCubeRows == numberOfRows)
                 {
                     currentCountedNumberOfRows = 0;

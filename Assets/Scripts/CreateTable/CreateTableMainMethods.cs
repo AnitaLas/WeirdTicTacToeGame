@@ -1,18 +1,10 @@
 ﻿using Assets.Scripts.CreateTable;
-using Assets.Scripts.GameConfiguration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
     internal class CreateTableMainMethods : MonoBehaviour
     {
-
-
         public static GameObject[,,] CreateTableWithNumbers(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D, string[,,] defaultTextForCubePlay)
         {
             // [prefabCubePlay][prefabCubePlayNewZ]
@@ -131,10 +123,8 @@ namespace Assets.Scripts
 
             for (float x = positionForFirstCubePlayX; x < positionForLastCubePlayX; x = x + newScale)
             {
-
                 for (float y = positionForFirstCubePlayY; y < positionForLastCubePlayY; y = y + newScale)
                 {
-
                     for (float z = positionForFirstCubePlayZ; z < positionForLastCubePlayZ; z = z + newScale)
                     {
 
@@ -184,7 +174,6 @@ namespace Assets.Scripts
                         // [prefabCubePlayName] set up new currentNumberCubePlayName
                         numbersCubePlayName = CommonMethods.SetUpNewCurrentNumberByAddition(numbersCubePlayName, index);
 
-
                         // [gameBoard]
                         GameObject newCublePlayOnTheBoard = newPrefabCubePlay;
 
@@ -217,11 +206,8 @@ namespace Assets.Scripts
                     }
                 }
             }
-
             return gameBoard;
             // [gameBoard] create game board - end
-
         }
-
     }
 }

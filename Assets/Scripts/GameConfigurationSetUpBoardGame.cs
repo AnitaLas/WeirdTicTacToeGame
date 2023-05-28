@@ -41,7 +41,7 @@ namespace Assets.Scripts.GameConfiguration
 
         public Material[] prefabCubePlayButtonsNumberColour;
 
-        Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+        private Dictionary<int, string> _configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
 
         private string _tagConfigurationBoardGameButtonSave;
         private string _tagConfigurationBoardGameButtonBack;
@@ -66,7 +66,7 @@ namespace Assets.Scripts.GameConfiguration
         private static bool _isGame2D = true;
 
         public Touch touch;
-        private Camera mainCamera;
+        private Camera _mainCamera;
 
         private List<GameObject[,,]> _buttonsAll;
         private List<GameObject[,,]> _buttonsMoreSpecificConfiguration;
@@ -75,33 +75,31 @@ namespace Assets.Scripts.GameConfiguration
 
         void Start()
         {
-
             isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
-
 
             numberOfPlayers = 2;
             numberOfRows = 3;
             numberOfColumns = 3;
             lenghtToCheck = 3;
 
-            _tagConfigurationBoardGameButtonSave = configurationBoardGameDictionaryTag[1];
-            _tagConfigurationBoardGameButtonBack = configurationBoardGameDictionaryTag[2];
-            _tagConfigurationBoardGameTableNumberRows = configurationBoardGameDictionaryTag[3];
-            _tagConfigurationBoardGameTableNumberColumns = configurationBoardGameDictionaryTag[4];
-            _tagConfigurationBoardGameRows = configurationBoardGameDictionaryTag[5];
-            _tagConfigurationBoardGameColumns = configurationBoardGameDictionaryTag[6];
-            _tagConfigurationBoardGameChangeNumberRows = configurationBoardGameDictionaryTag[7];
-            _tagConfigurationBoardGameChangeNumberColumns = configurationBoardGameDictionaryTag[8];
+            _tagConfigurationBoardGameButtonSave = _configurationBoardGameDictionaryTag[1];
+            _tagConfigurationBoardGameButtonBack = _configurationBoardGameDictionaryTag[2];
+            _tagConfigurationBoardGameTableNumberRows = _configurationBoardGameDictionaryTag[3];
+            _tagConfigurationBoardGameTableNumberColumns = _configurationBoardGameDictionaryTag[4];
+            _tagConfigurationBoardGameRows = _configurationBoardGameDictionaryTag[5];
+            _tagConfigurationBoardGameColumns = _configurationBoardGameDictionaryTag[6];
+            _tagConfigurationBoardGameChangeNumberRows = _configurationBoardGameDictionaryTag[7];
+            _tagConfigurationBoardGameChangeNumberColumns = _configurationBoardGameDictionaryTag[8];
 
-            _tagConfigurationBoardGamePlayers = configurationBoardGameDictionaryTag[9];
-            _tagConfigurationBoardGameChangeNumberPlayers = configurationBoardGameDictionaryTag[10];
-            _tagConfigurationBoardGameTableNumberPlayers = configurationBoardGameDictionaryTag[11];
+            _tagConfigurationBoardGamePlayers = _configurationBoardGameDictionaryTag[9];
+            _tagConfigurationBoardGameChangeNumberPlayers = _configurationBoardGameDictionaryTag[10];
+            _tagConfigurationBoardGameTableNumberPlayers = _configurationBoardGameDictionaryTag[11];
 
-            _tagConfigurationBoardGameLenghtToCheck = configurationBoardGameDictionaryTag[12];
-            _tagConfigurationBoardGameChangeNumberLenghtToCheck = configurationBoardGameDictionaryTag[13];
-            _tagConfigurationBoardGameTableNumberLenghtToCheck = configurationBoardGameDictionaryTag[14];
+            _tagConfigurationBoardGameLenghtToCheck = _configurationBoardGameDictionaryTag[12];
+            _tagConfigurationBoardGameChangeNumberLenghtToCheck = _configurationBoardGameDictionaryTag[13];
+            _tagConfigurationBoardGameTableNumberLenghtToCheck = _configurationBoardGameDictionaryTag[14];
 
-            _tagConfigurationBoardGameButtonBackToConfiguration = configurationBoardGameDictionaryTag[21];
+            _tagConfigurationBoardGameButtonBackToConfiguration = _configurationBoardGameDictionaryTag[21];
  
             // ---
             _tagConfigurationBoardGameHideOrUnhide[0] = _tagConfigurationBoardGameButtonSave;
@@ -119,10 +117,8 @@ namespace Assets.Scripts.GameConfiguration
             _tableWithChangedNumber[0] = _tagConfigurationBoardGameChangeNumberRows;
             _tableWithChangedNumber[1] = _tagConfigurationBoardGameChangeNumberColumns;
             _tableWithChangedNumber[2] = _tagConfigurationBoardGameChangeNumberLenghtToCheck;
-            
-            
+                     
             _buttonsAll = GameConfigurationButtonsCreate.GameConfigurationCreateButtons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D);
-
         }
 
 
@@ -178,8 +174,7 @@ namespace Assets.Scripts.GameConfiguration
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
 
                             GameConfigurationButtonsWithNumbersForLenghtToCheck.VerifyAndSetUpNewMaxLength(_tableWithChangedNumber);                               
-                        }
-                        
+                        }                    
 
                         // columns
                         if (gameObjectTag == _tagConfigurationBoardGameColumns || gameObjectTag == _tagConfigurationBoardGameChangeNumberColumns)
@@ -192,8 +187,6 @@ namespace Assets.Scripts.GameConfiguration
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberColumns)
                         {
-                            // remove tag from method
-                            //numberOfColumns = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberColumns);
                             numberOfColumns = GameConfigurationCommonMethods.SetUpChosenNumberForConfigurationColumns(_buttonsWithNumbers, gameObjectName);
                             
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
@@ -206,29 +199,20 @@ namespace Assets.Scripts.GameConfiguration
                         // lenght to check
                         if (gameObjectTag == _tagConfigurationBoardGameLenghtToCheck || gameObjectTag == _tagConfigurationBoardGameChangeNumberLenghtToCheck)
                         {
-                            // remove tags from method
-                            //lenghtToCheckMax = GameConfigurationButtonsWithNumbersForLenghtToCheck.GetLenghtToCheckMax(_tagConfigurationBoardGameChangeNumberRows, _tagConfigurationBoardGameChangeNumberColumns);
                             _lenghtToCheckMax = GameConfigurationButtonsWithNumbersForLenghtToCheck.GetLenghtToCheckMax();
                             _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForLenghtToCheck.CreateTableForLenghtToCheck(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _lenghtToCheckMax, _isGame2D, isCellphoneMode);
                             _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndLenghtToCheck(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
                             GameConfigurationButtonsActions.HideConfiguration(_buttonsAll);
-                        
                         }
 
                         if (gameObjectTag == _tagConfigurationBoardGameTableNumberLenghtToCheck)
                         {
-                            // remove tag from method
-                            //lenghtToCheck = GameConfigurationCommonMethods.SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, _tagConfigurationBoardGameChangeNumberLenghtToCheck);
-                            lenghtToCheck = GameConfigurationCommonMethods.SetUpChosenNumberForConfigurationLenghtToCheck(_buttonsWithNumbers, gameObjectName);
-                            
+                            lenghtToCheck = GameConfigurationCommonMethods.SetUpChosenNumberForConfigurationLenghtToCheck(_buttonsWithNumbers, gameObjectName);                           
+                           
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
-
-                        }
-          
-
-                        // ---
+                        }        
 
                         if (gameObjectTag == _tagConfigurationBoardGameButtonSave)
                         {
@@ -237,6 +221,7 @@ namespace Assets.Scripts.GameConfiguration
                             ConfigurationBoardGameNumberOfPlayers = numberOfPlayers;
                             ConfigurationBoardGameLenghtToCheck = lenghtToCheck;
                             ConfigurationBoardGameDeviceModeKind = isCellphoneMode;
+
                             ScenesChange.GoToSceneConfigurationPlayersSymbols();
                         }
 
@@ -248,13 +233,11 @@ namespace Assets.Scripts.GameConfiguration
                         if (gameObjectTag == _tagConfigurationBoardGameButtonBackToConfiguration)
                         {
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
-                            GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
-                           
+                            GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);                           
                         }
                     }
                 }
             }
-
         }
     }
 }

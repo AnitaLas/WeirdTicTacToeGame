@@ -1,14 +1,4 @@
-﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameFieldsVerification;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtons;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.ScreenVerification;
@@ -43,7 +33,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             return numbers;
         }
 
-       // public static int GetLenghtToCheckMax(string tagNameRows, string tagNameColumns)
         public static int GetLenghtToCheckMax()
         {
             Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
@@ -55,12 +44,10 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             int columns = numbers[1];
 
             int maxNumberInt = CommonMethods.CheckAndReturnLowerNumber(rows, columns);
-           //string numberString = CommonMethods.ConverIntToString(maxNumberInt);
-           //var numberKind = Tuple.Create(maxNumberInt, numberString);
 
             return maxNumberInt;
-
         }
+
         public static int GetNumberGivenByUser(string tagName)
         {
             GameObject gameObject = CommonMethods.GetObjectByTagName(tagName);
@@ -68,7 +55,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 
             int number = CommonMethods.ConvertStringToInt(gameObjectText);
             return number;
-
         }
 
 
@@ -92,21 +78,18 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             {
                 CommonMethods.ChangeTextForFirstChild(gameObject, defaulNumber);
             }
-
         }
 
         public static GameObject[,,] CreateTableForMaxLenghtToCheck(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, int lenghtToCheckMax)
         {
             GameObject[,,] table;
             int start = 2;
-            //int end = lenghtToCheckMax + 1;
             int end = lenghtToCheckMax;
             float newCoordinateY = 0f;
             string inactiveText = "-";
 
             table = GameConfigurationButtonsWithNumbersCommonMethods.ChangeDataForTableWithNumbers(tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
             return table;
-
         }
 
         public static GameObject[,,] CreateTableForLenghtToCheck(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, int lenghtToCheckMax, bool isGame2D, bool isCellphoneMode)
@@ -120,17 +103,13 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 
             var numbers = ScreenVerificationMethods.GetNumberOfRowsAndColumnsForDefaulTableWithNumber(isCellphoneMode);
             int numberOfDepths = 1;
-            //int numberOfRows = 3;
-            //int numberOfColumns = 3;
             int numberOfRows = numbers.Item1;
             int numberOfColumns = numbers.Item2;
-
 
             tableWithNumbers = GameConfigurationButtonsWithNumbersCommonMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
             tableWithNumberFinal = CreateTableForMaxLenghtToCheck(tableWithNumbers, tagConfigurationBoardGameTableNumberLenghtToCheck, tagConfigurationBoardGameInactiveField, lenghtToCheckMax);
 
             return tableWithNumberFinal;
-
         }
     }
 }

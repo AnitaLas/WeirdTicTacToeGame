@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.GameFieldsVerification
 {
@@ -15,8 +8,6 @@ namespace Assets.Scripts.GameFieldsVerification
         {
             Debug.Log($"{playerSymbol} - You win!");
             Debug.Log(" --------------------  ");
-
-
         }
 
         public static void MessageGameOver()
@@ -28,7 +19,5 @@ namespace Assets.Scripts.GameFieldsVerification
         {
             Debug.Log("CubePlay has already been taken by another player.");
         }
-    
-
     }
 }

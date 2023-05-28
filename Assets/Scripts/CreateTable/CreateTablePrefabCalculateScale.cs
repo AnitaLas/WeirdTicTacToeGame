@@ -1,11 +1,4 @@
-﻿using Assets.Scripts;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -32,17 +25,15 @@ namespace Assets.Scripts
         {
             prefab.transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
         }
-
+     
+        //public static void TransformGameObjectPrefabToNewScaleX(GameObject prefab, float newScaleX, float newScaleY, float newScaleZ)
+        //{
+        //    prefab.transform.GetChild(0).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
+        //    prefab.transform.GetChild(1).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
+        //    prefab.transform.GetChild(2).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
+        //    prefab.transform.GetChild(3).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
+        //}
         
-        public static void TransformGameObjectPrefabToNewScaleX(GameObject prefab, float newScaleX, float newScaleY, float newScaleZ)
-        {
-            prefab.transform.GetChild(0).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
-            prefab.transform.GetChild(1).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
-            prefab.transform.GetChild(2).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
-            prefab.transform.GetChild(3).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
-        }
-        
-
         /// <summary>
         /// <para> prefab = CubePlay </para>
         /// </summary>
@@ -57,9 +48,6 @@ namespace Assets.Scripts
             double newScaleForZ = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleZ, numberOfDepths, _prefabCubePlayMaxNumberDetphZPhone);
 
             int roundDouble = 6;
-            //float floatNewScaleForX = CommonMethods.ConvertDoubleToFloat(newScaleForX);
-            //float floatNewScaleForY = CommonMethods.ConvertDoubleToFloat(newScaleForY);
-            //float floatNewScaleForZ = CommonMethods.ConvertDoubleToFloat(newScaleForZ);
 
             float floatNewScaleForX = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
             float floatNewScaleForY = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
@@ -70,7 +58,6 @@ namespace Assets.Scripts
             float newScale = FindSmallestScaleXYZForPrefabCubePlay(newScaleForXYZ, numberOfDepths, numberOfRows, numberOfColumns);
 
             return newScale;
-
         }
 
         /// <summary>
@@ -89,25 +76,6 @@ namespace Assets.Scripts
             double newScale = CommonMethods.RoundDownWithDecimal(resut, numberAfterDecimal);
             return newScale;
         }
-
-        //public static double CalculateNewScaleForPrefab2(double defaultScaleForXYZ)
-        //{
-        //    double cubePlayMaxNumberForXYZ = ;
-        //    double numbersCubePlayForXYZ = ;
-
-        //    int sizeWidth = Screen.width;
-        //    int sizeHeight = Screen.height;
-
-        //    Debug.Log(" sizeWidth = " + sizeWidth);
-        //    Debug.Log(" sizeHeight = " + sizeHeight);
-
-
-        //    double resut = (defaultScaleForXYZ * numbersCubePlayForXYZ) / cubePlayMaxNumberForXYZ;
-        //    int numberAfterDecimal = 1;
-        //    double newScale = CommonMethods.RoundDownWithDecimal(resut, numberAfterDecimal);
-        //    return newScale;
-        //}
-
 
         /// <summary>
         /// <para> </para>
@@ -150,7 +118,6 @@ namespace Assets.Scripts
         }
 
         // ---
-
 
         public static float FindSmallestScaleXYZForPrefabCubePlayGameBoard(float[] newScaleForXYZ, double numberOfDepths, double numberOfRows, double numberOfColumns, bool isCellphoneMode)
         {
@@ -203,9 +170,6 @@ namespace Assets.Scripts
             }
 
 
-
-
-
             if (numberOfRows != maxNumberOfRows || numberOfColumns != maxNnumberOfColumns || numberOfDepths != maxNnumberOfDepths)
             {
                 for (int i = 0; i < newScaleForXYZLenght; i++)
@@ -242,7 +206,6 @@ namespace Assets.Scripts
                 newScaleForX = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleX, numberOfColumns, _prefabCubePlayMaxNumberWidthXTablet);
                 newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYTablet);
                 newScaleForZ = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleZ, numberOfDepths, _prefabCubePlayMaxNumberDetphZTblet);
-
             }
 
             int roundDouble = 6;
@@ -256,8 +219,6 @@ namespace Assets.Scripts
             float newScale = FindSmallestScaleXYZForPrefabCubePlayGameBoard(newScaleForXYZ, numberOfDepths, numberOfRows, numberOfColumns, isCellphoneMode);
 
             return newScale;
-
         }
-
     }
 }
