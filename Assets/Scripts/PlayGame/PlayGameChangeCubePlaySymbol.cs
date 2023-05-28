@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.CommonMethods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,18 +27,18 @@ namespace Assets.Scripts
 
         public static Tuple<Tuple<int, int, int>, string> SetUpPlayerSymbolForCubePlay(GameObject[,,] gameBoard, string cubePlayName, string[] playersSymbols, int currentPlayerNumber)
         {
-            Color symbolColor = CommonMethods.GetNewColor(2);
+            Color symbolColor = CommonMethodsMain.GetNewColor(2);
             string symbol = PlayGameMethods.GetPlayerSymbol(playersSymbols, currentPlayerNumber);
 
-            var cubePlayDataZYX = CommonMethods.GetIndexZYXForGameObject(gameBoard, cubePlayName);
+            var cubePlayDataZYX = CommonMethodsMain.GetIndexZYXForGameObject(gameBoard, cubePlayName);
             int cubePlayIndexZ = cubePlayDataZYX.Item1;
             int cubePlayIndexY = cubePlayDataZYX.Item2;
             int cubePlayIndexX = cubePlayDataZYX.Item3;
 
             GameObject cubePlay = gameBoard[cubePlayIndexZ, cubePlayIndexY, cubePlayIndexX];
 
-            CommonMethods.ChangeTextForCubePlay(cubePlay, symbol);
-            CommonMethods.ChangeTextColourForCubePlay(cubePlay, symbolColor);
+            CommonMethodsMain.ChangeTextForCubePlay(cubePlay, symbol);
+            CommonMethodsMain.ChangeTextColourForCubePlay(cubePlay, symbolColor);
 
             return Tuple.Create(cubePlayDataZYX, symbol);
         }    

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.CommonMethods;
+using UnityEngine;
+
 
 namespace Assets.Scripts
 {
@@ -25,14 +27,6 @@ namespace Assets.Scripts
         {
             prefab.transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
         }
-     
-        //public static void TransformGameObjectPrefabToNewScaleX(GameObject prefab, float newScaleX, float newScaleY, float newScaleZ)
-        //{
-        //    prefab.transform.GetChild(0).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
-        //    prefab.transform.GetChild(1).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
-        //    prefab.transform.GetChild(2).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
-        //    prefab.transform.GetChild(3).transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
-        //}
         
         /// <summary>
         /// <para> prefab = CubePlay </para>
@@ -49,9 +43,9 @@ namespace Assets.Scripts
 
             int roundDouble = 6;
 
-            float floatNewScaleForX = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
-            float floatNewScaleForY = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
-            float floatNewScaleForZ = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
+            float floatNewScaleForX = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
+            float floatNewScaleForY = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
+            float floatNewScaleForZ = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
 
             float[] newScaleForXYZ = { floatNewScaleForX, floatNewScaleForY, floatNewScaleForZ };
 
@@ -73,7 +67,7 @@ namespace Assets.Scripts
         {
             double resut = (defaultScaleForXYZ * numbersCubePlayForXYZ) / cubePlayMaxNumberForXYZ;
             int numberAfterDecimal = 1;
-            double newScale = CommonMethods.RoundDownWithDecimal(resut, numberAfterDecimal);
+            double newScale = CommonMethodsMain.RoundDownWithDecimal(resut, numberAfterDecimal);
             return newScale;
         }
 
@@ -210,9 +204,9 @@ namespace Assets.Scripts
 
             int roundDouble = 6;
 
-            float floatNewScaleForX = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
-            float floatNewScaleForY = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
-            float floatNewScaleForZ = CommonMethods.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
+            float floatNewScaleForX = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
+            float floatNewScaleForY = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
+            float floatNewScaleForZ = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
 
             float[] newScaleForXYZ = { floatNewScaleForX, floatNewScaleForY, floatNewScaleForZ };
 

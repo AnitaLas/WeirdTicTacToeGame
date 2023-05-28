@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.CommonMethods;
+using UnityEngine;
 
 namespace Assets.Scripts.PlayGame
 {
@@ -21,21 +22,21 @@ namespace Assets.Scripts.PlayGame
         public static void ChangeBoarGameHelpTextToInvisible(GameObject[,,] boardGame, string[] playersSymbols)
         {
             int dictionaryColorId = 4;
-            Color textColour = CommonMethods.GetNewColor(dictionaryColorId);
+            Color textColour = CommonMethodsMain.GetNewColor(dictionaryColorId);
             ChangeCubePlayTextVisibility(boardGame, playersSymbols, textColour);
         }
 
         public static void ChangeBoarGameHelpTextToVisible(GameObject[,,] boardGame, string[] playersSymbols)
         {
             int dictionaryColorId = 3;
-            Color textColour = CommonMethods.GetNewColor(dictionaryColorId);
+            Color textColour = CommonMethodsMain.GetNewColor(dictionaryColorId);
             ChangeCubePlayTextVisibility(boardGame, playersSymbols, textColour);
         }
 
         public static void ChangeCubePlayTextVisibility(GameObject[,,] boardGame, string[] playersSymbols, Color textColour)
         {
             int dictionaryColorId = 2;
-            Color defaultColour = CommonMethods.GetNewColor(dictionaryColorId);
+            Color defaultColour = CommonMethodsMain.GetNewColor(dictionaryColorId);
 
             int maxIndexDepth = boardGame.GetLength(0);
             int maxIndexColumn = boardGame.GetLength(2);
@@ -49,9 +50,9 @@ namespace Assets.Scripts.PlayGame
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = boardGame[indexDepth, indexRow, indexColumn];
-                        string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
+                        string cubePlayText = CommonMethodsMain.GetCubePlayText(cubePlay);
 
-                        CommonMethods.ChangeTextColourForCubePlay(cubePlay, textColour);
+                        CommonMethodsMain.ChangeTextColourForCubePlay(cubePlay, textColour);
 
                         for (int player = 0; player < playersNumber; player++)
                         {
@@ -59,7 +60,7 @@ namespace Assets.Scripts.PlayGame
 
                             if (cubePlayText == playerSymbol)
                             {
-                                CommonMethods.ChangeTextColourForCubePlay(cubePlay, defaultColour);
+                                CommonMethodsMain.ChangeTextColourForCubePlay(cubePlay, defaultColour);
                             }
                         }
                     }

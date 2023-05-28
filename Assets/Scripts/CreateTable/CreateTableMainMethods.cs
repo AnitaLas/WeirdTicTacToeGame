@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.CreateTable;
+﻿using Assets.Scripts.CommonMethods;
+using Assets.Scripts.CreateTable;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -8,7 +9,7 @@ namespace Assets.Scripts
         public static GameObject[,,] CreateTableWithNumbers(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D, string[,,] defaultTextForCubePlay)
         {
             // [prefabCubePlay][prefabCubePlayNewZ]
-            bool isNumberOfRowsEven = CommonMethods.IsNumberEven(numberOfRows);
+            bool isNumberOfRowsEven = CommonMethodsMain.IsNumberEven(numberOfRows);
             //string prefabName = "CubePlayUI";
             // [prefabCubePlayColor] lenght of array colour assigned to object "GameBoard"
             int cubePlayColourLenght = prefabCubePlayDefaultColour.Length;
@@ -152,32 +153,32 @@ namespace Assets.Scripts
                         CreateTablePrefabDefaultText.SetUpDefaultTextForPrefaCubePlay(prefabCubePlay, prefabCubePlayDefaultText);
 
                         //[prefabCubePlayTextDefault] - set up new currentNumberForPrefabCubePlay
-                        countedPrefabCubePlay = CommonMethods.SetUpNewCurrentNumberByAddition(countedPrefabCubePlay, index);
+                        countedPrefabCubePlay = CommonMethodsMain.SetUpNewCurrentNumberByAddition(countedPrefabCubePlay, index);
 
                         // create new prefab "CubePlay"
                         //var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(x, y, z), Quaternion.identity);
 
-                        float newX = CommonMethods.RoundCoordinateXYZ(x);
-                        float newY = CommonMethods.RoundCoordinateXYZ(y);
-                        float newZ = CommonMethods.RoundCoordinateXYZ(z);
+                        float newX = CommonMethodsSetUpCoordinates.RoundCoordinateXYZ(x);
+                        float newY = CommonMethodsSetUpCoordinates.RoundCoordinateXYZ(y);
+                        float newZ = CommonMethodsSetUpCoordinates.RoundCoordinateXYZ(z);
 
                         var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(newX, newY, newZ), Quaternion.identity);
                         
                         // [prefabCubePlayName] chcange the name for new prefab "CubePlay"
                         int currentNumberCubePlayName = numbersCubePlayName[0];
-                        var currentIndexXYForPrefabCubePlay = CommonMethods.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberCubePlayName);
+                        var currentIndexXYForPrefabCubePlay = CommonMethodsMain.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberCubePlayName);
 
                         // [prefabCubePlayName]
                         string prefabCubePlayName = CreateTablePrefabName.CreateNameForPrefabCubePlay(currentNumberCubePlayName, currentIndexXYForPrefabCubePlay);
                         newPrefabCubePlay.name = prefabCubePlayName;
 
                         // [prefabCubePlayName] set up new currentNumberCubePlayName
-                        numbersCubePlayName = CommonMethods.SetUpNewCurrentNumberByAddition(numbersCubePlayName, index);
+                        numbersCubePlayName = CommonMethodsMain.SetUpNewCurrentNumberByAddition(numbersCubePlayName, index);
 
                         // [gameBoard]
                         GameObject newCublePlayOnTheBoard = newPrefabCubePlay;
 
-                        var newXYZFornewCubePlayOnTheBoard = CommonMethods.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberForPrefabCubePlay);
+                        var newXYZFornewCubePlayOnTheBoard = CommonMethodsMain.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberForPrefabCubePlay);
 
                         int newNumberOfDepth = newXYZFornewCubePlayOnTheBoard.Item1;
                         int newNumberOfRow = newXYZFornewCubePlayOnTheBoard.Item2;
@@ -202,7 +203,7 @@ namespace Assets.Scripts
                         indexForCubePlayCoordinateZ[0] = newIndexPrefabCubePlayForCoordinateZ;
                         countedNumberCubePlayForRowsForCoordinateZ[0] = newCountedNumberOfRows;
                         float currentCoordinateZ = coordinateZForPrefabCubePlay[newIndexPrefabCubePlayForCoordinateZ];
-                        CommonMethods.ChangeZForGameObject(newPrefabCubePlay, currentCoordinateZ);
+                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(newPrefabCubePlay, currentCoordinateZ);
                     }
                 }
             }

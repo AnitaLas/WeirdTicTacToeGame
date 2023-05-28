@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts;
+using Assets.Scripts.CommonMethods;
 
 namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase
 {
@@ -44,9 +46,9 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase
                         for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                         {
                             GameObject cubePlay = oneButton[indexDepth, indexRow, indexColumn];
-                            CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                            CommonMethods.SetUpNewXForGameObject(cubePlay, newCoordinateX);
-                            CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                            CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                            CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         }
                     }
                 }
@@ -58,7 +60,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase
             float result;
             float previousResult;
             float[] table = new float[playersNumber];
-            float scale = CommonMethods.GetObjectScaleX(prefabPlayerSymbol);
+            float scale = CommonMethodsMain.GetObjectScaleX(prefabPlayerSymbol);
 
             float halfScale = scale * 6; // 6 for boardGameConfiguration
             float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber) - 0.5f;
@@ -85,13 +87,13 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase
             float yForFirstPrefabPlayerSymbol;
 
             int playersNumberDevidedByTwo = playersNumber / 2;
-            bool isPlayersNumberEven = CommonMethods.IsNumberEven(playersNumber);
+            bool isPlayersNumberEven = CommonMethodsMain.IsNumberEven(playersNumber);
 
             if (isPlayersNumberEven == false)
             {
-                decimal playersNumberDecimal = CommonMethods.ConvertDecimalToInt(playersNumberDevidedByTwo);
-                decimal playersNumberRoundUp = CommonMethods.RoundUp(playersNumberDecimal);
-                float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);
+                decimal playersNumberDecimal = CommonMethodsMain.ConvertDecimalToInt(playersNumberDevidedByTwo);
+                decimal playersNumberRoundUp = CommonMethodsMain.RoundUp(playersNumberDecimal);
+                float playersNumberFloat = CommonMethodsMain.ConvertDecimalToFloat(playersNumberRoundUp);
 
                 yForFirstPrefabPlayerSymbol = -playersNumberFloat;
                 return yForFirstPrefabPlayerSymbol;
@@ -99,9 +101,9 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase
             }
             else
             {
-                decimal playersNumberDecimal = CommonMethods.ConvertDecimalToInt(playersNumberDevidedByTwo);
-                decimal playersNumberRoundUp = CommonMethods.RoundUp(playersNumberDecimal);
-                float playersNumberFloat = CommonMethods.ConvertDecimalToFloat(playersNumberRoundUp);
+                decimal playersNumberDecimal = CommonMethodsMain.ConvertDecimalToInt(playersNumberDevidedByTwo);
+                decimal playersNumberRoundUp = CommonMethodsMain.RoundUp(playersNumberDecimal);
+                float playersNumberFloat = CommonMethodsMain.ConvertDecimalToFloat(playersNumberRoundUp);
 
                 yForFirstPrefabPlayerSymbol = -playersNumberFloat;
                 return yForFirstPrefabPlayerSymbol;
@@ -135,11 +137,11 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase
                         for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                         {
                             GameObject cubePlay = oneButton[indexDepth, indexRow, indexColumn];
-                            CommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
-                            CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                            CommonMethods.SetUpNewXForGameObject(cubePlay, newCoordinateX);
-                            CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
-                            CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
+                            CommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                            CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                            CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                            CommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
                         }
                     }
                 }

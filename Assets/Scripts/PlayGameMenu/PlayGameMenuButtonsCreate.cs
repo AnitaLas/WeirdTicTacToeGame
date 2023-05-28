@@ -100,7 +100,6 @@ namespace Assets.Scripts.PlayGame
             return tableButtonHelpButtons;
         }
 
-
         public static GameObject[,,] CreateButtoGameMenuBack(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             GameObject[,,] tableButtonBack;
@@ -124,7 +123,6 @@ namespace Assets.Scripts.PlayGame
 
             return tableButtonBack;
         }
-
 
         public static GameObject[,,] CreateButtonGameMenunBoarGameHelpText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {

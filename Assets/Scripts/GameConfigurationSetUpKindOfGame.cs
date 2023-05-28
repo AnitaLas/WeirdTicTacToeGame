@@ -4,6 +4,7 @@ using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.Scenes;
 using Assets.Scripts.GameStart;
 using Assets.Scripts.GameName;
+using Assets.Scripts.CommonMethods;
 
 // scene name: SceneStartGame
 
@@ -49,11 +50,11 @@ namespace Assets.Scripts
                 {
                     if (touch.collider != null)
                     {
-                        string gameObjectTag = CommonMethods.GetObjectTag(touch);
+                        string gameObjectTag = CommonMethodsMain.GetObjectTag(touch);
 
                         if (gameObjectTag != _tagUntagged)
                         {
-                            GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
+                            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(gameObjectTag);
                         }
 
                         if (gameObjectTag == _tagStartGameButtonStartGame)

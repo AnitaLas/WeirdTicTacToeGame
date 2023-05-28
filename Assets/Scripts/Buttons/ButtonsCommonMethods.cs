@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts;
+using Assets.Scripts.CommonMethods;
 
 namespace Assets.Scripts.PlayGameMenu
 {
@@ -45,8 +47,6 @@ namespace Assets.Scripts.PlayGameMenu
             return tableWithNumber;
         }
 
-
-
         public static void ChangeDataForSingleGameButtons(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, string tagToSetUp)
         {
             int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
@@ -64,11 +64,11 @@ namespace Assets.Scripts.PlayGameMenu
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        CommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
-                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                        CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
-                        CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
-                        CommonMethods.ChangeTagForGameObject(cubePlay, tagToSetUp);
+                        CommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        CommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                        CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
                 }
             }
@@ -91,18 +91,16 @@ namespace Assets.Scripts.PlayGameMenu
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        CommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
-                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                        CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
-                        CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
-                        CommonMethods.ChangeTagForGameObject(cubePlay, tagToSetUp);
+                        CommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        CommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                        CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
                 }
             }
         }
-
-       
-
+    
         public static void ChangeDataForSingleCommonButton(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX, string tagToSetUp)
         {
             float newScale = 0.4f;
@@ -111,7 +109,6 @@ namespace Assets.Scripts.PlayGameMenu
             CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
             ChangingCoordinatesXYForBoundaryPrefabCubePlay(singleConfigurationButtonTable, newScale);
             SetUpFinalCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newCoordinateY, newCoordinateX);
-
         }
 
         public static void ChangeDataForSingleGameConfigurationCommonButton(GameObject[,,] singleConfigurationButtonTable, string tagToSetUp)
@@ -139,10 +136,10 @@ namespace Assets.Scripts.PlayGameMenu
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        CommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
-                        CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
-                        CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
-                        CommonMethods.ChangeTagForGameObject(cubePlay, tagToSetUp);
+                        CommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        CommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                        CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
                 }
             }
@@ -162,8 +159,8 @@ namespace Assets.Scripts.PlayGameMenu
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                        CommonMethods.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                     }
                 }
             }
@@ -180,7 +177,7 @@ namespace Assets.Scripts.PlayGameMenu
             string[] numbers = new string[allNumbers];
             string symbol;
             string emptyValue = "";
-            string[] tableWithEmptyText = CommonMethods.CreateTableWithGivenLengthAndGivenValue(numberOfColumns, emptyValue);
+            string[] tableWithEmptyText = CommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(numberOfColumns, emptyValue);
 
             for (int number = 1; number <= allNumbers; number++)
             {
@@ -277,7 +274,7 @@ namespace Assets.Scripts.PlayGameMenu
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow - 1, indexColumn];
                             float y = cubePlayForX.transform.position.y;
                             newStartY = y + newScale;
-                            CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
+                            CommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newStartY);
                         }
 
                         if (indexColumn >= 1)
@@ -285,7 +282,7 @@ namespace Assets.Scripts.PlayGameMenu
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
                             float x = cubePlayForX.transform.position.x;
                             newStartX = x + newScale;
-                            CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
+                            CommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newStartX);
                         }
                     }
                 }
@@ -318,7 +315,7 @@ namespace Assets.Scripts.PlayGameMenu
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float x = cubePlayForX.transform.position.x;
                             newStartX = x + newScale * percetageOfNewScale;
-                            CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
+                            CommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newStartX);
                         }
 
                         if (indexColumn == maxIndexColumn - 1)
@@ -326,7 +323,7 @@ namespace Assets.Scripts.PlayGameMenu
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float x = cubePlayForX.transform.position.x;
                             newStartX = x - newScale * percetageOfNewScale;
-                            CommonMethods.ChangeXForGameObject(cubePlay, newStartX);
+                            CommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newStartX);
                         }
 
                         if (indexRow == 0)
@@ -334,7 +331,7 @@ namespace Assets.Scripts.PlayGameMenu
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float y = cubePlayForX.transform.position.y;
                             newStartY = y + newScale * percetageOfNewScale;
-                            CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
+                            CommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newStartY);
                         }
 
                         if (indexRow == maxIndexRow - 1)
@@ -342,7 +339,7 @@ namespace Assets.Scripts.PlayGameMenu
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float y = cubePlayForX.transform.position.y;
                             newStartY = y - newScale * percetageOfNewScale;
-                            CommonMethods.ChangeYForGameObject(cubePlay, newStartY);
+                            CommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newStartY);
                         }
                     }
                 }
@@ -383,7 +380,7 @@ namespace Assets.Scripts.PlayGameMenu
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        CommonMethods.ChangeColourForGameObject(cubePlay, newColour);
+                        CommonMethodsMain.ChangeColourForGameObject(cubePlay, newColour);
                     }
                 }
             }
@@ -436,8 +433,8 @@ namespace Assets.Scripts.PlayGameMenu
 
         public static void ChangeCoordinateYForOneGameObjectByTagName(string gameObjectTagName, float newCoordinateY)
         {
-            GameObject gameOject = CommonMethods.GetObjectByTagName(gameObjectTagName);
-            CommonMethods.SetUpNewYForGameObject(gameOject, newCoordinateY);
+            GameObject gameOject = CommonMethodsMain.GetObjectByTagName(gameObjectTagName);
+            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(gameOject, newCoordinateY);
         }
 
         public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateY)
@@ -453,30 +450,30 @@ namespace Assets.Scripts.PlayGameMenu
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
                     }
                 }
             }
         }
 
-        public static void ChangeCoordinateYForGameObjectsTagName(string[] helpButtons, float newCoordinateY)
-        {
-            string tagName;
-            int helpButtonsLength = helpButtons.Length;
+        //public static void ChangeCoordinateYForGameObjectsTagName(string[] helpButtons, float newCoordinateY)
+        //{
+        //    string tagName;
+        //    int helpButtonsLength = helpButtons.Length;
 
-            for (int i = 0; i < helpButtonsLength; i++)
-            {
-                tagName = helpButtons[i];
-                GameObject[] gameObjects = CommonMethods.GetObjectsListWithTagName(tagName);
-                int NumberOfgameObjects = gameObjects.Length;
+        //    for (int i = 0; i < helpButtonsLength; i++)
+        //    {
+        //        tagName = helpButtons[i];
+        //        GameObject[] gameObjects = CommonMethodsMain.GetObjectsListWithTagName(tagName);
+        //        int NumberOfgameObjects = gameObjects.Length;
 
-                for (int j = 0; j < NumberOfgameObjects; j++)
-                {
-                    GameObject gameObject = gameObjects[j];
-                    CommonMethods.SetUpNewYForGameObject(gameObject, newCoordinateY);
-                }
-            }
-        }
+        //        for (int j = 0; j < NumberOfgameObjects; j++)
+        //        {
+        //            GameObject gameObject = gameObjects[j];
+        //            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(gameObject, newCoordinateY);
+        //        }
+        //    }
+        //}
 
         public static void ChangeCoordinateYForGameObjectsTagName(Dictionary<int,string> tagsNameDictionary, float newCoordinateY)
         {
@@ -486,13 +483,13 @@ namespace Assets.Scripts.PlayGameMenu
             for (int i = 1; i <= helpButtonsLength; i++)
             {
                 tagName = tagsNameDictionary[i];
-                GameObject[] gameObjects = CommonMethods.GetObjectsListWithTagName(tagName);
+                GameObject[] gameObjects = CommonMethodsMain.GetObjectsListWithTagName(tagName);
                 int NumberOfgameObjects = gameObjects.Length;
 
                 for (int j = 0; j < NumberOfgameObjects; j++)
                 {
                     GameObject gameObject = gameObjects[j];
-                    CommonMethods.SetUpNewYForGameObject(gameObject, newCoordinateY);
+                    CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(gameObject, newCoordinateY);
                 }
             }
         }
@@ -534,7 +531,7 @@ namespace Assets.Scripts.PlayGameMenu
             int textLength = gameObjectName.Length;
             int startIndex = textLength - 2;
             int searchedTextLength = 2;
-            string text = CommonMethods.GetSubstringFromText(gameObjectName, startIndex, searchedTextLength);
+            string text = CommonMethodsMain.GetSubstringFromText(gameObjectName, startIndex, searchedTextLength);
             return text;
         }
 
@@ -552,9 +549,9 @@ namespace Assets.Scripts.PlayGameMenu
                     {
 
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        string oldName = CommonMethods.GetObjectName(cubePlay);
+                        string oldName = CommonMethodsMain.GetObjectName(cubePlay);
                         string newName = frontTextToAdd + oldName;
-                        CommonMethods.ChangeGameObjectName(cubePlay, newName);
+                        CommonMethodsMain.ChangeGameObjectName(cubePlay, newName);
                     }
                 }
             }

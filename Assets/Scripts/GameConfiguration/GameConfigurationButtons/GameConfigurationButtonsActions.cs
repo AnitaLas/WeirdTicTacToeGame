@@ -6,7 +6,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
 {
     internal class GameConfigurationButtonsActions
     {
-
         public static void UnhideConfiguration(List<GameObject[,,]> gameObjects)
         {
             ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
@@ -19,43 +18,11 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
 
         // ---
 
-        //public static void HideTableWithNumber(GameObject[,,] gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
-        //}
-
-        //public static void UnhideTableWithNumber(GameObject[,,] gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
-        //}
-
-        // ---
-
         public static void HideButtonBackToConfiguration(GameObject[,,] gameObjects)
         {
             ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
         }
-
-        //public static void UnhideButtonBackToConfiguration(GameObject[,,] gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
-        //}
-
-        //// ---
-
-        //public static void HideVisibleTablesWithNumber(List<GameObject[,,]> gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.HideVisibleTablesWithNumber(gameObjects);
-  
-        //}
-
-        // --- 
-
-        //public static void DestroyTableWithLenghtToCheckBase(GameObject[,,] table)
-        //{
-        //    ButtonsCommonMethodsActionsDestroy.DestroyTable3D(table);
-        //}
-
+      
         public static void DestroyHelpButtons(List<GameObject[,,]> gameObjects)
         {
             ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(gameObjects);

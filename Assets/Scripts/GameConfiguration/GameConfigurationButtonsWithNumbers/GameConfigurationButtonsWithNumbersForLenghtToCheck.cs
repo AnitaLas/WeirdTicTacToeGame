@@ -2,6 +2,7 @@
 using UnityEngine;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.ScreenVerification;
+using Assets.Scripts.CommonMethods;
 
 namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 {
@@ -9,9 +10,9 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
     {
         public static int GetNumberFromConfiguration(string tagName)
         {
-            GameObject objectNumber = CommonMethods.GetObjectByTagName(tagName);
-            string numberString = CommonMethods.GetCubePlayText(objectNumber);
-            int numberInt = CommonMethods.ConvertStringToInt(numberString);
+            GameObject objectNumber = CommonMethodsMain.GetObjectByTagName(tagName);
+            string numberString = CommonMethodsMain.GetCubePlayText(objectNumber);
+            int numberInt = CommonMethodsMain.ConvertStringToInt(numberString);
             return numberInt;
         }
 
@@ -43,17 +44,17 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             int rows = numbers[0];
             int columns = numbers[1];
 
-            int maxNumberInt = CommonMethods.CheckAndReturnLowerNumber(rows, columns);
+            int maxNumberInt = CommonMethodsMain.CheckAndReturnLowerNumber(rows, columns);
 
             return maxNumberInt;
         }
 
         public static int GetNumberGivenByUser(string tagName)
         {
-            GameObject gameObject = CommonMethods.GetObjectByTagName(tagName);
-            string gameObjectText = CommonMethods.GetCubePlayText(gameObject);
+            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(tagName);
+            string gameObjectText = CommonMethodsMain.GetCubePlayText(gameObject);
 
-            int number = CommonMethods.ConvertStringToInt(gameObjectText);
+            int number = CommonMethodsMain.ConvertStringToInt(gameObjectText);
             return number;
         }
 
@@ -64,19 +65,19 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             string tagConfigurationBoardGameChangeNumberColumns = tableWithChangedNumber[1];
             string tagConfigurationBoardGameChangeNumberLenghtToCheck = tableWithChangedNumber[2];
 
-            GameObject gameObject = CommonMethods.GetObjectByTagName(tagConfigurationBoardGameChangeNumberLenghtToCheck);
+            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
             int rowsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberRows);
             int columnsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberColumns);
             int currentLenghtToCheck = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
-            int lowerNumber = CommonMethods.CheckAndReturnLowerNumber(rowsNumber, columnsNumber);
+            int lowerNumber = CommonMethodsMain.CheckAndReturnLowerNumber(rowsNumber, columnsNumber);
 
             string defaulNumber = "3";
 
             if (lowerNumber < currentLenghtToCheck)
             {
-                CommonMethods.ChangeTextForFirstChild(gameObject, defaulNumber);
+                CommonMethodsMain.ChangeTextForFirstChild(gameObject, defaulNumber);
             }
         }
 

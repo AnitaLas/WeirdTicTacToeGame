@@ -11,6 +11,7 @@ using Assets.Scripts.CreateGameHelpButton;
 using Assets.Scripts.Scenes;
 using Assets.Scripts.PlayGameHelpButtons;
 using Assets.Scripts.PlayGameFrame;
+using Assets.Scripts.CommonMethods;
 
 internal class Game : MonoBehaviour
 {
@@ -91,10 +92,8 @@ internal class Game : MonoBehaviour
     private int[] _currentPlayer;
     private int[] _currentCountedTagCubePlayTaken;
 
-
     private ArrayList _listCheckerForWinner = new ArrayList();
     private bool _isWinnerExists = false;
-    //private bool _isCubePlayFrameVisible = true;
 
     private GameObject[,,] _gameBoard;
     private string[,] _gameBoardVerification2D;
@@ -156,13 +155,13 @@ internal class Game : MonoBehaviour
 
         _playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
 
-        _currentPlayer = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
+        _currentPlayer = CommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
 
         _playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
 
-        _currentCountedTagCubePlayTaken = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
+        _currentCountedTagCubePlayTaken = CommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
         // [gameBoard] - creating the board game with game object "CubePlay"
         _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode);
@@ -210,13 +209,13 @@ internal class Game : MonoBehaviour
                 if (touch.collider != null)
                 {
                     int countedTagCubePlayTaken;
-                    string gameObjectTag = CommonMethods.GetObjectTag(touch);
-                    string gameObjectName = CommonMethods.GetObjectName(touch);
+                    string gameObjectTag = CommonMethodsMain.GetObjectTag(touch);
+                    string gameObjectName = CommonMethodsMain.GetObjectName(touch);
 
                     bool isCubePlayFrameExsist = PlayGameFrameActions.IsCubePlayFrameExsist(_cubePlayFrame);
 
                     int currentPlayerNumber = _currentPlayer[0];
-                    GameObject cubePlay = CommonMethods.GetCubePlay(_gameBoard, gameObjectName);
+                    GameObject cubePlay = CommonMethodsMain.GetCubePlay(_gameBoard, gameObjectName);
                     
                     // move by arrows 
                     if (gameObjectTag == _tagArrowRight || gameObjectTag == _tagArrowLeft || gameObjectTag == _tagArrowDown || gameObjectTag == _tagArrowUp)
@@ -230,9 +229,9 @@ internal class Game : MonoBehaviour
                         int indexX = _moveIndexForFrame[_moveIndexForFrameX];
                         int indexY = _moveIndexForFrame[_moveIndexForFrameY];
 
-                        GameObject cubePlayMarkByFrame = CommonMethods.GetCubePlay(_gameBoard, indexY, indexX);
-                        string cubePlayMarkByFrameName = CommonMethods.GetObjectName(cubePlayMarkByFrame);
-                        string cubePlayMarkByFrameTag = CommonMethods.GetObjectTag(cubePlayMarkByFrame);
+                        GameObject cubePlayMarkByFrame = CommonMethodsMain.GetCubePlay(_gameBoard, indexY, indexX);
+                        string cubePlayMarkByFrameName = CommonMethodsMain.GetObjectName(cubePlayMarkByFrame);
+                        string cubePlayMarkByFrameTag = CommonMethodsMain.GetObjectTag(cubePlayMarkByFrame);
 
                         if (cubePlayMarkByFrameTag == _tagCubePlayFree)
                         {
@@ -270,7 +269,7 @@ internal class Game : MonoBehaviour
 
                                 PlayGameMethods.DisactivateChosenCubePlay(cubePlayMarkByFrame);
 
-                                _currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(_currentCountedTagCubePlayTaken, _index);
+                                _currentCountedTagCubePlayTaken = CommonMethodsMain.SetUpNewCurrentNumberByAddition(_currentCountedTagCubePlayTaken, _index);
 
                                 countedTagCubePlayTaken = _currentCountedTagCubePlayTaken[_index];
 
@@ -342,7 +341,7 @@ internal class Game : MonoBehaviour
 
                                 PlayGameMethods.DisactivateChosenCubePlay(touch);
 
-                                _currentCountedTagCubePlayTaken = CommonMethods.SetUpNewCurrentNumberByAddition(_currentCountedTagCubePlayTaken, _index);
+                                _currentCountedTagCubePlayTaken = CommonMethodsMain.SetUpNewCurrentNumberByAddition(_currentCountedTagCubePlayTaken, _index);
 
                                 countedTagCubePlayTaken = _currentCountedTagCubePlayTaken[_index];
 

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using Color = UnityEngine.Color;
+using Assets.Scripts;
+using Assets.Scripts.CommonMethods;
 
 namespace Assets.Scripts
 {
-
     internal class CreateGameBoardMethods : MonoBehaviour
     {
 
@@ -57,7 +58,7 @@ namespace Assets.Scripts
 
             for (int number = 1; number <= allNumbers; number++)
             {
-                numberString = CommonMethods.ConverIntToString(number);
+                numberString = CommonMethodsMain.ConverIntToString(number);
                 int indexNumber = number - 1;
                 numbers[indexNumber] = numberString;
             }
@@ -383,7 +384,7 @@ namespace Assets.Scripts
             int maxIndexColumn = boardGame.GetLength(2);
             int maxIndexRow = boardGame.GetLength(1);
 
-            Color colour = CommonMethods.GetNewColor(3);
+            Color colour = CommonMethodsMain.GetNewColor(3);
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
@@ -392,7 +393,7 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = boardGame[indexDepth, indexRow, indexColumn];
-                        CommonMethods.ChangeTextColourForCubePlay(cubePlay, colour);
+                        CommonMethodsMain.ChangeTextColourForCubePlay(cubePlay, colour);
                     }
                 }
             }

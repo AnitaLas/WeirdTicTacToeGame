@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts.CommonMethods;
+using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,8 +34,8 @@ namespace Assets.Scripts.GameName
         {
             Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformations.DictionaryTagGameInformations();
             string tagGameName = tagGameInformations[9];
-            GameObject text = CommonMethods.GetObjectByTagName(tagGameName);
-            CommonMethods.ChangeYForGameObject(text, newCoordinateY);
+            GameObject text = CommonMethodsMain.GetObjectByTagName(tagGameName);
+            CommonMethodsSetUpCoordinates.ChangeYForGameObject(text, newCoordinateY);
         }
     }
 }

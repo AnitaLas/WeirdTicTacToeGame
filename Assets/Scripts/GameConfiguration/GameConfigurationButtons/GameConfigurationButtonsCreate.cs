@@ -10,7 +10,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
 {
     internal class GameConfigurationButtonsCreate
     {
-
         public static List<GameObject[,,]> GameConfigurationCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
         {
             // buttons with text

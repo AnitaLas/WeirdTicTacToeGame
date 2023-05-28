@@ -19,22 +19,6 @@ namespace Assets.Scripts.Buttons
             return buttonBack;
         }
 
-        //public static List<GameObject[,,]> GameConfigurationPlayerSymbolAllCreateButtonsForPlayerNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagName, int playersNumber, string[] defaultTextForButtons)
-        //{
-        //    string finalTextForButton;
-
-        //    List<GameObject[,,]> buttonsList = new List<GameObject[,,]>();
-
-        //    for (int i = 0; i < playersNumber; i++)
-        //    {
-        //        finalTextForButton = defaultTextForButtons[i];
-        //        GameObject[,,] buttonBack = GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, finalTextForButton);
-        //        buttonsList.Insert(i, buttonBack);
-        //    }
-
-        //    return buttonsList;
-        //}
-
         public static List<GameObject[,,]> GameConfigurationPlayerSymbolAllCreateButtonsForPlayerNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagName, int playersNumber, string[] defaultTextForButtons)
         {
             string finalTextForButton;

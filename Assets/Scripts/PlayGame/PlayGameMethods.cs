@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts.CommonMethods;
+using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,21 +16,21 @@ namespace Assets.Scripts
         public static void ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(GameObject cubePlay)
         {
             float newCoordinateZ = 0;
-            CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
+            CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
         }
 
         public static void DisactivateChosenCubePlay(GameObject cubePlayMarkByFrame)
         {
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
             string tagCubePlayTaken = tagCubePlayDictionary[2];
-            CommonMethods.ChangeTagForGameObject(cubePlayMarkByFrame, tagCubePlayTaken);
+            CommonMethodsMain.ChangeTagForGameObject(cubePlayMarkByFrame, tagCubePlayTaken);
         }
 
         public static void DisactivateChosenCubePlay(RaycastHit touch)
         {
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
             string tagCubePlayTaken = tagCubePlayDictionary[2];
-            CommonMethods.ChangeTagForGameObject(touch, tagCubePlayTaken);
+            CommonMethodsMain.ChangeTagForGameObject(touch, tagCubePlayTaken);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.CommonMethods;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -6,12 +7,12 @@ namespace Assets.Scripts
     {  
         public static void SetUpDefaultTextForPrefaCubePlay(GameObject prefab, string prefabDefaultText)
         {
-            CommonMethods.ChangeTextForCubePlay(prefab, prefabDefaultText);
+            CommonMethodsMain.ChangeTextForCubePlay(prefab, prefabDefaultText);
         }
         
         public static string SetUpNewDefaultTextForPrefaCubePlay(int[,,] prefabCubePlayNumbers, string[,,] defaultTextForPrefabCubePlay, int currentNumberForPrefabCubePlay)
         {
-            var cublePlayIndex = CommonMethods.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberForPrefabCubePlay);
+            var cublePlayIndex = CommonMethodsMain.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberForPrefabCubePlay);
 
             int cubePlayIndexDepth = cublePlayIndex.Item1;
             int cubePlayIndexRow = cublePlayIndex.Item2;
