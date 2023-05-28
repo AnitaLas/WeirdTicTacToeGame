@@ -22,7 +22,6 @@ namespace Assets.Scripts
                 currentPlayer[0] = 0;
                 return currentPlayer;
             }
-
         }
 
         public static Tuple<Tuple<int, int, int>, string> SetUpPlayerSymbolForCubePlay(GameObject[,,] gameBoard, string cubePlayName, string[] playersSymbols, int currentPlayerNumber)
@@ -41,7 +40,6 @@ namespace Assets.Scripts
             CommonMethods.ChangeTextColourForCubePlay(cubePlay, symbolColor);
 
             return Tuple.Create(cubePlayDataZYX, symbol);
-        }
-    
+        }    
     }
 }

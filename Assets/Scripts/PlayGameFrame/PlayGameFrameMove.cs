@@ -1,17 +1,11 @@
-﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameDictionaries;
-using System;
+﻿using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.PlayGameFrame
 {
     internal class PlayGameFrameMove : MonoBehaviour
     {
-
         public static int[] CreateTableForMoveIndexForFrame(int numberOfRows)
         {
             int[] table = CommonMethods.CreateTableWithGivenLengthAndGivenValue(2, 0);
@@ -43,7 +37,6 @@ namespace Assets.Scripts.PlayGameFrame
             return moveIndexForFrame;
         }
 
-
         public static int[] SetUpNewMoveIndexYForDown(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForY)
         {
             moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberBySubtraction(moveIndexForFrame, moveIndexForY);
@@ -51,13 +44,9 @@ namespace Assets.Scripts.PlayGameFrame
             CommonMethods.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
             return moveIndexForFrame;
         }
-        
-
-
 
         public static int[] SetUpNewMoveIndexXYForCubePlayFrame(int[] moveIndexForFrame, string tagArrow, GameObject cubePlayFrame, float cubePlayForFrameScale, int numberOfRows, int numberOfColumns)
         {
-
             Dictionary<int, string> tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
 
             string tagArrowRight = tagArrowDictionary[1];
@@ -111,7 +100,6 @@ namespace Assets.Scripts.PlayGameFrame
             return moveIndexForFrame;
         }
 
-
         public static void SetUpNewXYForCubePlayFrame(GameObject cubePlayFrame, GameObject cubePlay)
         {
             bool isGame2D = true;
@@ -121,9 +109,6 @@ namespace Assets.Scripts.PlayGameFrame
                 float x = cubePlay.transform.position.x;
                 float y = cubePlay.transform.position.y;
                 float z = cubePlayFrame.transform.position.z;
-                //float z = -0.6f;
-                //float z = cubePlay.transform.position.z;
-                //Debug.Log(" z = " + z);
 
                 cubePlayFrame.transform.position = new Vector3(x, y, z);
             }
@@ -136,7 +121,5 @@ namespace Assets.Scripts.PlayGameFrame
             GameObject gameObject = CommonMethods.GetObjectByTagName(tagCubePlayFrame);
             return gameObject;
         }
-
-
     }
 }

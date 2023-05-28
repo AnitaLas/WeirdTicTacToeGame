@@ -366,7 +366,28 @@
         358,
         359,
         360,
-        361
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382
       ],
       "AllowUnexpectedOutput": true,
       "DebugActionIndex": 0
@@ -8688,7 +8709,7 @@
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/Apk/res/mipmap-mdpi/app_icon.png"
+        "Temp/StagingArea/res.mdpi.app_icon.png"
       ],
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png"
@@ -8699,7 +8720,7 @@
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_background.png",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/Apk/res/mipmap-mdpi/ic_launcher_background.png"
+        "Temp/StagingArea/res.mdpi.adaptive_icon-0.png"
       ],
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_background.png"
@@ -8710,12 +8731,243 @@
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/Apk/res/mipmap-mdpi/ic_launcher_foreground.png"
+        "Temp/StagingArea/res.mdpi.adaptive_icon-1.png"
       ],
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
       ],
       "DebugActionIndex": 348
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/app_icon.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.ldpi.app_icon.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/app_icon.png"
+      ],
+      "DebugActionIndex": 349
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/app_icon.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.hdpi.app_icon.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/app_icon.png"
+      ],
+      "DebugActionIndex": 350
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/app_icon.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xhdpi.app_icon.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/app_icon.png"
+      ],
+      "DebugActionIndex": 351
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/app_icon.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xxhdpi.app_icon.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/app_icon.png"
+      ],
+      "DebugActionIndex": 352
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/app_icon.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xxxhdpi.app_icon.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/app_icon.png"
+      ],
+      "DebugActionIndex": 353
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/app_icon_round.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.ldpi.app_icon_round.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/app_icon_round.png"
+      ],
+      "DebugActionIndex": 354
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon_round.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.mdpi.app_icon_round.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon_round.png"
+      ],
+      "DebugActionIndex": 355
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/app_icon_round.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.hdpi.app_icon_round.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/app_icon_round.png"
+      ],
+      "DebugActionIndex": 356
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/app_icon_round.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xhdpi.app_icon_round.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/app_icon_round.png"
+      ],
+      "DebugActionIndex": 357
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/app_icon_round.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xxhdpi.app_icon_round.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/app_icon_round.png"
+      ],
+      "DebugActionIndex": 358
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/app_icon_round.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xxxhdpi.app_icon_round.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/app_icon_round.png"
+      ],
+      "DebugActionIndex": 359
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/ic_launcher_background.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.ldpi.adaptive_icon-0.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/ic_launcher_background.png"
+      ],
+      "DebugActionIndex": 360
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/ic_launcher_background.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.hdpi.adaptive_icon-0.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/ic_launcher_background.png"
+      ],
+      "DebugActionIndex": 361
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/ic_launcher_background.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xhdpi.adaptive_icon-0.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/ic_launcher_background.png"
+      ],
+      "DebugActionIndex": 362
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/ic_launcher_background.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xxhdpi.adaptive_icon-0.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/ic_launcher_background.png"
+      ],
+      "DebugActionIndex": 363
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xxxhdpi.adaptive_icon-0.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png"
+      ],
+      "DebugActionIndex": 364
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/ic_launcher_foreground.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.ldpi.adaptive_icon-1.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-ldpi/ic_launcher_foreground.png"
+      ],
+      "DebugActionIndex": 365
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/ic_launcher_foreground.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.hdpi.adaptive_icon-1.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+      ],
+      "DebugActionIndex": 366
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xhdpi.adaptive_icon-1.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
+      ],
+      "DebugActionIndex": 367
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xxhdpi.adaptive_icon-1.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+      ],
+      "DebugActionIndex": 368
+    },
+    {
+      "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Temp/StagingArea/res.xxxhdpi.adaptive_icon-1.png"
+      ],
+      "Outputs": [
+        "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
+      ],
+      "DebugActionIndex": 369
     },
     {
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmain.so",
@@ -8726,7 +8978,7 @@
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmain.so"
       ],
-      "DebugActionIndex": 349
+      "DebugActionIndex": 370
     },
     {
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so",
@@ -8737,7 +8989,7 @@
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so"
       ],
-      "DebugActionIndex": 350
+      "DebugActionIndex": 371
     },
     {
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmonobdwgc-2.0.so",
@@ -8748,7 +9000,7 @@
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmonobdwgc-2.0.so"
       ],
-      "DebugActionIndex": 351
+      "DebugActionIndex": 372
     },
     {
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libMonoPosixHelper.so",
@@ -8759,7 +9011,7 @@
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libMonoPosixHelper.so"
       ],
-      "DebugActionIndex": 352
+      "DebugActionIndex": 373
     },
     {
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmono-native.so",
@@ -8770,18 +9022,18 @@
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmono-native.so"
       ],
-      "DebugActionIndex": 353
+      "DebugActionIndex": 374
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/LauncherManifestDiag.txt_zvqu.info",
       "ActionType": "WriteTextFile",
-      "WriteTextFilePayload": "{\"AndroidPlayerBuildProgram.Actions.GenerateManifests+Arguments\":{\"Configuration\":{\"PackageName\":\"com.Alan.WeirdTicTacToe\",\"TargetSDKVersion\":30,\"LauncherManifestTemplatePath\":\"C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer\\\\Apk\\\\LauncherManifest.xml\",\"LibraryManifestTemplatePath\":\"C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer\\\\Apk\\\\UnityManifest.xml\",\"LauncherManifestPath\":\"launcher\\\\src\\\\main\\\\AndroidManifest.xml\",\"LibraryManifestPath\":\"unityLibrary\\\\src\\\\main\\\\AndroidManifest.xml\",\"TVCompatibility\":false,\"BannerEnabled\":true,\"IsGame\":true,\"PreferredInstallLocation\":\"PreferExternal\",\"TextureSupport\":\"Generic\",\"GamepadSupportLevel\":\"SupportsDPad\",\"TargetDevices\":\"AllDevices\",\"SupportedAspectRatioMode\":1,\"MaxAspectRatio\":2.1,\"ForceInternetPermission\":false,\"UseLowAccuracyLocation\":false,\"ForceSDCardPermission\":false,\"PreserveFramebufferAlpha\":false,\"DefaultInterfaceOrientation\":\"AutoRotation\",\"AllowedAutorotateToPortrait\":true,\"AllowedAutorotateToPortraitUpsideDown\":true,\"AllowedAutorotateToLandscapeLeft\":false,\"AllowedAutorotateToLandscapeRight\":false,\"ARCoreEnabled\":false,\"SplashScreenScale\":\"Center\",\"VREnabled\":false,\"RenderOutsideSafeArea\":true,\"GraphicsDevices\":[\"Vulkan\",\"OpenGLES3\"],\"OpenGLRequireES31\":false,\"OpenGLRequireES31AEP\":false,\"OpenGLRequireES32\":false,\"StartInFullscreen\":true,\"ChromeOSInputEmulation\":true,\"DefaultWindowWidth\":1920,\"DefaultWindowHeight\":1080,\"MinimumWindowWidth\":400,\"MinimumWindowHeight\":300,\"ResizableWindow\":false,\"FullScreenMode\":\"FullScreenWindow\"},\"Services\":{\"EnableUnityConnect\":false,\"EnablePerformanceReporting\":false,\"EnableAnalytics\":false,\"EnableCrashReporting\":false},\"ProjectPath\":\"C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle\",\"FeatureChecklist\":[\"Library/Bee/artifacts/Android/Features/Assembly-CSharp-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Mono.Security-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/mscorlib-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/netstandard-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Newtonsoft.Json-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.ComponentModel.Composition-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Configuration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Data.DataSetExtensions-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Data-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Drawing-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.EnterpriseServices-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.IO.Compression-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.IO.Compression.FileSystem-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Net.Http-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Numerics-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Runtime.Serialization-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Security-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.ServiceModel.Internals-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Transactions-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Xml-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Xml.Linq-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.InputSystem-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Analytics-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Configuration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Device-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Environments-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Environments.Internal-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Internal-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Networking-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Registration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Scheduler-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Telemetry-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Threading-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.TextMeshPro-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Timeline-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Antlr3.Runtime-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Flow-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.State-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AccessibilityModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AndroidJNIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AnimationModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ARModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AssetBundleModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AudioModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ClothModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.CoreModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.CrashReportingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.DirectorModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.DSPGraphModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GameCenterModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GridModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.HotReloadModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ImageConversionModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.IMGUIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.InputLegacyModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.InputModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.JSONSerializeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.LocalizationModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ParticleSystemModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.PerformanceReportingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.Physics2DModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.PhysicsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ProfilerModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ScreenCaptureModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SharedInternalsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SpriteMaskModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SpriteShapeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.StreamingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SubstanceModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SubsystemsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TerrainModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TerrainPhysicsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreFontEngineModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreTextEngineModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextRenderingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TilemapModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TLSModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UI-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsNativeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UmbraModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UNETModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsCommonModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityConnectModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityCurlModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityTestProtocolModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestAssetBundleModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestAudioModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestTextureModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestWWWModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VehiclesModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VFXModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VideoModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VRModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.WindModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.XRModule-FeaturesChecked.txt\"],\"Development\":false,\"UsingObb\":false,\"GradleResourcesInformation\":{\"TargetSDKVersion\":30,\"RoundIconsAvailable\":false,\"RoundIconsSupported\":true,\"AdaptiveIconsSupported\":true,\"AdaptiveIconsAvailable\":false},\"LauncherManifestDiagnosticsPath\":\"Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt\",\"LibraryManifestDiagnosticsPath\":\"Library/Bee/artifacts/Android/Manifest/LibraryManifestDiag.txt\"},\"Bee.TundraBackend.CSharpActionInvocationInformation\":{\"typeFullName\":\"AndroidPlayerBuildProgram.Actions.GenerateManifests\",\"methodName\":\"Run\",\"assemblyLocation\":\"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\2021.3.15f1\\\\Editor\\\\Data\\\\PlaybackEngines\\\\AndroidPlayer\\\\AndroidPlayerBuildProgram.exe\",\"targets\":[\"Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt\",\"Library/Bee/artifacts/Android/Manifest/LibraryManifestDiag.txt\",\"C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/AndroidManifest.xml\",\"C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml\"],\"inputs\":[\"Library/Bee/artifacts/Android/Features/Assembly-CSharp-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Mono.Security-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/mscorlib-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/netstandard-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Newtonsoft.Json-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.ComponentModel.Composition-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Configuration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Data.DataSetExtensions-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Data-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Drawing-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.EnterpriseServices-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.IO.Compression-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.IO.Compression.FileSystem-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Net.Http-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Numerics-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Runtime.Serialization-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Security-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.ServiceModel.Internals-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Transactions-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Xml-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Xml.Linq-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.InputSystem-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Analytics-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Configuration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Device-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Environments-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Environments.Internal-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Internal-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Networking-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Registration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Scheduler-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Telemetry-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Threading-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.TextMeshPro-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Timeline-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Antlr3.Runtime-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Flow-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.State-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AccessibilityModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AndroidJNIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AnimationModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ARModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AssetBundleModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AudioModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ClothModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.CoreModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.CrashReportingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.DirectorModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.DSPGraphModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GameCenterModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GridModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.HotReloadModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ImageConversionModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.IMGUIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.InputLegacyModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.InputModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.JSONSerializeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.LocalizationModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ParticleSystemModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.PerformanceReportingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.Physics2DModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.PhysicsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ProfilerModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ScreenCaptureModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SharedInternalsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SpriteMaskModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SpriteShapeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.StreamingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SubstanceModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SubsystemsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TerrainModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TerrainPhysicsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreFontEngineModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreTextEngineModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextRenderingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TilemapModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TLSModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UI-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsNativeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UmbraModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UNETModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsCommonModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityConnectModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityCurlModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityTestProtocolModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestAssetBundleModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestAudioModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestTextureModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestWWWModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VehiclesModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VFXModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VideoModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VRModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.WindModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.XRModule-FeaturesChecked.txt\",\"C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/Apk/LauncherManifest.xml\",\"C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/Apk/UnityManifest.xml\"],\"targetDirectories\":[]}}",
+      "WriteTextFilePayload": "{\"AndroidPlayerBuildProgram.Actions.GenerateManifests+Arguments\":{\"Configuration\":{\"PackageName\":\"com.Alan.WeirdTicTacToe\",\"TargetSDKVersion\":30,\"LauncherManifestTemplatePath\":\"C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer\\\\Apk\\\\LauncherManifest.xml\",\"LibraryManifestTemplatePath\":\"C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer\\\\Apk\\\\UnityManifest.xml\",\"LauncherManifestPath\":\"launcher\\\\src\\\\main\\\\AndroidManifest.xml\",\"LibraryManifestPath\":\"unityLibrary\\\\src\\\\main\\\\AndroidManifest.xml\",\"TVCompatibility\":false,\"BannerEnabled\":true,\"IsGame\":true,\"PreferredInstallLocation\":\"PreferExternal\",\"TextureSupport\":\"Generic\",\"GamepadSupportLevel\":\"SupportsDPad\",\"TargetDevices\":\"AllDevices\",\"SupportedAspectRatioMode\":1,\"MaxAspectRatio\":2.1,\"ForceInternetPermission\":false,\"UseLowAccuracyLocation\":false,\"ForceSDCardPermission\":false,\"PreserveFramebufferAlpha\":false,\"DefaultInterfaceOrientation\":\"AutoRotation\",\"AllowedAutorotateToPortrait\":true,\"AllowedAutorotateToPortraitUpsideDown\":true,\"AllowedAutorotateToLandscapeLeft\":false,\"AllowedAutorotateToLandscapeRight\":false,\"ARCoreEnabled\":false,\"SplashScreenScale\":\"ScaleToFit\",\"VREnabled\":false,\"RenderOutsideSafeArea\":true,\"GraphicsDevices\":[\"Vulkan\",\"OpenGLES3\"],\"OpenGLRequireES31\":false,\"OpenGLRequireES31AEP\":false,\"OpenGLRequireES32\":false,\"StartInFullscreen\":true,\"ChromeOSInputEmulation\":true,\"DefaultWindowWidth\":1920,\"DefaultWindowHeight\":1080,\"MinimumWindowWidth\":400,\"MinimumWindowHeight\":300,\"ResizableWindow\":false,\"FullScreenMode\":\"FullScreenWindow\"},\"Services\":{\"EnableUnityConnect\":false,\"EnablePerformanceReporting\":false,\"EnableAnalytics\":false,\"EnableCrashReporting\":false},\"ProjectPath\":\"C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle\",\"FeatureChecklist\":[\"Library/Bee/artifacts/Android/Features/Assembly-CSharp-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Mono.Security-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/mscorlib-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/netstandard-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Newtonsoft.Json-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.ComponentModel.Composition-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Configuration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Data.DataSetExtensions-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Data-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Drawing-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.EnterpriseServices-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.IO.Compression-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.IO.Compression.FileSystem-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Net.Http-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Numerics-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Runtime.Serialization-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Security-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.ServiceModel.Internals-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Transactions-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Xml-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Xml.Linq-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.InputSystem-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Analytics-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Configuration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Device-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Environments-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Environments.Internal-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Internal-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Networking-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Registration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Scheduler-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Telemetry-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Threading-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.TextMeshPro-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Timeline-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Antlr3.Runtime-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Flow-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.State-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AccessibilityModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AndroidJNIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AnimationModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ARModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AssetBundleModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AudioModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ClothModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.CoreModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.CrashReportingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.DirectorModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.DSPGraphModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GameCenterModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GridModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.HotReloadModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ImageConversionModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.IMGUIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.InputLegacyModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.InputModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.JSONSerializeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.LocalizationModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ParticleSystemModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.PerformanceReportingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.Physics2DModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.PhysicsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ProfilerModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ScreenCaptureModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SharedInternalsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SpriteMaskModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SpriteShapeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.StreamingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SubstanceModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SubsystemsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TerrainModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TerrainPhysicsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreFontEngineModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreTextEngineModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextRenderingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TilemapModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TLSModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UI-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsNativeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UmbraModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UNETModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsCommonModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityConnectModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityCurlModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityTestProtocolModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestAssetBundleModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestAudioModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestTextureModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestWWWModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VehiclesModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VFXModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VideoModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VRModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.WindModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.XRModule-FeaturesChecked.txt\"],\"Development\":false,\"UsingObb\":false,\"GradleResourcesInformation\":{\"TargetSDKVersion\":30,\"RoundIconsAvailable\":true,\"RoundIconsSupported\":true,\"AdaptiveIconsSupported\":true,\"AdaptiveIconsAvailable\":true},\"LauncherManifestDiagnosticsPath\":\"Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt\",\"LibraryManifestDiagnosticsPath\":\"Library/Bee/artifacts/Android/Manifest/LibraryManifestDiag.txt\"},\"Bee.TundraBackend.CSharpActionInvocationInformation\":{\"typeFullName\":\"AndroidPlayerBuildProgram.Actions.GenerateManifests\",\"methodName\":\"Run\",\"assemblyLocation\":\"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\2021.3.15f1\\\\Editor\\\\Data\\\\PlaybackEngines\\\\AndroidPlayer\\\\AndroidPlayerBuildProgram.exe\",\"targets\":[\"Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt\",\"Library/Bee/artifacts/Android/Manifest/LibraryManifestDiag.txt\",\"C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/AndroidManifest.xml\",\"C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml\"],\"inputs\":[\"Library/Bee/artifacts/Android/Features/Assembly-CSharp-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Mono.Security-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/mscorlib-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/netstandard-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Newtonsoft.Json-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.ComponentModel.Composition-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Configuration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Data.DataSetExtensions-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Data-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Drawing-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.EnterpriseServices-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.IO.Compression-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.IO.Compression.FileSystem-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Net.Http-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Numerics-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Runtime.Serialization-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Security-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.ServiceModel.Internals-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Transactions-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Xml-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/System.Xml.Linq-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.InputSystem-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Analytics-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Configuration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Device-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Environments-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Environments.Internal-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Internal-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Networking-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Registration-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Scheduler-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Telemetry-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Services.Core.Threading-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.TextMeshPro-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.Timeline-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Antlr3.Runtime-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Core-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.Flow-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/Unity.VisualScripting.State-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AccessibilityModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AndroidJNIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AnimationModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ARModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AssetBundleModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.AudioModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ClothModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.CoreModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.CrashReportingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.DirectorModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.DSPGraphModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GameCenterModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.GridModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.HotReloadModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ImageConversionModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.IMGUIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.InputLegacyModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.InputModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.JSONSerializeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.LocalizationModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ParticleSystemModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.PerformanceReportingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.Physics2DModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.PhysicsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ProfilerModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.ScreenCaptureModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SharedInternalsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SpriteMaskModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SpriteShapeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.StreamingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SubstanceModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.SubsystemsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TerrainModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TerrainPhysicsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreFontEngineModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreTextEngineModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TextRenderingModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TilemapModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.TLSModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UI-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsNativeModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UIModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UmbraModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UNETModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsCommonModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityConnectModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityCurlModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityTestProtocolModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestAssetBundleModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestAudioModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestTextureModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestWWWModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VehiclesModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VFXModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VideoModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.VRModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.WindModule-FeaturesChecked.txt\",\"Library/Bee/artifacts/Android/Features/UnityEngine.XRModule-FeaturesChecked.txt\",\"C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/Apk/LauncherManifest.xml\",\"C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/Apk/UnityManifest.xml\"],\"targetDirectories\":[]}}",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/csharpactions/LauncherManifestDiag.txt_zvqu.info"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 354
+      "DebugActionIndex": 375
     },
     {
       "Annotation": "Generate Manifests Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt (+3 others)",
@@ -9019,11 +9271,11 @@
         323,
         325,
         327,
-        354
+        375
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 355
+      "DebugActionIndex": 376
     },
     {
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/symbols/armeabi-v7a/libmain.so",
@@ -9034,7 +9286,7 @@
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/symbols/armeabi-v7a/libmain.so"
       ],
-      "DebugActionIndex": 356
+      "DebugActionIndex": 377
     },
     {
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/symbols/armeabi-v7a/libmonobdwgc-2.0.so",
@@ -9045,7 +9297,7 @@
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/symbols/armeabi-v7a/libmonobdwgc-2.0.so"
       ],
-      "DebugActionIndex": 357
+      "DebugActionIndex": 378
     },
     {
       "Annotation": "CopyFiles C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/symbols/armeabi-v7a/libunity.so",
@@ -9056,7 +9308,7 @@
       "Outputs": [
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/symbols/armeabi-v7a/libunity.so"
       ],
-      "DebugActionIndex": 358
+      "DebugActionIndex": 379
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/unity_app_guid_rs18.info",
@@ -9067,7 +9319,7 @@
         "Library/Bee/artifacts/csharpactions/unity_app_guid_rs18.info"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 359
+      "DebugActionIndex": 380
     },
     {
       "Annotation": "GuidGenerator C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid",
@@ -9199,11 +9451,11 @@
         "C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGame/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid"
       ],
       "ToBuildDependencies": [
-        359
+        380
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 360
+      "DebugActionIndex": 381
     },
     {
       "Annotation": "Player",
@@ -9455,11 +9707,32 @@
         351,
         352,
         353,
+        354,
         355,
-        360
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        376,
+        381
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 361
+      "DebugActionIndex": 382
     }
   ],
   "FileSignatures": [
@@ -9766,7 +10039,7 @@
   "EmitDataForBeeWhy": 0,
         "NamedNodes": {
           "all_tundra_nodes": 0,
-          "Player": 361
+          "Player": 382
         }
 ,  "DefaultNodes": [
     0

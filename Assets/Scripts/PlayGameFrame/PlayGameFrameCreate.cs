@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.PlayGameFrame
-{ 
+{
     internal class PlayGameFrameCreate : MonoBehaviour
     {
         public static GameObject CreateCubePlayFrameForWinner(GameObject prefabCubePlayFrame, GameObject cubePlayForFrame, bool isGame2D)
@@ -19,13 +14,9 @@ namespace Assets.Scripts.PlayGameFrame
 
                 CreateTablePrefabCalculateScale.TransformGameObjectPrefabToNewScale(prefabCubePlayFrame, cubePlayScaleX, cubePlayScaleY, cubePlayScaleZ);
 
-                // same of game objects CubePlay have coordinate Z = -0,05
-                float topForAllCubePlay = 0.15f;
-
                 float x = cubePlayForFrame.transform.position.x;
                 float y = cubePlayForFrame.transform.position.y;
-                //float z = cubePlayForFrame.transform.position.z - cubePlayScaleX / 2 - topForAllCubePlay;
-                float z = cubePlayForFrame.transform.position.z;// - topForAllCubePlay;
+                float z = cubePlayForFrame.transform.position.z;
 
                 // create new prefab "CubePlayFrame"
                 var newPrefabCubePlay = Instantiate(prefabCubePlayFrame, new Vector3(x, y, z), Quaternion.identity);
@@ -35,8 +26,6 @@ namespace Assets.Scripts.PlayGameFrame
 
             return cubePlayForFrame;
         }
-
-
 
 
         public static GameObject CreateCubePlayFrameForPlayerMove(GameObject prefabCubePlayFrame, GameObject cubePlayForFrame, bool isGame2D)
@@ -49,50 +38,18 @@ namespace Assets.Scripts.PlayGameFrame
 
                 CreateTablePrefabCalculateScale.TransformGameObjectPrefabToNewScale(prefabCubePlayFrame, cubePlayScaleX, cubePlayScaleY, cubePlayScaleZ);
 
-                // same of game objects CubePlay have coordinate Z = -0,05
                 float topForAllCubePlay = 0.15f;
-                //float topForAllCubePlay = 0.5f;
 
                 float x = cubePlayForFrame.transform.position.x;
                 float y = cubePlayForFrame.transform.position.y;
                 float z = cubePlayForFrame.transform.position.z - cubePlayScaleX / 2 - topForAllCubePlay;
 
-                // create new prefab "CubePlayFrame"
                 var newPrefabCubePlay = Instantiate(prefabCubePlayFrame, new Vector3(x, y, z), Quaternion.identity);
 
                 return cubePlayForFrame;
             }
 
             return cubePlayForFrame;
-        }
-
-
-        // --- 
-        //public static GameObject CreateCubePlayFrameForPlayerMove(GameObject prefabCubePlayFrame, GameObject cubePlayForFrame, bool isGame2D)
-        //{
-        //    if (isGame2D == true)
-        //    {
-        //        float cubePlayScaleX = cubePlayForFrame.transform.localScale.x;
-        //        float cubePlayScaleY = cubePlayForFrame.transform.localScale.y;
-        //        float cubePlayScaleZ = cubePlayForFrame.transform.localScale.z;
-
-        //        CreateTablePrefabCalculateScale.TransformGameObjectPrefabToNewScale(prefabCubePlayFrame, cubePlayScaleX, cubePlayScaleY, cubePlayScaleZ);
-
-        //        // same of game objects CubePlay have coordinate Z = -0,05
-        //        float topForAllCubePlay = 0.15f;
-
-        //        float x = cubePlayForFrame.transform.position.x;
-        //        float y = cubePlayForFrame.transform.position.y;
-        //        float z = cubePlayForFrame.transform.position.z - cubePlayScaleX / 2 - topForAllCubePlay;
-
-        //        // create new prefab "CubePlayFrame"
-        //        var newPrefabCubePlay = Instantiate(prefabCubePlayFrame, new Vector3(x, y, z), Quaternion.identity);
-
-        //        return cubePlayForFrame;
-        //    }
-
-        //    return cubePlayForFrame;
-        //}
-
+        }       
     }
 }

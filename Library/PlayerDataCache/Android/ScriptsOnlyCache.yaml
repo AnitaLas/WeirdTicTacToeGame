@@ -88,17 +88,17 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1554}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 4360}
+      Script: {instanceID: 4368}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5856}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -143,17 +143,17 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1554}
     - Class: 114
-      Script: {instanceID: 1690}
+      Script: {instanceID: 1692}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5856}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -198,17 +198,17 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1554}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 3382}
+      Script: {instanceID: 3388}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5856}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -253,19 +253,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1554}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5856}
     - Class: 114
-      Script: {instanceID: 6554}
+      Script: {instanceID: 6562}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7130}
     - Class: 114
-      Script: {instanceID: 7750}
+      Script: {instanceID: 7760}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -312,27 +312,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1554}
     - Class: 114
-      Script: {instanceID: 2020}
+      Script: {instanceID: 2022}
     - Class: 114
-      Script: {instanceID: 2298}
+      Script: {instanceID: 2300}
     - Class: 114
-      Script: {instanceID: 2808}
+      Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 4518}
+      Script: {instanceID: 4526}
     - Class: 114
-      Script: {instanceID: 4652}
+      Script: {instanceID: 4660}
     - Class: 114
-      Script: {instanceID: 4972}
+      Script: {instanceID: 4980}
     - Class: 114
-      Script: {instanceID: 5848}
+      Script: {instanceID: 5856}
     - Class: 114
-      Script: {instanceID: 6554}
+      Script: {instanceID: 6562}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7122}
+      Script: {instanceID: 7130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -522,6 +522,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.GameInformations.GameInformationsButtons
+    className: GameInformationsCreateText
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1298,6 +1304,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Assets.Scripts.CreateFrame
+    className: CreateFrameForMove
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1420,7 +1432,7 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Assets.Scripts.GameInformations.GameInformationsBase
+    namespaceName: Assets.Scripts.GameInformations.GameInformationsText
     className: GameInformationsTextActions
   - hash:
       serializedVersion: 2
@@ -1687,4 +1699,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SceneConfigurationBoardGame.unity
   - Assets/Scenes/SceneConfigurationPlayersSymbols.unity
   - Assets/Scenes/SceneGame.unity
-  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230524/WeirdTicTacToeGame_20230524_v15.apk
+  playerPath: C:/Users/anita/OneDrive/Dokumenty/GitHub/WeirdTicTacToeGameBuild/20230527/WeirdTicTacToeGame_20230527_v18.apk

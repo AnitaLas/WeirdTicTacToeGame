@@ -1,16 +1,8 @@
-﻿using Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons;
-using Assets.Scripts.GameConfiguration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.Scenes;
-using Assets.Scripts.ScreenVerification;
 using Assets.Scripts.GameStart;
-using Assets.Scripts.GameInformations.GameInformationsText;
 using Assets.Scripts.GameName;
 
 // scene name: SceneStartGame
@@ -31,21 +23,18 @@ namespace Assets.Scripts
         private string _tagStartGameButtonStartGame;
         private string _tagStartGameButtonInformations;
 
-        Dictionary<int, string> tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        Dictionary<int, string> tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
-
+        private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
+        private Dictionary<int, string> _tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
 
         void Start()
         {
-            _tagUntagged = tagCommonDictionary[1];
-            _tagStartGameButtonStartGame = tagStartGameButtonsDictionary[1];
-            _tagStartGameButtonInformations = tagStartGameButtonsDictionary[3];
+            _tagUntagged = _tagCommonDictionary[1];
+            _tagStartGameButtonStartGame = _tagStartGameButtonsDictionary[1];
+            _tagStartGameButtonInformations = _tagStartGameButtonsDictionary[3];
 
             GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
             GameNameTextCreate.CreateGameNameForStart(gameName);
-
         }
-
 
         void Update()
         {
@@ -58,7 +47,6 @@ namespace Assets.Scripts
 
                 if (Physics.Raycast(ray, out touch))
                 {
-
                     if (touch.collider != null)
                     {
                         string gameObjectTag = CommonMethods.GetObjectTag(touch);
@@ -68,18 +56,15 @@ namespace Assets.Scripts
                             GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
                         }
 
-
                         if (gameObjectTag == _tagStartGameButtonStartGame)
                         {
                             ScenesChange.GoToSceneConfigurationBoardGame();
                         }
 
-
                         if (gameObjectTag == _tagStartGameButtonInformations)
                         {
                             ScenesChange.GoToSceneInformations();
                         }
-
                     }
                 }
             }

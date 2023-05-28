@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Buttons
@@ -19,7 +15,6 @@ namespace Assets.Scripts.Buttons
         {
             bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
 
-            //Debug.Log(" isGameObjectWithTagExsist " + isGameObjectWithTagExsist);
             if (isGameObjectWithTagExsist == true)
             {
                 DestroySingleGameObjectWithTag(gameObjectTagToDestoy);
@@ -33,7 +28,6 @@ namespace Assets.Scripts.Buttons
             for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
             {
                 string gameObjectTagToDestroy = gameObjectsWithTagToDestoy[i];
-                //Debug.Log("gameObjectTagToDestroy = " + gameObjectTagToDestroy);
                 DestroySingleGameObjectWithTagIfExsist(gameObjectTagToDestroy);
             }
         }
@@ -60,23 +54,8 @@ namespace Assets.Scripts.Buttons
             }
         }
 
-            public static void DestroyGameObjectsList(List<GameObject[,,]> gameObjects)
+        public static void DestroyGameObjectsList(List<GameObject[,,]> gameObjects)
         {
-            //Debug.Log(" 1 ");
-            //int numberOfGameObjectTagToDestroy = gameObjects.Count;
-            //Debug.Log(" numberOfGameObjectTagToDestroy " + numberOfGameObjectTagToDestroy);
-
-            //for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
-            //{
-            //    GameObject[,,] table = gameObjects[i];
-            //    Debug.Log($" gameObjects[{i}] " + gameObjects[i]);
-            //    GameObject gameObject = table[0,0,0];
-            //    string gameObjectTagToDestroy = CommonMethods.GetObjectTag(gameObject);
-            //    Debug.Log(" gameObjectTagToDestroy = " + gameObjectTagToDestroy);
-            //    //DestroySingleGameObjectWithTagIfExsist(gameObjectTagToDestroy);
-            //    DestroyTable3D(table);
-            //}
-
             foreach (var button in gameObjects)
             {
                 DestroyTable3D(button);
@@ -98,25 +77,25 @@ namespace Assets.Scripts.Buttons
         {
             string tagName;
             int helpButtonsLength = gameObjectsWithTagToDestoy.Length;
+
             GameObject helpButton;
 
             for (int i = 0; i < helpButtonsLength; i++)
             {
                 tagName = gameObjectsWithTagToDestoy[i];
                 helpButton = CommonMethods.GetObjectByTagName(tagName);
-
                 Destroy(helpButton);
             }
         }
 
         public static void DestroyTable3D(GameObject[,,] table)
         {
-            //Debug.Log(" 1 ");
             int maxIndexDepth = table.GetLength(0);
             int maxIndexColumn = table.GetLength(2);
             int maxIndexRow = table.GetLength(1);
 
             GameObject baseGameObject = table[0, 0, 0];
+
             string tagName = CommonMethods.GetObjectTag(baseGameObject);
 
             bool isTagExsist = CommonMethods.IsGameObjectWithTagExsist(tagName);
@@ -131,20 +110,12 @@ namespace Assets.Scripts.Buttons
                         {
                             GameObject gameObjectToRemove = table[indexDepth, indexRow, indexColumn];
                             string gameObjectTagToDestroy = CommonMethods.GetObjectTag(gameObjectToRemove);
-                            //Debug.Log(" gameObjectTagToDestroy = " + gameObjectTagToDestroy);
                             Destroy(gameObjectToRemove);
 
                         }
                     }
                 }
-
-            } 
-            else
-            {
-
-            }
-            
+            }            
         }
-
     }
 }

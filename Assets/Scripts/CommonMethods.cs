@@ -1,21 +1,9 @@
 ﻿using Assets.Scripts.GameDictionaries;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
-using Unity.VisualScripting;
-//using UnityEditor.XR;
 using UnityEngine;
-using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
-using UnityEngine.TextCore.Text;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using Debug = UnityEngine.Debug;
 using Random = System.Random;
 
 namespace Assets.Scripts
@@ -80,7 +68,6 @@ namespace Assets.Scripts
             double test = Math.Round(roundedCoordinate, 2);
             float test2 = ConvertDoubleToFloat(test);
 
-            //float roundedCoordinate = (float)Math.Round(coordinate, 2);
             return test2;
         }
 
@@ -120,28 +107,12 @@ namespace Assets.Scripts
             }
         }
 
-        //public static bool IsNumberEven(float number)
+        //public static int ChooseRandomNumber(int maxNumber)
         //{
-        //    bool isNumberEven;
-
-        //    if (number % 2 == 0)
-        //    {
-        //        isNumberEven = true;
-        //        return isNumberEven;
-        //    }
-        //    else
-        //    {
-        //        isNumberEven = false;
-        //        return isNumberEven;
-        //    }
+        //    Random random = new Random();
+        //    int randomNumber = random.Next(0, maxNumber);
+        //    return randomNumber;
         //}
-
-        public static int ChooseRandomNumber(int maxNumber)
-        {
-            Random random = new Random();
-            int randomNumber = random.Next(0, maxNumber);
-            return randomNumber;
-        }
 
         public static int ConvertDecimalToInt(decimal number)
         {
@@ -161,11 +132,11 @@ namespace Assets.Scripts
             return result;
         }
 
-        public static decimal RoundDown(decimal number)
-        {
-            decimal result = Math.Floor(number);
-            return result;
-        }
+        //public static decimal RoundDown(decimal number)
+        //{
+        //    decimal result = Math.Floor(number);
+        //    return result;
+        //}
 
         public static decimal RoundUp(decimal number)
         {
@@ -246,29 +217,7 @@ namespace Assets.Scripts
             var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             return newPrefabCubePlayCanvasText;
         }
-        /*
-        public static TextMeshProUGUI GetTextMeshProUGUIForPlayerSymbolSecondChild(GameObject gameObject)
-        {
-            string gameObjectName = GetObjectName(gameObject);
-            // 
-            var newPrefabCubePlayCanvas = gameObject.transform.GetChild(1).transform.GetChild(0);
-            //
-            var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-            return newPrefabCubePlayCanvasText;
-        }
-        */
-
-
-
-
-
-
-
-
-
-
-
-
+       
         public static void ChangeTextForFirstChild(GameObject gameObject, string gameObjectText)
         {
             TextMeshProUGUI newPrefabGameObjectText;
@@ -313,32 +262,15 @@ namespace Assets.Scripts
             return text;
         }
 
-        //public static string GetCubePlayText2(GameObject gameObject)
+        //public static string GetTextForPlayerSymbolChild(GameObject gameObject, int childNumber)
         //{
-        //    string name = GetObjectName(gameObject);
-        //    //Debug.Log("name = " + name);
-
-        //    string tag = GetObjectTag(gameObject);
-        //    Debug.Log("tag = " + tag);
-
-
-        //    var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);
-        //    // game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
-        //    var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        //    string text = newPrefabCubePlayCanvasText.text;
-        //    //Debug.Log("text = " + text);
-        //    return text;
+        //    //string gameObjectName = GetObjectName(gameObject);
+        //    // game object: prefab PlayerSymbol -> PlayerSymbolText -> PlayerSymbolCanvas ->
+        //    var newPrefabPlayerSymbolCanvas = gameObject.transform.GetChild(childNumber).transform.GetChild(0);
+        //    // game object: prefab PlayerSymbol -> PlayerSymbolCanvas -> PlayerSymbolText
+        //    string newPrefabCubePlayCanvasText = newPrefabPlayerSymbolCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
+        //    return newPrefabCubePlayCanvasText;
         //}
-
-        public static string GetTextForPlayerSymbolChild(GameObject gameObject, int childNumber)
-        {
-            //string gameObjectName = GetObjectName(gameObject);
-            // game object: prefab PlayerSymbol -> PlayerSymbolText -> PlayerSymbolCanvas ->
-            var newPrefabPlayerSymbolCanvas = gameObject.transform.GetChild(childNumber).transform.GetChild(0);
-            // game object: prefab PlayerSymbol -> PlayerSymbolCanvas -> PlayerSymbolText
-            string newPrefabCubePlayCanvasText = newPrefabPlayerSymbolCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
-            return newPrefabCubePlayCanvasText;
-        }
 
         public static void ChangeTextColourForCubePlay(GameObject gameObject, Color textColor)
         {
@@ -353,17 +285,17 @@ namespace Assets.Scripts
             newPrefabCubePlayCanvasText.fontSize = fontSize;
         }
 
-        public static void ChangeTextAlignmentBottom(GameObject gameObject)
-        {
-            var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
-            newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Bottom;
-        }
+        //public static void ChangeTextAlignmentBottom(GameObject gameObject)
+        //{
+        //    var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
+        //    newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Bottom;
+        //}
 
-        public static void ChangeTextAlignmenTop(GameObject gameObject)
-        {
-            var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
-            newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Top;
-        }
+        //public static void ChangeTextAlignmenTop(GameObject gameObject)
+        //{
+        //    var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
+        //    newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Top;
+        //}
 
         public static Color GetNewColor(int dictionaryColorId)
         {
@@ -411,14 +343,12 @@ namespace Assets.Scripts
                         {
 
                             return Tuple.Create(indexDepth, indexRow, indexColumn);
-
                         }
                     }
                 }
             }
 
             return Tuple.Create(0, 0, 0);
-
         }
 
         /// <summary>
@@ -446,14 +376,12 @@ namespace Assets.Scripts
                         {
 
                             return Tuple.Create(indexDepth, indexRow, indexColumn);
-
                         }
                     }
                 }
             }
 
             return Tuple.Create(0, 0, 0);
-
         }
 
         //[GetIndexZYXForGameObject] - end
@@ -477,17 +405,13 @@ namespace Assets.Scripts
 
                         if (cubePlayNameFromTable == cubePlayName)
                         {
-
                             return cubePlay;
-
                         }
-
                     }             
                 }  
             }
 
             return cubePlay = table[0, 0, 0];
-
         }
 
 
@@ -498,17 +422,13 @@ namespace Assets.Scripts
             return cubePlay;
         }
 
-        public static string GetCubePlayName(GameObject[,,] table, int indexY, int indexX)
-        {
-            int indexZ = 0;
-            GameObject cubePlay = table[indexZ, indexY, indexX];
-            string cubePlayName = cubePlay.name;
-            return cubePlayName;
-        }
-
-
-
-
+        //public static string GetCubePlayName(GameObject[,,] table, int indexY, int indexX)
+        //{
+        //    int indexZ = 0;
+        //    GameObject cubePlay = table[indexZ, indexY, indexX];
+        //    string cubePlayName = cubePlay.name;
+        //    return cubePlayName;
+        //}
 
         public static void SetUpNewXForGameObject(GameObject gameObject, float newCoordinateX)
         {
@@ -549,10 +469,8 @@ namespace Assets.Scripts
             {
                 float x = gameObject.transform.position.x;
                 float y = gameObject.transform.position.y;
-                //float z = gameObject.transform.position.z;
 
                 gameObject.transform.position = new Vector3(x, y, newCoordinateZ);
-
             }
         }
         public static void ChangeYForGameObject(GameObject gameObject, float newCoordinateY)
@@ -617,17 +535,17 @@ namespace Assets.Scripts
             return gameObjectName;
         }
 
-        public static string GetParentObjectName(RaycastHit touchGameObject)
-        {
-            string gameObjectParentName = touchGameObject.collider.transform.parent.name;
-            return gameObjectParentName;
-        }
+        //public static string GetParentObjectName(RaycastHit touchGameObject)
+        //{
+        //    string gameObjectParentName = touchGameObject.collider.transform.parent.name;
+        //    return gameObjectParentName;
+        //}
 
-        public static string GetParentObjectName(GameObject gameObject)
-        {
-            string gameObjectParentName = gameObject.transform.parent.name;
-            return gameObjectParentName;
-        }
+        //public static string GetParentObjectName(GameObject gameObject)
+        //{
+        //    string gameObjectParentName = gameObject.transform.parent.name;
+        //    return gameObjectParentName;
+        //}
 
         public static string GetObjectTag(GameObject gameObject)
         {
@@ -654,7 +572,6 @@ namespace Assets.Scripts
             string gameObjectTagName = touchGameObject.collider.transform.tag;
             return gameObjectTagName;
         }
-
 
         public static string GetCubePlayPlayerSymbol(GameObject cubePlay)
         {
@@ -686,7 +603,6 @@ namespace Assets.Scripts
 
         public static int CheckAndReturnLowerNumber(int numberOne, int numberTwo)
         {
-
             if (numberTwo > numberOne)
             {
                 return numberOne;
@@ -700,42 +616,29 @@ namespace Assets.Scripts
                 // verticalLenght = horizontalLenght
                 return numberTwo;
             }
-
         }
 
-        public static int CheckAndReturnBiggerNumber(int numberOne, int numberTwo)
-        {
-
-            if (numberTwo > numberOne)
-            {
-                return numberTwo;
-            }
-            else if (numberTwo < numberOne)
-            {
-                return numberOne;
-            }
-            else
-            {
-                // verticalLenght = horizontalLenght
-                return numberOne;
-            }
-
-        }
+        //public static int CheckAndReturnBiggerNumber(int numberOne, int numberTwo)
+        //{
+        //    if (numberTwo > numberOne)
+        //    {
+        //        return numberTwo;
+        //    }
+        //    else if (numberTwo < numberOne)
+        //    {
+        //        return numberOne;
+        //    }
+        //    else
+        //    {
+        //        // verticalLenght = horizontalLenght
+        //        return numberOne;
+        //    }
+        //}
 
         public static void ChangeColourForGameObject(GameObject gameObject, Material newColour)
         {
             gameObject.GetComponent<Renderer>().material = newColour;
         }
-
-        // do I need it?
-        //public static string ChangeToCapitalLetter(string symbol)
-        //{
-        //    string text = symbol.ToUpper();
-        //    return text;
-        //}
-
-
-        //-------------------------------------------
 
         public static void ChangeScene(string sceneName)
         {
@@ -756,8 +659,6 @@ namespace Assets.Scripts
             {
                 return false;
             }
-
         }
-
     }
 }

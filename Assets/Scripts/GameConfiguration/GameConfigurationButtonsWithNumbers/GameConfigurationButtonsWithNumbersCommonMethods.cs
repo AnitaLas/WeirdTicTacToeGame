@@ -1,20 +1,9 @@
-﻿using Assets.Scripts.GameFieldsVerification;
-using System;
-using System.Collections.Generic;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtons;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 {
     internal class GameConfigurationButtonsWithNumbersCommonMethods : MonoBehaviour
-    {
-
-        
+    {   
         public static GameObject[,,] CreateTableWithNumbers(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             GameObject[,,] tableWithNumber;
@@ -38,17 +27,13 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             }
 
             return numbers;
-
         }
 
         public static GameObject[,,] ChangeDataForTableWithNumbers(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, int start, int end, float newCoordinateY, string inactiveText )
         {
-
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
             int maxIndexRow = tableWtithNumber.GetLength(1);
-
-            //float newCoordinateZ = 0;
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
@@ -67,15 +52,12 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
                         {
                             CommonMethods.ChangeTextForCubePlay(cubePlay, inactiveText);
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveField);
-                            //CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         }
-
                     }
                 }
             }
 
             return tableWtithNumber;
-
         }
 
 
@@ -90,7 +72,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             {
                 for (int indexRow = numberOfRows - 1; indexRow >= 0; indexRow--)
                 {
-
                     for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
                     {
                         currentIndex = index[0];
@@ -106,8 +87,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 
             return newTable;
         }
-
-
 
         public static string[,,] CreateTableWithTextForPrefabCubePlay(int numberOfDepths, int numberOfRows, int numberOfColumns)
         {
@@ -131,12 +110,5 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 
             return newTable;
         }
-
-
-
-       
-        
-
-
     }
 }

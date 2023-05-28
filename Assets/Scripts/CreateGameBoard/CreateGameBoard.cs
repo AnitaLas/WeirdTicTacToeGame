@@ -1,14 +1,4 @@
-﻿using Assets.Scripts;
-using Assets.Scripts.CreateTable;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -19,13 +9,8 @@ namespace Assets.Scripts
             GameObject[,,] tableWithNumber;
             string[,,] defaultTextForPrefabCubePlay = CreateGameBoardMethods.CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);     
             tableWithNumber = CreateTableMainMethodsForGame.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, isCellphoneMode, defaultTextForPrefabCubePlay);
-
             CreateGameBoardMethods.ChangeDataForBoardGameAtStart(tableWithNumber);
-
             return tableWithNumber;
         }
-
-
     }
-
 }

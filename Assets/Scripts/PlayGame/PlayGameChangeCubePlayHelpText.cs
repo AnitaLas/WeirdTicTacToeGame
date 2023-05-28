@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.PlayGame
 {
     internal class PlayGameChangeCubePlayHelpText
     {
-
         public static bool ChangeBoarGameHelpTextVisibility(GameObject[,,] boardGame, string[] playersSymbols, bool isBoarGameHelpTextVisible)
         {
             if (isBoarGameHelpTextVisible == true)
@@ -23,7 +16,6 @@ namespace Assets.Scripts.PlayGame
                 ChangeBoarGameHelpTextToVisible(boardGame, playersSymbols);
                 return true;
             }
-
         }
 
         public static void ChangeBoarGameHelpTextToInvisible(GameObject[,,] boardGame, string[] playersSymbols)
@@ -31,16 +23,13 @@ namespace Assets.Scripts.PlayGame
             int dictionaryColorId = 4;
             Color textColour = CommonMethods.GetNewColor(dictionaryColorId);
             ChangeCubePlayTextVisibility(boardGame, playersSymbols, textColour);
-
         }
 
         public static void ChangeBoarGameHelpTextToVisible(GameObject[,,] boardGame, string[] playersSymbols)
         {
             int dictionaryColorId = 3;
-            //int dictionaryColorId = 5;
             Color textColour = CommonMethods.GetNewColor(dictionaryColorId);
             ChangeCubePlayTextVisibility(boardGame, playersSymbols, textColour);
-
         }
 
         public static void ChangeCubePlayTextVisibility(GameObject[,,] boardGame, string[] playersSymbols, Color textColour)
@@ -72,17 +61,10 @@ namespace Assets.Scripts.PlayGame
                             {
                                 CommonMethods.ChangeTextColourForCubePlay(cubePlay, defaultColour);
                             }
-
                         }
-
                     }
                 }
             }
         }
-
-
-
-
-
     }
 }

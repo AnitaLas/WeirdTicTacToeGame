@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -35,13 +28,8 @@ namespace Assets.Scripts
         /// <param name="indexForNewColour"></param>
         public static void ChangeColourForPrefabCubePlay(GameObject prefab, Material[] cubePlayColour, int indexForNewColour)
         {
-            //Debug.Log(" test 1 ");
             Material cubeColour = NewColourForPrefabCubePlay(cubePlayColour, indexForNewColour);
-           //Debug.Log(" test 2 ");
-            //prefab.GetComponent<Renderer>().material = cubeColour;
             CommonMethods.ChangeColourForGameObject(prefab, cubeColour);
         }
-
-
     }
 }

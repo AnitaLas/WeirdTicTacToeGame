@@ -1,10 +1,6 @@
 ﻿using Assets.Scripts.Buttons;
 using Assets.Scripts.GameDictionaries;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.GameInformations.GameInformationsButtons
@@ -21,7 +17,6 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
         {
             ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
             ChangeTagForButtonBackToSceneInformations();
-
         }
 
         // ---
@@ -43,7 +38,5 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
 
             GameInformationsButtonsMethods.ChangeTagForButtonBack(oldTag, newTag);
         }
-
-
     }
 }

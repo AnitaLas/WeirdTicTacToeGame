@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.ScreenVerification
@@ -11,14 +7,9 @@ namespace Assets.Scripts.ScreenVerification
     {
         public static Tuple<int, int > GetScreenSize()
         {
-
             int sizeWidth = Screen.width;
             int sizeHeight = Screen.height;
-
-            //Debug.Log(" sizeWidth = " + sizeWidth);
-            //Debug.Log(" sizeHeight = " + sizeHeight);
-            //Debug.Log(" ---------------------------- ");
-           
+          
             var screenSize = new Tuple<int, int>(sizeWidth, sizeHeight);
             return screenSize;
         }
@@ -30,24 +21,16 @@ namespace Assets.Scripts.ScreenVerification
             int sizeWidth = screenSize.Item1;
             int sizeHeight = screenSize.Item2;
 
-
-            //if (sizeWidth < 1200 && sizeHeight < 2600)
-            //if (sizeWidth < 1000 && sizeHeight < 2600)
             if (sizeWidth < 1200)
-            //if (sizeWidth < 1200)
-           //if (sizeWidth < 1200)
             {
-                isCellphoneMode = true;
-                
+                isCellphoneMode = true;          
             }
             else
             {
                 isCellphoneMode = false;
             }
 
-           //Debug.Log("isCellphoneMode = " + isCellphoneMode);
            return isCellphoneMode;
-
         }
 
         public static Tuple<int, int> GetNumberOfRowsAndColumnsForDefaulTableWithNumber(bool isCellphoneMode)
@@ -99,6 +82,5 @@ namespace Assets.Scripts.ScreenVerification
                 return maxRowsOrColumnsNumberModeTablet;
             }
         }
-
     }
 }

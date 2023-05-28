@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5WH6R19722009261",
         "name": "com.Alan.WeirdTicTacToe",
-        "processId": 17709,
+        "processId": 16553,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,127 +11,247 @@
         {
             "deviceId": "5WH6R19722009261",
             "name": "com.Alan.WeirdTicTacToe",
-            "processId": 13156,
-            "exited": true
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.android.chrome",
-            "processId": 20018,
-            "exited": true
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 21965,
-            "exited": true
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 10630,
-            "exited": true
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 2554,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 3560,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 3979,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 6682,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 8794,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 10936,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 14639,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 15561,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 16456,
-            "exited": false
-        },
-        {
-            "deviceId": "5WH6R19722009261",
-            "name": "com.Alan.WeirdTicTacToe",
             "processId": 16888,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5WH6R19722009261",
             "name": "com.Alan.WeirdTicTacToe",
             "processId": 17328,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5WH6R19722009261",
             "name": "com.Alan.WeirdTicTacToe",
             "processId": 17709,
+            "exited": true
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 6704,
+            "exited": true
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 8235,
             "exited": false
         },
         {
-            "deviceId": "R52W10E1F8M",
-            "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 32494,
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 9590,
             "exited": false
         },
         {
-            "deviceId": "R52W10E1F8M",
-            "name": "com.DefaultCompany.WeirdTicTacToe",
-            "processId": 4442,
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 10707,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 30486,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 31790,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 32297,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 32731,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 1629,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 2722,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 4777,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 5689,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 6152,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 6813,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 7320,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 15861,
+            "exited": false
+        },
+        {
+            "deviceId": "5WH6R19722009261",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 16553,
             "exited": false
         },
         {
             "deviceId": "R52W10E1F8M",
             "name": "com.Alan.WeirdTicTacToe",
             "processId": 7900,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R52W10E1F8M",
             "name": "com.Alan.WeirdTicTacToe",
             "processId": 10301,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R52W10E1F8M",
             "name": "com.Alan.WeirdTicTacToe",
             "processId": 29541,
+            "exited": true
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 27002,
+            "exited": true
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 4003,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 30004,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 31445,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 31826,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 32097,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 3383,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 3821,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 4445,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 4863,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 5271,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 5714,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 6164,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 6449,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 6692,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 7339,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 8223,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 8545,
             "exited": false
         }
     ],

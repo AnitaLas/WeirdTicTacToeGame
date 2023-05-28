@@ -2,11 +2,7 @@
 using Assets.Scripts.GameConfiguration.GameConfigurationButtons;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.PlayGameMenu;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
@@ -21,7 +17,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
 
             string buttonText = buttonsGameNameDictionary[1];
-            //string buttonText = "X";
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
@@ -31,16 +26,12 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
 
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
-            //float newCoordinateY = -4.5f;
             float newCoordinateY = -4.5f;
-            //float newCoordinateX = 1.75f;
             float newCoordinateX = 1.7f;
-            //float newCoordinateX = 1.45f;
 
             ButtonsCommonMethods.ChangeDataForSingleCommonButton(tableButtonNewGame, newCoordinateY, newCoordinateX, tagNameDictionary);
 
             return tableButtonNewGame;
-
         }
 
         public static GameObject[,,] CreateCommonButtonBack(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary)
@@ -60,13 +51,11 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
             float newCoordinateY = -4.5f;
-            //float newCoordinateX = -1f;
             float newCoordinateX = -0.9f;
 
             ButtonsCommonMethods.ChangeDataForSingleCommonButton(tableButtonNewGame, newCoordinateY, newCoordinateX, tagNameDictionary);
 
             return tableButtonNewGame;
-
         }
 
         public static GameObject[,,] CreateCommonButtonBackToConfiguration(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary)
@@ -92,7 +81,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             GameConfigurationButtonsActions.HideButtonBackToConfiguration(tableButtonNewGame);
 
             return tableButtonNewGame;
-
         }
         // ---
 
@@ -115,7 +103,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
 
             return tableButtonNewGame;
-
         }
 
         public static GameObject[,,] CreateCommonButtonForNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
@@ -135,7 +122,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
 
             return tableButtonNewGame;
-
         }
 
         public static GameObject[,,] CreateCommonButtonForSymbol(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
@@ -155,7 +141,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
 
             return tableButtonNewGame;
-
         }
 
         // --- short buttons P1, P2, ...
@@ -179,9 +164,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon
             ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
 
             return tableButtonNewGame;
-
         }
-
-
     }
 }

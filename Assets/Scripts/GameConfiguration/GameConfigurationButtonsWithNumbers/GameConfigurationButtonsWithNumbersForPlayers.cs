@@ -1,42 +1,22 @@
 ﻿using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.ScreenVerification;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 {
     internal class GameConfigurationButtonsWithNumbersForPlayers
     {
-
-        //public static int[] CreateTableWithPlayersNumber(int playersNumber)
-        //{
-        //    int[] players = new int[playersNumber];
-
-        //    for (int i = 0; i < playersNumber; i++)
-        //    {
-        //        players[i] = i;
-        //    }
-
-        //    return players;
-        //}
-
         public static GameObject[,,] CreateTableWithOptionToChooseForPlayers(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, bool isCellphoneMode)
         {
             GameObject[,,] table;
             int start = 1;
-            //int end = 7;
             int end = ScreenVerificationMethods.GetMaxPlayerNumberForConfiguration(isCellphoneMode);
-            //float newCoordinateY = 100f; 
             float newCoordinateY = 0f; 
             string inactiveText = "-";
 
             table = GameConfigurationButtonsWithNumbersCommonMethods.ChangeDataForTableWithNumbers( tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
             return table;
-
         }
 
         public static GameObject[,,] CreateTableForPlayers(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, bool isCellphoneMode)
@@ -50,8 +30,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 
             var numbers = ScreenVerificationMethods.GetNumberOfRowsAndColumnsForDefaulTableWithNumber(isCellphoneMode);
             int numberOfDepths = 1;
-            //int numberOfRows = 3;
-            //int numberOfColumns = 3;
             int numberOfRows = numbers.Item1;
             int numberOfColumns = numbers.Item2;
 
@@ -59,10 +37,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             tableWithNumberFinal = CreateTableWithOptionToChooseForPlayers(tableWithNumbers, tagConfigurationBoardGameTableNumberPlayers, tagConfigurationBoardGameInactiveField, isCellphoneMode);
 
             return tableWithNumberFinal;
-
         }
-
     }
-
 }
 

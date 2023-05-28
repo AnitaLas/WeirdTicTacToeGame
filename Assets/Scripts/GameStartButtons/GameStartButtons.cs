@@ -1,72 +1,59 @@
-﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameConfiguration.GameConfigurationBase;
-using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.PlayGameMenu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-
+﻿
 namespace Assets.Scripts.GameStart
 {
     internal class GameStartButtons
     {
+        //public static void CreateButtonsStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        //{
+        //    CreateButtonStartGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+        //    CreateButtonStartGameInformations(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+        //}
 
-        public static void CreateButtonsStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
-        {
-            CreateButtonStartGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
-            CreateButtonStartGameInformations(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+        //public static GameObject[,,] CreateButtonStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        //{
+        //    GameObject[,,] tableButtonNewGame;
 
-        }
+        //    Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
+        //    Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
 
-        public static GameObject[,,] CreateButtonStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
-        {
-            GameObject[,,] tableButtonNewGame;
+        //    string tagGameButtonNewGame = tagCubePlayDictionary[1];
+        //    string buttonText = buttonsGameNameDictionary[1];
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
+        //    int numberOfDepths = 1;
+        //    int numberOfRows = 3;
+        //    int numberOfColumns = 18;
 
-            string tagGameButtonNewGame = tagCubePlayDictionary[1];
-            string buttonText = buttonsGameNameDictionary[1];
+        //    string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
 
-            int numberOfDepths = 1;
-            int numberOfRows = 3;
-            int numberOfColumns = 18;
+        //    tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
-            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
+        //    float newCoordinateY = 0.25f;
+        //    ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
 
-            tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
-
-            float newCoordinateY = 0.25f;
-            ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
-
-            return tableButtonNewGame;
-
-        }
+        //    return tableButtonNewGame;
+        //}
 
 
-        public static GameObject[,,] CreateButtonStartGameInformations(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
-        {
-            //GameObject[,,] tableButtonNewGame;
+        //public static GameObject[,,] CreateButtonStartGameInformations(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        //{
+        //    //GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
+        //    Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
+        //    Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
 
-            string tagName = tagCubePlayDictionary[3];
-            string buttonText = buttonsGameNameDictionary[3];
+        //    string tagName = tagCubePlayDictionary[3];
+        //    string buttonText = buttonsGameNameDictionary[3];
 
-            GameObject[,,] button = ButtonsStartGameMethods.CreateButtonForInformations(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+        //    GameObject[,,] button = ButtonsStartGameMethods.CreateButtonForInformations(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
-            float newCoordinateY = -4.7f;
-            float newCoordinateX = 1.7f;
+        //    float newCoordinateY = -4.7f;
+        //    float newCoordinateX = 1.7f;
 
-            ButtonsStartGameMethods.ChangeDataForSingleStartGameButtonInformations(button, tagName);
+        //    ButtonsStartGameMethods.ChangeDataForSingleStartGameButtonInformations(button, tagName);
 
-            ButtonsStartGameMethods.ChangingCoordinatesXYButtons(button, newCoordinateX, newCoordinateY);
+        //    ButtonsStartGameMethods.ChangingCoordinatesXYButtons(button, newCoordinateX, newCoordinateY);
 
-            return button;
-        }
+        //    return button;
+        //}
     }
 }

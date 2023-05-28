@@ -1,14 +1,8 @@
 ﻿using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.GameInformations.GameInformationsBase;
 using Assets.Scripts.GameInformations.GameInformationsButtons;
 using Assets.Scripts.GameInformations.GameInformationsText;
-using Assets.Scripts.GameName;
 using Assets.Scripts.Scenes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 // scene name: SceneInformations
@@ -17,7 +11,6 @@ namespace Assets.Scripts
 {
     internal class GameInformationsForPlayers : MonoBehaviour
     {
-
         public GameObject prefabCubePlay;
         public GameObject gameInformationsTextNextVersions;
         public GameObject gameInformationsTextContact;
@@ -38,28 +31,25 @@ namespace Assets.Scripts
         private string _tagGameInformationsTextContact;
         private string _tagGameInformationsTextNextVersions;
         private string _tagGameInformationsTextSet;
-        //private string _tagGameName;
 
-        Dictionary<int, string> tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformations.DictionaryTagGameInformations();
+        private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
+        private Dictionary<int, string> _tagGameInformations = GameDictionariesSceneInformations.DictionaryTagGameInformations();
 
         private GameObject[,,] _buttonBack;
         private List<GameObject[,,]> _buttonsAll;
         private List<string> _gameObjectsWithText;
 
-
         void Start()
         {
-            _tagUntagged = tagCommonDictionary[1];
-            _tagGameInformationsButtonBack = tagGameInformations[1];
-            _tagGameInformationsButtonBackToMenu = tagGameInformations[4];
-            _tagGameInformationsButtonContact = tagGameInformations[2];
-            _tagGameInformationsButtonNextVersions = tagGameInformations[3];
-            _tagGameInformationsTextContact = tagGameInformations[5];
-            _tagGameInformationsTextNextVersions = tagGameInformations[6];
-            _tagGameInformationsButtontSet = tagGameInformations[7];
-            _tagGameInformationsTextSet = tagGameInformations[8];
-            //_tagGameName = tagGameInformations[9];
+            _tagUntagged = _tagCommonDictionary[1];
+            _tagGameInformationsButtonBack = _tagGameInformations[1];
+            _tagGameInformationsButtonBackToMenu = _tagGameInformations[4];
+            _tagGameInformationsButtonContact = _tagGameInformations[2];
+            _tagGameInformationsButtonNextVersions = _tagGameInformations[3];
+            _tagGameInformationsTextContact = _tagGameInformations[5];
+            _tagGameInformationsTextNextVersions = _tagGameInformations[6];
+            _tagGameInformationsButtontSet = _tagGameInformations[7];
+            _tagGameInformationsTextSet = _tagGameInformations[8];
 
             _buttonBack = GameInformationsButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsAll = GameInformationsButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
@@ -67,7 +57,6 @@ namespace Assets.Scripts
             GameInformationsTextCreate.CreateGameName(gameName);
            
             _gameObjectsWithText = new List<string>();
-
         }
 
 
@@ -82,7 +71,6 @@ namespace Assets.Scripts
 
                 if (Physics.Raycast(ray, out touch))
                 {
-
                     if (touch.collider != null)
                     {
                         string gameObjectTag = CommonMethods.GetObjectTag(touch);
@@ -96,10 +84,8 @@ namespace Assets.Scripts
                         {
                             GameInformationsButtonsAction.HideButtons(_buttonsAll);
                             GameInformationsTextCreate.CreateGameInformationsTextContact(gameInformationsTextContact);
-                            // add mthod clean the list and add the new tag
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextContact);
                         }
-
 
                         if (gameObjectTag == _tagGameInformationsButtonNextVersions)
                         {
@@ -107,7 +93,6 @@ namespace Assets.Scripts
                             GameInformationsTextCreate.CreateGameInformationsTextNextVersions(gameInformationsTextNextVersions);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextNextVersions);
                         }
-
 
                         if (gameObjectTag == _tagGameInformationsButtontSet)
                         {
@@ -126,7 +111,6 @@ namespace Assets.Scripts
                         {
                             ScenesChange.GoToSceneStartGame();
                         }
-
                     }
                 }
             }

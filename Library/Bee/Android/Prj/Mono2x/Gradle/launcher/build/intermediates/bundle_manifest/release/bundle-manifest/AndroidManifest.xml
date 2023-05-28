@@ -37,7 +37,8 @@
     <application
         android:extractNativeLibs="true"
         android:icon="@mipmap/app_icon"
-        android:label="@string/app_name" >
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_icon_round" >
         <activity
             android:name="com.unity3d.player.UnityPlayerActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
@@ -62,7 +63,7 @@
 
         <meta-data
             android:name="unity.splash-mode"
-            android:value="0" />
+            android:value="1" />
         <meta-data
             android:name="unity.splash-enable"
             android:value="True" />

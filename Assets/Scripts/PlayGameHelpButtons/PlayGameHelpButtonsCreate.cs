@@ -1,12 +1,4 @@
-﻿using Assets.Scripts.PlayGameFrame;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.CreateGameHelpButton
 {
@@ -26,8 +18,6 @@ namespace Assets.Scripts.CreateGameHelpButton
                     CreateHelpButtons(prefabHelpButtons);
                 }
             }
-
         }
-
     }
 }

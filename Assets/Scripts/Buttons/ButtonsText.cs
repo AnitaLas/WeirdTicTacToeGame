@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-using Debug = UnityEngine.Debug;
-
+﻿
 namespace Assets.Scripts.Buttons
 {
     internal class ButtonsText 
     {
-
         public static string[] CreateTableWithButtonNameForGameConfiguration(int numberOfRows, int numberOfColumns, string buttonText)
         {
             string[] table = new string[numberOfColumns];
@@ -26,18 +17,15 @@ namespace Assets.Scripts.Buttons
                     if (i == 0)
                     {
                         table[i] = emptyString;
-                        //table[i] = "x";
                     }
                     else if (i <= textLenght)
                     {
                         string symbol = buttonText.Substring(i - 1, 1);
                         table[i] = symbol;
-
                     }
                     else
                     {
                         table[i] = emptyString;
-                        //table[i] = "o";
                     }
                 } 
                 else
@@ -75,9 +63,7 @@ namespace Assets.Scripts.Buttons
                 else
                 {
                     differenceBetweenHalves = stringHalfLength - textHalfLength;
-                    //differenceBetweenHalves = stringHalfLength - textHalfLength - 1 ;
                 }
-
             }
 
             for (int i = 0; i < numberOfColumns; i++)
@@ -88,26 +74,17 @@ namespace Assets.Scripts.Buttons
                 {
                     table[i] = emptyString;
                 }
-
                 else if (i >= differenceBetweenHalves && indexText < textLenght)
                 {
                     string symbol = buttonText.Substring(indexText, 1);
                     table[i] = symbol;
                 }
-
                 else
                 {
                     table[i] = emptyString;
                 }
-
-
-
-
             }
-
             return table;
-
         }
-
     }
 }

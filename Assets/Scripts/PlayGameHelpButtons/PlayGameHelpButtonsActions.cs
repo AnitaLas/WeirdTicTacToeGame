@@ -1,18 +1,13 @@
 ﻿using Assets.Scripts.Buttons;
 using Assets.Scripts.CreateGameHelpButton;
 using Assets.Scripts.GameDictionaries;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.PlayGameHelpButtons
 {
     internal class PlayGameHelpButtonsActions : MonoBehaviour
     {
-
         public static void HelpButtonsActionsCreateOrDestroy(GameObject prefabHelpButtons)
         {
             Dictionary<int, string> tagHelpButtonDictionary = GameDictionariesSceneGame.DictionaryTagGame();
@@ -23,15 +18,12 @@ namespace Assets.Scripts.PlayGameHelpButtons
             if (isGameButtonParentObjectHelpButtons == true)
             {
                 ButtonsCommonMethodsActionsDestroy.DestroySingleGameObjectWithTag(tagGameButtonParentObjectHelpButtons);
-
             }
             else
             {
                 PlayGameHelpButtonsCreate.CreateHelpButtons(prefabHelpButtons);
-
             }
         }
-
 
         public static void DestroyHelpButtons()
         {
@@ -41,9 +33,21 @@ namespace Assets.Scripts.PlayGameHelpButtons
             string tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
 
             ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(tagArrowDictionary, tagGameButtonParentObjectHelpButtons);
-
         }
 
+        //public static void DestroyHelpButtons(string[] helpButtons)
+        //{
+        //    string tagName;
+        //    int helpButtonsLength = helpButtons.Length;
+        //    GameObject helpButton;
 
+        //    for (int i = 0; i < helpButtonsLength; i++)
+        //    {
+        //        tagName = helpButtons[i];
+        //        helpButton = CommonMethods.GetObjectByTagName(tagName);
+
+        //        Destroy(helpButton);
+        //    }
+        //}
     }
 }

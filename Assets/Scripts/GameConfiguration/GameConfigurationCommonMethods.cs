@@ -1,32 +1,23 @@
-﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameDictionaries;
-using System;
+﻿using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts.GameConfiguration
 {
     internal class GameConfigurationCommonMethods
     {
-
+     
+        //public static string[] CreateTableWithPlayersSymbols()
+        //{
+        //    //string[] playersSymbols = { "x", "o", "H", "y", "z", "t" };
+        //    string[] playersSymbols = { "x", "00" };
+        //    //string[] playersSymbols = { "x", "00" };
+        //    //string[] playersSymbols = { "x", "0", "3" };
+        //    //string[] playersSymbols = { "x", "o", "H", "Z"};
+        //    //string[] playersSymbols = { "1", "2", "3", "4" };
+        //    return playersSymbols;
+        //}
         
-        public static string[] CreateTableWithPlayersSymbols()
-        {
-            //string[] playersSymbols = { "x", "o", "H", "y", "z", "t" };
-            string[] playersSymbols = { "x", "00" };
-            //string[] playersSymbols = { "x", "00" };
-            //string[] playersSymbols = { "x", "0", "3" };
-            //string[] playersSymbols = { "x", "o", "H", "Z"};
-            //string[] playersSymbols = { "1", "2", "3", "4" };
-            return playersSymbols;
-        }
-        
-
         public static string[,] CreateEmptyTable2D(int numberOfRows, int numberOfColumns)
         {
             string[,] table = new string[numberOfRows, numberOfColumns];
@@ -37,36 +28,30 @@ namespace Assets.Scripts.GameConfiguration
                 {
                     table[row, column] = "";
                 }
-
             }
             return table;
-
         }
-
-
-
         
-        public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateZ)
-        {
+        //public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateZ)
+        //{
 
-            int maxIndexDepth = 1;
-            int maxIndexColumn = tableWtithNumber.GetLength(2);
-            int maxIndexRow = tableWtithNumber.GetLength(1);
+        //    int maxIndexDepth = 1;
+        //    int maxIndexColumn = tableWtithNumber.GetLength(2);
+        //    int maxIndexRow = tableWtithNumber.GetLength(1);
 
-            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
-            {
-                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
-                {
-                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
-                    {
-                        GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateZ);
+        //    for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+        //    {
+        //        for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+        //        {
+        //            for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+        //            {
+        //                GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
+        //                CommonMethods.SetUpNewYForGameObject(cubePlay, newCoordinateZ);
 
-                    }
-
-                }
-            }
-        }
+        //            }
+        //        }
+        //    }
+        //}
         
         /*
         public static void UnhideTableWithNumber(GameObject[,,] tableWtithNumber)
@@ -93,21 +78,20 @@ namespace Assets.Scripts.GameConfiguration
                 string tag = tagConfigurationHideOrUnhide[i];
                 GameObject gameObjectToChange = CommonMethods.GetObjectByTagName(tag);
                 CommonMethods.SetUpNewYForGameObject(gameObjectToChange, newCoordinateZ);
-
             }
         }
 
-        public static void UnhideConfiguration( string[] tagConfigurationHideOrUnhide)
-        {
-            float newCoordinateY = -100f;
-            ChangeCoordinateYForConfiguration(newCoordinateY, tagConfigurationHideOrUnhide);
-        }
+        //public static void UnhideConfiguration( string[] tagConfigurationHideOrUnhide)
+        //{
+        //    float newCoordinateY = -100f;
+        //    ChangeCoordinateYForConfiguration(newCoordinateY, tagConfigurationHideOrUnhide);
+        //}
 
-        public static void HideConfiguration( string[] tagConfigurationHideOrUnhide)
-        {
-            float newCoordinateY = 100f;
-            ChangeCoordinateYForConfiguration(newCoordinateY, tagConfigurationHideOrUnhide);
-        }
+        //public static void HideConfiguration( string[] tagConfigurationHideOrUnhide)
+        //{
+        //    float newCoordinateY = 100f;
+        //    ChangeCoordinateYForConfiguration(newCoordinateY, tagConfigurationHideOrUnhide);
+        //}
 
 
         public static int SetUpChosenNumberForConfiguration( GameObject[,,] tableWithNumber, string gameObjectName, string tagName)
@@ -121,7 +105,6 @@ namespace Assets.Scripts.GameConfiguration
 
             number = CommonMethods.ConvertStringToInt(numberString);
             return number;
-
         }
 
         // ---
@@ -160,11 +143,5 @@ namespace Assets.Scripts.GameConfiguration
             int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberLenghtToCheck);
             return number;
         }
-
-
-
-
-    }
-
-    
+    } 
 }

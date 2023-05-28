@@ -1,27 +1,13 @@
 using Assets.Scripts;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
-using TMPro;
-using static System.Net.Mime.MediaTypeNames;
-using Vector3 = UnityEngine.Vector3;
-using Vector2 = UnityEngine.Vector2;
 using TouchPhase = UnityEngine.TouchPhase;
 using Assets.Scripts.GameConfiguration;
-using System.Net.NetworkInformation;
 using Assets.Scripts.GameFieldsVerification;
 using Assets.Scripts.PlayGame;
 using Assets.Scripts.GameDictionaries;
-using System.Reflection;
 using Assets.Scripts.CreateGameHelpButton;
-using Assets.Scripts.Buttons;
 using Assets.Scripts.Scenes;
 using Assets.Scripts.PlayGameHelpButtons;
 using Assets.Scripts.PlayGameFrame;
@@ -64,10 +50,10 @@ internal class Game : MonoBehaviour
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
-    private static int numberOfDepths = 1;
+    private static int _numberOfDepths = 1;
 
    // private static int lenghtToCheckMax;
-    private static int lenghtToCheck;
+    private static int _lenghtToCheck;
 
     private static bool _isGame2D = true;
 
@@ -77,12 +63,12 @@ internal class Game : MonoBehaviour
     private float _cubePlayForFrameScale;
 
 
-    Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
+    private Dictionary<int, string> _tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
 
     private string _tagCubePlayFree;
     private string _tagCubePlayTaken;
 
-    Dictionary<int, string> tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
+    private Dictionary<int, string> _tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
 
     private string _tagArrowRight; 
     private string _tagArrowLeft; 
@@ -90,7 +76,7 @@ internal class Game : MonoBehaviour
     private string _tagArrowDown; 
     private string _tagButtonConfirm; 
 
-    Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+    private Dictionary<int, string> _tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
 
     private string _tagGameButtonMenuConfigurationLeft;
     private string _tagGameButtonMenuConfigurationRight;
@@ -128,22 +114,22 @@ internal class Game : MonoBehaviour
     {
         _isBoarGameHelpTextVisible = true;
 
-        _tagCubePlayFree = tagCubePlayDictionary[1];
-        _tagCubePlayTaken = tagCubePlayDictionary[2];
+        _tagCubePlayFree = _tagCubePlayDictionary[1];
+        _tagCubePlayTaken = _tagCubePlayDictionary[2];
 
-        _tagArrowRight = tagArrowDictionary[1];
-        _tagArrowLeft = tagArrowDictionary[3];
-        _tagArrowUp = tagArrowDictionary[4];
-        _tagArrowDown = tagArrowDictionary[2];
-        _tagButtonConfirm = tagArrowDictionary[5];
+        _tagArrowRight = _tagArrowDictionary[1];
+        _tagArrowLeft = _tagArrowDictionary[3];
+        _tagArrowUp = _tagArrowDictionary[4];
+        _tagArrowDown = _tagArrowDictionary[2];
+        _tagButtonConfirm = _tagArrowDictionary[5];
 
 
-        _tagGameButtonMenuConfigurationLeft = tagGameDictionary[1]; ;
-        _tagGameButtonMenuConfigurationRight = tagGameDictionary[2]; ;
-        _tagGameButtonNewGame = tagGameDictionary[3];
-        _tagGameButtonHelpButtons = tagGameDictionary[4];
-        _tagGameButtonMenuBack = tagGameDictionary[5];
-        _tagGameButtonBoardGameHelpText = tagGameDictionary[8];
+        _tagGameButtonMenuConfigurationLeft = _tagGameDictionary[1]; ;
+        _tagGameButtonMenuConfigurationRight = _tagGameDictionary[2]; ;
+        _tagGameButtonNewGame = _tagGameDictionary[3];
+        _tagGameButtonHelpButtons = _tagGameDictionary[4];
+        _tagGameButtonMenuBack = _tagGameDictionary[5];
+        _tagGameButtonBoardGameHelpText = _tagGameDictionary[8];
 
         _index = 0;
 
@@ -160,10 +146,10 @@ internal class Game : MonoBehaviour
         _configurationBoardGameNumberOfColumns = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfColumns;
         _numberOfColumns = _configurationBoardGameNumberOfColumns;
 
-        _maxCubePlayNumber = _numberOfRows * _numberOfColumns * numberOfDepths;
+        _maxCubePlayNumber = _numberOfRows * _numberOfColumns * _numberOfDepths;
 
         _configurationBoardGameNumberForLenghtToCheck = GameConfigurationSetUpBoardGame.ConfigurationBoardGameLenghtToCheck;
-        lenghtToCheck = _configurationBoardGameNumberForLenghtToCheck - 1;
+        _lenghtToCheck = _configurationBoardGameNumberForLenghtToCheck - 1;
 
 
         _gameBoardVerification2D = GameConfigurationCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
@@ -179,7 +165,7 @@ internal class Game : MonoBehaviour
         _currentCountedTagCubePlayTaken = CommonMethods.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
         // [gameBoard] - creating the board game with game object "CubePlay"
-        _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode);
+        _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode);
 
         PlayGameHelpButtonsCreate.CreateAtStartHelpButtons(prefabHelpButtons, _numberOfRows, _numberOfColumns, _isCellphoneMode);
 
@@ -198,7 +184,6 @@ internal class Game : MonoBehaviour
 
                 _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
                 _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
-
             } 
             else
             {
@@ -208,16 +193,12 @@ internal class Game : MonoBehaviour
         else
         {
             _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
-        }
-    
-    
+        } 
     }
 
 
     void Update()
     {
-
-
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
@@ -266,7 +247,7 @@ internal class Game : MonoBehaviour
 
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, playersNumberGivenForConfiguration, _currentPlayer);
 
-                            _listCheckerForWinner = GameFieldsVerification.FieldsVerification(_gameBoardVerification2D, lenghtToCheck);
+                            _listCheckerForWinner = GameFieldsVerification.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
 
@@ -312,7 +293,6 @@ internal class Game : MonoBehaviour
                         }
                     }
                     
-
                     if (gameObjectTag == _tagCubePlayFree || gameObjectTag == _tagCubePlayTaken)
                     {
                         if (gameObjectTag == _tagCubePlayFree)
@@ -339,7 +319,7 @@ internal class Game : MonoBehaviour
 
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, playersNumberGivenForConfiguration, _currentPlayer);
 
-                            _listCheckerForWinner = GameFieldsVerification.FieldsVerification(_gameBoardVerification2D, lenghtToCheck);
+                            _listCheckerForWinner = GameFieldsVerification.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
 
@@ -435,7 +415,6 @@ internal class Game : MonoBehaviour
                     {
                         ScenesChange.GoToSceneConfigurationBoardGame();
                     }
-
                 }
             }   
         }

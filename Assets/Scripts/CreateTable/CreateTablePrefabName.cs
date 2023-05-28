@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
@@ -27,10 +22,8 @@ namespace Assets.Scripts
             int cubePlayIndexColumn = indexRowYForPrefabCubePlay.Item3;
 
             string cubePlayName = $"CubePlayUI_No_{currentNumberCubePlayName}_Table3DCoOrdinates_Depths_{cubePlayIndexDepths}_Row_{cubePlayIndexRow}_Column_{cubePlayIndexColumn}";
-            //string cubePlayName = $"CubePlayUI_No_{currentNumberCubePlayName}";
-
+            
             return cubePlayName;
         }
-
     }
 }

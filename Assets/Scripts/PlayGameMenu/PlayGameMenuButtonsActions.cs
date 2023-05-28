@@ -1,14 +1,8 @@
 ﻿using Assets.Scripts.Buttons;
 using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.PlayGame;
 using Assets.Scripts.PlayGameFrame;
 using Assets.Scripts.PlayGameHelpButtons;
-using Assets.Scripts.PlayGameMenu;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -37,7 +31,6 @@ namespace Assets.Scripts
             {
                 ButtonsCommonMethodsActions.GameObjectToHide(tagGameButtonParentObjectHelpButtons);
             }
-
         }
 
         public static void UnhideHelpButtons()
@@ -50,8 +43,7 @@ namespace Assets.Scripts
             if (isGameObjectWithTagExsist == true)
             {
                 ButtonsCommonMethodsActions.GameObjectToUnhide(tagGameButtonParentObjectHelpButtons);
-            }
-            
+            }          
         }
 
         // ---
@@ -75,26 +67,14 @@ namespace Assets.Scripts
             UnhideTopObjects();
             UnhideBoardGame(gameBoard);
             PlayGameFrameActions.UnhideCubePlayFrame();
-            //PlayGameFrameActions.CubePlayFrameVisibilityActions(isCubePlayFrameVisible);
             UnhideHelpButtons();
         }
-
-        //public static bool UnhidePlayGameElements(GameObject[,,] gameBoard, bool isCubePlayFrameVisible)
-        //{
-        //    UnhideTopObjects();
-        //    UnhideBoardGame(gameBoard);
-        //    //PlayGameFrameActions.UnhideCubePlayFrame();
-        //    bool isFrameVisible = PlayGameFrameActions.GetCubePlayFrameVisibility(isCubePlayFrameVisible);
-        //    UnhideHelpButtons();
-        //    return isFrameVisible;
-        //}
 
         public static void HidePlayGameElements(GameObject[,,] gameBoard)
         {
             HideTopObjects();
             HideBoardGame(gameBoard);
             PlayGameFrameActions.HideCubePlayFrame();
-            //PlayGameFrameActions.CubePlayFrameVisibilityActions(isCubePlayFrameVisible);
             HideHelpButtons();
         }
 
@@ -102,21 +82,8 @@ namespace Assets.Scripts
         {
             UnhideTopObjects();
             UnhideBoardGame(gameBoard);
-            //PlayGameFrameActions.UnhideCubePlayFrame();
-            //PlayGameFrameActions.UnhideCubePlayFrame();
-            //PlayGameFrameActions.CubePlayFrameVisibilityActions( isCubePlayFrameVisible);
         }
-
-        //public static bool UnhidePlayGameElementsHelpButtons(GameObject[,,] gameBoard, bool isCubePlayFrameVisible)
-        //{
-        //    UnhideTopObjects();
-        //    UnhideBoardGame(gameBoard);
-        //    PlayGameFrameActions.UnhideCubePlayFrame();
-        //    //PlayGameFrameActions.UnhideCubePlayFrame();
-        //    bool isFrameVisible = PlayGameFrameActions.GetCubePlayFrameVisibility(isCubePlayFrameVisible);
-        //    return isFrameVisible;
-        //}
-
+    
         public static void DisactivateConfigurationMenu()
         {
             Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
@@ -144,7 +111,6 @@ namespace Assets.Scripts
                 {
                     CommonMethods.ChangeTagForGameObject(gameObject, tagNameNew);
                 }
-
             }
         }
 
@@ -176,40 +142,15 @@ namespace Assets.Scripts
                             helpButton = buttonToRemove[indexDepth, indexRow, indexColumn];
                             Destroy(helpButton);
                         }
-
                     }
                 }
             }
         }
-
-        // --
-
-
-        //public static void HideCubePlayFrame()
-        //{
-        //    Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
-        //    string tagCubePlayFrame = tagCubePlayDictionary[3];
-        //    ButtonsCommonMethodsActions.GameObjectToHide(tagCubePlayFrame);
-
-        //}
-
-        //public static void UnhideCubePlayFrame()
-        //{
-        //    Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
-        //    string tagCubePlayFrame = tagCubePlayDictionary[3];
-        //    ButtonsCommonMethodsActions.GameObjectToUnhide(tagCubePlayFrame);
-        //}
-
-        //public static void DestroyCubePlayFrame(GameObject cubePlayFrame)
-        //{
-        //    Destroy(cubePlayFrame);
-        //}
 
         public static void DestroyElements()
         {
             PlayGameFrameActions.DestroyCubePlayFrame();
             PlayGameHelpButtonsActions.DestroyHelpButtons();
         }
-
     }
 }

@@ -1,11 +1,7 @@
 ﻿using Assets.Scripts.Buttons;
 using Assets.Scripts.GameConfigurationPlayerSymbol;
 using Assets.Scripts.GameDictionaries;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
@@ -30,10 +26,10 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
         //    ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
         //}
 
-        public static void UnhideTableWithNumber(GameObject[,,] gameObjects)
-        {
-            ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
-        }
+        //public static void UnhideTableWithNumber(GameObject[,,] gameObjects)
+        //{
+        //    ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
+        //}
 
         // ---
 
@@ -50,7 +46,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
         // --- 
 
         public static void HideConfigurationBaseButtons(List<List<GameObject[,,]>> gameObjectsLists, string gameObjectName)
-        //public static void HideConfigurationBaseButtons(List<List<GameObject[,,]>> gameObjectsLists )
         {
             ButtonsCommonMethodsActions.GameObjectToHide(gameObjectsLists);
             ChangeTagForPlayerDefaultSymbol(gameObjectName);
@@ -65,21 +60,20 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
         public static void UnhideConfigurationBaseButtons(List<List<GameObject[,,]>> gameObjectsLists, RaycastHit touch)
         {
             ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjectsLists);
-            //ChangeTagForPlayerDefaultSymbol();
             ChangeChosenSymbolForPlayer(touch);
         }
 
         // --- 
 
-        public static void DestroyButtons(GameObject[,,] table)
-        {
-            ButtonsCommonMethodsActionsDestroy.DestroyTable3D(table);
-        }
+        //public static void DestroyButtons(GameObject[,,] table)
+        //{
+        //    ButtonsCommonMethodsActionsDestroy.DestroyTable3D(table);
+        //}
 
-        public static void DestroyButtons(List<GameObject[,,]> tableList)
-        {
-            ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(tableList);
-        }
+        //public static void DestroyButtons(List<GameObject[,,]> tableList)
+        //{
+        //    ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(tableList);
+        //}
 
         public static void DestroyButtons(GameObject[,,] table, List<GameObject[,,]> tableList)
         {
@@ -96,7 +90,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
             string _tagConfigurationPlayerSymbolDefaultSymbol = tagNameDictionary[2];
 
             GameConfigurationPlayerSymbolCommonMethods.ChangeChosenSymbolForPlayer(touch, _tagConfigurationPlayerSymbolChange, _tagConfigurationPlayerSymbolDefaultSymbol);
-
         }
 
         public static void ChangeTagForPlayerDefaultSymbol(string gameObjectName)
@@ -106,7 +99,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
             string tagConfigurationPlayerSymbolDefaultSymbol = tagNameDictionary[2];
 
             GameConfigurationPlayerSymbolCommonMethods.ChangeTagForPlayerDefaultSymbol(gameObjectName, tagConfigurationPlayerSymbolChange, tagConfigurationPlayerSymbolDefaultSymbol);
-
         }
 
         public static void ChangeTagForPlayerDefaultSymbol()
@@ -116,7 +108,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
             string tagConfigurationPlayerSymbolDefaultSymbol = tagNameDictionary[2];
 
             GameConfigurationPlayerSymbolCommonMethods.ChangeGameObjectTag(tagConfigurationPlayerSymbolChange, tagConfigurationPlayerSymbolDefaultSymbol);
-
         }
     }
 }

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Assets.Scripts.GameDictionaries
 {
     internal class GameDictionariesGameFieldsVerification
-    {
-       
+    {      
         public static Dictionary<int, string> DictionaryChecker()
         {
             Dictionary<int, string> checkerDictionary = new Dictionary<int, string>();
@@ -21,20 +14,6 @@ namespace Assets.Scripts.GameDictionaries
             checkerDictionary.Add(4, "Backslash");
 
             return checkerDictionary;
-
         }
-        
-
-
-
-
-
-
-        
-
-
-
-
-
     }
 }

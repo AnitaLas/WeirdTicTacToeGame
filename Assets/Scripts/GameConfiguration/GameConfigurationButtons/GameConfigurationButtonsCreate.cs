@@ -1,16 +1,8 @@
 ﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameConfigurationPlayerSymbol;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.PlayGameMenu;
-using System;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtons;
 using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEditor;
 using UnityEngine;
 using Assets.Scripts.GameConfiguration.GameConfigurationButtonsBase;
 
@@ -21,8 +13,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
 
         public static List<GameObject[,,]> GameConfigurationCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
         {
-            //int numberOfButton = 4;
-
             // buttons with text
             GameObject[,,] battonPlayerText = GameConfigurationCreateButtonPlayerText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] battonRowText = GameConfigurationCreateButtonRowText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
@@ -73,7 +63,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             buttonsAll.Insert(9, buttonBack);
 
             return buttonsAll;
-
         }
 
         // ---
@@ -183,12 +172,10 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
             string frontTextToAdd = "ButtonLenghtToCheck_";
             ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
 
-
             return button;
         }
 
         // ---
-
         public static GameObject[,,] GameConfigurationCreateButtonPlayerNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();

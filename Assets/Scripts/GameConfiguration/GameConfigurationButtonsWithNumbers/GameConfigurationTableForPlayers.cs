@@ -1,43 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-
-namespace Assets.Scripts.GameConfiguration
+﻿namespace Assets.Scripts.GameConfiguration
 {
     internal class GameConfigurationTableForPlayers
     {
 
-        public static int[] CreateTableWithPlayersNumber(int playersNumber)
-        {
-            int[] players = new int[playersNumber];
+        //public static int[] CreateTableWithPlayersNumber(int playersNumber)
+        //{
+        //    int[] players = new int[playersNumber];
 
-            for (int i = 0; i < playersNumber; i++)
-            {
-                players[i] = i;
-            }
+        //    for (int i = 0; i < playersNumber; i++)
+        //    {
+        //        players[i] = i;
+        //    }
 
-            return players;
-        }
+        //    return players;
+        //}
 
-        public static GameObject[,,] CreateTableForPlayers(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField)
-        {
-            GameObject[,,] table;
-            int start = 1;
-            int end = 8;
-            float newCoordinateY = 100f; 
-            string inactiveText = "-";
+        //public static GameObject[,,] CreateTableForPlayers(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField)
+        //{
+        //    GameObject[,,] table;
+        //    int start = 1;
+        //    int end = 8;
+        //    float newCoordinateY = 100f; 
+        //    string inactiveText = "-";
 
-            table = GameConfigurationTableForSetUp.ChangeDataForTableWithNumbers( tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
-            return table;
+        //    table = GameConfigurationTableForSetUp.ChangeDataForTableWithNumbers( tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
+        //    return table;
 
-        }
-
-
-
+        //}
     }
-
 }
 
