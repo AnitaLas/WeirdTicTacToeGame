@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Assets.Scripts.ScreenVerification;
+using Assets.Scripts.CommonMethods;
 
 namespace Assets.Scripts.GameConfiguration
 {
@@ -19,14 +20,12 @@ namespace Assets.Scripts.GameConfiguration
         public static int ConfigurationBoardGameLenghtToCheck { get; set; }
         public static bool ConfigurationBoardGameDeviceModeKind { get; set; }
 
-
         private static int _lenghtToCheckMax;
 
         public static int numberOfPlayers;
         public static int numberOfRows;
         public static int numberOfColumns;
         public static int lenghtToCheck;
-
         public static bool isCellphoneMode;
         // ---
 
@@ -135,8 +134,8 @@ namespace Assets.Scripts.GameConfiguration
                 {
                     if (touch.collider != null)
                     {
-                        string gameObjectTag = CommonMethods.GetObjectTag(touch);
-                        string gameObjectName = CommonMethods.GetObjectName(touch);
+                        string gameObjectTag = CommonMethodsMain.GetObjectTag(touch);
+                        string gameObjectName = CommonMethodsMain.GetObjectName(touch);
                        
                         // players
                         if (gameObjectTag == _tagConfigurationBoardGamePlayers || gameObjectTag == _tagConfigurationBoardGameChangeNumberPlayers)

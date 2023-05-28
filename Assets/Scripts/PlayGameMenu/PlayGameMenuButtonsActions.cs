@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Buttons;
+using Assets.Scripts.CommonMethods;
 using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.PlayGameFrame;
 using Assets.Scripts.PlayGameHelpButtons;
@@ -25,7 +26,7 @@ namespace Assets.Scripts
             Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
             string tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
 
-            bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
+            bool isGameObjectWithTagExsist = CommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
 
             if (isGameObjectWithTagExsist == true)
             {
@@ -38,7 +39,7 @@ namespace Assets.Scripts
             Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
             string tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
 
-            bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
+            bool isGameObjectWithTagExsist = CommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
 
             if (isGameObjectWithTagExsist == true)
             {
@@ -109,7 +110,7 @@ namespace Assets.Scripts
 
                 foreach (var gameObject in gameObjects)
                 {
-                    CommonMethods.ChangeTagForGameObject(gameObject, tagNameNew);
+                    CommonMethodsMain.ChangeTagForGameObject(gameObject, tagNameNew);
                 }
             }
         }

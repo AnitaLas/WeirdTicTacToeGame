@@ -1,5 +1,7 @@
 ﻿using Assets.Scripts.PlayGameMenu;
 using UnityEngine;
+using Assets.Scripts;
+using Assets.Scripts.CommonMethods;
 
 namespace Assets.Scripts.Buttons
 {
@@ -37,10 +39,10 @@ namespace Assets.Scripts.Buttons
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        CommonMethods.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
-                        CommonMethods.ChangeZForGameObject(cubePlay, newCoordinateZ);
-                        CommonMethods.ChangeTextFontSize(cubePlay, fontSize);
-                        CommonMethods.ChangeTagForGameObject(cubePlay, tagToSetUp);
+                        CommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        CommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                        CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
                 }
             }
@@ -59,8 +61,8 @@ namespace Assets.Scripts.Buttons
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        CommonMethods.ChangeXForGameObject(cubePlay, newCoordinateX);
-                        CommonMethods.ChangeYForGameObject(cubePlay, newCoordinateY);
+                        CommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newCoordinateX);
+                        CommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newCoordinateY);
                     }
                 }
             }

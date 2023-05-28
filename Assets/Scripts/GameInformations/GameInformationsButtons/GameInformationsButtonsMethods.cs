@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.CommonMethods;
+using UnityEngine;
 
 namespace Assets.Scripts.GameInformations.GameInformationsButtons
 {
@@ -6,11 +7,11 @@ namespace Assets.Scripts.GameInformations.GameInformationsButtons
     {
         public static void ChangeTagForButtonBack(string oldTag, string newTag)
         {
-            GameObject[] gameObjects = CommonMethods.GetObjectsListWithTagName(oldTag);
+            GameObject[] gameObjects = CommonMethodsMain.GetObjectsListWithTagName(oldTag);
 
             foreach (GameObject gameObject in gameObjects) 
             {
-                CommonMethods.ChangeTagForGameObject(gameObject, newTag);
+                CommonMethodsMain.ChangeTagForGameObject(gameObject, newTag);
             }
         }
     }

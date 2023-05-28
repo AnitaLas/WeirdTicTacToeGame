@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.CommonMethods;
+using System;
 
 namespace Assets.Scripts.CreateTable
 {
@@ -26,7 +27,7 @@ namespace Assets.Scripts.CreateTable
         /// <returns></returns>
         public static float CalculateLengthForAllPrefabInOneLineXYZ(int number, float newScale)
         {
-            float floatNumber = CommonMethods.ConvertIntToFloat(number);
+            float floatNumber = CommonMethodsMain.ConvertIntToFloat(number);
             float lenght = floatNumber * newScale;
             return lenght;
         }
@@ -54,7 +55,7 @@ namespace Assets.Scripts.CreateTable
             int divide = 2;
             double doubleNumber = PositionMinOrMaxXYZForCubePlayCalculate(lengthForAllPrefabCubePlayInOneLine, divide, round);
             //float floatNumber = CommonMethods.RoundAndConvertDoubleToFloat(doubleNumber, 6);
-            float floatNumber = CommonMethods.RoundAndConvertDoubleToFloat(doubleNumber, round);
+            float floatNumber = CommonMethodsMain.RoundAndConvertDoubleToFloat(doubleNumber, round);
             return floatNumber;
         }
 

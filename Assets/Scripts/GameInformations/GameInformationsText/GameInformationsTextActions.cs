@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.CommonMethods;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.GameInformations.GameInformationsText
@@ -7,13 +8,13 @@ namespace Assets.Scripts.GameInformations.GameInformationsText
     {
         public static void DestroyText(string gameObjectTag)
         {
-            GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
+            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(gameObjectTag);
             Destroy(gameObject);
         }
 
         public static void DestroyOneGameObjectByTag(string gameObjectTagToDestoy)
         {
-            bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
+            bool isGameObjectWithTagExsist = CommonMethodsMain.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
 
             if (isGameObjectWithTagExsist == true)
             {
@@ -31,48 +32,5 @@ namespace Assets.Scripts.GameInformations.GameInformationsText
                 DestroyOneGameObjectByTag(gameObjectTagToDestroy);
             }
         }
-        /*
-       public static void DestroyText(string gameObjectTag)
-       {
-           GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
-           Destroy(gameObject);
-       }
-
-
-       public static void DestroyOneGameObjectByTag(string gameObjectTagToDestoy)
-       {
-           bool isGameObjectWithTagExsist = CommonMethods.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
-
-           if (isGameObjectWithTagExsist == true)
-           {
-               DestroyText(gameObjectTagToDestoy);
-           }
-       }
-
-       public static void DestroyGameObjectsWithText(List<string> gameObjectTagToDestoy)
-       {
-           int numberOfGameObjectTagToDestroy = gameObjectTagToDestoy.Count;
-
-           for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
-           {
-               string gameObjectTagToDestroy = gameObjectTagToDestoy[i];
-               DestroyOneGameObjectByTag(gameObjectTagToDestroy);
-           }
-
-
-       }
-       */
-        //public static void DestroyGameObjectsWithText2(List<string> gameObjectTagToDestoy)
-        //{
-        //    //int numberOfGameObjectTagToDestroy = gameObjectTagToDestoy.Count;
-
-        //    //for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
-        //    //{
-        //    //    string gameObjectTagToDestroy = gameObjectTagToDestoy[i];
-        //    //    DestroyOneGameObjectByTag(gameObjectTagToDestroy);
-        //    //}
-
-        //    ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(gameObjectTagToDestoy);
-        //}
     }
 }

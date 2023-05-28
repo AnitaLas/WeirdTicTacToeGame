@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts.CommonMethods;
+using Assets.Scripts.GameDictionaries;
 using Assets.Scripts.GameInformations.GameInformationsButtons;
 using Assets.Scripts.GameInformations.GameInformationsText;
 using Assets.Scripts.Scenes;
@@ -73,11 +74,11 @@ namespace Assets.Scripts
                 {
                     if (touch.collider != null)
                     {
-                        string gameObjectTag = CommonMethods.GetObjectTag(touch);
+                        string gameObjectTag = CommonMethodsMain.GetObjectTag(touch);
 
                         if (gameObjectTag != _tagUntagged)
                         {
-                            GameObject gameObject = CommonMethods.GetObjectByTagName(gameObjectTag);
+                            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(gameObjectTag);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonContact)

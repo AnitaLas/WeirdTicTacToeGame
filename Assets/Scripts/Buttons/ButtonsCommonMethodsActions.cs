@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.PlayGameMenu;
+﻿using Assets.Scripts;
+using Assets.Scripts.CommonMethods;
+using Assets.Scripts.PlayGameMenu;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -76,30 +78,30 @@ namespace Assets.Scripts.Buttons
 
         // ---
 
-        public static void HideVisibleTablesWithNumber(List<GameObject[,,]> tablesWithNumber)
-        {
-            GameObject[,,] table;
-            GameObject gameObject;
+        //public static void HideVisibleTablesWithNumber(List<GameObject[,,]> tablesWithNumber)
+        //{
+        //    GameObject[,,] table;
+        //    GameObject gameObject;
 
-            bool isTableVisible;
-            string tagName;
-            int tableNumber = tablesWithNumber.Count;
+        //    bool isTableVisible;
+        //    string tagName;
+        //    int tableNumber = tablesWithNumber.Count;
 
-            for (int i = 0; i < tableNumber; i++)
-            {
-                table = tablesWithNumber[i];
-                gameObject = table[0, 0, 0];
-                isTableVisible = ButtonsCommonMethods.IsTableWithNumberVisible(table);
-                tagName = CommonMethods.GetObjectTag(gameObject);
+        //    for (int i = 0; i < tableNumber; i++)
+        //    {
+        //        table = tablesWithNumber[i];
+        //        gameObject = table[0, 0, 0];
+        //        isTableVisible = ButtonsCommonMethods.IsTableWithNumberVisible(table);
+        //        tagName = CommonMethodsMain.GetObjectTag(gameObject);
 
-                if (tagName != null)
-                {
-                    if (isTableVisible == true)
-                    {
-                        GameObjectToHide(table);
-                    }
-                }
-            }
-        }
+        //        if (tagName != null)
+        //        {
+        //            if (isTableVisible == true)
+        //            {
+        //                GameObjectToHide(table);
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

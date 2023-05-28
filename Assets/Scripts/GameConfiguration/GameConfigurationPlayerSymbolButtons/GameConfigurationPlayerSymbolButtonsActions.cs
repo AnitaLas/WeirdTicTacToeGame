@@ -8,43 +8,6 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
 {
     internal class GameConfigurationPlayerSymbolButtonsActions
     {
-
-        //public static void UnhideConfiguration(List<GameObject[,,]> gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
-        //}
-
-        //public static void HideConfiguration(List<GameObject[,,]> gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
-        //}
-
-        // ---
-
-        //public static void HideTableWithNumber(GameObject[,,] gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
-        //}
-
-        //public static void UnhideTableWithNumber(GameObject[,,] gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
-        //}
-
-        // ---
-
-        //public static void HideButtonBackToConfiguration(GameObject[,,] gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
-        //}
-
-        //public static void UnhideButtonBackToConfiguration(GameObject[,,] gameObjects)
-        //{
-        //    ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
-        //}
-
-        // --- 
-
         public static void HideConfigurationBaseButtons(List<List<GameObject[,,]>> gameObjectsLists, string gameObjectName)
         {
             ButtonsCommonMethodsActions.GameObjectToHide(gameObjectsLists);
@@ -63,25 +26,11 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
             ChangeChosenSymbolForPlayer(touch);
         }
 
-        // --- 
-
-        //public static void DestroyButtons(GameObject[,,] table)
-        //{
-        //    ButtonsCommonMethodsActionsDestroy.DestroyTable3D(table);
-        //}
-
-        //public static void DestroyButtons(List<GameObject[,,]> tableList)
-        //{
-        //    ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(tableList);
-        //}
-
         public static void DestroyButtons(GameObject[,,] table, List<GameObject[,,]> tableList)
         {
             ButtonsCommonMethodsActionsDestroy.DestroyTable3D(table);
             ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(tableList);
         }
-
-        // ---
 
         public static void ChangeChosenSymbolForPlayer(RaycastHit touch)
         {

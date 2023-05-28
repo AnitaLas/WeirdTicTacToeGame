@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Buttons;
+using Assets.Scripts.CommonMethods;
 using Assets.Scripts.CreateGameHelpButton;
 using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Assets.Scripts.PlayGameHelpButtons
             Dictionary<int, string> tagHelpButtonDictionary = GameDictionariesSceneGame.DictionaryTagGame();
             string tagGameButtonParentObjectHelpButtons = tagHelpButtonDictionary[6];
 
-            bool isGameButtonParentObjectHelpButtons = CommonMethods.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
+            bool isGameButtonParentObjectHelpButtons = CommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
 
             if (isGameButtonParentObjectHelpButtons == true)
             {
@@ -34,20 +35,5 @@ namespace Assets.Scripts.PlayGameHelpButtons
 
             ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsWithTag(tagArrowDictionary, tagGameButtonParentObjectHelpButtons);
         }
-
-        //public static void DestroyHelpButtons(string[] helpButtons)
-        //{
-        //    string tagName;
-        //    int helpButtonsLength = helpButtons.Length;
-        //    GameObject helpButton;
-
-        //    for (int i = 0; i < helpButtonsLength; i++)
-        //    {
-        //        tagName = helpButtons[i];
-        //        helpButton = CommonMethods.GetObjectByTagName(tagName);
-
-        //        Destroy(helpButton);
-        //    }
-        //}
     }
 }

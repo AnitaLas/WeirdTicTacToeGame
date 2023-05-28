@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts.CommonMethods;
+using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
 
 namespace Assets.Scripts.Scenes
@@ -9,35 +10,35 @@ namespace Assets.Scripts.Scenes
         {
             Dictionary<int, string> scenceDictionary = GameDictionariesScenesCommon.DictionaryScencesName();
             string _sceneSceneConfigurationBoardGame = scenceDictionary[5];
-            CommonMethods.ChangeScene(_sceneSceneConfigurationBoardGame);
+            CommonMethodsMain.ChangeScene(_sceneSceneConfigurationBoardGame);
         }
 
         public static void GoToSceneInformations()
         {
             Dictionary<int, string> scenceDictionary = GameDictionariesScenesCommon.DictionaryScencesName();
             string _sceneInformations = scenceDictionary[4];
-            CommonMethods.ChangeScene(_sceneInformations);
+            CommonMethodsMain.ChangeScene(_sceneInformations);
         }
 
         public static void GoToSceneConfigurationBoardGame()
         {
             Dictionary<int, string> scenceDictionary = GameDictionariesScenesCommon.DictionaryScencesName();
             string _sceneSceneConfigurationBoardGame = scenceDictionary[3];
-            CommonMethods.ChangeScene(_sceneSceneConfigurationBoardGame);
+            CommonMethodsMain.ChangeScene(_sceneSceneConfigurationBoardGame);
         }
 
         public static void GoToSceneConfigurationPlayersSymbols()
         {
             Dictionary<int, string> scenceDictionary = GameDictionariesScenesCommon.DictionaryScencesName();
             string _sceneConfigurationPlayersSymbols = scenceDictionary[2];
-            CommonMethods.ChangeScene(_sceneConfigurationPlayersSymbols);
+            CommonMethodsMain.ChangeScene(_sceneConfigurationPlayersSymbols);
         }
 
         public static void GoToSceneGame()
         {
             Dictionary<int, string> scenceDictionary = GameDictionariesScenesCommon.DictionaryScencesName();
             string _sceneGame = scenceDictionary[1];
-            CommonMethods.ChangeScene(_sceneGame);
+            CommonMethodsMain.ChangeScene(_sceneGame);
         }
     }
 }

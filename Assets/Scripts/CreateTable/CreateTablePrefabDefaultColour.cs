@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.CommonMethods;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -29,7 +30,7 @@ namespace Assets.Scripts
         public static void ChangeColourForPrefabCubePlay(GameObject prefab, Material[] cubePlayColour, int indexForNewColour)
         {
             Material cubeColour = NewColourForPrefabCubePlay(cubePlayColour, indexForNewColour);
-            CommonMethods.ChangeColourForGameObject(prefab, cubeColour);
+            CommonMethodsMain.ChangeColourForGameObject(prefab, cubeColour);
         }
     }
 }

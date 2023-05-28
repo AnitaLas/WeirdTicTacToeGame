@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts.CommonMethods;
+using Assets.Scripts.GameDictionaries;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,40 +9,40 @@ namespace Assets.Scripts.PlayGameFrame
     {
         public static int[] CreateTableForMoveIndexForFrame(int numberOfRows)
         {
-            int[] table = CommonMethods.CreateTableWithGivenLengthAndGivenValue(2, 0);
+            int[] table = CommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(2, 0);
             table[1] = numberOfRows - 1;
             return table;
         }
 
         public static int[] SetUpNewMoveIndexXForRight(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForYorX)
         {
-            moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberByAddition(moveIndexForFrame, moveIndexForYorX);
+            moveIndexForFrame = CommonMethodsMain.SetUpNewCurrentNumberByAddition(moveIndexForFrame, moveIndexForYorX);
             float newCoordinate = cubePlayForFrameScale * (1);
-            CommonMethods.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
+            CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
             return moveIndexForFrame;
         }
 
         public static int[] SetUpNewMoveIndexYForUp(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForYorX)
         {
-            moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberByAddition(moveIndexForFrame, moveIndexForYorX);
+            moveIndexForFrame = CommonMethodsMain.SetUpNewCurrentNumberByAddition(moveIndexForFrame, moveIndexForYorX);
             float newCoordinate = cubePlayForFrameScale * (1);
-            CommonMethods.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
+            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
             return moveIndexForFrame;
         }
 
         public static int[] SetUpNewMoveIndexXForLeft(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForX)
         {
-            moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberBySubtraction(moveIndexForFrame, moveIndexForX);
+            moveIndexForFrame = CommonMethodsMain.SetUpNewCurrentNumberBySubtraction(moveIndexForFrame, moveIndexForX);
             float newCoordinate = cubePlayForFrameScale * (-1);
-            CommonMethods.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
+            CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
             return moveIndexForFrame;
         }
 
         public static int[] SetUpNewMoveIndexYForDown(int[] moveIndexForFrame, GameObject cubePlayFrame, float cubePlayForFrameScale, int moveIndexForY)
         {
-            moveIndexForFrame = CommonMethods.SetUpNewCurrentNumberBySubtraction(moveIndexForFrame, moveIndexForY);
+            moveIndexForFrame = CommonMethodsMain.SetUpNewCurrentNumberBySubtraction(moveIndexForFrame, moveIndexForY);
             float newCoordinate = cubePlayForFrameScale * (-1);
-            CommonMethods.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
+            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
             return moveIndexForFrame;
         }
 
@@ -118,7 +119,7 @@ namespace Assets.Scripts.PlayGameFrame
         {
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
             string tagCubePlayFrame = tagCubePlayDictionary[3];
-            GameObject gameObject = CommonMethods.GetObjectByTagName(tagCubePlayFrame);
+            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(tagCubePlayFrame);
             return gameObject;
         }
     }
