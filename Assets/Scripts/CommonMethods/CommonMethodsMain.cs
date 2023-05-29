@@ -153,17 +153,6 @@ namespace Assets.Scripts.CommonMethods
         /// <summary>
         /// <para> set the new number for current number, it's increase current number by one </para>
         /// </summary>
-        /// <param name="currentNumber"></param>
-        /// <returns></returns>
-        //public static int SetUpNewCurrentNumber(int currentNumber)
-        //{
-        //    int newCurrentNumber = currentNumber + 1;
-        //    return newCurrentNumber;
-        //}
-
-        /// <summary>
-        /// <para> set the new number for current number, it's increase current number by one </para>
-        /// </summary>
         /// <param name="currentCountedNumber"></param>
         /// <returns></returns>
         public static int[] SetUpNewCurrentNumberByAddition(int[] currentCountedNumber, int tableIndex)
@@ -253,16 +242,6 @@ namespace Assets.Scripts.CommonMethods
             //Debug.Log("text = " + text);
             return text;
         }
-
-        //public static string GetTextForPlayerSymbolChild(GameObject gameObject, int childNumber)
-        //{
-        //    //string gameObjectName = GetObjectName(gameObject);
-        //    // game object: prefab PlayerSymbol -> PlayerSymbolText -> PlayerSymbolCanvas ->
-        //    var newPrefabPlayerSymbolCanvas = gameObject.transform.GetChild(childNumber).transform.GetChild(0);
-        //    // game object: prefab PlayerSymbol -> PlayerSymbolCanvas -> PlayerSymbolText
-        //    string newPrefabCubePlayCanvasText = newPrefabPlayerSymbolCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
-        //    return newPrefabCubePlayCanvasText;
-        //}
 
         public static void ChangeTextColourForCubePlay(GameObject gameObject, Color textColor)
         {
@@ -559,7 +538,6 @@ namespace Assets.Scripts.CommonMethods
         {
             SceneManager.LoadScene(sceneName);
         }
-
 
         public static bool IsGameObjectWithTagExsist(string tagName)
         {
