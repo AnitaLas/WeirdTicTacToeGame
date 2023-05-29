@@ -167,8 +167,8 @@
     <Compile Include="Assets\Scripts\PlayGameFrame\PlayGameFrameCreate.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesGameFieldsVerification.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlayHelpText.cs" />
     <Compile Include="Assets\Scripts\CommonMethods\CommonMethodsMain.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlayHelpText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
