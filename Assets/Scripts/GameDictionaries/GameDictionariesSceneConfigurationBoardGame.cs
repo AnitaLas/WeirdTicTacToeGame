@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Assets.Scripts.GameDictionaries
+namespace Assets.Scripts
 {
     internal class GameDictionariesSceneConfigurationBoardGame
     {
@@ -22,6 +22,9 @@ namespace Assets.Scripts.GameDictionaries
                 { 12, "ConfigurationBoardGameLenghtToCheck" },
                 { 13, "ConfigurationBoardGameChangeNumberLenghtToCheck" },
                 { 14, "ConfigurationBoardGameTableNumberLenghtToCheck" },
+                { 15, "ConfigurationBoardGameGaps" },
+                { 16, "ConfigurationBoardGameChangeNumberGaps" },
+                { 17, "ConfigurationBoardGameTableNumberGaps" },
                 { 20, "ConfigurationBoardGameInactiveField" },
                 { 21, "ConfigurationBoardGameButtonBackToConfiguration" },
                 { 22, "ConfigurationBoardGameButtonInformation" }
@@ -38,9 +41,11 @@ namespace Assets.Scripts.GameDictionaries
                 { 2, "ROWS" },
                 { 3, "COLUMNS" },
                 //buttonsNameDictionary.Add(4, "CROSS OUT");
-                { 4, "MARK TO WIN" },
+                //{ 4, "MARK TO WIN" },
+                //{ 4, "TO WIN" },
+                { 4, "VICTORY" },
                 //buttonsNameDictionary.Add(4, "LENGTH TO CHECK");
-                { 5, "HOLES" }
+                { 5, "GAPS" }
             };
 
             return buttonsNameDictionary;
@@ -50,8 +55,9 @@ namespace Assets.Scripts.GameDictionaries
         {
             Dictionary<int, string> buttonsDefaultNumberDictionary = new Dictionary<int, string>
             {
-                { 1, "2" },
-                { 2, "3" }
+                { 1, "2" }, // players
+                { 2, "3" }, // rows & columns
+                { 3, "0" } // gaps
             };
 
             return buttonsDefaultNumberDictionary;

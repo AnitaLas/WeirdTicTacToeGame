@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Assets.Scripts.GameDictionaries
+namespace Assets.Scripts
 {
     internal class GameDictionariesGameFieldsVerification
     {      

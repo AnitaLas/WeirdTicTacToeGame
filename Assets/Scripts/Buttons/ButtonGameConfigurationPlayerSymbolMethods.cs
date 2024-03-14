@@ -1,9 +1,9 @@
-﻿using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
+﻿
 using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace Assets.Scripts.Buttons
+namespace Assets.Scripts
 {
     internal class ButtonGameConfigurationPlayerSymbolMethods
     {

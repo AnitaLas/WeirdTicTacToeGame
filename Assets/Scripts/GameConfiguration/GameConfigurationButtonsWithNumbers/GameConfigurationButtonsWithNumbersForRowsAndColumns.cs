@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.ScreenVerification;
+﻿using Assets.Scripts;
 using UnityEngine;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
+namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersForRowsAndColumns
     {

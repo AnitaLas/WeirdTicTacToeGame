@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.CommonMethods;
-using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,14 +22,14 @@ namespace Assets.Scripts
         {
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
             string tagCubePlayTaken = tagCubePlayDictionary[2];
-            CommonMethodsMain.ChangeTagForGameObject(cubePlayMarkByFrame, tagCubePlayTaken);
+            GameCommonMethodsMain.ChangeTagForGameObject(cubePlayMarkByFrame, tagCubePlayTaken);
         }
 
         public static void DisactivateChosenCubePlay(RaycastHit touch)
         {
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
             string tagCubePlayTaken = tagCubePlayDictionary[2];
-            CommonMethodsMain.ChangeTagForGameObject(touch, tagCubePlayTaken);
+            GameCommonMethodsMain.ChangeTagForGameObject(touch, tagCubePlayTaken);
         }
     }
 }

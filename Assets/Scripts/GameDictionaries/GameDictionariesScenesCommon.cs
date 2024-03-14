@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Assets.Scripts.GameDictionaries
+namespace Assets.Scripts
 {
     internal class GameDictionariesScenesCommon
     {
@@ -13,7 +13,10 @@ namespace Assets.Scripts.GameDictionaries
                 { 2, "SceneConfigurationPlayersSymbols" },
                 { 3, "SceneConfigurationBoardGame" },
                 { 4, "SceneInformations" },
-                { 5, "SceneStartGame" }
+                { 5, "SceneStartGame" },
+                { 6, "SceneConfigurationGameTeamsNumber" },
+                { 7, "SceneConfigurationGameTeamsPlayersNumber" },
+                { 9, "SceneConfigurationGameTeamsPlayersSymbols" }
             };
 
             return scenceDictionary;

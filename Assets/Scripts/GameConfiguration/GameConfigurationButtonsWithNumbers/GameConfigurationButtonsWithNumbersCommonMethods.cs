@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.CommonMethods;
+﻿using Assets.Scripts;
 using UnityEngine;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
+namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersCommonMethods : MonoBehaviour
     {   
@@ -22,7 +22,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
 
             for (int number = 1; number <= allNumbers; number++)
             {
-                numberString = CommonMethodsMain.ConverIntToString(number);
+                numberString = GameCommonMethodsMain.ConverIntToString(number);
                 int indexNumber = number - 1;
                 numbers[indexNumber] = numberString;
             }
@@ -43,16 +43,16 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        string cubePlayText = CommonMethodsMain.GetCubePlayText(cubePlay);
-                        int cubePlayTextInt = CommonMethodsMain.ConvertStringToInt(cubePlayText);
+                        string cubePlayText = GameCommonMethodsMain.GetCubePlayText(cubePlay);
+                        int cubePlayTextInt = GameCommonMethodsMain.ConvertStringToInt(cubePlayText);
 
-                        CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameTableNumberForAll);
+                        GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameTableNumberForAll);
                         CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
 
                         if (start >= cubePlayTextInt || (end + 1)<= cubePlayTextInt)
                         {
-                            CommonMethodsMain.ChangeTextForCubePlay(cubePlay, inactiveText);
-                            CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveField);
+                            GameCommonMethodsMain.ChangeTextForCubePlay(cubePlay, inactiveText);
+                            GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveField);
                         }
                     }
                 }

@@ -1,20 +1,20 @@
-﻿using Assets.Scripts.CommonMethods;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.GameInformations.GameInformationsText
+namespace Assets.Scripts
 {
     internal class GameInformationsTextActions : MonoBehaviour
     {
         public static void DestroyText(string gameObjectTag)
         {
-            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(gameObjectTag);
+            GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(gameObjectTag);
             Destroy(gameObject);
         }
 
         public static void DestroyOneGameObjectByTag(string gameObjectTagToDestoy)
         {
-            bool isGameObjectWithTagExsist = CommonMethodsMain.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
+            bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
 
             if (isGameObjectWithTagExsist == true)
             {

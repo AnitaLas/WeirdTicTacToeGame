@@ -1,11 +1,9 @@
-﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.CommonMethods;
-using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.PlayGameFrame
+namespace Assets.Scripts
 {
     internal class PlayGameFrameActions : MonoBehaviour
     {
@@ -14,7 +12,7 @@ namespace Assets.Scripts.PlayGameFrame
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
             string tagCubePlayFrame = tagCubePlayDictionary[3];
 
-            bool isCubePlayFrameExsist = CommonMethodsMain.IsGameObjectWithTagExsist(tagCubePlayFrame);
+            bool isCubePlayFrameExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagCubePlayFrame);
 
             if (isCubePlayFrameExsist == true)
             {
@@ -27,7 +25,7 @@ namespace Assets.Scripts.PlayGameFrame
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
             string tagCubePlayFrame = tagCubePlayDictionary[3];
 
-            bool isCubePlayFrameExsist = CommonMethodsMain.IsGameObjectWithTagExsist(tagCubePlayFrame);
+            bool isCubePlayFrameExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagCubePlayFrame);
 
             if (isCubePlayFrameExsist == true)
             {
@@ -40,11 +38,11 @@ namespace Assets.Scripts.PlayGameFrame
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
             string tagCubePlayFrame = tagCubePlayDictionary[3];
 
-            bool isCubePlayFrameExsist = CommonMethodsMain.IsGameObjectWithTagExsist(tagCubePlayFrame);
+            bool isCubePlayFrameExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagCubePlayFrame);
 
             if (isCubePlayFrameExsist == true)
             {
-                GameObject cubePlayFrame = CommonMethodsMain.GetObjectByTagName(tagCubePlayFrame);
+                GameObject cubePlayFrame = GameCommonMethodsMain.GetObjectByTagName(tagCubePlayFrame);
                 Destroy(cubePlayFrame);          
             }
         }
@@ -59,7 +57,7 @@ namespace Assets.Scripts.PlayGameFrame
             Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
             string tagCubePlayFrame = tagCubePlayDictionary[3];
 
-            bool isCubePlayFrameExsist = CommonMethodsMain.IsGameObjectWithTagExsist(tagCubePlayFrame);
+            bool isCubePlayFrameExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagCubePlayFrame);
 
             return isCubePlayFrameExsist;
         }

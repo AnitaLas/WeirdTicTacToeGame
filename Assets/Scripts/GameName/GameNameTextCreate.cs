@@ -1,9 +1,8 @@
-﻿using Assets.Scripts.CommonMethods;
-using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.GameName
+namespace Assets.Scripts
 {
     internal class GameNameTextCreate : MonoBehaviour
     {
@@ -34,7 +33,7 @@ namespace Assets.Scripts.GameName
         {
             Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformations.DictionaryTagGameInformations();
             string tagGameName = tagGameInformations[9];
-            GameObject text = CommonMethodsMain.GetObjectByTagName(tagGameName);
+            GameObject text = GameCommonMethodsMain.GetObjectByTagName(tagGameName);
             CommonMethodsSetUpCoordinates.ChangeYForGameObject(text, newCoordinateY);
         }
     }

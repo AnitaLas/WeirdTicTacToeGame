@@ -1,8 +1,8 @@
-﻿using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Assets.Scripts.GameFieldsVerification
+namespace Assets.Scripts
 {
     internal class GameFieldsVerificationCheckerSlash
     {

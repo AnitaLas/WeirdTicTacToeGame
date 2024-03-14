@@ -1,10 +1,8 @@
-﻿using Assets.Scripts.GameDictionaries;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts;
-using Assets.Scripts.CommonMethods;
 
-namespace Assets.Scripts.GameConfiguration
+namespace Assets.Scripts
 {
     internal class GameConfigurationCommonMethods
     {  
@@ -39,13 +37,13 @@ namespace Assets.Scripts.GameConfiguration
         public static int SetUpChosenNumberForConfiguration( GameObject[,,] tableWithNumber, string gameObjectName, string tagName)
         {
             int number;
-            GameObject cubePlay = CommonMethodsMain.GetCubePlay(tableWithNumber, gameObjectName);
-            string numberString = CommonMethodsMain.GetCubePlayText(cubePlay);
+            GameObject cubePlay = GameCommonMethodsMain.GetCubePlay(tableWithNumber, gameObjectName);
+            string numberString = GameCommonMethodsMain.GetCubePlayText(cubePlay);
 
-            GameObject cubePlayToChange = CommonMethodsMain.GetObjectByTagName(tagName);
-            CommonMethodsMain.ChangeTextForFirstChild(cubePlayToChange, numberString);
+            GameObject cubePlayToChange = GameCommonMethodsMain.GetObjectByTagName(tagName);
+            GameCommonMethodsMain.ChangeTextForFirstChild(cubePlayToChange, numberString);
 
-            number = CommonMethodsMain.ConvertStringToInt(numberString);
+            number = GameCommonMethodsMain.ConvertStringToInt(numberString);
             return number;
         }
 
@@ -83,6 +81,15 @@ namespace Assets.Scripts.GameConfiguration
             string tagConfigurationBoardGameChangeNumberLenghtToCheck = configurationBoardGameDictionaryTag[13];
 
             int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberLenghtToCheck);
+            return number;
+        }
+
+        public static int SetUpChosenNumberForConfigurationGaps(GameObject[,,] _buttonsWithNumbers, string gameObjectName)
+        {
+            Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+            string tagConfigurationBoardGameChangeNumberGaps = configurationBoardGameDictionaryTag[16];
+
+            int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberGaps);
             return number;
         }
     } 

@@ -1,17 +1,17 @@
-﻿using Assets.Scripts.CommonMethods;
+﻿using Assets.Scripts;
 using UnityEngine;
 
-namespace Assets.Scripts.GameInformations.GameInformationsButtons
+namespace Assets.Scripts
 {
     internal class GameInformationsButtonsMethods
     {
         public static void ChangeTagForButtonBack(string oldTag, string newTag)
         {
-            GameObject[] gameObjects = CommonMethodsMain.GetObjectsListWithTagName(oldTag);
+            GameObject[] gameObjects = GameCommonMethodsMain.GetObjectsListWithTagName(oldTag);
 
             foreach (GameObject gameObject in gameObjects) 
             {
-                CommonMethodsMain.ChangeTagForGameObject(gameObject, newTag);
+                GameCommonMethodsMain.ChangeTagForGameObject(gameObject, newTag);
             }
         }
     }

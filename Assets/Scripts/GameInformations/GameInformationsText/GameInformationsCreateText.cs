@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.GameInformations.GameInformationsButtons
+namespace Assets.Scripts
 {
     internal class GameInformationsCreateText : MonoBehaviour
     {

@@ -1,15 +1,14 @@
-﻿using Assets.Scripts.PlayGameMenu;
+﻿using Assets.Scripts;
 using UnityEngine;
 using Assets.Scripts;
-using Assets.Scripts.CommonMethods;
 
-namespace Assets.Scripts.GameConfigurationPlayerSymbol
+namespace Assets.Scripts  
 {
     internal class GameConfigurationPlayerSymbolCommonMethods
     {      
         public static void ChangeTagForPlayerDefaultSymbol(string gameObjectName, string gameObjectTagNameToChange, string tagConfigurationPlayerSymbolDefaultSymbol)
         {
-            GameObject[] listOfSymbol = CommonMethodsMain.GetObjectsListWithTagName(tagConfigurationPlayerSymbolDefaultSymbol);
+            GameObject[] listOfSymbol = GameCommonMethodsMain.GetObjectsListWithTagName(tagConfigurationPlayerSymbolDefaultSymbol);
             int tagNumber = listOfSymbol.Length;
       
             string gameObjectNameEndNumber = ButtonsCommonMethods.GetSubstringFromCubePlayName(gameObjectName);
@@ -17,12 +16,12 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             for (int i = 0; i < tagNumber; i++)
             {
                 GameObject cubePlay = listOfSymbol[i];
-                string gameObjectNameToCompare = CommonMethodsMain.GetObjectName(cubePlay);
+                string gameObjectNameToCompare = GameCommonMethodsMain.GetObjectName(cubePlay);
                 string gameObjectNameNumberToCompare = ButtonsCommonMethods.GetSubstringFromCubePlayName(gameObjectNameToCompare);
 
                 if (gameObjectNameEndNumber.Equals(gameObjectNameNumberToCompare))
                 {
-                    CommonMethodsMain.ChangeTagForGameObject(cubePlay, gameObjectTagNameToChange);
+                    GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, gameObjectTagNameToChange);
                 }
             }
         }
@@ -49,21 +48,21 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
         public static void ChangeSymbolForPlayer(string newSymbol, string tagConfigurationPlayerSymbolChooseSymbol)
         {
-            GameObject objectWithChosenSymbol = CommonMethodsMain.GetObjectByTagName(tagConfigurationPlayerSymbolChooseSymbol);
-            CommonMethodsMain.ChangeTextForFirstChild(objectWithChosenSymbol, newSymbol);
+            GameObject objectWithChosenSymbol = GameCommonMethodsMain.GetObjectByTagName(tagConfigurationPlayerSymbolChooseSymbol);
+            GameCommonMethodsMain.ChangeTextForFirstChild(objectWithChosenSymbol, newSymbol);
         }
 
         public static void ChangeGameObjectTag(string currentTag, string newTag)
         {
-            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(currentTag);
-            CommonMethodsMain.ChangeTagForGameObject(gameObject, newTag);
+            GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(currentTag);
+            GameCommonMethodsMain.ChangeTagForGameObject(gameObject, newTag);
         }
 
         public static void ChangeChosenSymbolForPlayer(RaycastHit touch, string tagConfigurationPlayerSymbolChange, string tagConfigurationPlayerSymbolDefaultSymbol)
         {
-            string gameObjectNameForChosenSymbol = CommonMethodsMain.GetObjectName(touch);
-            GameObject gameObjectForChosenSymbol = CommonMethodsMain.GetObjectByName(gameObjectNameForChosenSymbol);
-            string newSymbol = CommonMethodsMain.GetCubePlayText(gameObjectForChosenSymbol);
+            string gameObjectNameForChosenSymbol = GameCommonMethodsMain.GetObjectName(touch);
+            GameObject gameObjectForChosenSymbol = GameCommonMethodsMain.GetObjectByName(gameObjectNameForChosenSymbol);
+            string newSymbol = GameCommonMethodsMain.GetCubePlayText(gameObjectForChosenSymbol);
 
             ChangeSymbolForPlayer(newSymbol, tagConfigurationPlayerSymbolChange);
             ChangeGameObjectTag(tagConfigurationPlayerSymbolChange, tagConfigurationPlayerSymbolDefaultSymbol);

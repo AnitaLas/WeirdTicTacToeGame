@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.GameName;
+﻿using Assets.Scripts;
 using UnityEngine;
 
-namespace Assets.Scripts.GameInformations.GameInformationsText
+namespace Assets.Scripts
 {
     internal class GameInformationsTextCreate : MonoBehaviour
     {

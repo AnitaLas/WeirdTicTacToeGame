@@ -1,12 +1,8 @@
-﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsCommon;
-using Assets.Scripts.GameConfigurationPlayerSymbol;
-using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.PlayGameMenu;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons
+namespace Assets.Scripts
 {
     internal class GameConfigurationPlayerSymbolButtonsCreate
     {

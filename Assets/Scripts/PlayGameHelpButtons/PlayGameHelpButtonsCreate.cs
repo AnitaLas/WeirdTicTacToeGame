@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.CreateGameHelpButton
+namespace Assets.Scripts
 {
     internal class PlayGameHelpButtonsCreate : MonoBehaviour
     {

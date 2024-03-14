@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Assets.Scripts.GameFieldsVerification
+namespace Assets.Scripts
 {
     internal class GameFieldsVerification
     {
@@ -10,10 +10,10 @@ namespace Assets.Scripts.GameFieldsVerification
 
             bool checker = false;
 
-            ArrayList checkerHorizontal; // == false;
-            ArrayList checkerVertical; // == false;
-            ArrayList checkerSlash; // == false;
-            ArrayList checkerBackslash; // == false;
+            ArrayList checkerHorizontal;
+            ArrayList checkerVertical;
+            ArrayList checkerSlash;
+            ArrayList checkerBackslash;
 
             if(checker == false)
             {

@@ -1,10 +1,8 @@
-﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.PlayGameMenu;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.PlayGame
+namespace Assets.Scripts
 {
     internal class PlayGameMenuButtonsCreate : MonoBehaviour
     {

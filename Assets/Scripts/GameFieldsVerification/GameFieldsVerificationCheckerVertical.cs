@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 
-namespace Assets.Scripts.GameFieldsVerification
+namespace Assets.Scripts
 {
     internal class GameFieldsVerificationCheckerVertical
     {
@@ -69,7 +70,7 @@ namespace Assets.Scripts.GameFieldsVerification
                             listCheckerVertical.Insert(0, checker);
                             listCheckerVertical.Insert(1, coordinateXYToMark);
 
-                            Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesGameFieldsVerification.DictionaryChecker();
+                            Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
                             string kindOfChecker = checkerDictionary[2];
                             listCheckerVertical.Insert(2, kindOfChecker);
 

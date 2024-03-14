@@ -1,20 +1,20 @@
-﻿using Assets.Scripts.CommonMethods;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Buttons
+namespace Assets.Scripts
 {
-    internal class ButtonsCommonMethodsActionsDestroy :MonoBehaviour
+    internal class ButtonsCommonMethodsActionsDestroy : MonoBehaviour
     {
         public static void DestroySingleGameObjectWithTag(string gameObjectTag)
         {
-            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(gameObjectTag);
+            GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(gameObjectTag);
             Destroy(gameObject);
         }
 
         public static void DestroySingleGameObjectWithTagIfExsist(string gameObjectTagToDestoy)
         {
-            bool isGameObjectWithTagExsist = CommonMethodsMain.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
+            bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
 
             if (isGameObjectWithTagExsist == true)
             {
@@ -65,7 +65,7 @@ namespace Assets.Scripts.Buttons
 
         //public static void DestroyGameObjectsWithTag(string[] helpButtonsTag, string tagGameButtonParentObjectHelpButtons)
         //{
-        //    bool isGameObjectWithTagExsist = CommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
+        //    bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
 
         //    if (isGameObjectWithTagExsist == true)
         //    {
@@ -84,7 +84,7 @@ namespace Assets.Scripts.Buttons
         //    for (int i = 0; i < helpButtonsLength; i++)
         //    {
         //        tagName = gameObjectsWithTagToDestoy[i];
-        //        helpButton = CommonMethodsMain.GetObjectByTagName(tagName);
+        //        helpButton = GameCommonMethodsMain.GetObjectByTagName(tagName);
         //        Destroy(helpButton);
         //    }
         //}
@@ -97,9 +97,9 @@ namespace Assets.Scripts.Buttons
 
             GameObject baseGameObject = table[0, 0, 0];
 
-            string tagName = CommonMethodsMain.GetObjectTag(baseGameObject);
+            string tagName = GameCommonMethodsMain.GetObjectTag(baseGameObject);
 
-            bool isTagExsist = CommonMethodsMain.IsGameObjectWithTagExsist(tagName);
+            bool isTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagName);
 
             if (isTagExsist == true)
             {
@@ -110,7 +110,7 @@ namespace Assets.Scripts.Buttons
                         for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                         {
                             GameObject gameObjectToRemove = table[indexDepth, indexRow, indexColumn];
-                            string gameObjectTagToDestroy = CommonMethodsMain.GetObjectTag(gameObjectToRemove);
+                            string gameObjectTagToDestroy = GameCommonMethodsMain.GetObjectTag(gameObjectToRemove);
                             Destroy(gameObjectToRemove);
 
                         }

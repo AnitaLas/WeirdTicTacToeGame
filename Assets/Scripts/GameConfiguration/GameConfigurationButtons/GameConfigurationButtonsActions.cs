@@ -1,8 +1,8 @@
-﻿using Assets.Scripts.Buttons;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationButtons
+namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsActions
     {

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using Color = UnityEngine.Color;
 using Assets.Scripts;
-using Assets.Scripts.CommonMethods;
 
 namespace Assets.Scripts
 {
@@ -58,7 +57,7 @@ namespace Assets.Scripts
 
             for (int number = 1; number <= allNumbers; number++)
             {
-                numberString = CommonMethodsMain.ConverIntToString(number);
+                numberString = GameCommonMethodsMain.ConverIntToString(number);
                 int indexNumber = number - 1;
                 numbers[indexNumber] = numberString;
             }
@@ -384,7 +383,7 @@ namespace Assets.Scripts
             int maxIndexColumn = boardGame.GetLength(2);
             int maxIndexRow = boardGame.GetLength(1);
 
-            Color colour = CommonMethodsMain.GetNewColor(3);
+            Color colour = GameCommonMethodsMain.GetNewColor(3);
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
@@ -393,7 +392,7 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = boardGame[indexDepth, indexRow, indexColumn];
-                        CommonMethodsMain.ChangeTextColourForCubePlay(cubePlay, colour);
+                        GameCommonMethodsMain.ChangeTextColourForCubePlay(cubePlay, colour);
                     }
                 }
             }

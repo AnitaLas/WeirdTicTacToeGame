@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.CommonMethods;
+﻿using Assets.Scripts;
 using UnityEngine;
 
 
@@ -43,9 +43,9 @@ namespace Assets.Scripts
 
             int roundDouble = 6;
 
-            float floatNewScaleForX = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
-            float floatNewScaleForY = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
-            float floatNewScaleForZ = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
+            float floatNewScaleForX = GameCommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
+            float floatNewScaleForY = GameCommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
+            float floatNewScaleForZ = GameCommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
 
             float[] newScaleForXYZ = { floatNewScaleForX, floatNewScaleForY, floatNewScaleForZ };
 
@@ -67,7 +67,7 @@ namespace Assets.Scripts
         {
             double resut = (defaultScaleForXYZ * numbersCubePlayForXYZ) / cubePlayMaxNumberForXYZ;
             int numberAfterDecimal = 1;
-            double newScale = CommonMethodsMain.RoundDownWithDecimal(resut, numberAfterDecimal);
+            double newScale = GameCommonMethodsMain.RoundDownWithDecimal(resut, numberAfterDecimal);
             return newScale;
         }
 
@@ -204,9 +204,9 @@ namespace Assets.Scripts
 
             int roundDouble = 6;
 
-            float floatNewScaleForX = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
-            float floatNewScaleForY = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
-            float floatNewScaleForZ = CommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
+            float floatNewScaleForX = GameCommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForX, roundDouble);
+            float floatNewScaleForY = GameCommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForY, roundDouble);
+            float floatNewScaleForZ = GameCommonMethodsMain.RoundAndConvertDoubleToFloat(newScaleForZ, roundDouble);
 
             float[] newScaleForXYZ = { floatNewScaleForX, floatNewScaleForY, floatNewScaleForZ };
 
