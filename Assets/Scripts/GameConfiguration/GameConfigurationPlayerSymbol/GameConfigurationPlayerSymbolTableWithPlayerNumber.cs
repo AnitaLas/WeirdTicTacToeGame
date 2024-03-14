@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts;
-using Assets.Scripts.CommonMethods;
 
-namespace Assets.Scripts.GameConfigurationPlayerSymbol
+namespace Assets.Scripts
 {
     internal class GameConfigurationPlayerSymbolTableWithPlayerNumber
     {
@@ -60,22 +59,22 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             float yForFirstPrefabPlayerSymbol;
             int playersNumberDevidedByTwo = playersNumber / 2;
             
-            bool isPlayersNumberEven = CommonMethodsMain.IsNumberEven(playersNumber);
+            bool isPlayersNumberEven = GameCommonMethodsMain.IsNumberEven(playersNumber);
 
             if (isPlayersNumberEven == false)
             {
-                decimal playersNumberDecimal = CommonMethodsMain.ConvertDecimalToInt(playersNumberDevidedByTwo);
-                decimal playersNumberRoundUp = CommonMethodsMain.RoundUp(playersNumberDecimal);
-                float playersNumberFloat = CommonMethodsMain.ConvertDecimalToFloat(playersNumberRoundUp);
+                decimal playersNumberDecimal = GameCommonMethodsMain.ConvertDecimalToInt(playersNumberDevidedByTwo);
+                decimal playersNumberRoundUp = GameCommonMethodsMain.RoundUp(playersNumberDecimal);
+                float playersNumberFloat = GameCommonMethodsMain.ConvertDecimalToFloat(playersNumberRoundUp);
 
                 yForFirstPrefabPlayerSymbol = -playersNumberFloat;
                 return yForFirstPrefabPlayerSymbol;
             } 
             else
             {
-                decimal playersNumberDecimal = CommonMethodsMain.ConvertDecimalToInt(playersNumberDevidedByTwo);
-                decimal playersNumberRoundUp = CommonMethodsMain.RoundUp(playersNumberDecimal);
-                float playersNumberFloat = CommonMethodsMain.ConvertDecimalToFloat(playersNumberRoundUp);
+                decimal playersNumberDecimal = GameCommonMethodsMain.ConvertDecimalToInt(playersNumberDevidedByTwo);
+                decimal playersNumberRoundUp = GameCommonMethodsMain.RoundUp(playersNumberDecimal);
+                float playersNumberFloat = GameCommonMethodsMain.ConvertDecimalToFloat(playersNumberRoundUp);
 
                 yForFirstPrefabPlayerSymbol = -playersNumberFloat;
                 return yForFirstPrefabPlayerSymbol;
@@ -85,7 +84,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
         public static float[] SetUpTableWithNewYForPrefabPlayerSymbol(GameObject prefabPlayerSymbol, int playersNumber)
         {
             float[] table = new float[playersNumber];
-            float scale = CommonMethodsMain.GetObjectScaleX(prefabPlayerSymbol);
+            float scale = GameCommonMethodsMain.GetObjectScaleX(prefabPlayerSymbol);
             float halfScale = scale * 3.2f;
             //float halfScale = scale * 3.5f;
             float firstY = GetFirstPositionForPrefabPlayerSymbol(scale, playersNumber) - 0.2f;
@@ -106,12 +105,12 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
         public static int SetUpPlayersNumberForColumns(int palayersNumber)
         {
-            decimal number = CommonMethodsMain.ConvertIntToDecimal(palayersNumber) / 2;
+            decimal number = GameCommonMethodsMain.ConvertIntToDecimal(palayersNumber) / 2;
 
-            decimal numberFinal = CommonMethodsMain.RoundUp(number);
-            int numberInt = CommonMethodsMain.ConvertDecimalToInt(numberFinal);
+            decimal numberFinal = GameCommonMethodsMain.RoundUp(number);
+            int numberInt = GameCommonMethodsMain.ConvertDecimalToInt(numberFinal);
            
-            bool isEvenNumber = CommonMethodsMain.IsNumberEven(number);
+            bool isEvenNumber = GameCommonMethodsMain.IsNumberEven(number);
 
             if(isEvenNumber == true)
             {
@@ -147,12 +146,12 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
             if (currentNumber < 10)
             {
                 gameObjectName = $"{constantPartOfName}_No_0{currentNumber}";
-                CommonMethodsMain.ChangeGameObjectName(gameObject, gameObjectName);
+                GameCommonMethodsMain.ChangeGameObjectName(gameObject, gameObjectName);
             }
             else
             {
                 gameObjectName = $"{constantPartOfName}_No_{currentNumber}";
-                CommonMethodsMain.ChangeGameObjectName(gameObject, gameObjectName);
+                GameCommonMethodsMain.ChangeGameObjectName(gameObject, gameObjectName);
             }
         }
 
@@ -384,9 +383,9 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                             }
 
                             CommonMethodsSetUpCoordinates.ChangeZForGameObject(playerSymbol, newCoordinateZ);
-                            CommonMethodsMain.ChangeTextFontSize(playerSymbol, fontSize);
+                            GameCommonMethodsMain.ChangeTextFontSize(playerSymbol, fontSize);
 
-                            CommonMethodsMain.TransformGameObjectToNewScale(playerSymbol, newScale, newScale, newScale);
+                            GameCommonMethodsMain.TransformGameObjectToNewScale(playerSymbol, newScale, newScale, newScale);
                             ChangeNameForPrefabPlayerSymbol(playerSymbol, playerNumber);
                         }
                     }
@@ -434,13 +433,13 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         {
                             GameObject cubePlay = table[indexDepth, indexRow, indexColumn];
 
-                            CommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                            GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
 
                             CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, yForFirstPrefabPlayerSymbol);
                             CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                             CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
 
-                            CommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                            GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
                             ChangeNameForPrefabPlayerSymbol(cubePlay, playerNumber);
                         }
                     }

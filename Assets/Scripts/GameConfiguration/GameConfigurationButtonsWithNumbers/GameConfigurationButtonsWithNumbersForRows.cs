@@ -1,9 +1,8 @@
-﻿using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.ScreenVerification;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
+namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersForRows
     {

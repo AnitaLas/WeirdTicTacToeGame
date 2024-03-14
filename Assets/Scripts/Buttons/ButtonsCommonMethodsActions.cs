@@ -1,10 +1,8 @@
 ﻿using Assets.Scripts;
-using Assets.Scripts.CommonMethods;
-using Assets.Scripts.PlayGameMenu;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Buttons
+namespace Assets.Scripts
 {
     internal class ButtonsCommonMethodsActions
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.GameFieldsVerification
+namespace Assets.Scripts
 {
     internal class GameFieldsVerificationMessages
     {

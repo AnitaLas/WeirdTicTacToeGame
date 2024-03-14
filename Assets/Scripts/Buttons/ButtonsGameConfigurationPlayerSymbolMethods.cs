@@ -1,10 +1,9 @@
-﻿using Assets.Scripts.CommonMethods;
-using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace Assets.Scripts.Buttons
+namespace Assets.Scripts
 {
     internal class ButtonsGameConfigurationPlayerSymbolMethods
     {     
@@ -13,8 +12,8 @@ namespace Assets.Scripts.Buttons
             Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
             string tagName = tagNameDictionary[3];
 
-            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(tagName);
-            string gameObjectName = CommonMethodsMain.GetObjectName(gameObject);
+            GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
+            string gameObjectName = GameCommonMethodsMain.GetObjectName(gameObject);
 
             int gameObjectNameLenght = gameObjectName.Length;
             int startIndex = gameObjectNameLenght - 2;
@@ -53,9 +52,9 @@ namespace Assets.Scripts.Buttons
                         CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
                         CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                         CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
-                        CommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
-                        CommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
-                        CommonMethodsMain.ChangeTextForCubePlay(cubePlay, playerNumberToSetUp);
+                        GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                        GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                        GameCommonMethodsMain.ChangeTextForCubePlay(cubePlay, playerNumberToSetUp);
                     }
                 }
             }

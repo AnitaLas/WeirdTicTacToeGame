@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.CommonMethods;
+﻿
 using System;
 
-namespace Assets.Scripts.CreateTable
+namespace Assets.Scripts
 {
     internal class CreateTableCommonMethods
     {
@@ -27,7 +27,7 @@ namespace Assets.Scripts.CreateTable
         /// <returns></returns>
         public static float CalculateLengthForAllPrefabInOneLineXYZ(int number, float newScale)
         {
-            float floatNumber = CommonMethodsMain.ConvertIntToFloat(number);
+            float floatNumber = GameCommonMethodsMain.ConvertIntToFloat(number);
             float lenght = floatNumber * newScale;
             return lenght;
         }
@@ -55,7 +55,7 @@ namespace Assets.Scripts.CreateTable
             int divide = 2;
             double doubleNumber = PositionMinOrMaxXYZForCubePlayCalculate(lengthForAllPrefabCubePlayInOneLine, divide, round);
             //float floatNumber = CommonMethods.RoundAndConvertDoubleToFloat(doubleNumber, 6);
-            float floatNumber = CommonMethodsMain.RoundAndConvertDoubleToFloat(doubleNumber, round);
+            float floatNumber = GameCommonMethodsMain.RoundAndConvertDoubleToFloat(doubleNumber, round);
             return floatNumber;
         }
 

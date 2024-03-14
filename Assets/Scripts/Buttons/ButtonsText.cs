@@ -1,6 +1,6 @@
-﻿using Assets.Scripts.CommonMethods;
+﻿
 
-namespace Assets.Scripts.Buttons
+namespace Assets.Scripts
 {
     internal class ButtonsText 
     {
@@ -49,7 +49,7 @@ namespace Assets.Scripts.Buttons
             int textHalfLength = textLenght / 2;
             int differenceBetweenHalves;
 
-            bool isButtonTextEven = CommonMethodsMain.IsNumberEven(textLenght);
+            bool isButtonTextEven = GameCommonMethodsMain.IsNumberEven(textLenght);
 
             if (isButtonTextEven == true)
             {

@@ -1,18 +1,16 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.ScreenVerification;
-using Assets.Scripts.CommonMethods;
+using Assets.Scripts;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
+namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersForLenghtToCheck : MonoBehaviour
     {
         public static int GetNumberFromConfiguration(string tagName)
         {
-            GameObject objectNumber = CommonMethodsMain.GetObjectByTagName(tagName);
-            string numberString = CommonMethodsMain.GetCubePlayText(objectNumber);
-            int numberInt = CommonMethodsMain.ConvertStringToInt(numberString);
+            GameObject objectNumber = GameCommonMethodsMain.GetObjectByTagName(tagName);
+            string numberString = GameCommonMethodsMain.GetCubePlayText(objectNumber);
+            int numberInt = GameCommonMethodsMain.ConvertStringToInt(numberString);
             return numberInt;
         }
 
@@ -44,17 +42,17 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             int rows = numbers[0];
             int columns = numbers[1];
 
-            int maxNumberInt = CommonMethodsMain.CheckAndReturnLowerNumber(rows, columns);
+            int maxNumberInt = GameCommonMethodsMain.CheckAndReturnLowerNumber(rows, columns);
 
             return maxNumberInt;
         }
 
         public static int GetNumberGivenByUser(string tagName)
         {
-            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(tagName);
-            string gameObjectText = CommonMethodsMain.GetCubePlayText(gameObject);
+            GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
+            string gameObjectText = GameCommonMethodsMain.GetCubePlayText(gameObject);
 
-            int number = CommonMethodsMain.ConvertStringToInt(gameObjectText);
+            int number = GameCommonMethodsMain.ConvertStringToInt(gameObjectText);
             return number;
         }
 
@@ -65,19 +63,19 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
             string tagConfigurationBoardGameChangeNumberColumns = tableWithChangedNumber[1];
             string tagConfigurationBoardGameChangeNumberLenghtToCheck = tableWithChangedNumber[2];
 
-            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(tagConfigurationBoardGameChangeNumberLenghtToCheck);
+            GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
             int rowsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberRows);
             int columnsNumber = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberColumns);
             int currentLenghtToCheck = GetNumberGivenByUser(tagConfigurationBoardGameChangeNumberLenghtToCheck);
 
-            int lowerNumber = CommonMethodsMain.CheckAndReturnLowerNumber(rowsNumber, columnsNumber);
+            int lowerNumber = GameCommonMethodsMain.CheckAndReturnLowerNumber(rowsNumber, columnsNumber);
 
             string defaulNumber = "3";
 
             if (lowerNumber < currentLenghtToCheck)
             {
-                CommonMethodsMain.ChangeTextForFirstChild(gameObject, defaulNumber);
+                GameCommonMethodsMain.ChangeTextForFirstChild(gameObject, defaulNumber);
             }
         }
 

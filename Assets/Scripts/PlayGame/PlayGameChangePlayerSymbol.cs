@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.CommonMethods;
-using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +7,14 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 
-namespace Assets.Scripts.PlayGame
+namespace Assets.Scripts
 {
     internal class PlayGameChangePlayerSymbol
     {
         public static void SetUpPlayerSymbol(string playerSymbol, string tagPlayerSymbol)
         {
-            GameObject playerSymbolMove = CommonMethodsMain.GetObjectByTagName(tagPlayerSymbol);
-            CommonMethodsMain.ChangeTextForFirstChild(playerSymbolMove, playerSymbol);
+            GameObject playerSymbolMove = GameCommonMethodsMain.GetObjectByTagName(tagPlayerSymbol);
+            GameCommonMethodsMain.ChangeTextForFirstChild(playerSymbolMove, playerSymbol);
         }
 
         public static void SetUpPlayerSymbolForMoveAtStart(string[] playersSymbols)
@@ -82,8 +81,8 @@ namespace Assets.Scripts.PlayGame
 
         public static void ChangePlayerSymbol(string playerSymbol, string tagPlayerSymbolDictionary)
         {
-            GameObject playerSymbolMove = CommonMethodsMain.GetObjectByTagName(tagPlayerSymbolDictionary);
-            CommonMethodsMain.ChangeTextForFirstChild(playerSymbolMove, playerSymbol);
+            GameObject playerSymbolMove = GameCommonMethodsMain.GetObjectByTagName(tagPlayerSymbolDictionary);
+            GameCommonMethodsMain.ChangeTextForFirstChild(playerSymbolMove, playerSymbol);
         }   
 
         public static string[] ChangeCurrentPlayersSymbolsMove(string[] playerSymbolMove, string[] playersSymbols, int playersNumberGivenForConfiguration, int[] currentPlayer)

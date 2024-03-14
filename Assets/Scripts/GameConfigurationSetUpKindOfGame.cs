@@ -1,10 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.Scenes;
-using Assets.Scripts.GameStart;
-using Assets.Scripts.GameName;
-using Assets.Scripts.CommonMethods;
+using Assets.Scripts;
 
 // scene name: SceneStartGame
 
@@ -22,6 +18,7 @@ namespace Assets.Scripts
 
         private string _tagUntagged;
         private string _tagStartGameButtonStartGame;
+        private string _tagStartGameButtonStarTeamGame;
         private string _tagStartGameButtonInformations;
 
         private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
@@ -31,6 +28,7 @@ namespace Assets.Scripts
         {
             _tagUntagged = _tagCommonDictionary[1];
             _tagStartGameButtonStartGame = _tagStartGameButtonsDictionary[1];
+            _tagStartGameButtonStarTeamGame = _tagStartGameButtonsDictionary[2];
             _tagStartGameButtonInformations = _tagStartGameButtonsDictionary[3];
 
             GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
@@ -50,17 +48,24 @@ namespace Assets.Scripts
                 {
                     if (touch.collider != null)
                     {
-                        string gameObjectTag = CommonMethodsMain.GetObjectTag(touch);
+                        string gameObjectTag = GameCommonMethodsMain.GetObjectTag(touch);
 
                         if (gameObjectTag != _tagUntagged)
                         {
-                            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(gameObjectTag);
+                            GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(gameObjectTag);
                         }
 
                         if (gameObjectTag == _tagStartGameButtonStartGame)
                         {
                             ScenesChange.GoToSceneConfigurationBoardGame();
                         }
+
+                        // clik team button - add scene in unity!!!
+
+                        //if (gameObjectTag == _tagStartGameButtonStarTeamGame)
+                        //{
+                        //    ScenesChange.GoToSceneConfigurationGameTeamsNumber();
+                        //}
 
                         if (gameObjectTag == _tagStartGameButtonInformations)
                         {

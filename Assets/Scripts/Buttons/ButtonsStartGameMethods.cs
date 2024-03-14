@@ -1,8 +1,6 @@
-﻿using Assets.Scripts.CommonMethods;
-using Assets.Scripts.PlayGameMenu;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.Buttons
+namespace Assets.Scripts
 {
     internal class ButtonsStartGameMethods
     {

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts;
-using Assets.Scripts.CommonMethods;
 
-namespace Assets.Scripts.GameConfigurationPlayerSymbol
+namespace Assets.Scripts
 {
     internal class GameConfigurationPlayerSymbolTableWithSymbols
     {
@@ -101,7 +100,7 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                         for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                         {
                             GameObject chosenPlayerSymbol = table[indexDepth, indexRow, indexColumn];
-                            string chosenPlayerSymbolText = CommonMethodsMain.GetCubePlayText(chosenPlayerSymbol);
+                            string chosenPlayerSymbolText = GameCommonMethodsMain.GetCubePlayText(chosenPlayerSymbol);
 
                             tableWitPlayersChosenSymbols[index] = chosenPlayerSymbolText;                          
                         }
@@ -134,17 +133,17 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = tableWithSymbolsBase[indexDepth, indexRow, indexColumn];
-                        string cubePlayText = CommonMethodsMain.GetCubePlayText(cubePlay);
-                        CommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                        string cubePlayText = GameCommonMethodsMain.GetCubePlayText(cubePlay);
+                        GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
 
                         if (!cubePlayText.Equals(inactiveField))
                         {
-                            CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationPlayerSymbolChooseSymbol);                                              
+                            GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationPlayerSymbolChooseSymbol);                                              
                         }
                         else
                         {
-                            CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
-                            CommonMethodsMain.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
+                            GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
+                            GameCommonMethodsMain.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
                             CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         }
 
@@ -154,15 +153,15 @@ namespace Assets.Scripts.GameConfigurationPlayerSymbol
 
                             if (cubePlayText.Equals(chosenPlayerSymbol))
                             {
-                                CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
-                                CommonMethodsMain.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
+                                GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
+                                GameCommonMethodsMain.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
                                 CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                             }
                         }
 
                         numberForName = numberForName + 1;
                         string newName = frontTextToAdd + numberForName;
-                        CommonMethodsMain.ChangeGameObjectName(cubePlay, newName);
+                        GameCommonMethodsMain.ChangeGameObjectName(cubePlay, newName);
                     }
                 }
             }

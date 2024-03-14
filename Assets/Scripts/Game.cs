@@ -4,14 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TouchPhase = UnityEngine.TouchPhase;
 using Assets.Scripts.GameConfiguration;
-using Assets.Scripts.GameFieldsVerification;
-using Assets.Scripts.PlayGame;
-using Assets.Scripts.GameDictionaries;
-using Assets.Scripts.CreateGameHelpButton;
-using Assets.Scripts.Scenes;
-using Assets.Scripts.PlayGameHelpButtons;
-using Assets.Scripts.PlayGameFrame;
-using Assets.Scripts.CommonMethods;
+
 
 internal class Game : MonoBehaviour
 {
@@ -21,7 +14,7 @@ internal class Game : MonoBehaviour
     // prefab "CybePlayFrame"
     public GameObject prefabCubePlayFrame;
 
-    // prefab "CybePlayFrame"
+    // prefab "prefabHelpButtons"
     public GameObject prefabHelpButtons;
 
     // prefab "CubePlay" - colour 
@@ -109,6 +102,7 @@ internal class Game : MonoBehaviour
 
     private GameObject _cubePlayForFrame;
 
+
     void Start()
     {
         _isBoarGameHelpTextVisible = true;
@@ -155,13 +149,13 @@ internal class Game : MonoBehaviour
 
         _playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
 
-        _currentPlayer = CommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
+        _currentPlayer = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
 
         _playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
 
-        _currentCountedTagCubePlayTaken = CommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
+        _currentCountedTagCubePlayTaken = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
         // [gameBoard] - creating the board game with game object "CubePlay"
         _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode);
@@ -209,13 +203,13 @@ internal class Game : MonoBehaviour
                 if (touch.collider != null)
                 {
                     int countedTagCubePlayTaken;
-                    string gameObjectTag = CommonMethodsMain.GetObjectTag(touch);
-                    string gameObjectName = CommonMethodsMain.GetObjectName(touch);
+                    string gameObjectTag = GameCommonMethodsMain.GetObjectTag(touch);
+                    string gameObjectName = GameCommonMethodsMain.GetObjectName(touch);
 
                     bool isCubePlayFrameExsist = PlayGameFrameActions.IsCubePlayFrameExsist(_cubePlayFrame);
 
                     int currentPlayerNumber = _currentPlayer[0];
-                    GameObject cubePlay = CommonMethodsMain.GetCubePlay(_gameBoard, gameObjectName);
+                    GameObject cubePlay = GameCommonMethodsMain.GetCubePlay(_gameBoard, gameObjectName);
                     
                     // move by arrows 
                     if (gameObjectTag == _tagArrowRight || gameObjectTag == _tagArrowLeft || gameObjectTag == _tagArrowDown || gameObjectTag == _tagArrowUp)
@@ -229,9 +223,9 @@ internal class Game : MonoBehaviour
                         int indexX = _moveIndexForFrame[_moveIndexForFrameX];
                         int indexY = _moveIndexForFrame[_moveIndexForFrameY];
 
-                        GameObject cubePlayMarkByFrame = CommonMethodsMain.GetCubePlay(_gameBoard, indexY, indexX);
-                        string cubePlayMarkByFrameName = CommonMethodsMain.GetObjectName(cubePlayMarkByFrame);
-                        string cubePlayMarkByFrameTag = CommonMethodsMain.GetObjectTag(cubePlayMarkByFrame);
+                        GameObject cubePlayMarkByFrame = GameCommonMethodsMain.GetCubePlay(_gameBoard, indexY, indexX);
+                        string cubePlayMarkByFrameName = GameCommonMethodsMain.GetObjectName(cubePlayMarkByFrame);
+                        string cubePlayMarkByFrameTag = GameCommonMethodsMain.GetObjectTag(cubePlayMarkByFrame);
 
                         if (cubePlayMarkByFrameTag == _tagCubePlayFree)
                         {
@@ -269,7 +263,7 @@ internal class Game : MonoBehaviour
 
                                 PlayGameMethods.DisactivateChosenCubePlay(cubePlayMarkByFrame);
 
-                                _currentCountedTagCubePlayTaken = CommonMethodsMain.SetUpNewCurrentNumberByAddition(_currentCountedTagCubePlayTaken, _index);
+                                _currentCountedTagCubePlayTaken = GameCommonMethodsMain.SetUpNewCurrentNumberByAddition(_currentCountedTagCubePlayTaken, _index);
 
                                 countedTagCubePlayTaken = _currentCountedTagCubePlayTaken[_index];
 
@@ -341,7 +335,7 @@ internal class Game : MonoBehaviour
 
                                 PlayGameMethods.DisactivateChosenCubePlay(touch);
 
-                                _currentCountedTagCubePlayTaken = CommonMethodsMain.SetUpNewCurrentNumberByAddition(_currentCountedTagCubePlayTaken, _index);
+                                _currentCountedTagCubePlayTaken = GameCommonMethodsMain.SetUpNewCurrentNumberByAddition(_currentCountedTagCubePlayTaken, _index);
 
                                 countedTagCubePlayTaken = _currentCountedTagCubePlayTaken[_index];
 
@@ -412,7 +406,8 @@ internal class Game : MonoBehaviour
 
                     if (gameObjectTag ==  _tagGameButtonNewGame)
                     {
-                        ScenesChange.GoToSceneConfigurationBoardGame();
+                        //ScenesChange.GoToSceneConfigurationBoardGame(); 
+                        ScenesChange.GoToSceneStartGame();
                     }
                 }
             }   

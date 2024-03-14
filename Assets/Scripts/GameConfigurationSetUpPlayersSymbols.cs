@@ -1,11 +1,7 @@
 ﻿using Assets.Scripts.GameConfiguration;
-using Assets.Scripts.GameConfigurationPlayerSymbol;
-using Assets.Scripts.GameDictionaries;
+using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.GameConfiguration.GameConfigurationPlayerSymbolButtons;
-using Assets.Scripts.Scenes;
-using Assets.Scripts.CommonMethods;
 
 namespace Assets.Scripts
 {
@@ -99,12 +95,12 @@ namespace Assets.Scripts
                 {
                     if (touch.collider != null)
                     {
-                        string gameObjectTag = CommonMethodsMain.GetObjectTag(touch);
-                        string gameObjectName = CommonMethodsMain.GetObjectName(touch);
+                        string gameObjectTag = GameCommonMethodsMain.GetObjectTag(touch);
+                        string gameObjectName = GameCommonMethodsMain.GetObjectName(touch);
 
                         if (gameObjectTag != _tagUntagged)
                         {
-                            GameObject gameObject = CommonMethodsMain.GetObjectByTagName(gameObjectTag);
+                            GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(gameObjectTag);
                         }
                         
 

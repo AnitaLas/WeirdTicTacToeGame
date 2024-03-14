@@ -1,11 +1,8 @@
-﻿using Assets.Scripts.Buttons;
-using Assets.Scripts.CommonMethods;
-using Assets.Scripts.CreateGameHelpButton;
-using Assets.Scripts.GameDictionaries;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.PlayGameHelpButtons
+namespace Assets.Scripts
 {
     internal class PlayGameHelpButtonsActions : MonoBehaviour
     {
@@ -14,7 +11,7 @@ namespace Assets.Scripts.PlayGameHelpButtons
             Dictionary<int, string> tagHelpButtonDictionary = GameDictionariesSceneGame.DictionaryTagGame();
             string tagGameButtonParentObjectHelpButtons = tagHelpButtonDictionary[6];
 
-            bool isGameButtonParentObjectHelpButtons = CommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
+            bool isGameButtonParentObjectHelpButtons = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
 
             if (isGameButtonParentObjectHelpButtons == true)
             {

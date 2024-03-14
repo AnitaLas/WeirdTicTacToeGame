@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.PlayGameFrame
+namespace Assets.Scripts
 {
     internal class PlayGameFrameCreate : MonoBehaviour
     {

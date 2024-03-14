@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.CommonMethods;
-using Assets.Scripts.CreateTable;
+﻿using Assets.Scripts;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -9,7 +8,7 @@ namespace Assets.Scripts
         public static GameObject[,,] CreateTableWithNumbers(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D, bool isCellphoneMode, string[,,] defaultTextForCubePlay)
         {
             // [prefabCubePlay][prefabCubePlayNewZ]
-            bool isNumberOfRowsEven = CommonMethodsMain.IsNumberEven(numberOfRows);
+            bool isNumberOfRowsEven = GameCommonMethodsMain.IsNumberEven(numberOfRows);
             //string prefabName = "CubePlayUI";
             // [prefabCubePlayColor] lenght of array colour assigned to object "GameBoard"
             int cubePlayColourLenght = prefabCubePlayDefaultColour.Length;
@@ -156,7 +155,7 @@ namespace Assets.Scripts
                         CreateTablePrefabDefaultText.SetUpDefaultTextForPrefaCubePlay(prefabCubePlay, prefabCubePlayDefaultText);
 
                         //[prefabCubePlayTextDefault] - set up new currentNumberForPrefabCubePlay
-                        countedPrefabCubePlay = CommonMethodsMain.SetUpNewCurrentNumberByAddition(countedPrefabCubePlay, index);
+                        countedPrefabCubePlay = GameCommonMethodsMain.SetUpNewCurrentNumberByAddition(countedPrefabCubePlay, index);
 
                         // create new prefab "CubePlay"
                         //var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(x, y, z), Quaternion.identity);
@@ -169,19 +168,19 @@ namespace Assets.Scripts
                         
                         // [prefabCubePlayName] chcange the name for new prefab "CubePlay"
                         int currentNumberCubePlayName = numbersCubePlayName[0];
-                        var currentIndexXYForPrefabCubePlay = CommonMethodsMain.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberCubePlayName);
+                        var currentIndexXYForPrefabCubePlay = GameCommonMethodsMain.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberCubePlayName);
 
                         // [prefabCubePlayName]
                         string prefabCubePlayName = CreateTablePrefabName.CreateNameForPrefabCubePlay(currentNumberCubePlayName, currentIndexXYForPrefabCubePlay);
                         newPrefabCubePlay.name = prefabCubePlayName;
 
                         // [prefabCubePlayName] set up new currentNumberCubePlayName
-                        numbersCubePlayName = CommonMethodsMain.SetUpNewCurrentNumberByAddition(numbersCubePlayName, index);
+                        numbersCubePlayName = GameCommonMethodsMain.SetUpNewCurrentNumberByAddition(numbersCubePlayName, index);
 
                         // [gameBoard]
                         GameObject newCublePlayOnTheBoard = newPrefabCubePlay;
 
-                        var newXYZFornewCubePlayOnTheBoard = CommonMethodsMain.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberForPrefabCubePlay);
+                        var newXYZFornewCubePlayOnTheBoard = GameCommonMethodsMain.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberForPrefabCubePlay);
 
                         int newNumberOfDepth = newXYZFornewCubePlayOnTheBoard.Item1;
                         int newNumberOfRow = newXYZFornewCubePlayOnTheBoard.Item2;

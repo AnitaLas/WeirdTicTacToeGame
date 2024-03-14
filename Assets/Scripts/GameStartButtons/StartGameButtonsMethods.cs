@@ -1,9 +1,8 @@
-﻿using Assets.Scripts.PlayGameMenu;
-using UnityEngine;
+﻿using UnityEngine;
 using Assets.Scripts;
-using Assets.Scripts.CommonMethods;
+using Assets;
 
-namespace Assets.Scripts.Buttons
+namespace Assets.Scripts
 {
     internal class StartGameButtonsMethods
     {
@@ -39,10 +38,10 @@ namespace Assets.Scripts.Buttons
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        CommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                        GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
                         CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
-                        CommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
-                        CommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
+                        GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                        GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
                 }
             }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Assets.Scripts.GameDictionaries
+namespace Assets.Scripts
 {
     internal class GameDictionariesSceneStartGame
     {
@@ -20,7 +20,8 @@ namespace Assets.Scripts.GameDictionaries
         {
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
             {
-                { 1, "START GAME" },
+                //{ 1, "START GAME" },
+                { 1, "PAST PLAY" },
                 { 2, "TEAM GAME" },
                 { 3, "?" }
             };

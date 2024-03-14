@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.GameFieldsVerification
+namespace Assets.Scripts
 {
     internal class GameFieldsVerificationCheckerBackslash
     {
@@ -116,7 +116,7 @@ namespace Assets.Scripts.GameFieldsVerification
                                 listCheckerBackslash.Insert(0, checker);
                                 listCheckerBackslash.Insert(1, coordinateXYToMark);
 
-                                Dictionary<int, string> checkerDictionary = GameDictionaries.GameDictionariesGameFieldsVerification.DictionaryChecker();
+                                Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
                                 string kindOfChecker = checkerDictionary[4];
                                 listCheckerBackslash.Insert(2, kindOfChecker);
                             }
