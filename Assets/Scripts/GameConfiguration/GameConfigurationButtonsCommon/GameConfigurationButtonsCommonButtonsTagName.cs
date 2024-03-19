@@ -9,9 +9,9 @@ namespace Assets.Scripts
     internal class GameConfigurationButtonsCommonButtonsTagName
     {
         // --- tag name dictionary
-        public static string GetTagNameFromDictionaryTagConfigurationBoardGame(int dictionatyId)
+        public static string GetTagsNameFromDictionaryTagsConfigurationBoardGame(int dictionatyId)
         {
-            Dictionary<int, string> defaulNumbers = GameDictionariesSceneConfigurationBoardGame.DictionaryTagNameConfigurationBoardGame();
+            Dictionary<int, string> defaulNumbers = GameDictionariesSceneConfigurationBoardGame.DictionaryTagsNameConfigurationBoardGame();
             string defaulNumber = defaulNumbers[dictionatyId];
             return defaulNumber;
         }
@@ -20,21 +20,21 @@ namespace Assets.Scripts
         public static string GetTagForButtonNameByTagPlayers()
         {
             int dictionatyId = 9;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagButtonNumberByTagChangeNumberPlayers()
         {
             int dictionatyId = 10;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagForTableWithNumbersByTagTableNumberPlayers()
         {
             int dictionatyId = 11;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
@@ -42,21 +42,21 @@ namespace Assets.Scripts
         public static string GetTagForButtonNameByTagRows()
         {
             int dictionatyId = 5;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagForButtonNumberByTagChangeNumberRows()
         {
             int dictionatyId = 7;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagForTableWithNumbersByTagTableNumberRows()
         {
             int dictionatyId = 3;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
@@ -64,21 +64,21 @@ namespace Assets.Scripts
         public static string GetTagForButtonNameByTagColumns()
         {
             int dictionatyId = 6;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagForButtonNumberByTagChangeNumberColumns()
         {
             int dictionatyId = 8;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagForTableWithNumbersByTagTableNumberColumns()
         {
             int dictionatyId = 4;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
@@ -86,21 +86,21 @@ namespace Assets.Scripts
         public static string GetTagForButtonNameByTagLenghtToCheck()
         {
             int dictionatyId = 12;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagButtonNumberByTagChangeNumberLenghtToCheck()
         {
             int dictionatyId = 13;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagForTableWithNumbersByTagTableLenghtToCheck()
         {
             int dictionatyId = 14;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
@@ -108,21 +108,21 @@ namespace Assets.Scripts
         public static string GetTagForButtonNameByTagGaps()
         {
             int dictionatyId = 15;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagButtonNumberByTagChangeNumberGaps()
         {
             int dictionatyId = 16;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagForTableWithNumbersByTagTableNumberGaps()
         {
             int dictionatyId = 17;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
@@ -130,14 +130,14 @@ namespace Assets.Scripts
         public static string GetTagForButtonSaveByTagButtonSave()
         {
             int dictionatyId = 1;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
         public static string GetTagForButtonSaveByTagButtonBack()
         {
             int dictionatyId = 2;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
@@ -146,7 +146,7 @@ namespace Assets.Scripts
         public static string GetTagForButtonSaveByTagButtonBackToConfiguration()
         {
             int dictionatyId = 21;
-            string currentNumber = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
             return currentNumber;
         }
 
@@ -154,22 +154,22 @@ namespace Assets.Scripts
         public static string GetTagNameForInactiveField()
         {
             int dictionaryId = 20;
-            string tagName = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionaryId);
             return tagName;
         }
 
         public static string GetTagNameForInformation()
         {
             int dictionaryId = 22;
-            string tagName = GetTagNameFromDictionaryTagConfigurationBoardGame(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionaryId);
             return tagName;
         }
 
         // --
 
-        public static string GetTagNameFromDictionaryTagCommon(int dictionatyId)
+        public static string GetTagsNameFromDictionaryTagsCommon(int dictionatyId)
         {
-            Dictionary<int, string> defaulNumbers = GameDictionariesScenesCommon.DictionaryCommonTagName();
+            Dictionary<int, string> defaulNumbers = GameDictionariesScenesCommon.DictionaryCommonTagsName();
             string defaulNumber = defaulNumbers[dictionatyId];
             return defaulNumber;
         }
@@ -177,7 +177,7 @@ namespace Assets.Scripts
         public static string GetTagNameUntagged()
         {
             int dictionaryId = 1;
-            string tagName = GetTagNameFromDictionaryTagCommon(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsCommon(dictionaryId);
             return tagName;
         }
 
@@ -185,9 +185,9 @@ namespace Assets.Scripts
         // ----------------------------------------------------------------------------------------------------------------------------------------------
         // tags: players symbol set up
 
-        public static string GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(int dictionatyId)
+        public static string GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(int dictionatyId)
         {
-            Dictionary<int, string> defaulNumbers = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
+            Dictionary<int, string> defaulNumbers = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagsNameConfigurationPlayersSymbols();
             string defaulNumber = defaulNumbers[dictionatyId];
             return defaulNumber;
         }
@@ -195,63 +195,63 @@ namespace Assets.Scripts
         public static string GetTagForButtonPlayerSymbolDefaultNumber()
         {
             int dictionaryId = 1;
-            string tagName = GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
 
         public static string GetTagForButtonPlayerSymbolDefaultSymbol()
         {
             int dictionaryId = 2;
-            string tagName = GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
 
         public static string GetTagForButtonPlayerSymbolChange()
         {
             int dictionaryId = 3;
-            string tagName = GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
 
         public static string GetTagForButtonPlayerSymbolChooseSymbol()
         {
             int dictionaryId = 4;
-            string tagName = GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
 
         public static string GetTagForButtonPlayerSymbolInactiveField()
         {
             int dictionaryId = 5;
-            string tagName = GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
 
         public static string GetTagForButtonPlayerSymbolButtonSave()
         {
             int dictionaryId = 6;
-            string tagName = GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
 
         public static string GetTagForButtonPlayerSymbolButtonBack()
         {
             int dictionaryId = 7;
-            string tagName = GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
 
         public static string GetTagForButtonPlayerSymbolButtonBackToConfiguration()
         {
             int dictionaryId = 8;
-            string tagName = GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
 
         public static string GetTagForButtonBoardGameButtonInformation()
         {
             int dictionaryId = 9;
-            string tagName = GetTagNameFromDictionaryTagNameConfigurationPlayersSymbols(dictionaryId);
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
 

@@ -8,7 +8,7 @@ namespace Assets.Scripts
     {
         public static void HelpButtonsActionsCreateOrDestroy(GameObject prefabHelpButtons)
         {
-            Dictionary<int, string> tagHelpButtonDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagHelpButtonDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
             string tagGameButtonParentObjectHelpButtons = tagHelpButtonDictionary[6];
 
             bool isGameButtonParentObjectHelpButtons = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
@@ -26,7 +26,7 @@ namespace Assets.Scripts
         public static void DestroyHelpButtons()
         {
             Dictionary<int, string> tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
-            Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
 
             string tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
 

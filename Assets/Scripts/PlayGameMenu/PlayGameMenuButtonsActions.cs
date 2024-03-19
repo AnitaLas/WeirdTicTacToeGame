@@ -19,7 +19,7 @@ namespace Assets.Scripts
         // --
         public static void HideHelpButtons()
         {
-            Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
             string tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
 
             bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
@@ -32,7 +32,7 @@ namespace Assets.Scripts
 
         public static void UnhideHelpButtons()
         {
-            Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
             string tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
 
             bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
@@ -83,7 +83,7 @@ namespace Assets.Scripts
     
         public static void DisactivateConfigurationMenu()
         {
-            Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
             string tagGameButtonMenuConfigurationDisactivate = tagGameDictionary[7];
             string tagGameButtonMenuConfigurationRight = tagGameDictionary[1];
             string tagGameButtonMenuConfigurationLeft = tagGameDictionary[2];

@@ -31,7 +31,7 @@ namespace Assets.Scripts
 
         public static void ChangeDataForGameName(float newCoordinateY)
         {
-            Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformation.DictionaryTagGameInformation();
+            Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
             string tagGameName = tagGameInformations[9];
             GameObject text = GameCommonMethodsMain.GetObjectByTagName(tagGameName);
             GameCommonMethodsSetUpCoordinates.ChangeYForGameObject(text, newCoordinateY);

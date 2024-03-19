@@ -25,7 +25,7 @@ namespace Assets.Scripts
         private string _tagGameInformationsButtonNextVersions;
 
         //Dictionary<int, string> tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformation.DictionaryTagGameInformation();
+        Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
 
         private GameObject[,,] _buttonBack;
         private List<GameObject[,,]> _buttonsAll;

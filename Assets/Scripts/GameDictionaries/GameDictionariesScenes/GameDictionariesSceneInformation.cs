@@ -4,7 +4,7 @@ namespace Assets.Scripts
 {
     internal class GameDictionariesSceneInformation
     {
-        public static Dictionary<int, string> DictionaryTagGameInformation()
+        public static Dictionary<int, string> DictionaryTagsGameInformation()
         {
             Dictionary<int, string> tagGameInformationsDictionary = new Dictionary<int, string>
             {
