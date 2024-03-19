@@ -159,9 +159,9 @@ namespace Assets.Scripts
                         // create new prefab "CubePlay"
                         //var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(x, y, z), Quaternion.identity);
 
-                        float newX = CommonMethodsSetUpCoordinates.RoundCoordinateXYZ(x);
-                        float newY = CommonMethodsSetUpCoordinates.RoundCoordinateXYZ(y);
-                        float newZ = CommonMethodsSetUpCoordinates.RoundCoordinateXYZ(z);
+                        float newX = GameCommonMethodsSetUpCoordinates.RoundCoordinateXYZ(x);
+                        float newY = GameCommonMethodsSetUpCoordinates.RoundCoordinateXYZ(y);
+                        float newZ = GameCommonMethodsSetUpCoordinates.RoundCoordinateXYZ(z);
 
                         var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(newX, newY, newZ), Quaternion.identity);
                         
@@ -204,7 +204,7 @@ namespace Assets.Scripts
                         indexForCubePlayCoordinateZ[0] = newIndexPrefabCubePlayForCoordinateZ;
                         countedNumberCubePlayForRowsForCoordinateZ[0] = newCountedNumberOfRows;
                         float currentCoordinateZ = coordinateZForPrefabCubePlay[newIndexPrefabCubePlayForCoordinateZ];
-                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(newPrefabCubePlay, currentCoordinateZ);
+                        GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(newPrefabCubePlay, currentCoordinateZ);
                     }
                 }
             }

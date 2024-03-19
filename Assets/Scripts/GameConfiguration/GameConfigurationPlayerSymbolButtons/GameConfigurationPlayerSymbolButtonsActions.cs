@@ -32,27 +32,37 @@ namespace Assets.Scripts
 
         public static void ChangeChosenSymbolForPlayer(RaycastHit touch)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
-            string _tagConfigurationPlayerSymbolChange = tagNameDictionary[3];
-            string _tagConfigurationPlayerSymbolDefaultSymbol = tagNameDictionary[2];
+            //Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
+            //string _tagConfigurationPlayerSymbolChange = tagNameDictionary[3];
+            string tagConfigurationPlayerSymbolChange = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolChange();
+            //string _tagConfigurationPlayerSymbolDefaultSymbol = tagNameDictionary[2];
+            string tagConfigurationPlayerSymbolDefaultSymbol = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolDefaultSymbol();
 
-            GameConfigurationPlayerSymbolCommonMethods.ChangeChosenSymbolForPlayer(touch, _tagConfigurationPlayerSymbolChange, _tagConfigurationPlayerSymbolDefaultSymbol);
+            GameConfigurationPlayerSymbolCommonMethods.ChangeChosenSymbolForPlayer(touch, tagConfigurationPlayerSymbolChange, tagConfigurationPlayerSymbolDefaultSymbol);
         }
 
         public static void ChangeTagForPlayerDefaultSymbol(string gameObjectName)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
-            string tagConfigurationPlayerSymbolChange = tagNameDictionary[3];
-            string tagConfigurationPlayerSymbolDefaultSymbol = tagNameDictionary[2];
+            //Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
+           // string tagConfigurationPlayerSymbolChange = tagNameDictionary[3];
+            string tagConfigurationPlayerSymbolChange = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolChange();
+
+            //string tagConfigurationPlayerSymbolDefaultSymbol = tagNameDictionary[2];
+            string tagConfigurationPlayerSymbolDefaultSymbol = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolDefaultSymbol();
+
 
             GameConfigurationPlayerSymbolCommonMethods.ChangeTagForPlayerDefaultSymbol(gameObjectName, tagConfigurationPlayerSymbolChange, tagConfigurationPlayerSymbolDefaultSymbol);
         }
 
         public static void ChangeTagForPlayerDefaultSymbol()
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
-            string tagConfigurationPlayerSymbolChange = tagNameDictionary[3];
-            string tagConfigurationPlayerSymbolDefaultSymbol = tagNameDictionary[2];
+            //Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
+            //string tagConfigurationPlayerSymbolChange = tagNameDictionary[3];
+            string tagConfigurationPlayerSymbolChange = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolChange();
+
+            //string tagConfigurationPlayerSymbolDefaultSymbol = tagNameDictionary[2];
+            string tagConfigurationPlayerSymbolDefaultSymbol = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolDefaultSymbol();
+
 
             GameConfigurationPlayerSymbolCommonMethods.ChangeGameObjectTag(tagConfigurationPlayerSymbolChange, tagConfigurationPlayerSymbolDefaultSymbol);
         }

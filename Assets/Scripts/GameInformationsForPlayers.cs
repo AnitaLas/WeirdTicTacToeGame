@@ -29,8 +29,8 @@ namespace Assets.Scripts
         private string _tagGameInformationsTextNextVersions;
         private string _tagGameInformationsTextSet;
 
-        private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        private Dictionary<int, string> _tagGameInformations = GameDictionariesSceneInformations.DictionaryTagGameInformations();
+        //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
+        private Dictionary<int, string> _tagGameInformations = GameDictionariesSceneInformation.DictionaryTagGameInformation();
 
         private GameObject[,,] _buttonBack;
         private List<GameObject[,,]> _buttonsAll;
@@ -38,7 +38,8 @@ namespace Assets.Scripts
 
         void Start()
         {
-            _tagUntagged = _tagCommonDictionary[1];
+            //_tagUntagged = _tagCommonDictionary[1];
+            _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
             _tagGameInformationsButtonBack = _tagGameInformations[1];
             _tagGameInformationsButtonBackToMenu = _tagGameInformations[4];
             _tagGameInformationsButtonContact = _tagGameInformations[2];
@@ -48,10 +49,10 @@ namespace Assets.Scripts
             _tagGameInformationsButtontSet = _tagGameInformations[7];
             _tagGameInformationsTextSet = _tagGameInformations[8];
 
-            _buttonBack = GameInformationsButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, _isGame2D);
-            _buttonsAll = GameInformationsButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
+            _buttonBack = GameInformationButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, _isGame2D);
+            _buttonsAll = GameInformationButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
-            GameInformationsTextCreate.CreateGameName(gameName);
+            GameInformationTextCreate.CreateGameName(gameName);
            
             _gameObjectsWithText = new List<string>();
         }
@@ -79,34 +80,34 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagGameInformationsButtonContact)
                         {
-                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
-                            GameInformationsTextCreate.CreateGameInformationsTextContact(gameInformationsTextContact);
+                            GameInformationButtonsAction.HideButtons(_buttonsAll);
+                            GameInformationTextCreate.CreateGameInformationsTextContact(gameInformationsTextContact);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextContact);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonNextVersions)
                         {
-                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
-                            GameInformationsTextCreate.CreateGameInformationsTextNextVersions(gameInformationsTextNextVersions);
+                            GameInformationButtonsAction.HideButtons(_buttonsAll);
+                            GameInformationTextCreate.CreateGameInformationsTextNextVersions(gameInformationsTextNextVersions);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextNextVersions);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtontSet)
                         {
-                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
-                            GameInformationsTextCreate.CreateGameInformationsTextSet(gameInformationsTextSet);
+                            GameInformationButtonsAction.HideButtons(_buttonsAll);
+                            GameInformationTextCreate.CreateGameInformationsTextSet(gameInformationsTextSet);
                             _gameObjectsWithText.Insert(0, _tagGameInformationsTextSet);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonBackToMenu)
                         {
-                            GameInformationsButtonsAction.UnhideButtons(_buttonsAll);
-                            GameInformationsTextActions.DestroyGameObjectsWithText(_gameObjectsWithText);
+                            GameInformationButtonsAction.UnhideButtons(_buttonsAll);
+                            GameInformationTextActions.DestroyGameObjectsWithText(_gameObjectsWithText);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonBack)
                         {
-                            ScenesChange.GoToSceneStartGame();
+                            ScenesChangeMainMethods.GoToSceneStartGame();
                         }
                     }
                 }

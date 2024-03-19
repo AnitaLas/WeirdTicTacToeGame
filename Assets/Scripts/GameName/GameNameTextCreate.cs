@@ -31,10 +31,10 @@ namespace Assets.Scripts
 
         public static void ChangeDataForGameName(float newCoordinateY)
         {
-            Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformations.DictionaryTagGameInformations();
+            Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformation.DictionaryTagGameInformation();
             string tagGameName = tagGameInformations[9];
             GameObject text = GameCommonMethodsMain.GetObjectByTagName(tagGameName);
-            CommonMethodsSetUpCoordinates.ChangeYForGameObject(text, newCoordinateY);
+            GameCommonMethodsSetUpCoordinates.ChangeYForGameObject(text, newCoordinateY);
         }
     }
 }

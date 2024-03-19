@@ -1,0 +1,109 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assets.Scripts
+{
+    internal class GameConfigurationButtonsCommonButtonsName
+    {
+
+        // --- button name
+
+        public static string GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(int dictionatyId)
+        {
+            Dictionary<int, string> buttonsNames = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
+            string buttonName = buttonsNames[dictionatyId];
+            return buttonName;
+        }
+
+        public static string GetButtonNameForPlayers()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForRows()
+        {
+            int dictionatyId = 2;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForColumns()
+        {
+            int dictionatyId = 3;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForLenghtToCheck()
+        {
+            int dictionatyId = 4;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForGaps()
+        {
+            int dictionatyId = 5;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        // buttons: name back &  save
+        public static string GetButtonNameFromGameDictionariesScenesCommon(int dictionatyId)
+        {
+            Dictionary<int, string> buttonsNames = GameDictionariesScenesCommon.DictionaryCommonButtonName();
+            string buttonName = buttonsNames[dictionatyId];
+            return buttonName;
+        }
+
+        public static string GetButtonNameForButtonSave()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonNameFromGameDictionariesScenesCommon(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForButtonBack()
+        {
+            int dictionatyId = 2;
+            string tagName = GetButtonNameFromGameDictionariesScenesCommon(dictionatyId);
+            return tagName;
+        }
+
+        // buttons: players symbol set up
+
+        public static string GetButtonNameFromDictionaryButtonsConfigurationPlayerSymbolDefaultText(int dictionatyId)
+        {
+            Dictionary<int, string> buttonsNames = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryButtonsConfigurationPlayerSymbolDefaultText();
+            string buttonName = buttonsNames[dictionatyId];
+            return buttonName;
+        }
+
+        public static string GetButtonNamePlayer()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationPlayerSymbolDefaultText(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNamePlayers()
+        {
+            int dictionatyId = 2;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationPlayerSymbolDefaultText(dictionatyId);
+            return tagName;
+        }
+
+        // button: P - tablet mode
+        public static string GetButtonNameP()
+        {
+            int dictionatyId = 3;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationPlayerSymbolDefaultText(dictionatyId);
+            return tagName;
+        }
+    }
+}

@@ -289,19 +289,19 @@ namespace Assets.Scripts
         //    newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Top;
         //}
 
-        public static Color GetNewColor(int dictionaryColorId)
-        {
-            Dictionary<int, Tuple<float, float, float, float>> colorDictionary = GameDictionariesScenesCommon.DictionaryColor();
-            var newColor = colorDictionary[dictionaryColorId];
+        //public static Color GetNewColor(int dictionaryColorId)
+        //{
+        //    Dictionary<int, Tuple<float, float, float, float>> colorDictionary = GameDictionariesScenesCommon.DictionaryColor();
+        //    var newColor = colorDictionary[dictionaryColorId];
 
-            float r = newColor.Item1;
-            float g = newColor.Item2;
-            float b = newColor.Item3;
-            float a = newColor.Item4;
+        //    float r = newColor.Item1;
+        //    float g = newColor.Item2;
+        //    float b = newColor.Item3;
+        //    float a = newColor.Item4;
 
-            Color newTextColor = new Color(r, g, b, a);
-            return newTextColor;
-        }
+        //    Color newTextColor = new Color(r, g, b, a);
+        //    return newTextColor;
+        //}
 
         //[TextChange] - end
         // --------------------------------------------------------------------------------------------------------------------------------------------------------------

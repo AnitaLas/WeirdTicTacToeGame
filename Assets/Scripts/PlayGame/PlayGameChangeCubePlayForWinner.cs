@@ -54,7 +54,7 @@ namespace Assets.Scripts
 
         public static void ChangesForOneCubePlay(GameObject cubePlay, string tagCubePlayGameOver, Color newTextColor)
         {
-            CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, _newCoordinateZForAllCubePlay);
+            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, _newCoordinateZForAllCubePlay);
             GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagCubePlayGameOver);
         }
 
@@ -85,10 +85,10 @@ namespace Assets.Scripts
         public static void ChangeOneWinnerCubePlayForChecker(GameObject cubePlay, GameObject prefabCubePlayFrame, Color newTextColor, Material winColourForCubePlay, bool _isGame2D, float newFontSize, string tagCubePlayGameWin)
         {
             GameCommonMethodsMain.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
-            CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, _newCoordinateZForAllCubePlayWinner);
+            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, _newCoordinateZForAllCubePlayWinner);
 
             GameObject frame = PlayGameFrameCreate.CreateCubePlayFrameForWinner(prefabCubePlayFrame, cubePlay, _isGame2D);
-            CommonMethodsSetUpCoordinates.ChangeZForGameObject(frame, _newCoordinateZForCubePlayFrame);
+            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(frame, _newCoordinateZForCubePlayFrame);
 
             GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
 
@@ -114,10 +114,10 @@ namespace Assets.Scripts
 
         public static void ChangeOneOtherCubePlay(GameObject prefabCubePlayFrame, GameObject cubePlay, Material winColourForCubePlay, string tagCubePlayGameWin, Color newTextColor, float newFontSize)
         {
-            CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, _newCoordinateZForAllCubePlayWinner);
+            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, _newCoordinateZForAllCubePlayWinner);
 
             GameObject frame = PlayGameFrameCreate.CreateCubePlayFrameForWinner(prefabCubePlayFrame, cubePlay, true);
-            CommonMethodsSetUpCoordinates.ChangeZForGameObject(frame, _newCoordinateZForCubePlayFrame);
+            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(frame, _newCoordinateZForCubePlayFrame);
 
             GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagCubePlayGameWin);
             GameCommonMethodsMain.ChangeColourForGameObject(cubePlay, winColourForCubePlay);
@@ -532,12 +532,17 @@ namespace Assets.Scripts
             int[,]  winnerCoordinateXYForCubePlay = (int[,])listCheckerForWinner[1];
             string winnerKindOfChecker = (string)listCheckerForWinner[2];
 
-            Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
+            //Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
 
-            string checkerHorizontal = checkerDictionary[1];
-            string checkerVertical = checkerDictionary[2];
-            string checkerSlash = checkerDictionary[3];
-            string checkerBackslash = checkerDictionary[4];
+            //string checkerHorizontal = checkerDictionary[1];
+            //string checkerVertical = checkerDictionary[2];
+            //string checkerSlash = checkerDictionary[3];
+            //string checkerBackslash = checkerDictionary[4];
+
+            string checkerHorizontal = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerHorizontal();
+            string checkerVertical = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerVertical();
+            string checkerSlash = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerSlash();
+            string checkerBackslash = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerBackslash();
 
             Material winColourForCubePlay = cubePlayColourWin[0];
 

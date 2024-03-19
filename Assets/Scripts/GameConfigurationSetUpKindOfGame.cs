@@ -21,12 +21,13 @@ namespace Assets.Scripts
         private string _tagStartGameButtonStarTeamGame;
         private string _tagStartGameButtonInformations;
 
-        private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
+        //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
         private Dictionary<int, string> _tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
 
         void Start()
         {
-            _tagUntagged = _tagCommonDictionary[1];
+            //_tagUntagged = _tagCommonDictionary[1];
+            _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
             _tagStartGameButtonStartGame = _tagStartGameButtonsDictionary[1];
             _tagStartGameButtonStarTeamGame = _tagStartGameButtonsDictionary[2];
             _tagStartGameButtonInformations = _tagStartGameButtonsDictionary[3];
@@ -57,7 +58,7 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagStartGameButtonStartGame)
                         {
-                            ScenesChange.GoToSceneConfigurationBoardGame();
+                            ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
                         }
 
                         // clik team button - add scene in unity!!!
@@ -69,7 +70,7 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagStartGameButtonInformations)
                         {
-                            ScenesChange.GoToSceneInformations();
+                            ScenesChangeMainMethods.GoToSceneInformations();
                         }
                     }
                 }

@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,6 +38,20 @@ namespace Assets.Scripts
         {
             DestroyButtonsWithNumber(gameObjects);
             DestroyHelpButtons(gameObjectsList);
+        }
+
+        public static void VerifyButtonsWithNumberForLenghtToCheckAndGaps()
+        {
+            //int lowerNumberBetweenRowsNumberAndColumnsNumber = GameCommonMethodsSetUpButtonWithNumber.GetLowerNumberBetweenRowsNumberAndColumnsNumber();
+            //int currentLenghtToCheck = GetLengthToCheckNumber();
+            //int currentGapsNumber = GetGapsNumber();
+            //bool isCurrentLenghtToCheckBiggerThanRowsNumberAndColumnsNumber = VerifyIfCurrentNumberIsLowerThanRowsNumberOrColumnsNumber(lowerNumberBetweenRowsNumberAndColumnsNumber, currentLenghtToCheck);
+            //bool isCurrentGapsNumberBiggerThanRowsNumberAndColumnsNumber = VerifyIfCurrentNumberIsLowerThanRowsNumberOrColumnsNumber(lowerNumberBetweenRowsNumberAndColumnsNumber, currentGapsNumber);
+
+            GameConfigurationButtonsWithNumbersForLenghtToCheck.VerifyAndSetUpLenghtToCheck();
+            GameConfigurationButtonsWithNumbersForGaps.VerifyAndSetUpGapsNumber();
+
+
         }
     }
 }

@@ -240,7 +240,7 @@ internal class Game : MonoBehaviour
 
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, playersNumberGivenForConfiguration, _currentPlayer);
 
-                            _listCheckerForWinner = GameFieldsVerification.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
+                            _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
 
@@ -255,7 +255,7 @@ internal class Game : MonoBehaviour
 
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
-                                GameFieldsVerificationMessages.MessageWin(cubePlaySymbol);
+                                GameFieldsVerificationCommonMessages.MessageWin(cubePlaySymbol);
                             }
                             else
                             {
@@ -276,13 +276,13 @@ internal class Game : MonoBehaviour
 
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
-                                    GameFieldsVerificationMessages.MessageGameOver();                           
+                                    GameFieldsVerificationCommonMessages.MessageGameOver();                           
                                 }
                             }
                         }
                         else 
                         {
-                            GameFieldsVerificationMessages.MessageCubePlayTaken();
+                            GameFieldsVerificationCommonMessages.MessageCubePlayTaken();
                         }
                     }
                     
@@ -312,7 +312,7 @@ internal class Game : MonoBehaviour
 
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, playersNumberGivenForConfiguration, _currentPlayer);
 
-                            _listCheckerForWinner = GameFieldsVerification.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
+                            _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
 
@@ -327,7 +327,7 @@ internal class Game : MonoBehaviour
 
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
-                                GameFieldsVerificationMessages.MessageWin(cubePlaySymbol);
+                                GameFieldsVerificationCommonMessages.MessageWin(cubePlaySymbol);
                             }
                             else
                             {
@@ -348,13 +348,13 @@ internal class Game : MonoBehaviour
 
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
-                                    GameFieldsVerificationMessages.MessageGameOver();
+                                    GameFieldsVerificationCommonMessages.MessageGameOver();
                                 }
                             }
                         }
                         else
                         {
-                            GameFieldsVerificationMessages.MessageCubePlayTaken();
+                            GameFieldsVerificationCommonMessages.MessageCubePlayTaken();
                         }
                     }
 
@@ -407,7 +407,7 @@ internal class Game : MonoBehaviour
                     if (gameObjectTag ==  _tagGameButtonNewGame)
                     {
                         //ScenesChange.GoToSceneConfigurationBoardGame(); 
-                        ScenesChange.GoToSceneStartGame();
+                        ScenesChangeMainMethods.GoToSceneStartGame();
                     }
                 }
             }   

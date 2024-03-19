@@ -17,7 +17,7 @@ namespace Assets.Scripts
         {
             moveIndexForFrame = GameCommonMethodsMain.SetUpNewCurrentNumberByAddition(moveIndexForFrame, moveIndexForYorX);
             float newCoordinate = cubePlayForFrameScale * (1);
-            CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
+            GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
             return moveIndexForFrame;
         }
 
@@ -25,7 +25,7 @@ namespace Assets.Scripts
         {
             moveIndexForFrame = GameCommonMethodsMain.SetUpNewCurrentNumberByAddition(moveIndexForFrame, moveIndexForYorX);
             float newCoordinate = cubePlayForFrameScale * (1);
-            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
+            GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
             return moveIndexForFrame;
         }
 
@@ -33,7 +33,7 @@ namespace Assets.Scripts
         {
             moveIndexForFrame = GameCommonMethodsMain.SetUpNewCurrentNumberBySubtraction(moveIndexForFrame, moveIndexForX);
             float newCoordinate = cubePlayForFrameScale * (-1);
-            CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
+            GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlayFrame, newCoordinate);
             return moveIndexForFrame;
         }
 
@@ -41,7 +41,7 @@ namespace Assets.Scripts
         {
             moveIndexForFrame = GameCommonMethodsMain.SetUpNewCurrentNumberBySubtraction(moveIndexForFrame, moveIndexForY);
             float newCoordinate = cubePlayForFrameScale * (-1);
-            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
+            GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlayFrame, newCoordinate);
             return moveIndexForFrame;
         }
 

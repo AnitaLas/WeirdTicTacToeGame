@@ -11,9 +11,17 @@ namespace Assets.Scripts
             GameObject[,,] tableWithNumbers;
             GameObject[,,] tableWithNumberFinal;
 
-            Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagConfigurationBoardGameTableNumberRows = configurationBoardGameDictionaryTag[3];
-            string tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
+            //Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
+            //string tagConfigurationBoardGameTableNumberRows = configurationBoardGameDictionaryTag[3];
+            //string tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
+
+            //int dictionatyId = 3;
+            //string tagConfigurationBoardGameTableNumberRows = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagConfigurationBoardGameTableNumberRows = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberRows();
+
+
+            string tagConfigurationBoardGameInactiveField = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInactiveField();
+
 
             var numbers = ScreenVerificationMethods.GetNumberOfRowsAndColumnsForDefaulTableWithNumber(isCellphoneMode);
             int numberOfDepths = 1;

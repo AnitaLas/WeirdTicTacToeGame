@@ -494,7 +494,7 @@ namespace Assets.Scripts
             gameObject.name = gameObjectName;
         }
 
-        public static int CheckAndReturnLowerNumber(int numberOne, int numberTwo)
+        public static int GetLowerNumber(int numberOne, int numberTwo)
         {
             if (numberTwo > numberOne)
             {
@@ -511,7 +511,7 @@ namespace Assets.Scripts
             }
         }
 
-        //public static int CheckAndReturnBiggerNumber(int numberOne, int numberTwo)
+        //public static int GetBiggerNumber(int numberOne, int numberTwo)
         //{
         //    if (numberTwo > numberOne)
         //    {
@@ -523,7 +523,7 @@ namespace Assets.Scripts
         //    }
         //    else
         //    {
-        //        // verticalLenght = horizontalLenght
+        //        //verticalLenght = horizontalLenght
         //        return numberOne;
         //    }
         //}
@@ -533,10 +533,6 @@ namespace Assets.Scripts
             gameObject.GetComponent<Renderer>().material = newColour;
         }
 
-        public static void ChangeScene(string sceneName)
-        {
-            SceneManager.LoadScene(sceneName);
-        }
 
         public static bool IsGameObjectWithTagExsist(string tagName)
         {
