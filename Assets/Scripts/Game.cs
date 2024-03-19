@@ -70,7 +70,7 @@ internal class Game : MonoBehaviour
     private string _tagArrowDown; 
     private string _tagButtonConfirm; 
 
-    private Dictionary<int, string> _tagGameDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+    private Dictionary<int, string> _tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
 
     private string _tagGameButtonMenuConfigurationLeft;
     private string _tagGameButtonMenuConfigurationRight;

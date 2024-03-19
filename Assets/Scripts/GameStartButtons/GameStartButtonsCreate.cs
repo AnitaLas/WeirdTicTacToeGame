@@ -20,7 +20,7 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
 
             string tagGameButtonNewGame = tagCubePlayDictionary[1];
@@ -45,7 +45,7 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
 
             string tagGameButtonNewGame = tagCubePlayDictionary[2];
@@ -68,7 +68,7 @@ namespace Assets.Scripts
 
         public static GameObject[,,] CreateButtonStartGameInformations(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
 
             string tagName = tagCubePlayDictionary[3];

@@ -10,7 +10,7 @@ namespace Assets.Scripts
     {
         // --- button name
 
-        public static string GetButtonNameFromDictionaryTagGameInformation(int dictionatyId)
+        public static string GetButtonsNameFromDictionaryTagGameInformation(int dictionatyId)
         {
             Dictionary<int, string> buttonsNames = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
             string buttonName = buttonsNames[dictionatyId];
@@ -20,21 +20,21 @@ namespace Assets.Scripts
         public static string GetButtonNameForContcat()
         {
             int dictionatyId = 1;
-            string tagName = GetButtonNameFromDictionaryTagGameInformation(dictionatyId);
+            string tagName = GetButtonsNameFromDictionaryTagGameInformation(dictionatyId);
             return tagName;
         }
 
         public static string GetButtonNameForGameVersions()
         {
-            int dictionatyId = 1;
-            string tagName = GetButtonNameFromDictionaryTagGameInformation(dictionatyId);
+            int dictionatyId = 2;
+            string tagName = GetButtonsNameFromDictionaryTagGameInformation(dictionatyId);
             return tagName;
         }
 
         public static string GetButtonNameForDefaultSet()
         {
-            int dictionatyId = 1;
-            string tagName = GetButtonNameFromDictionaryTagGameInformation(dictionatyId);
+            int dictionatyId = 3;
+            string tagName = GetButtonsNameFromDictionaryTagGameInformation(dictionatyId);
             return tagName;
         }
 

@@ -32,7 +32,7 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
 
             string tagGameButtonNewGame = tagCubePlayDictionary[3];
@@ -56,7 +56,7 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
 
             string tagGameButtonNewGame = tagCubePlayDictionary[3];
@@ -78,7 +78,7 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonHelpButtons;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
 
             string tagGameButtonHelpButtons = tagCubePlayDictionary[4];
@@ -102,7 +102,7 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonBack;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
 
             string tagGameButtonHelpButtons = tagCubePlayDictionary[5];
@@ -126,7 +126,7 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonNewGame;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagGame();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
             Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneGame.DictionaryButtonsGameName();
 
             string tagGameButtonNewGame = tagCubePlayDictionary[8];

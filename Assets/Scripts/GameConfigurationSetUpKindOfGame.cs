@@ -22,7 +22,7 @@ namespace Assets.Scripts
         private string _tagStartGameButtonInformations;
 
         //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        private Dictionary<int, string> _tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagStartGame();
+        private Dictionary<int, string> _tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
 
         void Start()
         {

@@ -22,7 +22,7 @@ namespace Assets.Scripts
             return scenceDictionary;
         }
 
-        public static Dictionary<int, string> DictionaryCommonTagName()
+        public static Dictionary<int, string> DictionaryCommonTagsName()
         {
             Dictionary<int, string> tagCommonDictionary = new Dictionary<int, string>
             {
@@ -31,7 +31,7 @@ namespace Assets.Scripts
             return tagCommonDictionary;
         }
 
-        public static Dictionary<int, string> DictionaryCommonButtonName()
+        public static Dictionary<int, string> DictionaryCommonButtonsName()
         {
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
             {

@@ -30,7 +30,7 @@ namespace Assets.Scripts
         private string _tagGameInformationsTextSet;
 
         //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        private Dictionary<int, string> _tagGameInformations = GameDictionariesSceneInformation.DictionaryTagGameInformation();
+        private Dictionary<int, string> _tagGameInformations = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
 
         private GameObject[,,] _buttonBack;
         private List<GameObject[,,]> _buttonsAll;

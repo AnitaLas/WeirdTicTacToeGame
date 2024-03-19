@@ -22,7 +22,7 @@ namespace Assets.Scripts
 
         public static void ChangeTagForButtonBackToSceneInformations()
         {
-            Dictionary<int, string> tagGameInformationsDictionary = GameDictionariesSceneInformation.DictionaryTagGameInformation();
+            Dictionary<int, string> tagGameInformationsDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
             string oldTag = tagGameInformationsDictionary[1];
             string newTag = tagGameInformationsDictionary[4];
 
@@ -31,7 +31,7 @@ namespace Assets.Scripts
 
         public static void ChangeTagForButtonBackToSceneStartGame()
         {
-            Dictionary<int, string> tagGameInformationsDictionary = GameDictionariesSceneInformation.DictionaryTagGameInformation();
+            Dictionary<int, string> tagGameInformationsDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
             string oldTag = tagGameInformationsDictionary[4];
             string newTag = tagGameInformationsDictionary[1];
 

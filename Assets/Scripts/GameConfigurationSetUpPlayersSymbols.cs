@@ -23,7 +23,7 @@ namespace Assets.Scripts
 
         private bool _isGame2D = true;
 
-        private Dictionary<int, string> _configurationPlayersSymbolsDictionaryTag = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
+        private Dictionary<int, string> _configurationPlayersSymbolsDictionaryTag = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagsNameConfigurationPlayersSymbols();
 
         private string _tagConfiguratioPlayerSymbolDefaultNumber;
         private string _tagConfigurationPlayerSymbolDefaultSymbol;

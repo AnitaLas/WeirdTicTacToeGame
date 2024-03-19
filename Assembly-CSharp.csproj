@@ -182,7 +182,6 @@
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayerSymbol.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsAction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesScenesInformations.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonButtonsDefaultNumber.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />

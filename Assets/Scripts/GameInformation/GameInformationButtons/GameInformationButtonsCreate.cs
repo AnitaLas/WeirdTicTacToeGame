@@ -24,11 +24,12 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonContact;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagGameInformation();
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
+            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
 
             string tagButtonContact = tagCubePlayDictionary[2];
-            string buttonText = buttonsGameNameDictionary[1];
+            //string buttonText = buttonsGameNameDictionary[1];
+            string buttonText = GameInformationCommonButtonsName.GetButtonNameForContcat();
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
@@ -48,11 +49,12 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonNextVersions;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagGameInformation();
-            Dictionary<int, string> buttonsNextVersionsNameDictionary = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
+            //Dictionary<int, string> buttonsNextVersionsNameDictionary = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
 
             string tagGameButtonHelpButtons = tagCubePlayDictionary[3];
-            string buttonText = buttonsNextVersionsNameDictionary[2];
+            //string buttonText = buttonsNextVersionsNameDictionary[2];
+            string buttonText = GameInformationCommonButtonsName.GetButtonNameForGameVersions();
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
@@ -73,11 +75,12 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonContact;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagGameInformation();
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
+            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
 
             string tagButtonContact = tagCubePlayDictionary[7];
-            string buttonText = buttonsGameNameDictionary[3];
+            //string buttonText = buttonsGameNameDictionary[3];
+            string buttonText = GameInformationCommonButtonsName.GetButtonNameForDefaultSet();
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
@@ -98,7 +101,7 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonBack;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagGameInformation();
+            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
             //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
 
             string tagGameButtonHelpButtons = tagCubePlayDictionary[1];

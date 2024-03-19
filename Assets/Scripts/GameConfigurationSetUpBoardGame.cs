@@ -37,7 +37,7 @@ namespace Assets.Scripts.GameConfiguration
 
         public Material[] prefabCubePlayButtonsNumberColour;
 
-        private Dictionary<int, string> _configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagNameConfigurationBoardGame();
+        private Dictionary<int, string> _configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagsNameConfigurationBoardGame();
 
         private string _tagConfigurationBoardGameButtonSave;
         private string _tagConfigurationBoardGameButtonBack;
