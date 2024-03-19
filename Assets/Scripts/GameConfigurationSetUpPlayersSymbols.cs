@@ -23,7 +23,7 @@ namespace Assets.Scripts
 
         private bool _isGame2D = true;
 
-        private Dictionary<int, string> _configurationPlayersSymbolsDictionaryTag = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
+        private Dictionary<int, string> _configurationPlayersSymbolsDictionaryTag = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
 
         private string _tagConfiguratioPlayerSymbolDefaultNumber;
         private string _tagConfigurationPlayerSymbolDefaultSymbol;
@@ -33,7 +33,7 @@ namespace Assets.Scripts
         private string _tagConfigurationPlayerSymbolButtonBack;
         private string _tagConfigurationPlayerSymbolButtonBackToConfiguration;
 
-        private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
+        //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
 
         private string _tagUntagged;
 
@@ -62,7 +62,8 @@ namespace Assets.Scripts
             _tagConfigurationPlayerSymbolButtonBackToConfiguration = _configurationPlayersSymbolsDictionaryTag[8];
 
             // ---
-            _tagUntagged = _tagCommonDictionary[1];
+            //_tagUntagged = _tagCommonDictionary[1];
+            _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 
             // ---
             _numberOfPlayers = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfPlayers;        
@@ -132,12 +133,12 @@ namespace Assets.Scripts
                             _tableWitPlayersChosenSymbols = GameConfigurationPlayerSymbolTableWithSymbols.CreateTableWithPlayersChosenSymbols(_buttonsWithSymbols);
                             ConfigurationPlayerSymbolTableWitPlayersChosenSymbols = _tableWitPlayersChosenSymbols;
 
-                            ScenesChange.GoToSceneGame();
+                            ScenesChangeMainMethods.GoToSceneGame();
                         }
 
                         if (gameObjectTag == _tagConfigurationPlayerSymbolButtonBack)
                         {
-                            ScenesChange.GoToSceneConfigurationBoardGame();
+                            ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
                         }
                     }
                 }

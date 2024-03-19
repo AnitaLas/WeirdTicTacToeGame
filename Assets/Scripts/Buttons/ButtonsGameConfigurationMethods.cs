@@ -23,8 +23,8 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = button[indexDepth, indexRow, indexColumn];
-                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                        CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                     }
                 }
             }           

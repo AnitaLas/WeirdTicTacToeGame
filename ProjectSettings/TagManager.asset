@@ -65,6 +65,9 @@ TagManager:
   - GameInformationButtontSet
   - GameButtonBoardGameHelpText
   - GameName
+  - ConfigurationBoardGameGaps
+  - ConfigurationBoardGameChangeNumberGaps
+  - ConfigurationBoardGameTableNumberGaps
   layers:
   - Default
   - TransparentFX

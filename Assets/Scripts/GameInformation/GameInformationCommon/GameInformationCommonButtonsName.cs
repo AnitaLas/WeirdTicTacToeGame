@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assets.Scripts
+{
+    internal class GameInformationCommonButtonsName
+    {
+        // --- button name
+
+        public static string GetButtonNameFromDictionaryTagGameInformation(int dictionatyId)
+        {
+            Dictionary<int, string> buttonsNames = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
+            string buttonName = buttonsNames[dictionatyId];
+            return buttonName;
+        }
+
+        public static string GetButtonNameForContcat()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonNameFromDictionaryTagGameInformation(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForGameVersions()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonNameFromDictionaryTagGameInformation(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForDefaultSet()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonNameFromDictionaryTagGameInformation(dictionatyId);
+            return tagName;
+        }
+
+
+
+    }
+}

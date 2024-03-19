@@ -65,8 +65,8 @@ namespace Assets.Scripts
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                         GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
-                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
                         GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
@@ -92,8 +92,8 @@ namespace Assets.Scripts
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                         GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
-                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
                         GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
@@ -137,7 +137,7 @@ namespace Assets.Scripts
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                         GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
-                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
                         GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
@@ -159,8 +159,8 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                        CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                     }
                 }
             }
@@ -274,7 +274,7 @@ namespace Assets.Scripts
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow - 1, indexColumn];
                             float y = cubePlayForX.transform.position.y;
                             newStartY = y + newScale;
-                            CommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newStartY);
+                            GameCommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newStartY);
                         }
 
                         if (indexColumn >= 1)
@@ -282,7 +282,7 @@ namespace Assets.Scripts
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn - 1];
                             float x = cubePlayForX.transform.position.x;
                             newStartX = x + newScale;
-                            CommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newStartX);
+                            GameCommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newStartX);
                         }
                     }
                 }
@@ -315,7 +315,7 @@ namespace Assets.Scripts
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float x = cubePlayForX.transform.position.x;
                             newStartX = x + newScale * percetageOfNewScale;
-                            CommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newStartX);
+                            GameCommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newStartX);
                         }
 
                         if (indexColumn == maxIndexColumn - 1)
@@ -323,7 +323,7 @@ namespace Assets.Scripts
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float x = cubePlayForX.transform.position.x;
                             newStartX = x - newScale * percetageOfNewScale;
-                            CommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newStartX);
+                            GameCommonMethodsSetUpCoordinates.ChangeXForGameObject(cubePlay, newStartX);
                         }
 
                         if (indexRow == 0)
@@ -331,7 +331,7 @@ namespace Assets.Scripts
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float y = cubePlayForX.transform.position.y;
                             newStartY = y + newScale * percetageOfNewScale;
-                            CommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newStartY);
+                            GameCommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newStartY);
                         }
 
                         if (indexRow == maxIndexRow - 1)
@@ -339,7 +339,7 @@ namespace Assets.Scripts
                             cubePlayForX = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
                             float y = cubePlayForX.transform.position.y;
                             newStartY = y - newScale * percetageOfNewScale;
-                            CommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newStartY);
+                            GameCommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newStartY);
                         }
                     }
                 }
@@ -434,7 +434,7 @@ namespace Assets.Scripts
         public static void ChangeCoordinateYForOneGameObjectByTagName(string gameObjectTagName, float newCoordinateY)
         {
             GameObject gameOject = GameCommonMethodsMain.GetObjectByTagName(gameObjectTagName);
-            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(gameOject, newCoordinateY);
+            GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(gameOject, newCoordinateY);
         }
 
         public static void ChangeCoordinateYForTable(GameObject[,,] tableWtithNumber, float newCoordinateY)
@@ -450,7 +450,7 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
                     }
                 }
             }
@@ -489,7 +489,7 @@ namespace Assets.Scripts
                 for (int j = 0; j < NumberOfgameObjects; j++)
                 {
                     GameObject gameObject = gameObjects[j];
-                    CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(gameObject, newCoordinateY);
+                    GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(gameObject, newCoordinateY);
                 }
             }
         }

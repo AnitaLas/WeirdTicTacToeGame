@@ -71,9 +71,9 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonSave(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-
-            string tagName = tagNameDictionary[1];
+            //int dictionatyId = 1;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonSaveByTagButtonSave();
 
             GameObject[,,] buttonSave = GameConfigurationButtonsCommonCreate.CreateCommonButtonSave(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName);
             return buttonSave;
@@ -81,9 +81,9 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonBack(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-
-            string tagName = tagNameDictionary[2];
+            //int dictionatyId = 2;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonSaveByTagButtonBack();
 
             GameObject[,,] buttonBack = GameConfigurationButtonsCommonCreate.CreateCommonButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D, tagName);
             return buttonBack;
@@ -93,11 +93,12 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonBack;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForButtonBack();
 
-            string tagName = tagCubePlayDictionary[21];
-            string buttonText = buttonsGameNameDictionary[2];
+            //int dictionatyId = 21;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonSaveByTagButtonBackToConfiguration();
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
@@ -112,15 +113,15 @@ namespace Assets.Scripts
 
             return tableButtonBack;
         }
-        // ---
+        // --- buttons with text 
 
         public static GameObject[,,] GameConfigurationCreateButtonPlayerText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[9];
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForPlayers();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[1];
+            //int dictionatyId = 9;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNameByTagPlayers();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
@@ -131,11 +132,11 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonRowText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[5];
+            //int dictionatyId = 5;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNameByTagRows();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[2];
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForRows();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
@@ -147,11 +148,11 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonColumnText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[6];
+            //int dictionatyId = 6;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNameByTagColumns();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[3];
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForColumns();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
@@ -163,11 +164,11 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonLenghtToCheckText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[12];
+            //int dictionatyId = 12;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNameByTagLenghtToCheck();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[4];
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForLenghtToCheck();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
@@ -179,11 +180,11 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonGapText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[15];
+            //int dictionatyId = 15;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNameByTagGaps();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[5];
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForGaps();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
@@ -193,14 +194,14 @@ namespace Assets.Scripts
             return button;
         }
 
-        // ---
+        // --- buttons with number
         public static GameObject[,,] GameConfigurationCreateButtonPlayerNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[10];
+            //int dictionatyId = 10;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagButtonNumberByTagChangeNumberPlayers();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameDefaultNumbers();
-            string buttonText = buttonsGameNameDictionary[1];
+            string buttonText = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonNumberForPlayers();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return button;
@@ -208,11 +209,11 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonRowNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[7];
+            //int dictionatyId = 7;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberRows();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameDefaultNumbers();
-            string buttonText = buttonsGameNameDictionary[2];
+            string buttonText = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonNumberForRowsAndColumns();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return button; ;
@@ -220,11 +221,11 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonColumnNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[8];
+            //int dictionatyId = 8;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberColumns();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameDefaultNumbers();
-            string buttonText = buttonsGameNameDictionary[2];
+            string buttonText = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonNumberForRowsAndColumns();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return button; ;
@@ -232,11 +233,11 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonLenghtToCheckNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[13];
+            //int dictionatyId = 13;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagButtonNumberByTagChangeNumberLenghtToCheck();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameDefaultNumbers();
-            string buttonText = buttonsGameNameDictionary[2];
+            string buttonText = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonNumberForLenghtToCheck();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return button;
@@ -244,11 +245,11 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateButtonGapNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[16];
+            //int dictionatyId = 16;
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagButtonNumberByTagChangeNumberGaps();
 
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameDefaultNumbers();
-            string buttonText = buttonsGameNameDictionary[3];
+            string buttonText = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonNumberForGaps();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return button;
@@ -258,11 +259,8 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateInformationButtonPlayer(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[22];
-
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[1];
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForPlayers();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
@@ -289,11 +287,8 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateInformationButtonRow(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[22];
-
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[2];
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForRows();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
@@ -319,11 +314,8 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateInformationButtonColumns(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[22];
-
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[3];
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForColumns();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
@@ -350,11 +342,8 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateInformationButtonlenghtToCheck(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[22];
-
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[4];
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForLenghtToCheck();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
@@ -380,11 +369,8 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationCreateInformationButtonGaps(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            string tagName = tagNameDictionary[22];
-
-            Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();
-            string buttonText = buttonsGameNameDictionary[5];
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInactiveField();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForGaps();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 

@@ -144,7 +144,7 @@ namespace Assets.Scripts
                         {
                             GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
                             GameCommonMethodsMain.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
-                            CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         }
 
                         for (int i = 0; i < tableWitPlayersChosenSymbols.Length; i++)
@@ -155,7 +155,7 @@ namespace Assets.Scripts
                             {
                                 GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);
                                 GameCommonMethodsMain.ChangeColourForGameObject(cubePlay, cubeColourInactiveField);
-                                CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                                GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                             }
                         }
 

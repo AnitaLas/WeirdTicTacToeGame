@@ -204,8 +204,8 @@ namespace Assets.Scripts
                         {
                             GameObject player = table[indexDepth, indexRow, indexColumn];
 
-                            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
-                            CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(player, newCoordinateX);
+                            GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
+                            GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(player, newCoordinateX);
 
                             ChangeNameForPrefabPlayerNumber(player, playerNumber);
                         }
@@ -280,16 +280,16 @@ namespace Assets.Scripts
 
                             if (currentCountedButtonsNumberForOneColumn < buttonsNumberForOneColumn)
                             {
-                                CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(player, coordinateX);
-                                CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
+                                GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(player, coordinateX);
+                                GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
                             }
                             else
                             {
                                 coordinateX = newCoordinateX[2];
-                                CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(player, coordinateX);
+                                GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(player, coordinateX);
 
                                 yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - currentCountedButtonsNumberForOneColumn];
-                                CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
+                                GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(player, yForFirstPrefabPlayerSymbol);
                             }
 
                             ChangeNameForPrefabPlayerNumber(player, playerNumber);
@@ -370,19 +370,19 @@ namespace Assets.Scripts
 
                             if (currentCountedButtonsNumberForOneColumn < buttonsNumberForOneColumn)
                             {
-                                CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(playerSymbol, coordinateX);
-                                CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(playerSymbol, yForFirstPrefabPlayerSymbol);
+                                GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(playerSymbol, coordinateX);
+                                GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(playerSymbol, yForFirstPrefabPlayerSymbol);
                             }
                             else
                             {
                                 coordinateX = newCoordinateX[2];
-                                CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(playerSymbol, coordinateX);
+                                GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(playerSymbol, coordinateX);
 
                                 yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - currentCountedButtonsNumberForOneColumn] + coordinateYCorrection;
-                                CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(playerSymbol, yForFirstPrefabPlayerSymbol);
+                                GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(playerSymbol, yForFirstPrefabPlayerSymbol);
                             }
 
-                            CommonMethodsSetUpCoordinates.ChangeZForGameObject(playerSymbol, newCoordinateZ);
+                            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(playerSymbol, newCoordinateZ);
                             GameCommonMethodsMain.ChangeTextFontSize(playerSymbol, fontSize);
 
                             GameCommonMethodsMain.TransformGameObjectToNewScale(playerSymbol, newScale, newScale, newScale);
@@ -435,9 +435,9 @@ namespace Assets.Scripts
 
                             GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
 
-                            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, yForFirstPrefabPlayerSymbol);
-                            CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
-                            CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                            GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, yForFirstPrefabPlayerSymbol);
+                            GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
 
                             GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
                             ChangeNameForPrefabPlayerSymbol(cubePlay, playerNumber);

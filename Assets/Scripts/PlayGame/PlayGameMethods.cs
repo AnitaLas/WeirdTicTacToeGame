@@ -15,7 +15,7 @@ namespace Assets.Scripts
         public static void ChangeCoordinateZForCubePlayAfterClickOnTheCubePlay(GameObject cubePlay)
         {
             float newCoordinateZ = 0;
-            CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
         }
 
         public static void DisactivateChosenCubePlay(GameObject cubePlayMarkByFrame)

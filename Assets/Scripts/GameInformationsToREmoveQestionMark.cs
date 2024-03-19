@@ -24,8 +24,8 @@ namespace Assets.Scripts
         private string _tagGameInformationsButtonContact;
         private string _tagGameInformationsButtonNextVersions;
 
-        Dictionary<int, string> tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformations.DictionaryTagGameInformations();
+        //Dictionary<int, string> tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
+        Dictionary<int, string> tagGameInformations = GameDictionariesSceneInformation.DictionaryTagGameInformation();
 
         private GameObject[,,] _buttonBack;
         private List<GameObject[,,]> _buttonsAll;
@@ -33,14 +33,15 @@ namespace Assets.Scripts
 
         void Start()
         {
-            _tagUntagged = tagCommonDictionary[1];
+            //_tagUntagged = tagCommonDictionary[1];
+            _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
             _tagGameInformationsButtonBack = tagGameInformations[1];
             _tagGameInformationsButtonBackToMenu = tagGameInformations[4];
             _tagGameInformationsButtonContact = tagGameInformations[2];
             _tagGameInformationsButtonNextVersions = tagGameInformations[3];
 
-            _buttonBack = GameInformationsButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
-            _buttonsAll = GameInformationsButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, isGame2D);
+            _buttonBack = GameInformationButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
+            _buttonsAll = GameInformationButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, isGame2D);
 
         }
 
@@ -71,12 +72,12 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagGameInformationsButtonNextVersions)
                         {
-                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
+                            GameInformationButtonsAction.HideButtons(_buttonsAll);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonContact)
                         {
-                            GameInformationsButtonsAction.HideButtons(_buttonsAll);
+                            GameInformationButtonsAction.HideButtons(_buttonsAll);
                         }
 
                         if (gameObjectTag == _tagGameInformationsButtonBackToMenu)
@@ -86,7 +87,7 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagGameInformationsButtonBack)
                         {
-                            ScenesChange.GoToSceneStartGame();
+                            ScenesChangeMainMethods.GoToSceneStartGame();
                         }
 
 

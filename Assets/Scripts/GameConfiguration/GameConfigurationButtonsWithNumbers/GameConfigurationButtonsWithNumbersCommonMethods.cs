@@ -47,7 +47,7 @@ namespace Assets.Scripts
                         int cubePlayTextInt = GameCommonMethodsMain.ConvertStringToInt(cubePlayText);
 
                         GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameTableNumberForAll);
-                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
 
                         if (start >= cubePlayTextInt || (end + 1)<= cubePlayTextInt)
                         {

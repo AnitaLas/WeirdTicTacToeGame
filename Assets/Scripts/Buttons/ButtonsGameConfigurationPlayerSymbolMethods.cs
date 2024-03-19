@@ -9,8 +9,9 @@ namespace Assets.Scripts
     {     
         public static void ChangeGameConfigurationPlayerSymbolInformationButtonsWithPlayerNumber(GameObject[,,] singleConfigurationButtonTable)
         {
-            Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagConfigurationPlayersSymbols();
-            string tagName = tagNameDictionary[3];
+            //Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
+            //string tagName = tagNameDictionary[3];
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolChange();
 
             GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
             string gameObjectName = GameCommonMethodsMain.GetObjectName(gameObject);
@@ -49,9 +50,9 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
-                        CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-                        CommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
-                        CommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                        GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
                         GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
                         GameCommonMethodsMain.ChangeTextForCubePlay(cubePlay, playerNumberToSetUp);
