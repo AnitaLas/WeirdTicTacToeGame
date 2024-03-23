@@ -36,12 +36,13 @@ namespace Assets.Scripts
             return tagName;
         }
 
-        public static string GetTagForButtonNameByTagInformationTextNextVersions()
+        public static string GetTagForButtonNameByTagInformationButtonBackToMenu()
         {
-            int dictionatyId = 6;
+            int dictionatyId = 4;
             string tagName = GetTagsNameFromDictionaryTagsGameInformation(dictionatyId);
             return tagName;
         }
+
 
         public static string GetTagForButtonNameByTagInformationButtontSet()
         {
@@ -60,16 +61,16 @@ namespace Assets.Scripts
 
         // button: text
 
-        public static string GetTagTextByTagInformationButtonBackToMenu()
+        public static string GetTagTextByTagInformationTextContact()
         {
-            int dictionatyId = 4;
+            int dictionatyId = 5;
             string tagName = GetTagsNameFromDictionaryTagsGameInformation(dictionatyId);
             return tagName;
         }
 
-        public static string GetTagTextByTagInformationTextContact()
+        public static string GetTagTextByTagInformationTextNextVersions()
         {
-            int dictionatyId = 5;
+            int dictionatyId = 6;
             string tagName = GetTagsNameFromDictionaryTagsGameInformation(dictionatyId);
             return tagName;
         }

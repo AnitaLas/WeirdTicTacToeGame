@@ -37,7 +37,7 @@ namespace Assets.Scripts
             return buttonsNameDictionary;
         }
 
-        public static Dictionary<int, string> DictionaryTagCubePlay()
+        public static Dictionary<int, string> DictionaryTagsCubePlay()
         {
             Dictionary<int, string> tagCubePlayDictionary = new Dictionary<int, string>
             {
@@ -51,7 +51,7 @@ namespace Assets.Scripts
             return tagCubePlayDictionary;
         }
 
-        public static Dictionary<int, string> DictionaryTagHelpButtons()
+        public static Dictionary<int, string> DictionaryTagsHelpButtons()
         {
             Dictionary<int, string> tagHelpButtonDictionary = new Dictionary<int, string>
             {
@@ -65,7 +65,7 @@ namespace Assets.Scripts
             return tagHelpButtonDictionary;
         }
 
-        public static Dictionary<int, string> DictionaryTagPlayerSymbolMove()
+        public static Dictionary<int, string> DictionaryTagsPlayerSymbolMove()
         {
             Dictionary<int, string> tagPlayerSymbolMoveDictionary = new Dictionary<int, string>
             {
@@ -77,7 +77,7 @@ namespace Assets.Scripts
             return tagPlayerSymbolMoveDictionary;
         }
 
-        public static Dictionary<int, string> DictionaryTagTopObjecs()
+        public static Dictionary<int, string> DictionaryTagsTopObjecs()
         {
             Dictionary<int, string> tagTopObjecsDictionary = new Dictionary<int, string>
             {

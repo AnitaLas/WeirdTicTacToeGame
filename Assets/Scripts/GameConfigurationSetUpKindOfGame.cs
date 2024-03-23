@@ -22,15 +22,19 @@ namespace Assets.Scripts
         private string _tagStartGameButtonInformations;
 
         //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        private Dictionary<int, string> _tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
+        //private Dictionary<int, string> _tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
 
         void Start()
         {
             //_tagUntagged = _tagCommonDictionary[1];
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
-            _tagStartGameButtonStartGame = _tagStartGameButtonsDictionary[1];
-            _tagStartGameButtonStarTeamGame = _tagStartGameButtonsDictionary[2];
-            _tagStartGameButtonInformations = _tagStartGameButtonsDictionary[3];
+            //_tagStartGameButtonStartGame = _tagStartGameButtonsDictionary[1];
+            //_tagStartGameButtonStarTeamGame = _tagStartGameButtonsDictionary[2];
+            //_tagStartGameButtonInformations = _tagStartGameButtonsDictionary[3];
+
+            _tagStartGameButtonStartGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartGame();
+            _tagStartGameButtonStarTeamGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartTeamGame();
+            _tagStartGameButtonInformations = GameStartCommonButtonsTagName.GetTagForButtonNameByTagInformation();
 
             GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
             GameNameTextCreate.CreateGameNameForStart(gameName);

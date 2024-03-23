@@ -55,7 +55,7 @@ namespace Assets.Scripts
         {
             string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
 
-            string[] alphabet = CreateGameBoardMethods.CreateTableWithCharactersByGivenString();
+            string[] alphabet = CreateGameBoardCommonMethods.CreateTableWithCharactersByGivenString();
 
             string[,,] alphabet3D = CreateTableForDefaultTextWithCharacters(alphabet, numberOfDepths, numberOfRows, numberOfColumns);
 

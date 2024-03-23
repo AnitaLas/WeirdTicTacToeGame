@@ -10,7 +10,7 @@ namespace Assets.Scripts
             {
                 { 1, "StartGameButtonStartGame" },
                 { 2, "StartGameButtonStartTeamGame" },
-                { 3, "StartGameButtonInformations" }
+                { 3, "StartGameButtonInformations" } // should be without s xD
             };
 
             return tagStartGameDictionary;

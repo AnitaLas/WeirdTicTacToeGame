@@ -51,7 +51,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
         public static int GetGapsNumberMax()
         {
             int maxNumber = 0;
-            int[] numbers = GameConfigurationButtonsCommonButtonsWithNumberForLenghtToChcekAndGaps.GetCurrentRowsAndColumnsNumber();
+            int[] numbers = GameConfigurationButtonsCommonMethodsForButtonsWithNumberForLenghtToChcekAndGaps.GetCurrentRowsAndColumnsNumber();
             int number1 = numbers[0];
             int number2 = numbers[1];
 
@@ -73,7 +73,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
         public static int GetGapsNumberMin()
         {
             int minNumber;
-            int[] numbers = GameConfigurationButtonsCommonButtonsWithNumberForLenghtToChcekAndGaps.GetCurrentRowsAndColumnsNumber();
+            int[] numbers = GameConfigurationButtonsCommonMethodsForButtonsWithNumberForLenghtToChcekAndGaps.GetCurrentRowsAndColumnsNumber();
             int number1 = numbers[0];
             int number2 = numbers[1];
 
@@ -112,7 +112,7 @@ namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
         {
             //string tagConfigurationBoardGameChangeNumberGaps = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(16);
             string tagConfigurationBoardGameChangeNumberGaps = GameConfigurationButtonsCommonButtonsTagName.GetTagButtonNumberByTagChangeNumberGaps();
-            int number = GameConfigurationButtonsCommonButtonsWithNumberForLenghtToChcekAndGaps.GetNumberFromConfiguration(tagConfigurationBoardGameChangeNumberGaps);
+            int number = GameConfigurationButtonsCommonMethodsForButtonsWithNumberForLenghtToChcekAndGaps.GetNumberFromConfiguration(tagConfigurationBoardGameChangeNumberGaps);
             return number;
         }
 

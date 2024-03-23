@@ -29,6 +29,7 @@ internal class Game : MonoBehaviour
     private static int _configurationBoardGameNumberOfColumns;
     private static int _configurationBoardGameNumberOfPlayers;
     private static int _configurationBoardGameNumberForLenghtToCheck;
+    private static int _configurationBoardGameNumberOfGaps;
     private static bool _configurationBoardGameDeviceModeKind;
 
     public Touch touch;
@@ -39,6 +40,7 @@ internal class Game : MonoBehaviour
     private static int _numberOfRows;// = 4; //3;// 3;
     private static int _numberOfColumns; // = 3;// 6;
     private static bool _isCellphoneMode; // = 3;// 6;
+    private static int _numberOfGaps; // = 3;// 6;
     //private static bool _isBoarGameHelpTextVisible; // = 3;// 6;
     private static bool _isBoarGameHelpTextVisible; // = 3;// 6;
 
@@ -57,12 +59,12 @@ internal class Game : MonoBehaviour
     private float _cubePlayForFrameScale;
 
 
-    private Dictionary<int, string> _tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
+    //private Dictionary<int, string> _tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
 
     private string _tagCubePlayFree;
     private string _tagCubePlayTaken;
 
-    private Dictionary<int, string> _tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
+    //private Dictionary<int, string> _tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
 
     private string _tagArrowRight; 
     private string _tagArrowLeft; 
@@ -70,7 +72,7 @@ internal class Game : MonoBehaviour
     private string _tagArrowDown; 
     private string _tagButtonConfirm; 
 
-    private Dictionary<int, string> _tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
+    //private Dictionary<int, string> _tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
 
     private string _tagGameButtonMenuConfigurationLeft;
     private string _tagGameButtonMenuConfigurationRight;
@@ -107,22 +109,38 @@ internal class Game : MonoBehaviour
     {
         _isBoarGameHelpTextVisible = true;
 
-        _tagCubePlayFree = _tagCubePlayDictionary[1];
-        _tagCubePlayTaken = _tagCubePlayDictionary[2];
+        //_tagCubePlayFree = _tagCubePlayDictionary[1];
+        //_tagCubePlayTaken = _tagCubePlayDictionary[2];
 
-        _tagArrowRight = _tagArrowDictionary[1];
-        _tagArrowLeft = _tagArrowDictionary[3];
-        _tagArrowUp = _tagArrowDictionary[4];
-        _tagArrowDown = _tagArrowDictionary[2];
-        _tagButtonConfirm = _tagArrowDictionary[5];
+        _tagCubePlayFree = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagFree();
+        _tagCubePlayTaken = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagTaken();
+
+        //_tagArrowRight = _tagArrowDictionary[1];
+        //_tagArrowLeft = _tagArrowDictionary[3];
+        //_tagArrowUp = _tagArrowDictionary[4];
+        //_tagArrowDown = _tagArrowDictionary[2];
+        //_tagButtonConfirm = _tagArrowDictionary[5];
+
+        _tagArrowRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagArrowRight();
+        _tagArrowDown = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagArrowDown();
+        _tagArrowLeft = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagArrowLeft();
+        _tagArrowUp = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagArrowUp();
+        _tagButtonConfirm = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagButtonConfirm();
 
 
-        _tagGameButtonMenuConfigurationLeft = _tagGameDictionary[1]; ;
-        _tagGameButtonMenuConfigurationRight = _tagGameDictionary[2]; ;
-        _tagGameButtonNewGame = _tagGameDictionary[3];
-        _tagGameButtonHelpButtons = _tagGameDictionary[4];
-        _tagGameButtonMenuBack = _tagGameDictionary[5];
-        _tagGameButtonBoardGameHelpText = _tagGameDictionary[8];
+        //_tagGameButtonMenuConfigurationLeft = _tagGameDictionary[1];
+        //_tagGameButtonMenuConfigurationRight = _tagGameDictionary[2];
+        //_tagGameButtonNewGame = _tagGameDictionary[3];
+        //_tagGameButtonHelpButtons = _tagGameDictionary[4];
+        //_tagGameButtonMenuBack = _tagGameDictionary[5];
+        //_tagGameButtonBoardGameHelpText = _tagGameDictionary[8];
+
+        _tagGameButtonMenuConfigurationLeft = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationLeft();
+        _tagGameButtonMenuConfigurationRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationRight();
+        _tagGameButtonNewGame = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagNewGame();
+        _tagGameButtonHelpButtons = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagHelpButtons();
+        _tagGameButtonMenuBack = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuBack();
+        _tagGameButtonBoardGameHelpText = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagBoardGameHelpText();
 
         _index = 0;
 
@@ -132,8 +150,7 @@ internal class Game : MonoBehaviour
         _configurationBoardGameNumberOfPlayers = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfPlayers;
         playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
 
-        _configurationBoardGameNumberOfRows = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfRows;
-       
+        _configurationBoardGameNumberOfRows = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfRows;    
         _numberOfRows = _configurationBoardGameNumberOfRows;
 
         _configurationBoardGameNumberOfColumns = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfColumns;
@@ -144,8 +161,10 @@ internal class Game : MonoBehaviour
         _configurationBoardGameNumberForLenghtToCheck = GameConfigurationSetUpBoardGame.ConfigurationBoardGameLenghtToCheck;
         _lenghtToCheck = _configurationBoardGameNumberForLenghtToCheck - 1;
 
+        _configurationBoardGameNumberOfGaps = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfGaps;
+        _numberOfGaps = _configurationBoardGameNumberOfGaps;
 
-        _gameBoardVerification2D = GameConfigurationCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
+        _gameBoardVerification2D = GameConfigurationButtonsCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
 
         _playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
 

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
+using Random = System.Random;
 
 namespace Assets.Scripts
 {
@@ -99,12 +100,19 @@ namespace Assets.Scripts
             }
         }
 
-        //public static int ChooseRandomNumber(int maxNumber)
-        //{
-        //    Random random = new Random();
-        //    int randomNumber = random.Next(0, maxNumber);
-        //    return randomNumber;
-        //}
+        public static int ChooseRandomNumber(int maxNumber)
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(0, maxNumber);
+            return randomNumber;
+        }
+
+        public static int ChooseRandomNumber(int maxNumber, int minNumber)
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(minNumber, maxNumber);
+            return randomNumber;
+        }
 
         public static int ConvertDecimalToInt(decimal number)
         {

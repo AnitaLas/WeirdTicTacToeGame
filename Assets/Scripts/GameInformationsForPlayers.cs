@@ -30,7 +30,7 @@ namespace Assets.Scripts
         private string _tagGameInformationsTextSet;
 
         //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        private Dictionary<int, string> _tagGameInformations = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
+        //private Dictionary<int, string> _tagGameInformations = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
 
         private GameObject[,,] _buttonBack;
         private List<GameObject[,,]> _buttonsAll;
@@ -40,14 +40,23 @@ namespace Assets.Scripts
         {
             //_tagUntagged = _tagCommonDictionary[1];
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
-            _tagGameInformationsButtonBack = _tagGameInformations[1];
-            _tagGameInformationsButtonBackToMenu = _tagGameInformations[4];
-            _tagGameInformationsButtonContact = _tagGameInformations[2];
-            _tagGameInformationsButtonNextVersions = _tagGameInformations[3];
-            _tagGameInformationsTextContact = _tagGameInformations[5];
-            _tagGameInformationsTextNextVersions = _tagGameInformations[6];
-            _tagGameInformationsButtontSet = _tagGameInformations[7];
-            _tagGameInformationsTextSet = _tagGameInformations[8];
+            //_tagGameInformationsButtonBack = _tagGameInformations[1];
+            //_tagGameInformationsButtonBackToMenu = _tagGameInformations[4];
+            //_tagGameInformationsButtonContact = _tagGameInformations[2];
+            //_tagGameInformationsButtonNextVersions = _tagGameInformations[3];
+            //_tagGameInformationsTextContact = _tagGameInformations[5];
+            //_tagGameInformationsTextNextVersions = _tagGameInformations[6];
+            //_tagGameInformationsButtontSet = _tagGameInformations[7];
+            //_tagGameInformationsTextSet = _tagGameInformations[8];
+
+            _tagGameInformationsButtonBack = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtonBack();
+            _tagGameInformationsButtonBackToMenu = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtonBackToMenu();
+            _tagGameInformationsButtonContact = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtonContact();
+            _tagGameInformationsButtonNextVersions = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtonNextVersions();
+            _tagGameInformationsTextContact = GameInformationCommonButtonsTagName.GetTagTextByTagInformationTextContact();
+            _tagGameInformationsTextNextVersions = GameInformationCommonButtonsTagName.GetTagTextByTagInformationTextNextVersions();
+            _tagGameInformationsButtontSet = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtontSet();
+            _tagGameInformationsTextSet = GameInformationCommonButtonsTagName.GetTagTextByTagInformationTextSet();
 
             _buttonBack = GameInformationButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsAll = GameInformationButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
