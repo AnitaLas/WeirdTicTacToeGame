@@ -18,7 +18,7 @@ namespace Assets.Scripts
         public static string GetScencesNameFromDictionaryScencesName(int dictionatyId)
         {
             Dictionary<int, string> scenceDictionary = GameDictionariesScenesCommon.DictionaryScencesName();
-            string sceneName = scenceDictionary[5];
+            string sceneName = scenceDictionary[dictionatyId];
             return sceneName;
         }
 

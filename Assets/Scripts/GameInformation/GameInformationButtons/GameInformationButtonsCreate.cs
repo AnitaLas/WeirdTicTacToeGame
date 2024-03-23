@@ -24,10 +24,11 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonContact;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
+            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
             //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
 
-            string tagButtonContact = tagCubePlayDictionary[2];
+            //string tagButtonContact = tagCubePlayDictionary[2];
+            string tagButtonContact = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtonContact();
             //string buttonText = buttonsGameNameDictionary[1];
             string buttonText = GameInformationCommonButtonsName.GetButtonNameForContcat();
 
@@ -49,10 +50,11 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonNextVersions;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
+            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
             //Dictionary<int, string> buttonsNextVersionsNameDictionary = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
 
-            string tagGameButtonHelpButtons = tagCubePlayDictionary[3];
+            //string tagGameButtonHelpButtons = tagCubePlayDictionary[3];
+            string tagGameButtonHelpButtons = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtonNextVersions();
             //string buttonText = buttonsNextVersionsNameDictionary[2];
             string buttonText = GameInformationCommonButtonsName.GetButtonNameForGameVersions();
 
@@ -75,10 +77,11 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonContact;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
+            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
             //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneInformation.DictionaryButtonsGameInformation();
 
-            string tagButtonContact = tagCubePlayDictionary[7];
+            //string tagButtonContact = tagCubePlayDictionary[7];
+            string tagButtonContact = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtontSet();
             //string buttonText = buttonsGameNameDictionary[3];
             string buttonText = GameInformationCommonButtonsName.GetButtonNameForDefaultSet();
 
@@ -101,10 +104,11 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonBack;
 
-            Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
+            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
             //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
 
-            string tagGameButtonHelpButtons = tagCubePlayDictionary[1];
+            //string tagGameButtonHelpButtons = tagCubePlayDictionary[1];
+            string tagGameButtonHelpButtons = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtonBack();
             //string buttonText = buttonsGameNameDictionary[2];
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForButtonBack();
 

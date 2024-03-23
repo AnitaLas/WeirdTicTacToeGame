@@ -60,6 +60,7 @@ namespace Assets.Scripts
             // [prefabCubePlayName] change name for prefab "CubePlay"
             int[] numbersCubePlayName = new int[1];
             numbersCubePlayName[0] = 1;
+            int numbersCubePlayMax = numberOfDepths * numberOfRows * numberOfColumns;   
 
             //[prefabCubePlayName] - end 
             // --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -171,7 +172,9 @@ namespace Assets.Scripts
                         var currentIndexXYForPrefabCubePlay = GameCommonMethodsMain.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberCubePlayName);
 
                         // [prefabCubePlayName]
-                        string prefabCubePlayName = CreateTablePrefabName.CreateNameForPrefabCubePlay(currentNumberCubePlayName, currentIndexXYForPrefabCubePlay);
+                        //string prefabCubePlayName = CreateTablePrefabName.CreateNameForPrefabCubePlay(currentNumberCubePlayName, currentIndexXYForPrefabCubePlay);
+                        //string prefabCubePlayName = CreateTablePrefabName.CreateNameForPrefabCubePlay(currentNumberCubePlayName, numbersCubePlayNameMax, currentIndexXYForPrefabCubePlay);
+                        string prefabCubePlayName = CreateTablePrefabName.CreateNameForPrefabCubePlay(currentNumberCubePlayName, numbersCubePlayMax, currentIndexXYForPrefabCubePlay);
                         newPrefabCubePlay.name = prefabCubePlayName;
 
                         // [prefabCubePlayName] set up new currentNumberCubePlayName

@@ -25,24 +25,24 @@ namespace Assets.Scripts
 
         public static void HideTableWithNumber(GameObject[,,] gameObjects)
         {
-            ButtonsCommonMethodsAction.GameObjectToHide(gameObjects);
+            ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
         }
 
         public static void UnhideTableWithNumber(GameObject[,,] gameObjects)
         {
-            ButtonsCommonMethodsAction.GameObjectToUnhide(gameObjects);
+            ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
         }
 
         // ---
 
         public static void HideButtonBackToConfiguration(GameObject[,,] gameObjects)
         {
-            ButtonsCommonMethodsAction.GameObjectToHide(gameObjects);
+            ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
         }
 
         public static void UnhideButtonBackToConfiguration(GameObject[,,] gameObjects)
         {
-            ButtonsCommonMethodsAction.GameObjectToUnhide(gameObjects);
+            ButtonsCommonMethodsActions.GameObjectToUnhide(gameObjects);
         }
 
         // ---

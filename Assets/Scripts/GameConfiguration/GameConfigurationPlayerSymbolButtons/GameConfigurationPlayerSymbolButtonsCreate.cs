@@ -128,7 +128,7 @@ namespace Assets.Scripts
             //string buttonText = buttonsGameNameDictionary[1];
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayer();
 
-            string[] defaultPlayersSymbols = CreateGameBoardMethods.CreateTableWithDefaultPlayerSymbols();
+            string[] defaultPlayersSymbols = CreateGameBoardCommonMethods.CreateTableWithDefaultPlayerSymbols();
 
             buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultPlayersSymbols);
 
@@ -150,7 +150,7 @@ namespace Assets.Scripts
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayer();
 
 
-            string[] defaultPlayersSymbols = CreateGameBoardMethods.CreateTableWithDefaultPlayerSymbols();
+            string[] defaultPlayersSymbols = CreateGameBoardCommonMethods.CreateTableWithDefaultPlayerSymbols();
 
             buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultPlayersSymbols);
 

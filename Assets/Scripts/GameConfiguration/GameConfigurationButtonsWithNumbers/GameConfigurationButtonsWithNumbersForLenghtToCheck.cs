@@ -80,7 +80,7 @@ namespace Assets.Scripts
             //string tagConfigurationBoardGameChangeNumberColumns = configurationBoardGameDictionaryTag[8];
 
             //int[] numbers = GameCommonMethodsSetUpButtonWithNumber.CreateTableWithNumberFromConfiguration(tagConfigurationBoardGameChangeNumberRows, tagConfigurationBoardGameChangeNumberColumns);
-            int[] numbers = GameConfigurationButtonsCommonButtonsWithNumberForLenghtToChcekAndGaps.GetCurrentRowsAndColumnsNumber();
+            int[] numbers = GameConfigurationButtonsCommonMethodsForButtonsWithNumberForLenghtToChcekAndGaps.GetCurrentRowsAndColumnsNumber();
             int rows = numbers[0];
             int columns = numbers[1];
 
@@ -135,7 +135,7 @@ namespace Assets.Scripts
 
         public static void VerifyAndSetUpLenghtToCheck()
         {
-            int lowerNumberBetweenRowsNumberAndColumnsNumber = GameConfigurationButtonsCommonButtonsWithNumberForLenghtToChcekAndGaps.GetLowerNumberBetweenRowsNumberAndColumnsNumber();
+            int lowerNumberBetweenRowsNumberAndColumnsNumber = GameConfigurationButtonsCommonMethodsForButtonsWithNumberForLenghtToChcekAndGaps.GetLowerNumberBetweenRowsNumberAndColumnsNumber();
             int currentLenghtToCheck = GetCurrentLengthToCheckNumber();
             //bool isCurrentLenghtToCheckBiggerThanRowsNumberOrColumnsNumber = GameCommonMethodsSetUpButtonWithNumber.VerifyIfCurrentNumberIsLowerThanRowsNumberOrColumnsNumber(lowerNumberBetweenRowsNumberAndColumnsNumber, currentLenghtToCheck);
 
@@ -160,7 +160,7 @@ namespace Assets.Scripts
         {
             //string tagConfigurationBoardGameChangeNumbeLengthToCheck = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(13);
             string tagConfigurationBoardGameChangeNumbeLengthToCheck = GameConfigurationButtonsCommonButtonsTagName.GetTagButtonNumberByTagChangeNumberLenghtToCheck();
-            int number = GameConfigurationButtonsCommonButtonsWithNumberForLenghtToChcekAndGaps.GetNumberFromConfiguration(tagConfigurationBoardGameChangeNumbeLengthToCheck);
+            int number = GameConfigurationButtonsCommonMethodsForButtonsWithNumberForLenghtToChcekAndGaps.GetNumberFromConfiguration(tagConfigurationBoardGameChangeNumbeLengthToCheck);
             return number;
         }
 
