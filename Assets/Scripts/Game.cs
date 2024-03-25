@@ -144,29 +144,29 @@ internal class Game : MonoBehaviour
 
         _index = 0;
 
-        _configurationBoardGameDeviceModeKind = GameConfigurationSetUpBoardGame.ConfigurationBoardGameDeviceModeKind;
+        _configurationBoardGameDeviceModeKind = GameConfigurationBoardGame.ConfigurationBoardGameDeviceModeKind;
         _isCellphoneMode = _configurationBoardGameDeviceModeKind;
 
-        _configurationBoardGameNumberOfPlayers = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfPlayers;
+        _configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
         playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
 
-        _configurationBoardGameNumberOfRows = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfRows;    
+        _configurationBoardGameNumberOfRows = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfRows;    
         _numberOfRows = _configurationBoardGameNumberOfRows;
 
-        _configurationBoardGameNumberOfColumns = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfColumns;
+        _configurationBoardGameNumberOfColumns = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfColumns;
         _numberOfColumns = _configurationBoardGameNumberOfColumns;
 
         _maxCubePlayNumber = _numberOfRows * _numberOfColumns * _numberOfDepths;
 
-        _configurationBoardGameNumberForLenghtToCheck = GameConfigurationSetUpBoardGame.ConfigurationBoardGameLenghtToCheck;
+        _configurationBoardGameNumberForLenghtToCheck = GameConfigurationBoardGame.ConfigurationBoardGameLenghtToCheck;
         _lenghtToCheck = _configurationBoardGameNumberForLenghtToCheck - 1;
 
-        _configurationBoardGameNumberOfGaps = GameConfigurationSetUpBoardGame.ConfigurationBoardGameNumberOfGaps;
+        _configurationBoardGameNumberOfGaps = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfGaps;
         _numberOfGaps = _configurationBoardGameNumberOfGaps;
 
         _gameBoardVerification2D = GameConfigurationButtonsCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
 
-        _playersSymbols = GameConfigurationSetUpPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
+        _playersSymbols = GameConfigurationPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
 
         _currentPlayer = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
@@ -177,7 +177,7 @@ internal class Game : MonoBehaviour
         _currentCountedTagCubePlayTaken = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
         // [gameBoard] - creating the board game with game object "CubePlay"
-        _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode);
+        _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode, _numberOfGaps);
 
         PlayGameHelpButtonsCreate.CreateAtStartHelpButtons(prefabHelpButtons, _numberOfRows, _numberOfColumns, _isCellphoneMode);
 

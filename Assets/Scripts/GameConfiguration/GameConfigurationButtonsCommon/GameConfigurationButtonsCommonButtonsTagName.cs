@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.GameDictionaries.GameDictionariesScenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -254,6 +255,55 @@ namespace Assets.Scripts
             string tagName = GetTagsNameFromDictionaryTagsNameConfigurationPlayersSymbols(dictionaryId);
             return tagName;
         }
+
+        // ----------------------------------------------------------------------------------------------------------------------------------------------
+        // tags: change/ swich players symbols set up
+
+        public static string GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(int dictionatyId)
+        {
+            Dictionary<int, string> defaulNumbers = GameDictionariesSceneConfigurationChangePlayersSymbols.DictionaryTagsNameConfigurationChangePlayersSymbols();
+            string defaulNumber = defaulNumbers[dictionatyId];
+            return defaulNumber;
+        }
+
+        public static string GetTagForButtonChangePlayersSymbolsButtonSave()
+        {
+            int dictionaryId = 1;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
+        public static string GetTagForButtonChangePlayersSymbolsButtonBack()
+        {
+            int dictionaryId = 2;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
+        public static string GetTagForButtonChangeRandomly()
+        {
+            int dictionaryId = 3;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
+        public static string GetTagForButtonNumberByTagChangeNumberRandomly()
+        {
+            int dictionaryId = 4;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
+        public static string GetTagForTableWithNumbersByTagTableNumberRandomly()
+        {
+            int dictionaryId = 5;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
+
+
+
 
 
 

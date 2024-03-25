@@ -56,21 +56,22 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesSceneConfigurationChangePlayersSymbols.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsGameConfigurationPlayerSymbolMethods.cs" />
     <Compile Include="Assets\Scripts\CreateGameBoard\CreateGameBoardCommonMethods.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTableMainMethodsForGame.cs" />
-    <Compile Include="Assets\Scripts\GameConfigurationSetUpPlayersSymbols.cs" />
+    <Compile Include="Assets\Scripts\GameConfigurationPlayersSymbols.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\GameStart\GameStartButtons\StartGameButtonsMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
-    <Compile Include="Assets\Scripts\GameConfigurationSetUpKindOfGame.cs" />
+    <Compile Include="Assets\Scripts\GameConfigurationKindOfGame.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameHelpButtons\PlayGameHelpButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationCommon\GameInformationCommonButtonsName.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckers\GameFieldsVerificationCheckerMainMethod.cs" />
     <Compile Include="Assets\Scripts\CommonMethods.cs" />
     <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationText\GameInformationCreateText.cs" />
-    <Compile Include="Assets\Scripts\GameConfigurationSeyUpKindOfGame.cs" />
+    <Compile Include="Assets\Scripts\GameConfigurationChangePlayersSymbols.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonButtonsName.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsStartGameMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -81,7 +82,6 @@
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesSceneStartGame.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsText.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonButtonsTagName.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsAction.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForColumns.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationTableForSetUp.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonGameConfigurationPlayerSymbolMethods.cs" />
@@ -104,11 +104,10 @@
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCommon\GameFieldsVerificationCommonMessages.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabDefaultColour.cs" />
-    <Compile Include="Assets\Scripts\GameConfigurationSetUpBoardGame.cs" />
+    <Compile Include="Assets\Scripts\GameConfigurationBoardGame.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationText\GameInformationTextCreate.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationButtons\GameInformationButtonsMethods.cs" />
     <Compile Include="Assets\Scripts\ConfigurationBoardGame.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsAction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabName.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsGameConfigurationMethods.cs" />
@@ -119,7 +118,6 @@
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlayForWinner.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesScenesCommon.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
-    <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesCommon.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethods.cs" />
@@ -136,6 +134,7 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForRowsAndColumns.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolCommonMethods.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationChangePlayersSymbols\GameConfigurationChangePlayerSymbolButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTableMainMethods.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabCalculateScale.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesSceneInformation.cs" />
@@ -160,12 +159,11 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonMethodsForButtonsWithNumberForLenghtToChcekAndGaps.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForGaps.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsCreate.cs" />
-    <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesSceneConfigurationConfigurationPlayerSymbols.cs" />
     <Compile Include="Assets\Scripts\GameName\GameNameTextCreate.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesSceneConfigurationPlayerSymbols.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerification.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\Scripts\ScenesChange\ScenesChange.cs" />
+    <Compile Include="Assets\Scripts\ScenesChange\ScenesChangeCommon.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationButtons\GameInformationButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsName.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsActions.cs" />

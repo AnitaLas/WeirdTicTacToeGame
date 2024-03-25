@@ -397,5 +397,17 @@ namespace Assets.Scripts
                 }
             }
         }
+
+
+        public static int[] CreateTableWithOneNumber(int number, int tableLenght)
+        {
+            int[] table = new int[tableLenght];
+
+            for (int i = 0; i < tableLenght; i++)
+            {
+                table[i] = number;
+            }
+            return table;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.GameDictionaries.GameDictionariesScenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,6 +47,20 @@ namespace Assets.Scripts
 
         //---
 
+        // buttons change palyers symbols
 
+        public static string GetDefaultButtonNumberForChangePlayersSymbols(int defaultNumberForButton)
+        {
+            Dictionary<int, string> defaulNumbers = GameDictionariesSceneConfigurationChangePlayersSymbols.DictionaryButtonsConfigurationChangePlayersSymbolsDefaultNumbers();
+            string defaulNumber = defaulNumbers[defaultNumberForButton];
+            return defaulNumber;
+        }
+
+        public static string GetDefaultButtonTimeForChange()
+        {
+            int dictionatyId = 1;
+            string defaulNumber = GetDefaultButtonNumberForChangePlayersSymbols(dictionatyId);
+            return defaulNumber;
+        }
     }
 }

@@ -5,9 +5,9 @@ namespace Assets.Scripts
 {
     internal class CreateGameBoard : MonoBehaviour
     {
-        public static GameObject[,,] CreateBoardGame(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D, bool isCellphoneMode)
+        public static GameObject[,,] CreateBoardGame(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D, bool isCellphoneMode, int numberOfGaps)
         {
-            int numberOfGaps = 2;
+            //int numberOfGaps = 2;
             GameObject[,,] boardGame;
 
             boardGame = CreateBoardGameStandard(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, isCellphoneMode);
@@ -30,48 +30,24 @@ namespace Assets.Scripts
             return tableWithNumber;
         }
 
-        public static void DestroySingleGameObjectWithName(string gameObjectName)
-        {
-            GameObject gameObject = GameCommonMethodsMain.GetObjectByName(gameObjectName);
-            Destroy(gameObject);
-        }
-
-
-        //public List<GameObject>
         public static GameObject[,,] CreateBoardGameWithGaps(GameObject[,,] boardGame, int numbersCubePlayMax, int numberOfGaps)
         {
-            string[] cubePlayNumbers = CreateGameBoardWithGaps.SetUpRightCurrentNumberForCubePlayToDestroy( numbersCubePlayMax, numberOfGaps);
-            int cubePlayNumbersLenght = cubePlayNumbers.Length;
+            string[] cubePlayNumbers = CreateGameBoardWithGaps.SetUpRightCurrentNumberForCubePlay( numbersCubePlayMax, numberOfGaps);
+            string[] fullCubePlayName = CreateGameBoardWithGaps.GetFullCubePlayNames(cubePlayNumbers, boardGame);
 
-            for (int i = 0; i < cubePlayNumbersLenght; i++)
-            {
-                string cubePlayName = decimal;
-                GameObject cubePlay = CommonMethods.GetObjectByName(cubePlayName);
-                DestroySingleGameObjectWithName(cubePlayName);
-
-
-            }
-
-
-
-            //int maxIndexDepth = boardGame.GetLength(0);
-            //int maxIndexColumn = boardGame.GetLength(2);
-            //int maxIndexRow = boardGame.GetLength(1);
-
-            //Color colour = GameCommonMethodsMain.GetNewColor(3);
-
-            //for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            //Debug.Log(" ----------------------------   CreateBoardGameWithGaps  --------------------------------------");
+            //for (int i = 0; i < fullCubePlayName.Length; i++)
             //{
-            //    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
-            //    {
-            //        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
-            //        {
-            //            GameObject cubePlay = boardGame[indexDepth, indexRow, indexColumn];
-            //            GameCommonMethodsMain.ChangeTextColourForCubePlay(cubePlay, colour);
-            //        }
-            //    }
+            //    Debug.Log($"{i} - fullCubePlayName: " + fullCubePlayName[i]);
             //}
 
+            int cubePlayNumbersLenght = cubePlayNumbers.Length;
+                
+            for (int i = 0; i < cubePlayNumbersLenght; i++)
+            {
+                string cubePlayName = fullCubePlayName[i];
+                CreateGameBoardWithGaps.CubePlayToHide(cubePlayName);
+            }
 
             return boardGame;
 

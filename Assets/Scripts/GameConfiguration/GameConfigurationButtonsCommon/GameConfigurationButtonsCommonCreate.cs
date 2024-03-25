@@ -116,7 +116,7 @@ namespace Assets.Scripts
 
             tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
-            float newCoordinateY = 0f;
+            float newCoordinateY = 0.25f; // 0 without button gaps
 
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
 
@@ -160,6 +160,70 @@ namespace Assets.Scripts
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
 
             float newScale = 0.3f;
+            ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
+
+            return tableButtonNewGame;
+        }
+
+        // buttons: top & team game
+        public static GameObject[,,] CreateCommonButtonForChangePlayersSymbolsFourRows(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
+        {
+            GameObject[,,] tableButtonNewGame;
+
+            int numberOfDepths = 1;
+            int numberOfRows = 4;
+            int numberOfColumns = 17;
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
+
+            tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = 0f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
+
+            float newScale = 0.3f;
+            ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
+
+            return tableButtonNewGame;
+        }
+
+        public static GameObject[,,] CreateCommonButtonForChangePlayersSymbolsThreeRows(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
+        {
+            GameObject[,,] tableButtonNewGame;
+
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 17;
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
+
+            tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = 0f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
+
+            float newScale = 0.3f;
+            ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
+
+            return tableButtonNewGame;
+        }
+
+        public static GameObject[,,] CreateCommonButtonForChangePlayersSymbolsChange(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
+        {
+            GameObject[,,] tableButtonNewGame;
+
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 16;
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
+
+            tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = 0f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
+
+            float newScale = 0.25f;
             ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
 
             return tableButtonNewGame;
