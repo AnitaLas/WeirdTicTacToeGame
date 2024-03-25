@@ -68,6 +68,14 @@ TagManager:
   - ConfigurationBoardGameGaps
   - ConfigurationBoardGameChangeNumberGaps
   - ConfigurationBoardGameTableNumberGaps
+  - ConfigurationChangePlayersSymbolsButtonSave
+  - ConfigurationChangePlayersSymbolsButtonBack
+  - ConfigurationChangePlayersSymbolsRandomly
+  - ConfigurationChangePlayersSymbolsChangeNumberRandomly
+  - ConfigurationChangePlayersSymbolsTableNumberRandomly
+  - ConfigurationChangePlayersSymbolsForAll
+  - ConfigurationChangePlayersSymbolsChangeNumberForAll
+  - ConfigurationChangePlayersSymbolsTableNumberForAll
   layers:
   - Default
   - TransparentFX

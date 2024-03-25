@@ -9,10 +9,10 @@ namespace Assets.Scripts
 {
     internal class ScenesChangeCommonSceneName
     {
-        public static void ChangeScene(string sceneName)
-        {
-            SceneManager.LoadScene(sceneName);
-        }
+        //public static void ChangeScene(string sceneName)
+        //{
+        //    SceneManager.LoadScene(sceneName);
+        //}
 
         // sccenes: name
         public static string GetScencesNameFromDictionaryScencesName(int dictionatyId)
@@ -57,25 +57,25 @@ namespace Assets.Scripts
             return tagName;
         }
 
-        public static string GetScenceNameSceneConfigurationGameTeamsNumber()
+        public static string GetScenceNameSceneConfigurationChangePlayersSymbols()
         {
             int dictionatyId = 6;
             string tagName = GetScencesNameFromDictionaryScencesName(dictionatyId);
             return tagName;
         }
 
-        public static string GetScenceNameSceneConfigurationGameTeamsPlayersNumber()
-        {
-            int dictionatyId = 7;
-            string tagName = GetScencesNameFromDictionaryScencesName(dictionatyId);
-            return tagName;
-        }
+        //public static string GetScenceNameSceneConfigurationGameTeamsPlayersNumber()
+        //{
+        //    int dictionatyId = 7;
+        //    string tagName = GetScencesNameFromDictionaryScencesName(dictionatyId);
+        //    return tagName;
+        //}
 
-        public static string GetScenceNameSceneConfigurationGameTeamsPlayersSymbols()
-        {
-            int dictionatyId = 8;
-            string tagName = GetScencesNameFromDictionaryScencesName(dictionatyId);
-            return tagName;
-        }
+        //public static string GetScenceNameSceneConfigurationGameTeamsPlayersSymbols()
+        //{
+        //    int dictionatyId = 8;
+        //    string tagName = GetScencesNameFromDictionaryScencesName(dictionatyId);
+        //    return tagName;
+        //}
     }
 }

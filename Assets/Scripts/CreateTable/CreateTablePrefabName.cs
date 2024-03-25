@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts
 {
@@ -52,7 +53,7 @@ namespace Assets.Scripts
             
             string number = currentNumber;
 
-            if (currentNumbertLenght < maxNumberLenght)
+            if (currentNumbertLenght <= maxNumberLenght)
             {
                 for (int i = currentNumbertLenght; i < maxNumberLenght; i++)
                 {
@@ -61,6 +62,8 @@ namespace Assets.Scripts
             }
 
             finalNumber = staticString + number;
+            //Debug.Log("finalNumber: " + finalNumber);
+            
             return finalNumber;
         }
 

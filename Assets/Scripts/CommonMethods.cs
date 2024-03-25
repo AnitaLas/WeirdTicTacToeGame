@@ -100,14 +100,14 @@ namespace Assets.Scripts
             }
         }
 
-        public static int ChooseRandomNumber(int maxNumber)
-        {
-            Random random = new Random();
-            int randomNumber = random.Next(0, maxNumber);
-            return randomNumber;
-        }
+        //public static int ChooseRandomNumber(int maxNumber)
+        //{
+        //    Random random = new Random();
+        //    int randomNumber = random.Next(0, maxNumber);
+        //    return randomNumber;
+        //}
 
-        public static int ChooseRandomNumber(int maxNumber, int minNumber)
+        public static int ChooseRandomNumber(int minNumber, int maxNumber)
         {
             Random random = new Random();
             int randomNumber = random.Next(minNumber, maxNumber);

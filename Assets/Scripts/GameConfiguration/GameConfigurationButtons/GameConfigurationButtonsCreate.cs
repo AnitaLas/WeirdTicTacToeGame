@@ -127,7 +127,7 @@ namespace Assets.Scripts
 
             string frontTextToAdd = "ButtonPlayer_";
             ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
-            return button;;
+            return button;
         }
 
         public static GameObject[,,] GameConfigurationCreateButtonRowText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)

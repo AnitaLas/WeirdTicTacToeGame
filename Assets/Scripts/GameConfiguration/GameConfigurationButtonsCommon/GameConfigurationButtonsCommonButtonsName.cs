@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.GameDictionaries.GameDictionariesScenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -103,6 +104,42 @@ namespace Assets.Scripts
         {
             int dictionatyId = 3;
             string tagName = GetButtonNameFromDictionaryButtonsConfigurationPlayerSymbolDefaultText(dictionatyId);
+            return tagName;
+        }
+
+        // butons: players symbols change/ switch
+        public static string GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(int dictionatyId)
+        {
+            Dictionary<int, string> buttonsNames = GameDictionariesSceneConfigurationChangePlayersSymbols.DictionaryButtonsConfigurationChangePlayersSymbolsButtonsName();
+            string buttonName = buttonsNames[dictionatyId];
+            return buttonName;
+        }
+
+        public static string GetButtonNameToPlayersSymbols()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameTopChange()
+        {
+            int dictionatyId = 2;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameChangeRandomly()
+        {
+            int dictionatyId = 3;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameChangeAll()
+        {
+            int dictionatyId = 4;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
             return tagName;
         }
     }

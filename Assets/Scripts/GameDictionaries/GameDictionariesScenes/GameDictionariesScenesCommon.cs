@@ -14,9 +14,9 @@ namespace Assets.Scripts
                 { 3, "SceneConfigurationBoardGame" },
                 { 4, "SceneInformations" },
                 { 5, "SceneStartGame" },
-                { 6, "SceneConfigurationGameTeamsNumber" },
-                { 7, "SceneConfigurationGameTeamsPlayersNumber" },
-                { 8, "SceneConfigurationGameTeamsPlayersSymbols" }
+                { 6, "SceneConfigurationChangePlayersSymbols" },
+                { 7, "-------------SceneConfigurationTeamGame" },
+
             };
 
             return scenceDictionary;
