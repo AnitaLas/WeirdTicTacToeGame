@@ -11,7 +11,8 @@ namespace Assets.Scripts
 
     internal class GameConfigurationChangePlayersSymbols : MonoBehaviour
     {
-        public static int ConfigurationBoardGameChangePlayersSymbolsTime{ get; set; }
+        public static int ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime { get; set; }
+        public static int ConfigurationBoardGameChangeForAllPlayersSymbolsTime { get; set; }
         public static int ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime { get; set; }
         public static bool ConfigurationBoardGameEqualMoveQuantityForBothTeams { get; set; }
 
@@ -24,33 +25,54 @@ namespace Assets.Scripts
         //public Material[] prefabSymbolPlayerMaterialInactiveField;
 
         // --- new
+        public Material[] prefabCubePlayDefaultColour;
         public Material[] prefabCubePlayButtonsDefaultColour;
         public Material[] prefabCubePlayButtonsBackColour;
         public Material[] prefabCubePlayButtonsNumberColour;
 
         private bool _isGame2D = true;
         private static bool isTeamGame = false;
+        private bool isCellphoneMode = true;
 
-        public static int timeForChangePlayersSymbols;
+        public static int timeButtonRandomly;
+        public static int timeButtonForAll;
+        public static int timeButtonSwitchSymbolsBetweenTeams;
+
         public static int timeForSwitchPlayersSymbolsBetweenTeams;
         public static bool isEqualMoveQuantityForBothTeams;
-
-
 
         private string _tagConfigurationChangePlayerSymbolButtonSave;
         private string _tagConfigurationChangePlayerSymbolButtonBack;
 
-        //private List<GameObject[,,]> _buttonsBackAndSave;
+        private string _tagConfigurationChangePlayersSymbolsRandomly;
+        private string _tagConfigurationChangePlayersSymbolsChangeNumberRandomly;
+        private string _tagConfigurationChangePlayersSymbolsTableNumberRandomly;
+
+        private string _tagConfigurationChangePlayersSymbolsForAll;
+        private string _tagConfigurationChangePlayersSymbolsChangeNumberForAll;
+        private string _tagConfigurationChangePlayersSymbolsTableNumberForAll;
+
         private List<GameObject[,,]> _buttonsAll;
+        private List<GameObject[,,]> _buttonsMoreSpecificConfiguration;
+        private GameObject[,,] _buttonsWithNumbers;
 
         void Start()
         {
-            timeForChangePlayersSymbols = 0;
-            timeForSwitchPlayersSymbolsBetweenTeams= 0;
+            timeButtonRandomly = 0;
+            timeButtonForAll = 0;
+            timeButtonSwitchSymbolsBetweenTeams = 0;
             isEqualMoveQuantityForBothTeams = true;
 
             _tagConfigurationChangePlayerSymbolButtonSave = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangePlayersSymbolsButtonSave();
             _tagConfigurationChangePlayerSymbolButtonBack = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangePlayersSymbolsButtonBack();
+
+            _tagConfigurationChangePlayersSymbolsRandomly = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangeRandomly();
+            _tagConfigurationChangePlayersSymbolsChangeNumberRandomly = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberRandomly();
+            _tagConfigurationChangePlayersSymbolsTableNumberRandomly = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberRandomly();
+
+            _tagConfigurationChangePlayersSymbolsForAll = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangForAll();
+            _tagConfigurationChangePlayersSymbolsChangeNumberForAll = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberForAll();
+            _tagConfigurationChangePlayersSymbolsTableNumberForAll = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberForAll();
 
             _buttonsAll = GameConfigurationChangePlayerSymbolButtonsCreate.GameConfigurationChangePlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, isTeamGame);
 
@@ -74,12 +96,42 @@ namespace Assets.Scripts
                     {
                         string gameObjectTag = CommonMethods.GetObjectTag(touch);
                         string gameObjectName = CommonMethods.GetObjectName(touch);
-                        //Debug.Log("gameObjectTag = " + gameObjectTag);
+
+                        // radomly
+                        if (gameObjectTag == _tagConfigurationChangePlayersSymbolsRandomly || gameObjectTag == _tagConfigurationChangePlayersSymbolsChangeNumberRandomly)
+                        {
+                            _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForChangeRandomly.CreateTableForChangeRandomly(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D);
+                            //_buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndPlayer(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
+
+                            GameConfigurationButtonsActions.HideConfiguration(_buttonsAll);
+                        }
+
+
+                        if (gameObjectTag == _tagConfigurationChangePlayersSymbolsTableNumberRandomly)
+                        {
+                            //timeButtonRandomly = GameConfigurationButtonsCommonMethods.SetUpChosenNumberForConfigurationPlayers(_buttonsWithNumbers, gameObjectName);
+
+                            //GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
+                            //GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
+                        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                         if (gameObjectTag == _tagConfigurationChangePlayerSymbolButtonSave)
                         {
-                            ConfigurationBoardGameChangePlayersSymbolsTime = timeForChangePlayersSymbols;
+                            ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime = timeButtonRandomly;
+                            ConfigurationBoardGameChangeForAllPlayersSymbolsTime = timeButtonForAll;
                             ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = timeForSwitchPlayersSymbolsBetweenTeams;
                             ConfigurationBoardGameEqualMoveQuantityForBothTeams = isEqualMoveQuantityForBothTeams;
 ;

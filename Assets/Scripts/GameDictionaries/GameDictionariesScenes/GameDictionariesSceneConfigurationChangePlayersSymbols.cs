@@ -43,6 +43,8 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
                 { 2, "    CHANGE" }, // spaces are needed for the button name; do not remove it! It is an easy (short/ lazy) fix, the method for button name requires changes
                 { 3, "RANDOMLY" },
                 { 4, "FOR ALL" },
+                { 5, "TIME - SECONDS" },
+
 
             };
 

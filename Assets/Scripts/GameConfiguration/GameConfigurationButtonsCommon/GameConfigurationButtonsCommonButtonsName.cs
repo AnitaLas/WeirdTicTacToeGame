@@ -142,5 +142,12 @@ namespace Assets.Scripts
             string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
             return tagName;
         }
+
+        public static string GetButtonNameTimeInSeconds()
+        {
+            int dictionatyId = 5;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
     }
 }
