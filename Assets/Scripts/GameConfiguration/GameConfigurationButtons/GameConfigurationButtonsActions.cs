@@ -1,6 +1,4 @@
-﻿using Assets.Scripts;
-using Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers;
-using System.Collections.Generic;
+﻿using Assets.Scripts;using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts

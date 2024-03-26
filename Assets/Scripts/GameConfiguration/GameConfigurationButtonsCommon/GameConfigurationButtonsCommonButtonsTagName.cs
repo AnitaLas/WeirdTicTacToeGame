@@ -301,6 +301,27 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetTagForButtonChangForAll()
+        {
+            int dictionaryId = 6;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
+        public static string GetTagForButtonNumberByTagChangeNumberForAll()
+        {
+            int dictionaryId = 7;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
+        public static string GetTagForTableWithNumbersByTagTableNumberForAll()
+        {
+            int dictionaryId = 8;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
 
 
 

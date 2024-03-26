@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationButtonsWithNumbers
+namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersForGaps : MonoBehaviour
     {
