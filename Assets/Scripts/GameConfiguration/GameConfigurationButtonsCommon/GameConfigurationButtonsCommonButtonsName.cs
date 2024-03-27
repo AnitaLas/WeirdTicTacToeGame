@@ -149,5 +149,19 @@ namespace Assets.Scripts
             string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
             return tagName;
         }
+
+        public static string GetButtonNameChangeRandomlyForInformation()
+        {
+            int dictionatyId = 6;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameChangeForAllForInformation()
+        {
+            int dictionatyId = 7;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
     }
 }

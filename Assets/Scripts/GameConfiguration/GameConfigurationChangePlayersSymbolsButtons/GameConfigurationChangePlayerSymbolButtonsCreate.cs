@@ -91,7 +91,7 @@ namespace Assets.Scripts
         }
 
         // -------------------------------------------------------------------------------------------
-
+        // buttons: top: player symbols & change
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopPlayerSymbol(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             //GameObject[,,] buttons;
@@ -130,6 +130,50 @@ namespace Assets.Scripts
             return button;
         }
 
+        // button: common: more information
+
+        public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopCommonInformation(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            //GameObject[,,] buttons;
+
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameTimeInSeconds();
+
+            GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsFourRows(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            //string frontTextToAdd = "InformationButtonTopPlayersSymbols_";
+            float newCoordinateY = 4f;
+            float newCoordinateX = -0.8f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
+
+            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
+
+            return button;
+        }
+
+
+        // button back to configuration 
+        public static GameObject[,,] GameConfigurationCreateButtonBackToConfiguration(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
+        {
+            GameObject[,,] tableButtonBack;
+
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForButtonBack();
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBackByTagButtonBackToConfigurationChangePlayersSymbols();
+
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 14;
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
+
+            tableButtonBack = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = -4.75f;
+            ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonBack, newCoordinateY, tagName);
+
+            return tableButtonBack;
+        }
+
         // button ramdomly
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonChangeRandomlyText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
@@ -150,6 +194,56 @@ namespace Assets.Scripts
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return button;
+        }
+
+        public static GameObject[,,] CreateTableForRandomlyWithTime(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            GameObject[,,] tableWithNumbers;
+            GameObject[,,] tableWithNumberFinal;
+
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberRandomly();
+
+            int numberOfDepths = 1;
+            int numberOfRows = 4;
+            int numberOfColumns = 4;
+
+            tableWithNumbers = GameConfigurationButtonsWithNumbersForChangeRandomly.CreateTableWithTime(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
+            tableWithNumberFinal = GameConfigurationButtonsWithNumbersForChangeRandomly.ChangeDataForTableWithTime(tableWithNumbers, tagName);
+
+            return tableWithNumberFinal;
+        }
+
+        public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopRandomly(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
+        {
+            //GameObject[,,] buttons;
+
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameChangeRandomlyForInformation();
+
+            GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
+
+            //string frontTextToAdd = "InformationButtonTopChange_";
+            float newCoordinateY = 3.55f;
+            float newCoordinateX = -0.4f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
+
+            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
+
+            return button;
+        }
+
+        public static List<GameObject[,,]> GameConfigurationCreateButtonsBackAndRandomly(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
+        {
+            GameObject[,,] buttonTopInformation = GameConfigurationChangePlayerSymbolCreateButtonTopCommonInformation(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            GameObject[,,] buttonTopRandomly = GameConfigurationChangePlayerSymbolCreateButtonTopRandomly(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+            GameObject[,,] buttonBack = GameConfigurationCreateButtonBackToConfiguration(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
+
+            List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
+            buttonsAll.Insert(0, buttonTopInformation);
+            buttonsAll.Insert(1, buttonTopRandomly);
+            buttonsAll.Insert(2, buttonBack);
+
+            return buttonsAll;
         }
 
         // button for all
@@ -173,5 +267,61 @@ namespace Assets.Scripts
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return button;
         }
+
+        public static GameObject[,,] CreateTableForForAllWithTime(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            GameObject[,,] tableWithNumbers;
+            GameObject[,,] tableWithNumberFinal;
+
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberForAll();
+
+            int numberOfDepths = 1;
+            int numberOfRows = 4;
+            int numberOfColumns = 4;
+
+            tableWithNumbers = GameConfigurationButtonsWithNumbersForChangeRandomly.CreateTableWithTime(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
+            tableWithNumberFinal = GameConfigurationButtonsWithNumbersForChangeRandomly.ChangeDataForTableWithTime(tableWithNumbers, tagName);
+
+            return tableWithNumberFinal;
+        }
+
+        public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopForAll(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
+        {
+            //GameObject[,,] buttons;
+
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameChangeForAllForInformation();
+
+            GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
+
+            //string frontTextToAdd = "InformationButtonTopChange_";
+            float newCoordinateY = 3.55f;
+            float newCoordinateX = -0.4f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
+
+            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
+
+            return button;
+        }
+
+        public static List<GameObject[,,]> GameConfigurationCreateButtonsBackAndForAll(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
+        {
+            GameObject[,,] buttonTopInformation = GameConfigurationChangePlayerSymbolCreateButtonTopCommonInformation(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            GameObject[,,] buttonTopRandomly = GameConfigurationChangePlayerSymbolCreateButtonTopForAll(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+            GameObject[,,] buttonBack = GameConfigurationCreateButtonBackToConfiguration(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
+
+            List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
+            buttonsAll.Insert(0, buttonTopInformation);
+            buttonsAll.Insert(1, buttonTopRandomly);
+            buttonsAll.Insert(2, buttonBack);
+
+            return buttonsAll;
+        }
+
+
+
+
+
+
     }
 }

@@ -82,6 +82,7 @@ namespace Assets.Scripts.GameConfiguration
             lenghtToCheck = 3;
             numberOfGaps = 0;
 
+
             //_tagConfigurationBoardGameButtonSave = _configurationBoardGameDictionaryTag[1];
             //_tagConfigurationBoardGameButtonBack = _configurationBoardGameDictionaryTag[2];
             //_tagConfigurationBoardGameTableNumberRows = _configurationBoardGameDictionaryTag[3];
@@ -126,7 +127,7 @@ namespace Assets.Scripts.GameConfiguration
             _tagConfigurationBoardGameChangeNumberGaps = GameConfigurationButtonsCommonButtonsTagName.GetTagButtonNumberByTagChangeNumberGaps();
             _tagConfigurationBoardGameTableNumberGaps = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberGaps();
 
-            _tagConfigurationBoardGameButtonBackToConfiguration = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonSaveByTagButtonBackToConfiguration();
+            _tagConfigurationBoardGameButtonBackToConfiguration = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBackByTagButtonBackToConfiguration();
 
             // ---
             //_tagConfigurationBoardGameHideOrUnhide[0] = _tagConfigurationBoardGameButtonSave;

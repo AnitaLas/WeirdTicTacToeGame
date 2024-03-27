@@ -53,6 +53,7 @@ namespace Assets.Scripts
 
         void Start()
         {
+           
             //_tagConfiguratioPlayerSymbolDefaultNumber = _configurationPlayersSymbolsDictionaryTag[1];
             //_tagConfigurationPlayerSymbolDefaultSymbol = _configurationPlayersSymbolsDictionaryTag[2];
             //_tagConfigurationPlayerSymbolChooseSymbol = _configurationPlayersSymbolsDictionaryTag[4];
@@ -73,8 +74,20 @@ namespace Assets.Scripts
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 
             // ---
-            _numberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;        
+            _numberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
 
+
+
+
+            // to fix one method not if
+            if (_numberOfPlayers == 0)
+            {
+                _numberOfPlayers = 2;
+            }
+
+
+
+            //_numberOfPlayers = 2;
             _buttonsWithPlayers = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsWithPlayerNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D, _numberOfPlayers);
             _buttonsWithSymbols = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayButtonsNumberColour, _isGame2D, _numberOfPlayers);
             _buttonsBackAndSave = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, _numberOfPlayers);

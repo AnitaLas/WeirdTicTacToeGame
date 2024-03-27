@@ -10,43 +10,31 @@ namespace Assets.Scripts
     internal class GameConfigurationButtonsWithNumbersForChangeRandomly
     {
 
-        public static GameObject[,,] CreateTableForTimeBySeconds(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField)
+        public static GameObject[,,] CreateTableWithTime(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            GameObject[,,] table;
-            int[] tableWithSeconds = CreateTableWithSeconds();
-            int start = 0;
-            int end = 4;
-            //float newCoordinateY = 100f;
-            float newCoordinateY = 0f;
-            string inactiveText = "-";
+            GameObject[,,] tableWithNumber;
+            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTimeForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);
+            tableWithNumber = CreateTableMainMethodsForButtons.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
 
-            table = GameConfigurationButtonsWithNumbersCommonMethods.ChangeDataForTableWithNumbers(tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
-            return table;
-
+            return tableWithNumber;
         }
 
+        //public static GameObject[,,] CreateTableForChangeRandomly(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        //{
+        //    GameObject[,,] tableWithNumbers;
+        //    GameObject[,,] tableWithNumberFinal;
 
-        public static GameObject[,,] CreateTableForChangeRandomly(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
-        {
-            GameObject[,,] tableWithNumbers;
-            GameObject[,,] tableWithNumberFinal;
+        //    string tagConfigurationBoardGameTableNumberRows = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberRandomly();
 
-            string tagConfigurationBoardGameTableNumberRows = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberRandomly();
-            string tagConfigurationBoardGameInactiveField = "";
+        //    int numberOfDepths = 1;
+        //    int numberOfRows = 4;
+        //    int numberOfColumns = 4;
 
-            int numberOfDepths = 1;
-            int numberOfRows = 4;
-            int numberOfColumns = 4;
+        //    tableWithNumbers = CreateTableWithTime(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
+        //    tableWithNumberFinal = ChangeDataForTableWithSeconds(tableWithNumbers, tagConfigurationBoardGameTableNumberRows);
 
-            tableWithNumbers = GameConfigurationButtonsWithNumbersCommonMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
-            //tableWithNumberFinal = GameConfigurationButtonsWithNumbersForRowsAndColumns.CreateTableForRowsAndColumns(tableWithNumbers, tagConfigurationBoardGameTableNumberRows, tagConfigurationBoardGameInactiveField, isCellphoneMode);
-            tableWithNumberFinal = CreateTableForTimeBySeconds(tableWithNumbers, tagConfigurationBoardGameTableNumberRows, tagConfigurationBoardGameInactiveField);
-
-            //return tableWithNumbers;
-            return tableWithNumberFinal;
-        }
-
-
+        //    return tableWithNumberFinal;
+        //}
 
         public static int[] CreateTableWithSeconds()
         {
@@ -62,15 +50,76 @@ namespace Assets.Scripts
                 table[i] = table[previousValue] + increaseNumber;
             }
 
-            for (int i = 0; i < table.Length; i++)
-            {
-                Debug.Log(table[i]);
-            }
-
             return table;
         }
 
-        public static GameObject[,,] ChangeDataForTableWithSeconds(GameObject[,,] tableWtithNumber, int[] tableWithSeconds, string tagConfigurationBoardGameTableNumberForAll, float newCoordinateY)
+        public static string[] CreateTableWithSecondsForCubePlay()
+        {
+            int[] tableInt = CreateTableWithSeconds();
+            int tableStringLenght = tableInt.Length;
+            string[] tableString = new string[tableStringLenght];
+
+            for (int i = 0; i < tableStringLenght; i++)
+            {
+                int number = tableInt[i];
+                string numberString = CommonMethods.ConverIntToString(number);
+                tableString[i] = numberString;
+            }
+
+            return tableString;
+        }
+
+        public static string[,,] CreateTableForDefaultTextWithNumbers(string[] table, int numberOfDepths, int numberOfRows, int numberOfColumns)
+        {
+            string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
+            int[] index = new int[1];
+            index[0] = 0;
+            int currentIndex;
+
+            for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
+            {
+                for (int indexRow = numberOfRows - 1; indexRow >= 0; indexRow--)
+                {
+                    for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
+                    {
+                        currentIndex = index[0];
+                        string stringNumber = table[currentIndex];
+
+                        newTable[indexDepth, indexRow, indexColumn] = stringNumber;
+                        index[0] = index[0] + 1;
+                    }
+                }
+
+                index[0] = 0;
+            }
+
+            return newTable;
+        }
+
+        public static string[,,] CreateTableWithTimeForPrefabCubePlay(int numberOfDepths, int numberOfRows, int numberOfColumns)
+        {
+            string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
+
+            string[] numbers = CreateTableWithSecondsForCubePlay();
+
+            string[,,] numbers3D = CreateTableForDefaultTextWithNumbers(numbers, numberOfDepths, numberOfRows, numberOfColumns);
+
+            for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
+            {
+                for (int indexRow = 0; indexRow < numberOfRows; indexRow++)
+                {
+                    for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
+                    {
+                        string stringNumber = numbers3D[indexDepth, indexRow, indexColumn];                      
+                        newTable[indexDepth, indexRow, indexColumn] = stringNumber;
+                    }
+                }
+            }
+
+            return newTable;
+        }
+
+        public static GameObject[,,] ChangeDataForTableWithTime(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll)
         {
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
@@ -83,18 +132,12 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        string cubePlayText = GameCommonMethodsMain.GetCubePlayText(cubePlay);
-                        int cubePlayTextInt = GameCommonMethodsMain.ConvertStringToInt(cubePlayText);
-
                         GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameTableNumberForAll);
-                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-
                     }
                 }
             }
 
             return tableWtithNumber;
         }
-
     }
 }

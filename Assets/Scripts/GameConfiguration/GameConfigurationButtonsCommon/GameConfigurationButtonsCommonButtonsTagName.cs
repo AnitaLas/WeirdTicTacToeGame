@@ -144,7 +144,7 @@ namespace Assets.Scripts
 
         // button: back - back from view with table for set up palyers/ rows/ columns/ lenght to check/ gaps to configuration menu 
 
-        public static string GetTagForButtonSaveByTagButtonBackToConfiguration()
+        public static string GetTagForButtonBackByTagButtonBackToConfiguration()
         {
             int dictionatyId = 21;
             string currentNumber = GetTagsNameFromDictionaryTagsConfigurationBoardGame(dictionatyId);
@@ -325,7 +325,19 @@ namespace Assets.Scripts
 
 
 
+        public static string GetTagForButtonBackByTagButtonBackToConfigurationChangePlayersSymbols()
+        {
+            int dictionaryId = 15;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
 
+        public static string GetTagForButtonBoardGameButtonInformationChangePlayersSymbols()
+        {
+            int dictionaryId = 16;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
 
 
 

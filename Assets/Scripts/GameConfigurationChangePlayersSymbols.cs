@@ -52,6 +52,8 @@ namespace Assets.Scripts
         private string _tagConfigurationChangePlayersSymbolsChangeNumberForAll;
         private string _tagConfigurationChangePlayersSymbolsTableNumberForAll;
 
+        private string _tagConfigurationChangePlayersSymbolsBackToConfiguration;
+
         private List<GameObject[,,]> _buttonsAll;
         private List<GameObject[,,]> _buttonsMoreSpecificConfiguration;
         private GameObject[,,] _buttonsWithNumbers;
@@ -73,6 +75,8 @@ namespace Assets.Scripts
             _tagConfigurationChangePlayersSymbolsForAll = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangForAll();
             _tagConfigurationChangePlayersSymbolsChangeNumberForAll = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberForAll();
             _tagConfigurationChangePlayersSymbolsTableNumberForAll = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberForAll();
+
+            _tagConfigurationChangePlayersSymbolsBackToConfiguration = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBackByTagButtonBackToConfigurationChangePlayersSymbols();
 
             _buttonsAll = GameConfigurationChangePlayerSymbolButtonsCreate.GameConfigurationChangePlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, isTeamGame);
 
@@ -97,11 +101,11 @@ namespace Assets.Scripts
                         string gameObjectTag = CommonMethods.GetObjectTag(touch);
                         string gameObjectName = CommonMethods.GetObjectName(touch);
 
-                        // radomly
+                        // change radomly
                         if (gameObjectTag == _tagConfigurationChangePlayersSymbolsRandomly || gameObjectTag == _tagConfigurationChangePlayersSymbolsChangeNumberRandomly)
                         {
-                            _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForChangeRandomly.CreateTableForChangeRandomly(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D);
-                            //_buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndPlayer(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
+                            _buttonsWithNumbers = GameConfigurationChangePlayerSymbolButtonsCreate.CreateTableForRandomlyWithTime(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D);
+                            _buttonsMoreSpecificConfiguration = GameConfigurationChangePlayerSymbolButtonsCreate.GameConfigurationCreateButtonsBackAndRandomly(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D);
 
                             GameConfigurationButtonsActions.HideConfiguration(_buttonsAll);
                         }
@@ -109,10 +113,28 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagConfigurationChangePlayersSymbolsTableNumberRandomly)
                         {
-                            //timeButtonRandomly = GameConfigurationButtonsCommonMethods.SetUpChosenNumberForConfigurationPlayers(_buttonsWithNumbers, gameObjectName);
+                            timeButtonRandomly = GameConfigurationButtonsCommonMethods.SetUpChosenNumberForConfigurationRandomly(_buttonsWithNumbers, gameObjectName);
 
-                            //GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
-                            //GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
+                            GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
+                            GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
+                        }
+
+                        //change for all
+                        if (gameObjectTag == _tagConfigurationChangePlayersSymbolsForAll || gameObjectTag == _tagConfigurationChangePlayersSymbolsChangeNumberForAll)
+                            {
+                                _buttonsWithNumbers = GameConfigurationChangePlayerSymbolButtonsCreate.CreateTableForForAllWithTime(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D);
+                                _buttonsMoreSpecificConfiguration = GameConfigurationChangePlayerSymbolButtonsCreate.GameConfigurationCreateButtonsBackAndForAll(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D);
+
+                                GameConfigurationButtonsActions.HideConfiguration(_buttonsAll);
+                            }
+
+
+                        if (gameObjectTag == _tagConfigurationChangePlayersSymbolsTableNumberForAll)
+                        {
+                            timeButtonForAll = GameConfigurationButtonsCommonMethods.SetUpChosenNumberForConfigurationForAll(_buttonsWithNumbers, gameObjectName);
+
+                            GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
+                            GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
                         }
 
 
@@ -120,14 +142,7 @@ namespace Assets.Scripts
 
 
 
-
-
-
-
-
-
-
-
+                        // button save
                         if (gameObjectTag == _tagConfigurationChangePlayerSymbolButtonSave)
                         {
                             ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime = timeButtonRandomly;
@@ -138,11 +153,19 @@ namespace Assets.Scripts
                             ScenesChangeMainMethods.GoToSceneGame();
                         }
 
+                        // button back
                         if (gameObjectTag == _tagConfigurationChangePlayerSymbolButtonBack)
                         {
                             ScenesChangeMainMethods.GoToSceneConfigurationPlayersSymbols();
+                            //ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
                         }
 
+                        // button back to configuration
+                        if (gameObjectTag == _tagConfigurationChangePlayersSymbolsBackToConfiguration)
+                        {
+                            GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
+                            GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
+                        }
 
 
 
