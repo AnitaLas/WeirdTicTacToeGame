@@ -76,6 +76,8 @@ TagManager:
   - ConfigurationChangePlayersSymbolsForAll
   - ConfigurationChangePlayersSymbolsChangeNumberForAll
   - ConfigurationChangePlayersSymbolsTableNumberForAll
+  - ConfigurationChangePlayersSymbolsButtonBackToConfiguration
+  - ConfigurationChangePlayersSymbolsButtonInformation
   layers:
   - Default
   - TransparentFX

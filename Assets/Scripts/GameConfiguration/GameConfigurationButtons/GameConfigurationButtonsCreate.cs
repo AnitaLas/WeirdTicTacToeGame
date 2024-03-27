@@ -98,7 +98,8 @@ namespace Assets.Scripts
             //int dictionatyId = 21;
             //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
             //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
-            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonSaveByTagButtonBackToConfiguration();
+            //string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonSaveByTagButtonBackToConfiguration();
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBackByTagButtonBackToConfiguration();
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
