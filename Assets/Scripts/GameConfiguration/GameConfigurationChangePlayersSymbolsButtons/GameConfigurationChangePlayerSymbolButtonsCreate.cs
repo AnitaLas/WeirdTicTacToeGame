@@ -207,8 +207,8 @@ namespace Assets.Scripts
             int numberOfRows = 4;
             int numberOfColumns = 4;
 
-            tableWithNumbers = GameConfigurationButtonsWithNumbersForChangeRandomly.CreateTableWithTime(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
-            tableWithNumberFinal = GameConfigurationButtonsWithNumbersForChangeRandomly.ChangeDataForTableWithTime(tableWithNumbers, tagName);
+            tableWithNumbers = GameConfigurationButtonsWithNumbersForTime.CreateTableWithTime(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
+            tableWithNumberFinal = GameConfigurationButtonsWithNumbersForTime.ChangeDataForTableWithTime(tableWithNumbers, tagName);
 
             return tableWithNumberFinal;
         }
@@ -279,8 +279,8 @@ namespace Assets.Scripts
             int numberOfRows = 4;
             int numberOfColumns = 4;
 
-            tableWithNumbers = GameConfigurationButtonsWithNumbersForChangeRandomly.CreateTableWithTime(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
-            tableWithNumberFinal = GameConfigurationButtonsWithNumbersForChangeRandomly.ChangeDataForTableWithTime(tableWithNumbers, tagName);
+            tableWithNumbers = GameConfigurationButtonsWithNumbersForTime.CreateTableWithTime(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
+            tableWithNumberFinal = GameConfigurationButtonsWithNumbersForTime.ChangeDataForTableWithTime(tableWithNumbers, tagName);
 
             return tableWithNumberFinal;
         }

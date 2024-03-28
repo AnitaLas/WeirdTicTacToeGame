@@ -113,7 +113,8 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagConfigurationChangePlayersSymbolsTableNumberRandomly)
                         {
-                            timeButtonRandomly = GameConfigurationButtonsCommonMethods.SetUpChosenNumberForConfigurationRandomly(_buttonsWithNumbers, gameObjectName);
+                            //timeButtonRandomly = GameConfigurationButtonsCommonMethods.SetUpChosenNumberForConfigurationRandomly(_buttonsWithNumbers, gameObjectName);
+                            timeButtonRandomly = GameConfigurationButtonsWithNumbersForChangeRandomlyAndForAll.SetUpChosenTimeForConfigurationRandomly(_buttonsWithNumbers, gameObjectName);
 
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
@@ -131,7 +132,8 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagConfigurationChangePlayersSymbolsTableNumberForAll)
                         {
-                            timeButtonForAll = GameConfigurationButtonsCommonMethods.SetUpChosenNumberForConfigurationForAll(_buttonsWithNumbers, gameObjectName);
+                            //timeButtonForAll = GameConfigurationButtonsCommonMethods.SetUpChosenNumberForConfigurationForAll(_buttonsWithNumbers, gameObjectName);
+                            timeButtonForAll = GameConfigurationButtonsWithNumbersForChangeRandomlyAndForAll.SetUpChosenTimeForConfigurationForAll(_buttonsWithNumbers, gameObjectName);
 
                             GameConfigurationButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration, _buttonsWithNumbers);
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);

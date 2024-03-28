@@ -99,10 +99,12 @@ namespace Assets.Scripts
 
         public static int SetUpChosenNumberForConfigurationForAll(GameObject[,,] _buttonsWithNumbers, string gameObjectName)
         {
-            string tagConfigurationBoardGameChangeNumberRandomly = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberForAll();
+            string tagConfigurationBoardGameChangeNumberForAll = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberForAll();
 
-            int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberRandomly);
+            int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberForAll);
             return number;
         }
+
+
     } 
 }
