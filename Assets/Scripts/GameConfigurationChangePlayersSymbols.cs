@@ -11,9 +11,9 @@ namespace Assets.Scripts
 
     internal class GameConfigurationChangePlayersSymbols : MonoBehaviour
     {
-        public static int ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime { get; set; }
-        public static int ConfigurationBoardGameChangeForAllPlayersSymbolsTime { get; set; }
-        public static int ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime { get; set; }
+        public static float ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime { get; set; }
+        public static float ConfigurationBoardGameChangeForAllPlayersSymbolsTime { get; set; }
+        public static float ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime { get; set; }
         public static bool ConfigurationBoardGameEqualMoveQuantityForBothTeams { get; set; }
 
         // ---

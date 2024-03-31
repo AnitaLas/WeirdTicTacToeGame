@@ -72,6 +72,20 @@ namespace Assets.Scripts
             return currentNumber;
         }
 
+        public static string GetTagForButtonNameByTagInformationTimerForPlayers()
+        {
+            int dictionatyId = 9;
+            string currentNumber = GetTagsNameFromDictionaryTagsGame(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagForButtonNameByTagInformationTimerForBoardGame()
+        {
+            int dictionatyId = 10;
+            string currentNumber = GetTagsNameFromDictionaryTagsGame(dictionatyId);
+            return currentNumber;
+        }
+
         // ---------------------------------------------------------------------------------------
         // tags name: cubePlay
 

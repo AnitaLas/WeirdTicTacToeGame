@@ -15,7 +15,9 @@ namespace Assets.Scripts
                 { 5, "GameButtonMenuBack" },
                 { 6, "GameButtonParentObjectHelpButtons" },
                 { 7, "GameButtonMenuConfigurationDisactivate" },
-                { 8, "GameButtonBoardGameHelpText" }
+                { 8, "GameButtonBoardGameHelpText" },
+                { 9, "GameButtonInformationTimerForPlayers" },
+                { 10, "GameButtonInformationTimerForBoardGame" }
             };
             //tagGameDictionary.Add(4, "GameButtonHideHelpButtons");
             //tagGameDictionary.Add(5, "GameButtonUnhideHelpButtons");
@@ -31,7 +33,12 @@ namespace Assets.Scripts
                 { 2, "BACK" },
                 { 3, "HELP BUTTONS" },
                 //{ 4, "BUTTONS TEXT" }
-                { 4, "BOARD TEXT" }
+                { 4, "BOARD TEXT" },
+                { 5, "PLAYER SYMBOL" },
+                { 6, "PLAYERS SYMBOLS" },
+                { 7, "CHANGE" },
+                { 8, "SWICH" },
+                { 9, "OLD     NEW" }
             };
 
             return buttonsNameDictionary;
