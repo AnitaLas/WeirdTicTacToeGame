@@ -78,6 +78,8 @@ TagManager:
   - ConfigurationChangePlayersSymbolsTableNumberForAll
   - ConfigurationChangePlayersSymbolsButtonBackToConfiguration
   - ConfigurationChangePlayersSymbolsButtonInformation
+  - GameButtonInformationTimerForPlayers
+  - GameButtonInformationTimerForBoardGame
   layers:
   - Default
   - TransparentFX

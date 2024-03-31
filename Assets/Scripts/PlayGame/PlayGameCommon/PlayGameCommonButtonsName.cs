@@ -45,6 +45,41 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetButtonNameForPlayerSymbol()
+        {
+            int dictionatyId = 5;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForPlayersSymbols()
+        {
+            int dictionatyId = 6;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForChange()
+        {
+            int dictionatyId = 7;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForSwitch()
+        {
+            int dictionatyId = 8;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForOldAndNew()
+        {
+            int dictionatyId = 9;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
+
         // ---------------------------------------------------------------------------------------
 
     }
