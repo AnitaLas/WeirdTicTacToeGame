@@ -15,7 +15,8 @@ namespace Assets.Scripts
         /// <returns></returns>
         public static string[] CreateTableWithCharactersByGivenString()
         {
-            string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            //string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string characters = PlayGameCommonPlayersSymbols.GetStringWithAllSymbols();
             int alphabetLenght = characters.Length;
             string[] allSeparatedCharacters = new string[alphabetLenght];
 
@@ -29,7 +30,8 @@ namespace Assets.Scripts
 
         public static string[] CreateTableWithDefaultPlayerSymbols()
         {
-            string characters = "OXWTALFUNVCRDEGHIJKLMPQSYZ";
+            //string characters = "OXWTALFUNVCRDEGHIJKLMPQSYZ";
+            string characters = PlayGameCommonPlayersSymbols.GetStringWitDefaultSymbols();
             int alphabetLenght = characters.Length;
             string[] allSeparatedCharacters = new string[alphabetLenght];
 

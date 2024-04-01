@@ -34,7 +34,7 @@ namespace Assets.Scripts
                 { 3, "HELP BUTTONS" },
                 //{ 4, "BUTTONS TEXT" }
                 { 4, "BOARD TEXT" },
-                { 5, "PLAYER SYMBOL" },
+                { 5, " PLAYER SYMBOL" },
                 { 6, "PLAYERS SYMBOLS" },
                 { 7, "CHANGE" },
                 { 8, "SWICH" },

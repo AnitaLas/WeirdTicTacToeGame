@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.PlayGame.PlayGameTimer
+namespace Assets.Scripts
 {
     internal class PlayGameTimerCommonMethods
     {
@@ -26,14 +26,12 @@ namespace Assets.Scripts.PlayGame.PlayGameTimer
 
         public static bool TurnOffTimer()
         {
-            Debug.Log("test 11");
             return false;
         }
 
 
         public static bool TurnOnTimer()
         {
-            Debug.Log("test 222");
             return true;
         }
 

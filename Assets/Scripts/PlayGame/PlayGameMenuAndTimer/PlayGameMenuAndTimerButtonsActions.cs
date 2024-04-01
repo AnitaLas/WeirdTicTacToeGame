@@ -114,7 +114,7 @@ namespace Assets.Scripts
 
         // ---
 
-        public static void DestroyGameConfigurationMenuButtons(List<GameObject[,,]> helpButtons)
+        public static void DestroyPlayGameButtons(List<GameObject[,,]> helpButtons)
         {
             int helpButtonsNumber = helpButtons.Count;
             GameObject helpButton;
@@ -127,7 +127,7 @@ namespace Assets.Scripts
             {
                 GameObject[,,] buttonToRemove = helpButtons[i];
 
-                maxIndexDepth = buttonToRemove.GetLength(0); ;
+                maxIndexDepth = buttonToRemove.GetLength(0);
                 maxIndexColumn = buttonToRemove.GetLength(2);
                 maxIndexRow = buttonToRemove.GetLength(1);
 
