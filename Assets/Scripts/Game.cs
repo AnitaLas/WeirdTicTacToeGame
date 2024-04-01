@@ -7,6 +7,7 @@ using Assets.Scripts.GameConfiguration;
 using TMPro;
 using UnityEditor;
 using Assets.Scripts.PlayGame.PlayGameTimer;
+using UnityEditor.Experimental.GraphView;
 
 internal class Game : MonoBehaviour
 {
@@ -115,16 +116,20 @@ internal class Game : MonoBehaviour
 
     private List<GameObject[,,]> _gameButtonsMenu;
     private List<GameObject> _gameButtonsTimer;
+    private List<float> _gameChangeTimeConfiguration;
 
     private GameObject _cubePlayForFrame;
 
 
     private float[] _timeForHidePlayGameElements;
+    private float[] _timeForTimers;
     //private float _timeForHideDefault = 3f;
     private float _timeForHidePlayGameElementsDefault = 3f;
     private float _timeForUnhidePlayGameElements;
     private float _timeForHide;
     private bool _isTimeToHidePlayGameElements;
+    private bool _isTimerActivate;
+    private bool _switchTimer;
 
 
     void Start()
@@ -249,30 +254,53 @@ internal class Game : MonoBehaviour
 
 
         //---------------------------------------------------------------------------
-        // TIMER ACTION - start       
+        // TIMER ACTION - start
+        // 
 
-        if (_timeForChandeRandomly != 0 || _timeForChandeForAll != 0 || _timeForSwitchBetweenTeams != 0)
+
+        _isTimerActivate = PlayGameTimerCommonMethods.IsTimerActivate(_timeForChandeRandomly, _timeForChandeForAll, _timeForSwitchBetweenTeams);
+        //if (_timeForChandeRandomly != 0 || _timeForChandeForAll != 0 || _timeForSwitchBetweenTeams != 0)
+        if (_isTimerActivate == true)
         {
-            _gameButtonsTimer = PlayGameTimerButtonsCreate.GameTimerButtonsCreate(prefabTimer);
+            _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
 
-            _timeForHidePlayGameElements = new float[2]; // 2 = _timeForChandeRandomly or _timeForChandeForAll + _timeForSwitchBetweenTeams
-            
-            if(_timeForChandeRandomly != 0)
-                _timeForHidePlayGameElements[0] = _timeForChandeRandomly;
-            else
-                _timeForHidePlayGameElements[0] = _timeForChandeForAll;
-
-            _timeForHidePlayGameElements[1] = _timeForSwitchBetweenTeams;
-
-            //Debug.Log("_timeForHidePlayGameElements[0]: " + _timeForHidePlayGameElements[0]);
-            //Debug.Log("_timeForHidePlayGameElements[1]: " + _timeForHidePlayGameElements[1]);
-
-            _timeForHide = _timeForHidePlayGameElements[0];
-            _timeForUnhidePlayGameElements = _timeForHidePlayGameElementsDefault;
-            _isTimeToHidePlayGameElements = true;          
+            if (_switchTimer == true)
+            {
+                _gameChangeTimeConfiguration = new List<float>();
+                _gameChangeTimeConfiguration.Insert(0, _timeForChandeRandomly);
+                _gameChangeTimeConfiguration.Insert(1, _timeForChandeForAll);
+                _gameChangeTimeConfiguration.Insert(2, _timeForSwitchBetweenTeams);
+                _gameChangeTimeConfiguration.Insert(3, _timeForHidePlayGameElementsDefault);
 
 
 
+                _gameButtonsTimer = PlayGameTimerButtonsCreate.GameTimerButtonsCreate(prefabTimer);
+
+
+                //_timeForHidePlayGameElements = new float[2]; // 2 = _timeForChandeRandomly or _timeForChandeForAll + _timeForSwitchBetweenTeams
+
+                //if(_timeForChandeRandomly != 0)
+                //    _timeForHidePlayGameElements[0] = _timeForChandeRandomly;
+                //else
+                //    _timeForHidePlayGameElements[0] = _timeForChandeForAll;
+
+                //_timeForHidePlayGameElements[1] = _timeForSwitchBetweenTeams;
+
+                ////Debug.Log("_timeForHidePlayGameElements[0]: " + _timeForHidePlayGameElements[0]);
+                ////Debug.Log("_timeForHidePlayGameElements[1]: " + _timeForHidePlayGameElements[1]);
+
+
+                //_timeForHide = _timeForHidePlayGameElements[0];
+                //_timeForUnhidePlayGameElements = _timeForHidePlayGameElementsDefault;
+                //_isTimeToHidePlayGameElements = true;
+
+                _timeForTimers = PlayGameTimerCommonMethods.SetupTimer(_gameChangeTimeConfiguration);
+
+                _timeForHide = _timeForTimers[0];
+                _timeForUnhidePlayGameElements = _timeForTimers[2];
+                _isTimeToHidePlayGameElements = true;
+
+            }
 
 
 
@@ -289,7 +317,7 @@ internal class Game : MonoBehaviour
 
 
 
-        // TIMER ACTION - start
+        // TIMER ACTION - end
 
 
 
@@ -381,6 +409,9 @@ internal class Game : MonoBehaviour
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
                                 GameFieldsVerificationCommonMessages.MessageWin(cubePlaySymbol);
+
+                                _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
+                                PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
                             }
                             else
                             {
@@ -453,6 +484,9 @@ internal class Game : MonoBehaviour
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
                                 GameFieldsVerificationCommonMessages.MessageWin(cubePlaySymbol);
+
+                                _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
+                                PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
                             }
                             else
                             {
@@ -486,13 +520,11 @@ internal class Game : MonoBehaviour
 
                     if (gameObjectTag == _tagGameButtonMenuConfigurationLeft || gameObjectTag == _tagGameButtonMenuConfigurationRight)
                     {
-                        PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);
+                        PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);                   
                         _gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
-
-                        // when menu is press, set up counter to 
-
-
+                        _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
+                        PlayGameMenuAndTimerButtonsActions.HideTimerForGameBoard();
                     }
 
                     if (gameObjectTag == _tagGameButtonHelpButtons)
@@ -516,6 +548,9 @@ internal class Game : MonoBehaviour
                             PlayGameFrameActions.DestroyCubePlayFrame();
                             PlayGameFrameActions.DestroyMoveIndexForFrame(_moveIndexForFrame);
                         }
+
+                        _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
+                        PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
                     }
 
                     if (gameObjectTag == _tagGameButtonBoardGameHelpText)
@@ -524,12 +559,17 @@ internal class Game : MonoBehaviour
                         PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
                         _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
 
+                        _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
+                        PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
                     }
 
                     if (gameObjectTag == _tagGameButtonMenuBack)
                     {
                         PlayGameMenuAndTimerButtonsActions.DestroyGameConfigurationMenuButtons(_gameButtonsMenu);
                         PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
+
+                        _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
+                        PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
                     }
 
 
@@ -554,88 +594,139 @@ internal class Game : MonoBehaviour
         //PlayGameTimerCommonMethods.CountdownSecondsForPlayers(_timeForUnhidePlayGameElements);
 
 
-        if (_timeForChandeRandomly != 0 || _timeForChandeForAll != 0 || _timeForSwitchBetweenTeams != 0)
+        if (_isTimerActivate == true)
         {
-            // for team game this index must change 0 -> 1 -> 0 -> 1 -> 0... new method required
-            int indexTimeForHide = 0;
-            //_timeForHide = _timeForHidePlayGameElements[indexTimeForHide];
-            PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
-            PlayGameTimerCommonMethods.CountdownSecondsForBoarGame(_timeForHide);
-
-
-            
-
-            if (_isTimeToHidePlayGameElements == true)
+            if (_switchTimer == true)
             {
-                // PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
-                //PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
+                int indexTimeForHide = 0;
+                PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
+                PlayGameTimerCommonMethods.CountdownSecondsForBoarGame(_timeForHide);
 
-                //PlayGameMenuAndTimerButtonsActions.ShowTimerForChangePlayersSymbols();
-                //PlayGameMenuAndTimerButtonsActions.UnhideTimerForChangePlayersSymbols();
-               
-                _timeForHide -= 1 * Time.deltaTime;
-
-                if (_timeForHide < 0)
+                if (_isTimeToHidePlayGameElements == true)
                 {
-                    //PlayGameMenuAndTimerButtonsActions.HideTimerForGameBoard();
-                    //PlayGameMenuAndTimerButtonsActions.UnhideTimerForChangePlayersSymbols();
-                    PlayGameMenuAndTimerButtonsActions.ShowTimerForChangePlayersSymbols();
-                    PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);
-                    //--------------------------------------
-                    //_gameButtonsTimer = PlayGameTimerButtonsCreate.GameTimerButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsTimerColour, _isGame2D);
+                    _timeForHide -= 1 * Time.deltaTime;
 
+                    if (_timeForHide < 0)
+                    {
+                        PlayGameMenuAndTimerButtonsActions.ShowTimerForChangePlayersSymbols();
+                        PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);
+                        _isTimeToHidePlayGameElements = false;
+                        _timeForHide = _timeForTimers[indexTimeForHide];
+                    }
+                }
+                else
+                {
+                    _timeForUnhidePlayGameElements -= 1 * Time.deltaTime;
 
-                    //PlayGameTimerCommonMethods.CountdownSecondsForPlayers(_timeForUnhidePlayGameElements);
+                    if (_timeForUnhidePlayGameElements < 0)
+                    {
+                        PlayGameMenuAndTimerButtonsActions.ShowTimerFoGameBoard();
+                        PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
+                        _isTimeToHidePlayGameElements = true;
+                        _timeForUnhidePlayGameElements = _timeForTimers[2];
+                    }
 
-
-                    //_gameButtonsTimer = PlayGameTimerButtonsCreate.GameTimerButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsTimerColour, _isGame2D);
-                    //PlayGameTimerCommonMethods.CountdownSecondsForPlayers(_timeForUnhidePlayGameElements);
-
-                    //string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForPlayers();
-                    //GameObject timer = CommonMethods.GetObjectByTagName(tagName);
-                    //CommonMethods.ChangeTextForCubePlay(timer, _timeForHide.ToString());
-
-
-                    //PlayGameTimerCommonMethods.CountdownSecondsForPlayers(_timeForUnhidePlayGameElements);
-
-                    //--------------------------------------
-                    _isTimeToHidePlayGameElements = false;
-                    _timeForHide = _timeForHidePlayGameElements[indexTimeForHide];
                 }
             }
             else
             {
-                //PlayGameMenuAndTimerButtonsActions.ShowTimerForChangePlayersSymbols();
-                _timeForUnhidePlayGameElements -= 1 * Time.deltaTime;
-                //Debug.Log("_timeForUnhide: " + _timeForUnhide);
-                //PlayGameTimerCommonMethods.CountdownSecondsForBoarGame(_timeForHide);
-                //PlayGameMenuAndTimerButtonsActions.HideTimerForChangePlayersSymbols();
-
-                if (_timeForUnhidePlayGameElements < 0)
-                {
-
-                    //PlayGameMenuAndTimerButtonsActions.DestroyGameConfigurationMenuButtons(_gameButtonsTimer);
-
-                    //PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
-                    //PlayGameMenuAndTimerButtonsActions.HideTimerForChangePlayersSymbols();
-                    PlayGameMenuAndTimerButtonsActions.ShowTimerFoGameBoard();
-                    PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
-                    _isTimeToHidePlayGameElements = true;
-                    _timeForUnhidePlayGameElements = _timeForHidePlayGameElementsDefault;
-                }
-
+                //true = stop time, in future, can set up the main configuration for time,
+                //where the user can set up if this time will be stopped or counted from the beginning
             }
 
 
 
-            //_timeForUnhide -= 1 * Time.deltaTime;
 
-            //if (_timeForUnhide <= 0)
-            //{
-            //    PlayGameMenuButtonsActions.UnhidePlayGameElements(_gameBoard);
-            //}
+
+
 
         }
+
+        ////PlayGameTimerCommonMethods.CountdownSecondsForPlayers(_timeForUnhidePlayGameElements);
+
+
+        //if (_timeForChandeRandomly != 0 || _timeForChandeForAll != 0 || _timeForSwitchBetweenTeams != 0)
+        //{
+        //    // for team game this index must change 0 -> 1 -> 0 -> 1 -> 0... new method required
+        //    int indexTimeForHide = 0;
+        //    //_timeForHide = _timeForHidePlayGameElements[indexTimeForHide];
+        //    PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
+        //    PlayGameTimerCommonMethods.CountdownSecondsForBoarGame(_timeForHide);
+
+
+
+
+        //    if (_isTimeToHidePlayGameElements == true)
+        //    {
+        //        // PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
+        //        //PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
+
+        //        //PlayGameMenuAndTimerButtonsActions.ShowTimerForChangePlayersSymbols();
+        //        //PlayGameMenuAndTimerButtonsActions.UnhideTimerForChangePlayersSymbols();
+
+        //        _timeForHide -= 1 * Time.deltaTime;
+
+        //        if (_timeForHide < 0)
+        //        {
+        //            //PlayGameMenuAndTimerButtonsActions.HideTimerForGameBoard();
+        //            //PlayGameMenuAndTimerButtonsActions.UnhideTimerForChangePlayersSymbols();
+        //            PlayGameMenuAndTimerButtonsActions.ShowTimerForChangePlayersSymbols();
+        //            PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);
+        //            //--------------------------------------
+        //            //_gameButtonsTimer = PlayGameTimerButtonsCreate.GameTimerButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsTimerColour, _isGame2D);
+
+
+        //            //PlayGameTimerCommonMethods.CountdownSecondsForPlayers(_timeForUnhidePlayGameElements);
+
+
+        //            //_gameButtonsTimer = PlayGameTimerButtonsCreate.GameTimerButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsTimerColour, _isGame2D);
+        //            //PlayGameTimerCommonMethods.CountdownSecondsForPlayers(_timeForUnhidePlayGameElements);
+
+        //            //string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForPlayers();
+        //            //GameObject timer = CommonMethods.GetObjectByTagName(tagName);
+        //            //CommonMethods.ChangeTextForCubePlay(timer, _timeForHide.ToString());
+
+
+        //            //PlayGameTimerCommonMethods.CountdownSecondsForPlayers(_timeForUnhidePlayGameElements);
+
+        //            //--------------------------------------
+        //            _isTimeToHidePlayGameElements = false;
+        //            _timeForHide = _timeForTimers[indexTimeForHide];
+        //        }
+        //    }
+        //    else
+        //    {
+        //        //PlayGameMenuAndTimerButtonsActions.ShowTimerForChangePlayersSymbols();
+        //        _timeForUnhidePlayGameElements -= 1 * Time.deltaTime;
+        //        //Debug.Log("_timeForUnhide: " + _timeForUnhide);
+        //        //PlayGameTimerCommonMethods.CountdownSecondsForBoarGame(_timeForHide);
+        //        //PlayGameMenuAndTimerButtonsActions.HideTimerForChangePlayersSymbols();
+
+        //        if (_timeForUnhidePlayGameElements < 0)
+        //        {
+
+        //            //PlayGameMenuAndTimerButtonsActions.DestroyGameConfigurationMenuButtons(_gameButtonsTimer);
+
+        //            //PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
+        //            //PlayGameMenuAndTimerButtonsActions.HideTimerForChangePlayersSymbols();
+        //            PlayGameMenuAndTimerButtonsActions.ShowTimerFoGameBoard();
+        //            PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
+        //            _isTimeToHidePlayGameElements = true;
+        //            _timeForUnhidePlayGameElements = _timeForTimers[2];
+        //        }
+
+        //    }
+
+
+
+        //    //_timeForUnhide -= 1 * Time.deltaTime;
+
+        //    //if (_timeForUnhide <= 0)
+        //    //{
+        //    //    PlayGameMenuButtonsActions.UnhidePlayGameElements(_gameBoard);
+        //    //}
+
+        //}
 
 
         // TIMER ACTION - end
