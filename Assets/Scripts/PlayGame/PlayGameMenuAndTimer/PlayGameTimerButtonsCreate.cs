@@ -17,7 +17,7 @@ namespace Assets.Scripts
 
             List<GameObject> buttonsAll = new List<GameObject>();
             buttonsAll.Insert(0, battonTimerForBoardGame);
-            buttonsAll.Insert(0, battonTimerForPlayers);
+            buttonsAll.Insert(1, battonTimerForPlayers);
 
             PlayGameMenuAndTimerButtonsActions.HideObjectPlayerSymbolPrevious();
             //PlayGameMenuAndTimerButtonsActions.HideTimerForGameBoard();

@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.7.34221.43
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{3324A655-E191-D659-FA7C-952F3304CA6C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{E6DC3DF1-C1F6-EC1A-407D-DE8278DC7BE0}"
@@ -91,45 +89,47 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TestTools.CodeCoverag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Shared.Editor", "Unity.VisualScripting.Shared.Editor.csproj", "{AA6719C0-FFE5-086A-AB72-CDB753B3E9B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI.Player", "UnityEngine.UI.Player.csproj", "{F06373D3-2971-26B3-3760-7EE9CF06550C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.Player.csproj", "{F06373D3-2971-26B3-3760-7EE9CF06550C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner.Player", "UnityEngine.TestRunner.Player.csproj", "{A1A79D05-155C-ED00-2F98-FCD209F6922D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.Player.csproj", "{A1A79D05-155C-ED00-2F98-FCD209F6922D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Flow.Player", "Unity.VisualScripting.Flow.Player.csproj", "{1590B428-729C-D829-5A3E-7A69182756A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Flow", "Unity.VisualScripting.Flow.Player.csproj", "{1590B428-729C-D829-5A3E-7A69182756A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Telemetry.Player", "Unity.Services.Core.Telemetry.Player.csproj", "{495D99B6-9713-24E3-0D10-55296FFB9266}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.Player.csproj", "{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InputSystem.Player", "Unity.InputSystem.Player.csproj", "{F7286FAD-BAE4-1292-0755-550D4DD86958}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Telemetry", "Unity.Services.Core.Telemetry.Player.csproj", "{495D99B6-9713-24E3-0D10-55296FFB9266}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.State.Player", "Unity.VisualScripting.State.Player.csproj", "{A52377AF-C258-2942-9584-C76729D5EC40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InputSystem", "Unity.InputSystem.Player.csproj", "{F7286FAD-BAE4-1292-0755-550D4DD86958}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Core.Player", "Unity.VisualScripting.Core.Player.csproj", "{43017001-0088-7156-EB63-1B87C16BE8DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.State", "Unity.VisualScripting.State.Player.csproj", "{A52377AF-C258-2942-9584-C76729D5EC40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Environments.Internal.Player", "Unity.Services.Core.Environments.Internal.Player.csproj", "{3CFA4EF3-F343-6359-7748-00BE679AEDB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Core", "Unity.VisualScripting.Core.Player.csproj", "{43017001-0088-7156-EB63-1B87C16BE8DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro.Player", "Unity.TextMeshPro.Player.csproj", "{A2B06A12-98C9-87C0-8898-25C0AAB72C40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Environments.Internal", "Unity.Services.Core.Environments.Internal.Player.csproj", "{3CFA4EF3-F343-6359-7748-00BE679AEDB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline.Player", "Unity.Timeline.Player.csproj", "{3DFC726A-2632-9547-3C4A-50C074B2F2D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro", "Unity.TextMeshPro.Player.csproj", "{A2B06A12-98C9-87C0-8898-25C0AAB72C40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Player", "Unity.Services.Core.Player.csproj", "{EB182FB6-102B-07A4-E145-1EB696BC936D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline", "Unity.Timeline.Player.csproj", "{3DFC726A-2632-9547-3C4A-50C074B2F2D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Environments.Player", "Unity.Services.Core.Environments.Player.csproj", "{475E125D-8231-E7AE-B367-EF800F1F8B98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core", "Unity.Services.Core.Player.csproj", "{EB182FB6-102B-07A4-E145-1EB696BC936D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Internal.Player", "Unity.Services.Core.Internal.Player.csproj", "{2B97BD4B-3E32-E88B-999A-8DCDDE7AD156}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Environments", "Unity.Services.Core.Environments.Player.csproj", "{475E125D-8231-E7AE-B367-EF800F1F8B98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Analytics.Player", "Unity.Services.Core.Analytics.Player.csproj", "{C70A596B-F9D5-8A56-EB2B-12F895871DFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Internal", "Unity.Services.Core.Internal.Player.csproj", "{2B97BD4B-3E32-E88B-999A-8DCDDE7AD156}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Scheduler.Player", "Unity.Services.Core.Scheduler.Player.csproj", "{DB9E1BED-9995-6A33-15B6-7AF8AB7DEA82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Analytics", "Unity.Services.Core.Analytics.Player.csproj", "{C70A596B-F9D5-8A56-EB2B-12F895871DFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Registration.Player", "Unity.Services.Core.Registration.Player.csproj", "{E3DA9629-C9FE-04FF-778E-F078427224DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Scheduler", "Unity.Services.Core.Scheduler.Player.csproj", "{DB9E1BED-9995-6A33-15B6-7AF8AB7DEA82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Device.Player", "Unity.Services.Core.Device.Player.csproj", "{D9C8E990-342F-4E15-AD3E-31EF0D6CA898}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Registration", "Unity.Services.Core.Registration.Player.csproj", "{E3DA9629-C9FE-04FF-778E-F078427224DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Threading.Player", "Unity.Services.Core.Threading.Player.csproj", "{79D565C3-A59E-67D7-7D76-F288125FD589}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Device", "Unity.Services.Core.Device.Player.csproj", "{D9C8E990-342F-4E15-AD3E-31EF0D6CA898}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Networking.Player", "Unity.Services.Core.Networking.Player.csproj", "{A04FBBF9-2B11-9353-138F-07DDC8905C71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Threading", "Unity.Services.Core.Threading.Player.csproj", "{79D565C3-A59E-67D7-7D76-F288125FD589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Configuration.Player", "Unity.Services.Core.Configuration.Player.csproj", "{9079A7B3-6432-A186-C7F5-0D674CA6C6AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Networking", "Unity.Services.Core.Networking.Player.csproj", "{A04FBBF9-2B11-9353-138F-07DDC8905C71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Services.Core.Configuration", "Unity.Services.Core.Configuration.Player.csproj", "{9079A7B3-6432-A186-C7F5-0D674CA6C6AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -325,6 +325,10 @@ Global
 		{1590B428-729C-D829-5A3E-7A69182756A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1590B428-729C-D829-5A3E-7A69182756A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1590B428-729C-D829-5A3E-7A69182756A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{495D99B6-9713-24E3-0D10-55296FFB9266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{495D99B6-9713-24E3-0D10-55296FFB9266}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{495D99B6-9713-24E3-0D10-55296FFB9266}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -396,8 +400,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D8463E35-9BC0-4C4C-BA71-F4DBD402104C}
 	EndGlobalSection
 EndGlobal

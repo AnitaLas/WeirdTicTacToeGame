@@ -85,12 +85,8 @@ namespace Assets.Scripts
     
         public static void DisactivateConfigurationMenu()
         {
-            //Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
-            //string tagGameButtonMenuConfigurationDisactivate = tagGameDictionary[7];
             string tagGameButtonMenuConfigurationDisactivate = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationDisactivate();
-            //string tagGameButtonMenuConfigurationRight = tagGameDictionary[1];
             string tagGameButtonMenuConfigurationRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationLeft();
-            //string tagGameButtonMenuConfigurationLeft = tagGameDictionary[2];
             string tagGameButtonMenuConfigurationLeft = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationRight();
 
             string[] tagConfigurationMenu = new string[3];
@@ -165,9 +161,14 @@ namespace Assets.Scripts
 
         public static void HideTimerForGameBoard()
         {
-            string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame(); ;
+            string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame();
             ButtonsCommonMethodsActions.GameObjectToHide(tagName);
         }
+        //public static void HideTimerForGameBoardIfExist()
+        //{
+        //    string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame();
+        //    ButtonsCommonMethodsActions.GameObjectToHide(tagName);
+        //}
 
         public static void HideTimerForChangePlayersSymbols()
         {
@@ -177,7 +178,7 @@ namespace Assets.Scripts
 
         public static void UnhideTimerForGameBoard()
         {
-            string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame(); ;
+            string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame(); 
             ButtonsCommonMethodsActions.GameObjectToUnhide(tagName);
         }
 
