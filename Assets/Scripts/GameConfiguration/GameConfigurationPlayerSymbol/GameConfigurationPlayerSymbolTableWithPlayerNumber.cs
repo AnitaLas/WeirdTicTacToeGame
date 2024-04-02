@@ -447,6 +447,61 @@ namespace Assets.Scripts
             }
         }
 
+        public static void ChangeDataForButtonsPlayGameChangePlayersSymbols(List<GameObject[,,]> buttons, float newCoordinateX)
+        {
+            int maxIndexDepth;
+            int maxIndexColumn;
+            int maxIndexRow;
+            int buttonsNumber = buttons.Count;
+
+            GameObject[,,] table;
+            GameObject[,,] buttonFirst = buttons[0];
+
+            GameObject prefabPlayerSymbol = buttonFirst[0, 0, 0];
+
+            float[] tableWithNewCordinateForY = SetUpTableWithNewYForPrefabPlayerSymbol(prefabPlayerSymbol, buttonsNumber);
+            float yForFirstPrefabPlayerSymbol;
+            //float newCoordinateX = 1.65f;
+            float newCoordinateZ = 0.45f;
+            float newScale = 0.9f;
+            float fontSize = 0.5f;
+
+            int start = buttonsNumber - 1;
+            int playerNumber;
+
+            for (int i = 0; i < buttonsNumber; i++)
+            {
+                table = buttons[i];
+                playerNumber = i + 1;
+                maxIndexDepth = table.GetLength(0);
+                maxIndexColumn = table.GetLength(2);
+                maxIndexRow = table.GetLength(1);
+
+                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
+
+                for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+                {
+                    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                    {
+                        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                        {
+                            GameObject cubePlay = table[indexDepth, indexRow, indexColumn];
+
+                            GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+
+                            GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, yForFirstPrefabPlayerSymbol);
+                            GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                            GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+
+                            GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                            ChangeNameForPrefabPlayerSymbol(cubePlay, playerNumber);
+                        }
+                    }
+                }
+            }
+        }
+
+
         //public static void ChangeDataForTableWithPlayersSymbolBiggerThanSix(List<GameObject[,,]> buttons)
         //{
         //    int maxIndexDepth;

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts
 {
@@ -128,8 +129,8 @@ namespace Assets.Scripts
             int maxRandomNumber = maxNumberForUntakenSymbol - 1;
             for (int i = 0; i < newSymbolsForPlayersLenght; i++)
             {
-
                 int randomIndex = GetRandomNumberPlayersToChangeSymbolsAll(maxRandomNumber);
+                maxRandomNumber--;
 
                 string newSymbols = untakenSymbolsString.Substring(randomIndex, 1);
 
@@ -138,7 +139,7 @@ namespace Assets.Scripts
                 string newString = untakenSymbolsString.Remove(randomIndex, 1);
 
                 untakenSymbolsString = newString;
-                //UnityEngine.Debug.Log($"untakenSymbolsString: " + untakenSymbolsString);
+
             }
 
             //UnityEngine.Debug.Log($"--------------------------------------------------------------");
@@ -149,6 +150,47 @@ namespace Assets.Scripts
             //}
 
             return newSymbolsForPlayers;
+        }
+
+        public static void SetUpPlayerSymbols(List<GameObject[,,]> buttons, string[] playersSymbols)
+        {
+            int maxIndexDepth;
+            int maxIndexColumn;
+            int maxIndexRow;
+            int buttonsNumber = buttons.Count;
+            Debug.Log("buttonsNumber" + buttonsNumber);
+           //sss GameObject[,,] table;
+
+            for (int i = 0; i < buttonsNumber; i++)
+            {
+                GameObject[,,] table = buttons[i];
+                maxIndexDepth = table.GetLength(0);
+                maxIndexColumn = table.GetLength(2);
+                maxIndexRow = table.GetLength(1);
+
+                Debug.Log("maxIndexDepth" + maxIndexDepth);
+                Debug.Log("maxIndexColumn" + maxIndexColumn);
+                Debug.Log("maxIndexRow" + maxIndexRow);
+
+
+                for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+                {
+                    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                    {
+                        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                        {
+                            GameObject cubePlay = table[indexDepth, indexRow, indexColumn];
+                           
+                            string symbol = playersSymbols[i];
+                            Debug.Log("symbol" + symbol);
+                            //CommonMethods.ChangeTextForCubePlay(cubePlay, symbol);
+                            CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
+
+                        }
+                    }
+                }
+            }
+
         }
 
     }

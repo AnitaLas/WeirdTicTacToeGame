@@ -533,8 +533,11 @@ internal class Game : MonoBehaviour
                         PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);                   
                         _gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
-                        _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
-                        PlayGameMenuAndTimerButtonsActions.HideTimerForGameBoard();
+                        if (_isTimerActivate == true)
+                        {
+                            _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
+                            PlayGameMenuAndTimerButtonsActions.HideTimerForGameBoard();
+                        }                      
                     }
 
                     if (gameObjectTag == _tagGameButtonHelpButtons)
@@ -559,8 +562,11 @@ internal class Game : MonoBehaviour
                             PlayGameFrameActions.DestroyMoveIndexForFrame(_moveIndexForFrame);
                         }
 
-                        _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
-                        PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
+                        if (_isTimerActivate == true)
+                        {
+                            _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
+                            PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
+                        }
                     }
 
                     if (gameObjectTag == _tagGameButtonBoardGameHelpText)
@@ -569,8 +575,11 @@ internal class Game : MonoBehaviour
                         PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
                         _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
 
-                        _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
-                        PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
+                        if (_isTimerActivate == true)
+                        {
+                            _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
+                            PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
+                        }
                     }
 
                     if (gameObjectTag == _tagGameButtonMenuBack)
@@ -578,8 +587,11 @@ internal class Game : MonoBehaviour
                         PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsMenu);
                         PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
 
-                        _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
-                        PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
+                        if (_isTimerActivate == true)
+                        {
+                            _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
+                            PlayGameMenuAndTimerButtonsActions.UnhideTimerForGameBoard();
+                        }
                     }
 
 
@@ -625,6 +637,9 @@ internal class Game : MonoBehaviour
 
                         //-------------------------------------------------------
                         _newPlayersSymbols = PlayGameChangePlayersSymbolsComnonMethods.GetNewPlayersSymbols(_playersSymbols);
+                                           
+                        _playersSymbols = _newPlayersSymbols;
+
                         _gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newPlayersSymbols);
                         _gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _playersSymbols, _newPlayersSymbols);
 
