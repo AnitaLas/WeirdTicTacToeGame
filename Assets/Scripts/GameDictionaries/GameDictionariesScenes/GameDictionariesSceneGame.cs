@@ -38,7 +38,7 @@ namespace Assets.Scripts
                 { 6, "PLAYERS SYMBOLS" },
                 { 7, "CHANGE" },
                 { 8, "SWICH" },
-                { 9, "OLD     NEW" }
+                { 9, "OLD      NEW" }
             };
 
             return buttonsNameDictionary;
