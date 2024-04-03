@@ -192,6 +192,7 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonButtonsDefaultNumber.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtonsCommonCreate.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameTimer\PlayGameTimerButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameMenuAndTimer\PlayGameMenuAndTimerButtonsActions.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameFrame\PlayGameFrameCreate.cs" />
@@ -200,7 +201,6 @@
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsTagName.cs" />
     <Compile Include="Assets\Scripts\GameCommonMethods\GameCommonMethodsMain.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlayHelpText.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtonsCommonCreate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
