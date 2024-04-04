@@ -11,9 +11,9 @@ namespace Assets.Scripts
     {
         // buttons: top: player symbols & change
 
-        public static List<GameObject[,,]> GameChangePlayersSymbolsButtonsTopCreate(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<float> gameChangeTimeConfiguration, string[] newPlayersSymbols)
+        public static List<GameObject[,,]> GameChangePlayersSymbolsButtonsTopCreate(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<float> gameChangeTimeConfiguration)
         {
-            int playersNumber = newPlayersSymbols.Length;
+            //int playersNumber = newPlayersSymbols.Length;
             //int randomNumberForChange = PlayGameChangePlayersSymbolsComnonMethods.GetRandomNumberPlayersToChangeSymbols(playerSymbolMove);
             int randomNumberForChange = 2;
             float timeForChandeRandomly = gameChangeTimeConfiguration[0];
@@ -149,9 +149,9 @@ namespace Assets.Scripts
         // button - main - information about old symbol and new symbol
 
 
-        public static List<GameObject[,,]> GameChangePlayersSymbolsButtonsCreate(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<float> gameChangeTimeConfiguration, string[] playersSymbols, string[] newPlayersSymbols)
+        public static List<GameObject[,,]> GameChangePlayersSymbolsButtonsCreate(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<float> gameChangeTimeConfiguration, string[] oldSymbolsForChande, string[] newSymbolsForChande)
         {
-            int playersNumberForChangeSymbols = newPlayersSymbols.Length;
+            int playersNumberForChangeSymbols = newSymbolsForChande.Length;
             //Debug.Log("playersNumberForChangeSymbols: " + playersNumberForChangeSymbols);
             List<GameObject[,,]> buttons = new List<GameObject[,,]>();
 
@@ -160,7 +160,7 @@ namespace Assets.Scripts
             {
                 //Debug.Log(" test ");
 
-                buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D, playersSymbols, newPlayersSymbols);
+                buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
             
             
             
@@ -168,7 +168,7 @@ namespace Assets.Scripts
             }
             else
             {
-
+                Debug.Log("Upss it does not implemented yet, sorry :( ");
 
             }
 
@@ -198,7 +198,7 @@ namespace Assets.Scripts
             return button;
         }
 
-        public static GameObject[,,] PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldSymbol(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, string[] playersSymbols)
+        public static GameObject[,,] PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldSymbol(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
         {
             //GameObject[,,] buttons;
 
