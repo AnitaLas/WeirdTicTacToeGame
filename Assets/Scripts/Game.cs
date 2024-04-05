@@ -626,14 +626,18 @@ internal class Game : MonoBehaviour
 
                         //---------------------------------
 
-                        Debug.Log($" -------------------- BEFORE -------------------------------------- ");
+                        //Debug.Log($" -------------------- BEFORE -------------------------------------- ");
 
-                        for (int i = 0; i < _playersSymbols.Length; i++)
-                        {
-                            Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
-                        }
+                        //for (int i = 0; i < _playersSymbols.Length; i++)
+                        //{
+                        //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
+                        //}
 
 
+                        //for (int i = 0; i < _playerSymbolMove.Length; i++)
+                        //{
+                        //    Debug.Log($"_playersSymbols[{i}]: " + _playerSymbolMove[i]);
+                        //}
 
 
                         _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsComnonMethods.GetNewDataForPlayersSymbols(_playersSymbols, _gameChangeTimeConfiguration, _switchChange);
@@ -646,18 +650,11 @@ internal class Game : MonoBehaviour
 
                         PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChande, _newSymbolsForChande);
 
-                        _gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration);
-                        _gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _oldSymbolsForChande, _newSymbolsForChande);
+                        _gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChande);
+                        //_gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _oldSymbolsForChande, _newSymbolsForChande);
+                        _gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChande, _newSymbolsForChande);
 
-                        //Debug.Log($" -------------------- BEFORE -------------------------------------- ");
-
-                        //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                        //{
-                        //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                        //}
-
-
-                        _playerSymbolMove = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayerSymbolMove(_playerSymbolMove, _oldSymbolsForChande, _newSymbolsForChande);
+                        _playerSymbolMove = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChande, _newSymbolsForChande);
 
                         //Debug.Log($" -------------------- AFTER -------------------------------------- ");
 
@@ -682,12 +679,12 @@ internal class Game : MonoBehaviour
 
                         _playersSymbols = _newPlayersSymbols;
 
-                        Debug.Log($" -------------------- AFTER -------------------------------------- ");
+                        //Debug.Log($" -------------------- AFTER -------------------------------------- ");
 
-                        for (int i = 0; i < _playersSymbols.Length; i++)
-                        {
-                            Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
-                        }
+                        //for (int i = 0; i < _playersSymbols.Length; i++)
+                        //{
+                        //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
+                        //}
 
 
                     }

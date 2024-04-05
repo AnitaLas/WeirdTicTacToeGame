@@ -144,7 +144,196 @@ namespace Assets.Scripts
         }
 
 
-        // to fix - again xD
+        public static bool IsChangeForAll(float timeForChandeRandomly)
+        {
+            bool isChangeForAll;
+
+            if (timeForChandeRandomly > 0)
+                 isChangeForAll = false;
+            else
+                 isChangeForAll = true;
+
+            return isChangeForAll;
+        }
+
+        public static int GetRandomMaxIndexForNewSymbols(int takenSymbolsLenght)
+        {
+            int minNumber = 1;
+            int maxNumber = takenSymbolsLenght;
+            int numberSymbolsToChange = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
+            return numberSymbolsToChange;
+
+            //int minNumber = 0;
+            //int maxNumber = takenSymbolsLenght - 1;
+            //int numberSymbolsToChange = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
+            //return numberSymbolsToChange + 1;
+        }
+
+        public static int GetMaxIndexForNewSymbols(bool isChangeForAll, int takenSymbolsLenght)
+        {
+            int numberSymbolsToChange;
+
+            if (isChangeForAll == false)
+                numberSymbolsToChange = GetRandomMaxIndexForNewSymbols(takenSymbolsLenght);
+            else
+                numberSymbolsToChange = takenSymbolsLenght;
+
+            return numberSymbolsToChange;
+        }
+
+        public static string SetUpUntakenSymbols(string[] takenSymbols)
+        {
+            int takenSymbolsLength = takenSymbols.Length;
+            string untakenSymbols = PlayGameCommonPlayersSymbols.GetStringWithAllSymbols();
+
+            for (int i = 0; i < takenSymbolsLength; i++)
+            {
+                string takenSymbol = takenSymbols[i];
+                int index = untakenSymbols.IndexOf(takenSymbol);
+                string newString = untakenSymbols.Remove(index, 1);
+                untakenSymbols = newString;
+            }
+
+            return untakenSymbols;  
+        }
+
+        public static string SetUpTakenSymbols(string[] playersSymbols)
+        {
+            int playersSymbolsLength = playersSymbols.Length;
+            string oldSymbols = "";
+
+            for (int i = 0; i < playersSymbolsLength; i++)
+            {
+                string symbol = playersSymbols[i];
+                oldSymbols = oldSymbols + symbol;
+            }
+
+            return oldSymbols;
+        }
+
+        public static string[] GetSymbolsForChange(string symbols, int numberSymbolsToChange)
+        {
+            int symbolsLength = symbols.Length;
+            string[] symbolsForChange = new string[numberSymbolsToChange];
+            int randomIndex = symbolsLength;
+            //Debug.Log("randomIndex: " + randomIndex);
+
+            for (int i = 0; i < numberSymbolsToChange; i++)
+            {
+                int startIndex = GetRandomStartIndexForSymbol(randomIndex);
+                //Debug.Log("startIndex: " + startIndex);
+                randomIndex--;
+
+                string symbol = symbols.Substring(startIndex, 1);
+
+                symbolsForChange[i] = symbol;
+
+                symbols = symbols.Remove(startIndex, 1);
+
+            }
+            return symbolsForChange;
+        }
+
+        public static string[] GetNewSymbols(string[] playersSymbols, int numberSymbolsToChange)
+        {
+            string untakenSymbolsText = SetUpUntakenSymbols(playersSymbols);
+            string[] newSymbols = GetSymbolsForChange(untakenSymbolsText, numberSymbolsToChange);
+            return newSymbols;
+        }
+
+        public static string[] GetOldSymbolsByRandom(string[] playersSymbols, int numberSymbolsToChange)
+        {
+            string takenSymbolsText = SetUpTakenSymbols(playersSymbols);
+            string[] oldSymbols = GetSymbolsForChange(takenSymbolsText, numberSymbolsToChange);
+            return oldSymbols;
+        }
+
+        public static string[] GetOldSymbols(string[] playersSymbols, int numberSymbolsToChange, bool isChangeForAll)
+        {
+            string[] oldSymbolsForChange= new string[numberSymbolsToChange];
+            int playersSymbolsLength = playersSymbols.Length;
+
+            if (isChangeForAll == true)
+            {
+                //Debug.Log("  for all   2");
+                //randomOldSymbolsForChandeSingle = takenSymbols;
+
+                for (int i = 0; i < playersSymbolsLength; i++)
+                {
+                    string symbol = playersSymbols[i];
+                    oldSymbolsForChange[i] = symbol;
+                }
+
+                //for (int i = 0; i < randomOldSymbolsForChandeSingle.Length; i++)
+                //{
+                //    Debug.Log($"randomOldSymbolsForChandeSingle[{i}]: " + randomOldSymbolsForChandeSingle[i]);
+                //}
+            }
+            else
+            {
+                //    //Debug.Log("  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     ");
+                //    // turn players symbols to one string
+                //string oldSymbols = "";
+
+                //for (int i = 0; i < playersSymbolsLength; i++)
+                //{
+                //    string symbol = playersSymbols[i];
+                //    oldSymbols = oldSymbols + symbol;
+                //}
+
+
+                //string oldSymbols = SetUpTakenSymbols(playersSymbols);
+                ////Debug.Log("oldSymbols: " + oldSymbols);
+
+                //// get random symbol - old symbol
+                //int takenSymbolsLenght2 = playersSymbolsLength;
+                //int randomIndex2 = takenSymbolsLenght2;
+                ////Debug.Log("randomIndex2: " + randomIndex2);
+
+                //for (int i = 0; i < numberSymbolsToChange; i++)
+                //{
+                //    int startIndex = GetRandomStartIndexForSymbol(randomIndex2);
+                //    //Debug.Log("startIndex: " + startIndex);
+                //    randomIndex2--;
+                //    string oldSymbol = oldSymbols.Substring(startIndex, 1);
+
+                //    oldSymbolsForChange[i] = oldSymbol;
+
+                //    oldSymbols = oldSymbols.Remove(startIndex, 1);
+
+
+                //}
+
+                //string oldSymbols = SetUpTakenSymbols(playersSymbols);
+                //oldSymbolsForChange = GetSymbolsForChange(oldSymbols, numberSymbolsToChange);
+                oldSymbolsForChange = GetOldSymbolsByRandom(playersSymbols, numberSymbolsToChange);
+            }
+
+            return oldSymbolsForChange;
+        }
+
+        public static string[] GetNewPlayersSymbols(string[] playersSymbols, string[] oldSymbolsForChange, string[] newSymbolsForChange, int numberSymbolsToChange)
+        {
+            int playersSymbolsLength = playersSymbols.Length;
+            for (int i = 0; i < numberSymbolsToChange; i++)
+            {
+                string oldSymbol = oldSymbolsForChange[i];
+                string newSymbol = newSymbolsForChange[i];
+
+                for (int j = 0; j < playersSymbolsLength; j++)
+                {
+                    string takenSymbol = playersSymbols[j];
+
+                    if (takenSymbol == oldSymbol)
+                    {
+                        playersSymbols[i] = newSymbol;
+                    }
+                }
+            }
+
+            return playersSymbols;
+        }
+
         public static List<string[]> GetNewDataForPlayersSymbols(string[] playersSymbols, List<float> gameChangeTimeConfiguration, int switchChange)
         {
             float timeForChandeRandomly = gameChangeTimeConfiguration[0];
@@ -168,163 +357,195 @@ namespace Assets.Scripts
         }
 
         /// <summary>
-        /// that will be work only max for 13 players, GameDictionariesCommonPlayersSymbols -> DictionaryPlayersSymbols
+        /// that will be work only max for 13 players, GameDictionariesCommonPlayersSymbols -> DictionaryPlayersSymbols,
+        /// hmmm new method to generate that string is required if more than 13 
         /// </summary>
         /// <param name="playersSymbols"></param>
+        /// <param name="timeForChandeRandomly"></param>
         /// <returns></returns>
         public static List<string[]> GetNewPlayersSymbols(string[] playersSymbols, float timeForChandeRandomly)
         {
             List<string[]> symbolsLists = new List<string[]>();
 
-            string[] takenSymbols = playersSymbols;
+            //string[] takenSymbols = playersSymbols;
             int takenSymbolsLenght = playersSymbols.Length;
 
-            bool isChangeForAll;            
-
-            if (timeForChandeRandomly > 0)
-            {
-                isChangeForAll = false;  
-            }
-            else
-            {
-                isChangeForAll = true;
-            }
-
-
-            int numberSymbolsToChange;
+            bool isChangeForAll = IsChangeForAll(timeForChandeRandomly);
 
             //if (timeForChandeRandomly > 0)
-            if (isChangeForAll == false)
-            {
-                int minNumber = 1;
-                int maxNumber = takenSymbolsLenght;
-                numberSymbolsToChange = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
-            }
-            else
-            {
-                //Debug.Log("  for all   1");
-                numberSymbolsToChange = takenSymbolsLenght;
-            }
-                
+            //{
+            //    isChangeForAll = false;  
+            //}
+            //else
+            //{
+            //    isChangeForAll = true;
+            //}
 
 
+            //int numberSymbolsToChange;
+
+
+            //if (timeForChandeRandomly > 0)
+            //if (isChangeForAll == false)
+            //{
+            //    int minNumber = 1;
+            //    int maxNumber = takenSymbolsLenght;
+            //    //numberSymbolsToChange = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
+            //    numberSymbolsToChange = GetRandomMaxIndexForNewSymbols(takenSymbolsLenght);
+            //}
+            //else
+            //{
+            //    //Debug.Log("  for all   1");
+            //    numberSymbolsToChange = takenSymbolsLenght;
+            //}
+
+            Debug.Log("takenSymbolsLenght: " + takenSymbolsLenght);
+            int numberSymbolsToChange = GetMaxIndexForNewSymbols(isChangeForAll, takenSymbolsLenght);
+            Debug.Log("numberSymbolsToChange: " + numberSymbolsToChange);
+            Debug.Log(" -------------------------------------------------------------- ");
             // create table for changes
-            string[]  randomNewSymbolsForChandeSingle = new string[numberSymbolsToChange];
-            string[]  randomOldSymbolsForChandeSingle = new string[numberSymbolsToChange];
+            string[] newSymbolsForChange = new string[numberSymbolsToChange];
+            string[] oldSymbolsForChange = new string[numberSymbolsToChange];
 
 
             // create string with untaken symbols
-            string untakenSymbols = PlayGameCommonPlayersSymbols.GetStringWithAllSymbols();
-            
+            //string untakenSymbols = PlayGameCommonPlayersSymbols.GetStringWithAllSymbols();
 
-            for (int i = 0; i < takenSymbolsLenght; i++)
-            {
-                string takenSymbol = takenSymbols[i];
-                int index = untakenSymbols.IndexOf(takenSymbol);
-                string newString = untakenSymbols.Remove(index, 1);
-                untakenSymbols = newString;
-            }
+
+            //for (int i = 0; i < takenSymbolsLenght; i++)
+            //{
+            //    string takenSymbol = takenSymbols[i];
+            //    int index = untakenSymbols.IndexOf(takenSymbol);
+            //    string newString = untakenSymbols.Remove(index, 1);
+            //    untakenSymbols = newString;
+            //}
+
+            //string untakenSymbols = SetUpUntakenSymbols(takenSymbols);
 
 
             // get random symbol - new symbols - for change from untaken players symbols for single game
 
             //Debug.Log("untakenSymbols: " + untakenSymbols);
 
-            int untakenSymbolsLength = untakenSymbols.Length;
+            //int untakenSymbolsLength = untakenSymbols.Length;
 
-            int randomIndex = untakenSymbolsLength;
-           //Debug.Log("randomIndex: " + randomIndex);
-
-
-            for (int i = 0; i < numberSymbolsToChange; i++)
-            {
-                int startIndex = GetRandomStartIndexForSymbol(randomIndex);
-                //Debug.Log("startIndex: " + startIndex);
-                randomIndex--;
-
-                string newSymbols = untakenSymbols.Substring(startIndex, 1);
-
-                randomNewSymbolsForChandeSingle[i] = newSymbols;
-
-                untakenSymbols = untakenSymbols.Remove(startIndex, 1);
+            //int randomIndex = untakenSymbolsLength;
+            ////Debug.Log("randomIndex: " + randomIndex);
 
 
-            }
+            //for (int i = 0; i < numberSymbolsToChange; i++)
+            //{
+            //    int startIndex = GetRandomStartIndexForSymbol(randomIndex);
+            //    //Debug.Log("startIndex: " + startIndex);
+            //    randomIndex--;
+
+            //    string newSymbols = untakenSymbols.Substring(startIndex, 1);
+
+            //    randomNewSymbolsForChandeSingle[i] = newSymbols;
+
+            //    untakenSymbols = untakenSymbols.Remove(startIndex, 1);
+
+
+            //}
+
+
+
+            //randomNewSymbolsForChandeSingle = GetNewSymbols(takenSymbols, numberSymbolsToChange);
+            newSymbolsForChange = GetNewSymbols(playersSymbols, numberSymbolsToChange);
 
             // get random symbol - old symbols - for change from taken players symbols for single game
 
 
-            if (isChangeForAll == true)
-            {
-                //Debug.Log("  for all   2");
-                //randomOldSymbolsForChandeSingle = takenSymbols;
+            //if (isChangeForAll == true)
+            //{
+            //    //Debug.Log("  for all   2");
+            //    //randomOldSymbolsForChandeSingle = takenSymbols;
 
-                for (int i = 0; i < playersSymbols.Length; i++)
-                {
-                    string symbol = playersSymbols[i];
-                    randomOldSymbolsForChandeSingle[i] = symbol;
-                }
+            //    for (int i = 0; i < playersSymbols.Length; i++)
+            //    {
+            //        string symbol = playersSymbols[i];
+            //        randomOldSymbolsForChandeSingle[i] = symbol;
+            //    }
 
-                //for (int i = 0; i < randomOldSymbolsForChandeSingle.Length; i++)
-                //{
-                //    Debug.Log($"randomOldSymbolsForChandeSingle[{i}]: " + randomOldSymbolsForChandeSingle[i]);
-                //}
-            }
-            else
-            {
-                //Debug.Log("  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     ");
-                // turn players symbols to one string
-                string oldSymbols = "";
+            //    //for (int i = 0; i < randomOldSymbolsForChandeSingle.Length; i++)
+            //    //{
+            //    //    Debug.Log($"randomOldSymbolsForChandeSingle[{i}]: " + randomOldSymbolsForChandeSingle[i]);
+            //    //}
+            //}
+            //else
+            //{
+            //    //    //Debug.Log("  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     ");
+            //    //    // turn players symbols to one string
+            //       string oldSymbols = "";
 
-                for (int i = 0; i < takenSymbolsLenght; i++)
-                {
-                    string symbol = takenSymbols[i];
-                    oldSymbols = oldSymbols + symbol;
-                }
+            //    for (int i = 0; i < takenSymbolsLenght; i++)
+            //    {
+            //    string symbol = takenSymbols[i];
+            //    oldSymbols = oldSymbols + symbol;
+            //    }
 
-                //Debug.Log("oldSymbols: " + oldSymbols);
+            ////Debug.Log("oldSymbols: " + oldSymbols);
 
-                // get random symbol - old symbol
-                int takenSymbolsLenght2 = playersSymbols.Length;
-                int randomIndex2 = takenSymbolsLenght2;
-                //Debug.Log("randomIndex2: " + randomIndex2);
+            //// get random symbol - old symbol
+            //int takenSymbolsLenght2 = playersSymbols.Length;
+            //int randomIndex2 = takenSymbolsLenght2;
+            ////Debug.Log("randomIndex2: " + randomIndex2);
 
-                for (int i = 0; i < numberSymbolsToChange; i++)
-                {
-                    int startIndex = GetRandomStartIndexForSymbol(randomIndex2);
-                    //Debug.Log("startIndex: " + startIndex);
-                    randomIndex2--;
-                    string oldSymbol = oldSymbols.Substring(startIndex, 1);
+            //    for (int i = 0; i < numberSymbolsToChange; i++)
+            //    {
+            //    int startIndex = GetRandomStartIndexForSymbol(randomIndex2);
+            //    //Debug.Log("startIndex: " + startIndex);
+            //    randomIndex2--;
+            //    string oldSymbol = oldSymbols.Substring(startIndex, 1);
 
-                    randomOldSymbolsForChandeSingle[i] = oldSymbol;
+            //    randomOldSymbolsForChandeSingle[i] = oldSymbol;
 
-                    oldSymbols = oldSymbols.Remove(startIndex, 1);
-
-
-                }
-            }
+            //    oldSymbols = oldSymbols.Remove(startIndex, 1);
 
 
+            //    }
+
+            //}
 
 
+            //randomOldSymbolsForChandeSingle = GetOldSymbols(takenSymbols, numberSymbolsToChange, isChangeForAll);
+            oldSymbolsForChange = GetOldSymbols(playersSymbols, numberSymbolsToChange, isChangeForAll);
 
-            //// new players symbols - all
 
-            for (int i = 0; i < numberSymbolsToChange; i++)
-            {
-                string oldSymbol = randomOldSymbolsForChandeSingle[i];
-                string newSymbol = randomNewSymbolsForChandeSingle[i];
+            //// new players symbols - all layersSymbols.Length
 
-                for (int j = 0; j < takenSymbolsLenght; j++)
-                {
-                    string takenSymbol = takenSymbols[j];
+            //for (int i = 0; i < numberSymbolsToChange; i++)
+            //{
+            //    string oldSymbol = randomOldSymbolsForChandeSingle[i];
+            //    string newSymbol = randomNewSymbolsForChandeSingle[i];
 
-                    if (takenSymbol == oldSymbol)
-                    {
-                        takenSymbols[i] = newSymbol;
-                    }
-                }
-            }
+            //    for (int j = 0; j < playersSymbols.Length; j++)
+            //    {
+            //        string takenSymbol = playersSymbols[j];
+
+            //        if (takenSymbol == oldSymbol)
+            //        {
+            //            playersSymbols[j] = newSymbol;
+            //        }
+            //    }
+            //}
+
+            playersSymbols = GetNewPlayersSymbols(playersSymbols, oldSymbolsForChange, newSymbolsForChange, numberSymbolsToChange);
+            //for (int i = 0; i < numberSymbolsToChange; i++)
+            //{
+            //    string oldSymbol = randomOldSymbolsForChandeSingle[i];
+            //    string newSymbol = randomNewSymbolsForChandeSingle[i];
+
+            //    for (int j = 0; j < takenSymbolsLenght; j++)
+            //    {
+            //        string takenSymbol = takenSymbols[j];
+
+            //        if (takenSymbol == oldSymbol)
+            //        {
+            //            takenSymbols[i] = newSymbol;
+            //        }
+            //    }
+            //}
 
 
             //Debug.Log("  ----------------------------------------    ");
@@ -340,194 +561,10 @@ namespace Assets.Scripts
             //    Debug.Log($"randomNewSymbolsForChandeSingle[{i}]: " + randomNewSymbolsForChandeSingle[i]);
             //}
 
-            symbolsLists.Insert(0, randomOldSymbolsForChandeSingle);
-            symbolsLists.Insert(1, randomNewSymbolsForChandeSingle);
-            symbolsLists.Insert(2, takenSymbols);
-
-            return symbolsLists;
-        }
-
-
-
-        /// <summary>
-        /// that will be work only max for 13 players, GameDictionariesCommonPlayersSymbols -> DictionaryPlayersSymbols
-        /// </summary>
-        /// <param name="playersSymbols"></param>
-        /// <returns></returns>
-        public static List<string[]> GetNewRandomPlayersSymbolsOldVersion(string[] playersSymbols, List<float> gameChangeTimeConfiguration)
-        {
-            List<string[]> symbolsLists = new List<string[]>();
-
-            float timeForChandeRandomly = gameChangeTimeConfiguration[0];
-            float timeForChandeForAll = gameChangeTimeConfiguration[1];
-            float timeForSwitchBetweenTeams = gameChangeTimeConfiguration[2];
-
-            string[] takenSymbols = playersSymbols;
-            int takenSymbolsLenght = playersSymbols.Length;
-
-            string[] newPlayersSymbols = new string[takenSymbolsLenght];
-
-
-            bool isDoubleRandomChange;// = false;
-
-            if ((timeForChandeRandomly > 0 || timeForChandeForAll > 0 ) && timeForSwitchBetweenTeams > 0)
-            {
-                isDoubleRandomChange = true;
-            }
-            else
-            {
-                isDoubleRandomChange = false;
-            }
-
-
-            int doubleRandom;
-
-            if (isDoubleRandomChange == true)
-            {
-                doubleRandom = 2;
-            }
-            else
-            {
-                doubleRandom = 1;
-            }
-
-            int[] randomNumberToChange = new int[doubleRandom];
-
-
-            for (int i = 0; i < doubleRandom; i++)
-            {
-                int minNumber = 1;
-                int maxNumber = takenSymbolsLenght;
-                int random = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
-                takenSymbolsLenght = random;
-                randomNumberToChange[i] = random;
-            }
-
-
-            // create table for changes
-            string[] randomNewSymbolsForChandeSingle; // for all or randomly
-            string[] randomOldSymbolsForChandeSingle; // for all or randomly
-            string[] randomSymbolsForSwitchBetweenTeams;
-
-            int singleChange = randomNumberToChange[0];
-            int teamChange;
-            randomNewSymbolsForChandeSingle = new string[singleChange];
-            randomOldSymbolsForChandeSingle = new string[singleChange];
-
-            if (isDoubleRandomChange == true)
-            {
-                teamChange = randomNumberToChange[1];  
-                randomSymbolsForSwitchBetweenTeams = new string[teamChange];
-            }
-
-            // create string with untaken symbols
-            string untakenSymbols = PlayGameCommonPlayersSymbols.GetStringWithAllSymbols();
-            int untakenSymbolsLength = untakenSymbols.Length;
-
-            for (int i = 0; i < takenSymbolsLenght; i++)
-            {
-                string takenSymbol = takenSymbols[i];
-                int index = untakenSymbols.IndexOf(takenSymbol);
-                string newString = untakenSymbols.Remove(index, 1);
-                untakenSymbols = newString;
-            }
-
-
-            // get random symbol - new symbols - for change from untaken players symbols for single game
-
-            
-            for (int i = 0; i < singleChange; i++)
-            {
-                int startIndex = GetRandomStartIndexForSymbol(untakenSymbolsLength);
-
-                string newSymbols = untakenSymbols.Substring(startIndex, 1);
-
-                randomNewSymbolsForChandeSingle[i] = newSymbols;
-
-                untakenSymbols = untakenSymbols.Remove(startIndex, 1);
-
-                //untakenSymbols = newString;
-
-            }
-
-            // get random symbol - old symbols - for change from taken players symbols for single game
-
-            // turn players symbols to one string
-            string oldSymbols = "";
-
-            for (int i = 0; i < takenSymbolsLenght; i++)
-            {
-                string symbol = takenSymbols[i];
-                oldSymbols = oldSymbols + symbol;
-            }
-
-
-
-            // get random symbol - old symbol
-            for (int i = 0; i < singleChange; i++)
-            {
-                int startIndex = GetRandomStartIndexForSymbol(takenSymbolsLenght);
-
-                string oldSymbol = oldSymbols.Substring(startIndex, 1);
-
-                randomOldSymbolsForChandeSingle[i] = oldSymbol;
-
-                oldSymbols = oldSymbols.Remove(startIndex, 1);
-
-                //oldSymbols = newString;
-
-            }
-
-            // new players symbols 
-
-            for (int i = 0; i < singleChange; i++)
-            {
-                string oldSymbol = randomOldSymbolsForChandeSingle[i];
-                string newSymbol = randomNewSymbolsForChandeSingle[i];
-
-                for (int j = 0; j < takenSymbolsLenght; j++)
-                {
-                    string takenSymbol = takenSymbols[j];
-
-                    if (takenSymbol == oldSymbol)
-                    {
-                        takenSymbols[i] = newSymbol;
-                    }
-                }
-            }
-
-
-
-
-
-
-
-
-
-            // get random symbol for team game
-
-
-
-            //string[] newSymbolsForPlayers = new string[takenSymbolsLenght];
-            //int newSymbolsForPlayersLength = newSymbolsForPlayers.Length;
-            //int maxNumberForUntakenSymbol = untakenSymbolsLength - takenSymbolsLenght;
-
-
-            //int maxRandomNumber = maxNumberForUntakenSymbol - 1;
-            //for (int i = 0; i < newSymbolsForPlayersLength; i++)
-            //{
-            //    int randomIndex = GetRandomNumberPlayersToChangeSymbolsAll(maxRandomNumber);
-            //    maxRandomNumber--;
-
-            //    string newSymbols = untakenSymbols.Substring(randomIndex, 1);
-
-            //    newSymbolsForPlayers[i] = newSymbols;
-
-            //    string newString = untakenSymbols.Remove(randomIndex, 1);
-
-            //    untakenSymbols = newString;
-
-            //}
+            symbolsLists.Insert(0, oldSymbolsForChange);
+            symbolsLists.Insert(1, newSymbolsForChange);
+            //symbolsLists.Insert(2, takenSymbols);
+            symbolsLists.Insert(2, playersSymbols);
 
             return symbolsLists;
         }
@@ -559,31 +596,29 @@ namespace Assets.Scripts
                     }
                 }
             }
-
         }
 
-        public static void SetUpNewDataForGame(GameObject[,,] gameBoard, string[] oldSymbols, string[] newSymbols)
-        {
-            SetUpNewPlayersSymbolsForGameBoard(gameBoard, oldSymbols, newSymbols);
-        }
+        //public static void SetUpNewDataForGame(GameObject[,,] gameBoard, string[] oldSymbols, string[] newSymbols)
+        //{
+        //    SetUpNewPlayersSymbolsForGameBoard(gameBoard, oldSymbols, newSymbols);
+        //}
 
         public static string[,] SetUpNewGameBoardVerification2D(string[,] gameBoardVerification2D, string[] oldSymbolsForChande, string[] newSymbolsForChande)
         {
             int cubePlayIndexY = gameBoardVerification2D.GetLength(0);
             int cubePlayIndexX = gameBoardVerification2D.GetLength(1);
-            //string[,] newGameBoardVerification2D = new string[cubePlayIndexY, cubePlayIndexX];
-
             int newSymbolsToChange = newSymbolsForChande.Length;
-
 
             for (int z = 0; z < newSymbolsToChange; z++)
             {
                 string newSymbol = newSymbolsForChande[z];
                 string oldSymbol = oldSymbolsForChande[z];
 
-                for (int i = 0; i < gameBoardVerification2D.GetLength(0); i++)
+                //for (int i = 0; i < gameBoardVerification2D.GetLength(0); i++)
+                for (int i = 0; i < cubePlayIndexY; i++)
                 {
-                    for (int j = 0; j < gameBoardVerification2D.GetLength(1); j++)
+                    //for (int j = 0; j < gameBoardVerification2D.GetLength(1); j++)
+                    for (int j = 0; j < cubePlayIndexX; j++)
                     {
                         string currentSymbol = gameBoardVerification2D[i, j];
 
@@ -591,11 +626,8 @@ namespace Assets.Scripts
                         {
                             gameBoardVerification2D[i, j] = newSymbol;
                         }
-
-
                     }
                 }
-
             }
 
 
@@ -661,31 +693,8 @@ namespace Assets.Scripts
             return gameBoardVerification2D;
         }
 
-        public static string[] SetUpNewPlayerSymbolMove(string[] playerSymbolMove, string[] oldSymbolsForChande, string[] newSymbolsForChande)
+        public static string[] CreateTableWithTagsForPlayerSymbolMove()
         {
-            int playerSymbolMoveLength = playerSymbolMove.Length;
-            int newSymbolsToChangeLength = newSymbolsForChande.Length;
-            string[] newPlayerSymbolMove = new string[playerSymbolMoveLength];
-
-            for (int z = 0; z < newSymbolsToChangeLength; z++)
-            {
-                string newSymbol = newSymbolsForChande[z];
-                string oldSymbol = oldSymbolsForChande[z];
-
-                for (int i = 0; i < playerSymbolMoveLength; i++)
-                {
-
-                    string currentSymbol = playerSymbolMove[i];
-
-                    if (currentSymbol == oldSymbol)
-                    {
-                        newPlayerSymbolMove[i] = newSymbol;
-                    }
-                }
-
-            }
-
-
             string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
             string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
             string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
@@ -694,6 +703,14 @@ namespace Assets.Scripts
             table[0] = tagPlayerSymbolPrevious;
             table[1] = tagPlayerSymbolCurrent;
             table[2] = tagPlayerSymbolNext;
+
+            return table;
+        }
+
+        public static void ChangeDataForPlayersSymbolsMoveGameObjects(string[] oldSymbolsForChande, string[] newSymbolsForChande)
+        {
+            string[] table = CreateTableWithTagsForPlayerSymbolMove();
+            int newSymbolsToChangeLength = newSymbolsForChande.Length;
 
             for (int i = 0; i < table.Length; i++)
             {
@@ -708,17 +725,97 @@ namespace Assets.Scripts
                     if (currentSymbol == oldSymbol)
                     {
                         string newSymbol = newSymbolsForChande[j];
-
                         GameCommonMethodsMain.ChangeTextForFirstChild(cubePlay, newSymbol);
                     }
                 }
+            }
+        }
 
-                
-                
+        public static string[] GetNewPlayersSymbolsMove(string[] playerSymbolMove, string[] oldSymbolsForChande, string[] newSymbolsForChande)
+        {
+            int playerSymbolMoveLength = playerSymbolMove.Length;
+            int newSymbolsToChangeLength = newSymbolsForChande.Length;
+
+            for (int z = 0; z < newSymbolsToChangeLength; z++)
+            {
+                string newSymbol = newSymbolsForChande[z];
+                string oldSymbol = oldSymbolsForChande[z];
+
+                for (int i = 0; i < playerSymbolMoveLength; i++)
+                {
+                    string currentSymbol = playerSymbolMove[i];
+
+                    if (currentSymbol == oldSymbol)
+                        playerSymbolMove[i] = newSymbol;
+                }
             }
 
+            return playerSymbolMove;
+        }
 
-            return newPlayerSymbolMove;
+        public static string[] SetUpNewPlayersSymbolsMove(string[] playerSymbolMove, string[] oldSymbolsForChande, string[] newSymbolsForChande)
+        {
+            //int playerSymbolMoveLength = playerSymbolMove.Length;
+            //int newSymbolsToChangeLength = newSymbolsForChande.Length;
+
+            //for (int z = 0; z < newSymbolsToChangeLength; z++)
+            //{
+            //    string newSymbol = newSymbolsForChande[z];
+            //    string oldSymbol = oldSymbolsForChande[z];
+
+            //    for (int i = 0; i < playerSymbolMoveLength; i++)
+            //    {
+            //        string currentSymbol = playerSymbolMove[i];
+
+            //        if (currentSymbol == oldSymbol)
+            //            playerSymbolMove[i] = newSymbol;
+            //    }
+            //}
+
+
+            //string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
+            //string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
+            //string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
+
+            //string[] table = new string[3];
+            //table[0] = tagPlayerSymbolPrevious;
+            //table[1] = tagPlayerSymbolCurrent;
+            //table[2] = tagPlayerSymbolNext;
+
+
+            //string[] table = CreateTableWithTagsForPlayerSymbolMove();
+
+
+            //for (int i = 0; i < table.Length; i++)
+            //{
+            //    string tagName = table[i];
+            //    GameObject cubePlay = GameCommonMethodsMain.GetObjectByTagName(tagName);
+            //    string currentSymbol = CommonMethods.GetCubePlayText(cubePlay);
+
+            //    for (int j = 0; j < newSymbolsToChangeLength; j++)
+            //    {
+            //        string oldSymbol = oldSymbolsForChande[j];
+
+            //        if (currentSymbol == oldSymbol)
+            //        {
+            //            string newSymbol = newSymbolsForChande[j];
+            //            GameCommonMethodsMain.ChangeTextForFirstChild(cubePlay, newSymbol);
+            //        }
+
+            //    }
+
+            //}
+            playerSymbolMove = GetNewPlayersSymbolsMove(playerSymbolMove, oldSymbolsForChande, newSymbolsForChande);
+            ChangeDataForPlayersSymbolsMoveGameObjects(oldSymbolsForChande, newSymbolsForChande);
+
+            //Debug.Log($" -------------------- AFTER -------------------------------------- ");
+
+            //for (int i = 0; i < playerSymbolMove.Length; i++)
+            //{
+            //    Debug.Log($"_playersSymbols[{i}]: " + playerSymbolMove[i]);
+            //}
+
+            return playerSymbolMove;
         }
 
 
@@ -753,6 +850,7 @@ namespace Assets.Scripts
                 }
             }
         }
+
 
     }
 }

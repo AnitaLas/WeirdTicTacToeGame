@@ -11,11 +11,11 @@ namespace Assets.Scripts
     {
         // buttons: top: player symbols & change
 
-        public static List<GameObject[,,]> GameChangePlayersSymbolsButtonsTopCreate(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<float> gameChangeTimeConfiguration)
+        public static List<GameObject[,,]> GameChangePlayersSymbolsButtonsTopCreate(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<float> gameChangeTimeConfiguration, string[] newSymbolsForChande)
         {
             //int playersNumber = newPlayersSymbols.Length;
             //int randomNumberForChange = PlayGameChangePlayersSymbolsComnonMethods.GetRandomNumberPlayersToChangeSymbols(playerSymbolMove);
-            int randomNumberForChange = 2;
+            int randomNumberForChange = newSymbolsForChande.Length;
             float timeForChandeRandomly = gameChangeTimeConfiguration[0];
             float timeForChandeForAll = gameChangeTimeConfiguration[1];
             //float timeForSwitchBetweenTeams = gameChangeTimeConfiguration[2];
@@ -149,7 +149,7 @@ namespace Assets.Scripts
         // button - main - information about old symbol and new symbol
 
 
-        public static List<GameObject[,,]> GameChangePlayersSymbolsButtonsCreate(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<float> gameChangeTimeConfiguration, string[] oldSymbolsForChande, string[] newSymbolsForChande)
+        public static List<GameObject[,,]> GameChangePlayersSymbolsButtonsCreate(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, Material[] prefabCubePlayButtonsBackColour, string[] oldSymbolsForChande, string[] newSymbolsForChande)
         {
             int playersNumberForChangeSymbols = newSymbolsForChande.Length;
             //Debug.Log("playersNumberForChangeSymbols: " + playersNumberForChangeSymbols);
@@ -160,7 +160,8 @@ namespace Assets.Scripts
             {
                 //Debug.Log(" test ");
 
-                buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
+                //buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
+                buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
             
             
             
@@ -190,7 +191,7 @@ namespace Assets.Scripts
 
             //string frontTextToAdd = "InformationButtonTopChange_";
             float newCoordinateY = -1.25f;
-            float newCoordinateX = 0f;
+            float newCoordinateX = 0.3f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
             //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
@@ -209,9 +210,12 @@ namespace Assets.Scripts
 
             //string frontTextToAdd = "InformationButtonTopChange_";
             float newCoordinateY = -1.6f;
-            float newCoordinateX = -2.45f;
+            float newCoordinateX = -2.35f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
+
+
+ 
             //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
 
             return button;
@@ -228,7 +232,7 @@ namespace Assets.Scripts
 
             //string frontTextToAdd = "InformationButtonTopChange_";
             float newCoordinateY = -1.6f;
-            float newCoordinateX = -0.25f;
+            float newCoordinateX = 0.15f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
             //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
