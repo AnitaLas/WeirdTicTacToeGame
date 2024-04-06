@@ -80,6 +80,7 @@ TagManager:
   - ConfigurationChangePlayersSymbolsButtonInformation
   - GameButtonInformationTimerForPlayers
   - GameButtonInformationTimerForBoardGame
+  - StartGameButtonInactiveField
   layers:
   - Default
   - TransparentFX

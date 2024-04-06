@@ -36,6 +36,13 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetTagForButtonNameByTagInactiveField()
+        {
+            int dictionatyId = 4;
+            string tagName = GetTagsNameFromDictionaryTagsStartGame(dictionatyId);
+            return tagName;
+        }
+
 
     }
 }

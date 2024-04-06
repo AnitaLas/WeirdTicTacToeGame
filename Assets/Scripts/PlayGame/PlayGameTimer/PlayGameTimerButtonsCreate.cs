@@ -47,7 +47,7 @@ namespace Assets.Scripts
         {
             GameObject timer = PlayGameTimerButtonsCreateSingleButtonCountdownSeconds(prefabTimer);
 
-            float newCoordinateY = 3.25f;
+            float newCoordinateY = 3.6f;
             float newCoordinateX = 1.25f;
             float newCoordinateZ = 0f;
             string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForPlayers();

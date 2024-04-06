@@ -102,7 +102,7 @@ namespace Assets.Scripts
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsFourRows(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             //string frontTextToAdd = "InformationButtonTopPlayersSymbols_";
-            float newCoordinateY = 4f;
+            float newCoordinateY = 4.35f;
             float newCoordinateX = -0.8f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
@@ -121,7 +121,7 @@ namespace Assets.Scripts
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
             //string frontTextToAdd = "InformationButtonTopChange_";
-            float newCoordinateY = 3.55f;
+            float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
@@ -142,7 +142,7 @@ namespace Assets.Scripts
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsFourRows(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             //string frontTextToAdd = "InformationButtonTopPlayersSymbols_";
-            float newCoordinateY = 4f;
+            float newCoordinateY = 4.35f;
             float newCoordinateX = -0.8f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
@@ -223,7 +223,7 @@ namespace Assets.Scripts
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
             //string frontTextToAdd = "InformationButtonTopChange_";
-            float newCoordinateY = 3.55f;
+            float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
@@ -295,7 +295,7 @@ namespace Assets.Scripts
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
             //string frontTextToAdd = "InformationButtonTopChange_";
-            float newCoordinateY = 3.55f;
+            float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 

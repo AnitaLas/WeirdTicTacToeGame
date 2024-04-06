@@ -78,7 +78,7 @@ namespace Assets.Scripts
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsFourRows(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             //string frontTextToAdd = "InformationButtonTopPlayersSymbols_";
-            float newCoordinateY = 4f;
+            float newCoordinateY = 4.35f;
             float newCoordinateX = -0.8f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
@@ -97,7 +97,7 @@ namespace Assets.Scripts
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsFourRows(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             //string frontTextToAdd = "InformationButtonTopPlayersSymbols_";
-            float newCoordinateY = 4f;
+            float newCoordinateY = 4.35f;
             float newCoordinateX = -0.8f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
@@ -116,7 +116,7 @@ namespace Assets.Scripts
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
             //string frontTextToAdd = "InformationButtonTopChange_";
-            float newCoordinateY = 3.55f;
+            float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
@@ -135,7 +135,7 @@ namespace Assets.Scripts
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
             //string frontTextToAdd = "InformationButtonTopChange_";
-            float newCoordinateY = 3.55f;
+            float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
@@ -161,7 +161,7 @@ namespace Assets.Scripts
                 //Debug.Log(" test ");
 
                 //buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
-                buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
+                buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtonsForModeCellphone(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
             
             
             
@@ -169,32 +169,46 @@ namespace Assets.Scripts
             }
             else
             {
-                Debug.Log("Upss it does not implemented yet, sorry :( ");
+                //Debug.Log("Upss it does not implemented yet, sorry :( ");
+
+                buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtonsForModeTablet(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
+
 
             }
 
-            
+
 
 
             return buttons;
         }
 
-
+        // button: background - mode: cellphone 
         public static GameObject[,,] PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldAndNewBackground(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, bool isGame2D)
         {
-            //GameObject[,,] buttons;
-
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
             string buttonText = PlayGameCommonButtonsName.GetButtonNameForOldAndNew();
 
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsButtonForOldAndNewBackground(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D, tagName, buttonText);
 
-            //string frontTextToAdd = "InformationButtonTopChange_";
             float newCoordinateY = -1.25f;
             float newCoordinateX = 0.3f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
-            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
+            return button;
+        }
+
+        // button: background - mode: tablet 
+        public static GameObject[,,] PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldAndNewBackgroundForModeTablet(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, bool isGame2D)
+        {
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
+            //string buttonText = PlayGameCommonButtonsName.GetButtonNameForOldAndNew();
+            string buttonText = "  >";
+
+            GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsButtonForOldAndNewBackgroundForModeTablet(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D, tagName, buttonText);
+
+            float newCoordinateY = -0.9f;
+            float newCoordinateX = 0.2f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
 
             return button;
         }

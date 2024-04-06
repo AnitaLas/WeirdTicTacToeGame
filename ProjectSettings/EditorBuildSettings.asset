@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneConfigurationChangePlayersSymbols.unity
     guid: 974026451fa2aac44b1766751a468924
   - enabled: 1
+    path: Assets/Scenes/SceneConfigurationTeamMembers.unity
+    guid: 73338544a7189c248bd9d8254f07a876
+  - enabled: 1
+    path: Assets/Scenes/SceneConfigurationTeamNumbers.unity
+    guid: 6506aec16e5044f409568d52a9506043
+  - enabled: 1
     path: Assets/Scenes/SceneGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
