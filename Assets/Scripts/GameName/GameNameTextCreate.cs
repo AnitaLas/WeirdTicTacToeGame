@@ -6,12 +6,12 @@ namespace Assets.Scripts
 {
     internal class GameNameTextCreate : MonoBehaviour
     {
-        public static void CreateGameNameForStart(GameObject objectWithtext)
-        {
-            float newCoordinateY = 4;
-            CreateGameNameText(objectWithtext);
-            ChangeDataForGameName(newCoordinateY);
-        }
+        //public static void CreateGameNameForStart(GameObject objectWithtext)
+        //{
+        //    float newCoordinateY = 4;
+        //    CreateGameNameText(objectWithtext);
+        //    ChangeDataForGameName(newCoordinateY);
+        //}
 
         public static void CreateGameNameForGameInformations(GameObject objectWithtext)
         {

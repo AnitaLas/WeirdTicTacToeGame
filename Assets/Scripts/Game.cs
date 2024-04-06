@@ -609,44 +609,11 @@ internal class Game : MonoBehaviour
                         _isTimeToHidePlayGameElements = false;
                         _timeForHide = _timeForTimers[indexTimeForHide];
 
-                        //-------------------------------------------------------
-
-                        //_newPlayersSymbols = PlayGameChangePlayersSymbolsComnonMethods.GetNewPlayersSymbols(_playersSymbols);                                          
-
-                        //PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _playersSymbols, _newPlayersSymbols);
-
-                        //_gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newPlayersSymbols);
-                        //_gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _playersSymbols, _newPlayersSymbols);
-
-                        //_playerSymbolMove = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayerSymbolMove(_playerSymbolMove, _playersSymbols, _newPlayersSymbols);
-                        //_gameBoardVerification2D = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _playersSymbols, _newPlayersSymbols);
-
-
-
-
-                        //---------------------------------
-
-                        //Debug.Log($" -------------------- BEFORE -------------------------------------- ");
-
-                        //for (int i = 0; i < _playersSymbols.Length; i++)
-                        //{
-                        //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
-                        //}
-
-
-                        //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                        //{
-                        //    Debug.Log($"_playersSymbols[{i}]: " + _playerSymbolMove[i]);
-                        //}
-
-
                         _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsComnonMethods.GetNewDataForPlayersSymbols(_playersSymbols, _gameChangeTimeConfiguration, _switchChange);
 
                         _oldSymbolsForChande = _newDataForPlayersSymbols[0];
                         _newSymbolsForChande = _newDataForPlayersSymbols[1];
                         _newPlayersSymbols = _newDataForPlayersSymbols[2];
-
-
 
                         PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChande, _newSymbolsForChande);
 
@@ -656,36 +623,16 @@ internal class Game : MonoBehaviour
 
                         _playerSymbolMove = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChande, _newSymbolsForChande);
 
-                        //Debug.Log($" -------------------- AFTER -------------------------------------- ");
-
-                        //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                        //{
-                        //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                        //}
 
 
                         _gameBoardVerification2D = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChande, _newSymbolsForChande);
-
-
 
                         if (_isDoubleRandomChange == true)
                         {
                             _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
                         }
 
-
-
-     
-
                         _playersSymbols = _newPlayersSymbols;
-
-                        //Debug.Log($" -------------------- AFTER -------------------------------------- ");
-
-                        //for (int i = 0; i < _playersSymbols.Length; i++)
-                        //{
-                        //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
-                        //}
-
 
                     }
                 }
@@ -707,7 +654,7 @@ internal class Game : MonoBehaviour
             }
             else
             {
-                //true = stop time, in future, can set up the main configuration for time,
+                //true = stop time, in future, can set up the main configuration for time, false = stop
                 //where the user can set up if this time will be stopped or counted from the beginning
             }
 

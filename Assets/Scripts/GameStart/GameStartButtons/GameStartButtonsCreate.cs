@@ -8,76 +8,136 @@ namespace Assets.Scripts
     internal class GameStartButtonsCreate
     {
  
-        public static void CreateButtonsStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        public static void CreateButtonsStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
-            CreateButtonStartGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
-            CreateButtonStartTeamGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            GameNameButtons.CreateButtonGameName(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D);
+
+            CreateButtonStartGameBackgroundForStartGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            CreateButtonStartGame(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+
+
+            CreateButtonStartGameBackgroundForStartTeamGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            CreateButtonStartTeamGame(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+
+
+
             CreateButtonStartGameInformation(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+
+           
+        }
+
+        // button background
+
+        public static GameObject[,,] CreateButtonStartGameBackgroundForStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            GameObject[,,] button;
+
+            string tagGameButtonNewGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartGame(); ;
+            string buttonText = GameStartCommonButtonsName.GetButtonNameForGameBackground();
+
+            int numberOfDepths = 1;
+            int numberOfRows = 4;
+            int numberOfColumns = 18;
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
+
+            button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = 1.2f;
+            ButtonsCommonMethods.ChangeDataForSingleGameButtons(button, newCoordinateY, tagGameButtonNewGame);
+
+            float newCoordinateY2 = 0f;
+            float newCoordinateX = 0f;
+
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY2, newCoordinateX);
+
+            return button;
         }
 
         // button - standard/ normal game version
         public static GameObject[,,] CreateButtonStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            GameObject[,,] tableButtonNewGame;
+            GameObject[,,] button;
 
-            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
-            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
-
-            //string tagGameButtonNewGame = tagCubePlayDictionary[1];
-            string tagGameButtonNewGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartGame();
-            //string buttonText = buttonsGameNameDictionary[1];
+            string tagName = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartGame();;
             string buttonText = GameStartCommonButtonsName.GetButtonNameForTraditionalGame();
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
+            int numberOfColumns = 14;
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
+
+            button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = 0.7f;
+            ButtonsCommonMethods.ChangeDataForSingleGameButtons(button, newCoordinateY, tagName);
+
+            float newCoordinateY2 = 0f;
+            float newCoordinateX = 0f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY2, newCoordinateX);
+
+            return button;
+        }
+
+        // buutton - team game
+
+        public static GameObject[,,] CreateButtonStartGameBackgroundForStartTeamGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            GameObject[,,] button;
+
+            string tagName = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartTeamGame(); ;
+            string buttonText = GameStartCommonButtonsName.GetButtonNameForGameBackground();
+
+            int numberOfDepths = 1;
+            int numberOfRows = 4;
             int numberOfColumns = 18;
 
             string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
 
-            tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+            button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
-            float newCoordinateY = 1.0f;
-            ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
+            float newCoordinateY = -1.0f;
+            ButtonsCommonMethods.ChangeDataForSingleGameButtons(button, newCoordinateY, tagName);
 
-            return tableButtonNewGame;
+            float newCoordinateY2 = 0f;
+            float newCoordinateX = 0f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY2, newCoordinateX);
+
+
+            return button;
         }
 
-        // buutton - team game
         public static GameObject[,,] CreateButtonStartTeamGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            GameObject[,,] tableButtonNewGame;
+            GameObject[,,] button;
 
-            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
-            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
-
-            //string tagGameButtonNewGame = tagCubePlayDictionary[2];
-            string tagGameButtonNewGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartTeamGame();
-            //string buttonText = buttonsGameNameDictionary[2];
+            string tagName = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartTeamGame();
             string buttonText = GameStartCommonButtonsName.GetButtonNameForTeamGame();
 
             int numberOfDepths = 1;
             int numberOfRows = 3;
-            int numberOfColumns = 18;
+            int numberOfColumns = 14;
 
             string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
 
-            tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+            button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
-            float newCoordinateY = -1.0f;
-            ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonNewGame, newCoordinateY, tagGameButtonNewGame);
+            float newCoordinateY = -1.5f;
+            ButtonsCommonMethods.ChangeDataForSingleGameButtons(button, newCoordinateY, tagName);
 
-            return tableButtonNewGame;
+            float newCoordinateY2 = 0f;
+            float newCoordinateX = 0f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY2, newCoordinateX);
+
+
+            return button;
         }
 
 
         public static GameObject[,,] CreateButtonStartGameInformation(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
-            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
-
-            //string tagName = tagCubePlayDictionary[3];
             string tagName = GameStartCommonButtonsTagName.GetTagForButtonNameByTagInformation();
-            //string buttonText = buttonsGameNameDictionary[3];
             string buttonText = GameStartCommonButtonsName.GetButtonNameForQuestionMark();
 
             GameObject[,,] button = StartGameButtonsMethods.CreateButtonForInformations(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);

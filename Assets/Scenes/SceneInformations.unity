@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 237597992}
   - component: {fileID: 237597993}
   m_Layer: 0
-  m_Name: GameInformations
+  m_Name: GameInformation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,6 +280,9 @@ MonoBehaviour:
   prefabCubePlayButtonsBackColour:
   - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
   - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
+  prefabCubePlayButtonsNumberColour:
+  - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
+  - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
 --- !u!1 &844971349
 GameObject:
   m_ObjectHideFlags: 0

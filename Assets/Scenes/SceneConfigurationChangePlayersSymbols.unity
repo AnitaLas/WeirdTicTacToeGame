@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 248997196}
   - component: {fileID: 248997198}
   m_Layer: 0
-  m_Name: GameConfigurationChangePlayersSymbols
+  m_Name: SceneConfigurationTeamNumbers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

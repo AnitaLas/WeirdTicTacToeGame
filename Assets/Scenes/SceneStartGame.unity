@@ -277,6 +277,12 @@ MonoBehaviour:
   prefabCubePlayButtonsInformationColour:
   - {fileID: 2100000, guid: 80409c1508248834c9d8aa645ccf17c5, type: 2}
   - {fileID: 2100000, guid: 80409c1508248834c9d8aa645ccf17c5, type: 2}
+  prefabCubePlayButtonsNumberColour:
+  - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
+  - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
+  prefabCubePlayButtonsBackColour:
+  - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
+  - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
 --- !u!1 &844971349
 GameObject:
   m_ObjectHideFlags: 0

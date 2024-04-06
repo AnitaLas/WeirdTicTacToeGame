@@ -120,12 +120,7 @@ namespace Assets.Scripts
         {
             List<GameObject[,,]> buttonsList;
 
-            //Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
-            //string tagName = tagNameDictionary[2];
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolDefaultSymbol();
-
-            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryButtonsConfigurationPlayerSymbolDefaultText();
-            //string buttonText = buttonsGameNameDictionary[1];
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayer();
 
             string[] defaultPlayersSymbols = CreateGameBoardCommonMethods.CreateTableWithDefaultPlayerSymbols();
@@ -141,14 +136,8 @@ namespace Assets.Scripts
         {
             List<GameObject[,,]> buttonsList;
 
-            //Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
-            //string tagName = tagNameDictionary[2];
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolDefaultSymbol();
-
-            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryButtonsConfigurationPlayerSymbolDefaultText();
-            //string buttonText = buttonsGameNameDictionary[1];
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayer();
-
 
             string[] defaultPlayersSymbols = CreateGameBoardCommonMethods.CreateTableWithDefaultPlayerSymbols();
 
@@ -163,16 +152,10 @@ namespace Assets.Scripts
         {
             GameObject[,,] buttons;
 
-            //Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
-            //string tagConfigurationPlayerSymbolChooseSymbol = tagNameDictionary[4];
             string tagConfigurationPlayerSymbolChooseSymbol = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolChooseSymbol();
-            //string tagConfigurationPlayerSymbolInactiveField = tagNameDictionary[5];
             string tagConfigurationPlayerSymbolInactiveField = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolInactiveField();
 
-            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryButtonsConfigurationPlayerSymbolDefaultText();
-            //string buttonText = buttonsGameNameDictionary[1];
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayer();
-
 
             int numberOfDepths = 1;
             int numberOfColumns = 4;

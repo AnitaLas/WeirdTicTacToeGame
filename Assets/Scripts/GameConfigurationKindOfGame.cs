@@ -13,6 +13,8 @@ namespace Assets.Scripts
 
         public Material[] prefabCubePlayButtonsDefaultColour;
         public Material[] prefabCubePlayButtonsInformationColour;
+        public Material[] prefabCubePlayButtonsNumberColour;
+        public Material[] prefabCubePlayButtonsBackColour;
 
         private bool _isGame2D = true;
 
@@ -36,8 +38,8 @@ namespace Assets.Scripts
             _tagStartGameButtonStarTeamGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartTeamGame();
             _tagStartGameButtonInformations = GameStartCommonButtonsTagName.GetTagForButtonNameByTagInformation();
 
-            GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
-            GameNameTextCreate.CreateGameNameForStart(gameName);
+            GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
+            //GameNameTextCreate.CreateGameNameForStart(gameName);
         }
 
         void Update()
