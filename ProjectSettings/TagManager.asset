@@ -81,6 +81,12 @@ TagManager:
   - GameButtonInformationTimerForPlayers
   - GameButtonInformationTimerForBoardGame
   - StartGameButtonInactiveField
+  - ConfigurationTeamNumbersInactiveField
+  - ConfigurationTeamNumbersButtonSave
+  - ConfigurationTeamNumbersButtonBack
+  - ConfigurationTeamNumbersDefaultNumber
+  - ConfigurationTeamNumbersTableWithNumbers
+  - ConfigurationTeamNumbersChange
   layers:
   - Default
   - TransparentFX

@@ -165,7 +165,8 @@ internal class Game : MonoBehaviour
 
         _index = 0;
 
-        _configurationBoardGameDeviceModeKind = GameConfigurationBoardGame.ConfigurationBoardGameDeviceModeKind;
+        //_configurationBoardGameDeviceModeKind = GameConfigurationBoardGame.ConfigurationBoardGameDeviceModeKind;
+        _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
         _isCellphoneMode = _configurationBoardGameDeviceModeKind;
 
         _configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;

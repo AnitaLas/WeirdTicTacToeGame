@@ -64,18 +64,18 @@ namespace Assets.Scripts
             return tagName;
         }
 
-        //public static string GetScenceNameSceneConfigurationGameTeamsPlayersNumber()
-        //{
-        //    int dictionatyId = 7;
-        //    string tagName = GetScencesNameFromDictionaryScencesName(dictionatyId);
-        //    return tagName;
-        //}
+        public static string GetScenceNameSceneConfigurationGameTeamNumbers()
+        {
+            int dictionatyId = 7;
+            string tagName = GetScencesNameFromDictionaryScencesName(dictionatyId);
+            return tagName;
+        }
 
-        //public static string GetScenceNameSceneConfigurationGameTeamsPlayersSymbols()
-        //{
-        //    int dictionatyId = 8;
-        //    string tagName = GetScencesNameFromDictionaryScencesName(dictionatyId);
-        //    return tagName;
-        //}
+        public static string GetScenceNameSceneConfigurationGameTeamMembers()
+        {
+            int dictionatyId = 8;
+            string tagName = GetScencesNameFromDictionaryScencesName(dictionatyId);
+            return tagName;
+        }
     }
 }
