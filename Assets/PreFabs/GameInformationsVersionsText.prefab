@@ -66,34 +66,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'VERSION RELEASED
+  m_text: '
 
 
-    standard board game
 
 
-    ----------------------------------
+
+    NEXT VERSIONS
 
 
-    NEXT
-    VERSIONS
+    team game
 
 
-    board game with holes
-
-
-    random changing players'' symbol
-
-
-    team
-    game
-
-
-    team game with holes
-
-
-    random switch players'' symbols between
-    teams
+    random switch players''
+    symbols between teams
 
 
     3D game'

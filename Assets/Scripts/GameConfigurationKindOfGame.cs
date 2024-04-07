@@ -8,6 +8,10 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationKindOfGame : MonoBehaviour
     {
+        public static bool ConfigurationBoardGameDeviceModeKind { get; set; }
+
+        public static bool isCellphoneMode;
+
         public GameObject prefabCubePlay;
         public GameObject gameName;
 
@@ -28,11 +32,11 @@ namespace Assets.Scripts
 
         void Start()
         {
+            isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
+
             //_tagUntagged = _tagCommonDictionary[1];
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
-            //_tagStartGameButtonStartGame = _tagStartGameButtonsDictionary[1];
-            //_tagStartGameButtonStarTeamGame = _tagStartGameButtonsDictionary[2];
-            //_tagStartGameButtonInformations = _tagStartGameButtonsDictionary[3];
+
 
             _tagStartGameButtonStartGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartGame();
             _tagStartGameButtonStarTeamGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartTeamGame();
@@ -44,6 +48,7 @@ namespace Assets.Scripts
 
         void Update()
         {
+            isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
 
             if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
             {
@@ -65,14 +70,19 @@ namespace Assets.Scripts
                         if (gameObjectTag == _tagStartGameButtonStartGame)
                         {
                             ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
+                            ConfigurationBoardGameDeviceModeKind = isCellphoneMode;
                         }
 
-                        // clik team button - add scene in unity!!!
 
-                        //if (gameObjectTag == _tagStartGameButtonStarTeamGame)
-                        //{
-                        //    ScenesChange.GoToSceneConfigurationGameTeamsNumber();
-                        //}
+                        if (gameObjectTag == _tagStartGameButtonStarTeamGame)
+                        {
+                           Debug.Log("isCellphoneMode: " + isCellphoneMode);
+                            if (isCellphoneMode == true)
+                                ScenesChangeMainMethods.GoToSceneConfigurationGameTeamMembers();
+                           else
+                                ScenesChangeMainMethods.GoToSceneConfigurationGameTeamNumbers();
+                        }
+
 
                         if (gameObjectTag == _tagStartGameButtonInformations)
                         {

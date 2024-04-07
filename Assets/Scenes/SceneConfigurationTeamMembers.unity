@@ -230,8 +230,9 @@ GameObject:
   m_Component:
   - component: {fileID: 248997196}
   - component: {fileID: 248997198}
+  - component: {fileID: 248997199}
   m_Layer: 0
-  m_Name: GameConfigurationChangePlayersSymbols
+  m_Name: GameConfigurationTeamMembers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248997194}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9f4714b8f5953d4f8e82f70c173c60a, type: 3}
   m_Name: 
@@ -283,6 +284,18 @@ MonoBehaviour:
   prefabCubePlayButtonsNumberColour:
   - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
   - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
+--- !u!114 &248997199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248997194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d31f13be53e3f84ebcc716159629837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &844971349
 GameObject:
   m_ObjectHideFlags: 0

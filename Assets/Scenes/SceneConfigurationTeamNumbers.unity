@@ -229,9 +229,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 248997196}
-  - component: {fileID: 248997198}
+  - component: {fileID: 248997199}
   m_Layer: 0
-  m_Name: GameConfigurationChangePlayersSymbols
+  m_Name: GameConfigurationTeamNumbers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +257,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &248997198
+--- !u!114 &248997199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,23 +266,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 248997194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f4714b8f5953d4f8e82f70c173c60a, type: 3}
+  m_Script: {fileID: 11500000, guid: a3d124ba7832bc541bbb28ad8672d037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabCubePlay: {fileID: 6239705776127172700, guid: d04175f188a775647983c3b246bb8d98, type: 3}
-  prefabCubePlayForTableNumber: {fileID: 6239705776127172700, guid: c01368ac448363d42b8c27fd7fd6b5be, type: 3}
   prefabCubePlayDefaultColour:
   - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
   - {fileID: 2100000, guid: 92154e8fc314d4446ba5f033d1e2ee37, type: 2}
   prefabCubePlayButtonsDefaultColour:
   - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
   - {fileID: 2100000, guid: 42fabb91e0bed7248b8c6adea76afa21, type: 2}
-  prefabCubePlayButtonsBackColour:
-  - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
-  - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
   prefabCubePlayButtonsNumberColour:
   - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
   - {fileID: 2100000, guid: b4b78fb96c2953f4f869d2793d455db2, type: 2}
+  prefabCubePlayButtonsBackColour:
+  - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
+  - {fileID: 2100000, guid: fb5a46e84eaea4c4cb58b1d16e969b80, type: 2}
 --- !u!1 &844971349
 GameObject:
   m_ObjectHideFlags: 0

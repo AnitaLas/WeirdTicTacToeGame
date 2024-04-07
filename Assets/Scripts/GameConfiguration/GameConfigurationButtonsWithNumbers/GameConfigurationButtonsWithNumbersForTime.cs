@@ -19,23 +19,6 @@ namespace Assets.Scripts
             return tableWithNumber;
         }
 
-        //public static GameObject[,,] CreateTableForChangeRandomly(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
-        //{
-        //    GameObject[,,] tableWithNumbers;
-        //    GameObject[,,] tableWithNumberFinal;
-
-        //    string tagConfigurationBoardGameTableNumberRows = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberRandomly();
-
-        //    int numberOfDepths = 1;
-        //    int numberOfRows = 4;
-        //    int numberOfColumns = 4;
-
-        //    tableWithNumbers = CreateTableWithTime(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
-        //    tableWithNumberFinal = ChangeDataForTableWithSeconds(tableWithNumbers, tagConfigurationBoardGameTableNumberRows);
-
-        //    return tableWithNumberFinal;
-        //}
-
         public static int[] CreateTableWithSeconds()
         {
             int numberOfCubePlay = 4 * 4; // number: rows & columns

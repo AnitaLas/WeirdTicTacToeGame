@@ -12,7 +12,7 @@ namespace Assets.Scripts.GameConfiguration
         public static int ConfigurationBoardGameNumberOfColumns { get; set; }
         public static int ConfigurationBoardGameLenghtToCheck { get; set; }
         public static int ConfigurationBoardGameNumberOfGaps { get; set; }
-        public static bool ConfigurationBoardGameDeviceModeKind { get; set; }
+        //public static bool ConfigurationBoardGameDeviceModeKind { get; set; }
 
         private static int _lenghtToCheckMax;
         private static int _gapsNumber;
@@ -57,10 +57,7 @@ namespace Assets.Scripts.GameConfiguration
         private string _tagConfigurationBoardGameChangeNumberGaps;
         private string _tagConfigurationBoardGameTableNumberGaps;
         private string _tagConfigurationBoardGameButtonBackToConfiguration;
-        //private string[] _tagConfigurationBoardGameHideOrUnhide = new string[12];
-        //private string[] _tableWithChangedNumber = new string[3];
-        //private string[] _tableWithChangedNumber = new string[4];
-
+        private static bool _configurationBoardGameDeviceModeKind;
 
         private static bool _isGame2D = true;
 
@@ -74,37 +71,15 @@ namespace Assets.Scripts.GameConfiguration
 
         void Start()
         {
-            isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
+            _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
+            //isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
+            isCellphoneMode = _configurationBoardGameDeviceModeKind;
 
             numberOfPlayers = 2;
             numberOfRows = 3;
             numberOfColumns = 3;
             lenghtToCheck = 3;
             numberOfGaps = 0;
-
-
-            //_tagConfigurationBoardGameButtonSave = _configurationBoardGameDictionaryTag[1];
-            //_tagConfigurationBoardGameButtonBack = _configurationBoardGameDictionaryTag[2];
-            //_tagConfigurationBoardGameTableNumberRows = _configurationBoardGameDictionaryTag[3];
-            //_tagConfigurationBoardGameTableNumberColumns = _configurationBoardGameDictionaryTag[4];
-            //_tagConfigurationBoardGameRows = _configurationBoardGameDictionaryTag[5];
-            //_tagConfigurationBoardGameColumns = _configurationBoardGameDictionaryTag[6];
-            //_tagConfigurationBoardGameChangeNumberRows = _configurationBoardGameDictionaryTag[7];
-            //_tagConfigurationBoardGameChangeNumberColumns = _configurationBoardGameDictionaryTag[8];
-            //// players
-            //_tagConfigurationBoardGamePlayers = _configurationBoardGameDictionaryTag[9];
-            //_tagConfigurationBoardGameChangeNumberPlayers = _configurationBoardGameDictionaryTag[10];
-            //_tagConfigurationBoardGameTableNumberPlayers = _configurationBoardGameDictionaryTag[11];
-            //// lenght to check
-            //_tagConfigurationBoardGameLenghtToCheck = _configurationBoardGameDictionaryTag[12];
-            //_tagConfigurationBoardGameChangeNumberLenghtToCheck = _configurationBoardGameDictionaryTag[13];
-            //_tagConfigurationBoardGameTableNumberLenghtToCheck = _configurationBoardGameDictionaryTag[14];
-            //// gaps
-            //_tagConfigurationBoardGameGaps = _configurationBoardGameDictionaryTag[15];
-            //_tagConfigurationBoardGameChangeNumberGaps = _configurationBoardGameDictionaryTag[16];
-            //_tagConfigurationBoardGameTableNumberGaps = _configurationBoardGameDictionaryTag[17];
-
-            //_tagConfigurationBoardGameButtonBackToConfiguration = _configurationBoardGameDictionaryTag[21];
 
             _tagConfigurationBoardGameButtonSave = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonSaveByTagButtonSave();
             _tagConfigurationBoardGameButtonBack = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonSaveByTagButtonBack();
@@ -128,27 +103,7 @@ namespace Assets.Scripts.GameConfiguration
             _tagConfigurationBoardGameTableNumberGaps = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberGaps();
 
             _tagConfigurationBoardGameButtonBackToConfiguration = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBackByTagButtonBackToConfiguration();
-
-            // ---
-            //_tagConfigurationBoardGameHideOrUnhide[0] = _tagConfigurationBoardGameButtonSave;
-            //_tagConfigurationBoardGameHideOrUnhide[1] = _tagConfigurationBoardGameButtonBack;
-            //_tagConfigurationBoardGameHideOrUnhide[2] = _tagConfigurationBoardGameRows;
-            //_tagConfigurationBoardGameHideOrUnhide[3] = _tagConfigurationBoardGameChangeNumberRows;
-            //_tagConfigurationBoardGameHideOrUnhide[4] = _tagConfigurationBoardGameColumns;
-            //_tagConfigurationBoardGameHideOrUnhide[5] = _tagConfigurationBoardGameChangeNumberColumns;
-            //_tagConfigurationBoardGameHideOrUnhide[6] = _tagConfigurationBoardGamePlayers;
-            //_tagConfigurationBoardGameHideOrUnhide[7] = _tagConfigurationBoardGameChangeNumberPlayers;
-            //_tagConfigurationBoardGameHideOrUnhide[8] = _tagConfigurationBoardGameLenghtToCheck;
-            //_tagConfigurationBoardGameHideOrUnhide[9] = _tagConfigurationBoardGameChangeNumberLenghtToCheck;
-            //_tagConfigurationBoardGameHideOrUnhide[10] = _tagConfigurationBoardGameChangeNumberGaps;
-            //_tagConfigurationBoardGameHideOrUnhide[11] = _tagConfigurationBoardGameGaps;
-
-
-            // ---
-            //_tableWithChangedNumber[0] = _tagConfigurationBoardGameChangeNumberRows;
-            //_tableWithChangedNumber[1] = _tagConfigurationBoardGameChangeNumberColumns;
-            //_tableWithChangedNumber[2] = _tagConfigurationBoardGameChangeNumberLenghtToCheck;
-            //_tableWithChangedNumber[3] = _tagConfigurationBoardGameChangeNumberGaps;
+    
 
             _buttonsAll = GameConfigurationButtonsCreate.GameConfigurationCreateButtons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D);
         }
@@ -277,7 +232,7 @@ namespace Assets.Scripts.GameConfiguration
                             ConfigurationBoardGameNumberOfPlayers = numberOfPlayers;
                             ConfigurationBoardGameLenghtToCheck = lenghtToCheck;
                             ConfigurationBoardGameNumberOfGaps = numberOfGaps;
-                            ConfigurationBoardGameDeviceModeKind = isCellphoneMode;
+                            //ConfigurationBoardGameDeviceModeKind = isCellphoneMode;
 
                             ScenesChangeMainMethods.GoToSceneConfigurationPlayersSymbols();
                         }

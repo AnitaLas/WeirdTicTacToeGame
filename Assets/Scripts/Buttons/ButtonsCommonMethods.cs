@@ -535,11 +535,11 @@ namespace Assets.Scripts
             return text;
         }
 
-        public static void ChangeNameForGameConfigurationButtons(GameObject[,,] singleConfigurationButtonTable, string frontTextToAdd)
+        public static void ChangeNameForGameConfigurationButtons(GameObject[,,] button, string frontTextToAdd)
         {
-            int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
-            int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
-            int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
+            int maxIndexDepth = button.GetLength(0);
+            int maxIndexColumn = button.GetLength(2);
+            int maxIndexRow = button.GetLength(1);
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
@@ -548,7 +548,7 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
 
-                        GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
+                        GameObject cubePlay = button[indexDepth, indexRow, indexColumn];
                         string oldName = GameCommonMethodsMain.GetObjectName(cubePlay);
                         string newName = frontTextToAdd + oldName;
                         GameCommonMethodsMain.ChangeGameObjectName(cubePlay, newName);
@@ -558,11 +558,11 @@ namespace Assets.Scripts
         }
 
         // buttons change players symbols
-        public static void ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX)
+        public static void ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(GameObject[,,] button, float newCoordinateY, float newCoordinateX)
         {
-            int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
-            int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
-            int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
+            int maxIndexDepth = button.GetLength(0);
+            int maxIndexColumn = button.GetLength(2);
+            int maxIndexRow = button.GetLength(1);
 
             float newCoordinateZ = 0.175f;
             float fontSize = 0.7f;
@@ -574,7 +574,7 @@ namespace Assets.Scripts
                 {
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
-                        GameObject cubePlay = singleConfigurationButtonTable[indexDepth, indexRow, indexColumn];
+                        GameObject cubePlay = button[indexDepth, indexRow, indexColumn];
                         GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
                         GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
                         GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
@@ -586,8 +586,36 @@ namespace Assets.Scripts
             }
         }
 
+        public static void ChangeDataForSingleGameStartButtons(GameObject[,,] button, float newCoordinateY, float newCoordinateX, string tagName)
+        {
+            int maxIndexDepth = button.GetLength(0);
+            int maxIndexColumn = button.GetLength(2);
+            int maxIndexRow = button.GetLength(1);
 
+            float newCoordinateZ = 0.175f;
+            float fontSize = 0.7f;
+            float newScale = 0.3f;
 
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay = button[indexDepth, indexRow, indexColumn];
+                        GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                        GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                        GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
+                        //GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
+                    }
+                }
+            }
+        }
+
+       
 
     }
 }

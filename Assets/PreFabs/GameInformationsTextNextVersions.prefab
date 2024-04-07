@@ -66,9 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nVERSION RELEASED\n\nbase board game\n\n----------------------------------\n\nNEXT
-    VERSIONS\n\nboard game with holes\n\nrandom changing \nplayers' symbol\n\nTEAM
-    game\n\nteam game with holes\n\nrandom changing \nplayers' symbol\n\nrandom switching\nplayers'
+  m_text: "\n\n\n\n\n\n\n\n\n\nNEXT VERSIONS\n\nTEAM game\n\nrandom switching\nplayers'
     symbols \nbetween teams\n\n3D game"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
