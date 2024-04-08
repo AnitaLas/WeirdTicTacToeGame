@@ -76,7 +76,7 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagStartGameButtonStarTeamGame)
                         {
-                           Debug.Log("isCellphoneMode: " + isCellphoneMode);
+                           //Debug.Log("isCellphoneMode: " + isCellphoneMode);
                             if (isCellphoneMode == true)
                                 ScenesChangeMainMethods.GoToSceneConfigurationGameTeamMembers();
                            else

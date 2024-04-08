@@ -14,11 +14,12 @@ namespace Assets.Scripts
             Dictionary<int, string> tagTeamNumbers = new Dictionary<int, string>
             {
                 { 1, "ConfigurationTeamMembersDefaultNumber" },
-                { 2, "ConfigurationTeamMembersTableWithNumbers" },
+                { 2, "ConfigurationTeamMembersTableWithTeamSymbols" },
                 { 3, "ConfigurationTeamMembersChange" },
                 { 4, "ConfigurationTeamMembersInactiveField" },
                 { 5, "ConfigurationTeamMembersButtonSave" },
-                { 6, "ConfigurationTeamMembersButtonBack" }
+                { 6, "ConfigurationTeamMembersButtonBack" },
+                { 7, "ConfigurationTeamMembersTableWithAllSymbols" }
             };
 
             return tagTeamNumbers;
@@ -31,6 +32,7 @@ namespace Assets.Scripts
                 { 1, "TEAM GAME" },
                 { 2, "NUMBERS" },
                 { 3, "TEAM" },
+                { 4, "PLAYERS" },
             };
 
             return buttonsNameDictionary;

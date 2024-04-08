@@ -53,15 +53,6 @@ namespace Assets.Scripts
 
         void Start()
         {
-           
-            //_tagConfiguratioPlayerSymbolDefaultNumber = _configurationPlayersSymbolsDictionaryTag[1];
-            //_tagConfigurationPlayerSymbolDefaultSymbol = _configurationPlayersSymbolsDictionaryTag[2];
-            //_tagConfigurationPlayerSymbolChooseSymbol = _configurationPlayersSymbolsDictionaryTag[4];
-
-            //_tagConfigurationPlayerSymbolButtonSave = _configurationPlayersSymbolsDictionaryTag[6];
-            //_tagConfigurationPlayerSymbolButtonBack = _configurationPlayersSymbolsDictionaryTag[7];
-            //_tagConfigurationPlayerSymbolButtonBackToConfiguration = _configurationPlayersSymbolsDictionaryTag[8];
-
             _tagConfiguratioPlayerSymbolDefaultNumber = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolDefaultNumber();
             _tagConfigurationPlayerSymbolDefaultSymbol = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolDefaultSymbol();
             _tagConfigurationPlayerSymbolChooseSymbol = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolChooseSymbol();
@@ -70,7 +61,6 @@ namespace Assets.Scripts
             _tagConfigurationPlayerSymbolButtonBack = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolButtonBack();
             _tagConfigurationPlayerSymbolButtonBackToConfiguration = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolButtonBackToConfiguration();
             // ---
-            //_tagUntagged = _tagCommonDictionary[1];
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 
             // ---

@@ -9,7 +9,7 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationTeamNumbersButtonsCreate
     {
-        public static List<GameObject[,,]> GameConfigurationChangePlayerSymbolCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
+        public static List<GameObject[,,]> GameConfigurationTeamNumbersButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
             List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
 

@@ -130,6 +130,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesSceneTeamNumbers.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabDefaultText.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForTeamNumbers.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckers\GameFieldsVerificationCheckerVertical.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForRowsAndColumns.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtonsCommonCreate.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamNumbers\GameConfigurationTeamNumbersButtons\GameConfigurationTeamNumbersButtonsCreateCommon.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameTimer\PlayGameTimerButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameMenuAndTimer\PlayGameMenuAndTimerButtonsActions.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameFrame\PlayGameFrameCreate.cs" />
@@ -218,8 +220,8 @@
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsTagName.cs" />
     <Compile Include="Assets\Scripts\GameCommonMethods\GameCommonMethodsMain.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlayHelpText.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamNumbers\GameConfigurationTeamNumbersButtons\GameConfigurationTeamNumbersButtonsCreateCommon.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForTeamNumbers.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersButtons\GameConfigurationTeamMembersButtonsCreateCommon.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForTeamMembers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -9,7 +9,56 @@ namespace Assets.Scripts
     internal class GameConfigurationButtonsTeamMembersButtonsName
     {
 
+        public static string GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersName(int dictionatyId)
+        {
+            Dictionary<int, string> buttonsNames = GameDictionariesSceneTeamMembers.DictionaryButtonsConfigurationTeamMembersName();
+            string buttonName = buttonsNames[dictionatyId];
+            return buttonName;
+        }
 
+        public static string GetButtonNameForTeamGame()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForNumbers()
+        {
+            int dictionatyId = 2;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForTeam()
+        {
+            int dictionatyId = 3;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForPlayers()
+        {
+            int dictionatyId = 4;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersName(dictionatyId);
+            return tagName;
+        }
+
+        // default numbers:
+
+        public static string GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultNumbers(int dictionatyId)
+        {
+            Dictionary<int, string> buttonsNames = GameDictionariesSceneTeamMembers.DictionaryButtonsConfigurationTeamMembersDefaultNumbers();
+            string buttonName = buttonsNames[dictionatyId];
+            return buttonName;
+        }
+
+        public static string GetDefaultButtonNumberForTeamMembers()
+        {
+            int dictionatyId = 3;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultNumbers(dictionatyId);
+            return tagName;
+        }
 
     }
 }

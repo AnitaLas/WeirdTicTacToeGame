@@ -87,6 +87,13 @@ TagManager:
   - ConfigurationTeamNumbersDefaultNumber
   - ConfigurationTeamNumbersTableWithNumbers
   - ConfigurationTeamNumbersChange
+  - ConfigurationTeamMembersInactiveField
+  - ConfigurationTeamMembersButtonSave
+  - ConfigurationTeamMembersButtonBack
+  - ConfigurationTeamMembersDefaultNumber
+  - ConfigurationTeamMembersChange
+  - ConfigurationTeamMembersTableWithAllSymbols
+  - ConfigurationTeamMembersTableWithTeamSymbols
   layers:
   - Default
   - TransparentFX
