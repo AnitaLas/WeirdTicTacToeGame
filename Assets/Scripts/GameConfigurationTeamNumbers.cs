@@ -20,8 +20,8 @@ namespace Assets
         public Material[] prefabCubePlayButtonsNumberColour;
         public Material[] prefabCubePlayButtonsBackColour;
 
-        private static bool _configurationBoardGameDeviceModeKind;
-        private static bool _isCellphoneMode;
+        //private static bool _configurationBoardGameDeviceModeKind;
+        //private static bool _isCellphoneMode;
 
         private int _teamNumbers;
         private bool _isGame2D = true;
@@ -33,19 +33,19 @@ namespace Assets
 
         private string _tagConfigurationTeamNumbersButtonSave;
         private string _tagConfigurationTeamNumbersButtonBack;
-        private string _tagConfigurationTeamNumbers;
-        private string _tagConfigurationTeamNumbersChangeNumber;
+        //private string _tagConfigurationTeamNumbers;
+        //private string _tagConfigurationTeamNumbersChangeNumber;
         private string _tagConfigurationTeamNumbersTableWithNumbers;
 
-        private string _tagConfigurationTeamNumbersInactiveField;
+        //private string _tagConfigurationTeamNumbersInactiveField;
 
 
 
         void Start()
         {
             
-            _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
-            _isCellphoneMode = _configurationBoardGameDeviceModeKind;
+            //_configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
+            //_isCellphoneMode = _configurationBoardGameDeviceModeKind;
 
             _teamNumbers = 2;
 
@@ -55,13 +55,13 @@ namespace Assets
             _tagConfigurationTeamNumbersButtonSave = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersButtonSave();
             _tagConfigurationTeamNumbersButtonBack = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersButtonBack();
             
-            _tagConfigurationTeamNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersDefaultNumber();
-            _tagConfigurationTeamNumbersChangeNumber = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersChange();
+            //_tagConfigurationTeamNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersDefaultNumber();
+            //_tagConfigurationTeamNumbersChangeNumber = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersChange();
             _tagConfigurationTeamNumbersTableWithNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersTableWithNumbers();
 
             //GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
-            GameConfigurationTeamNumbersButtonsCreate.GameConfigurationChangePlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
+            GameConfigurationTeamNumbersButtonsCreate.GameConfigurationTeamNumbersButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsWithNumbers = GameConfigurationTeamNumbersButtonsCreate.CreateTableForTeamGameWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, _isGame2D);
 
         }

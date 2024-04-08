@@ -9,7 +9,54 @@ namespace Assets.Scripts
     internal class GameConfigurationButtonsTeamMembersTagName
     {
 
+        public static string GetTagsNameFromDictionaryTagsConfigurationTeamMembers(int dictionatyId)
+        {
+            Dictionary<int, string> defaulNumbers = GameDictionariesSceneTeamMembers.DictionaryTagsNameConfigurationTeamMembers();
+            string defaulNumber = defaulNumbers[dictionatyId];
+            return defaulNumber;
+        }
 
+        public static string GetTagNameForButtonByTagTeamMembersDefaultNumber()
+        {
+            int dictionatyId = 1;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagNameForButtonByTagTeamMembersTableWithSymbols()
+        {
+            int dictionatyId = 2;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagNameForButtonByTagTeamMembersChange()
+        {
+            int dictionatyId = 3;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagNameForButtonByTagTeamMembersInactiveField()
+        {
+            int dictionatyId = 4;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagNameForButtonByTagTeamMembersButtonSave()
+        {
+            int dictionatyId = 5;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagNameForButtonByTagTeamMembersButtonBack()
+        {
+            int dictionatyId = 6;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
 
     }
 }
