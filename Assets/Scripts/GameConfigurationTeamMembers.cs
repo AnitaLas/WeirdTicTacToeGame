@@ -26,7 +26,7 @@ namespace Assets
         private bool _isGame2D = true;
         private string _tagUntagged;
 
-        private GameObject[,,] _buttonsWithNumbers;
+        List<List<GameObject[,,]>> _buttonsWithTeams;
 
         private string _tagConfigurationTeamMembersButtonSave;
         private string _tagConfigurationTeamNMembersButtonBack;
@@ -39,10 +39,12 @@ namespace Assets
         void Start()
         {
 
-            _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
-            _isCellphoneMode = _configurationBoardGameDeviceModeKind;
+            //_configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
+            //_isCellphoneMode = _configurationBoardGameDeviceModeKind;
+            //_isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
+            //Debug.Log("3 isCellphoneMode: " + _isCellphoneMode);
 
-            _teamNumbers = 2;
+            _teamNumbers = GameConfigurationTeamMembersButtonsMethods.GetDefaultTeamGameNumber();
 
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 
@@ -55,8 +57,9 @@ namespace Assets
             //_tagConfigurationTeamMembersTableWithNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersTableWithNumbers();
 
             //GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
-
-            GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtons(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
+            
+            GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonsConstant(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
+            _buttonsWithTeams = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtons(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, _isCellphoneMode, _teamNumbers);
             //_buttonsWithNumbers = GameConfigurationTeamNumbersButtonsCreate.CreateTableForTeamGameWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, _isGame2D);
 
         }

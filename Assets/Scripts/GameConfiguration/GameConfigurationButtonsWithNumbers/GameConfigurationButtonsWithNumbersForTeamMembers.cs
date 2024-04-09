@@ -18,41 +18,16 @@ namespace Assets.Scripts
             tableWithNumber = CreateTableMainMethodsForButtons.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
 
             return tableWithNumber;
-        }
+        }     
 
-        // to fix it!!!
-        public static int[] CreateTableWithNumbers()
+        public static string[] CreateTableWithSymbolsForCubePlay()
         {
-            int maxTeamNumber = 6;
-            int minTeamNumber = 2;
-            int[] table = new int[maxTeamNumber];
+            int maxCubePlayNumber = 12;
+            string[] tableString = new string[maxCubePlayNumber];         
 
-            int index = 0;
-
-            for (int i = minTeamNumber; i <= maxTeamNumber; i++)
+            for (int i = 0; i < maxCubePlayNumber; i++)
             {
-                table[index] = i;
-                index++;
-            }
-
-            for (int i = (maxTeamNumber + 1); i < table.Length; i++)
-            {
-                table[i] = 0;
-            }
-
-            return table;
-        }
-
-        public static string[] CreateTableWithNumbersForCubePlay()
-        {
-            int[] tableInt = CreateTableWithNumbers();
-            int tableStringLenght = tableInt.Length;
-            string[] tableString = new string[tableStringLenght];
-
-            for (int i = 0; i < tableStringLenght; i++)
-            {
-                int number = tableInt[i];
-                string numberString = CommonMethods.ConverIntToString(number);
+                string numberString = CommonMethods.ConverIntToString(i);
                 tableString[i] = numberString;
             }
 
@@ -91,7 +66,7 @@ namespace Assets.Scripts
         {
             string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
 
-            string[] numbers = CreateTableWithNumbersForCubePlay();
+            string[] numbers = CreateTableWithSymbolsForCubePlay();
 
             string[,,] numbers3D = CreateTableForDefaultTextWithNumbers(numbers, numberOfDepths, numberOfRows, numberOfColumns);
 
@@ -110,16 +85,16 @@ namespace Assets.Scripts
             return newTable;
         }
 
-        public static GameObject[,,] ChangeDataForTableWithTeamNumbers(GameObject[,,] tableWtithNumber)
+        public static GameObject[,,] ChangeDataForTableWithTeamMembers(GameObject[,,] tableWtithNumber)
         {
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
             int maxIndexRow = tableWtithNumber.GetLength(1);
 
-            string tagInactiveField = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersInactiveField();
-            string tagTableWithNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersTableWithNumbers();
-            string textToCompare = "0";
-            string newText = "-";
+            //string tagInactiveField = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersInactiveField();
+            //string tagTableWithNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersTableWithNumbers();
+            //string textToCompare = "0";
+            //string newText = "-";
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
@@ -128,14 +103,14 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagTableWithNumbers);
+                        //GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagTableWithNumbers);
                         string oldText = CommonMethods.GetCubePlayText(cubePlay);
 
-                        if (oldText.Equals(textToCompare))
-                        {
-                            CommonMethods.ChangeTextForFirstChild(cubePlay, newText);
-                            CommonMethods.ChangeTagForGameObject(cubePlay, tagInactiveField);
-                        }
+                        //if (oldText.Equals(textToCompare))
+                        //{
+                        //    CommonMethods.ChangeTextForFirstChild(cubePlay, newText);
+                        //    CommonMethods.ChangeTagForGameObject(cubePlay, tagInactiveField);
+                        //}
                     }
                 }
             }
