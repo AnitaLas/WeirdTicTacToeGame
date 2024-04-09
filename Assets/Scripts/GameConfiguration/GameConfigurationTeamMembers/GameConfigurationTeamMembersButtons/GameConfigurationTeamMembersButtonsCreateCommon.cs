@@ -52,6 +52,20 @@ namespace Assets.Scripts
             return button;
         }
 
+        public static GameObject[,,] GameConfigurationTeamMembersCreateSingleTableWithButtonsSymbols(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, Tuple<int, int> tableSize)
+        {
+            GameObject[,,] tableWithNumbers;
+            GameObject[,,] tableWithNumberFinal;
+
+            int numberOfDepths = 1;
+            int numberOfRows = tableSize.Item1; 
+            int numberOfColumns = tableSize.Item2; 
+
+            tableWithNumbers = GameConfigurationButtonsWithNumbersForTeamMembers.CreateTableWithTeamMembersSymbols(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
+            tableWithNumberFinal = GameConfigurationButtonsWithNumbersForTeamMembers.ChangeDataForTableWithTeamMembers(tableWithNumbers);
+
+            return tableWithNumberFinal;
+        }
 
     }
 }

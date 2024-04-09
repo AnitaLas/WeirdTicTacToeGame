@@ -10,8 +10,6 @@ namespace Assets.Scripts
             int sizeWidth = Screen.width;
             int sizeHeight = Screen.height;
 
-
-            Debug.Log("sizeWidth: " + sizeWidth);
             var screenSize = new Tuple<int, int>(sizeWidth, sizeHeight);
             return screenSize;
         }
