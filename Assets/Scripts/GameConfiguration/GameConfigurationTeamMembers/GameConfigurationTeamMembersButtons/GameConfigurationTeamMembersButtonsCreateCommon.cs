@@ -62,9 +62,9 @@ namespace Assets.Scripts
             int numberOfColumns = tableSize.Item2; 
 
             tableWithNumbers = GameConfigurationButtonsWithNumbersForTeamMembers.CreateTableWithTeamMembersSymbols(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
-            tableWithNumberFinal = GameConfigurationButtonsWithNumbersForTeamMembers.ChangeDataForTableWithTeamMembers(tableWithNumbers);
+            //tableWithNumberFinal = GameConfigurationButtonsWithNumbersForTeamMembers.ChangeDataForTableWithTeamMembers(tableWithNumbers);
 
-            return tableWithNumberFinal;
+            return tableWithNumbers;
         }
 
     }
