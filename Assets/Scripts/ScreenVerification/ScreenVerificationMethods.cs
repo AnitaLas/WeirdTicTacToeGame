@@ -35,22 +35,68 @@ namespace Assets.Scripts
 
         public static Tuple<int, int> GetNumberOfRowsAndColumnsForDefaulTableWithNumber(bool isCellphoneMode)
         {
-            int rowsNumberModeCellphone = 3;
-            int columnsNumberModeCellphone = 3;
+            //int rowsNumberModeCellphone = 3;
+            //int columnsNumberModeCellphone = 3;
 
-            int rowsNumberModeTablet = 4;
-            int columnsNumberModeTablet = 4;
+            //int rowsNumberModeTablet = 4;
+            //int columnsNumberModeTablet = 4;
+
+            //if (isCellphoneMode)
+            //{
+            //    var numbers = new Tuple<int, int>(rowsNumberModeCellphone, columnsNumberModeCellphone);
+            //    return numbers;
+            //}
+            //else
+            //{
+            //    var numbers = new Tuple<int, int>(rowsNumberModeTablet, columnsNumberModeTablet);
+            //    return numbers;
+            //}
+
+
+            Tuple<int, int> tableSize;
 
             if (isCellphoneMode)
             {
-                var numbers = new Tuple<int, int>(rowsNumberModeCellphone, columnsNumberModeCellphone);
-                return numbers;
+                tableSize = Tuple.Create(3, 3); // rows, columns
             }
             else
             {
-                var numbers = new Tuple<int, int>(rowsNumberModeTablet, columnsNumberModeTablet);
-                return numbers;
+                tableSize = Tuple.Create(4, 4);
             }
+
+            return tableSize;
+        }
+
+        public static Tuple<int, int> GetSizeForTableWithSymbolsForTeamMembers(bool isCellphoneMode)
+        {
+            Tuple<int, int> tableSize;
+
+            if (isCellphoneMode == true)
+            {
+                tableSize = Tuple.Create(1, 3); // rows, columns
+            }
+            else
+            {
+                tableSize = Tuple.Create(3, 3);
+            }
+
+            return tableSize;
+        }
+
+        public static Tuple<int, int> GetSizeForTableWithPlayersNumbersForTeamMembers(bool isCellphoneMode)
+        {
+            Tuple<int, int> tableSize;
+
+            if (isCellphoneMode == true)
+            {
+                tableSize = Tuple.Create(1, 3); // rows, columns
+            }
+            else
+            {
+                tableSize = Tuple.Create(2, 3);
+            }
+
+            return tableSize;
         }
 
         public static int GetMaxPlayerNumberForConfiguration(bool isCellphoneMode)

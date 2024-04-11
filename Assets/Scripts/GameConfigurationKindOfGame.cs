@@ -49,7 +49,7 @@ namespace Assets.Scripts
         void Update()
         {
             isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
-            Debug.Log("3 isCellphoneMode: " + isCellphoneMode);
+            //Debug.Log("3 isCellphoneMode: " + isCellphoneMode);
 
             if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
             {

@@ -160,7 +160,7 @@ namespace Assets.Scripts
         public static List<GameObject[,,]> GameConfigurationTeamMembersCreateFinalTablesWithButtonsSymbols(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, bool isCellphoneMode ,int teamNumbers)
         {
             List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
-            Tuple<int, int> tableSize = GameConfigurationButtonsTeamMembersButtonsStaticData.GetSizeForTableWithDefaulSymbols(isCellphoneMode);
+            Tuple<int, int> tableSize = ScreenVerificationMethods.GetSizeForTableWithSymbolsForTeamMembers(isCellphoneMode);
 
             List<string[]> teamMembersSymbols = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithDefaulSymbols(teamNumbers);
 
@@ -291,5 +291,92 @@ namespace Assets.Scripts
             return buttonsAll;
 
         }
+
+        // -------------------------------------------------------------------------------------------
+        // button: back to configuration
+
+        public static GameObject[,,] GameConfigurationTeamMembersButtonBackToConfiguration(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
+        {
+            GameObject[,,] tableButtonBack;
+            string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfiguration();
+
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForButtonBack();
+
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 14;
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
+
+            tableButtonBack = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayButtonsBackColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = -4.75f;
+            ButtonsCommonMethods.ChangeDataForSingleGameButtons(tableButtonBack, newCoordinateY, tagName);
+
+            string frontTextToAdd = "InformationButtonBackToConfiguration_";
+            ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(tableButtonBack, frontTextToAdd);
+
+            return tableButtonBack;
+        }
+
+        public static GameObject[,,] GameConfigurationTeamMembersButtonsWithNumbers(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, bool isCellphoneMode)
+        {
+            GameObject[,,] buttons = GameConfigurationButtonsWithNumbersForTeamMembers.CreateTableWithNumberForTeamMembers(prefabCubePlay, prefabCubePlayDefaultColour,  isGame2D, isCellphoneMode);
+            return buttons;
+        }
+
+        public static GameObject[,,] GameConfigurationTeammMembersCreateButtonTopTeamNo(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, int teamNo)
+        {
+            string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
+            string buttonText = GameConfigurationButtonsTeamMembersButtonsName.GetButtonNameForTeam();
+            string buttonTextFinal = $"{buttonText} {teamNo}";
+
+            GameObject[,,] button = GameConfigurationTeamMembersButtonsCreateCommon.CreateCommonButtonForTeamMembersFourRows(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonTextFinal);
+
+            float newCoordinateY = 4.35f;
+            float newCoordinateX = -0.8f;
+            GameConfigurationTeamMembersButtonsMethods.ChangeDataForSingleGameConfigurationTeamMembersButtons(button, newCoordinateY, newCoordinateX);
+
+            return button;
+        }
+
+        public static GameObject[,,] GameConfigurationTeaMembersCreateButtonTopPlayersNo(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
+        {
+
+            string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
+            string buttonText = GameConfigurationButtonsTeamMembersButtonsName.GetButtonNameForPlayersNo();
+
+            GameObject[,,] button = GameConfigurationTeamMembersButtonsCreateCommon.CreateCommonButtonForTeamMembersPlayers(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
+
+            float newCoordinateY = 3.9f;
+            float newCoordinateX = -0.4f;
+            GameConfigurationTeamMembersButtonsMethods.ChangeDataForSingleGameConfigurationTeamMembersButtons(button, newCoordinateY, newCoordinateX);
+
+            return button;
+        }
+
+        public static List<GameObject[,,]> GameConfigurationTeamMembersButtonBackAndTableWithNumbers(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsDefaultColour, bool isGame2D, string gameObjectName)
+        {
+            List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
+            bool isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
+            //string teamNo = "3";
+            int teamNo = GameConfigurationTeamMembersButtonsMethods.GetTemaNumber(gameObjectName);
+
+            GameObject[,,] buttonBackToConfiguration = GameConfigurationTeamMembersButtonBackToConfiguration(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
+            GameObject[,,] buttonsNumbers = GameConfigurationTeamMembersButtonsWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, isCellphoneMode);
+            GameObject[,,] buttonTopTextTeamNo = GameConfigurationTeammMembersCreateButtonTopTeamNo(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D, teamNo);
+            GameObject[,,] buttonTopTextPlayers = GameConfigurationTeaMembersCreateButtonTopPlayersNo(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+
+
+            buttonsAll.Insert(0, buttonBackToConfiguration);
+            buttonsAll.Insert(1, buttonsNumbers);
+            buttonsAll.Insert(2, buttonTopTextTeamNo);
+            buttonsAll.Insert(3, buttonTopTextPlayers);
+
+            return buttonsAll;
+
+
+        }
+
     }
 }

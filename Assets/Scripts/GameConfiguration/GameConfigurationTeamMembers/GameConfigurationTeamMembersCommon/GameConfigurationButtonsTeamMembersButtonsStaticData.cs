@@ -9,21 +9,21 @@ namespace Assets.Scripts
     internal class GameConfigurationButtonsTeamMembersButtonsStaticData
     {
 
-        public static Tuple<int, int> GetSizeForTableWithDefaulSymbols(bool isCellphoneMode)
-        {
-            Tuple<int, int> tableSize;
+        //public static Tuple<int, int> GetSizeForTableWithDefaulSymbols(bool isCellphoneMode)
+        //{
+        //    Tuple<int, int> tableSize;
 
-            if (isCellphoneMode == true)
-            {
-                tableSize = Tuple.Create(1, 3); // rows, columns
-            }
-            else
-            {
-                tableSize = Tuple.Create(4, 3);
-            }
+        //    if (isCellphoneMode == true)
+        //    {
+        //        tableSize = Tuple.Create(1, 3); // rows, columns
+        //    }
+        //    else
+        //    {
+        //        tableSize = Tuple.Create(3, 3);
+        //    }
 
-            return tableSize;
-        }
+        //    return tableSize;
+        //}
 
         public static int GetDefaultTeamGameNumber()
         {
@@ -35,7 +35,8 @@ namespace Assets.Scripts
         {
             float teamOneY = 0.5f;
             float teamTwoY = -1.1f;
-            float moreThanTwoTeams = -0.25f;
+            //float moreThanTwoTeams = -0.25f;
+            float moreThanTwoTeams = -0f;
 
             float[] coordinateYData = new float[3];
             coordinateYData[0] = teamOneY;
@@ -65,7 +66,8 @@ namespace Assets.Scripts
         {
             float teamOneY = 1.65f;
             float teamTwoY = -1.55f;
-            float moreThanTwoTeams = 1.8f;
+            //float moreThanTwoTeams = 1.8f;
+            float moreThanTwoTeams = 1.7f;
 
             float[] coordinateYData = new float[3];
             coordinateYData[0] = teamOneY;
@@ -80,7 +82,8 @@ namespace Assets.Scripts
         {
             float teamOneY = 1.95f;
             float teamTwoY = -1.15f;
-            float moreThanTwoTeams = 2.2f;
+            //sfloat moreThanTwoTeams = 2.2f;
+            float moreThanTwoTeams = 2.1f;
 
             float[] coordinateYData = new float[3];
             coordinateYData[0] = teamOneY;

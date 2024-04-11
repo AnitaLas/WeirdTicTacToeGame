@@ -94,6 +94,10 @@ TagManager:
   - ConfigurationTeamMembersChange
   - ConfigurationTeamMembersTableWithAllSymbols
   - ConfigurationTeamMembersTableWithTeamSymbols
+  - ConfigurationTeamMembersArrowLeft
+  - ConfigurationTeamMembersArrowRight
+  - ConfigurationTeamMembersTableWithNumbers
+  - ConfigurationTeamMembersButtonBackToConfiguration
   layers:
   - Default
   - TransparentFX
