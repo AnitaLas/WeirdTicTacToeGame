@@ -11,6 +11,55 @@ namespace Assets.Scripts
     {
 
 
+        public static GameObject[,,] CreateTableWithOptionToChooseForTeamMembersNumbers(GameObject[,,] tableWtithNumber, string tagName)
+        {
+            string frontTextToAdd = "TeamMembers_NewNo_";
+
+            int maxIndexDepth = 1;
+            int maxIndexColumn = tableWtithNumber.GetLength(2);
+            int maxIndexRow = tableWtithNumber.GetLength(1);
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
+                        GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
+                        string text = CommonMethods.GetCubePlayText(cubePlay);
+                        string oldName = GameCommonMethodsMain.GetObjectName(cubePlay);
+                        string newName = frontTextToAdd + text + "_" + oldName;
+                        GameCommonMethodsMain.ChangeGameObjectName(cubePlay, newName);
+                    }
+                }
+            }
+
+            return tableWtithNumber;
+        }
+
+        public static GameObject[,,] CreateTableWithNumberForTeamMembers(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, bool isCellphoneMode)
+        {
+            GameObject[,,] tableWithNumbers;
+            GameObject[,,] tableWithNumberFinal;
+
+            string tagNumbers = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithNumbers();
+
+            //string tagInactiveField = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
+
+            var numbers = ScreenVerificationMethods.GetSizeForTableWithPlayersNumbersForTeamMembers(isCellphoneMode);
+            int numberOfDepths = 1;
+            int numberOfRows = numbers.Item1;
+            int numberOfColumns = numbers.Item2;
+
+            tableWithNumbers = GameConfigurationButtonsWithNumbersCommonMethods.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
+            tableWithNumberFinal = CreateTableWithOptionToChooseForTeamMembersNumbers(tableWithNumbers, tagNumbers);
+
+            return tableWithNumberFinal;
+        }
+
+
+        // new class 
         public static GameObject[,,] CreateTableWithTeamMembersSymbols(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             GameObject[,,] tableWithNumber;

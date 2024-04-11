@@ -19,7 +19,11 @@ namespace Assets.Scripts
                 { 4, "ConfigurationTeamMembersInactiveField" },
                 { 5, "ConfigurationTeamMembersButtonSave" },
                 { 6, "ConfigurationTeamMembersButtonBack" },
-                { 7, "ConfigurationTeamMembersTableWithAllSymbols" }
+                { 7, "ConfigurationTeamMembersTableWithAllSymbols" },
+                { 8, "ConfigurationTeamMembersArrowLeft" },
+                { 9, "ConfigurationTeamMembersArrowRight" },
+                { 10, "ConfigurationTeamMembersTableWithNumbers" },
+                { 11, "ConfigurationTeamMembersButtonBackToConfiguration" }
             };
 
             return tagTeamNumbers;
@@ -33,6 +37,7 @@ namespace Assets.Scripts
                 { 2, "NUMBERS" },
                 { 3, "TEAM" },
                 { 4, "PLAYERS" },
+                { 5, "PLAYERS NO" },
             };
 
             return buttonsNameDictionary;
@@ -48,6 +53,18 @@ namespace Assets.Scripts
             };
 
             return buttonsDefaultNumberDictionary;
+        }
+
+        public static Dictionary<int, string> DictionaryButtonsConfigurationTeamMembersDefaultSymbols()
+        {
+            Dictionary<int, string> buttonsDefaultSymbols = new Dictionary<int, string>
+            {
+                { 1, "<" }, 
+                { 2, ">" }, 
+
+            };
+
+            return buttonsDefaultSymbols;
         }
 
 

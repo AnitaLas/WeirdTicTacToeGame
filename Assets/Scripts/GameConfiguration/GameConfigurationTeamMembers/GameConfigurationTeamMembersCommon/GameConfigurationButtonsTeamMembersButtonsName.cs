@@ -44,6 +44,13 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetButtonNameForPlayersNo()
+        {
+            int dictionatyId = 5;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersName(dictionatyId);
+            return tagName;
+        }
+
         // default numbers:
 
         public static string GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultNumbers(int dictionatyId)
@@ -60,5 +67,27 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        // default numbers:
+
+        public static string GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultSymbols(int dictionatyId)
+        {
+            Dictionary<int, string> buttonsNames = GameDictionariesSceneTeamMembers.DictionaryButtonsConfigurationTeamMembersDefaultSymbols();
+            string buttonName = buttonsNames[dictionatyId];
+            return buttonName;
+        }
+
+        public static string GetDefaultButtonSymolLeftForTeamMembers()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultSymbols(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetDefaultButtonSymolRightForTeamMembers()
+        {
+            int dictionatyId = 2;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultSymbols(dictionatyId);
+            return tagName;
+        }
     }
 }

@@ -128,7 +128,7 @@ namespace Assets.Scripts
                         GameObject cubePlay = button[indexDepth, indexRow, indexColumn];
                         string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
                         string oldName = GameCommonMethodsMain.GetObjectName(cubePlay);
-                        string newName = frontTextToAdd + secondTextToAdd + cubePlayText + " " + oldName;
+                        string newName = frontTextToAdd + secondTextToAdd + cubePlayText + "_" + oldName;
                         GameCommonMethodsMain.ChangeGameObjectName(cubePlay, newName);
                     }
                 }
@@ -165,8 +165,8 @@ namespace Assets.Scripts
         {
             string tagNameInactiveField = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
             string tagNameTableWithSymbols = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithSymbols();
-            string tagName;
 
+            string tagName;
             string symbol;
             string staticText = "-";
 
@@ -179,17 +179,11 @@ namespace Assets.Scripts
 
             int[] numbersToChange = new int[symbolsLength];
 
+            // create method to create this table!
             for (int i = 0; i < symbolsLength; i++)
             {
                 numbersToChange[i] = i;
             }
-
-
-            //for (int i = 0; i < symbolsLength; i++)
-            //{
-            //    Debug.Log("i: " + i);
-            //}
-            //Debug.Log(" ------------------------ " );
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
                 {
@@ -201,63 +195,73 @@ namespace Assets.Scripts
                             string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
                             int cubePlayNumber = CommonMethods.ConvertStringToInt(cubePlayText);
 
-                            Debug.Log("cubePlayText: " + cubePlayText);
-                        
-                            //if (index < symbolsLength)
-                            //{
-                            //symbol = symbols[index];
-                            //index++;
-                            //tagName = tagNameTableWithSymbols;
-
                                 for (int i = 0; i < symbolsLength; i++)
                                 {
-
-
                                     if (cubePlayNumber == i)
                                     {
-
                                         symbol = symbols[index];
                                         index++;
                                         tagName = tagNameTableWithSymbols;
-
                                         GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
                                         CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
-                                //CommonMethods.ChangeTextForSecondChild(cubePlay, symbol);
-                                break;
+                                        break;
                                     }
-                                else
-                                {
-                                symbol = staticText;
-                                tagName = tagNameInactiveField;
-                                GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
-                                CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
-                            }
-
-                            //}
-
-
-                            //}
-                        //else
-                        //{
-                          //  symbol = staticText;
-                          //  tagName = tagNameInactiveField;
-                           // GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
-                           // CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
+                                    else
+                                    {
+                                        symbol = staticText;
+                                        tagName = tagNameInactiveField;
+                                        GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
+                                        CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
+                                    }   
+                                }
                         }
-
-                        //GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
-                        //CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
-
                     }
-                    }
-                }          
+            }          
+        }
+
+        // ----
+
+        public static int GetTemaNumber(string gameObjectName)
+        {
+            int startIndex = 11;
+            int length = 1;
+
+            string number = gameObjectName.Substring(startIndex, length);
+
+            int index = CommonMethods.ConvertStringToInt(number);
+            int teamNo = index + 1;
+
+            return teamNo;
         }
 
 
+        public static void ChangeTagForDefaultNumber()
+        {
+            string tagNameNew = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersDefaultNumber();
+            string tagNameOld = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
+            GameObject cubePlay = CommonMethods.GetObjectByTagName(tagNameOld);
+            CommonMethods.ChangeTagForGameObject(cubePlay, tagNameNew);
+        }
+
+        public static void ChangeTagForChangeNumber(string gameObjectName)
+        {
+            string tagNameNew = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
+            //string tagNameNew = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersDefaultNumber();
+            GameObject cubePlay = CommonMethods.GetObjectByName(gameObjectName);
+            CommonMethods.ChangeTagForGameObject(cubePlay, tagNameNew);
+        }
+
+        public static void SetUpNewPlayersNumberForTeam(string gameObjectName)
+        {
+            string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
+            GameObject teamNumber = CommonMethods.GetObjectByTagName(tagName);
+
+            GameObject choosenNumber = CommonMethods.GetObjectByName(gameObjectName);
+
+            string newNumber = CommonMethods.GetCubePlayText(choosenNumber);
+            CommonMethods.ChangeTextForFirstChild(teamNumber, newNumber);
 
 
-
-
-        
+        }
     }
 }

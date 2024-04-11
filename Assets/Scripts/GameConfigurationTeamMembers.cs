@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Assets
 {
     internal class GameConfigurationTeamMembers : MonoBehaviour
     {
-        public static int ConfigurationBoardGameTeamNumber { get; set; }
+        //public static int ConfigurationBoardGameTeamNumber { get; set; }
 
         public GameObject prefabCubePlay;
 
@@ -20,6 +21,7 @@ namespace Assets
         public Material[] prefabCubePlayButtonsBackColour;
 
         private static bool _configurationBoardGameDeviceModeKind;
+        private static int _configurationBoardGameTeamNumber;
         private static bool _isCellphoneMode;
 
         private int _teamNumbers;
@@ -32,33 +34,53 @@ namespace Assets
         private string _tagConfigurationTeamNMembersButtonBack;
         private string _tagConfigurationTeamMembers;
         private string _tagConfigurationTeamMembersChangeNumber;
+        private string _tagConfigurationTeamMembersDefaultNumber;
         private string _tagConfigurationTeamMembersTableWithNumbers;
+        private string _configurationTeamMembersButtonBackToConfiguration;
 
         private string _tagConfigurationTeamMembersInactiveField;
+
+
+        private List<GameObject[,,]> _buttonsStatic;
+        private List<GameObject[,,]> _buttonsMoreSpecificConfiguration;
+
 
         void Start()
         {
 
-            //_configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
-            //_isCellphoneMode = _configurationBoardGameDeviceModeKind;
+            _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
+            _isCellphoneMode = _configurationBoardGameDeviceModeKind;
+
+            if (_isCellphoneMode == false)
+            {
+                _configurationBoardGameTeamNumber = GameConfigurationTeamNumbers.ConfigurationBoardGameTeamNumber;
+                _teamNumbers = _configurationBoardGameTeamNumber;
+            }
+            else
+            {
+                _teamNumbers = GameConfigurationButtonsTeamMembersButtonsStaticData.GetDefaultTeamGameNumber();
+            }
+           
             //_isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
             //Debug.Log("3 isCellphoneMode: " + _isCellphoneMode);
 
-            _teamNumbers = GameConfigurationButtonsTeamMembersButtonsStaticData.GetDefaultTeamGameNumber();
+           
 
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 
 
             _tagConfigurationTeamMembersButtonSave = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonSave();
             _tagConfigurationTeamNMembersButtonBack = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonBack();
-
             //_tagConfigurationTeamMembers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersDefaultNumber();
-            //_tagConfigurationTeamMembersChangeNumber = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersChange();
-            //_tagConfigurationTeamMembersTableWithNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersTableWithNumbers();
+            //_tagConfigurationTeamMembersDefaultNumber = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamNumbersChange();
+            _tagConfigurationTeamMembersDefaultNumber = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersDefaultNumber();
+            //_tagConfigurationTeamMembersChangeNumber = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersDefaultNumber();
+            _configurationTeamMembersButtonBackToConfiguration = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfiguration();
+            _tagConfigurationTeamMembersTableWithNumbers = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithNumbers();
 
             //GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
-            
-            GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonsStatic(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
+
+            _buttonsStatic = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonsStatic(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsWithTeams = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtons(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, _isCellphoneMode, _teamNumbers);
             //_buttonsWithNumbers = GameConfigurationTeamNumbersButtonsCreate.CreateTableForTeamGameWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, _isGame2D);
 
@@ -80,11 +102,36 @@ namespace Assets
                         string gameObjectTag = GameCommonMethodsMain.GetObjectTag(touch);
                         string gameObjectName = GameCommonMethodsMain.GetObjectName(touch);
 
+                        //Debug.Log("gameObjectTag: " + gameObjectTag);
+
                         if (gameObjectTag != _tagUntagged)
                         {
                             GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(gameObjectTag);
                         }
 
+
+                        if (gameObjectTag == _tagConfigurationTeamMembersDefaultNumber)
+                        {
+                            GameConfigurationTeamMembersButtonsActions.HideTeamMembersElements(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            _buttonsMoreSpecificConfiguration = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonBackAndTableWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsDefaultColour, _isGame2D, gameObjectName);
+                        }
+
+                        if (gameObjectTag == _configurationTeamMembersButtonBackToConfiguration)
+                        {
+                            GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElements(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
+                        }
+
+
+                        if (gameObjectTag == _tagConfigurationTeamMembersTableWithNumbers)
+                        {
+                            //UnityEngine.Debug.Log("gameObjectTag: " + gameObjectTag);
+                            GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElements(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
+
+
+
+                        }
 
 
 

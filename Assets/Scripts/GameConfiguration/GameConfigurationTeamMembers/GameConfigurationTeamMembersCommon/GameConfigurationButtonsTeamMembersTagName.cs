@@ -30,6 +30,14 @@ namespace Assets.Scripts
             return currentNumber;
         }
 
+        public static string GetTagNameForButtonByTagTeamMembersTableWithNumbers()
+        {
+            int dictionatyId = 10;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+
         public static string GetTagNameForButtonByTagTeamMembersChange()
         {
             int dictionatyId = 3;
@@ -58,5 +66,25 @@ namespace Assets.Scripts
             return currentNumber;
         }
 
+        public static string GetTagNameForButtonByTagTeamMembersButtonArrowLeft()
+        {
+            int dictionatyId = 8;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagNameForButtonByTagTeamMembersButtonArrowRight()
+        {
+            int dictionatyId = 9;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfiguration()
+        {
+            int dictionatyId = 11;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
     }
 }
