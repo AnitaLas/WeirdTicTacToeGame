@@ -33,7 +33,7 @@ namespace Assets.Scripts
         void Start()
         {
             isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
-
+            Debug.Log("1 isCellphoneMode: " + isCellphoneMode);
             //_tagUntagged = _tagCommonDictionary[1];
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 

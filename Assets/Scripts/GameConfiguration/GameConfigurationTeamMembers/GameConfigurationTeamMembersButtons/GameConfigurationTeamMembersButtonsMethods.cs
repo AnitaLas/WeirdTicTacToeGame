@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -160,7 +161,20 @@ namespace Assets.Scripts
         }
 
 
-        // to fix
+        //public static int[] CreateTableWithNumbersToChange(string[] symbols)
+        //{
+        //    int symbolsLength = symbols.Length;
+        //    int[] numbersToChange = new int[symbolsLength];
+
+        //    // create method to create this table!
+        //    for (int i = 0; i < symbolsLength; i++)
+        //    {
+        //        numbersToChange[i] = i;
+        //    }
+
+        //    return numbersToChange;
+        //}
+
         public static void SetUpDefaulSymbolsForTeamMembers(GameObject[,,] buttons, string[] symbols)
         {
             string tagNameInactiveField = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
@@ -177,45 +191,47 @@ namespace Assets.Scripts
             int symbolsLength = symbols.Length;
             int index = 0;
 
-            int[] numbersToChange = new int[symbolsLength];
+            //int[] numbersToChange = new int[symbolsLength];
 
-            // create method to create this table!
-            for (int i = 0; i < symbolsLength; i++)
-            {
-                numbersToChange[i] = i;
-            }
+            //// create method to create this table!
+            //for (int i = 0; i < symbolsLength; i++)
+            //{
+            //    numbersToChange[i] = i;
+            //}
+
+            //int[] numbersToChange = CreateTableWithNumbersToChange(symbols);
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
                 {
-                    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
-                        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
-                        {
-                            GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
-                            string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
-                            int cubePlayNumber = CommonMethods.ConvertStringToInt(cubePlayText);
+                        GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
+                        string cubePlayText = CommonMethods.GetCubePlayText(cubePlay);
+                        int cubePlayNumber = CommonMethods.ConvertStringToInt(cubePlayText);
 
-                                for (int i = 0; i < symbolsLength; i++)
-                                {
-                                    if (cubePlayNumber == i)
-                                    {
-                                        symbol = symbols[index];
-                                        index++;
-                                        tagName = tagNameTableWithSymbols;
-                                        GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
-                                        CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        symbol = staticText;
-                                        tagName = tagNameInactiveField;
-                                        GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
-                                        CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
-                                    }   
-                                }
+                        for (int i = 0; i < symbolsLength; i++)
+                        {
+                            if (cubePlayNumber == i)
+                            {
+                                symbol = symbols[index];
+                                index++;
+                                tagName = tagNameTableWithSymbols;
+                                GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
+                                CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
+                                break;
+                            }
+                            else
+                            {
+                                symbol = staticText;
+                                tagName = tagNameInactiveField;
+                                GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
+                                CommonMethods.ChangeTextForFirstChild(cubePlay, symbol);
+                            }   
                         }
                     }
+                }
             }          
         }
 
@@ -246,7 +262,6 @@ namespace Assets.Scripts
         public static void ChangeTagForChangeNumber(string gameObjectName)
         {
             string tagNameNew = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
-            //string tagNameNew = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersDefaultNumber();
             GameObject cubePlay = CommonMethods.GetObjectByName(gameObjectName);
             CommonMethods.ChangeTagForGameObject(cubePlay, tagNameNew);
         }
@@ -260,8 +275,186 @@ namespace Assets.Scripts
 
             string newNumber = CommonMethods.GetCubePlayText(choosenNumber);
             CommonMethods.ChangeTextForFirstChild(teamNumber, newNumber);
-
-
         }
+
+        public static List<List<GameObject[,,]>> CreateListButtonsByTeams(List<List<GameObject[,,]>> buttonsWithTeams,int teamNumbers)
+        {
+            List<List<GameObject[,,]>> buttonsGroupedByTeams = new List<List<GameObject[,,]>>();
+
+            int buttonAllNumber = buttonsWithTeams.Count;
+
+            for (int i = 0; i < teamNumbers; i++)
+            {
+                List<GameObject[,,]> TeamGroupList = new List<GameObject[,,]>();
+
+                for (int j = 0; j < buttonAllNumber; j++)
+                {
+                    List<GameObject[,,]> gameObjects = buttonsWithTeams[j];
+
+                    GameObject[,,] gameObject = gameObjects[i];
+
+                    TeamGroupList.Insert(j, gameObject);
+                }
+
+                buttonsGroupedByTeams.Insert(i, TeamGroupList);
+
+
+
+            }
+
+            return buttonsGroupedByTeams;
+        }
+
+        //public static string[] CreateTablesWithTeamsPlayersChosenSymbols()
+        //{
+
+        //}
+
+        public static string GetPlayersNumberForTeam(GameObject[,,] button)
+        {
+            string number = "hmm";
+
+            int maxIndexDepth = button.GetLength(0);
+            int maxIndexColumn = button.GetLength(2);
+            int maxIndexRow = button.GetLength(1);
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay = button[indexDepth, indexRow, indexColumn];
+                        number = GameCommonMethodsMain.GetCubePlayText(cubePlay);
+                    }
+                }
+            }
+
+
+            return number;
+        }
+
+        // ---
+        public static int[] CreateTablesWithTeamNumberOfPlayers(List<List<GameObject[,,]>> buttonsWithTeams)
+        {
+            int teamNumbers = buttonsWithTeams.Count;
+            int[] teamPlayersNumbers = new int[teamNumbers];
+            int index = 0; // always for number
+
+           
+
+            for (int l = 0; l < buttonsWithTeams.Count; l++)
+                {
+                    List<GameObject[,,]> buttonsGroup = buttonsWithTeams[l];
+                    GameObject[,,] button = buttonsGroup[index];
+                    string numberOfPlayers = GetPlayersNumberForTeam(button);
+                    int number = CommonMethods.ConvertStringToInt(numberOfPlayers);
+                    teamPlayersNumbers[l] = number;
+                    //Debug.Log($"numberOfPlayers: " + numberOfPlayers);
+                }
+  
+
+                //for (int i = 0; i < teamPlayersNumbers.Length; i++)
+                //{
+                //    Debug.Log($"teamPlayersNumbers[{i}]: " + teamPlayersNumbers[i]);
+                //}
+
+
+                return teamPlayersNumbers;
+        }
+
+        // ---
+
+        public static string[] GetPlayersSymbolsForTeam(GameObject[,,] button)
+        {
+            int playersNumber= button.Length;
+            string[] palyersSymbols = new string[playersNumber];
+            string inactiveField = "-";
+
+            int countedInactiveFields = 0;
+
+            int maxIndexDepth = button.GetLength(0);
+            int maxIndexColumn = button.GetLength(2);
+            int maxIndexRow = button.GetLength(1);
+
+            int index = 0;
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay = button[indexDepth, indexRow, indexColumn];
+                        string symbol = GameCommonMethodsMain.GetCubePlayText(cubePlay);
+
+                        if (symbol.Equals(inactiveField))
+                        {
+                            countedInactiveFields++;
+                        }
+
+                        palyersSymbols[index] = symbol;
+                        index++;
+                    }
+                }
+            }
+
+            //for (int i = 0; i < palyersSymbols.Length; i++)
+            //{
+            //    Debug.Log($"palyersSymbols[{i}]: " + palyersSymbols[i]);
+            //}
+
+            //--
+            int playersSymbolsFinalNumber = playersNumber - countedInactiveFields;
+
+            string[] palyersSymbolsFinal = new string[playersSymbolsFinalNumber];
+
+            for (int i = 0; i < playersSymbolsFinalNumber; i++)
+            {
+                palyersSymbolsFinal[i] = palyersSymbols[i];
+            }
+
+
+            for (int i = 0; i < palyersSymbolsFinal.Length; i++)
+            {
+                Debug.Log($"palyersSymbolsFinal[{i}]: " + palyersSymbolsFinal[i]);
+            }
+
+
+
+            return palyersSymbols;
+        }
+        public static List<string[]> CreateTablesWithTeamsPlayersSymbols(List<List<GameObject[,,]>> buttonsWithTeams)
+        {
+            int teamNumbers = buttonsWithTeams.Count;
+            string[] teamPlayersNumbers = new string[teamNumbers];
+            int index = 1; // always for symbol
+
+            List<string[]> playersSymbolsByTeam = new List<string[]>();
+
+            for (int a = 0; a < buttonsWithTeams.Count; a++)
+            {
+                List<GameObject[,,]> buttonsGroup = buttonsWithTeams[a];
+                GameObject[,,] button = buttonsGroup[index];
+                string[] playersSymbols = GetPlayersSymbolsForTeam(button);
+                //int number = CommonMethods.ConvertStringToInt(numberOfPlayers);
+                playersSymbolsByTeam.Insert( a, playersSymbols);
+            }
+
+
+            //for (int i = 0; i < teamPlayersNumbers.Length; i++)
+            //{
+            //    Debug.Log($"teamPlayersNumbers[{i}]: " + teamPlayersNumbers[i]);
+            //}
+
+
+            return playersSymbolsByTeam;
+        }
+
+
+
+
+
+
     }
 }
