@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Assets
 {
@@ -20,15 +21,16 @@ namespace Assets
         public Material[] prefabCubePlayButtonsNumberColour;
         public Material[] prefabCubePlayButtonsBackColour;
 
-        private static bool _configurationBoardGameDeviceModeKind;
+        public static bool _configurationBoardGameDeviceModeKind;
         private static int _configurationBoardGameTeamNumber;
-        private static bool _isCellphoneMode;
+        public static bool _isCellphoneMode;
 
         private int _teamNumbers;
         private bool _isGame2D = true;
         private string _tagUntagged;
 
         List<List<GameObject[,,]>> _buttonsWithTeams;
+        List<List<GameObject[,,]>> _buttonsGroupByTeams;
 
         private string _tagConfigurationTeamMembersButtonSave;
         private string _tagConfigurationTeamNMembersButtonBack;
@@ -43,13 +45,17 @@ namespace Assets
 
         private List<GameObject[,,]> _buttonsStatic;
         private List<GameObject[,,]> _buttonsMoreSpecificConfiguration;
+        private List<string[]> _tablesWitPlayersChosenSymbols;
+        private int[] _tablesWitPlayersNumbersForTeams;
 
 
         void Start()
         {
 
-            _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
-            _isCellphoneMode = _configurationBoardGameDeviceModeKind;
+            //_configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
+            //_isCellphoneMode = _configurationBoardGameDeviceModeKind;
+            _isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
+           // Debug.Log("3 isCellphoneMode: " + _isCellphoneMode);
 
             if (_isCellphoneMode == false)
             {
@@ -83,7 +89,7 @@ namespace Assets
             _buttonsStatic = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonsStatic(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsWithTeams = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtons(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, _isCellphoneMode, _teamNumbers);
             //_buttonsWithNumbers = GameConfigurationTeamNumbersButtonsCreate.CreateTableForTeamGameWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, _isGame2D);
-
+            _buttonsGroupByTeams = GameConfigurationTeamMembersButtonsMethods.CreateListButtonsByTeams(_buttonsWithTeams, _teamNumbers);
         }
 
         void Update()
@@ -114,7 +120,17 @@ namespace Assets
                         {
                             GameConfigurationTeamMembersButtonsActions.HideTeamMembersElements(_buttonsStatic, _buttonsWithTeams, gameObjectName);
                             _buttonsMoreSpecificConfiguration = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonBackAndTableWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsDefaultColour, _isGame2D, gameObjectName);
+
+
+
+
+                            
+
                         }
+
+                        
+
+                        
 
                         if (gameObjectTag == _configurationTeamMembersButtonBackToConfiguration)
                         {
@@ -128,6 +144,20 @@ namespace Assets
                             //UnityEngine.Debug.Log("gameObjectTag: " + gameObjectTag);
                             GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElements(_buttonsStatic, _buttonsWithTeams, gameObjectName);
                             GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
+
+                            _tablesWitPlayersNumbersForTeams = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithTeamNumberOfPlayers(_buttonsGroupByTeams);
+                            
+                            
+                            _tablesWitPlayersChosenSymbols = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithTeamsPlayersSymbols(_buttonsGroupByTeams);
+
+
+
+
+
+
+
+
+
 
 
 

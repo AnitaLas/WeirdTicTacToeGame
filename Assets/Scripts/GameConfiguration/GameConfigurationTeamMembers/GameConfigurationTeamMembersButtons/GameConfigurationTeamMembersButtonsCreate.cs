@@ -40,8 +40,8 @@ namespace Assets.Scripts
             bool isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
             //Debug.Log("2 isCellphoneMode: " + isCellphoneMode); 
 
-            List < List<GameObject[,,]>> buttonsAll = new List<List<GameObject[,,]>>();
-
+            List<List<GameObject[,,]>> buttonsAll = new List<List<GameObject[,,]>>();
+            
 
 
             List<GameObject[,,]> buttonsTeamBackgroudTeamNumbers = GameConfigurationTeamMembersCreateFinalButtonsTextWithTeamNumbers(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D, isCellphoneMode, teamNumbers);
@@ -49,6 +49,12 @@ namespace Assets.Scripts
             List<GameObject[,,]> buttonsTeamNumbers = GameConfigurationTeamMembersCreateFinalButtonsWithTeamNumbers(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, isCellphoneMode, teamNumbers);
 
 
+            buttonsAll.Insert(0, buttonsTeamNumbers);
+            buttonsAll.Insert(1, buttonsTeamSymbols);
+            buttonsAll.Insert(2, buttonsTeamBackgroudTeamNumbers);
+
+
+            
 
 
 
@@ -58,19 +64,18 @@ namespace Assets.Scripts
 
 
             //buttons: table with numbers to change
-            List<GameObject[,,]> tableWithButtonsNumber = new List<GameObject[,,]>();
+            //List<GameObject[,,]> tableWithButtonsNumber = new List<GameObject[,,]>();
 
 
 
 
 
-            buttonsAll.Insert(0, buttonsTeamBackgroudTeamNumbers);
-            buttonsAll.Insert(1, buttonsTeamNumbers);
-            buttonsAll.Insert(2, buttonsTeamSymbols);
+
 
 
 
             return buttonsAll;
+           
         }
 
         // -------------------------------------------------------------------------------------------
