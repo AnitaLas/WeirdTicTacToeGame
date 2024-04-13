@@ -150,8 +150,27 @@ namespace Assets
                             
                             _tablesWitPlayersChosenSymbols = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithTeamsPlayersSymbols(_buttonsGroupByTeams);
 
+                            //int dddd = _tablesWitPlayersChosenSymbols.Count;
+
+                            //for (int i = 0; i < dddd; i++)
+                            //{
+                            //    string[] table = _tablesWitPlayersChosenSymbols[i];
+
+                            //    for (int j = 0; j < table.Length; j++)
+                            //    {
+                            //        Debug.Log($"table[{i}]: " + table[i]);
+
+                            //    }
+                            //    Debug.Log(" ------ ");
+
+                            //}
+                            //Debug.Log(" -------------------------------------- ");
 
 
+
+
+
+                            GameConfigurationTeamMembersButtonsMethods.SetUpRightSymbolsForTeam(_buttonsGroupByTeams, _tablesWitPlayersNumbersForTeams, _tablesWitPlayersChosenSymbols);
 
 
 

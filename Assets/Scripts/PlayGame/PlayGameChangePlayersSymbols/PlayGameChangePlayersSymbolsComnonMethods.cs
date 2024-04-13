@@ -181,7 +181,7 @@ namespace Assets.Scripts
             return numberSymbolsToChange;
         }
 
-        public static string SetUpUntakenSymbols(string[] takenSymbols)
+        public static string GetUntakenSymbols(string[] takenSymbols)
         {
             int takenSymbolsLength = takenSymbols.Length;
             string untakenSymbols = PlayGameCommonPlayersSymbols.GetStringWithAllSymbols();
@@ -236,7 +236,7 @@ namespace Assets.Scripts
 
         public static string[] GetNewSymbols(string[] playersSymbols, int numberSymbolsToChange)
         {
-            string untakenSymbolsText = SetUpUntakenSymbols(playersSymbols);
+            string untakenSymbolsText = GetUntakenSymbols(playersSymbols);
             string[] newSymbols = GetSymbolsForChange(untakenSymbolsText, numberSymbolsToChange);
             return newSymbols;
         }
@@ -255,57 +255,14 @@ namespace Assets.Scripts
 
             if (isChangeForAll == true)
             {
-                //Debug.Log("  for all   2");
-                //randomOldSymbolsForChandeSingle = takenSymbols;
-
                 for (int i = 0; i < playersSymbolsLength; i++)
                 {
                     string symbol = playersSymbols[i];
                     oldSymbolsForChange[i] = symbol;
                 }
-
-                //for (int i = 0; i < randomOldSymbolsForChandeSingle.Length; i++)
-                //{
-                //    Debug.Log($"randomOldSymbolsForChandeSingle[{i}]: " + randomOldSymbolsForChandeSingle[i]);
-                //}
             }
             else
-            {
-                //    //Debug.Log("  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     ");
-                //    // turn players symbols to one string
-                //string oldSymbols = "";
-
-                //for (int i = 0; i < playersSymbolsLength; i++)
-                //{
-                //    string symbol = playersSymbols[i];
-                //    oldSymbols = oldSymbols + symbol;
-                //}
-
-
-                //string oldSymbols = SetUpTakenSymbols(playersSymbols);
-                ////Debug.Log("oldSymbols: " + oldSymbols);
-
-                //// get random symbol - old symbol
-                //int takenSymbolsLenght2 = playersSymbolsLength;
-                //int randomIndex2 = takenSymbolsLenght2;
-                ////Debug.Log("randomIndex2: " + randomIndex2);
-
-                //for (int i = 0; i < numberSymbolsToChange; i++)
-                //{
-                //    int startIndex = GetRandomStartIndexForSymbol(randomIndex2);
-                //    //Debug.Log("startIndex: " + startIndex);
-                //    randomIndex2--;
-                //    string oldSymbol = oldSymbols.Substring(startIndex, 1);
-
-                //    oldSymbolsForChange[i] = oldSymbol;
-
-                //    oldSymbols = oldSymbols.Remove(startIndex, 1);
-
-
-                //}
-
-                //string oldSymbols = SetUpTakenSymbols(playersSymbols);
-                //oldSymbolsForChange = GetSymbolsForChange(oldSymbols, numberSymbolsToChange);
+            {              
                 oldSymbolsForChange = GetOldSymbolsByRandom(playersSymbols, numberSymbolsToChange);
             }
 
@@ -399,10 +356,10 @@ namespace Assets.Scripts
             //    numberSymbolsToChange = takenSymbolsLenght;
             //}
 
-            Debug.Log("takenSymbolsLenght: " + takenSymbolsLenght);
+            //Debug.Log("takenSymbolsLenght: " + takenSymbolsLenght);
             int numberSymbolsToChange = GetMaxIndexForNewSymbols(isChangeForAll, takenSymbolsLenght);
-            Debug.Log("numberSymbolsToChange: " + numberSymbolsToChange);
-            Debug.Log(" -------------------------------------------------------------- ");
+            //Debug.Log("numberSymbolsToChange: " + numberSymbolsToChange);
+            //Debug.Log(" -------------------------------------------------------------- ");
             // create table for changes
             string[] newSymbolsForChange = new string[numberSymbolsToChange];
             string[] oldSymbolsForChange = new string[numberSymbolsToChange];
