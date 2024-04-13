@@ -132,7 +132,8 @@ namespace Assets.Scripts
         public static GameObject[,,] GameConfigurationTeamMembersCreateSingleButtonTextWithTeamNumbers(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, string buttonTextFinal)
         {
 
-            string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersDefaultNumber();
+            string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
+            //string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersDefaultNumber();
             //string buttonText = GameConfigurationButtonsTeamMembersButtonsName.GetButtonNameForTeam();
             //string buttonTextFinal = $"{buttonText} {teamNumber}";
 
