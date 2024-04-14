@@ -55,7 +55,7 @@ namespace Assets.Scripts
         public static GameObject[,,] GameConfigurationTeamMembersCreateSingleTableWithButtonsSymbols(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, Tuple<int, int> tableSize)
         {
             GameObject[,,] tableWithNumbers;
-            GameObject[,,] tableWithNumberFinal;
+           // GameObject[,,] tableWithNumberFinal;
 
             int numberOfDepths = 1;
             int numberOfRows = tableSize.Item1; 

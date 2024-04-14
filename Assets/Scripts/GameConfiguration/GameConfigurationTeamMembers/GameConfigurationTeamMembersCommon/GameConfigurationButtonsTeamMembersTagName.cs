@@ -23,7 +23,14 @@ namespace Assets.Scripts
             return currentNumber;
         }
 
-        public static string GetTagNameForButtonByTagTeamMembersTableWithSymbols()
+        public static string GetTagNameForButtonByTagTeamMembersDefaultSymbols()
+        {
+            int dictionatyId = 13;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagNameForButtonByTagTeamMembersTableWithTeamSymbols()
         {
             int dictionatyId = 2;
             string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
@@ -66,6 +73,13 @@ namespace Assets.Scripts
             return currentNumber;
         }
 
+        public static string GetTagNameForButtonByTagTeamMembersTableWithAllSymbols()
+        {
+            int dictionatyId = 7;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
         public static string GetTagNameForButtonByTagTeamMembersButtonArrowLeft()
         {
             int dictionatyId = 8;
@@ -80,9 +94,16 @@ namespace Assets.Scripts
             return currentNumber;
         }
 
-        public static string GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfiguration()
+        public static string GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfigurationFromChangePlayersNumber()
         {
             int dictionatyId = 11;
+            string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
+            return currentNumber;
+        }
+
+        public static string GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfigurationFromChangePlayersSymbol()
+        {
+            int dictionatyId = 12;
             string currentNumber = GetTagsNameFromDictionaryTagsConfigurationTeamMembers(dictionatyId);
             return currentNumber;
         }

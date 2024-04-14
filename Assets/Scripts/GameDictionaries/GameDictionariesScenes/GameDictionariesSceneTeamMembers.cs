@@ -23,7 +23,9 @@ namespace Assets.Scripts
                 { 8, "ConfigurationTeamMembersArrowLeft" },
                 { 9, "ConfigurationTeamMembersArrowRight" },
                 { 10, "ConfigurationTeamMembersTableWithNumbers" },
-                { 11, "ConfigurationTeamMembersButtonBackToConfiguration" }
+                { 11, "ConfigurationTeamMembersButtonBackToConfigurationFromChangePlayersNumber" },
+                { 12, "ConfigurationTeamMembersButtonBackToConfigurationFromChangePlayersSymbol" },
+                { 13, "ConfigurationTeamMembersDefaultSymbol" }
             };
 
             return tagTeamNumbers;
@@ -38,6 +40,7 @@ namespace Assets.Scripts
                 { 3, "TEAM" },
                 { 4, "PLAYERS" },
                 { 5, "PLAYERS NO" },
+                { 6, "PLAYER" },
             };
 
             return buttonsNameDictionary;
