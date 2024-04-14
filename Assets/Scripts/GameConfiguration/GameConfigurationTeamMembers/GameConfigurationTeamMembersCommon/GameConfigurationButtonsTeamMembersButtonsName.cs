@@ -51,6 +51,13 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetButtonNameForPlayer()
+        {
+            int dictionatyId = 6;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersName(dictionatyId);
+            return tagName;
+        }
+
         // default numbers:
 
         public static string GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultNumbers(int dictionatyId)

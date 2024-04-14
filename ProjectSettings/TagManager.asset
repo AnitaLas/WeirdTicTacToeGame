@@ -97,7 +97,9 @@ TagManager:
   - ConfigurationTeamMembersArrowLeft
   - ConfigurationTeamMembersArrowRight
   - ConfigurationTeamMembersTableWithNumbers
-  - ConfigurationTeamMembersButtonBackToConfiguration
+  - ConfigurationTeamMembersButtonBackToConfigurationFromChangePlayersNumber
+  - ConfigurationTeamMembersButtonBackToConfigurationFromChangePlayersSymbol
+  - ConfigurationTeamMembersDefaultSymbol
   layers:
   - Default
   - TransparentFX

@@ -38,9 +38,13 @@ namespace Assets
         private string _tagConfigurationTeamMembersChangeNumber;
         private string _tagConfigurationTeamMembersDefaultNumber;
         private string _tagConfigurationTeamMembersTableWithNumbers;
-        private string _configurationTeamMembersButtonBackToConfiguration;
+        private string _configurationTeamMembersTableWithTeamSymbols;
+        private string _configurationTeamMembersTableWithAllSymbols;
+        //private string _configurationTeamMembersDefaultSymbols;
+        private string _configurationTeamMembersButtonBackToConfigurationFromChangePlayersNumber;
+        private string _configurationTeamMembersButtonBackToConfigurationFromChangePlayersSymbol;
 
-        private string _tagConfigurationTeamMembersInactiveField;
+        //private string _tagConfigurationTeamMembersInactiveField;
 
 
         private List<GameObject[,,]> _buttonsStatic;
@@ -77,12 +81,14 @@ namespace Assets
 
             _tagConfigurationTeamMembersButtonSave = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonSave();
             _tagConfigurationTeamNMembersButtonBack = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonBack();
-            //_tagConfigurationTeamMembers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersDefaultNumber();
-            //_tagConfigurationTeamMembersDefaultNumber = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamNumbersChange();
+
             _tagConfigurationTeamMembersDefaultNumber = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersDefaultNumber();
-            //_tagConfigurationTeamMembersChangeNumber = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersDefaultNumber();
-            _configurationTeamMembersButtonBackToConfiguration = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfiguration();
+            _configurationTeamMembersButtonBackToConfigurationFromChangePlayersNumber = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfigurationFromChangePlayersNumber();
             _tagConfigurationTeamMembersTableWithNumbers = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithNumbers();
+
+            _configurationTeamMembersTableWithTeamSymbols = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithTeamSymbols();
+            _configurationTeamMembersButtonBackToConfigurationFromChangePlayersSymbol = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfigurationFromChangePlayersSymbol();
+            _configurationTeamMembersTableWithAllSymbols = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithAllSymbols();
 
             //GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
@@ -108,81 +114,88 @@ namespace Assets
                         string gameObjectTag = GameCommonMethodsMain.GetObjectTag(touch);
                         string gameObjectName = GameCommonMethodsMain.GetObjectName(touch);
 
-                        //Debug.Log("gameObjectTag: " + gameObjectTag);
+                        Debug.Log("gameObjectTag: " + gameObjectTag);
 
                         if (gameObjectTag != _tagUntagged)
                         {
                             GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(gameObjectTag);
                         }
 
-
+                        // team - players numbers
                         if (gameObjectTag == _tagConfigurationTeamMembersDefaultNumber)
                         {
-                            GameConfigurationTeamMembersButtonsActions.HideTeamMembersElements(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            GameConfigurationTeamMembersButtonsActions.HideTeamMembersElementsPlayersNumbers(_buttonsStatic, _buttonsWithTeams, gameObjectName);
                             _buttonsMoreSpecificConfiguration = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonBackAndTableWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsDefaultColour, _isGame2D, gameObjectName);
-
-
-
-
-                            
-
+ 
                         }
-
-                        
-
-                        
-
-                        if (gameObjectTag == _configurationTeamMembersButtonBackToConfiguration)
-                        {
-                            GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElements(_buttonsStatic, _buttonsWithTeams, gameObjectName);
-                            GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
-                        }
-
 
                         if (gameObjectTag == _tagConfigurationTeamMembersTableWithNumbers)
                         {
-                            //UnityEngine.Debug.Log("gameObjectTag: " + gameObjectTag);
-                            GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElements(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            //GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsWhenBackFromViewTableNumbers(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsAfterChangePlayersNumber(_buttonsStatic, _buttonsWithTeams, gameObjectName);
                             GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
 
                             _tablesWitPlayersNumbersForTeams = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithTeamNumberOfPlayers(_buttonsGroupByTeams);
-                            
-                            
                             _tablesWitPlayersChosenSymbols = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithTeamsPlayersSymbols(_buttonsGroupByTeams);
 
-                            //int dddd = _tablesWitPlayersChosenSymbols.Count;
-
-                            //for (int i = 0; i < dddd; i++)
-                            //{
-                            //    string[] table = _tablesWitPlayersChosenSymbols[i];
-
-                            //    for (int j = 0; j < table.Length; j++)
-                            //    {
-                            //        Debug.Log($"table[{i}]: " + table[i]);
-
-                            //    }
-                            //    Debug.Log(" ------ ");
-
-                            //}
-                            //Debug.Log(" -------------------------------------- ");
-
-
-
-
-
                             GameConfigurationTeamMembersButtonsMethods.SetUpRightSymbolsForTeam(_buttonsGroupByTeams, _tablesWitPlayersNumbersForTeams, _tablesWitPlayersChosenSymbols);
+                        
+                        }
+
+                        if (gameObjectTag == _configurationTeamMembersButtonBackToConfigurationFromChangePlayersNumber)
+                        {
+                            GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsWhenBackFromViewTableNumbers(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            GameConfigurationTeamMembersButtonsActions.DestroyButtonsForTeamNumbers(_buttonsMoreSpecificConfiguration);
+                        }
 
 
+                        // team - palyers symbol
 
+                        if (gameObjectTag == _configurationTeamMembersTableWithTeamSymbols)
+                        {
+                            GameConfigurationTeamMembersButtonsActions.HideTeamMembersElementsPlayersSymbols(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            _tablesWitPlayersChosenSymbols = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithTeamsPlayersSymbols(_buttonsGroupByTeams);
 
-
-
-
-
+                            _buttonsMoreSpecificConfiguration = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonBackAndTableWithSymbols(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsDefaultColour, _isGame2D, gameObjectName, _tablesWitPlayersChosenSymbols);
 
                         }
 
 
+
+
+
+                        // to do
+                        if (gameObjectTag == _configurationTeamMembersTableWithAllSymbols)
+                        {
+                            GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsAfterChangePlayerSymbol(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            //_buttonsMoreSpecificConfiguration = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonBackAndTableWithSymbols(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsDefaultColour, _isGame2D, gameObjectName, _tablesWitPlayersChosenSymbols);
+
+                        }
+
+
+
+
+
+
+
+
+                        
+                        if (gameObjectTag == _configurationTeamMembersButtonBackToConfigurationFromChangePlayersSymbol)
+                        {
+                            GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsWhenBackFromViewTableSymbols(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                            GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
+                        }
+
+
+
+
+
+
+
+
+
+
+                        // buttons: save & back (to previous scene)
 
                         if (gameObjectTag == _tagConfigurationTeamMembersButtonSave)
                         {
@@ -191,7 +204,7 @@ namespace Assets
                             ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
                         }
 
-                        // back
+
                         if (gameObjectTag == _tagConfigurationTeamNMembersButtonBack)
                         {
                             if (_isCellphoneMode == true)

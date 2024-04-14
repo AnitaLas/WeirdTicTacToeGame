@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -10,11 +11,20 @@ namespace Assets.Scripts
     internal class GameConfigurationTeamMembersButtonsActions
     {
         // button: hide
-        public static void HideTeamMembersElements(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams, string gameObjectName)
+        public static void HideTeamMembersElementsPlayersNumbers(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams, string gameObjectName)
         {
             HideButtons(buttonsStatic);
             HideButtonsList(buttonsWithTeams);
             GameConfigurationTeamMembersButtonsMethods.ChangeTagForChangeNumber(gameObjectName);
+            //GameConfigurationTeamMembersButtonsMethods.ChangeTagForChangeSymbol(gameObjectName);
+        }
+
+        public static void HideTeamMembersElementsPlayersSymbols(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams, string gameObjectName)
+        {
+            HideButtons(buttonsStatic);
+            HideButtonsList(buttonsWithTeams);
+            //GameConfigurationTeamMembersButtonsMethods.ChangeTagForChangeNumber(gameObjectName);
+            GameConfigurationTeamMembersButtonsMethods.ChangeTagForChangeSymbol(gameObjectName);
         }
 
 
@@ -44,12 +54,36 @@ namespace Assets.Scripts
 
         // button: unhide
 
-        public static void UnhideTeamMembersElements(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams, string gameObjectName)
+        public static void UnhideTeamMembersElementsAfterChangePlayersNumber(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams, string gameObjectName)
         {
             UnhideButtons(buttonsStatic);
             UnhideButtonsList(buttonsWithTeams);
             GameConfigurationTeamMembersButtonsMethods.SetUpNewPlayersNumberForTeam(gameObjectName);
             GameConfigurationTeamMembersButtonsMethods.ChangeTagForDefaultNumber();
+        }
+
+        public static void UnhideTeamMembersElementsWhenBackFromViewTableNumbers(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams, string gameObjectName)
+        {
+            UnhideButtons(buttonsStatic);
+            UnhideButtonsList(buttonsWithTeams);
+            //GameConfigurationTeamMembersButtonsMethods.SetUpNewPlayersNumberForTeam(gameObjectName);
+            GameConfigurationTeamMembersButtonsMethods.ChangeTagForDefaultNumber();
+        }
+
+        public static void UnhideTeamMembersElementsWhenBackFromViewTableSymbols(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams, string gameObjectName)
+        {
+            UnhideButtons(buttonsStatic);
+            UnhideButtonsList(buttonsWithTeams);
+            //GameConfigurationTeamMembersButtonsMethods.SetUpNewPlayersNumberForTeam(gameObjectName);
+            GameConfigurationTeamMembersButtonsMethods.ChangeTagForDefaultTeamSymbol();
+        }
+
+        public static void UnhideTeamMembersElementsAfterChangePlayerSymbol(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams, string gameObjectName)
+        {
+            UnhideButtons(buttonsStatic);
+            UnhideButtonsList(buttonsWithTeams);
+            //GameConfigurationTeamMembersButtonsMethods.SetUpNewPlayersNumberForTeam(gameObjectName);
+            GameConfigurationTeamMembersButtonsMethods.ChangeTagForDefaultTeamSymbol();
         }
 
 
@@ -78,6 +112,12 @@ namespace Assets.Scripts
         }
 
         // button: destroy 
+
+        public static void DestroyButtonsForTeamNumbers(List<GameObject[,,]> gameObjectsList)
+        {
+            //DestroyButtonsWithNumber(gameObjects);
+            DestroyBackButton(gameObjectsList);
+        }
 
         public static void DestroyButtons(List<GameObject[,,]> gameObjectsList)
         {

@@ -16,7 +16,6 @@ namespace Assets.Scripts
     internal class PlayGameChangePlayersSymbolsComnonMethods
     {
 
-        //public static int GetRandomNumberPlayersToChangeSymbols(int newSymbolsForPlayersLenght)
         public static int GetRandomNumberPlayersToChangeSymbols(string[] playerSymbolMove)
         {
             int minNumber = 1;
@@ -234,6 +233,7 @@ namespace Assets.Scripts
             return symbolsForChange;
         }
 
+        // GameConfigurationTeamMembersButtonsMethods - add one class for that method
         public static string[] GetNewSymbols(string[] playersSymbols, int numberSymbolsToChange)
         {
             string untakenSymbolsText = GetUntakenSymbols(playersSymbols);

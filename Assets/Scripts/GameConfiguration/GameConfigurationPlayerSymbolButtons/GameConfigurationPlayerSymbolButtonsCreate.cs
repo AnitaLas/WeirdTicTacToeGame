@@ -140,7 +140,7 @@ namespace Assets.Scripts
             string tagConfigurationPlayerSymbolChooseSymbol = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolChooseSymbol();
             string tagConfigurationPlayerSymbolInactiveField = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolInactiveField();
 
-            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayer();
+            //string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayer();
 
             int numberOfDepths = 1;
             int numberOfColumns = 4;

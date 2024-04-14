@@ -179,7 +179,7 @@ namespace Assets.Scripts
         public static void SetUpDefaulSymbolsForTeamMembers(GameObject[,,] buttons, string[] symbols)
         {
             string tagNameInactiveField = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
-            string tagNameTableWithSymbols = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithSymbols();
+            string tagNameTableWithSymbols = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithTeamSymbols();
 
             string tagName;
             string symbol;
@@ -251,6 +251,19 @@ namespace Assets.Scripts
             return teamNo;
         }
 
+        public static int GetPlayerNumber(string gameObjectName)
+        {
+            int startIndex = 23; // part of cubePlay name - Unity
+            int length = 1;
+
+            string number = gameObjectName.Substring(startIndex, length);
+
+            int index = CommonMethods.ConvertStringToInt(number);
+            int teamNo = index + 1;
+
+            return teamNo;
+        }
+
 
         public static void ChangeTagForDefaultNumber()
         {
@@ -266,6 +279,48 @@ namespace Assets.Scripts
             GameObject cubePlay = CommonMethods.GetObjectByName(gameObjectName);
             CommonMethods.ChangeTagForGameObject(cubePlay, tagNameNew);
         }
+
+        public static void ChangeTagForDefaultTeamSymbol()
+        {
+            string tagNameNew = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithTeamSymbols();
+            string tagNameOld = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
+            GameObject cubePlay = CommonMethods.GetObjectByTagName(tagNameOld);
+            CommonMethods.ChangeTagForGameObject(cubePlay, tagNameNew);
+        }
+
+        public static void ChangeTagForChangeSymbol(string gameObjectName)
+        {
+            string tagNameNew = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
+            GameObject cubePlay = CommonMethods.GetObjectByName(gameObjectName);
+            CommonMethods.ChangeTagForGameObject(cubePlay, tagNameNew);
+        }
+
+       
+
+        //public static void SetUpNewPlayersNumberForTeam(string gameObjectName)
+        //{
+        //    string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
+        //    GameObject teamNumber = CommonMethods.GetObjectByTagName(tagName);
+
+        //    GameObject choosenNumber = CommonMethods.GetObjectByName(gameObjectName);
+
+        //    string newNumber = CommonMethods.GetCubePlayText(choosenNumber);
+        //    CommonMethods.ChangeTextForFirstChild(teamNumber, newNumber);
+        //}
+
+
+
+        //public static void SetUpNewPlayerSymbolForTeam(string gameObjectName)
+        //{
+        //    string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
+        //    GameObject teamNumber = CommonMethods.GetObjectByTagName(tagName);
+
+        //    GameObject choosenNumber = CommonMethods.GetObjectByName(gameObjectName);
+
+        //    string newNumber = CommonMethods.GetCubePlayText(choosenNumber);
+        //    CommonMethods.ChangeTextForFirstChild(teamNumber, newNumber);
+        //}
+
 
         public static void SetUpNewPlayersNumberForTeam(string gameObjectName)
         {
@@ -499,7 +554,8 @@ namespace Assets.Scripts
         // ---
         public static void RemoveSymbolsForTeam(GameObject[,,] buttons, int symbolsCounted, int playersNumbers)
         {
-            int numberToChange = symbolsCounted - playersNumbers;
+            string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
+            //int numberToChange = symbolsCounted - playersNumbers;
             int index = 0;
 
             int maxIndexDepth = buttons.GetLength(0);
@@ -524,6 +580,7 @@ namespace Assets.Scripts
                         {
                             GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
                             CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
+                            CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
                         }
                        
 
@@ -581,30 +638,79 @@ namespace Assets.Scripts
             return allSymbols;
         }
 
+        public static string GetUntakenSymbols(string[] takenSymbols)
+        {
+            int takenSymbolsLength = takenSymbols.Length;
+            string untakenSymbols = PlayGameCommonPlayersSymbols.GetStringWithAllSymbols();
 
-        // -- to do 
+            for (int i = 0; i < takenSymbolsLength; i++)
+            {
+                string takenSymbol = takenSymbols[i];
+                int index = untakenSymbols.IndexOf(takenSymbol);
+                string newString = untakenSymbols.Remove(index, 1);
+                untakenSymbols = newString;
+            }
+
+            return untakenSymbols;
+        }
+
+        public static int GetRandomStartIndexForSymbol(int maxNumber)
+        {
+            int minNumber = 0;
+            int randomNumber = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
+            return randomNumber;
+        }
+
+        public static string[] GetSymbolsForChange(string symbols, int numberSymbolsToChange)
+        {
+            int symbolsLength = symbols.Length;
+            string[] symbolsForChange = new string[numberSymbolsToChange];
+            int randomIndex = symbolsLength;
+            //Debug.Log("randomIndex: " + randomIndex);
+
+            for (int i = 0; i < numberSymbolsToChange; i++)
+            {
+                int startIndex = GetRandomStartIndexForSymbol(randomIndex);
+                //Debug.Log("startIndex: " + startIndex);
+                randomIndex--;
+
+                string symbol = symbols.Substring(startIndex, 1);
+
+                symbolsForChange[i] = symbol;
+
+                symbols = symbols.Remove(startIndex, 1);
+
+            }
+            return symbolsForChange;
+        }
+
+
+
+        // PlayGameChangePlayersSymbolsComnonMethods - add one class for that method
         public static string[] GetNewDefaultSymbols(string[] takenSymbols, int symbolsCounted, int playersNumbers)
         {
             int newSymbolsNumber = playersNumbers - symbolsCounted;
-            string[] defaulSymbol = new string[newSymbolsNumber];
+            
 
-            string[] allSymbols = CreateGameBoardCommonMethods.CreateTableWithCharactersByGivenString();
+            //string[] allSymbols = CreateGameBoardCommonMethods.CreateTableWithCharactersByGivenString();
 
-
-
-
-
+            string untakenSymbools = GetUntakenSymbols(takenSymbols);
+            string[] newDefaulSymbol = GetSymbolsForChange(untakenSymbools, newSymbolsNumber);
 
 
+
+            return newDefaulSymbol;
         }
 
         public static void AddDefaultSymbolsForTeam(GameObject[,,] buttons, int symbolsCounted, int playersNumbers, List<string[]> tablesWitPlayersChosenSymbols)
         {
+            string tagName= GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithTeamSymbols();
             //int numberToChange = playersNumbers - symbolsCounted;
             //int index = 0 + numberToChange;
             int index = 0;
-            int indexSymbolsCounted = symbolsCounted - 1;
-            int ddddd = playersNumbers - 1;
+            int indexNewSymbol = 0;
+            //int indexSymbolsCounted = symbolsCounted - 1;
+            //int ddddd = playersNumbers - 1;
 
 
             //Debug.Log("index: " + index);
@@ -641,9 +747,12 @@ namespace Assets.Scripts
 
                         if (index > symbolsCounted - 1 && index  < playersNumbers)
                         { 
-
+                            string newSymbol = untakenSymobl[indexNewSymbol];
                             GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
-                            CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
+                            //CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
+                            CommonMethods.ChangeTextForFirstChild(cubePlay, newSymbol);
+                            CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
+                            indexNewSymbol++;
                         }
 
 
