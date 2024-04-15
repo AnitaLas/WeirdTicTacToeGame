@@ -333,6 +333,8 @@ namespace Assets.Scripts
             CommonMethods.ChangeTextForFirstChild(teamNumber, newNumber);
         }
 
+
+
         public static List<List<GameObject[,,]>> CreateListButtonsByTeams(List<List<GameObject[,,]>> buttonsWithTeams,int teamNumbers)
         {
             List<List<GameObject[,,]>> buttonsGroupedByTeams = new List<List<GameObject[,,]>>();

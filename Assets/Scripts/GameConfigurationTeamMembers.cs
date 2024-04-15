@@ -145,7 +145,8 @@ namespace Assets
                         if (gameObjectTag == _configurationTeamMembersButtonBackToConfigurationFromChangePlayersNumber)
                         {
                             GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsWhenBackFromViewTableNumbers(_buttonsStatic, _buttonsWithTeams, gameObjectName);
-                            GameConfigurationTeamMembersButtonsActions.DestroyButtonsForTeamNumbers(_buttonsMoreSpecificConfiguration);
+                            //GameConfigurationTeamMembersButtonsActions.DestroyButtonsForTeamNumbers(_buttonsMoreSpecificConfiguration);
+                            GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
                         }
 
 
@@ -160,33 +161,20 @@ namespace Assets
 
                         }
 
-
-
-
-
-                        // to do
                         if (gameObjectTag == _configurationTeamMembersTableWithAllSymbols)
                         {
                             GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsAfterChangePlayerSymbol(_buttonsStatic, _buttonsWithTeams, gameObjectName);
-                            //_buttonsMoreSpecificConfiguration = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonBackAndTableWithSymbols(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsDefaultColour, _isGame2D, gameObjectName, _tablesWitPlayersChosenSymbols);
-
+                            //GameConfigurationTeamMembersButtonsActions.DestroyButtonsForTeamNumbers(_buttonsMoreSpecificConfiguration);
+                            GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
                         }
 
-
-
-
-
-
-
-
-                        
                         if (gameObjectTag == _configurationTeamMembersButtonBackToConfigurationFromChangePlayersSymbol)
                         {
                             GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsWhenBackFromViewTableSymbols(_buttonsStatic, _buttonsWithTeams, gameObjectName);
                             GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
                         }
 
-
+                        // buttons - tablet mode: switch teams for set up
 
 
 
