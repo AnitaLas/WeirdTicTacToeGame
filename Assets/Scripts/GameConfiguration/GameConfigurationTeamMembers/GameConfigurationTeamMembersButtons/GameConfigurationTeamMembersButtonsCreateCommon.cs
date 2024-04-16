@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    internal class GameConfigurationTeamMembersButtonsCreateCommon
+    internal class GameConfigurationTeamMembersButtonsCreateCommon : MonoBehaviour
     {
 
         public static GameObject[,,] CreateCommonButtonForTeamMembersFourRows(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
@@ -65,6 +65,11 @@ namespace Assets.Scripts
             //tableWithNumberFinal = GameConfigurationButtonsWithNumbersForTeamMembers.ChangeDataForTableWithTeamMembers(tableWithNumbers);
 
             return tableWithNumbers;
+        }
+
+        public static GameObject CreateButtonArrow(GameObject buttoArrow)
+        {
+            return Instantiate(buttoArrow);
         }
 
     }

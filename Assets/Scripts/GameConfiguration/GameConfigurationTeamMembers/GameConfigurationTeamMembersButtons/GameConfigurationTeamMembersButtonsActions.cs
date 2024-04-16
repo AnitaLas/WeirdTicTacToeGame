@@ -62,6 +62,10 @@ namespace Assets.Scripts
             }
         }
 
+        public static void HideButtons(GameObject[,,] button)
+        {
+            ButtonsCommonMethodsActions.GameObjectToHide(button);
+        }
         // button: unhide
         public static void UnhideButtons(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams)
         {
