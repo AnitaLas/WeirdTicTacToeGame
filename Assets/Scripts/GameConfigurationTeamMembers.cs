@@ -15,6 +15,8 @@ namespace Assets
         //public static int ConfigurationBoardGameTeamNumber { get; set; }
 
         public GameObject prefabCubePlay;
+        public GameObject buttonArrowLeft;
+        public GameObject buttonArrowRight;
 
         public Material[] prefabCubePlayDefaultColour;
         public Material[] prefabCubePlayButtonsDefaultColour;
@@ -29,8 +31,7 @@ namespace Assets
         private bool _isGame2D = true;
         private string _tagUntagged;
 
-        List<List<GameObject[,,]>> _buttonsWithTeams;
-        List<List<GameObject[,,]>> _buttonsGroupByTeams;
+
 
         private string _tagConfigurationTeamMembersButtonSave;
         private string _tagConfigurationTeamNMembersButtonBack;
@@ -40,16 +41,22 @@ namespace Assets
         private string _tagConfigurationTeamMembersTableWithNumbers;
         private string _configurationTeamMembersTableWithTeamSymbols;
         private string _configurationTeamMembersTableWithAllSymbols;
+        private string _configurationTeamMembersArrowLeft;
+        private string _configurationTeamMembersArrowRight;
         //private string _configurationTeamMembersDefaultSymbols;
         private string _configurationTeamMembersButtonBackToConfigurationFromChangePlayersNumber;
         private string _configurationTeamMembersButtonBackToConfigurationFromChangePlayersSymbol;
 
         //private string _tagConfigurationTeamMembersInactiveField;
 
+        private List<List<GameObject[,,]>> _buttonsWithTeams;
+        private List<List<GameObject[,,]>> _buttonsGroupByTeams;
 
         private List<GameObject[,,]> _buttonsStatic;
         private List<GameObject[,,]> _buttonsMoreSpecificConfiguration;
-        private List<string[]> _tablesWitPlayersChosenSymbols;
+
+        private List<GameObject> _buttonsArrows;
+        private List<string[,,]> _tablesWitPlayersChosenSymbols;
         private int[] _tablesWitPlayersNumbersForTeams;
 
 
@@ -59,12 +66,14 @@ namespace Assets
             //_configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
             //_isCellphoneMode = _configurationBoardGameDeviceModeKind;
             _isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
-           // Debug.Log("3 isCellphoneMode: " + _isCellphoneMode);
+            //Debug.Log("MMMMMM isCellphoneMode: " + _isCellphoneMode);
 
             if (_isCellphoneMode == false)
             {
                 _configurationBoardGameTeamNumber = GameConfigurationTeamNumbers.ConfigurationBoardGameTeamNumber;
                 _teamNumbers = _configurationBoardGameTeamNumber;
+               // Debug.Log("teamNumbers: " + _teamNumbers);
+                _buttonsArrows = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersCreateButtonsArrows(buttonArrowLeft, buttonArrowRight);
             }
             else
             {
@@ -90,9 +99,12 @@ namespace Assets
             _configurationTeamMembersButtonBackToConfigurationFromChangePlayersSymbol = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonButtonBackToConfigurationFromChangePlayersSymbol();
             _configurationTeamMembersTableWithAllSymbols = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithAllSymbols();
 
+            _configurationTeamMembersArrowLeft = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonArrowLeft();
+            _configurationTeamMembersArrowRight = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonArrowRight();
+
             //GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
-            _buttonsStatic = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonsStatic(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
+            _buttonsStatic = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonsStatic(prefabCubePlay, buttonArrowLeft, buttonArrowRight, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsWithTeams = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtons(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, _isCellphoneMode, _teamNumbers);
             //_buttonsWithNumbers = GameConfigurationTeamNumbersButtonsCreate.CreateTableForTeamGameWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, _isGame2D);
             _buttonsGroupByTeams = GameConfigurationTeamMembersButtonsMethods.CreateListButtonsByTeams(_buttonsWithTeams, _teamNumbers);
@@ -114,7 +126,7 @@ namespace Assets
                         string gameObjectTag = GameCommonMethodsMain.GetObjectTag(touch);
                         string gameObjectName = GameCommonMethodsMain.GetObjectName(touch);
 
-                        Debug.Log("gameObjectTag: " + gameObjectTag);
+                        //Debug.Log("gameObjectTag: " + gameObjectTag);
 
                         if (gameObjectTag != _tagUntagged)
                         {
@@ -174,12 +186,30 @@ namespace Assets
                             GameConfigurationTeamMembersButtonsActions.DestroyButtons(_buttonsMoreSpecificConfiguration);
                         }
 
-                        // buttons - tablet mode: switch teams for set up
+                        // buttons: arrow left & right - tablet mode: switch teams for set up 
+
+
+                        if (gameObjectTag == _configurationTeamMembersArrowLeft)
+                        {
+                            //GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsWhenBackFromViewTableSymbols(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+                        
 
 
 
 
 
+
+
+
+
+
+                        }
+
+                        if (gameObjectTag == _configurationTeamMembersArrowRight)
+                        {
+                            //GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsWhenBackFromViewTableSymbols(_buttonsStatic, _buttonsWithTeams, gameObjectName);
+
+                        }
 
 
 
