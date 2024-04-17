@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Assets.Scripts
 {
@@ -424,10 +425,9 @@ namespace Assets.Scripts
 
         // ---
 
-        public static string[,,] GetPlayersSymbolsForTeam(GameObject[,,] button)
+        public static string[] GetPlayersSymbolsForTeam(GameObject[,,] button)
         {
-            int playersNumber= button.Length;
-            string[] palyersSymbols = new string[playersNumber];
+           
             string inactiveField = "-";
 
             int countedInactiveFields = 0;
@@ -435,6 +435,9 @@ namespace Assets.Scripts
             int maxIndexDepth = button.GetLength(0);
             int maxIndexColumn = button.GetLength(2);
             int maxIndexRow = button.GetLength(1);
+
+            int playersNumber = maxIndexDepth * maxIndexColumn * maxIndexRow;
+            string[] palyersSymbols = new string[playersNumber];
 
             int index = 0;
 
@@ -451,24 +454,29 @@ namespace Assets.Scripts
                         {
                             countedInactiveFields++;
                         }
+                        else
+                        {                           
+                            palyersSymbols[index] = symbol;
+                            index++;
+                        }
 
-                        palyersSymbols[index] = symbol;
-                        index++;
+                        //palyersSymbols[index] = symbol;
+                        //index++;
                     }
                 }
             }
 
-            //for (int i = 0; i < palyersSymbols.Length; i++)
-            //{
+           // for (int i = 0; i < palyersSymbols.Length; i++)
+           // {
             //    Debug.Log($"palyersSymbols[{i}]: " + palyersSymbols[i]);
             //}
 
 
             //Debug.Log(" -------------------------------------- ");
-            //--
+            //s--
             int playersSymbolsFinalNumber = playersNumber - countedInactiveFields;
 
-            string[,,] palyersSymbolsFinal = new string[maxIndexDepth, maxIndexRow, maxIndexColumn];
+            string[] palyersSymbolsFinal = new string[playersSymbolsFinalNumber];
 
             for (int i = 0; i < playersSymbolsFinalNumber; i++)
             {
@@ -484,6 +492,7 @@ namespace Assets.Scripts
             //Debug.Log(" -------------------------------------- ");
 
             return palyersSymbolsFinal;
+            //return palyersSymbols;
         }
 
         // fix string[,,] not string[] !!!!!!!!!!
@@ -559,36 +568,48 @@ namespace Assets.Scripts
         // ---
 
 
-        public static List<string[,,]> CreateTablesWithTeamsPlayersSymbols(List<List<GameObject[,,]>> buttonsGroupByTeams)
+        public static List<string[]> CreateTablesWithTeamsPlayersSymbols(List<List<GameObject[,,]>> buttonsGroupByTeams)
         {
             int teamNumbers = buttonsGroupByTeams.Count;
             
-            int index = 1; // always for symbol
+            int indexForListWithSymbols = 1; // always for symbol
+            int indexForSymbol = 0; // always for symbol
 
-            List<string[,,]> playersSymbolsByTeam = new List<string[,,]>();
+            List<string[]> playersSymbolsByTeam = new List<string[]>();
 
             for (int a = 0; a < teamNumbers; a++)
             {
                 List<GameObject[,,]> buttonsGroup = buttonsGroupByTeams[a];
 
+                //GameObject[,,] button = buttonsGroup[index];
+                //string[] playersSymbols = GetPlayersSymbolsForTeam(button);
+                //playersSymbolsByTeam.Insert(a, playersSymbols);
+                GameObject[,,] buttons = buttonsGroup[indexForListWithSymbols];
 
+                int maxIndexDepth = buttons.GetLength(0);
+                int maxIndexColumn = buttons.GetLength(2);
+                int maxIndexRow = buttons.GetLength(1);
 
+                string[] playersSymbols = GetPlayersSymbolsForTeam(buttons);
 
+                //for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+                //{
+                //    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                //    {
+                //        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                //        {
+                //            GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
+                //            string symbol = GameCommonMethodsMain.GetCubePlayText(cubePlay);
 
+                //            playersSymbols[indexForSymbol] = symbol;
+                //            indexForSymbol++;
 
-
-                GameObject[,,] button = buttonsGroup[index];
-
-
-                string[,,] playersSymbols = GetPlayersSymbolsForTeam(button);
-
+                            
+                //        }
+                //    }
+                //}
 
                 playersSymbolsByTeam.Insert(a, playersSymbols);
-
-
-
-
-
 
 
 
@@ -614,17 +635,41 @@ namespace Assets.Scripts
             string inactiveField = "-";
             //Debug.Log("numberToChange:" + numberToChange);
 
+            //for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            //{                  
+            //    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+            //    {
+            //        for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+            //        {
+
+            //            //Debug.Log("index: " + index);
+            //            //Debug.Log("numberToChange: " + numberToChange);
+            //            //Debug.Log("playersNumbers : " + (playersNumbers - 0));
+            //            //Debug.Log("-----------------------: ");
+            //            GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
+
+            //            if (index > playersNumbers - 1)
+            //            {
+            //                //GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
+            //                CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
+            //                CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
+            //            }
+                       
+
+
+
+            //            index++;
+            //        }
+            //    }
+            //}
+
+
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
-            {                  
-                for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+            {
+                for (int indexRow = maxIndexRow - 1; indexRow >= 0; indexRow--)
                 {
                     for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
                     {
-
-                        //Debug.Log("index: " + index);
-                        //Debug.Log("numberToChange: " + numberToChange);
-                        //Debug.Log("playersNumbers : " + (playersNumbers - 0));
-                        //Debug.Log("-----------------------: ");
                         GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
 
                         if (index > playersNumbers - 1)
@@ -633,7 +678,7 @@ namespace Assets.Scripts
                             CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
                         }
-                       
+
 
 
 
@@ -642,12 +687,54 @@ namespace Assets.Scripts
                 }
             }
 
-
         }
 
         // ---
 
-        public static string[,,] GetAllTakenSymbols(List<string[,,]> tablesWitPlayersChosenSymbols)
+
+        //public static string[] GetAllTakenSymbols2(string[] tablesWitPlayersChosenSymbols)
+        //{
+        //    int tablesNumber = tablesWitPlayersChosenSymbols.Count;
+
+        //    --
+        //   int allSymbolsLength = 0;
+
+        //    for (int a = 0; a < tablesNumber; a++)
+        //    {
+        //        int lenght = tablesWitPlayersChosenSymbols[a].Length;
+        //        allSymbolsLength = allSymbolsLength + lenght;
+        //    }
+
+
+        //    --
+        //    string[] allSymbols = new string[allSymbolsLength];
+        //    int index = 0;
+        //    for (int a = 0; a < tablesNumber; a++)
+        //    {
+        //        string[] tableWithSymbols = tablesWitPlayersChosenSymbols[a];
+        //        int tableWithSymbolsLength = tableWithSymbols.Length;
+
+        //        for (int l = 0; l < tableWithSymbolsLength; l++)
+        //        {
+        //            string symbol = tableWithSymbols[l];
+        //            allSymbols[index] = symbol;
+        //            index++;
+        //        }
+
+        //    }
+
+        //    for (int i = 0; i < allSymbols.Length; i++)
+        //    {
+        //        Debug.Log($"allSymbols[{i}]: " + allSymbols[i]);
+        //    }
+        //    Debug.Log(" -------------------------------------- ");
+
+
+
+        //    return allSymbols;
+        //}
+
+        public static string[] GetAllTakenSymbols(List<string[]> tablesWitPlayersChosenSymbols)
         {
             int tablesNumber = tablesWitPlayersChosenSymbols.Count;
 
@@ -755,14 +842,14 @@ namespace Assets.Scripts
 
 
         // PlayGameChangePlayersSymbolsComnonMethods - add one class for that method
-        public static string[] GetNewDefaultSymbols(string[] takenSymbols, int symbolsCounted, int playersNumbers)
+        public static string[] GetNewDefaultSymbols(string[] takenSymbolsAll, int symbolsCounted, int playersNumbers)
         {
             int newSymbolsNumber = playersNumbers - symbolsCounted;
             
 
             //string[] allSymbols = CreateGameBoardCommonMethods.CreateTableWithCharactersByGivenString();
 
-            string untakenSymbools = GetUntakenSymbols(takenSymbols);
+            string untakenSymbools = GetUntakenSymbols(takenSymbolsAll);
             string[] newDefaulSymbol = GetSymbolsForChange(untakenSymbools, newSymbolsNumber);
 
 
@@ -791,6 +878,7 @@ namespace Assets.Scripts
                         if (currentIndex >= tableLenght)
                         {
                             stringAlphabet = "-";
+                           // stringAlphabet = "11";
                         }
                         else
                         {
@@ -802,6 +890,9 @@ namespace Assets.Scripts
                     }
                 }
             }
+
+
+
 
             return newTable;
         }
@@ -827,16 +918,29 @@ namespace Assets.Scripts
                 }
             }
 
+            //for (int i = 0; i < newTable.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < newTable.GetLength(1); j++)
+            //    {
+            //        for (int z = 0; z < newTable.GetLength(2); z++)
+            //        {
+
+            //            Debug.Log($"newTable[{i}, {j}, {z}] : " + newTable[i, j, z]);
+
+            //        }
+            //    }
+            //}
+
             return newTable;
         }
 
-        public static void AddDefaultSymbolsForTeam(GameObject[,,] buttons, int symbolsCounted, int playersNumbers, List<string[,,]> tablesWitPlayersChosenSymbols)
-        {
+       public static void AddDefaultSymbolsForTeam(GameObject[,,] buttons, int symbolsCounted, int playersNumbers, string[] takenSymbols, List<string[]> tablesWitPlayersChosenSymbols)      
+       {
             string tagName= GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithTeamSymbols();
             //int numberToChange = playersNumbers - symbolsCounted;
             //int index = 0 + numberToChange;
             int index = 0;
-            int indexNewSymbol = 0;
+            int indexNewSymbols = 0;
             //int indexSymbolsCounted = symbolsCounted - 1;
             //int ddddd = playersNumbers - 1;
 
@@ -848,20 +952,66 @@ namespace Assets.Scripts
             string inactiveField = "AL";
 
 
-            string[] takenSymbols = GetAllTakenSymbols(tablesWitPlayersChosenSymbols);
-           
+            string[] takenSymbolsAll = GetAllTakenSymbols(tablesWitPlayersChosenSymbols);
 
-            string[] untakenSymobl = GetNewDefaultSymbols(takenSymbols, symbolsCounted, playersNumbers);
+
+            string[] untakenSymobls = GetNewDefaultSymbols(takenSymbolsAll, symbolsCounted, playersNumbers);
+            //string[] untakenSymobl = { "z", "z2", "z3"};
+            int untakenSymoblsLength = untakenSymobls.Length;
+            int untakenSymoblsIndex = 0;
+
+            int takenSymbolsLength = takenSymbols.Length;
+            int takenSymbolsIndex = 0;
+
+            int newSymbolsLength = untakenSymoblsLength + takenSymbolsLength;
+            string[] newSymbols = new string[newSymbolsLength];
+
+            //Debug.Log($"takenSymbolsLength: " + takenSymbolsLength);
+            //Debug.Log($"untakenSymoblsLength: " + untakenSymoblsLength);
+            //Debug.Log($"newSymbolsLength: " + newSymbolsLength);
+            //Debug.Log($" ---------------------------------- ");
+
+            for (int i = 0; i < newSymbolsLength; i++)
+            {
+                //Debug.Log($"indexNewSymbols: " + indexNewSymbols);
+                //Debug.Log($"i: " + i);
+
+                if (takenSymbolsIndex < takenSymbolsLength)
+                {
+                    //Debug.Log($"untakenSymoblsIndex: " + untakenSymoblsIndex);
+                    newSymbols[i] = takenSymbols[takenSymbolsIndex];
+                    takenSymbolsIndex++;
+                }
+                else
+                {
+                    newSymbols[i] = untakenSymobls[untakenSymoblsIndex];
+                    untakenSymoblsIndex++;
+                }
+
+
+                //indexNewSymbols++;
+            }
+
+
+            //Debug.Log($" ---------------------------------- ");
+            //for (int i = 0; i < newSymbols.Length; i++)
+            //{
+            //    Debug.Log($"newSymbols[{i}] : " + newSymbols[i]);
+            //}
 
             int maxIndexDepth = buttons.GetLength(0);
             int maxIndexColumn = buttons.GetLength(2);
             int maxIndexRow = buttons.GetLength(1);
 
-            Debug.Log("maxIndexDepth: " + maxIndexDepth);
-           Debug.Log("maxIndexColumn: " + maxIndexColumn);
-            Debug.Log("maxIndexRow: " + maxIndexRow);
+            //Debug.Log("maxIndexDepth: " + maxIndexDepth);
+            //Debug.Log("maxIndexColumn: " + maxIndexColumn);
+            //Debug.Log("maxIndexRow: " + maxIndexRow);
 
-            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(untakenSymobl, maxIndexDepth, maxIndexRow, maxIndexColumn);
+            //string[] untakenSymobl2 = { "z", "z2", "z3", "z4"};
+
+            //string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(untakenSymobl, maxIndexDepth, maxIndexRow, maxIndexColumn);
+            string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(newSymbols, maxIndexDepth, maxIndexRow, maxIndexColumn);
+            //string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(untakenSymobl2, 1, 3, 3);
 
            
 
@@ -886,29 +1036,39 @@ namespace Assets.Scripts
                         //Debug.Log("playersNumbers - 1: " + (playersNumbers - 1));
                         //Debug.Log("-----------------------: ");
 
-                        if (index > symbolsCounted - 1 && index  < playersNumbers)
-                        { 
-                            //string newSymbol = untakenSymobl[indexNewSymbol];
-                            //GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
-                            ////CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
-                            //CommonMethods.ChangeTextForFirstChild(cubePlay, newSymbol);
-                            //CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
-                            //indexNewSymbol++;
+                        //if (index > symbolsCounted - 1 && index  < playersNumbers)
+                        //{ 
+                        //    //string newSymbol = untakenSymobl[indexNewSymbol];
+                        //    //GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
+                        //    ////CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
+                        //    //CommonMethods.ChangeTextForFirstChild(cubePlay, newSymbol);
+                        //    //CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
+                        //    //indexNewSymbol++;
 
 
 
-                            string newSymbol = defaultTextForPrefabCubePlay[indexDepth, indexRow, indexColumn];
-                            GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
-                            //CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
-                            CommonMethods.ChangeTextForFirstChild(cubePlay, newSymbol);
-                            CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
-                            indexNewSymbol++;
-                        }
+                        //    string newSymbol = defaultTextForPrefabCubePlay[indexDepth, indexRow, indexColumn];
+                        //    GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
+                        //    //CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
+                        //    CommonMethods.ChangeTextForFirstChild(cubePlay, newSymbol);
+                        //    CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
+                        //    indexNewSymbol++;
+                        //}
 
 
 
 
-                        index++;
+                        //index++;
+
+
+
+
+
+                        string newSymbol = defaultTextForPrefabCubePlay[indexDepth, indexRow, indexColumn];
+                        GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
+                        //CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
+                        CommonMethods.ChangeTextForFirstChild(cubePlay, newSymbol);
+                        CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
                     }
                 }
             }
@@ -916,32 +1076,69 @@ namespace Assets.Scripts
 
         }
 
-        public static void SetUpRightSymbolsForTeam(List<List<GameObject[,,]>> buttonsGroupByTeams, int[] tablesWitPlayersNumbersForTeams, List<string[,,]> tablesWitPlayersChosenSymbols)
+        public static void SetUpRightSymbolsForTeam(List<List<GameObject[,,]>> buttonsGroupByTeams, int[] tablesWitPlayersNumbersForTeams, List<string[]> tablesWitPlayersChosenSymbols)
         {
             int listIndex = 1; // symbols
             
             int teamsNumbers = tablesWitPlayersNumbersForTeams.Length;
             int teamsNumbersBySymbols = tablesWitPlayersChosenSymbols.Count;
 
-            for (int a = 0; a < teamsNumbers; a++)
+            for (int teamNumber = 0; teamNumber < teamsNumbers; teamNumber++)
             {
-                List<GameObject[,,]> buttonsGroups = buttonsGroupByTeams[a];
+                List<GameObject[,,]> buttonsGroups = buttonsGroupByTeams[teamNumber];
 
                 GameObject[,,] buttons = buttonsGroups[listIndex];
 
-                int playersNumbers = tablesWitPlayersNumbersForTeams[a];
+                int playersNumbers = tablesWitPlayersNumbersForTeams[teamNumber];
+                // Debug.Log($"playersNumbers: " + playersNumbers);
+                //Debug.Log($" ---------------------------------- ");
 
-                string[] symbols = tablesWitPlayersChosenSymbols[a];
+                string[] symbols = tablesWitPlayersChosenSymbols[teamNumber];
                 int symbolsCounted = symbols.Length;
+
+                //Debug.Log($"symbolsCounted: " + symbolsCounted);
+                //Debug.Log($" ---------------------------------- ");
 
                 if (playersNumbers != symbolsCounted)
                 {
                     if(playersNumbers < symbolsCounted)
-                        RemoveSymbolsForTeam(buttons, symbolsCounted, playersNumbers);                         
+                    {
+                        RemoveSymbolsForTeam(buttons, symbolsCounted, playersNumbers);    
+                    }
+
                     else
-                        AddDefaultSymbolsForTeam(buttons, symbolsCounted, playersNumbers, tablesWitPlayersChosenSymbols);
+                    {
+
+                        AddDefaultSymbolsForTeam(buttons, symbolsCounted, playersNumbers, symbols, tablesWitPlayersChosenSymbols);
+
+                    }
                 }
             }
+        }
+
+
+        //--
+        public static int SetUpMaxPlayersNumbersForTeamGameAtStart()
+        {
+            string defaultMaxPlayersNumbersFromDictionary = GameConfigurationButtonsTeamMembersButtonsName.GetDefaultButtonMaxNumberForTeamMembers();
+            int number = CommonMethods.ConvertStringToInt(defaultMaxPlayersNumbersFromDictionary);
+            return number;
+        }
+
+
+        public static int SetUpPlayersNumbersForTeamGameAtStart(int teamNumbers)
+        {
+            string defaultPlayersNumbersFromDictionary = GameConfigurationButtonsTeamMembersButtonsName.GetDefaultButtonNumberForTeamMembers();
+            int defaultPlayersNumbersForTeams = CommonMethods.ConvertStringToInt(defaultPlayersNumbersFromDictionary);
+            int playersNumbers = teamNumbers * defaultPlayersNumbersForTeams;
+            return playersNumbers;
+        }
+
+        //-- to do
+        public static int GetMaxPlayersNumbersForTeamGame()
+        {
+            return 2;
+
         }
 
 
