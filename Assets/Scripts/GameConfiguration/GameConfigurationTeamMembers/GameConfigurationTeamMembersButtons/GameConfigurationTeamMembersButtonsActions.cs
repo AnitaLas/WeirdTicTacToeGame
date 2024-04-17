@@ -18,6 +18,36 @@ namespace Assets.Scripts
             HideButtons(buttonsWithTeams);
         }
 
+        public static void HideArrows(List<GameObject> buttonsArrows)
+        {
+            int listElements = buttonsArrows.Count;
+            float newCoordinateY = 100;
+            for (int i = 0; i < listElements; i++)
+            {
+                GameObject arrow = buttonsArrows[i];
+                GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(arrow, newCoordinateY);
+
+            }
+
+
+
+        }
+
+
+        public static void UnhideArrows(List<GameObject> buttonsArrows)
+        {
+            int listElements = buttonsArrows.Count;
+            float newCoordinateY = -100;
+            for (int i = 0; i < listElements; i++)
+            {
+                GameObject arrow = buttonsArrows[i];
+                GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(arrow, newCoordinateY);
+
+            }
+
+
+
+        }
 
         public static void HideTeamMembersElementsPlayersNumbers(List<GameObject[,,]> buttonsStatic, List<List<GameObject[,,]>> buttonsWithTeams, string gameObjectName)
         {
@@ -157,5 +187,100 @@ namespace Assets.Scripts
         {
             ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(gameObjects);
         }
+
+
+        // arrows
+
+        // to do
+        public static int SetUpNewIndexForOneTeamGameButtonsVisible(List<List<GameObject[,,]>> buttonsGroupByTeams, int indexForOneTeamGameButtonsVisible, string tagName)
+        {
+            string arrowLeft = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonArrowLeft();
+            string arrowRight = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonArrowRight();
+
+            int teamsNumbers = buttonsGroupByTeams.Count;
+            int newIndex;
+            int index = 0;
+
+            Debug.Log("indexForOneTeamGameButtonsVisible: " + indexForOneTeamGameButtonsVisible);
+            Debug.Log("teamsNumbers: " + teamsNumbers);
+
+
+            if (arrowLeft == tagName)
+            {
+                 newIndex = indexForOneTeamGameButtonsVisible - 1;
+
+                //Debug.Log("arrowLeft - newIndex: " + newIndex);
+
+                if (indexForOneTeamGameButtonsVisible < 0)
+                {
+                    List<GameObject[,,]> buttonsToUnhide = buttonsGroupByTeams[teamsNumbers];
+                    UnhideButtons(buttonsToUnhide);
+
+                    List<GameObject[,,]> buttonsToHide = buttonsGroupByTeams[indexForOneTeamGameButtonsVisible];
+                    HideButtons(buttonsToHide);
+
+                    newIndex = teamsNumbers;
+                    index = newIndex;
+                }
+                else
+                {
+                    List<GameObject[,,]> buttonsToUnhide = buttonsGroupByTeams[newIndex];
+                    UnhideButtons(buttonsToUnhide);
+
+                    List<GameObject[,,]> buttonsToHide = buttonsGroupByTeams[indexForOneTeamGameButtonsVisible];
+                    HideButtons(buttonsToHide);
+                    index = newIndex;
+                }
+
+
+                
+            }
+
+
+
+
+            //if (arrowRight == tagName)
+            //{
+            //    newIndex = indexForOneTeamGameButtonsVisible + 1;
+
+            //    if (indexForOneTeamGameButtonsVisible == teamsNumbers)
+            //    {
+            //        List<GameObject[,,]> buttonsToUnhide = buttonsGroupByTeams[0];
+            //        UnhideButtons(buttonsToUnhide);
+
+            //        List<GameObject[,,]> buttonsToHide = buttonsGroupByTeams[indexForOneTeamGameButtonsVisible];
+            //        HideButtons(buttonsToHide);
+
+            //    }
+            //    else
+            //    {
+            //        List<GameObject[,,]> buttonsToUnhide = buttonsGroupByTeams[newIndex];
+            //        UnhideButtons(buttonsToUnhide);
+
+            //        List<GameObject[,,]> buttonsToHide = buttonsGroupByTeams[indexForOneTeamGameButtonsVisible];
+            //        HideButtons(buttonsToHide);
+
+            //    }
+
+            //}
+
+
+
+
+
+
+            Debug.Log("index: " + index);
+
+
+            return index;
+
+
+
+        }
+
+
+
+
+
     }
 }

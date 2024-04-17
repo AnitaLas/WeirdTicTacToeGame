@@ -495,7 +495,7 @@ namespace Assets.Scripts
         }
 
 
-        public static List<GameObject[,,]> GameConfigurationTeamMembersButtonBackAndTableWithSymbols(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsDefaultColour, bool isGame2D, string gameObjectName, List<string[,,]> tablesWitPlayersChosenSymbols)
+        public static List<GameObject[,,]> GameConfigurationTeamMembersButtonBackAndTableWithSymbols(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsDefaultColour, bool isGame2D, string gameObjectName, List<string[]> tablesWitPlayersChosenSymbols)
         {
             List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
             //bool isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
@@ -504,7 +504,7 @@ namespace Assets.Scripts
             int playerNo = GameConfigurationTeamMembersButtonsMethods.GetPlayerNumber(gameObjectName);
 
             //List<string[] = tablesWitPlayersChosenSymbols[teamNo - 1];
-            string[,,] takenSymbols = GameConfigurationTeamMembersButtonsMethods.GetAllTakenSymbols(tablesWitPlayersChosenSymbols);
+            string[] takenSymbols = GameConfigurationTeamMembersButtonsMethods.GetAllTakenSymbols(tablesWitPlayersChosenSymbols);
 
             GameObject[,,] buttonBackToConfiguration = GameConfigurationTeamMembersButtonBackToConfigurationFromViewTableSymbols(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
             GameObject[,,] buttonTopTextTeamNo = GameConfigurationTeammMembersCreateButtonTopTeamNo(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D, teamNo);

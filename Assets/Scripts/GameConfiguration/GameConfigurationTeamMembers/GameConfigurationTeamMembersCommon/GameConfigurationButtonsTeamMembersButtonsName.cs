@@ -74,7 +74,14 @@ namespace Assets.Scripts
             return tagName;
         }
 
-        // default numbers:
+        public static string GetDefaultButtonMaxNumberForTeamMembers()
+        {
+            int dictionatyId = 19;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultNumbers(dictionatyId);
+            return tagName;
+        }
+
+        // default symbols:
 
         public static string GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultSymbols(int dictionatyId)
         {

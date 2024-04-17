@@ -53,6 +53,7 @@ namespace Assets.Scripts
                 //{ 1, "0" }, 
                 //{ 2, "1" }, 
                 { 3, "2" },
+                { 19, "18" },
             };
 
             return buttonsDefaultNumberDictionary;
