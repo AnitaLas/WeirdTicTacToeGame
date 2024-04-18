@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -179,19 +180,6 @@ namespace Assets.Scripts
             return button;
         }
 
-        public static List<GameObject> GameConfigurationTeamMembersCreateButtonsArrows(GameObject buttonArrowLeft, GameObject buttonArrowRight)
-        {
-
-            List<GameObject> buttonsAll = new List<GameObject>();
-
-            GameObject arrowLeft = GameConfigurationTeamMembersButtonsCreateCommon.CreateButtonArrow(buttonArrowLeft);
-            GameObject arrowRight = GameConfigurationTeamMembersButtonsCreateCommon.CreateButtonArrow(buttonArrowRight);
-
-            buttonsAll.Insert(0, arrowLeft);
-            buttonsAll.Insert(1, arrowRight);
-
-            return buttonsAll;
-        }
 
 
 
@@ -241,7 +229,7 @@ namespace Assets.Scripts
                 GameConfigurationTeamMembersButtonsMethods.ChangeDataForSingleGameConfigurationTeamMembersPlayersSymbols(buttons, coordinateY, coordinateZ);
 
                 if (i > 0 && isCellphoneMode == false)
-                    GameConfigurationTeamMembersButtonsActions.HideButtons(buttons);
+                    GameConfigurationTeamMembersButtonsActionsCommon.HideButtons(buttons);
 
                 buttonsAll.Insert(i, buttons);
             }
@@ -280,7 +268,7 @@ namespace Assets.Scripts
                 GameConfigurationTeamMembersButtonsMethods.ChangeDataForSingleGameConfigurationTeamMembers(button, coordinateY);
 
                 if (i > 0 && isCellphoneMode == false)
-                    GameConfigurationTeamMembersButtonsActions.HideButtons(button);
+                    GameConfigurationTeamMembersButtonsActionsCommon.HideButtons(button);
 
 
 
@@ -329,7 +317,7 @@ namespace Assets.Scripts
                 GameConfigurationTeamMembersButtonsMethods.ChangeDataForSingleGameConfigurationTeamMembers(button, coordinateY);
 
                 if (i > 0 && isCellphoneMode == false)
-                    GameConfigurationTeamMembersButtonsActions.HideButtons(button);
+                    GameConfigurationTeamMembersButtonsActionsCommon.HideButtons(button);
 
                 //int index = i + 1;
                 buttonsAll.Insert(i, button);
@@ -433,17 +421,26 @@ namespace Assets.Scripts
             return button;
         }
 
-        public static List<GameObject[,,]> GameConfigurationTeamMembersButtonBackAndTableWithNumbers(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsDefaultColour, bool isGame2D, string gameObjectName)
+        public static List<GameObject[,,]> GameConfigurationTeamMembersButtonBackAndTableWithNumbers(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsDefaultColour, bool isGame2D, string gameObjectName, int maxPlayersNumbersForTeam)
         {
             List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
             bool isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
             //string teamNo = "3";
-            int teamNo = GameConfigurationTeamMembersButtonsMethods.GetTemaNumber(gameObjectName);
+            int teamNo = GameConfigurationTeamMembersButtonsMethods.GetTeamNumber(gameObjectName);
 
             GameObject[,,] buttonBackToConfiguration = GameConfigurationTeamMembersButtonBackToConfigurationFromViewTableNumbers(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
             GameObject[,,] buttonsNumbers = GameConfigurationTeamMembersButtonsWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, isCellphoneMode);
             GameObject[,,] buttonTopTextTeamNo = GameConfigurationTeammMembersCreateButtonTopTeamNo(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D, teamNo);
             GameObject[,,] buttonTopTextPlayers = GameConfigurationTeaMembersCreateButtonTopPlayersNo(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+
+
+            Debug.Log(" maxPlayersNumbersForTeam:" + maxPlayersNumbersForTeam);
+
+            if (maxPlayersNumbersForTeam > 0)
+            {
+                GameConfigurationTeamMembersPlayersNumberVerification.SetUpMaxPlayersNumbersForTableWithNumber(buttonsNumbers, maxPlayersNumbersForTeam);
+            }
+
 
 
             buttonsAll.Insert(0, buttonBackToConfiguration);
@@ -500,7 +497,7 @@ namespace Assets.Scripts
             List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
             //bool isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
             //string teamNo = "3";
-            int teamNo = GameConfigurationTeamMembersButtonsMethods.GetTemaNumber(gameObjectName);
+            int teamNo = GameConfigurationTeamMembersButtonsMethods.GetTeamNumber(gameObjectName);
             int playerNo = GameConfigurationTeamMembersButtonsMethods.GetPlayerNumber(gameObjectName);
 
             //List<string[] = tablesWitPlayersChosenSymbols[teamNo - 1];

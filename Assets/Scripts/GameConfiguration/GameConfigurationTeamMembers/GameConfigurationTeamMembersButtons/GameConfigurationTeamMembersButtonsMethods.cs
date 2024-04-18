@@ -239,7 +239,7 @@ namespace Assets.Scripts
 
         // ----
 
-        public static int GetTemaNumber(string gameObjectName)
+        public static int GetTeamNumber(string gameObjectName)
         {
             int startIndex = 11; // part of cubePlay name - Unity
             int length = 1;
@@ -295,33 +295,6 @@ namespace Assets.Scripts
             GameObject cubePlay = CommonMethods.GetObjectByName(gameObjectName);
             CommonMethods.ChangeTagForGameObject(cubePlay, tagNameNew);
         }
-
-       
-
-        //public static void SetUpNewPlayersNumberForTeam(string gameObjectName)
-        //{
-        //    string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
-        //    GameObject teamNumber = CommonMethods.GetObjectByTagName(tagName);
-
-        //    GameObject choosenNumber = CommonMethods.GetObjectByName(gameObjectName);
-
-        //    string newNumber = CommonMethods.GetCubePlayText(choosenNumber);
-        //    CommonMethods.ChangeTextForFirstChild(teamNumber, newNumber);
-        //}
-
-
-
-        //public static void SetUpNewPlayerSymbolForTeam(string gameObjectName)
-        //{
-        //    string tagName = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersChange();
-        //    GameObject teamNumber = CommonMethods.GetObjectByTagName(tagName);
-
-        //    GameObject choosenNumber = CommonMethods.GetObjectByName(gameObjectName);
-
-        //    string newNumber = CommonMethods.GetCubePlayText(choosenNumber);
-        //    CommonMethods.ChangeTextForFirstChild(teamNumber, newNumber);
-        //}
-
 
         public static void SetUpNewPlayersNumberForTeam(string gameObjectName)
         {
@@ -1117,29 +1090,9 @@ namespace Assets.Scripts
         }
 
 
-        //--
-        public static int SetUpMaxPlayersNumbersForTeamGameAtStart()
-        {
-            string defaultMaxPlayersNumbersFromDictionary = GameConfigurationButtonsTeamMembersButtonsName.GetDefaultButtonMaxNumberForTeamMembers();
-            int number = CommonMethods.ConvertStringToInt(defaultMaxPlayersNumbersFromDictionary);
-            return number;
-        }
 
 
-        public static int SetUpPlayersNumbersForTeamGameAtStart(int teamNumbers)
-        {
-            string defaultPlayersNumbersFromDictionary = GameConfigurationButtonsTeamMembersButtonsName.GetDefaultButtonNumberForTeamMembers();
-            int defaultPlayersNumbersForTeams = CommonMethods.ConvertStringToInt(defaultPlayersNumbersFromDictionary);
-            int playersNumbers = teamNumbers * defaultPlayersNumbersForTeams;
-            return playersNumbers;
-        }
 
-        //-- to do
-        public static int GetMaxPlayersNumbersForTeamGame()
-        {
-            return 2;
-
-        }
 
 
     }

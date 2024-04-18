@@ -76,7 +76,7 @@ namespace Assets.Scripts
 
         public static string GetDefaultButtonMaxNumberForTeamMembers()
         {
-            int dictionatyId = 19;
+            int dictionatyId = 11;
             string tagName = GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultNumbers(dictionatyId);
             return tagName;
         }
