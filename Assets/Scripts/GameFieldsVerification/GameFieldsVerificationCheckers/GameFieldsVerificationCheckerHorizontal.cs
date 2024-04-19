@@ -73,8 +73,6 @@ namespace Assets.Scripts
                             listCheckerHorizontal.Insert(0, checker);
                             listCheckerHorizontal.Insert(1, coordinateXYToMark);
 
-                            //Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
-                            //string kindOfChecker = checkerDictionary[1];
                             string kindOfChecker = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerHorizontal();
                             listCheckerHorizontal.Insert(2, kindOfChecker);
 

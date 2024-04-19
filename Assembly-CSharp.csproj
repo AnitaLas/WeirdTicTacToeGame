@@ -146,6 +146,7 @@
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabCalculateScale.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesSceneInformation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\Scripts\GameFieldsVerification\GameTeamFieldsVerificationCheckers\GameTeamFieldsVerificationCheckerHorizontal.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersButtons\GameConfigurationTeamMembersButtonsCreateCommon.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamNumbers\GameConfigurationTeamNumbersButtons\GameConfigurationTeamNumbersButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForRows.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonCreate.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlaySymbol.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationTeamNumbers.cs" />
+    <Compile Include="Assets\Scripts\GameFieldsVerification\GameTeamFieldsVerificationCheckers\GameTeamFieldsVerificationCheckerMainMethod.cs" />
     <Compile Include="Assets\Scripts\GameStart\GameStartButtons\GameStartButtonsCreate.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTableCommonMethods.cs" />
@@ -173,6 +175,7 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamNumbers\GameConfigurationTeamNumbersCommon\GameConfigurationButtonsTeamNumbersTagName.cs" />
     <Compile Include="Assets\Scripts\GameName\GameNameTextCreate.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersArrows\GameConfigurationTeamMembersButtonsArrowsActions.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesSceneConfigurationPlayerSymbols.cs" />
     <Compile Include="Assets\Scripts\GameName\GameNameButtonsCommonMethods.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameCommon\PlayGameCommonPlayersSymbols.cs" />
@@ -184,6 +187,7 @@
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsName.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsComnonMethods.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersCommon\GameConfigurationButtonsTeamMembersButtonsName.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersButtons\GameConfigurationTeamMembersButtonsActionsCommon.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsActions.cs" />
     <Compile Include="Assets\Scripts\GameName\GameNameButtons.cs" />
     <Compile Include="Assets\Scripts\GameInformationForPlayers.cs" />
@@ -194,9 +198,11 @@
     <Compile Include="Assets\Scripts\GameInformation\GameInformationText\GameInformationTextAction.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersButtons\GameConfigurationTeamMembersButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameName\GameNameButtonsCommonCreate.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersArrows\GameConfigurationTeamMembersButtonsArrowsCreate.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsActions.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolTableWithSymbols.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersPlayersNumberVerification\GameConfigurationTeamMembersPlayersNumberVerification.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCommon\GameFieldsVerificationCommonMethods.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameCommon\PlayGameCommonButtonsName.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsMethods.cs" />
@@ -223,10 +229,7 @@
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsTagName.cs" />
     <Compile Include="Assets\Scripts\GameCommonMethods\GameCommonMethodsMain.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlayHelpText.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersButtons\GameConfigurationTeamMembersButtonsActionsCommon.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersPlayersNumberVerification\GameConfigurationTeamMembersPlayersNumberVerification.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersArrows\GameConfigurationTeamMembersButtonsArrowsActions.cs" />
-    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersArrows\GameConfigurationTeamMembersButtonsArrowsCreate.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameTeam\PlayGameTeamSetUpPlayersSymbols.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -23,6 +23,7 @@ namespace Assets.Scripts.GameConfiguration
         public static int lenghtToCheck;
         public static int numberOfGaps;
         public static bool isCellphoneMode;
+        public static bool isTeamGame;
         // ---
 
         private GameObject[,,] _buttonsWithNumbers;
@@ -58,6 +59,10 @@ namespace Assets.Scripts.GameConfiguration
         private string _tagConfigurationBoardGameTableNumberGaps;
         private string _tagConfigurationBoardGameButtonBackToConfiguration;
         private static bool _configurationBoardGameDeviceModeKind;
+        public static bool _configurationTraditionalGame1;
+        public static bool _configurationTraditionalGame2;
+        public static bool _configurationTeamGame1;
+        public static bool _configurationTeamGame2;
 
         private static bool _isGame2D = true;
 
@@ -74,6 +79,28 @@ namespace Assets.Scripts.GameConfiguration
             _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
             //isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
             isCellphoneMode = _configurationBoardGameDeviceModeKind;
+
+            _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+            _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
+
+            _configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
+            _configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
+
+            isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
+
+            //if (_configurationTraditionalGame1 == true && _configurationTeamGame1 == false)
+            //{
+            //    isTeamGame = false;
+            //}
+
+            //if (_configurationTraditionalGame2 == false && _configurationTeamGame2 == true)
+            //{
+            //    isTeamGame = true;
+            //}
+
+
+            //Debug.Log("_configurationTraditionalGame : " + _configurationTraditionalGame);
+            //Debug.Log("_configurationTeamGame : " + _configurationTeamGame);
 
             numberOfPlayers = 2;
             numberOfRows = 3;
@@ -105,7 +132,7 @@ namespace Assets.Scripts.GameConfiguration
             _tagConfigurationBoardGameButtonBackToConfiguration = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBackByTagButtonBackToConfiguration();
     
 
-            _buttonsAll = GameConfigurationButtonsCreate.GameConfigurationCreateButtons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D);
+            _buttonsAll = GameConfigurationButtonsCreate.GameConfigurationCreateButtons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, isTeamGame);
         }
 
 
@@ -229,12 +256,22 @@ namespace Assets.Scripts.GameConfiguration
                         {
                             ConfigurationBoardGameNumberOfRows = numberOfRows;
                             ConfigurationBoardGameNumberOfColumns = numberOfColumns;
-                            ConfigurationBoardGameNumberOfPlayers = numberOfPlayers;
+                            //ConfigurationBoardGameNumberOfPlayers = numberOfPlayers;
                             ConfigurationBoardGameLenghtToCheck = lenghtToCheck;
                             ConfigurationBoardGameNumberOfGaps = numberOfGaps;
                             //ConfigurationBoardGameDeviceModeKind = isCellphoneMode;
 
-                            ScenesChangeMainMethods.GoToSceneConfigurationPlayersSymbols();
+                            if (isTeamGame == false)
+                            {
+                                ConfigurationBoardGameNumberOfPlayers = numberOfPlayers;
+                                ScenesChangeMainMethods.GoToSceneConfigurationPlayersSymbols();
+                            }
+                            else
+                            {
+                                ScenesChangeMainMethods.GoToSceneConfigurationChangePlayersSymbols();
+                            }
+
+                            
                         }
 
                         // back

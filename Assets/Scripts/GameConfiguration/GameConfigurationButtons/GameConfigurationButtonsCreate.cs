@@ -7,39 +7,92 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsCreate
     {
-        public static List<GameObject[,,]> GameConfigurationCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
+
+        public static int[] GetNextIndex(int startIndex)
         {
+            int[] result = new int[4];
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                result[i] = i + startIndex;
+            }
+
+            return result;
+        }
+
+        public static List<GameObject[,,]> GameConfigurationCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, bool isTeamGame)
+        {
+            List<GameObject[,,]> buttonsText = new List<GameObject[,,]>();
+            List<GameObject[,,]> buttonsNumber = new List<GameObject[,,]>();
+            List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
+
+
             // buttons with text
-            GameObject[,,] battonPlayerText = GameConfigurationCreateButtonPlayerText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+            //GameObject[,,] battonPlayerText = GameConfigurationCreateButtonPlayerText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+            GameObject[,,] battonPlayerText; //= GameConfigurationCreateButtonPlayerText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] battonRowText = GameConfigurationCreateButtonRowText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] battonColumnText = GameConfigurationCreateButtonColumnText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] battonLenghtToCheckText = GameConfigurationCreateButtonLenghtToCheckText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] battonGapText = GameConfigurationCreateButtonGapText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
 
-            List<GameObject[,,]> buttonsText = new List<GameObject[,,]>();
-            buttonsText.Insert(0, battonPlayerText);
-            buttonsText.Insert(1, battonRowText);
-            buttonsText.Insert(2, battonColumnText);
-            buttonsText.Insert(3, battonLenghtToCheckText);
-            buttonsText.Insert(4, battonGapText);
-
             // buttons with number
-            GameObject[,,] battonPlayerNumber = GameConfigurationCreateButtonPlayerNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+            //GameObject[,,] battonPlayerNumber = GameConfigurationCreateButtonPlayerNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+            GameObject[,,] battonPlayerNumber; // = GameConfigurationCreateButtonPlayerNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] battonRowNumber = GameConfigurationCreateButtonRowNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] battonColumnNumber = GameConfigurationCreateButtonColumnNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] battonLenghtToCheckNumber = GameConfigurationCreateButtonLenghtToCheckNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] battonGapNumber = GameConfigurationCreateButtonGapNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
 
-            List<GameObject[,,]> buttonsNumber = new List<GameObject[,,]>();
-            buttonsNumber.Insert(0, battonPlayerNumber);
-            buttonsNumber.Insert(1, battonRowNumber);
-            buttonsNumber.Insert(2, battonColumnNumber);
-            buttonsNumber.Insert(3, battonLenghtToCheckNumber);
-            buttonsNumber.Insert(4, battonGapNumber);
+
+            int index = 0;
+
+
+            if (isTeamGame == false)
+            {
+                battonPlayerText = GameConfigurationCreateButtonPlayerText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+                buttonsText.Insert(index, battonPlayerText);
+
+                battonPlayerNumber = GameConfigurationCreateButtonPlayerNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+                buttonsNumber.Insert(index, battonPlayerNumber);
+
+                index = index + 1;
+
+            }
+
+            int[] nextIndex = GetNextIndex(index);
+            int indexRow = nextIndex[0];
+            int indexColumn = nextIndex[1];
+            int indexLenghtToCheck = nextIndex[2];
+            int indexGap = nextIndex[3];
+
+
+            
+            //buttonsText.Insert(0, battonPlayerText);
+            buttonsText.Insert(indexRow, battonRowText);
+            buttonsText.Insert(indexColumn, battonColumnText);
+            buttonsText.Insert(indexLenghtToCheck, battonLenghtToCheckText);
+            buttonsText.Insert(indexGap, battonGapText);
+
+           
+
+            // buttons with number
+
+            
+            //buttonsNumber.Insert(0, battonPlayerNumber);
+            buttonsNumber.Insert(indexRow, battonRowNumber);
+            buttonsNumber.Insert(indexColumn, battonColumnNumber);
+            buttonsNumber.Insert(indexLenghtToCheck, battonLenghtToCheckNumber);
+            buttonsNumber.Insert(indexGap, battonGapNumber);
+
+
+
+
+
 
             ButtonsCommonMethods.ChangeColourForButtonsWithNumbers(buttonsNumber, prefabCubePlayButtonsNumberColour);
 
-            GameObject gameObjectBase = battonPlayerText[0, 0, 0];
+            //GameObject gameObjectBase = battonPlayerText[0, 0, 0];
+            GameObject gameObjectBase = battonRowNumber[0, 0, 0];
             int numberOfButton = buttonsText.Count;
 
             float[] newYForButtons = GameConfigurationButtonsMethods.GetTableWithNewYForGameConfigurationButtons(gameObjectBase, numberOfButton);
@@ -50,19 +103,51 @@ namespace Assets.Scripts
             GameObject[,,] buttonSave = GameConfigurationCreateButtonSave(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] buttonBack = GameConfigurationCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
 
-            List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
-            buttonsAll.Insert(0, battonPlayerText);
-            buttonsAll.Insert(1, battonRowText);
-            buttonsAll.Insert(2, battonColumnText);
-            buttonsAll.Insert(3, battonLenghtToCheckText);
-            buttonsAll.Insert(4, battonPlayerNumber);
-            buttonsAll.Insert(5, battonRowNumber);
-            buttonsAll.Insert(6, battonColumnNumber);
-            buttonsAll.Insert(7, battonLenghtToCheckNumber);
-            buttonsAll.Insert(8, buttonSave);
-            buttonsAll.Insert(9, buttonBack);
-            buttonsAll.Insert(10, battonGapText);
-            buttonsAll.Insert(11, battonGapNumber);
+            ////List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
+            ////buttonsAll.Insert(0, battonPlayerText);
+            //buttonsAll.Insert(0, battonRowText);
+            //buttonsAll.Insert(1, battonColumnText);
+            //buttonsAll.Insert(2, battonLenghtToCheckText);
+            ////buttonsAll.Insert(4, battonPlayerNumber);
+            //buttonsAll.Insert(3, battonRowNumber);
+            //buttonsAll.Insert(4, battonColumnNumber);
+            //buttonsAll.Insert(5, battonLenghtToCheckNumber);
+            //buttonsAll.Insert(6, buttonSave);
+            //buttonsAll.Insert(7, buttonBack);
+            //buttonsAll.Insert(8, battonGapText);
+            //buttonsAll.Insert(9, battonGapNumber);
+
+            //if (isTeamGame == false)
+            //{
+            //    buttonsAll.Insert(10, battonPlayerText);
+            //    buttonsAll.Insert(11, battonPlayerNumber);
+            //}
+
+            buttonsAll.Insert(0, buttonSave);
+            buttonsAll.Insert(1, buttonBack);
+
+            List<List<GameObject[,,]>> configurationButtons = new List<List<GameObject[,,]>>();
+
+            configurationButtons.Insert(0, buttonsText);
+            configurationButtons.Insert(1, buttonsNumber);
+
+            int startIndex = 2; // because buttons save & back
+
+            for (int a = 0; a < configurationButtons.Count; a++)
+            {
+                List<GameObject[,,]> buttonsType = configurationButtons[a];
+
+                for (int l = 0; l < buttonsType.Count; l++)
+                {
+                    GameObject[,,] button = buttonsType[l];
+                    buttonsAll.Insert(startIndex, button);
+                    startIndex++;
+                }
+
+                
+
+
+            }
 
             return buttonsAll;
         }
