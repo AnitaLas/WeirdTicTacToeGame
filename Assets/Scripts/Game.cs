@@ -6,6 +6,7 @@ using TouchPhase = UnityEngine.TouchPhase;
 using Assets.Scripts.GameConfiguration;
 using TMPro;
 using UnityEditor;
+using Assets;
 
 
 internal class Game : MonoBehaviour
@@ -41,6 +42,7 @@ internal class Game : MonoBehaviour
     private static float _configurationBoardGameChangeForAllPlayersSymbolsTime;
     private static float _configurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime;
     private static bool _configurationBoardGameDeviceModeKind;
+    private static List<string[]> _configurationTeamGameSymbols; // = 3;// 6;
 
     public Touch touch;
     private Camera mainCamera;
@@ -51,6 +53,8 @@ internal class Game : MonoBehaviour
     private static int _numberOfColumns; // = 3;// 6;
     private static bool _isCellphoneMode; // = 3;// 6;
     private static int _numberOfGaps; // = 3;// 6;
+    private static List<string[]> _teamGameSymbols; // = 3;// 6;
+    
     
     private static float _timeForChandeRandomly; 
     private static float _timeForChandeForAll; 
@@ -94,6 +98,13 @@ internal class Game : MonoBehaviour
     private string _tagGameButtonHelpButtons;
     private string _tagGameButtonMenuBack;
     private string _tagGameButtonBoardGameHelpText;
+
+    public static bool _configurationTraditionalGame1;
+    public static bool _configurationTraditionalGame2;
+    public static bool _configurationTeamGame1;
+    public static bool _configurationTeamGame2;
+    public static bool isTeamGame;
+    public static bool isSameQuantityForMovePerTeam;
 
     private int _index;
    
@@ -186,6 +197,9 @@ internal class Game : MonoBehaviour
         _configurationBoardGameNumberOfGaps = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfGaps;
         _numberOfGaps = _configurationBoardGameNumberOfGaps;
 
+
+        _configurationTeamGameSymbols = GameConfigurationTeamMembers.ConfigurationTeamGameSymbol;
+        _teamGameSymbols = _configurationTeamGameSymbols;
         //------------------------------------
         _configurationBoardGameChangeRandomlyPlayersSymbolsTime = GameConfigurationChangePlayersSymbols.ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime;
         _timeForChandeRandomly = _configurationBoardGameChangeRandomlyPlayersSymbolsTime;
@@ -197,15 +211,64 @@ internal class Game : MonoBehaviour
 
         //------------------------------------
 
-        _gameBoardVerification2D = GameConfigurationButtonsCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
+        // team game parameters
 
-        _playersSymbols = GameConfigurationPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
+        _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+        _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
+
+        _configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
+        _configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
+
+        isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
+
+
+
+        _gameBoardVerification2D = GameConfigurationButtonsCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
+        //_playersSymbols = GameConfigurationPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
+
+        isSameQuantityForMovePerTeam = true;
+
+        if (isTeamGame == false)
+        {
+            _playersSymbols = GameConfigurationPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
+           
+        }
+        else
+        {
+
+            // mode 1
+
+            if (isSameQuantityForMovePerTeam == true)
+            {
+
+                _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
+
+                for (int i = 0; i < _playersSymbols.Length; i++)
+                {
+                    Debug.Log($"_playersSymbols[{i}]" + _playersSymbols[i]);
+                }
+
+
+            }
+
+            // mode 2
+
+            else
+            {
+
+
+            }
+
+        }
+
+        PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
+        _playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
 
         _currentPlayer = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
-        PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
+        //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
 
-        _playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
+        //_playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
 
         _currentCountedTagCubePlayTaken = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
@@ -238,17 +301,15 @@ internal class Game : MonoBehaviour
         }
         else
         {
-            _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
+            //_isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
         }
 
 
         //---------------------------------------------------------------------------
         // TIMER ACTION - start
-        // 
-
-        
 
         _isTimerActivate = PlayGameTimerCommonMethods.IsTimerActivate(_timeForChandeRandomly, _timeForChandeForAll, _timeForSwitchBetweenTeams);
+        
         if (_isTimerActivate == true)
         {
             _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
@@ -272,41 +333,10 @@ internal class Game : MonoBehaviour
                 
                 if (_isDoubleRandomChange == true)
                     _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpStartSwitchChange();
-
-
             }
         }
 
-
-
-
-
-
-
-
-
-
-
         // TIMER ACTION - end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
@@ -338,7 +368,7 @@ internal class Game : MonoBehaviour
                     if (gameObjectTag == _tagArrowRight || gameObjectTag == _tagArrowLeft || gameObjectTag == _tagArrowDown || gameObjectTag == _tagArrowUp)
                     {
                         _cubePlayFrame = PlayGameFrameMove.GetCubePlayFrame();
-                        _moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(_moveIndexForFrame, gameObjectTag,   _cubePlayFrame, _cubePlayForFrameScale, _numberOfRows, _numberOfColumns);                  
+                        _moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(_moveIndexForFrame, gameObjectTag, _cubePlayFrame, _cubePlayForFrameScale, _numberOfRows, _numberOfColumns);                  
                     }
                     
                     if (gameObjectTag == _tagButtonConfirm)
@@ -363,7 +393,17 @@ internal class Game : MonoBehaviour
 
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, playersNumberGivenForConfiguration, _currentPlayer);
 
-                            _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
+                            //_listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
+
+                            if (isTeamGame == false)
+                            {
+                                _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
+                            }
+                            else
+                            {
+                                _listCheckerForWinner = GameTeamFieldsVerificationCheckerMainMethod.FieldsVerificationGameTeam(_gameBoardVerification2D, _lenghtToCheck);
+                            }
+
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
 

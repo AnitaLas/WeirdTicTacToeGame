@@ -158,8 +158,9 @@ namespace Assets.Scripts
                         // button back
                         if (gameObjectTag == _tagConfigurationChangePlayerSymbolButtonBack)
                         {
-                            ScenesChangeMainMethods.GoToSceneConfigurationPlayersSymbols();
+                            //ScenesChangeMainMethods.GoToSceneConfigurationPlayersSymbols();
                             //ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
+                            ScenesChangeMainMethods.GoToSceneStartGame();
                         }
 
                         // button back to configuration

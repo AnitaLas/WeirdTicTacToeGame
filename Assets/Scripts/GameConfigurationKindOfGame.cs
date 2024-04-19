@@ -9,6 +9,8 @@ namespace Assets.Scripts
     internal class GameConfigurationKindOfGame : MonoBehaviour
     {
         public static bool ConfigurationBoardGameDeviceModeKind { get; set; }
+        public static bool ConfigurationTeamGame { get; set; }
+        public static bool ConfigurationTraditionalGame { get; set; }
 
         public static bool isCellphoneMode;
 
@@ -33,7 +35,7 @@ namespace Assets.Scripts
         void Start()
         {
             isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
-            Debug.Log("1 isCellphoneMode: " + isCellphoneMode);
+            //Debug.Log("1 isCellphoneMode: " + isCellphoneMode);
             //_tagUntagged = _tagCommonDictionary[1];
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 
@@ -72,6 +74,8 @@ namespace Assets.Scripts
                         {
                             ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
                             ConfigurationBoardGameDeviceModeKind = isCellphoneMode;
+                            ConfigurationTeamGame = true;
+                            ConfigurationTraditionalGame = false;
                         }
 
 

@@ -14,6 +14,10 @@ namespace Assets
     {
         //public static int ConfigurationBoardGameTeamNumber { get; set; }
 
+        public static bool ConfigurationTeamGame { get; set; }
+        public static bool ConfigurationTraditionalGame { get; set; }
+        public static List<string[]> ConfigurationTeamGameSymbol { get; set; }
+
         public GameObject prefabCubePlay;
         public GameObject buttonArrowLeft;
         public GameObject buttonArrowRight;
@@ -225,18 +229,22 @@ namespace Assets
                         // buttons: save & back (to previous scene)
                         if (gameObjectTag == _tagConfigurationTeamMembersButtonSave)
                         {
-                            //ConfigurationBoardGameTeamNumber = _teamNumbers;
+                            _tablesWitPlayersChosenSymbols = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithTeamsPlayersSymbols(_buttonsGroupByTeams);
 
+                            ConfigurationTeamGame = true;
+                            ConfigurationTraditionalGame = false;
+                            ConfigurationTeamGameSymbol = _tablesWitPlayersChosenSymbols;
                             ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
                         }
 
 
                         if (gameObjectTag == _tagConfigurationTeamNMembersButtonBack)
                         {
-                            if (_isCellphoneMode == true)
-                                ScenesChangeMainMethods.GoToSceneStartGame();
-                            else
-                                ScenesChangeMainMethods.GoToSceneConfigurationGameTeamNumbers();
+                            //if (_isCellphoneMode == true)
+                            //    ScenesChangeMainMethods.GoToSceneStartGame();
+                            //else
+                            //    ScenesChangeMainMethods.GoToSceneConfigurationGameTeamNumbers();
+                            ScenesChangeMainMethods.GoToSceneStartGame();
                         }
 
 

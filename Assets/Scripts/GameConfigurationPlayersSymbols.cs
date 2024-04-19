@@ -148,7 +148,8 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagConfigurationPlayerSymbolButtonBack)
                         {
-                            ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
+                            //ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
+                            ScenesChangeMainMethods.GoToSceneStartGame();
                         }
                     }
                 }
