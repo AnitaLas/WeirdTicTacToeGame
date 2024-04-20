@@ -434,7 +434,7 @@ namespace Assets.Scripts
             GameObject[,,] buttonTopTextPlayers = GameConfigurationTeaMembersCreateButtonTopPlayersNo(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
 
 
-            Debug.Log(" maxPlayersNumbersForTeam:" + maxPlayersNumbersForTeam);
+            //Debug.Log(" maxPlayersNumbersForTeam:" + maxPlayersNumbersForTeam);
 
             if (maxPlayersNumbersForTeam > 0)
             {

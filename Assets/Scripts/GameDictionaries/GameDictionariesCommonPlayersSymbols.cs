@@ -14,7 +14,8 @@ namespace Assets.Scripts
             Dictionary<int, string> tagStartGameDictionary = new Dictionary<int, string>
             {
                 { 1, "ABCDEFGHIJKLMNOPQRSTUVWXYZ" }, // that will be work only max for 13 players, PlayGameChangePlayersSymbolsComnonMethods -> GetNewPlayersSymbols
-                { 2, "OXWTALFUNVCRDEGHIJKLMPQSYZ" }, // up
+                //{ 2, "OXWTALFUNVCRDEGHIJKLMPQSYZ" }, // up
+                { 2, "AZBCDEOXWTALFUNVCRDEGHIJKLMPQSYZ" }, // up
             };
 
             return tagStartGameDictionary;

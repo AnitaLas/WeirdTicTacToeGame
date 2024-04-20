@@ -511,22 +511,22 @@ namespace Assets.Scripts
             }
         }
 
-        //public static int GetBiggerNumber(int numberOne, int numberTwo)
-        //{
-        //    if (numberTwo > numberOne)
-        //    {
-        //        return numberTwo;
-        //    }
-        //    else if (numberTwo < numberOne)
-        //    {
-        //        return numberOne;
-        //    }
-        //    else
-        //    {
-        //        //verticalLenght = horizontalLenght
-        //        return numberOne;
-        //    }
-        //}
+        public static int GetBiggerNumber(int numberOne, int numberTwo)
+        {
+            if (numberTwo > numberOne)
+            {
+                return numberTwo;
+            }
+            else if (numberTwo < numberOne)
+            {
+                return numberOne;
+            }
+            else
+            {
+                //verticalLenght = horizontalLenght
+                return numberOne;
+            }
+        }
 
         public static void ChangeColourForGameObject(GameObject gameObject, Material newColour)
         {
