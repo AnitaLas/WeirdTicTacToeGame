@@ -414,11 +414,17 @@ namespace Assets.Scripts
 
             int index = 0;
 
+            //for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            //{
+            //    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+            //    {
+            //        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+            //        {
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
-                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                for (int indexRow = maxIndexRow - 1; indexRow >= 0; indexRow--)
                 {
-                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
                     {
                         GameObject cubePlay = button[indexDepth, indexRow, indexColumn];
                         string symbol = GameCommonMethodsMain.GetCubePlayText(cubePlay);
@@ -546,7 +552,7 @@ namespace Assets.Scripts
             int teamNumbers = buttonsGroupByTeams.Count;
             
             int indexForListWithSymbols = 1; // always for symbol
-            int indexForSymbol = 0; // always for symbol
+            //int indexForSymbol = 0; // always for symbol
 
             List<string[]> playersSymbolsByTeam = new List<string[]>();
 

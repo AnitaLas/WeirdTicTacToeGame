@@ -109,6 +109,7 @@
     <Compile Include="Assets\Scripts\GameInformation\GameInformationText\GameInformationTextCreate.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationButtons\GameInformationButtonsMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameTeam\PlayGameTeamSetUpPlayersSymbols.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTablePrefabName.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsGameConfigurationMethods.cs" />
     <Compile Include="Assets\Scripts\ScenesChange\ScenesChangeCommonSceneName.cs" />
@@ -229,7 +230,6 @@
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsTagName.cs" />
     <Compile Include="Assets\Scripts\GameCommonMethods\GameCommonMethodsMain.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlayHelpText.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameTeam\PlayGameTeamSetUpPlayersSymbols.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -47,7 +47,8 @@ internal class Game : MonoBehaviour
     public Touch touch;
     private Camera mainCamera;
 
-    public int playersNumberGivenForConfiguration; // = 4;
+    //public int playersNumberGivenForConfiguration; // = 4;
+    private static int _playersNumberGivenForConfiguration; // = 4;
 
     private static int _numberOfRows;// = 4; //3;// 3;
     private static int _numberOfColumns; // = 3;// 6;
@@ -176,14 +177,13 @@ internal class Game : MonoBehaviour
 
         _index = 0;
 
-        //_configurationBoardGameDeviceModeKind = GameConfigurationBoardGame.ConfigurationBoardGameDeviceModeKind;
+
+        // set up: device mode kind
         _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
         _isCellphoneMode = _configurationBoardGameDeviceModeKind;
 
-        _configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
-        playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
-
-        _configurationBoardGameNumberOfRows = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfRows;    
+        // set up: common
+        _configurationBoardGameNumberOfRows = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfRows;
         _numberOfRows = _configurationBoardGameNumberOfRows;
 
         _configurationBoardGameNumberOfColumns = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfColumns;
@@ -197,10 +197,7 @@ internal class Game : MonoBehaviour
         _configurationBoardGameNumberOfGaps = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfGaps;
         _numberOfGaps = _configurationBoardGameNumberOfGaps;
 
-
-        _configurationTeamGameSymbols = GameConfigurationTeamMembers.ConfigurationTeamGameSymbol;
-        _teamGameSymbols = _configurationTeamGameSymbols;
-        //------------------------------------
+        // set up: timer
         _configurationBoardGameChangeRandomlyPlayersSymbolsTime = GameConfigurationChangePlayersSymbols.ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime;
         _timeForChandeRandomly = _configurationBoardGameChangeRandomlyPlayersSymbolsTime;
 
@@ -211,8 +208,8 @@ internal class Game : MonoBehaviour
 
         //------------------------------------
 
-        // team game parameters
 
+        // team game parameters
         _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
         _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
 
@@ -221,32 +218,43 @@ internal class Game : MonoBehaviour
 
         isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
 
+        //_configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
+        //playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
 
 
-        _gameBoardVerification2D = GameConfigurationButtonsCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
-        //_playersSymbols = GameConfigurationPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
 
-        isSameQuantityForMovePerTeam = true;
+
+
+        _configurationTeamGameSymbols = GameConfigurationTeamMembers.ConfigurationTeamGameSymbol;
+        _teamGameSymbols = _configurationTeamGameSymbols;
+
+
+       
+        isSameQuantityForMovePerTeam = false;
 
         if (isTeamGame == false)
         {
             _playersSymbols = GameConfigurationPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
-           
+            _configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
+            _playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
+
         }
         else
         {
+            _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
+
 
             // mode 1
 
             if (isSameQuantityForMovePerTeam == true)
             {
-
+                _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
                 _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
 
-                for (int i = 0; i < _playersSymbols.Length; i++)
-                {
-                    Debug.Log($"_playersSymbols[{i}]" + _playersSymbols[i]);
-                }
+                //for (int i = 0; i < _playersSymbols.Length; i++)
+                //{
+                //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
+                //}
 
 
             }
@@ -255,11 +263,26 @@ internal class Game : MonoBehaviour
 
             else
             {
+                _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
+
+                //_playersNumberGivenForConfiguration = _playersSymbols.Length;
+                _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
+
+                //for (int i = 0; i < _playersSymbols.Length; i++)
+                //{
+                //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
+                //}
+
 
 
             }
 
         }
+
+
+        //_playersSymbols = GameConfigurationPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
+        _gameBoardVerification2D = GameConfigurationButtonsCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
+
 
         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
         _playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
@@ -391,7 +414,7 @@ internal class Game : MonoBehaviour
 
                             _gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
-                            _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, playersNumberGivenForConfiguration, _currentPlayer);
+                            _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
 
                             //_listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
 
@@ -428,7 +451,7 @@ internal class Game : MonoBehaviour
                             }
                             else
                             {
-                                _currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(_currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
+                                _currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(_currentPlayer, currentPlayerNumber, _playersNumberGivenForConfiguration);
 
                                 PlayGameMethods.DisactivateChosenCubePlay(cubePlayMarkByFrame);
 
@@ -485,7 +508,7 @@ internal class Game : MonoBehaviour
                                 _moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
                             }
 
-                            _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, playersNumberGivenForConfiguration, _currentPlayer);
+                            _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
 
                             _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
 
@@ -512,7 +535,7 @@ internal class Game : MonoBehaviour
                             }
                             else
                             {
-                                _currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(_currentPlayer, currentPlayerNumber, playersNumberGivenForConfiguration);
+                                _currentPlayer = PlayGameChangeCubePlaySymbol.SetUpCurrentPlayer(_currentPlayer, currentPlayerNumber, _playersNumberGivenForConfiguration);
 
                                 PlayGameMethods.DisactivateChosenCubePlay(touch);
 
