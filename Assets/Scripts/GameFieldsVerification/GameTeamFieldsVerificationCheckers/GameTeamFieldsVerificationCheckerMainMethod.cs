@@ -1,10 +1,12 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Assets.Scripts
 {
     internal class GameTeamFieldsVerificationCheckerMainMethod
     {
-        public static ArrayList FieldsVerificationGameTeam(string[,] boardToCheck, int lenghtToCheck)
+        public static ArrayList FieldsVerificationGameTeam(string[,] boardToCheck, int lenghtToCheck, List<string[]> teamGameSymbols)
         {
             ArrayList listChecker = new ArrayList(); 
 
@@ -17,8 +19,9 @@ namespace Assets.Scripts
 
             if(checker == false)
             {
-                checkerHorizontal = GameFieldsVerificationCheckerHorizontal.CheckerHorizontal(boardToCheck, lenghtToCheck);
+                checkerHorizontal = GameTeamFieldsVerificationCheckerHorizontal.GameTeamCheckerHorizontal(boardToCheck, lenghtToCheck, teamGameSymbols);
                 bool isHorizontalWin = (bool)checkerHorizontal[0];
+                
 
                 //if (isHorizontalWin == false)
                 //{

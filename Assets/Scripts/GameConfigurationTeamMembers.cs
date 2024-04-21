@@ -211,7 +211,8 @@ namespace Assets
                             GameConfigurationTeamMembersButtonsActionsCommon.DestroyButtons(_buttonsMoreSpecificConfiguration);
 
                             if (_isCellphoneMode == false)
-                                GameConfigurationTeamMembersButtonsArrowsActions.HideArrows(_buttonsArrows);
+                                //GameConfigurationTeamMembersButtonsArrowsActions.HideArrows(_buttonsArrows);
+                                GameConfigurationTeamMembersButtonsArrowsActions.UnhideArrows(_buttonsArrows);
                         }
 
 

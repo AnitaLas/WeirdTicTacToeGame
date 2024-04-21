@@ -221,7 +221,7 @@ internal class Game : MonoBehaviour
         //_configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
         //playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
 
-
+        Debug.Log("isTeamGame 1: " + isTeamGame);
 
 
 
@@ -250,13 +250,6 @@ internal class Game : MonoBehaviour
             {
                 _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
                 _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
-
-                //for (int i = 0; i < _playersSymbols.Length; i++)
-                //{
-                //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
-                //}
-
-
             }
 
             // mode 2
@@ -264,8 +257,6 @@ internal class Game : MonoBehaviour
             else
             {
                 _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
-
-                //_playersNumberGivenForConfiguration = _playersSymbols.Length;
                 _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
 
                 //for (int i = 0; i < _playersSymbols.Length; i++)
@@ -280,18 +271,12 @@ internal class Game : MonoBehaviour
         }
 
 
-        //_playersSymbols = GameConfigurationPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
         _gameBoardVerification2D = GameConfigurationButtonsCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
-
 
         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
         _playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
 
         _currentPlayer = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
-
-        //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
-
-        //_playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
 
         _currentCountedTagCubePlayTaken = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
@@ -322,10 +307,10 @@ internal class Game : MonoBehaviour
                 _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
             }
         }
-        else
-        {
-            //_isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
-        }
+        //else
+        //{
+        //    //_isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
+        //}
 
 
         //---------------------------------------------------------------------------
@@ -417,15 +402,35 @@ internal class Game : MonoBehaviour
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
 
                             //_listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
+                           // Debug.Log("isTeamGame 2: " + isTeamGame);
 
                             if (isTeamGame == false)
                             {
+                                //Debug.Log("isTeamGame 3: " + isTeamGame);
                                 _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
                             }
                             else
                             {
-                                _listCheckerForWinner = GameTeamFieldsVerificationCheckerMainMethod.FieldsVerificationGameTeam(_gameBoardVerification2D, _lenghtToCheck);
+                                //Debug.Log("isTeamGame 4: " + isTeamGame);
+                                _listCheckerForWinner = GameTeamFieldsVerificationCheckerMainMethod.FieldsVerificationGameTeam(_gameBoardVerification2D, _lenghtToCheck, _teamGameSymbols);
+                            
+                            
+                            
+                            
+                            
+                            
                             }
+
+
+
+
+
+
+
+
+
+
+
 
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
@@ -435,7 +440,18 @@ internal class Game : MonoBehaviour
                                 PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
                                 PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+
+                                if (isTeamGame == false)
+                                {
+                                    PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                }
+                                else
+                                {
+                                    // to do - team number, maybe? T1. T2. T3, or maby crate the button team 1 winer?
+                                }
+
+
+
 
                                 PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
 
@@ -510,7 +526,47 @@ internal class Game : MonoBehaviour
 
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
 
-                            _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
+                            //_listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            //Debug.Log("isTeamGame 2: " + isTeamGame);
+
+                            if (isTeamGame == false)
+                            {
+                                //Debug.Log("isTeamGame 3: " + isTeamGame);
+                                _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
+                            }
+                            else
+                            {
+                                //Debug.Log("isTeamGame 4: " + isTeamGame);
+                                _listCheckerForWinner = GameTeamFieldsVerificationCheckerMainMethod.FieldsVerificationGameTeam(_gameBoardVerification2D, _lenghtToCheck, _teamGameSymbols);
+
+
+
+
+
+
+                            }
+
+
+
+
+
+
+
+
+
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
 
@@ -519,7 +575,17 @@ internal class Game : MonoBehaviour
                                 PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
                                 PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+
+
+                                if (isTeamGame == false)
+                                {
+                                    PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                }
+                                else
+                                {
+                                    // to do - team number, maybe? T1. T2. T3, or maby crate the button team 1 winer?
+                                }
 
                                 PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
 

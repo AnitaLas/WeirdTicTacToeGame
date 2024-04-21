@@ -916,6 +916,8 @@ namespace Assets.Scripts
        public static void AddDefaultSymbolsForTeam(GameObject[,,] buttons, int symbolsCounted, int playersNumbers, string[] takenSymbols, List<string[]> tablesWitPlayersChosenSymbols)      
        {
             string tagName= GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithTeamSymbols();
+            string tagNameInactiveField = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
+
             //int numberToChange = playersNumbers - symbolsCounted;
             //int index = 0 + numberToChange;
             int index = 0;
@@ -928,7 +930,7 @@ namespace Assets.Scripts
             //Debug.Log("indexSymbolsCounted: " + indexSymbolsCounted);
             //Debug.Log("ddddd: " + ddddd);
 
-            string inactiveField = "AL";
+            string inactiveField = "-";
 
 
             string[] takenSymbolsAll = GetAllTakenSymbols(tablesWitPlayersChosenSymbols);
@@ -1047,13 +1049,19 @@ namespace Assets.Scripts
                         GameObject cubePlay = buttons[indexDepth, indexRow, indexColumn];
                         //CommonMethods.ChangeTextForFirstChild(cubePlay, inactiveField);
                         CommonMethods.ChangeTextForFirstChild(cubePlay, newSymbol);
-                        CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
+                        string currentSymbol = CommonMethods.GetCubePlayText(cubePlay);
+
+                        if (currentSymbol != inactiveField)
+                        {
+                            CommonMethods.ChangeTagForGameObject(cubePlay, tagName);
+                        }
+                        
                     }
                 }
             }
 
 
-        }
+       }
 
         public static void SetUpRightSymbolsForTeam(List<List<GameObject[,,]>> buttonsGroupByTeams, int[] tablesWitPlayersNumbersForTeams, List<string[]> tablesWitPlayersChosenSymbols)
         {

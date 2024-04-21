@@ -58,14 +58,6 @@ namespace Assets.Scripts
             int teamsNumbers = playersNumberInTeams.Length;
             int maxNumber = 0;
 
-
-            //for (int i = 0; i < playersNumberInTeams.Length; i++)
-            //{
-            //    Debug.Log($"playersNumberInTeams[{i}]: " + playersNumberInTeams[i]);
-            //}
-
-            //Debug.Log($" ------------------- 1 ----------------------- ");
-
             for (int i = 0; i < teamsNumbers; i++)
             {
                 int numberToCompare = playersNumberInTeams[i];
@@ -119,102 +111,30 @@ namespace Assets.Scripts
         public static string[] CreateTableWithAllSymbolsForCorrectPlayersMove(string[] allSymbols, int maxPlayerNumbersInTeam)
         {
             int allSymbolsLength = allSymbols.Length - 1;
-            //Debug.Log($"allSymbolsLength: " + allSymbolsLength);
-            //Debug.Log($"maxPlayerNumbersInTeam: " + maxPlayerNumbersInTeam);
-
-            //Debug.Log($" ------------------- 1 ----------------------- ");
             string[] finalSymbols = new string[allSymbolsLength + 1];
 
-
-            //for (int i = 0; i < allSymbols.Length; i++)
-            //{
-            //    Debug.Log($"allSymbols[{i}]: " + allSymbols[i]);
-            //}
-
-            //Debug.Log($" ------------------- 2 ----------------------- ");
-
-            //int index = 0;
             int index = 0;
             int nextIndex = 1;
 
             for (int a = 0; a < allSymbolsLength + 1; a++)
             {
-                //Debug.Log($"for index: " + index);
-
                 if (index <= allSymbolsLength)
                 {
-                    //Debug.Log($"if 1 index: " + index);
-                    //Debug.Log($"index: " + index);
                     string symbol = allSymbols[index];
-
-                    //nextIndex = nextIndex + maxPlayerNumbersInTeam;
                     finalSymbols[a] = symbol;
 
                     index = index + maxPlayerNumbersInTeam;
-                    //Debug.Log($"if 2 index: " + index);
-                    //if (index >= allSymbolsLength)
-                    //{
-                    //    index = nextIndex;
-
-                    //    string symbol2 = allSymbols[index];
-                    //    index = index + maxPlayerNumbersInTeam;
-                    //    //nextIndex = nextIndex + maxPlayerNumbersInTeam;
-                    //    finalSymbols[a] = symbol2;
-
-                    //    index = index + maxPlayerNumbersInTeam;
-                    //    nextIndex++;
-                    //}
-
-                    //Debug.Log($"symbol: " + symbol);
-
-                    //Debug.Log($"index: " + index);
                 }
                 else
                 {
-
-
-                    //Debug.Log($"else 1 index: " + index);
                     index = nextIndex;
-                    //Debug.Log($"else 2 index: " + index);
-
-
                     string symbol2 = allSymbols[index];
-                    //index = index + maxPlayerNumbersInTeam;
-                    //nextIndex = nextIndex + maxPlayerNumbersInTeam;
                     finalSymbols[a] = symbol2;
-                    //Debug.Log($"symbol2: " + symbol2);
-                    //index = index + maxPlayerNumbersInTeam;
-
-                    //Debug.Log($"else 3 index: " + index);
                     index = index + maxPlayerNumbersInTeam;
 
                     nextIndex++;
-                    // Debug.Log($"nextIndex x: " + nextIndex);
-
-
-
-
                 }
-
-
-                //Debug.Log($" ------------------- ----------------------- ");
-
-
-
-
             }
-
-
-
-            //Debug.Log($" ------------------------- 3 ------------------------- ");
-
-            //for (int i = 0; i < finalSymbols.Length; i++)
-            //{
-            //    Debug.Log($"finalSymbols[{i}]: " + finalSymbols[i]);
-            //}
-
-            //Debug.Log($" ------------------- 2 ----------------------- ");
-
 
             return finalSymbols;
         }
@@ -227,21 +147,12 @@ namespace Assets.Scripts
             int allSymbolsLength = allSymbols.Length;
             int index = 0;
 
-            //for (int i = 0; i < allSymbols.Length; i++)
-            //{
-            //    Debug.Log($"allSymbols[{i}]: " + allSymbols[i]);
-            //}
-
-            //Debug.Log($" ------------------- 1 ----------------------- ");
-
             for (int i = 0; i < allSymbolsLength; i++)
             {
                 string symbol = allSymbols[i];
-                //Debug.Log($"symbol: " + symbol);
 
                 if (symbol.Equals(symbolToRemove))
                 {
-
                 }
                 else
                 {
@@ -249,7 +160,6 @@ namespace Assets.Scripts
                     index++;
                 }
             }
-            //Debug.Log($" ------------------- 1 ----------------------- ");
             return finalSymbols;
         }
 
@@ -263,56 +173,16 @@ namespace Assets.Scripts
             int allPlayersNumber = GetPlayersNumber(teamsSymbols);
             int maxLength = teamsNumbers * maxPlayerNumbersInTeam;
 
-            //string[] allSymbols = new string[maxLength];
             string[] allSymbols = CreateTableWithAllSymbols(teamsSymbols, maxPlayerNumbersInTeam);
-            //Debug.Log(" -- 1 -- ");
+
             string[] allSymbolsForCorrectPlayersMove = CreateTableWithAllSymbolsForCorrectPlayersMove(allSymbols, maxPlayerNumbersInTeam);
 
-
-            //for (int i = 0; i < allSymbolsForCorrectPlayersMove.Length; i++)
-            //{
-            //    Debug.Log($"allSymbolsForCorrectPlayersMove[{i}]: " + allSymbolsForCorrectPlayersMove[i]);
-            //}
-
-
-
-
-
-            //Debug.Log(" -- 2 -- ");
             string[] finalSymbols = CreateTableWithFinalSymbols(allSymbolsForCorrectPlayersMove, allPlayersNumber);
-
-            //int index = 0;
-
-            //string symbolToRemove = "-- * --";
-
-            //for (int l = 0; l < teamsNumbers; l++)
-            //{
-            //    string[] teamSymbols = teamsSymbols[l];
-            //    int playersNumberInTeam = teamSymbols.Length;
-
-            //    for (int w = 0; w < maxPlayerNumbersInTeam; w++)
-            //    {
-            //        if (w < playersNumberInTeam)
-            //        {
-            //            string symbol = teamSymbols[w];
-            //            allSymbols[index] = symbol;
-
-            //        }
-            //        else
-            //        {
-            //            allSymbols[index] = symbolToRemove;
-
-            //        }
-            //        index++;
-            //    }
-
-
-            //}
-
 
             return finalSymbols;
 
         }
+
         // -- the same
 
         public static string[] GetFirstPlayersSymbolFromTeams(List<string[]> teamsSymbols)
@@ -367,7 +237,6 @@ namespace Assets.Scripts
 
             List<string[]> newTeamsSymbols = new List<string[]>();
 
-
             for (int i = 0; i < teamsNumbers; i++)
             {
                 string[] teamSymbols = teamsSymbols[i];
@@ -387,36 +256,17 @@ namespace Assets.Scripts
                     }
                 }
 
-                //for (int z = 0; z < newTable.Length; z++)
-                //{
-                //    Debug.Log($"newTable[{z}]: " + newTable[z]);
-                //}
-
-                //Debug.Log("----------------------------------------------------");
-
                 newTeamsSymbols.Insert(i, newTable);
-
             }
-
-
-
-
-
 
             return newTeamsSymbols;
 
-
         }
-
-        // to do 
 
         public static string[] GetSymbolsToCompare(List<string[]> teamsSymbols, string[] previousSymbols, int[] playersNumberInTeams, int indexForSymbols)
         {
-            string staticSymbol = "*";
-            //string symbolsToCompare = "";
+            //string staticSymbol = "*";
             int teamsNumbers = teamsSymbols.Count;
-
-
 
             string[] newSymbols = new string[teamsNumbers];
 
@@ -431,101 +281,13 @@ namespace Assets.Scripts
                 {
                     string symbol = teamSymbols[indexForSymbols];
                     newSymbols[i] = symbol;
-
                 }
                 else
                 {
                     newSymbols[i] = previousSymbols[i];
 
                 }
-
-
-
-
             }
-
-
-
-
-            for (int z = 0; z < newSymbols.Length; z++)
-            {
-                Debug.Log($"newSymbols[{z}]: " + newSymbols[z]);
-            }
-
-            Debug.Log("----------------------------------------------------");
-
-
-
-
-
-
-
-
-            //string[] previousSymbols = new string[teamsNumbers];    
-            //// table with prevoius
-            //for (int i = 0; i < teamsNumbers; i++)
-            //{
-            //    string[] teamSymbols = teamsSymbols[i];
-            //    int symbolsNumbers = teamSymbols.Length;
-
-            //    for (int x = 0; x < teamsNumbers; x++)
-            //    {
-            //        //if (x < indexForSymbols)
-            //        //{
-            //        //    string symbol = teamSymbols[x];
-
-            //        //    if (symbol != staticSymbol)
-            //        //    {
-            //        //        previousSymbols[i] = symbol;
-            //        //    }
-            //        //}
-
-            //        if (x < symbolsNumbers)
-            //        {
-
-
-            //            if (x < indexForSymbols)
-            //            {
-
-            //                string symbol = teamSymbols[x];
-
-            //                if (symbol != staticSymbol)
-            //                {
-            //                    previousSymbols[i] = symbol;
-            //                }
-            //            }
-
-            //        }
-
-
-
-
-
-
-
-            //    }
-
-            //}
-
-
-
-            //for (int z = 0; z < previousSymbols.Length; z++)
-            //{
-            //    Debug.Log($"previousSymbols[{z}]: " + previousSymbols[z]);
-            //}
-
-            //Debug.Log("----------------------------------------------------");
-
-
-            // table for new string to compare 
-
-
-
-
-            //string symbolsToCompare = "";
-
-
-            // Debug.Log("symbolsToCompare: " + symbolsToCompare);
 
             return newSymbols;
         }
@@ -535,11 +297,6 @@ namespace Assets.Scripts
         {
             int teamsNumbers = teamsSymbols.Count;
 
-            //string[] firstTeamsSymbols = GetFirstPlayersSymbolFromTeams(teamsSymbols);
-
-            //string firstSymbols = GetSymbolsAsOneString(firstTeamsSymbols);
-
-
             int[] playersNumberInTeams = GetPlayersNumbersForEachTeam(teamsSymbols);
 
             List<string[]> symbols = CreateTeablesWithTheSameLenght(teamsSymbols);
@@ -547,10 +304,8 @@ namespace Assets.Scripts
             bool isFisrtSymbolsAsSameAsLastOne = false;
 
             int index = 1;
-            int index33 = 0;
 
             
-
             string[] previousSymbols = GetFirstPlayersSymbolFromTeams(teamsSymbols);
 
             string firstSymbols = GetSymbolsAsOneString(previousSymbols);
@@ -558,13 +313,9 @@ namespace Assets.Scripts
             string playersSymbols = firstSymbols;
 
             string finalListWithSymbols = firstSymbols;
+
             while (isFisrtSymbolsAsSameAsLastOne == false)
-            //while (index33 < 3)
             {
-
-
-
-
 
                 string[] symbolsToCompare = GetSymbolsToCompare(symbols, previousSymbols, playersNumberInTeams, index);
 
@@ -572,15 +323,11 @@ namespace Assets.Scripts
 
                 isFisrtSymbolsAsSameAsLastOne = IsFisrtSymbolsAsTheSameAsLastOne(playersSymbols, symbolsToCompareOneString);
 
-                //playersSymbols = symbolsToCompareOneString;
-
                 if (isFisrtSymbolsAsSameAsLastOne == false)
                 {
                     finalListWithSymbols = finalListWithSymbols + symbolsToCompareOneString;
-                    Debug.Log(" finalListWithSymbols: " + finalListWithSymbols);
                 }
 
-                index33++;
                 index++;
 
                 if (index > teamsNumbers)
@@ -588,21 +335,6 @@ namespace Assets.Scripts
                     index = 0;
                 }
             }
-
-
-
-
-            //int maxPlayerNumbersInTeam = GetBiggestPlayerNumbersInTeam(teamsSymbols);
-
-            //int allPlayersNumber = GetPlayersNumber(teamsSymbols);
-
-            //int maxLength = teamsNumbers * maxPlayerNumbersInTeam;
-
-            //string[] allSymbols = CreateTableWithAllSymbols(teamsSymbols, maxPlayerNumbersInTeam);
-
-            //string[] allSymbolsForCorrectPlayersMove = CreateTableWithAllSymbolsForCorrectPlayersMove(allSymbols, maxPlayerNumbersInTeam);
-
-            //string[] finalSymbols = CreateTableWithFinalSymbols(allSymbolsForCorrectPlayersMove, allPlayersNumber);
 
             int newSymbolLength = finalListWithSymbols.Length;
 

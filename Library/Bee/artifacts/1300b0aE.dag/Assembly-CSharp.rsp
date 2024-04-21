@@ -432,7 +432,6 @@
 "Assets/Scripts/GameDictionaries/GameDictionariesScenes/GameDictionariesSceneStartGame.cs"
 "Assets/Scripts/GameDictionaries/GameDictionariesScenes/GameDictionariesSceneTeamMembers.cs"
 "Assets/Scripts/GameDictionaries/GameDictionariesScenes/GameDictionariesSceneTeamNumbers.cs"
-"Assets/Scripts/GameFieldsVerification/GameFieldsVerification.cs"
 "Assets/Scripts/GameFieldsVerification/GameFieldsVerificationCheckers/GameFieldsVerificationCheckerBackslash.cs"
 "Assets/Scripts/GameFieldsVerification/GameFieldsVerificationCheckers/GameFieldsVerificationCheckerHorizontal.cs"
 "Assets/Scripts/GameFieldsVerification/GameFieldsVerificationCheckers/GameFieldsVerificationCheckerLenght.cs"
