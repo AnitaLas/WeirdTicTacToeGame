@@ -180,7 +180,6 @@
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesSceneConfigurationPlayerSymbols.cs" />
     <Compile Include="Assets\Scripts\GameName\GameNameButtonsCommonMethods.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameCommon\PlayGameCommonPlayersSymbols.cs" />
-    <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerification.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\ScenesChange\ScenesChangeCommon.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationButtons\GameInformationButtonsCreate.cs" />

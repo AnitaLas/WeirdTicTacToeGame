@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\creategameboard\\creategameboardcommonmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\creategameboard\\creategameboardcommonmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gamefieldsverification\\gameteamfieldsverificationcheckers\\gameteamfieldsverificationcheckerhorizontal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamefieldsverification\\gameteamfieldsverificationcheckers\\gameteamfieldsverificationcheckerhorizontal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gamefieldsverification\\gamefieldsverificationcheckers\\gamefieldsverificationcheckerhorizontal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamefieldsverification\\gamefieldsverificationcheckers\\gamefieldsverificationcheckerhorizontal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\gamefieldsverification\\gameteamfieldsverificationcheckers\\gameteamfieldsverificationcheckermainmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamefieldsverification\\gameteamfieldsverificationcheckers\\gameteamfieldsverificationcheckermainmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\gamedictionaries\\gamedictionariescommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedictionaries\\gamedictionariescommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\playgame\\playgameteam\\playgameteamsetupplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playgame\\playgameteam\\playgameteamsetupplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\playgame\\playgamecommon\\playgamecommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playgame\\playgamecommon\\playgamecommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gamedictionaries\\gamedictionariescommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedictionaries\\gamedictionariescommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfiguration\\gameconfigurationteammembers\\gameconfigurationteammembersbuttons\\gameconfigurationteammembersbuttonscreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfiguration\\gameconfigurationteammembers\\gameconfigurationteammembersbuttons\\gameconfigurationteammembersbuttonscreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,13 +38,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GameDictionariesCommonPlayersSymbols.cs",
               "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameDictionaries\\GameDictionariesCommonPlayersSymbols.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameDictionaries\\GameDictionariesCommonPlayersSymbols.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameDictionaries\\GameDictionariesCommonPlayersSymbols.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameDictionaries\\GameDictionariesCommonPlayersSymbols.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T17:52:38.144Z",
               "IsPinned": true,
@@ -52,13 +52,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\Game.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\Game.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game.cs",
-              "ViewState": "AQIAAPgAAAAAAAAAAAAcwAkBAABCAAAA",
+              "ViewState": "AQIAABECAAAAAAAAAAAswCgCAAB+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-19T16:04:44.995Z",
               "IsPinned": true,
@@ -66,42 +66,30 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GameConfigurationTeamMembersButtonsCreate.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersButtons\\GameConfigurationTeamMembersButtonsCreate.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersButtons\\GameConfigurationTeamMembersButtonsCreate.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersButtons\\GameConfigurationTeamMembersButtonsCreate.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersButtons\\GameConfigurationTeamMembersButtonsCreate.cs",
-              "ViewState": "AQIAALQAAAAAAAAAAAAnwMMAAAB4AAAA",
+              "DocumentIndex": 2,
+              "Title": "GameTeamFieldsVerificationCheckerMainMethod.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameFieldsVerification\\GameTeamFieldsVerificationCheckers\\GameTeamFieldsVerificationCheckerMainMethod.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameFieldsVerification\\GameTeamFieldsVerificationCheckers\\GameTeamFieldsVerificationCheckerMainMethod.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameFieldsVerification\\GameTeamFieldsVerificationCheckers\\GameTeamFieldsVerificationCheckerMainMethod.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameFieldsVerification\\GameTeamFieldsVerificationCheckers\\GameTeamFieldsVerificationCheckerMainMethod.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwBUAAABpAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T17:50:23.174Z",
+              "WhenOpened": "2024-04-21T13:20:11.425Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CreateGameBoardCommonMethods.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\CreateGameBoard\\CreateGameBoardCommonMethods.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CreateGameBoard\\CreateGameBoardCommonMethods.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\CreateGameBoard\\CreateGameBoardCommonMethods.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CreateGameBoard\\CreateGameBoardCommonMethods.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAcwCUAAAAAAAAA",
+              "Title": "GameTeamFieldsVerificationCheckerHorizontal.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameFieldsVerification\\GameTeamFieldsVerificationCheckers\\GameTeamFieldsVerificationCheckerHorizontal.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameFieldsVerification\\GameTeamFieldsVerificationCheckers\\GameTeamFieldsVerificationCheckerHorizontal.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameFieldsVerification\\GameTeamFieldsVerificationCheckers\\GameTeamFieldsVerificationCheckerHorizontal.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameFieldsVerification\\GameTeamFieldsVerificationCheckers\\GameTeamFieldsVerificationCheckerHorizontal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T18:42:56.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlayGameCommonPlayersSymbols.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameCommon\\PlayGameCommonPlayersSymbols.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayGame\\PlayGameCommon\\PlayGameCommonPlayersSymbols.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameCommon\\PlayGameCommonPlayersSymbols.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayGame\\PlayGameCommon\\PlayGameCommonPlayersSymbols.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T18:42:46.691Z",
+              "WhenOpened": "2024-04-21T14:05:20.736Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
@@ -127,19 +115,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "PlayGameTeamSetUpPlayersSymbols.cs",
               "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameTeam\\PlayGameTeamSetUpPlayersSymbols.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayGame\\PlayGameTeam\\PlayGameTeamSetUpPlayersSymbols.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameTeam\\PlayGameTeamSetUpPlayersSymbols.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayGame\\PlayGameTeam\\PlayGameTeamSetUpPlayersSymbols.cs",
-              "ViewState": "AQIAAEICAAAAAAAAAAAMwGYCAAANAAAA",
+              "ViewState": "AQIAAEEBAAAAAAAAAAAiwAsBAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-19T19:23:12.953Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameFieldsVerificationCheckerHorizontal.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameFieldsVerification\\GameFieldsVerificationCheckers\\GameFieldsVerificationCheckerHorizontal.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameFieldsVerification\\GameFieldsVerificationCheckers\\GameFieldsVerificationCheckerHorizontal.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameFieldsVerification\\GameFieldsVerificationCheckers\\GameFieldsVerificationCheckerHorizontal.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameFieldsVerification\\GameFieldsVerificationCheckers\\GameFieldsVerificationCheckerHorizontal.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAgwCsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T17:49:00.442Z",
               "IsPinned": true,
               "EditorCaption": ""
             }
