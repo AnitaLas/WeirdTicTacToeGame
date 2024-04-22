@@ -7,6 +7,7 @@ using Assets.Scripts.GameConfiguration;
 using TMPro;
 using UnityEditor;
 using Assets;
+using System;
 
 
 internal class Game : MonoBehaviour
@@ -221,7 +222,7 @@ internal class Game : MonoBehaviour
         //_configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
         //playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
 
-        Debug.Log("isTeamGame 1: " + isTeamGame);
+        //Debug.Log("isTeamGame 1: " + isTeamGame);
 
 
 
@@ -549,7 +550,33 @@ internal class Game : MonoBehaviour
                             }
                             else
                             {
-                                //Debug.Log("isTeamGame 4: " + isTeamGame);
+                                //_gameBoardVerification2D = 
+                                Debug.Log("isTeamGame 1: " + isTeamGame);
+
+
+
+
+                                //_gameBoardVerification2D = new string [,]
+                                //{
+                                //    {"","",""},
+                                //    {"","",""},
+                                //    {"O","X","O"} 
+                                //};
+
+                                // to do xxoo + win = 3 = return error! - to fix
+
+                                for (int i = 0; i < _gameBoardVerification2D.GetLength(0); i++)
+                                {
+                                    for (int j = 0; j < _gameBoardVerification2D.GetLength(1); j++)
+                                    {
+                                        Debug.Log($"_gameBoardVerification2D[{i}, {j}]" + _gameBoardVerification2D[i, j]);
+                                    }
+                                }
+
+                                Debug.Log(" --------------------------------------------------- ");
+
+
+
                                 _listCheckerForWinner = GameTeamFieldsVerificationCheckerMainMethod.FieldsVerificationGameTeam(_gameBoardVerification2D, _lenghtToCheck, _teamGameSymbols);
 
 
