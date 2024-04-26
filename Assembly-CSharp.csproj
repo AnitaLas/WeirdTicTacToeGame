@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckers\GameFieldsVerificationCheckerMainMethod.cs" />
     <Compile Include="Assets\Scripts\CommonMethods.cs" />
     <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
+    <Compile Include="Assets\Scripts\GameFieldsVerification\GameTeamFieldsVerificationCheckers\GameTeamFieldsVerificationCheckerVertical.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtonsMethods.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationText\GameInformationCreateText.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationChangePlayersSymbols.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCheckers\GameFieldsVerificationCheckerBackslash.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlayForTeamWinner.cs" />
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesScenes\GameDictionariesSceneStartGame.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsText.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonButtonsTagName.cs" />

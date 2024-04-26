@@ -21,28 +21,28 @@ namespace Assets.Scripts
             {
                 checkerHorizontal = GameTeamFieldsVerificationCheckerHorizontal.GameTeamCheckerHorizontal(boardToCheck, lenghtToCheck, teamGameSymbols);
                 bool isHorizontalWin = (bool)checkerHorizontal[0];
-                
+
 
                 //if (isHorizontalWin == false)
                 //{
-                //    checkerVertical = GameFieldsVerificationCheckerVertical.CheckerVertical(boardToCheck, lenghtToCheck);
+                //    checkerVertical = GameTeamFieldsVerificationCheckerVertical.GameTeamCheckerVertical(boardToCheck, lenghtToCheck, teamGameSymbols);
                 //    bool isVerticalWin = (bool)checkerVertical[0];
 
-                //    if (isVerticalWin == false)
-                //    {
-                //        checkerSlash = GameFieldsVerificationCheckerSlash.CheckerSlash(boardToCheck, lenghtToCheck);
-                //        bool isSlashlWin = (bool)checkerSlash[0];
+                    //if (isVerticalWin == false)
+                    //{
+                    //    checkerSlash = GameTeamFieldsVerificationCheckerHorizontal.CheckerSlash(boardToCheck, lenghtToCheck, teamGameSymbols);
+                    //    bool isSlashlWin = (bool)checkerSlash[0];
 
-                //        if (isSlashlWin == false)
-                //        {                     
-                //            checkerBackslash = GameFieldsVerificationCheckerBackslash.CheckerBackslash(boardToCheck, lenghtToCheck);
-                //            return checkerBackslash;
-                //        }
+                    //    if (isSlashlWin == false)
+                    //    {
+                    //        checkerBackslash = GameTeamFieldsVerificationCheckerHorizontal.CheckerBackslash(boardToCheck, lenghtToCheck, teamGameSymbols);
+                    //        return checkerBackslash;
+                    //    }
 
-                //        return checkerSlash;
-                //    }
+                    //    return checkerSlash;
+                    //}
 
-                //    return checkerVertical;
+                   // return checkerVertical;
                 //}
 
                 return checkerHorizontal;
