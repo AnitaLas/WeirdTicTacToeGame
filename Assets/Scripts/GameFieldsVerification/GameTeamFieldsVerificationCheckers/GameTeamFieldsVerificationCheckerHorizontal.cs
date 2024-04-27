@@ -100,27 +100,16 @@ namespace Assets.Scripts
                             //Debug.Log("1 matchingArray[0]: " + matchingArray[0]);
                             //Debug.Log("--------");
 
-
-
-                            string matchedSymbol = "";
-
                             for (int z = 0; z < playersNumber; z++)
                             {
                                 string teamSymbol = teamSymbols[z];
 
-                                //if (teamSymbol != currentSymbolToCheck && isMatchingArrayIncreased == false)
-                                //{
-
-                                    if (teamSymbol.Equals(boardToCheck[rowIndex, columnIndex]))
-                                    {
-                                        matchedSymbol = teamSymbol;
-                                        //Debug.Log("2 matchedSymbol: " + matchedSymbol);
-
-                                        isMatchingArrayIncreased = true;
-                                        break;
-                                    }
-
-                                //}
+                                if (teamSymbol.Equals(boardToCheck[rowIndex, columnIndex]))
+                                {
+ 
+                                     isMatchingArrayIncreased = true;
+                                     break;
+                                }
 
                             }
 

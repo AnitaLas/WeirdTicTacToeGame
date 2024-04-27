@@ -342,13 +342,24 @@ namespace Assets.Scripts
                 //    break;
                 //}
 
-                for (int a = 0; a < playersNumbers; a++)
+                for (int a = 0; a < winnerTeamSymbols.Length; a++)
                 {
+
                     string teamSymbol = winnerTeamSymbols[a];
+                    //Debug.Log(" 2 A symbolToCompare: " + symbolToCompare);
+                    //Debug.Log(" 2 A teamSymbol: " + teamSymbol);
 
                     if (teamSymbol.Equals(symbolToCompare))
+                    {
+                        //Debug.Log(" 3 A symbolToCompare: " + symbolToCompare);
+                        //Debug.Log(" 3 A teamSymbol: " + teamSymbol);
                         ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
 
+                    }
+                    else
+                    {
+                        //break;
+                    }
                 }
 
             }
@@ -385,13 +396,24 @@ namespace Assets.Scripts
                 //    break;
                 //}
 
-                for (int a = 0; a < playersNumbers; a++)
+                for (int a = 0; a < winnerTeamSymbols.Length; a++)
                 {
 
                     string teamSymbol = winnerTeamSymbols[a];
+                    //Debug.Log(" 2 A symbolToCompare: " + symbolToCompare);
+                    //Debug.Log(" 2 A teamSymbol: " + teamSymbol);
 
                     if (teamSymbol.Equals(symbolToCompare))
+                    {
+                        //Debug.Log(" 3 A symbolToCompare: " + symbolToCompare);
+                        //Debug.Log(" 3 A teamSymbol: " + teamSymbol);
                         ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+
+                    }
+                    else
+                    {
+                        //break;
+                    }
                 }
             }
         }
@@ -431,15 +453,15 @@ namespace Assets.Scripts
 
             int playersNumbers = winnerTeamSymbols.Length;
 
-            for (int i = 0; i < winnerCoordinateXYForCubePlay.GetLength(0); i++)
-            {
-                for (int j = 0; j < winnerCoordinateXYForCubePlay.GetLength(1); j++)
-                {
-                    Debug.Log($"winnerCoordinateXYForCubePlay[{i},{j}] =  " + winnerCoordinateXYForCubePlay[i,j]);
-                }
-            }
+            //for (int i = 0; i < winnerCoordinateXYForCubePlay.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < winnerCoordinateXYForCubePlay.GetLength(1); j++)
+            //    {
+            //        Debug.Log($"winnerCoordinateXYForCubePlay[{i},{j}] =  " + winnerCoordinateXYForCubePlay[i,j]);
+            //    }
+            //}
 
-            Debug.Log(" -------------------------------- ");
+            //Debug.Log(" -------------------------------- ");
 
             for (int i = startUpIndexXForOtherCubePlay; i < maxIndexXToCheck; i++)
             {
@@ -453,8 +475,11 @@ namespace Assets.Scripts
 
                 string symbolToCompare = GameCommonMethodsMain.GetCubePlayPlayerSymbol(cubePlay);
 
-                Debug.Log("i= " + i);
-                Debug.Log("symbolToCompare: " + symbolToCompare);
+                //Debug.Log(" 1 symbolToCompare: " + symbolToCompare + ", y: " +yForFirstCubePlay + ", x: " + xForFirstCubePlay);
+                //ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+
+                //Debug.Log("i= " + i);
+                //Debug.Log(" 2 symbolToCompare: " + symbolToCompare);
                 //if (playerSymbol.Equals(symbolToCompare))
                 //{
                 //    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
@@ -464,17 +489,35 @@ namespace Assets.Scripts
                 //    break;
                 //}
 
-                for (int a = 0; a < playersNumbers; a++)
+                //for (int a = 0; a < winnerTeamSymbols.Length; a++)
+                //{
+
+                //    Debug.Log($" winnerTeamSymbols[{a}]: " + winnerTeamSymbols[a]);
+
+                //}
+
+
+                for (int a = 0; a < winnerTeamSymbols.Length; a++)
                 {
 
                     string teamSymbol = winnerTeamSymbols[a];
-                    Debug.Log("teamSymbol: " + teamSymbol);
+                    //Debug.Log(" 2 A symbolToCompare: " + symbolToCompare);
+                    //Debug.Log(" 2 A teamSymbol: " + teamSymbol);
 
                     if (teamSymbol.Equals(symbolToCompare))
+                    {
+                        //Debug.Log(" 3 A symbolToCompare: " + symbolToCompare);
+                        //Debug.Log(" 3 A teamSymbol: " + teamSymbol);
                         ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+
+                    }
+                    else
+                    {
+                        //break;
+                    }
                 }
 
-                Debug.Log(" -------------------------------- ");
+                //Debug.Log(" -------------------------------- ");
             }
 
             // ----
@@ -503,15 +546,36 @@ namespace Assets.Scripts
                 string symbolToCompare = GameCommonMethodsMain.GetCubePlayPlayerSymbol(cubePlay);
 
 
-                if (playerSymbol.Equals(symbolToCompare))
-                {
-                    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-                }
-                else
-                {
-                    break;
-                }
+                //if (playerSymbol.Equals(symbolToCompare))
+                //{
+                //    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+                //}
+                //else
+                //{
+                //    break;
+                //}
 
+                for (int a = 0; a < winnerTeamSymbols.Length; a++)
+                {
+
+                    string teamSymbol = winnerTeamSymbols[a];
+                    Debug.Log(" 2 B symbolToCompare: " + symbolToCompare);
+                    Debug.Log(" 2 B teamSymbol: " + teamSymbol);
+
+                    if (teamSymbol.Equals(symbolToCompare))
+                    {
+                        Debug.Log(" 3 B symbolToCompare: " + symbolToCompare);
+                        Debug.Log(" 3 B teamSymbol: " + teamSymbol);
+                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+
+                    }
+                    else
+                    {
+                        //break;
+                    }
+
+                    Debug.Log(" -------------------------------- ");
+                }
             }
         }
 
@@ -614,6 +678,7 @@ namespace Assets.Scripts
         {
             ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
             ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize, winnerTeamSymbols);
+
         }
 
 
