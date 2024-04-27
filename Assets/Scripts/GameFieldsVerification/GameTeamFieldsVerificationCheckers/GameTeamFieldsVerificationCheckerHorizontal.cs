@@ -34,20 +34,20 @@ namespace Assets.Scripts
    
             int teamsNumbers = teamGameSymbols.Count;
 
-            Debug.Log("1 lenghtToCheck" + lenghtToCheck);
+            //Debug.Log("1 lenghtToCheck" + lenghtToCheck);
 
             for (int i = 0; i < teamsNumbers; i++)
             {
                 string[] teamSymbols = teamGameSymbols[i];
                 int playersNumber = teamSymbols.Length;
 
-                Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
-                for (int zz = 0; zz < teamSymbols.Length; zz++)
-                {
-                    Debug.Log($"teamSymbols[{zz}]: " + teamSymbols[zz]);
-                }
+                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
+                //for (int zz = 0; zz < teamSymbols.Length; zz++)
+                //{
+                //    Debug.Log($"teamSymbols[{zz}]: " + teamSymbols[zz]);
+                //}
 
-                Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
+                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
 
 
                 //Debug.Log(" ----------------------- ");
@@ -62,9 +62,9 @@ namespace Assets.Scripts
                 //matchingArray[0] = 0;
                 //
 
-                Debug.Log("0 matchingArray[0]: " + matchingArray[0]);
-                Debug.Log(" --------------------------------------------------------------------- "); 
-                Debug.Log(" --------------------------------------------------------------------- ");
+                //Debug.Log("0 matchingArray[0]: " + matchingArray[0]);
+                //Debug.Log(" --------------------------------------------------------------------- "); 
+                //Debug.Log(" --------------------------------------------------------------------- ");
 
                 int[,] coordinateXYToMark = new int[lenghtToCheck + 1, 2];
                 int[] indexYToMark = new int[1];
@@ -140,19 +140,19 @@ namespace Assets.Scripts
                             }
 
 
-                            Debug.Log($" 3  ----------------------- ");
-                            Debug.Log("3 !!! checkArray[0]: " + checkArray[0]);
-                            Debug.Log($"3 !!! boardToCheck[{rowIndex}, {columnIndex}]: " + boardToCheck[rowIndex, columnIndex]);
-                            Debug.Log("3 !!! isMatchingArrayIncreased: " + isMatchingArrayIncreased);
-                            Debug.Log("3 !!! isPreviousSymbolBelongToTeam: " + isPreviousSymbolBelongToTeam);
-                            Debug.Log($" 3  ----------------------- ");
+                            //Debug.Log($" 3  ----------------------- ");
+                            //Debug.Log("3 !!! checkArray[0]: " + checkArray[0]);
+                            //Debug.Log($"3 !!! boardToCheck[{rowIndex}, {columnIndex}]: " + boardToCheck[rowIndex, columnIndex]);
+                            //Debug.Log("3 !!! isMatchingArrayIncreased: " + isMatchingArrayIncreased);
+                            //Debug.Log("3 !!! isPreviousSymbolBelongToTeam: " + isPreviousSymbolBelongToTeam);
+                            //Debug.Log($" 3  ----------------------- ");
                             //}
 
                             //Debug.Log("1 isMatchingArrayIncreased: " + isMatchingArrayIncreased);
 
                             if (isMatchingArrayIncreased == true)
                             {
-                                Debug.Log("3 TRUE !!! isMatchingArrayIncreased: " + isMatchingArrayIncreased);
+                                //Debug.Log("3 TRUE !!! isMatchingArrayIncreased: " + isMatchingArrayIncreased);
                                 //Debug.Log("3 TRUE checkArray[0]: " + checkArray[0]);
                                 //Debug.Log("3 TRUE matchedSymbol" + matchedSymbol);
                                 //Debug.Log("3 TRUE matchingArray[0]: " + matchingArray[0]);
@@ -164,38 +164,39 @@ namespace Assets.Scripts
 
 
 
-                                    Debug.Log("3 matchingArray[0] < lenghtToCheck ---------------------- ");
+                                    //Debug.Log("3 matchingArray[0] < lenghtToCheck ---------------------- ");
 
 
                                     //  o for first element
 
                                     if (isPreviousSymbolBelongToTeam == false)
                                     {
-                                        Debug.Log("3 A isPreviousSymbolBelongToTeam == FALSE ");
+                                        //Debug.Log("3 A isPreviousSymbolBelongToTeam == FALSE ");
                                         checkArray[0] = boardToCheck[rowIndex, columnIndex];
                                         //matchingArray[0] = 1;
                                         matchingArray[0] = 1;
-                                        Debug.Log("3 A checkArray[0]: " + checkArray[0]);
-                                        Debug.Log("3 A matchingArray[0]: " + matchingArray[0]);
+                                       ///// Debug.Log("3 A checkArray[0]: " + checkArray[0]);
+                                        //Debug.Log("3 A matchingArray[0]: " + matchingArray[0]);
                                         
                                         
                                         indexYToMark[0] = 1;
                                         coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
                                         coordinateXYToMark[0, 0] = rowIndex;
                                         coordinateXYToMark[0, 1] = columnIndex;
-
+                                        
                                         listCheckerHorizontal.Insert(0, checker);
                                     }
                                     else
                                     {
-                                        Debug.Log("3 B isPreviousSymbolBelongToTeam == TRUE ");
+                                        checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                        //Debug.Log("3 B isPreviousSymbolBelongToTeam == TRUE ");
                                         matchingArray[0] = matchingArray[0] + 1;
                                         //Debug.Log("3 TRUE Ab if-> matchingArray[0]: " + matchingArray[0]);
 
-                                        checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                        
 
-                                        Debug.Log("3 B checkArray[0]: " + checkArray[0]);
-                                        Debug.Log("3 B matchingArray[0]: " + matchingArray[0]);
+                                        //Debug.Log("3 B checkArray[0]: " + checkArray[0]);
+                                        //Debug.Log("3 B matchingArray[0]: " + matchingArray[0]);
 
                                         int currentIndexY = indexYToMark[0];
                                         coordinateXYToMark[currentIndexY, 0] = rowIndex;
@@ -220,8 +221,8 @@ namespace Assets.Scripts
                                 }
                                 else if (matchingArray[0] == lenghtToCheck)
                                 {
-                                    Debug.Log("3 TRUE WIN ------------------------");
-                                    Debug.Log("3 TRUE -> matchingArray[0]: " + matchingArray[0]);
+                                    //Debug.Log("3 TRUE WIN ------------------------");
+                                    //Debug.Log("3 TRUE -> matchingArray[0]: " + matchingArray[0]);
                                     checker = true;
 
                                     int currentIndexY = indexYToMark[0];
@@ -569,7 +570,7 @@ namespace Assets.Scripts
 
             }
 
-            Debug.Log(" ------------------------------------------------------------- ");
+            //Debug.Log(" ------------------------------------------------------------- ");
             return listCheckerHorizontal;
         }
     }

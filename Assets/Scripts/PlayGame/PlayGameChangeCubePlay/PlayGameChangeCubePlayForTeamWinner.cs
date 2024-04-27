@@ -431,6 +431,16 @@ namespace Assets.Scripts
 
             int playersNumbers = winnerTeamSymbols.Length;
 
+            for (int i = 0; i < winnerCoordinateXYForCubePlay.GetLength(0); i++)
+            {
+                for (int j = 0; j < winnerCoordinateXYForCubePlay.GetLength(1); j++)
+                {
+                    Debug.Log($"winnerCoordinateXYForCubePlay[{i},{j}] =  " + winnerCoordinateXYForCubePlay[i,j]);
+                }
+            }
+
+            Debug.Log(" -------------------------------- ");
+
             for (int i = startUpIndexXForOtherCubePlay; i < maxIndexXToCheck; i++)
             {
                 yForFirstCubePlay = newIndexYForFirstCubePlay[0] + 1;
@@ -443,7 +453,8 @@ namespace Assets.Scripts
 
                 string symbolToCompare = GameCommonMethodsMain.GetCubePlayPlayerSymbol(cubePlay);
 
-
+                Debug.Log("i= " + i);
+                Debug.Log("symbolToCompare: " + symbolToCompare);
                 //if (playerSymbol.Equals(symbolToCompare))
                 //{
                 //    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
@@ -457,10 +468,13 @@ namespace Assets.Scripts
                 {
 
                     string teamSymbol = winnerTeamSymbols[a];
+                    Debug.Log("teamSymbol: " + teamSymbol);
 
                     if (teamSymbol.Equals(symbolToCompare))
                         ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
                 }
+
+                Debug.Log(" -------------------------------- ");
             }
 
             // ----
