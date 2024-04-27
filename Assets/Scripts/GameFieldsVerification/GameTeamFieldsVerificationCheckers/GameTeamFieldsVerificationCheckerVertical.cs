@@ -20,28 +20,28 @@ namespace Assets.Scripts
             bool checker = false;
             int columnIndex;
             int rowIndex;
-            //Debug.Log(" - test -");
+
+            // check string
+            string[] checkArray = new string[1];
+            checkArray[0] = "";
+
+            // count matching
+            int[] matchingArray = new int[1];
+
+            //
+            int[,] coordinateXYToMark = new int[lenghtToCheck + 1, 2];
+            int[] indexYToMark = new int[1];
+            int increaseIndexXY = 1;
 
             int teamsNumbers = teamGameSymbols.Count;
+
+            //Debug.Log("1 lenghtToCheck" + lenghtToCheck);
 
             for (int i = 0; i < teamsNumbers; i++)
             {
                 string[] teamSymbols = teamGameSymbols[i];
                 int playersNumber = teamSymbols.Length;
 
-                // check string
-                string[] checkArray = new string[1];
-                checkArray[0] = "";
-
-                // count matching
-                int[] matchingArray = new int[1];
-
-                //
-                int[,] coordinateXYToMark = new int[lenghtToCheck + 1, 2];
-                int[] indexYToMark = new int[1];
-                int increaseIndexXY = 1;
-
-                Debug.Log(" ------------------------------------------------------------- ");
 
                 for (columnIndex = 0; columnIndex <= boardColumnLength; columnIndex++)
                 {
@@ -60,75 +60,82 @@ namespace Assets.Scripts
 
                             listCheckerVertical.Insert(0, checker);
                         }
-                        else if (checkArray[0].Equals(boardToCheck[rowIndex, columnIndex]))
+                        else
                         {
-                            if (matchingArray[0] < lenghtToCheck)
-                            {
-                                checkArray[0] = boardToCheck[rowIndex, columnIndex];
-                                matchingArray[0] = matchingArray[0] + 1;
 
-                                int currentIndexY = indexYToMark[0];
-                                coordinateXYToMark[currentIndexY, 0] = rowIndex;
-                                coordinateXYToMark[currentIndexY, 1] = columnIndex;
-                                indexYToMark[0] = currentIndexY + increaseIndexXY;
-
-                                listCheckerVertical.Insert(0, checker);
-                            }
-                            else if (matchingArray[0] == lenghtToCheck)
-                            {
-                                checker = true;
-                                int currentIndexY = indexYToMark[0];
-                                coordinateXYToMark[currentIndexY, 0] = rowIndex;
-                                coordinateXYToMark[currentIndexY, 1] = columnIndex;
-
-                                listCheckerVertical.Insert(0, checker);
-                                listCheckerVertical.Insert(1, coordinateXYToMark);
-
-                                string kindOfChecker = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerVertical();
-                                listCheckerVertical.Insert(2, kindOfChecker);
-
-                                return listCheckerVertical;
-                            }
-                        }
-                        else if (checkArray[0] != boardToCheck[rowIndex, columnIndex])
-                        {
                             bool isMatchingArrayIncreased = false;
+
                             string currentSymbolToCheck = checkArray[0];
+
+
+                            string matchedSymbol = "";
 
                             for (int z = 0; z < playersNumber; z++)
                             {
                                 string teamSymbol = teamSymbols[z];
 
-                                if (teamSymbol != currentSymbolToCheck && isMatchingArrayIncreased == false)
+                                if (teamSymbol.Equals(boardToCheck[rowIndex, columnIndex]))
                                 {
-                                    if (teamSymbol.Equals(boardToCheck[rowIndex, columnIndex]))
-                                    {
-                                        //Debug.Log("2 teamSymbol: " + teamSymbol);
-                                        //Debug.Log($"2 boardToCheck[{rowIndex}, {columnIndex}]: " + boardToCheck[rowIndex, columnIndex]);
-                                        isMatchingArrayIncreased = true;
-                                        break;
-                                    }
+                                    matchedSymbol = teamSymbol;
 
+                                    isMatchingArrayIncreased = true;
+                                    break;
                                 }
 
-                               // Debug.Log(" ----------------- ");
+
                             }
 
+                            bool isPreviousSymbolBelongToTeam = false;
 
+                            for (int z = 0; z < playersNumber; z++)
+                            {
+                                string teamSymbol = teamSymbols[z];
+
+                                if (teamSymbol.Equals(currentSymbolToCheck))
+                                {
+                                    isPreviousSymbolBelongToTeam = true;
+                                    break;
+                                }
+
+                            }
 
                             if (isMatchingArrayIncreased == true)
                             {
+
+
                                 if (matchingArray[0] < lenghtToCheck)
                                 {
-                                    checkArray[0] = boardToCheck[rowIndex, columnIndex];
-                                    matchingArray[0] = matchingArray[0] + 1;
 
-                                    int currentIndexY = indexYToMark[0];
-                                    coordinateXYToMark[currentIndexY, 0] = rowIndex;
-                                    coordinateXYToMark[currentIndexY, 1] = columnIndex;
-                                    indexYToMark[0] = currentIndexY + increaseIndexXY;
 
-                                    listCheckerVertical.Insert(0, checker);
+
+                                    if (isPreviousSymbolBelongToTeam == false)
+                                    {
+
+                                        checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                        matchingArray[0] = 1;
+
+                                        indexYToMark[0] = 1;
+
+                                        coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                        coordinateXYToMark[0, 0] = rowIndex;
+                                        coordinateXYToMark[0, 1] = columnIndex;
+
+                                        listCheckerVertical.Insert(0, checker);
+
+                                    }
+                                    else
+                                    {
+                                        checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                        matchingArray[0] = matchingArray[0] + 1;
+
+                                        int currentIndexY = indexYToMark[0];
+                                        coordinateXYToMark[currentIndexY, 0] = rowIndex;
+                                        coordinateXYToMark[currentIndexY, 1] = columnIndex;
+                                        indexYToMark[0] = currentIndexY + increaseIndexXY;
+
+
+                                    }
+
                                 }
                                 else if (matchingArray[0] == lenghtToCheck)
                                 {
@@ -146,24 +153,30 @@ namespace Assets.Scripts
                                     return listCheckerVertical;
                                 }
 
+
+
+
+
+
                             }
 
 
                             if (isMatchingArrayIncreased == false)
                             {
-                                //if ((boardRowLength - rowIndex) >= lenghtToCheck)
-                                //{
-                                //    checkArray[0] = boardToCheck[rowIndex, columnIndex];
-                                //    matchingArray[0] = 1;
 
-                                //    indexYToMark[0] = 1;
+                                if ((boardRowLength - rowIndex) >= lenghtToCheck)
+                                {
+                                    checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                    matchingArray[0] = 1;
 
-                                //    coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-                                //    coordinateXYToMark[0, 0] = rowIndex;
-                                //    coordinateXYToMark[0, 1] = columnIndex;
-                                //}
-                                //else if ((boardRowLength - rowIndex) < lenghtToCheck)
-                                //{
+                                    indexYToMark[0] = 1;
+
+                                    coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                    coordinateXYToMark[0, 0] = rowIndex;
+                                    coordinateXYToMark[0, 1] = columnIndex;
+                                }
+                                else if ((boardRowLength - rowIndex) < lenghtToCheck)
+                                {
                                     if (columnIndex == boardColumnLength)
                                     {
                                         checker = false;
@@ -173,20 +186,16 @@ namespace Assets.Scripts
                                     }
                                     else if (columnIndex < boardColumnLength)
                                     {
-                                    //checkArray[0] = "";
-                                    //matchingArray[0] = 0;
-                                    //indexYToMark[0] = 0;
-                                    //coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-
-                                        checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                        checkArray[0] = "";
                                         matchingArray[0] = 0;
-
                                         indexYToMark[0] = 0;
                                         coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-                                        coordinateXYToMark[0, 0] = rowIndex;
-                                        coordinateXYToMark[0, 1] = columnIndex;
                                     }
-                                //}
+                                }
+
+
+
+
 
                             }
 
@@ -201,55 +210,11 @@ namespace Assets.Scripts
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            //if ((boardRowLength - rowIndex) >= lenghtToCheck)
-                            //{
-                            //    checkArray[0] = boardToCheck[rowIndex, columnIndex];
-                            //    matchingArray[0] = 1;
-
-                            //    indexYToMark[0] = 1;
-
-                            //    coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-                            //    coordinateXYToMark[0, 0] = rowIndex;
-                            //    coordinateXYToMark[0, 1] = columnIndex;
-                            //}
-                            //else if ((boardRowLength - rowIndex) < lenghtToCheck)
-                            //{
-                            //    if (columnIndex == boardColumnLength)
-                            //    {
-                            //        checker = false;
-
-                            //        listCheckerVertical.Insert(0, checker);
-                            //        return listCheckerVertical;
-                            //    }
-                            //    else if (columnIndex < boardColumnLength)
-                            //    {
-                            //        checkArray[0] = "";
-                            //        matchingArray[0] = 0;
-                            //        indexYToMark[0] = 0;
-                            //        coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-                            //    }
-                            //}
                         }
                     }
+
                 }
-
-                
             }
-
             return listCheckerVertical;
         }
     }

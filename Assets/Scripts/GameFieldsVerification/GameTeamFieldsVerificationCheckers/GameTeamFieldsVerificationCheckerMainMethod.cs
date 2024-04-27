@@ -23,27 +23,27 @@ namespace Assets.Scripts
                 bool isHorizontalWin = (bool)checkerHorizontal[0];
 
 
-                //if (isHorizontalWin == false)
-                //{
-                //    checkerVertical = GameTeamFieldsVerificationCheckerVertical.GameTeamCheckerVertical(boardToCheck, lenghtToCheck, teamGameSymbols);
-                //    bool isVerticalWin = (bool)checkerVertical[0];
+                if (isHorizontalWin == false)
+                {
+                    checkerVertical = GameTeamFieldsVerificationCheckerVertical.GameTeamCheckerVertical(boardToCheck, lenghtToCheck, teamGameSymbols);
+                    bool isVerticalWin = (bool)checkerVertical[0];
 
-                    //if (isVerticalWin == false)
-                    //{
-                    //    checkerSlash = GameTeamFieldsVerificationCheckerHorizontal.CheckerSlash(boardToCheck, lenghtToCheck, teamGameSymbols);
-                    //    bool isSlashlWin = (bool)checkerSlash[0];
+                    if (isVerticalWin == false)
+                    {
+                        checkerSlash = GameTeamFieldsVerificationCheckerSlash.GmaeTeamCheckerSlash(boardToCheck, lenghtToCheck, teamGameSymbols);
+                        bool isSlashlWin = (bool)checkerSlash[0];
 
-                    //    if (isSlashlWin == false)
-                    //    {
-                    //        checkerBackslash = GameTeamFieldsVerificationCheckerHorizontal.CheckerBackslash(boardToCheck, lenghtToCheck, teamGameSymbols);
-                    //        return checkerBackslash;
-                    //    }
+                        if (isSlashlWin == false)
+                        {
+                            checkerBackslash = GameTeamFieldsVerificationCheckerBackslash.GameTeamCheckerBackslash(boardToCheck, lenghtToCheck, teamGameSymbols);
+                            return checkerBackslash;
+                        }
 
-                    //    return checkerSlash;
-                    //}
+                        return checkerSlash;
+                    }
 
-                   // return checkerVertical;
-                //}
+                    return checkerVertical;
+                }
 
                 return checkerHorizontal;
 

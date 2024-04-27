@@ -621,7 +621,7 @@ internal class Game : MonoBehaviour
                                 else
                                 {
                                     // to do - team number, maybe? T1. T2. T3, or maby crate the button team 1 winer?
-                                   //PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
+                                   PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
 
                                 }
 
