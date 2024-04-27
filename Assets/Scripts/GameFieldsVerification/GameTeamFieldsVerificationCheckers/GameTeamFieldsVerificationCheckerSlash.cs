@@ -83,7 +83,7 @@ namespace Assets.Scripts
                 int playersNumber = teamSymbols.Length;
 
                 for (rowIndex = startRowIndex; rowIndex <= boardRowLength; rowIndex++)
-            {
+                {
                     for (columnIndex = startColumnIndex; columnIndex <= boardColumnLength; columnIndex++)
                     {
                         if (matchingSymbol[0].Equals(""))
@@ -100,91 +100,94 @@ namespace Assets.Scripts
 
                             listCheckerSlash.Insert(0, checker);
                         }
-                        else if (rowIndex == crossedOut[0] && columnIndex == crossedOut[1])
+                        else //if (rowIndex == crossedOut[0] && columnIndex == crossedOut[1])
                         {
                             //if (matchingSymbol[0].Equals(boardToCheck[rowIndex, columnIndex]))
                             //{
-
-                                bool isMatchingArrayIncreased = false;
-
-                                string currentSymbolToCheck = matchingSymbol[0];
+                            if (rowIndex == crossedOut[0] && columnIndex == crossedOut[1])
+                            {
 
 
-                                string matchedSymbol = "";
 
-                                for (int z = 0; z < playersNumber; z++)
+                            
+                            bool isMatchingArrayIncreased = false;
+                            string currentSymbolToCheck = matchingSymbol[0];
+
+
+
+
+                            for (int z = 0; z < playersNumber; z++)
+                            {
+                                string teamSymbol = teamSymbols[z];
+
+                                if (teamSymbol.Equals(boardToCheck[rowIndex, columnIndex]))
                                 {
-                                    string teamSymbol = teamSymbols[z];
-
-                                    if (teamSymbol.Equals(boardToCheck[rowIndex, columnIndex]))
-                                    {
-                                        matchedSymbol = teamSymbol;
-
-                                        isMatchingArrayIncreased = true;
-                                        break;
-                                    }
-
-
+                                    isMatchingArrayIncreased = true;
+                                    break;
                                 }
+                            }
 
-                                bool isPreviousSymbolBelongToTeam = false;
+                            bool isPreviousSymbolBelongToTeam = false;
 
-                                for (int z = 0; z < playersNumber; z++)
+                            for (int z = 0; z < playersNumber; z++)
+                            {
+                                string teamSymbol = teamSymbols[z];
+
+                                if (teamSymbol.Equals(currentSymbolToCheck))
                                 {
-                                    string teamSymbol = teamSymbols[z];
-
-                                    if (teamSymbol.Equals(currentSymbolToCheck))
-                                    {
-                                        isPreviousSymbolBelongToTeam = true;
-                                        break;
-                                    }
-
+                                    isPreviousSymbolBelongToTeam = true;
+                                    break;
                                 }
+                            }
 
 
-                                if (isMatchingArrayIncreased == true)
+                            if (isMatchingArrayIncreased == true)
+                            {
+
+
+                                if (numberOfMatchingSymbols[0] < lenghtToCheck)
                                 {
+                                    //numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
+
+                                    //crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
+                                    //crossedOut[1] = crossedOut[1] + increaseNumberForCrossedOutColumn;
+
+                                    //int currentIndexY = indexYToMark[0];
+                                    //coordinateXYToMark[currentIndexY, 0] = rowIndex;
+                                    //coordinateXYToMark[currentIndexY, 1] = columnIndex;
+                                    //indexYToMark[0] = currentIndexY + increaseIndexXY;
+
+                                    //listCheckerSlash.Insert(0, checker);
 
 
-                                    if (numberOfMatchingSymbols[0] < lenghtToCheck)
+                                    
+                                    if (isPreviousSymbolBelongToTeam == false)
                                     {
-                                        //numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
-
-                                        //crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
-                                        //crossedOut[1] = crossedOut[1] + increaseNumberForCrossedOutColumn;
-
-                                        //int currentIndexY = indexYToMark[0];
-                                        //coordinateXYToMark[currentIndexY, 0] = rowIndex;
-                                        //coordinateXYToMark[currentIndexY, 1] = columnIndex;
-                                        //indexYToMark[0] = currentIndexY + increaseIndexXY;
-
-                                        //listCheckerSlash.Insert(0, checker);
-
-
-                                        if (isPreviousSymbolBelongToTeam == false)
-                                        {
-                                            matchingSymbol[0] = boardToCheck[rowIndex, columnIndex];
+                                        matchingSymbol[0] = boardToCheck[rowIndex, columnIndex];
                                             numberOfMatchingSymbols[0] = increaseNumberForMatchingSymbol;
 
-                                            crossedOut[0] = rowIndex + increaseNumberForCrossedOutRww;
-                                            crossedOut[1] = columnIndex + increaseNumberForCrossedOutColumn;
+                                            crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
+                                            crossedOut[1] = crossedOut[1] + increaseNumberForCrossedOutColumn;
 
-                                        //coordinateXYToMark[0, 0] = rowIndex;
-                                        //coordinateXYToMark[0, 1] = columnIndex;
-                                        //indexYToMark[0] = 1;
+                                            //int currentIndexY = indexYToMark[0];
+                                            //coordinateXYToMark[currentIndexY, 0] = rowIndex;
+                                            //coordinateXYToMark[currentIndexY, 1] = columnIndex;
+                                            //indexYToMark[0] = currentIndexY + increaseIndexXY;
 
-                                        int currentIndexY = indexYToMark[0];
+
+                                            indexYToMark[0] = 1;
+                                            coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
                                             coordinateXYToMark[0, 0] = rowIndex;
                                             coordinateXYToMark[0, 1] = columnIndex;
-                                            indexYToMark[0] = currentIndexY;
+
 
                                             listCheckerSlash.Insert(0, checker);
 
 
 
-                                        }
-                                        else
-                                        {
+                                    }
+                                    else
+                                    {
                                             numberOfMatchingSymbols[0] = numberOfMatchingSymbols[0] + increaseNumberForMatchingSymbol;
 
                                             crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
@@ -201,69 +204,69 @@ namespace Assets.Scripts
                                         }
 
 
-                                    }
-                                    else if (numberOfMatchingSymbols[0] == lenghtToCheck)
-                                    {
-                                        checker = true;
+                                }
+                                else if (numberOfMatchingSymbols[0] == lenghtToCheck)
+                                {
+                                    checker = true;
 
-                                        int currentIndexY = indexYToMark[0];
-                                        coordinateXYToMark[currentIndexY, 0] = rowIndex;
-                                        coordinateXYToMark[currentIndexY, 1] = columnIndex;
+                                    int currentIndexY = indexYToMark[0];
+                                    coordinateXYToMark[currentIndexY, 0] = rowIndex;
+                                    coordinateXYToMark[currentIndexY, 1] = columnIndex;
 
-                                        listCheckerSlash.Insert(0, checker);
-                                        listCheckerSlash.Insert(1, coordinateXYToMark);
+                                    listCheckerSlash.Insert(0, checker);
+                                    listCheckerSlash.Insert(1, coordinateXYToMark);
 
-                                        string kindOfChecker = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerSlash();
-                                        listCheckerSlash.Insert(2, kindOfChecker);
-                                    }
-
-
-
-
-
-
-
-
-
-
-
-
+                                    string kindOfChecker = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerSlash();
+                                    listCheckerSlash.Insert(2, kindOfChecker);
                                 }
 
-                                if (isMatchingArrayIncreased == false)
+
+
+
+
+
+
+
+
+
+
+
+                            }
+
+                            if (isMatchingArrayIncreased == false)
+                            {
+
+
+
+                                if ((boardColumnLength - columnIndex) < lenghtToCheck)
                                 {
-
-
-
-                                    if ((boardColumnLength - columnIndex) < lenghtToCheck)
-                                    {
-                                        if ((boardRowLength - rowIndex) < lenghtToCheck)
-                                        {
-                                            checker = false;
-                                            listCheckerSlash.Insert(0, checker);
-                                            return listCheckerSlash;
-                                        }
-
-                                    }
-                                    else if ((boardColumnLength - lenghtToCheck) < lenghtToCheck)
+                                    if ((boardRowLength - rowIndex) < lenghtToCheck)
                                     {
                                         checker = false;
                                         listCheckerSlash.Insert(0, checker);
                                         return listCheckerSlash;
-
                                     }
 
-
-
-
-
-
-
-
-
-
+                                }
+                                else if ((boardColumnLength - lenghtToCheck) < lenghtToCheck)
+                                {
+                                    checker = false;
+                                    listCheckerSlash.Insert(0, checker);
+                                    return listCheckerSlash;
 
                                 }
+
+
+
+
+
+
+
+
+
+
+
+                            }
 
 
 
@@ -303,6 +306,8 @@ namespace Assets.Scripts
 
                             //    }
                             //}
+
+                        }
                         }
 
                     }

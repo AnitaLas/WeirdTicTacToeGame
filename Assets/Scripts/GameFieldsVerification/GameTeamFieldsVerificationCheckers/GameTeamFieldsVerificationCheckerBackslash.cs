@@ -103,16 +103,12 @@ namespace Assets.Scripts
                                 string currentSymbolToCheck = matchingSymbol[0];
 
 
-                                string matchedSymbol = "";
-
                                 for (int z = 0; z < playersNumber; z++)
                                 {
                                     string teamSymbol = teamSymbols[z];
 
                                     if (teamSymbol.Equals(boardToCheck[rowIndex, columnIndex]))
                                     {
-                                        matchedSymbol = teamSymbol;
-
                                         isMatchingArrayIncreased = true;
                                         break;
                                     }
@@ -149,11 +145,13 @@ namespace Assets.Scripts
                                             crossedOut[0] = crossedOut[0] + increaseNumberForCrossedOutRww;
                                             crossedOut[1] = crossedOut[1] - decreaseNumberForCrossedOutColumn;
 
-                                            int currentIndexY = indexYToMark[0];
-                                            coordinateXYToMark[currentIndexY, 0] = rowIndex;
-                                            coordinateXYToMark[currentIndexY, 1] = columnIndex;
+                                        indexYToMark[0] = 1;
+                                        //int currentIndexY = indexYToMark[0];
+                                        coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                        coordinateXYToMark[0, 0] = rowIndex;
+                                            coordinateXYToMark[0, 1] = columnIndex;
 
-                                            indexYToMark[0] = currentIndexY + increaseIndexXY;
+                                            
 
                                             listCheckerBackslash.Insert(0, checker);
 

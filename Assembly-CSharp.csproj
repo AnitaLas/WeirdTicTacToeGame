@@ -176,6 +176,7 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonMethodsForButtonsWithNumberForLenghtToChcekAndGaps.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsWithNumbers\GameConfigurationButtonsWithNumbersForGaps.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsCreate.cs" />
+    <Compile Include="Assets\Scripts\GameFieldsVerification\GameTeamFieldsVerificationCheckers\GameTeamFieldsVerificationCheckerBackslash.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamNumbers\GameConfigurationTeamNumbersCommon\GameConfigurationButtonsTeamNumbersTagName.cs" />
     <Compile Include="Assets\Scripts\GameName\GameNameTextCreate.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersArrows\GameConfigurationTeamMembersButtonsArrowsActions.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbolButtons\GameConfigurationPlayerSymbolButtonsActions.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationPlayerSymbol\GameConfigurationPlayerSymbolTableWithSymbols.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\GameFieldsVerification\GameTeamFieldsVerificationCheckers\GameTeamFieldsVerificationCheckerSlash.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersPlayersNumberVerification\GameConfigurationTeamMembersPlayersNumberVerification.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameFieldsVerificationCommon\GameFieldsVerificationCommonMethods.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameCommon\PlayGameCommonButtonsName.cs" />
@@ -230,8 +232,6 @@
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsTagName.cs" />
     <Compile Include="Assets\Scripts\GameCommonMethods\GameCommonMethodsMain.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlayHelpText.cs" />
-    <Compile Include="Assets\Scripts\GameFieldsVerification\GameTeamFieldsVerificationCheckers\GameTeamFieldsVerificationCheckerSlash.cs" />
-    <Compile Include="Assets\Scripts\GameFieldsVerification\GameTeamFieldsVerificationCheckers\GameTeamFieldsVerificationCheckerBackslash.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
