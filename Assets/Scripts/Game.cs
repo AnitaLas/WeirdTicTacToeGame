@@ -186,11 +186,11 @@ internal class Game : MonoBehaviour
         // set up: common
         _configurationBoardGameNumberOfRows = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfRows;
         _numberOfRows = _configurationBoardGameNumberOfRows;
-        _numberOfRows = 10;
+        _numberOfRows = 3;
 
         _configurationBoardGameNumberOfColumns = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfColumns;
         _numberOfColumns = _configurationBoardGameNumberOfColumns;
-        _numberOfColumns = 9;
+        _numberOfColumns = 3;
 
         _maxCubePlayNumber = _numberOfRows * _numberOfColumns * _numberOfDepths;
 
@@ -554,17 +554,24 @@ internal class Game : MonoBehaviour
                             else
                             {
                                 //_gameBoardVerification2D = 
-                               // Debug.Log("isTeamGame 1: " + isTeamGame);
+                                // Debug.Log("isTeamGame 1: " + isTeamGame);
 
 
 
 
                                 //_gameBoardVerification2D = new string[,]
                                 //{
-                                //    {"","",""},
-                                //    {"","",""},
-                                //    {"X","X","W"}
+                                //    {"X","",""},
+                                //    {"","O",""},
+                                //    {"","","X"}
                                 //};
+
+                                _gameBoardVerification2D = new string[,]
+                                {
+                                    {"X","O","X"},
+                                    {"","",""},
+                                    {"","","X"}
+                                };
 
                                 // to do xxoo + win = 3 = return error! - to fix
 
@@ -599,8 +606,8 @@ internal class Game : MonoBehaviour
 
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
-                            //Debug.Log(" ----------- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz ");
-                            //Debug.Log("_isWinnerExists: " + _isWinnerExists);
+                            Debug.Log(" ----------- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz ");
+                            Debug.Log("_isWinnerExists: " + _isWinnerExists);
 
                             if (_isWinnerExists == true)
                             {
@@ -621,7 +628,7 @@ internal class Game : MonoBehaviour
                                 else
                                 {
                                     // to do - team number, maybe? T1. T2. T3, or maby crate the button team 1 winer?
-                                   PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
+                                  //PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
 
                                 }
 

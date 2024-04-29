@@ -221,6 +221,16 @@ namespace Assets.Scripts
                                     listCheckerHorizontal.Insert(0, checker);
                                     listCheckerHorizontal.Insert(1, coordinateXYToMark);
 
+                                    //for (int z = 0; z < coordinateXYToMark.GetLength(0); z++)
+                                    //{
+                                    //    for (int j = 0; j < coordinateXYToMark.GetLength(1); j++)
+                                    //    {
+                                    //        UnityEngine.Debug.Log($"coordinateXYToMark: [{z}, {j}] = " + coordinateXYToMark[z, j]);
+
+                                    //    }
+                                    //}
+
+
                                     string kindOfChecker = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerHorizontal();
                                     listCheckerHorizontal.Insert(2, kindOfChecker);
 
