@@ -108,6 +108,9 @@ namespace Assets.Scripts
                 int coordinateYToMark = winnerCoordinateXYForCubePlay[indexColumnsWinner, 0];
                 int coordinateXToMark = winnerCoordinateXYForCubePlay[indexColumnsWinner, 1];
 
+                //UnityEngine.Debug.Log($"coordinateYToMark: " + coordinateYToMark);
+                //UnityEngine.Debug.Log($"coordinateXToMark: " + coordinateXToMark);
+
                 cubePlay = gameBoard[indexDepth, coordinateYToMark, coordinateXToMark];
                 ChangeOneWinnerCubePlayForChecker(cubePlay, prefabCubePlayFrame, newTextColor, winColourForCubePlay, _isGame2D, newFontSize, tagCubePlayGameWin);
             }
@@ -139,14 +142,16 @@ namespace Assets.Scripts
             int coordinateYToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForColumns - 1, 0];
             int coordinateXToMarkOther = winnerCoordinateXYForCubePlay[0, 1];
 
+            Debug.Log("coordinateYToMarkOther: " + coordinateYToMarkOther);
             //int startIndexXForOtherCubePlay = coordinateXToMarkOther + 1;
             int startIndexXForOtherCubePlay = coordinateXToMarkOther + 1;
+            Debug.Log("startIndexXForOtherCubePlay: " + startIndexXForOtherCubePlay);
 
             int maxIndexXForLenghtForColumns = lenghtForColumns - 1;
             int maxIndexXForWinnerLenghtForColumns = winnerLenghtForColumns - 1;
 
             int playersNumbers = winnerTeamSymbols.Length;
-
+           
             //Debug.Log(" - 1 - ");
             if (winnerCoordinateXYForCubePlay[0, maxIndexXForWinnerLenghtForColumns] < maxIndexXForLenghtForColumns)
             {
@@ -157,34 +162,80 @@ namespace Assets.Scripts
                     cubePlay = gameBoard[indexDepth, coordinateYToMarkOther, i];
 
                     string symbolToCompare = GameCommonMethodsMain.GetCubePlayPlayerSymbol(cubePlay);
-                    Debug.Log("-- i = " + i);
-                    Debug.Log("symbolToCompare: " + symbolToCompare);
+                     Debug.Log("-- i = " + i);
+                    // Debug.Log("startIndexXForOtherCubePlay = " + startIndexXForOtherCubePlays);
+                    //Debug.Log("symbolToCompare: " + symbolToCompare);
 
+                    bool isTeamSymbol = false;
+                    int ii = 0;
+                  
+                   //while (isTeamSymbol == false)
+                   ////while (ii<2)
+                   //{
+                        Debug.Log("ii: " + ii);
+                        Debug.Log("isTeamSymbol: " + isTeamSymbol);
+                        int[] isSymbolEqual = new int[2];
+                        isSymbolEqual[0] = 0;
+                        isSymbolEqual[1] = 0;
 
-                    for (int a = 0; a < playersNumbers; a++)
-                    {
-                        //Debug.Log(" - 4 - ");
-                        string teamSymbol = winnerTeamSymbols[a];
-
-                        //Debug.Log("playerSymbol: " + playerSymbol);
-                        //Debug.Log("teamSymbol: " + teamSymbol);
-                        //Debug.Log("symbolToCompare: " + symbolToCompare);
-                        //Debug.Log(" ------------------------  ");
-
-                        if (teamSymbol.Equals(symbolToCompare))
+                        for (int a = 0; a < playersNumbers; a++)
                         {
-                            //Debug.Log(" - a: " + a);
-                            ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-                            //break;
+                            //Debug.Log(" - 4 - ");
+                            string teamSymbol = winnerTeamSymbols[a];
+
+                            //Debug.Log("playerSymbol: " + playerSymbol);
+                            //Debug.Log("teamSymbol: " + teamSymbol);
+                            //Debug.Log("symbolToCompare: " + symbolToCompare);
+                            //Debug.Log(" ------------------------  ");
+
+                            if (teamSymbol.Equals(symbolToCompare))
+                            {
+                                //Debug.Log("symbolToCompare: " + symbolToCompare);
+                                //ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+                                isSymbolEqual[0] = 1;
+                                //Debug.Log("isSymbolEqual[0]: " + isSymbolEqual[0]);
                         }
                         else
-                        {
-                           // break;
+                            {
+                                //Debug.Log(" 222222222222222222: ");
+                                isSymbolEqual[1] = 0;
+                  
+                            }                       
+
                         }
 
-                        Debug.Log(" ------------------------  ");
 
-                    }
+                        int sum = 0;
+
+                        for (int x = 0; x < isSymbolEqual.Length; x++)
+                        {
+                            int number = isSymbolEqual[x];
+
+                            sum = sum + number;
+
+                            Debug.Log(" A: ");
+
+                            if (sum > 0)
+                            {
+                                isTeamSymbol = true;
+                                Debug.Log(" D: ");
+                            ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+
+                        }
+                        else
+                            {
+                            Debug.Log(" C: ");
+                            isTeamSymbol = false;
+                                i = lenghtForColumns + 13;
+                            }
+
+
+                        }
+                        
+                        //ii++;
+                   //}
+
+                    
                     //Debug.Log(" ------------------------  ");
 
                     //if (playerSymbol.Equals(symbolToCompare))
@@ -201,6 +252,7 @@ namespace Assets.Scripts
 
         public static void ChangeAllCubePlayForCheckerHorizontal(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize, string[] winnerTeamSymbols)
         {
+            Debug.Log(" ????? 1111111111111111");
             ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
             ChangeOtherCubePlayForCheckerHorizontal(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize, winnerTeamSymbols);
         }
@@ -247,7 +299,10 @@ namespace Assets.Scripts
 
                         if (teamSymbol.Equals(symbolToCompare))
                             ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-
+                        //else
+                        //{
+                        //    break;
+                        //}
                     }
                 }
             }
@@ -362,6 +417,8 @@ namespace Assets.Scripts
                     }
                 }
 
+                //Debug.Log(" -------------------------------- ");
+
             }
 
             // ----
@@ -415,6 +472,8 @@ namespace Assets.Scripts
                         //break;
                     }
                 }
+
+                //Debug.Log(" -------------------------------- ");
             }
         }
 
@@ -676,8 +735,8 @@ namespace Assets.Scripts
 
         public static void ChangeAllCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize, string[] winnerTeamSymbols)
         {
-            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
-            ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize, winnerTeamSymbols);
+           ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
+            //ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize, winnerTeamSymbols);
 
         }
 
@@ -728,7 +787,21 @@ namespace Assets.Scripts
             string tagCubePlayGameOver = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagGameOver();
             string tagCubePlayGameWin = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagGameWin();
 
-            int[,]  winnerCoordinateXYForCubePlay = (int[,])listCheckerForWinner[1];
+            //for (int i = 0; i < listCheckerForWinner.Count; i++)
+            //{
+            //    Debug.Log("i ======= " + i);
+            //}
+            //int[,]  winnerCoordinateXYForCubePlay = (int[,])listCheckerForWinner[1];
+            int[,] winnerCoordinateXYForCubePlay = (int[,])listCheckerForWinner[1];
+
+            //for (int aaai = 0; aaai < winnerCoordinateXYForCubePlay.GetLength(0); aaai++)
+            //{
+            //    for (int z = 0; z < winnerCoordinateXYForCubePlay.GetLength(0); z++)
+            //    {
+            //        UnityEngine.Debug.Log($"coordinateXYToMark: [{aaai}, {z}] = " + winnerCoordinateXYForCubePlay[aaai, z]);
+            //    }
+            //}
+
             string winnerKindOfChecker = (string)listCheckerForWinner[2];
 
             string checkerHorizontal = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerHorizontal();
