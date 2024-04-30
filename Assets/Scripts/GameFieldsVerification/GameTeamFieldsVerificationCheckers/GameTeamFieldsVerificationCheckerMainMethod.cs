@@ -33,11 +33,11 @@ namespace Assets.Scripts
                         checkerSlash = GameTeamFieldsVerificationCheckerSlash.GmaeTeamCheckerSlash(boardToCheck, lenghtToCheck, teamGameSymbols);
                         bool isSlashlWin = (bool)checkerSlash[0];
 
-                        //if (isSlashlWin == false)
-                        //{
-                        //    checkerBackslash = GameTeamFieldsVerificationCheckerBackslash.GameTeamCheckerBackslash(boardToCheck, lenghtToCheck, teamGameSymbols);
-                        //    return checkerBackslash;
-                        //}
+                        if (isSlashlWin == false)
+                        {
+                            checkerBackslash = GameTeamFieldsVerificationCheckerBackslash.GameTeamCheckerBackslash(boardToCheck, lenghtToCheck, teamGameSymbols);
+                            return checkerBackslash;
+                        }
 
                         return checkerSlash;
                     }

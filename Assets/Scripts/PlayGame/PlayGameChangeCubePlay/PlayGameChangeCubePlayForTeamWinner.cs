@@ -142,110 +142,48 @@ namespace Assets.Scripts
             int coordinateYToMarkOther = winnerCoordinateXYForCubePlay[winnerLenghtForColumns - 1, 0];
             int coordinateXToMarkOther = winnerCoordinateXYForCubePlay[0, 1];
 
-            Debug.Log("coordinateYToMarkOther: " + coordinateYToMarkOther);
-            //int startIndexXForOtherCubePlay = coordinateXToMarkOther + 1;
             int startIndexXForOtherCubePlay = coordinateXToMarkOther + 1;
-            Debug.Log("startIndexXForOtherCubePlay: " + startIndexXForOtherCubePlay);
 
             int maxIndexXForLenghtForColumns = lenghtForColumns - 1;
             int maxIndexXForWinnerLenghtForColumns = winnerLenghtForColumns - 1;
 
             int playersNumbers = winnerTeamSymbols.Length;
            
-            //Debug.Log(" - 1 - ");
             if (winnerCoordinateXYForCubePlay[0, maxIndexXForWinnerLenghtForColumns] < maxIndexXForLenghtForColumns)
             {
-                //Debug.Log(" - 2 - ");
                 for (int i = startIndexXForOtherCubePlay; i < lenghtForColumns; i++)
                 {
-                    //Debug.Log("startIndexXForOtherCubePlay: " + startIndexXForOtherCubePlay);
                     cubePlay = gameBoard[indexDepth, coordinateYToMarkOther, i];
 
                     string symbolToCompare = GameCommonMethodsMain.GetCubePlayPlayerSymbol(cubePlay);
-                     Debug.Log("-- i = " + i);
-                    // Debug.Log("startIndexXForOtherCubePlay = " + startIndexXForOtherCubePlays);
-                    //Debug.Log("symbolToCompare: " + symbolToCompare);
 
-                    bool isTeamSymbol = false;
-                    int ii = 0;
-                  
-                   //while (isTeamSymbol == false)
-                   ////while (ii<2)
-                   //{
-                        Debug.Log("ii: " + ii);
-                        Debug.Log("isTeamSymbol: " + isTeamSymbol);
-                        int[] isSymbolEqual = new int[2];
-                        isSymbolEqual[0] = 0;
-                        isSymbolEqual[1] = 0;
+                    int[] isSymbolEqual = new int[2];
+                    isSymbolEqual[0] = 0;
+                    isSymbolEqual[1] = 0;
 
-                        for (int a = 0; a < playersNumbers; a++)
-                        {
-                            //Debug.Log(" - 4 - ");
-                            string teamSymbol = winnerTeamSymbols[a];
+                    for (int a = 0; a < playersNumbers; a++)
+                    {
+                        string teamSymbol = winnerTeamSymbols[a];
 
-                            //Debug.Log("playerSymbol: " + playerSymbol);
-                            //Debug.Log("teamSymbol: " + teamSymbol);
-                            //Debug.Log("symbolToCompare: " + symbolToCompare);
-                            //Debug.Log(" ------------------------  ");
-
-                            if (teamSymbol.Equals(symbolToCompare))
-                            {
-                                //Debug.Log("symbolToCompare: " + symbolToCompare);
-                                //ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-                                isSymbolEqual[0] = 1;
-                                //Debug.Log("isSymbolEqual[0]: " + isSymbolEqual[0]);
-                        }
+                        if (teamSymbol.Equals(symbolToCompare))
+                            isSymbolEqual[0] = 1;
                         else
-                            {
-                                //Debug.Log(" 222222222222222222: ");
-                                isSymbolEqual[1] = 0;
-                  
-                            }                       
+                            isSymbolEqual[1] = 0;
+                    }
 
-                        }
+                    int sum = 0;
 
+                    for (int x = 0; x < isSymbolEqual.Length; x++)
+                    {
+                        int number = isSymbolEqual[x];
+                        sum = sum + number;
 
-                        int sum = 0;
-
-                        for (int x = 0; x < isSymbolEqual.Length; x++)
-                        {
-                            int number = isSymbolEqual[x];
-
-                            sum = sum + number;
-
-                            Debug.Log(" A: ");
-
-                            if (sum > 0)
-                            {
-                                isTeamSymbol = true;
-                                Debug.Log(" D: ");
+                        if (sum > 0)
                             ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-
-                        }
                         else
-                            {
-                            Debug.Log(" C: ");
-                            isTeamSymbol = false;
-                                i = lenghtForColumns + 13;
-                            }
+                           i = lenghtForColumns + 13;
+                    }
 
-
-                        }
-                        
-                        //ii++;
-                   //}
-
-                    
-                    //Debug.Log(" ------------------------  ");
-
-                    //if (playerSymbol.Equals(symbolToCompare))
-                    //{
-                    //    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-                    //}
-                    //else
-                    //{
-                    //    break;
-                    //}
                 }
             }
         }
@@ -284,25 +222,31 @@ namespace Assets.Scripts
 
                     string symbolToCompare = GameCommonMethodsMain.GetCubePlayPlayerSymbol(cubePlay);
 
-                    //if (playerSymbol.Equals(symbolToCompare))
-                    //{
-                    //    ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);                 
-                    //}
-                    //else
-                    //{
-                    //    break;
-                    //}
+                    int[] isSymbolEqual = new int[2];
+                    isSymbolEqual[0] = 0;
+                    isSymbolEqual[1] = 0;
 
                     for (int a = 0; a < playersNumbers; a++)
                     {
                         string teamSymbol = winnerTeamSymbols[a];
 
                         if (teamSymbol.Equals(symbolToCompare))
+                            isSymbolEqual[0] = 1;
+                        else
+                            isSymbolEqual[1] = 0;
+                    }
+
+                    int sum = 0;
+
+                    for (int x = 0; x < isSymbolEqual.Length; x++)
+                    {
+                        int number = isSymbolEqual[x];
+                        sum = sum + number;
+
+                        if (sum > 0)
                             ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-                        //else
-                        //{
-                        //    break;
-                        //}
+                        else
+                            i = lenghtForRows + 13;
                     }
                 }
             }
@@ -397,26 +341,51 @@ namespace Assets.Scripts
                 //    break;
                 //}
 
-                for (int a = 0; a < winnerTeamSymbols.Length; a++)
-                {
+                //for (int a = 0; a < winnerTeamSymbols.Length; a++)
+                //{
 
+                //    string teamSymbol = winnerTeamSymbols[a];
+                //    //Debug.Log(" 2 A symbolToCompare: " + symbolToCompare);
+                //    //Debug.Log(" 2 A teamSymbol: " + teamSymbol);
+
+                //    if (teamSymbol.Equals(symbolToCompare))
+                //    {
+                //        //Debug.Log(" 3 A symbolToCompare: " + symbolToCompare);
+                //        //Debug.Log(" 3 A teamSymbol: " + teamSymbol);
+                //        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+
+                //    }
+                //    else
+                //    {
+                //        //break;
+                //    }
+                //}
+                int[] isSymbolEqual = new int[2];
+                isSymbolEqual[0] = 0;
+                isSymbolEqual[1] = 0;
+
+                for (int a = 0; a < playersNumbers; a++)
+                {
                     string teamSymbol = winnerTeamSymbols[a];
-                    //Debug.Log(" 2 A symbolToCompare: " + symbolToCompare);
-                    //Debug.Log(" 2 A teamSymbol: " + teamSymbol);
 
                     if (teamSymbol.Equals(symbolToCompare))
-                    {
-                        //Debug.Log(" 3 A symbolToCompare: " + symbolToCompare);
-                        //Debug.Log(" 3 A teamSymbol: " + teamSymbol);
-                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-
-                    }
+                        isSymbolEqual[0] = 1;
                     else
-                    {
-                        //break;
-                    }
+                        isSymbolEqual[1] = 0;
                 }
 
+                int sum = 0;
+
+                for (int x = 0; x < isSymbolEqual.Length; x++)
+                {
+                    int number = isSymbolEqual[x];
+                    sum = sum + number;
+
+                    if (sum > 0)
+                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+                    else
+                        i = minIndexXToCheck - 13;
+                }
                 //Debug.Log(" -------------------------------- ");
 
             }
@@ -453,26 +422,51 @@ namespace Assets.Scripts
                 //    break;
                 //}
 
-                for (int a = 0; a < winnerTeamSymbols.Length; a++)
-                {
+                //for (int a = 0; a < winnerTeamSymbols.Length; a++)
+                //{
 
+                //    string teamSymbol = winnerTeamSymbols[a];
+                //    //Debug.Log(" 2 A symbolToCompare: " + symbolToCompare);
+                //    //Debug.Log(" 2 A teamSymbol: " + teamSymbol);
+
+                //    if (teamSymbol.Equals(symbolToCompare))
+                //    {
+                //        //Debug.Log(" 3 A symbolToCompare: " + symbolToCompare);
+                //        //Debug.Log(" 3 A teamSymbol: " + teamSymbol);
+                //        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+
+                //    }
+                //    else
+                //    {
+                //        //break;
+                //    }
+                //}
+                int[] isSymbolEqual = new int[2];
+                isSymbolEqual[0] = 0;
+                isSymbolEqual[1] = 0;
+
+                for (int a = 0; a < playersNumbers; a++)
+                {
                     string teamSymbol = winnerTeamSymbols[a];
-                    //Debug.Log(" 2 A symbolToCompare: " + symbolToCompare);
-                    //Debug.Log(" 2 A teamSymbol: " + teamSymbol);
 
                     if (teamSymbol.Equals(symbolToCompare))
-                    {
-                        //Debug.Log(" 3 A symbolToCompare: " + symbolToCompare);
-                        //Debug.Log(" 3 A teamSymbol: " + teamSymbol);
-                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-
-                    }
+                        isSymbolEqual[0] = 1;
                     else
-                    {
-                        //break;
-                    }
+                        isSymbolEqual[1] = 0;
                 }
 
+                int sum = 0;
+
+                for (int x = 0; x < isSymbolEqual.Length; x++)
+                {
+                    int number = isSymbolEqual[x];
+                    sum = sum + number;
+
+                    if (sum > 0)
+                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+                    else
+                        i = maxIndexXToCheck + 13;
+                }
                 //Debug.Log(" -------------------------------- ");
             }
         }
@@ -556,26 +550,55 @@ namespace Assets.Scripts
                 //}
 
 
-                for (int a = 0; a < winnerTeamSymbols.Length; a++)
-                {
+                //for (int a = 0; a < winnerTeamSymbols.Length; a++)
+                //{
 
+                //    string teamSymbol = winnerTeamSymbols[a];
+                //    //Debug.Log(" 2 A symbolToCompare: " + symbolToCompare);
+                //    //Debug.Log(" 2 A teamSymbol: " + teamSymbol);
+
+                //    if (teamSymbol.Equals(symbolToCompare))
+                //    {
+                //        //Debug.Log(" 3 A symbolToCompare: " + symbolToCompare);
+                //        //Debug.Log(" 3 A teamSymbol: " + teamSymbol);
+                //        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+
+                //    }
+                //    else
+                //    {
+                //        //break;
+                //    }
+                //}
+
+
+
+
+                int[] isSymbolEqual = new int[2];
+                isSymbolEqual[0] = 0;
+                isSymbolEqual[1] = 0;
+
+                for (int a = 0; a < playersNumbers; a++)
+                {
                     string teamSymbol = winnerTeamSymbols[a];
-                    //Debug.Log(" 2 A symbolToCompare: " + symbolToCompare);
-                    //Debug.Log(" 2 A teamSymbol: " + teamSymbol);
 
                     if (teamSymbol.Equals(symbolToCompare))
-                    {
-                        //Debug.Log(" 3 A symbolToCompare: " + symbolToCompare);
-                        //Debug.Log(" 3 A teamSymbol: " + teamSymbol);
-                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-
-                    }
+                        isSymbolEqual[0] = 1;
                     else
-                    {
-                        //break;
-                    }
+                        isSymbolEqual[1] = 0;
                 }
 
+                int sum = 0;
+
+                for (int x = 0; x < isSymbolEqual.Length; x++)
+                {
+                    int number = isSymbolEqual[x];
+                    sum = sum + number;
+
+                    if (sum > 0)
+                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+                    else
+                        i = maxIndexXToCheck + 13;
+                }
                 //Debug.Log(" -------------------------------- ");
             }
 
@@ -614,27 +637,54 @@ namespace Assets.Scripts
                 //    break;
                 //}
 
-                for (int a = 0; a < winnerTeamSymbols.Length; a++)
-                {
+                //for (int a = 0; a < winnerTeamSymbols.Length; a++)
+                //{
 
+                //    string teamSymbol = winnerTeamSymbols[a];
+                //    Debug.Log(" 2 B symbolToCompare: " + symbolToCompare);
+                //    Debug.Log(" 2 B teamSymbol: " + teamSymbol);
+
+                //    if (teamSymbol.Equals(symbolToCompare))
+                //    {
+                //        Debug.Log(" 3 B symbolToCompare: " + symbolToCompare);
+                //        Debug.Log(" 3 B teamSymbol: " + teamSymbol);
+                //        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+
+                //    }
+                //    else
+                //    {
+                //        //break;
+                //    }
+
+                //    Debug.Log(" -------------------------------- ");
+                //}
+                int[] isSymbolEqual = new int[2];
+                isSymbolEqual[0] = 0;
+                isSymbolEqual[1] = 0;
+
+                for (int a = 0; a < playersNumbers; a++)
+                {
                     string teamSymbol = winnerTeamSymbols[a];
-                    Debug.Log(" 2 B symbolToCompare: " + symbolToCompare);
-                    Debug.Log(" 2 B teamSymbol: " + teamSymbol);
 
                     if (teamSymbol.Equals(symbolToCompare))
-                    {
-                        Debug.Log(" 3 B symbolToCompare: " + symbolToCompare);
-                        Debug.Log(" 3 B teamSymbol: " + teamSymbol);
-                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
-
-                    }
+                        isSymbolEqual[0] = 1;
                     else
-                    {
-                        //break;
-                    }
-
-                    Debug.Log(" -------------------------------- ");
+                        isSymbolEqual[1] = 0;
                 }
+
+                int sum = 0;
+
+                for (int x = 0; x < isSymbolEqual.Length; x++)
+                {
+                    int number = isSymbolEqual[x];
+                    sum = sum + number;
+
+                    if (sum > 0)
+                        ChangeOneOtherCubePlay(prefabCubePlayFrame, cubePlay, winColourForCubePlay, tagCubePlayGameWin, newTextColor, newFontSize);
+                    else
+                        i = minIndexXToCheck - 13;
+                }
+
             }
         }
 
@@ -736,7 +786,7 @@ namespace Assets.Scripts
         public static void ChangeAllCubePlayForCheckerSlash(GameObject[,,] gameBoard, string playerSymbol, int[,] winnerCoordinateXYForCubePlay, string tagCubePlayGameWin, GameObject prefabCubePlayFrame, Material winColourForCubePlay, Color newTextColor, float newFontSize, string[] winnerTeamSymbols)
         {
            ChangeWinnerCubePlayForChecker(gameBoard, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize);
-            //ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize, winnerTeamSymbols);
+           ChangeOtherCubePlayForCheckerSlash(gameBoard, playerSymbol, winnerCoordinateXYForCubePlay, tagCubePlayGameWin, prefabCubePlayFrame, winColourForCubePlay, newTextColor, newFontSize, winnerTeamSymbols);
 
         }
 
