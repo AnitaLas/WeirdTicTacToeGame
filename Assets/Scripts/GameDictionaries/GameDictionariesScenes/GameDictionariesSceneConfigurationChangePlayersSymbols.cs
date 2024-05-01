@@ -24,9 +24,9 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
                 { 8, "ConfigurationChangePlayersSymbolsTableNumberForAll" },
 
                 // button: team game 1
-                //{ 9, "ConfigurationChangePlayersSymbolsButtonChangeRandomlyPlayersSymbols" },
-                //{ 10, "ConfigurationChangePlayersSymbolsButtonChangeRandomlyPlayersSymbols" },
-                //{ 11, "ConfigurationChangePlayersSymbolsButtonChangeRandomlyPlayersSymbols" },
+                { 9, "ConfigurationChangePlayersSymbolsBetweenTeams" },
+                { 10, "ConfigurationChangePlayersSymbolsChangeNumberBetweenTeams" },
+                { 11, "ConfigurationChangePlayersSymbolsTableNumberBetweenTeams" },
 
                 // button: team game 2
                 //{ 12, "ConfigurationChangePlayersSymbolsButtonChangeRandomlyPlayersSymbols" },
@@ -54,6 +54,8 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
                 { 5, "TIME IN SECONDS" },
                 { 6, "   RANDOMLY" }, // the same as in id 2
                 { 7, "    FOR ALL" }, // the same as in id 2
+                //{ 8, "BETWEEN TEAMS" }, 
+                { 8, "BTW. TEAMS" }, // the same as in id 2
 
 
 

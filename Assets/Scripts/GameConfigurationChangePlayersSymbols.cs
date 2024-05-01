@@ -34,6 +34,11 @@ namespace Assets.Scripts
         private static bool isTeamGame = false;
         private bool isCellphoneMode = true;
 
+        public static bool _configurationTraditionalGame1;
+        public static bool _configurationTraditionalGame2;
+        public static bool _configurationTeamGame1;
+        public static bool _configurationTeamGame2;
+
         public static int timeButtonRandomly;
         public static int timeButtonForAll;
         public static int timeButtonSwitchSymbolsBetweenTeams;
@@ -64,6 +69,15 @@ namespace Assets.Scripts
             timeButtonForAll = 0;
             timeButtonSwitchSymbolsBetweenTeams = 0;
             isEqualMoveQuantityForBothTeams = true;
+
+            _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+            _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
+
+            _configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
+            _configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
+
+            isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
+
 
             _tagConfigurationChangePlayerSymbolButtonSave = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangePlayersSymbolsButtonSave();
             _tagConfigurationChangePlayerSymbolButtonBack = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangePlayersSymbolsButtonBack();

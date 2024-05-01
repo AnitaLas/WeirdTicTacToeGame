@@ -20,6 +20,51 @@ using Assets.Scripts;
             ChangeDataForGameConfigurationButtonsWithChosenText(buttonsNumber);
         }
 
+        //public static void ChangeDataForGameConfigurationButtonsChangePlayersSymbols(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber, float[] newYForButtons)
+        //{
+        //    float newCoordinateXForButtonWithText = -0.85f; // columns -> 14
+        //    //float newCoordinateXForButtonWithText = -0.0f; // columns -> 14
+        //    float newCoordinateZForButtonWithText = 0.175f;
+        //    float newCoordinateXForButtonWithNumber = 0.25f; // columns -> 14
+        //    float newCoordinateZForButtonWithNumber = 0f;
+
+        //    ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateXForButtonWithText, newCoordinateZForButtonWithText);
+        //    ChangeCoordinatesXYZForGameConfigurationButtons(buttonsNumber, newYForButtons, newCoordinateXForButtonWithNumber, newCoordinateZForButtonWithNumber);
+        //    ChangeDataForGameConfigurationButtonsWithChosenText(buttonsNumber);
+        //    ChangeCoordinatesYForGameConfigurationButtons(buttonsNumber);
+        //}
+
+        //public static void ChangeCoordinatesYForGameConfigurationButtons(List<GameObject[,,]> buttons)
+        //{
+        //    int maxIndexDepth = 1;
+        //    int maxIndexColumn;
+        //    int maxIndexRow;
+        //    int buttonsNumber = buttons.Count;
+        //    int maxButtonNumber = buttonsNumber - 1;
+
+        //    float newCoordinateY = -0.2f;
+
+        //    for (int i = 0; i < buttonsNumber; i++)
+        //    {
+        //        GameObject[,,] oneButton = buttons[i];
+
+        //        maxIndexColumn = oneButton.GetLength(2);
+        //        maxIndexRow = oneButton.GetLength(1);
+
+        //        for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+        //        {
+        //            for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+        //            {
+        //                for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+        //                {
+        //                    GameObject cubePlay = oneButton[indexDepth, indexRow, indexColumn];
+        //                    GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
         public static void ChangeCoordinatesXYZForGameConfigurationButtons(List<GameObject[,,]> buttons, float[] newYForButtons, float newCoordinateX, float newCoordinateZ)
         {
             int maxIndexDepth = 1;

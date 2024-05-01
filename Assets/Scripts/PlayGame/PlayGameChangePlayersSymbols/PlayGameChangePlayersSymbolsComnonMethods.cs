@@ -283,7 +283,7 @@ namespace Assets.Scripts
 
                     if (takenSymbol == oldSymbol)
                     {
-                        playersSymbols[i] = newSymbol;
+                        playersSymbols[j] = newSymbol;
                     }
                 }
             }

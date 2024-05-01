@@ -115,5 +115,26 @@ namespace Assets.Scripts
 
             return button;
         }
+
+        public static GameObject[,,] CreateCommonButtonForText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
+        {
+            GameObject[,,] tableButtonNewGame;
+
+            int numberOfDepths = 1;
+            int numberOfRows = 3;
+            int numberOfColumns = 14;
+
+            string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
+
+            tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
+
+            float newCoordinateY = 0f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
+
+            float newScale = 0.3f;
+            ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
+
+            return tableButtonNewGame;
+        }
     }
 }
