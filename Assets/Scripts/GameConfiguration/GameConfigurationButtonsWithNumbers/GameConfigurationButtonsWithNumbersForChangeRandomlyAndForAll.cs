@@ -33,5 +33,13 @@ namespace Assets.Scripts
             return time;
         }
 
+        public static int SetUpChosenTimeForConfigurationBetweenTeams(GameObject[,,] _buttonsWithNumbers, string gameObjectName)
+        {
+            string tagConfigurationBoardGameChangeNumberBetweenTeams = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberBetweenTeams();
+            SetUpDefaultTime(tagConfigurationBoardGameChangeNumberBetweenTeams);
+            int time = GameConfigurationButtonsCommonMethods.SetUpChosenNumberForConfigurationBetweenTeams(_buttonsWithNumbers, gameObjectName);
+            return time;
+        }
+
     }
 }
