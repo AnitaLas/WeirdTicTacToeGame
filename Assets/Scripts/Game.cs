@@ -186,11 +186,11 @@ internal class Game : MonoBehaviour
         // set up: common
         _configurationBoardGameNumberOfRows = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfRows;
         _numberOfRows = _configurationBoardGameNumberOfRows;
-        _numberOfRows = 10;
+        //_numberOfRows = 10;
 
         _configurationBoardGameNumberOfColumns = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfColumns;
         _numberOfColumns = _configurationBoardGameNumberOfColumns;
-        _numberOfColumns = 9;
+        //_numberOfColumns = 9;
 
         _maxCubePlayNumber = _numberOfRows * _numberOfColumns * _numberOfDepths;
 
@@ -606,8 +606,8 @@ internal class Game : MonoBehaviour
 
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
-                            Debug.Log(" ----------- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz ");
-                            Debug.Log("_isWinnerExists: " + _isWinnerExists);
+                            //Debug.Log(" ----------- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz ");
+                            //Debug.Log("_isWinnerExists: " + _isWinnerExists);
 
                             if (_isWinnerExists == true)
                             {
@@ -789,6 +789,25 @@ internal class Game : MonoBehaviour
                         _oldSymbolsForChande = _newDataForPlayersSymbols[0];
                         _newSymbolsForChande = _newDataForPlayersSymbols[1];
                         _newPlayersSymbols = _newDataForPlayersSymbols[2];
+
+                        //for (int i = 0; i < _oldSymbolsForChande.Length; i++)
+                        //{
+                        //    Debug.Log($"_oldSymbolsForChande[{i}]" + _oldSymbolsForChande[i]);
+                        //}
+                        //Debug.Log(" ----------------------------------------------------------- ");
+
+                        //for (int i = 0; i < _newSymbolsForChande.Length; i++)
+                        //{
+                        //    Debug.Log($"_newSymbolsForChande[{i}]" + _newSymbolsForChande[i]);
+                        //}
+                        //Debug.Log(" ----------------------------------------------------------- ");
+
+                        //for (int i = 0; i < _newPlayersSymbols.Length; i++)
+                        //{
+                        //    Debug.Log($"_newPlayersSymbols[{i}]" + _newPlayersSymbols[i]);
+                        //}
+                        //Debug.Log(" ----------------------------------------------------------- ");
+                        //Debug.Log(" ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz ");
 
                         PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChande, _newSymbolsForChande);
 

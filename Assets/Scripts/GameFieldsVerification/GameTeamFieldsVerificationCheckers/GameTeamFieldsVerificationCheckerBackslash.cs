@@ -147,8 +147,8 @@ namespace Assets.Scripts
                                             matchingSymbol[0] = boardToCheck[rowIndex, columnIndex];
                                             numberOfMatchingSymbols[0] = increaseNumberForMatchingSymbol;
 
-                                            Debug.Log("3 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
-                                            Debug.Log("3 matchingSymbol[0]: " + matchingSymbol[0]);
+                                            //Debug.Log("3 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
+                                            //Debug.Log("3 matchingSymbol[0]: " + matchingSymbol[0]);
 
                                             crossedOut[0] = rowIndex + increaseNumberForCrossedOutRww;
                                             crossedOut[1] = columnIndex - decreaseNumberForCrossedOutColumn;
@@ -217,8 +217,8 @@ namespace Assets.Scripts
                                     matchingSymbol[0] = boardToCheck[rowIndex, columnIndex];
                                     numberOfMatchingSymbols[0] = increaseNumberForMatchingSymbol;
 
-                                    Debug.Log("3 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
-                                    Debug.Log("3 matchingSymbol[0]: " + matchingSymbol[0]);
+                                    //Debug.Log("3 numberOfMatchingSymbols[0]: " + numberOfMatchingSymbols[0]);
+                                    //Debug.Log("3 matchingSymbol[0]: " + matchingSymbol[0]);
 
                                     crossedOut[0] = rowIndex + increaseNumberForCrossedOutRww;
                                     crossedOut[1] = columnIndex - decreaseNumberForCrossedOutColumn;
