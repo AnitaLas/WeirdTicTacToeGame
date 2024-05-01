@@ -56,6 +56,8 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
                 { 7, "    FOR ALL" }, // the same as in id 2
                 //{ 8, "BETWEEN TEAMS" }, 
                 { 8, "BTW. TEAMS" }, // the same as in id 2
+                { 9, "  BTW. TEAMS" }, // the same as in id 2
+                { 10, "MOVES TEAM" }, // the same as in id 2
 
 
 

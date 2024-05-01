@@ -322,8 +322,26 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetTagForTableWithNumbersByTagChangeBetweenTeams()
+        {
+            int dictionaryId = 9;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
 
+        public static string GetTagForButtonNumberByTagChangeNumberBetweenTeams()
+        {
+            int dictionaryId = 10;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
 
+        public static string GetTagForTableWithNumbersByTagTableNumberBetweenTeams()
+        {
+            int dictionaryId = 11;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
 
         public static string GetTagForButtonBackByTagButtonBackToConfigurationChangePlayersSymbols()
         {

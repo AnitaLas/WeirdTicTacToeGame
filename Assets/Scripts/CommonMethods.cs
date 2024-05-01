@@ -37,6 +37,12 @@ namespace Assets.Scripts
             return intToString;
         }
 
+        public static string ConverFloatToString(float number)
+        {
+            string intToString = number.ToString();
+            return intToString;
+        }
+
         public static string GetSubstringFromText(string gameObjectName, int startIndex, int searchedTextLength)
         {
             string text = gameObjectName.Substring(startIndex, searchedTextLength);

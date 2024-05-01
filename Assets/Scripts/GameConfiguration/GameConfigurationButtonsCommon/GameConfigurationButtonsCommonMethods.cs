@@ -105,6 +105,14 @@ namespace Assets.Scripts
             return number;
         }
 
+        public static int SetUpChosenNumberForConfigurationBetweenTeams(GameObject[,,] _buttonsWithNumbers, string gameObjectName)
+        {
+            string tagConfigurationBoardGameChangeNumberBetweenTeams = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberBetweenTeams();
+
+            int number = SetUpChosenNumberForConfiguration(_buttonsWithNumbers, gameObjectName, tagConfigurationBoardGameChangeNumberBetweenTeams);
+            return number;
+        }
+
         public static bool IsTeamGame(bool _configurationTraditionalGame1, bool _configurationTeamGame1, bool _configurationTraditionalGame2, bool _configurationTeamGame2)
         {
             bool isTeamGame = false;
