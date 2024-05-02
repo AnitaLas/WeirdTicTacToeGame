@@ -237,12 +237,7 @@ namespace Assets.Scripts
 
         }
 
-        public static int GetMaxIndexForSwitchSymbols(List<string[]> teamGameSymbols)
-        {
-            int minPlayersNumberForTeam = GetMinPlayersNumberForTeam(teamGameSymbols);
-            int numberSymbolsToChange = GetRandomMaxIndexForNewSymbols(minPlayersNumberForTeam);
-            return numberSymbolsToChange;
-        }
+
 
         public static string GetUntakenSymbols(string[] takenSymbols)
         {
@@ -355,52 +350,49 @@ namespace Assets.Scripts
             return playersSymbols;
         }
 
+        public static List<string[]> SetUpNewTeamGameSymbols(List<string[]> oldTeamGameSymbols, string[] newSymbolsForChange)
+        {
+            List<string[]> newTeamGameSymbols = new List<string[]>();
+
+
+
+
+
+
+
+
+
+
+
+
+
+            return newTeamGameSymbols;
+        } 
+
         //public static List<string[]> GetNewDataForPlayersSymbols(string[] playersSymbols, List<float> gameChangeTimeConfiguration, int switchChange, List<string[]> teamGameSymbols)
-        public static List<string[]> GetNewDataForPlayersSymbols(string[] playersSymbols, List<float> gameChangeTimeConfiguration)
+        public static List<string[]> GetNewDataForPlayersSymbols(int switchChange, string[] playersSymbols, List<float> gameChangeTimeConfiguration, List<string[]> teamGameSymbols)
         {
             float timeForChandeRandomly = gameChangeTimeConfiguration[0];
             //float timeForChandeBetweenTeams = gameChangeTimeConfiguration[2];
             //Debug.Log(" 1 random or for all ------");
             List<string[]> symbolsLists = new List<string[]>();
 
-            //if (switchChange == 0)
-            //{
+            if (switchChange == 0)
+            {
                 symbolsLists = GetNewPlayersSymbols(playersSymbols, timeForChandeRandomly);
-            //}
-            //else
-            //{
+            }
+            else
+            {
 
-            //    symbolsLists = GetNewPlayersSymbolsForSwitch(playersSymbols, teamGameSymbols);
+                symbolsLists = GetNewPlayersSymbolsForSwitch(playersSymbols, teamGameSymbols);
 
-            //}
-
-            return symbolsLists;
-
-        }
-
-        public static List<string[]> GetNewPlayersSymbolsForSwitch(string[] playersSymbols, List<string[]> teamGameSymbols)
-        {
-            List<string[]> symbolsLists = new List<string[]>();
-
-            //Debug.Log(" 2 switch ------");
-            int takenSymbolsLenght = playersSymbols.Length;
-
-            //int numberSymbolsToChange = GetMaxIndexForSwitchSymbols(teamGameSymbols);
-
-            //string[] newSymbolsForChange = new string[numberSymbolsToChange];
-            //string[] oldSymbolsForChange = new string[numberSymbolsToChange];
-
-            //string[] newSymbolsForChange = GetNewSymbols(playersSymbols, numberSymbolsToChange);
-            //string[] oldSymbolsForChange = GetOldSymbols(playersSymbols, numberSymbolsToChange, isChangeForAll);
-            //playersSymbols = GetNewPlayersSymbols(playersSymbols, oldSymbolsForChange, newSymbolsForChange, numberSymbolsToChange);
-
-            //symbolsLists.Insert(0, oldSymbolsForChange);
-            //symbolsLists.Insert(1, newSymbolsForChange);
-            //symbolsLists.Insert(2, playersSymbols);
+            }
 
             return symbolsLists;
 
         }
+
+ 
 
 
         ///// <summary>
@@ -743,6 +735,42 @@ namespace Assets.Scripts
             }
         }
 
+        // switch symbols between teams
+        public static int GetMaxIndexForSwitchSymbols(List<string[]> teamGameSymbols)
+        {
+            int minPlayersNumberForTeam = GetMinPlayersNumberForTeam(teamGameSymbols);
+            int numberSymbolsToChange = GetRandomMaxIndexForNewSymbols(minPlayersNumberForTeam);
+            return numberSymbolsToChange;
+        }
 
+        public static List<string[]> GetNewPlayersSymbolsForSwitch(string[] playersSymbols, List<string[]> teamGameSymbols)
+        {
+            List<string[]> symbolsLists = new List<string[]>();
+
+            //Debug.Log(" 2 switch ------");
+            int takenSymbolsLenght = playersSymbols.Length;
+
+            int numberSymbolsToChange = GetMaxIndexForSwitchSymbols(teamGameSymbols);
+
+            int[] randomIndexForChange = ;
+
+            List<string[]> oldSymbolsForSwitch;
+            List<string[]> newSymbolsForSwitch;
+
+
+            //string[] newSymbolsForChange = new string[numberSymbolsToChange];
+            //string[] oldSymbolsForChange = new string[numberSymbolsToChange];
+
+            //string[] newSymbolsForChange = GetNewSymbols(playersSymbols, numberSymbolsToChange);
+            //string[] oldSymbolsForChange = GetOldSymbols(playersSymbols, numberSymbolsToChange, isChangeForAll);
+            //playersSymbols = GetNewPlayersSymbols(playersSymbols, oldSymbolsForChange, newSymbolsForChange, numberSymbolsToChange);
+
+            //symbolsLists.Insert(0, oldSymbolsForChange);
+            //symbolsLists.Insert(1, newSymbolsForChange);
+            //symbolsLists.Insert(2, playersSymbols);
+
+            return symbolsLists;
+
+        }
     }
 }
