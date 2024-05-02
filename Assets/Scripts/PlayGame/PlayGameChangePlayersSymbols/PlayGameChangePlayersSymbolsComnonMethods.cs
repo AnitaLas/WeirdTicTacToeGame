@@ -111,36 +111,57 @@ namespace Assets.Scripts
             float timeForChandeForAll = gameChangeTimeConfiguration[1];
             float timeForSwitchBetweenTeams = gameChangeTimeConfiguration[2];
 
-            int timeRandomly = CommonMethods.ConvertStringToInt(CommonMethods.ConverFloatToString(timeForChandeRandomly));
-            int timeForAll = CommonMethods.ConvertStringToInt(CommonMethods.ConverFloatToString(timeForChandeForAll));
-            int timeBetweenTeams = CommonMethods.ConvertStringToInt(CommonMethods.ConverFloatToString(timeForSwitchBetweenTeams));
+            //int timeRandomly = CommonMethods.ConvertStringToInt(CommonMethods.ConverFloatToString(timeForChandeRandomly));
+            //int timeForAll = CommonMethods.ConvertStringToInt(CommonMethods.ConverFloatToString(timeForChandeForAll));
+            //int timeBetweenTeams = CommonMethods.ConvertStringToInt(CommonMethods.ConverFloatToString(timeForSwitchBetweenTeams));
 
-            Debug.Log("timeRandomly: " + timeRandomly);
-            Debug.Log("timeForAll: " + timeForAll);
-            Debug.Log("timeBetweenTeams: " + timeBetweenTeams);
+            //Debug.Log("timeRandomly: " + timeRandomly);
+            //Debug.Log("timeForAll: " + timeForAll);
+           // Debug.Log("timeBetweenTeams: " + timeBetweenTeams);
             bool isDoubleRandomChange;
 
-            //if ((0 > 0 || 5 > 0) && 10 > 0)
-            if ((timeRandomly > 0 || timeForAll > 0) && timeBetweenTeams > 0)
-            //if ((timeForChandeRandomly > 0 || timeForChandeForAll > 0) && timeForSwitchBetweenTeams > 0)
-            //if ((timeForChandeRandomly > x || timeForChandeForAll > x) && timeForSwitchBetweenTeams > x)
-            //if ((timeForChandeForAll > 0 && timeForSwitchBetweenTeams > 0) || (timeForChandeRandomly > 0 && timeForSwitchBetweenTeams > 0))
-            {
+           if ((timeForChandeRandomly > 0 || timeForChandeForAll > 0) && timeForSwitchBetweenTeams > 0)
                 isDoubleRandomChange = true;
-            }
             else
-            {
                 isDoubleRandomChange = false;
-            }
 
             Debug.Log("isDoubleRandomChange: " + isDoubleRandomChange);
 
             return isDoubleRandomChange;
         }
 
-        public static int SetUpStartSwitchChange()
+        // change for list of int
+        public static int[] SetUpStartSwitchChange(List<float> gameChangeTimeConfiguration)
         {
-            return 0;
+            float timeForChandeRandomly = gameChangeTimeConfiguration[0];
+            float timeForChandeForAll = gameChangeTimeConfiguration[1];
+            float timeForSwitchBetweenTeams = gameChangeTimeConfiguration[2];
+
+
+            Debug.Log("timeForChandeRandomly: " + timeForChandeRandomly);
+            Debug.Log("timeForChandeForAll: " + timeForChandeForAll);
+            Debug.Log("timeForSwitchBetweenTeams: " + timeForSwitchBetweenTeams);
+
+            int[] newData = new int[2];
+
+            int switchChange = 0;
+            int indexStartTime = 0;
+           
+            if (timeForChandeRandomly == 0 && timeForChandeForAll == 0  && timeForSwitchBetweenTeams > 0)
+            {
+                switchChange = 1;
+                indexStartTime = 1;
+            }
+                
+            else
+            {
+                switchChange = 0;
+                indexStartTime = 0;
+            }
+            newData[0] = switchChange;
+            newData[1] = indexStartTime;
+
+            return newData;
         }
 
         public static int SetUpNewSwitchChange(int currentNumberForSwitchChange)
@@ -339,7 +360,7 @@ namespace Assets.Scripts
         {
             float timeForChandeRandomly = gameChangeTimeConfiguration[0];
             //float timeForChandeBetweenTeams = gameChangeTimeConfiguration[2];
-            Debug.Log(" 1 random or for all ------");
+            //Debug.Log(" 1 random or for all ------");
             List<string[]> symbolsLists = new List<string[]>();
 
             //if (switchChange == 0)
@@ -361,7 +382,7 @@ namespace Assets.Scripts
         {
             List<string[]> symbolsLists = new List<string[]>();
 
-            Debug.Log(" 2 switch ------");
+            //Debug.Log(" 2 switch ------");
             int takenSymbolsLenght = playersSymbols.Length;
 
             //int numberSymbolsToChange = GetMaxIndexForSwitchSymbols(teamGameSymbols);

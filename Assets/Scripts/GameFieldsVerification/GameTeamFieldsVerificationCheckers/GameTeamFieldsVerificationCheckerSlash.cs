@@ -135,7 +135,7 @@ namespace Assets.Scripts
                             //{
                             if (rowIndex == crossedOut[0] && columnIndex == crossedOut[1])
                             {
-                                Debug.Log($"rowIndex: {rowIndex}, columnIndex: {columnIndex}");
+                                //Debug.Log($"rowIndex: {rowIndex}, columnIndex: {columnIndex}");
                                 //UnityEngine.Debug.Log($"S boardToCheck[{rowIndex}, {columnIndex}]: " + boardToCheck[rowIndex, columnIndex]);
 
                                 bool isMatchingArrayIncreased = false;

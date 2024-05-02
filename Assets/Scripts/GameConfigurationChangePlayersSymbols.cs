@@ -188,7 +188,8 @@ namespace Assets.Scripts
                         {
                             ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime = timeButtonRandomly;
                             ConfigurationBoardGameChangeForAllPlayersSymbolsTime = timeButtonForAll;
-                            ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = timeForSwitchPlayersSymbolsBetweenTeams;
+                            //ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = timeForSwitchPlayersSymbolsBetweenTeams;
+                            ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = timeButtonSwitchSymbolsBetweenTeams;
                             ConfigurationBoardGameEqualMoveQuantityForBothTeams = isEqualMoveQuantityForBothTeams;
 ;
                             ScenesChangeMainMethods.GoToSceneGame();
