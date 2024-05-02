@@ -146,6 +146,8 @@ internal class Game : MonoBehaviour
     private bool _isTimeToHidePlayGameElements;
     private bool _isTimerActivate;
     private bool _switchTimer;
+    private int[] _startDataForTimer;
+    private int indexTimeForHide;
 
     private string[] _newPlayersSymbols;
     private List<string[]> _newDataForPlayersSymbols;
@@ -338,14 +340,36 @@ internal class Game : MonoBehaviour
                 _gameButtonsTimer = PlayGameTimerButtonsCreate.GameTimerButtonsCreate(prefabTimer);
                 _timeForTimers = PlayGameTimerCommonMethods.SetupTimer(_gameChangeTimeConfiguration);
 
-                _timeForHide = _timeForTimers[0];
-                _timeForUnhidePlayGameElements = _timeForTimers[2];
+                _startDataForTimer = PlayGameChangePlayersSymbolsComnonMethods.SetUpStartSwitchChange(_gameChangeTimeConfiguration);
+                _switchChange = _startDataForTimer[0];
+                indexTimeForHide = _startDataForTimer[1];
+
+                Debug.Log("indexTimeForHide: " + indexTimeForHide);
+
+
+                //Debug.Log("isDoubleRandomChange: " + isDoubleRandomChange);
+
+                //_timeForHide = _timeForTimers[0];;
+                //_timeForHide = _timeForTimers[2];
+                _timeForHide = _timeForTimers[indexTimeForHide];
+                Debug.Log("_timeForHide: " + _timeForHide);
+
+
+                _timeForUnhidePlayGameElements = _timeForTimers[2]; // must to be change
+                //_timeForUnhidePlayGameElements = _timeForTimers[indexTimeForHide]; // must to be change
+                Debug.Log("_timeForUnhidePlayGameElements: " + _timeForUnhidePlayGameElements);
+
+                //_isTimeToHidePlayGameElements = true;
                 _isTimeToHidePlayGameElements = true;
 
                 _isDoubleRandomChange = PlayGameChangePlayersSymbolsComnonMethods.IsDoubleRandomChange(_gameChangeTimeConfiguration);
-                Debug.Log("1 _isDoubleRandomChange: " + _isDoubleRandomChange);
-               // if (_isDoubleRandomChange == true)
-                    _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpStartSwitchChange();
+                //Debug.Log("1 _isDoubleRandomChange: " + _isDoubleRandomChange);
+                // if (_isDoubleRandomChange == true)
+
+
+                Debug.Log("1 _switchChange: " + _switchChange);
+
+
             }
         }
 
@@ -772,7 +796,10 @@ internal class Game : MonoBehaviour
 
             if (_switchTimer == true)
             {
-                int indexTimeForHide = 0;
+                //int indexTimeForHide = 0;
+                //PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
+                //PlayGameTimerCommonMethods.CountdownSecondsForBoarGame(_timeForHide);
+
                 PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
                 PlayGameTimerCommonMethods.CountdownSecondsForBoarGame(_timeForHide);
 
@@ -785,25 +812,43 @@ internal class Game : MonoBehaviour
                         PlayGameMenuAndTimerButtonsActions.ShowTimerForChangePlayersSymbols();
                         PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);
                         _isTimeToHidePlayGameElements = false;
-                        _timeForHide = _timeForTimers[indexTimeForHide];
+                        //_timeForHide = _timeForTimers[indexTimeForHide];
+                        //Debug.Log("2 _switchChange: " + _switchChange);
 
                         if (_switchChange == 0)
                         {
+                            Debug.Log("2 == 0 - _switchChange: " + _switchChange);
+                            _timeForHide = _timeForTimers[0];
                             _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsComnonMethods.GetNewDataForPlayersSymbols(_playersSymbols, _gameChangeTimeConfiguration);
-                            
-                            _oldSymbolsForChande = _newDataForPlayersSymbols[0];
-                            _newSymbolsForChande = _newDataForPlayersSymbols[1];
-                            _newPlayersSymbols = _newDataForPlayersSymbols[2];
+
+                            //_oldSymbolsForChande = _newDataForPlayersSymbols[0];
+                            //_newSymbolsForChande = _newDataForPlayersSymbols[1];
+                            //_newPlayersSymbols = _newDataForPlayersSymbols[2];
+                           //if (_isDoubleRandomChange == true)
+                           //     _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
                         }
 
                         if (_switchChange == 1)
                         {
+                            Debug.Log("2 == 1 - _switchChange: " + _switchChange);
+                            _timeForHide = _timeForTimers[1];
                             _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsComnonMethods.GetNewPlayersSymbolsForSwitch(_playersSymbols, _teamGameSymbols);
 
                             //_oldSymbolsForChande = _newDataForPlayersSymbols[0];
                             //_newSymbolsForChande = _newDataForPlayersSymbols[1];
                             //_newPlayersSymbols = _newDataForPlayersSymbols[2];
+
+                            //if (_isDoubleRandomChange == true)
+                            //    _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
                         }
+
+                        if (_isDoubleRandomChange == true)
+                            _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
+
+
+                        //_oldSymbolsForChande = _newDataForPlayersSymbols[0];
+                        //_newSymbolsForChande = _newDataForPlayersSymbols[1];
+                        //_newPlayersSymbols = _newDataForPlayersSymbols[2];
 
                         //for (int i = 0; i < _oldSymbolsForChande.Length; i++)
                         //{
@@ -841,10 +886,10 @@ internal class Game : MonoBehaviour
                         //////    _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
                         //////}
 
-                        Debug.Log("_isDoubleRandomChange: " + _isDoubleRandomChange);
-                        if (_isDoubleRandomChange == true)
-                        _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
-                        Debug.Log("_switchChange: " + _switchChange);
+                        //Debug.Log("_isDoubleRandomChange: " + _isDoubleRandomChange);
+                        // if (_isDoubleRandomChange == true)
+                        // _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
+
                     }
                 }
                 else
