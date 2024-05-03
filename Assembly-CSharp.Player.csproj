@@ -74,7 +74,7 @@
     <Compile Include="Assets\Scripts\CommonMethods.cs" />
     <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameTeamFieldsVerificationCheckers\GameTeamFieldsVerificationCheckerVertical.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtonsMethods.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtons\PlayGameChangePlayersSymbolsButtonsMethods.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationText\GameInformationCreateText.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationChangePlayersSymbols.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonButtonsName.cs" />
@@ -186,9 +186,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\ScenesChange\ScenesChangeCommon.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationButtons\GameInformationButtonsCreate.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtonsCreate.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtons\PlayGameChangePlayersSymbolsButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsName.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsComnonMethods.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsMethods.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersCommon\GameConfigurationButtonsTeamMembersButtonsName.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamMembers\GameConfigurationTeamMembersButtons\GameConfigurationTeamMembersButtonsActionsCommon.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsActions.cs" />
@@ -222,7 +222,7 @@
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonButtonsDefaultNumber.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtonsCommonCreate.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtons\PlayGameChangePlayersSymbolsButtonsCommonCreate.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamNumbers\GameConfigurationTeamNumbersButtons\GameConfigurationTeamNumbersButtonsCreateCommon.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameTimer\PlayGameTimerButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameMenuAndTimer\PlayGameMenuAndTimerButtonsActions.cs" />
@@ -232,6 +232,7 @@
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsTagName.cs" />
     <Compile Include="Assets\Scripts\GameCommonMethods\GameCommonMethodsMain.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlayHelpText.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameSwitchPlayersSymbolsMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
