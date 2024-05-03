@@ -341,11 +341,11 @@ internal class Game : MonoBehaviour
                 _gameButtonsTimer = PlayGameTimerButtonsCreate.GameTimerButtonsCreate(prefabTimer);
                 _timeForTimers = PlayGameTimerCommonMethods.SetupTimer(_gameChangeTimeConfiguration);
 
-                _startDataForTimer = PlayGameChangePlayersSymbolsComnonMethods.SetUpStartSwitchChange(_gameChangeTimeConfiguration);
+                _startDataForTimer = PlayGameChangePlayersSymbolsMethods.SetUpStartSwitchChange(_gameChangeTimeConfiguration);
                 _switchChange = _startDataForTimer[0];
                 indexTimeForHide = _startDataForTimer[1];
 
-                Debug.Log("indexTimeForHide: " + indexTimeForHide);
+                //Debug.Log("indexTimeForHide: " + indexTimeForHide);
 
 
                 //Debug.Log("isDoubleRandomChange: " + isDoubleRandomChange);
@@ -353,22 +353,22 @@ internal class Game : MonoBehaviour
                 //_timeForHide = _timeForTimers[0];;
                 //_timeForHide = _timeForTimers[2];
                 _timeForHide = _timeForTimers[indexTimeForHide];
-                Debug.Log("_timeForHide: " + _timeForHide);
+                //Debug.Log("_timeForHide: " + _timeForHide);
 
 
                 _timeForUnhidePlayGameElements = _timeForTimers[2]; // must to be change
                 //_timeForUnhidePlayGameElements = _timeForTimers[indexTimeForHide]; // must to be change
-                Debug.Log("_timeForUnhidePlayGameElements: " + _timeForUnhidePlayGameElements);
+                //Debug.Log("_timeForUnhidePlayGameElements: " + _timeForUnhidePlayGameElements);
 
                 //_isTimeToHidePlayGameElements = true;
                 _isTimeToHidePlayGameElements = true;
 
-                _isDoubleRandomChange = PlayGameChangePlayersSymbolsComnonMethods.IsDoubleRandomChange(_gameChangeTimeConfiguration);
+                _isDoubleRandomChange = PlayGameChangePlayersSymbolsMethods.IsDoubleRandomChange(_gameChangeTimeConfiguration);
                 //Debug.Log("1 _isDoubleRandomChange: " + _isDoubleRandomChange);
                 // if (_isDoubleRandomChange == true)
 
 
-                Debug.Log("1 _switchChange: " + _switchChange);
+               // Debug.Log("1 _switchChange: " + _switchChange);
 
 
             }
@@ -818,14 +818,14 @@ internal class Game : MonoBehaviour
 
                         if (_switchChange == 0)
                         {
-                            Debug.Log("2 == 0 - _switchChange: " + _switchChange);
+                            //Debug.Log("2 == 0 - _switchChange: " + _switchChange);
                             //_timeForHide = _timeForTimers[0];
                             if (_isDoubleRandomChange == false)
                                 _timeForHide = _timeForTimers[0];
                             else
                                 _timeForHide = _timeForTimers[1];
-                            Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
-                            _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsComnonMethods.GetNewDataForPlayersSymbols(_switchChange, _playersSymbols, _gameChangeTimeConfiguration);
+                            //Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
+                            _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsMethods.GetNewDataForPlayersSymbols(_playersSymbols, _gameChangeTimeConfiguration);
 
                             _oldSymbolsForChange = _newDataForPlayersSymbols[0];
                             _newSymbolsForChange = _newDataForPlayersSymbols[1];
@@ -833,34 +833,36 @@ internal class Game : MonoBehaviour
 
 
                             if (isTeamGame == true)
-                                _teamGameSymbols = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewTeamGameSymbols(_teamGameSymbols, _newSymbolsForChange);
+                            //Debug.Log("1 isTeamGame: " + isTeamGame);
+                                _teamGameSymbols = PlayGameChangePlayersSymbolsMethods.SetUpNewTeamGameSymbols(_teamGameSymbols, _oldSymbolsForChange, _newSymbolsForChange);
                             //if (_isDoubleRandomChange == true)
                             //     _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
                         }
 
                         if (_switchChange == 1)
                         {
-                            ////Debug.Log("2 == 1 - _switchChange: " + _switchChange);
-                            //////_timeForHide = _timeForTimers[1];
-                            ////_timeForHide = _timeForTimers[0];
-                            ////Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
-                            ////_newDataForPlayersSymbols = PlayGameChangePlayersSymbolsComnonMethods.GetNewDataForPlayersSymbols(_switchChange, _playersSymbols, _gameChangeTimeConfiguration, _teamGameSymbols);
+                            //Debug.Log("2 == 1 - _switchChange: " + _switchChange);
+                            //_timeForHide = _timeForTimers[1];
+                            _timeForHide = _timeForTimers[0];
+                            //Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
+                            _newDataForPlayersSymbols = PlayGameSwitchPlayersSymbolsMethods.GetNewPlayersSymbolsForSwitch(_playersSymbols, _teamGameSymbols);
 
-                            ////_oldSymbolsForChande = _newDataForPlayersSymbols[0];
-                            ////_newSymbolsForChande = _newDataForPlayersSymbols[1];
+                            ////_oldSymbolsForChange = _newDataForPlayersSymbols[0];
+                            ////_newSymbolsForChange = _newDataForPlayersSymbols[1];
                             ////_newPlayersSymbols = _newDataForPlayersSymbols[2];
 
 
-                            // it must change to!!!
-                            //_teamGameSymbols = 
+                            ////// it must change to!!!
+                            //////_teamGameSymbols = 
+                            ////_teamGameSymbols = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewTeamGameSymbols(_teamGameSymbols, _oldSymbolsForChange, _newSymbolsForChange);
 
 
-                            //if (_isDoubleRandomChange == true)
-                            //    _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
+                            ////if (_isDoubleRandomChange == true)
+                            ////    _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
                         }
 
-                        if (_isDoubleRandomChange == true)
-                            _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
+                        //if (_isDoubleRandomChange == true)
+                        //    _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
 
 
                         //_oldSymbolsForChande = _newDataForPlayersSymbols[0];
@@ -887,16 +889,16 @@ internal class Game : MonoBehaviour
                         //Debug.Log(" ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz ");
 
 
-                        PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChange, _newSymbolsForChange);
+                        //////PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChange, _newSymbolsForChange);
 
-                        _gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
-                        _gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
+                        //////_gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
+                        //////_gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
 
-                        _playerSymbolMove = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
+                        //////_playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
 
 
 
-                        _gameBoardVerification2D = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
+                        //////_gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
 
                         //if (_isDoubleRandomChange == true)
                         //{
@@ -917,8 +919,8 @@ internal class Game : MonoBehaviour
                     {
                         PlayGameMenuAndTimerButtonsActions.ShowTimerFoGameBoard();
                         PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
-                        PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbolsTop);
-                        PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbols);
+                        //PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbolsTop);
+                        //PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbols);
                         _isTimeToHidePlayGameElements = true;
                         _timeForUnhidePlayGameElements = _timeForTimers[2];
                     }
