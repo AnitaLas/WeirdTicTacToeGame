@@ -35,7 +35,8 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T17:52:38.144Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -45,7 +46,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\Game.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game.cs",
-              "ViewState": "AQIAADwDAAAAAAAAAAAcwIQDAADDAAAA",
+              "ViewState": "AQIAAEYDAAAAAAAAAAAMwFoDAAB8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T17:40:40.181Z",
               "IsPinned": true,
@@ -59,7 +60,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameSwitchPlayersSymbolsMethods.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameSwitchPlayersSymbolsMethods.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameSwitchPlayersSymbolsMethods.cs",
-              "ViewState": "AQIAANgAAAAAAAAAAAAowOoAAAARAAAA",
+              "ViewState": "AQIAAOEBAAAAAAAAAIAwwPIBAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T16:49:28.056Z",
               "IsPinned": true,

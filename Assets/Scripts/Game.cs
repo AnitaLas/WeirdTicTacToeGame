@@ -149,9 +149,9 @@ internal class Game : MonoBehaviour
     private int[] _startDataForTimer;
     private int indexTimeForHide;
 
-    private string[] _newPlayersSymbols;
-    //private Tuple<List<string[]>, List<string[]>> _newDataForPlayersSymbols;
+    private string[] _newPlayersSymbols;  
     private List<string[]> _newDataForPlayersSymbols;
+    private List<List<string[]>> _newDataForPlayersSymbolsSwitch;
     private bool _isDoubleRandomChange;
     private int _switchChange; // 0 single, 1 double
     private string[] _oldSymbolsForChange; 
@@ -833,10 +833,21 @@ internal class Game : MonoBehaviour
 
 
                             if (isTeamGame == true)
-                            //Debug.Log("1 isTeamGame: " + isTeamGame);
+                            {
                                 _teamGameSymbols = PlayGameChangePlayersSymbolsMethods.SetUpNewTeamGameSymbols(_teamGameSymbols, _oldSymbolsForChange, _newSymbolsForChange);
-                            //if (_isDoubleRandomChange == true)
-                            //     _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
+                            }
+
+                            PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChange, _newSymbolsForChange);
+
+                            _gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
+                            _gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
+
+                            _playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
+
+
+
+                            _gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
+
                         }
 
                         if (_switchChange == 1)
@@ -845,15 +856,14 @@ internal class Game : MonoBehaviour
                             //_timeForHide = _timeForTimers[1];
                             _timeForHide = _timeForTimers[0];
                             //Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
-                            _newDataForPlayersSymbols = PlayGameSwitchPlayersSymbolsMethods.GetNewPlayersSymbolsForSwitch(_playersSymbols, _teamGameSymbols);
+                            _newDataForPlayersSymbolsSwitch = PlayGameSwitchPlayersSymbolsMethods.GetPlayersSymbolsForSwitch(_teamGameSymbols);
 
                             ////_oldSymbolsForChange = _newDataForPlayersSymbols[0];
                             ////_newSymbolsForChange = _newDataForPlayersSymbols[1];
                             ////_newPlayersSymbols = _newDataForPlayersSymbols[2];
 
+                            //PlayGameSwitchPlayersSymbolsMethods.SetUpSwitchedPlayersSymbolsForGameBoard(_gameBoard, _newDataForPlayersSymbolsSwitch);
 
-                            ////// it must change to!!!
-                            //////_teamGameSymbols = 
                             ////_teamGameSymbols = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewTeamGameSymbols(_teamGameSymbols, _oldSymbolsForChange, _newSymbolsForChange);
 
 
@@ -889,16 +899,16 @@ internal class Game : MonoBehaviour
                         //Debug.Log(" ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz ");
 
 
-                        //////PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChange, _newSymbolsForChange);
+                        ////PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChange, _newSymbolsForChange);
 
-                        //////_gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
-                        //////_gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
+                        ////_gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
+                        ////_gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
 
-                        //////_playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
+                        ////_playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
 
 
 
-                        //////_gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
+                        ////_gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
 
                         //if (_isDoubleRandomChange == true)
                         //{
