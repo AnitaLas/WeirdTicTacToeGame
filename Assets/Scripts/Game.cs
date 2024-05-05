@@ -814,7 +814,7 @@ internal class Game : MonoBehaviour
                         PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);
                         _isTimeToHidePlayGameElements = false;
                         //_timeForHide = _timeForTimers[indexTimeForHide];
-                        //Debug.Log("2 _switchChange: " + _switchChange);
+                        Debug.Log("2 _switchChange: " + _switchChange);
 
                         if (_switchChange == 0)
                         {
@@ -853,8 +853,8 @@ internal class Game : MonoBehaviour
                         if (_switchChange == 1)
                         {
                             //Debug.Log("2 == 1 - _switchChange: " + _switchChange);
-                            //_timeForHide = _timeForTimers[1];
-                            _timeForHide = _timeForTimers[0];
+                            _timeForHide = _timeForTimers[1];
+                            //_timeForHide = _timeForTimers[0];
                             //Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
                             _newDataForPlayersSymbolsSwitch = PlayGameSwitchPlayersSymbolsMethods.GetPlayersSymbolsForSwitch(_teamGameSymbols);
 
@@ -862,9 +862,9 @@ internal class Game : MonoBehaviour
                             ////_newSymbolsForChange = _newDataForPlayersSymbols[1];
                             ////_newPlayersSymbols = _newDataForPlayersSymbols[2];
 
-                            //PlayGameSwitchPlayersSymbolsMethods.SetUpSwitchedPlayersSymbolsForGameBoard(_gameBoard, _newDataForPlayersSymbolsSwitch);
+                             PlayGameSwitchPlayersSymbolsMethods.SetUpSwitchedPlayersSymbolsForGameBoard(_gameBoard, _newDataForPlayersSymbolsSwitch);
 
-                            ////_teamGameSymbols = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewTeamGameSymbols(_teamGameSymbols, _oldSymbolsForChange, _newSymbolsForChange);
+                             _teamGameSymbols = PlayGameSwitchPlayersSymbolsMethods.SetUpNewTeamGameSymbols(_newDataForPlayersSymbolsSwitch);
 
 
                             ////if (_isDoubleRandomChange == true)
@@ -923,6 +923,7 @@ internal class Game : MonoBehaviour
                 }
                 else
                 {
+                    //Debug.Log("_timeForUnhidePlayGameElements: " + _timeForUnhidePlayGameElements);
                     _timeForUnhidePlayGameElements -= 1 * Time.deltaTime;
 
                     if (_timeForUnhidePlayGameElements < 0)

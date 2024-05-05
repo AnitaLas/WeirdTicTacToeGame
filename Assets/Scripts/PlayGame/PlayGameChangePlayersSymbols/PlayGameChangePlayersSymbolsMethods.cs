@@ -392,17 +392,17 @@ namespace Assets.Scripts
             }
 
 
-            for (int team = 0; team < teamsNumbers; team++)
-            {
-                string[] test = oldTeamGameSymbols[team];
-                for (int i = 0; i < test.Length; i++)
-                {
+            //for (int team = 0; team < teamsNumbers; team++)
+            //{
+            //    string[] test = oldTeamGameSymbols[team];
+            //    for (int i = 0; i < test.Length; i++)
+            //    {
 
-                    Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
+            //        Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
 
-                }
+            //    }
 
-            }
+            //}
 
 
 
