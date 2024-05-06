@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.9.34723.18
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{3324A655-E191-D659-FA7C-952F3304CA6C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{E6DC3DF1-C1F6-EC1A-407D-DE8278DC7BE0}"
@@ -65,23 +63,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TestTools.CodeCoverag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Shared.Editor", "Unity.VisualScripting.Shared.Editor.csproj", "{AA6719C0-FFE5-086A-AB72-CDB753B3E9B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI.Player", "UnityEngine.UI.Player.csproj", "{F06373D3-2971-26B3-3760-7EE9CF06550C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.Player.csproj", "{F06373D3-2971-26B3-3760-7EE9CF06550C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner.Player", "UnityEngine.TestRunner.Player.csproj", "{A1A79D05-155C-ED00-2F98-FCD209F6922D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.Player.csproj", "{A1A79D05-155C-ED00-2F98-FCD209F6922D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Flow.Player", "Unity.VisualScripting.Flow.Player.csproj", "{1590B428-729C-D829-5A3E-7A69182756A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Flow", "Unity.VisualScripting.Flow.Player.csproj", "{1590B428-729C-D829-5A3E-7A69182756A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InputSystem.Player", "Unity.InputSystem.Player.csproj", "{F7286FAD-BAE4-1292-0755-550D4DD86958}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.Player.csproj", "{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.State.Player", "Unity.VisualScripting.State.Player.csproj", "{A52377AF-C258-2942-9584-C76729D5EC40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InputSystem", "Unity.InputSystem.Player.csproj", "{F7286FAD-BAE4-1292-0755-550D4DD86958}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Core.Player", "Unity.VisualScripting.Core.Player.csproj", "{43017001-0088-7156-EB63-1B87C16BE8DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.State", "Unity.VisualScripting.State.Player.csproj", "{A52377AF-C258-2942-9584-C76729D5EC40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro.Player", "Unity.TextMeshPro.Player.csproj", "{A2B06A12-98C9-87C0-8898-25C0AAB72C40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Core", "Unity.VisualScripting.Core.Player.csproj", "{43017001-0088-7156-EB63-1B87C16BE8DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline.Player", "Unity.Timeline.Player.csproj", "{3DFC726A-2632-9547-3C4A-50C074B2F2D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro", "Unity.TextMeshPro.Player.csproj", "{A2B06A12-98C9-87C0-8898-25C0AAB72C40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InputSystem.TestFramework.Player", "Unity.InputSystem.TestFramework.Player.csproj", "{5179806A-0CC6-6A73-3EAB-1B7AA3A207E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline", "Unity.Timeline.Player.csproj", "{3DFC726A-2632-9547-3C4A-50C074B2F2D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InputSystem.TestFramework", "Unity.InputSystem.TestFramework.Player.csproj", "{5179806A-0CC6-6A73-3EAB-1B7AA3A207E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -225,6 +225,10 @@ Global
 		{1590B428-729C-D829-5A3E-7A69182756A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1590B428-729C-D829-5A3E-7A69182756A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1590B428-729C-D829-5A3E-7A69182756A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E78C5A4-8F1A-98C1-CE3A-374D420DA7A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F7286FAD-BAE4-1292-0755-550D4DD86958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7286FAD-BAE4-1292-0755-550D4DD86958}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7286FAD-BAE4-1292-0755-550D4DD86958}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -252,8 +256,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E2DE06F6-96E9-4FF7-8E45-17AE11176EAA}
 	EndGlobalSection
 EndGlobal
