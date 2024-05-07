@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts
@@ -496,10 +497,10 @@ namespace Assets.Scripts
 
         }
 
-        public static List<List<string[]>> GetPlayersSymbolsForSwitch(List<string[]> teamGameSymbols)
+        public static ArrayList GetPlayersSymbolsForSwitch(List<string[]> teamGameSymbols)
         {
-            List<List<string[]>> symbolsLists = new List<List<string[]>>();
-
+            //List<List<string[]>> symbolsLists = new List<List<string[]>>();
+            ArrayList allDataForSwitch = new ArrayList();
             // "old symbols"
             //List<string[]> symbolsForSwitch = GetSymoblsForSwitch(teamGameSymbols);
             ArrayList dataForSwitch = GetSymoblsForSwitch(teamGameSymbols);
@@ -542,10 +543,11 @@ namespace Assets.Scripts
 
             }
             //Debug.Log(" ----------------------------------------------- ");
-            symbolsLists.Insert(0, symbolsForSwitch);
-            symbolsLists.Insert(1, switchedSymbols);
+            allDataForSwitch.Insert(0, symbolsForSwitch);
+            allDataForSwitch.Insert(1, switchedSymbols);
+            allDataForSwitch.Insert(2, randomIndexesForSwitch);
 
-            return symbolsLists;
+            return allDataForSwitch;
 
         }
 
@@ -804,10 +806,10 @@ namespace Assets.Scripts
         }
 
 
-        public static void SetUpSwitchedPlayersSymbolsForGameBoard(GameObject[,,] gameBoard, List<List<string[]>> newDataForPlayersSymbolsSwitch)
+        public static void SetUpSwitchedPlayersSymbolsForGameBoard(GameObject[,,] gameBoard, ArrayList newDataForPlayersSymbolsSwitch)
         {
-            List<string[]> oldSymbolsForSwitch = newDataForPlayersSymbolsSwitch[1];
-            List<string[]> newSymbolsForSwitch = newDataForPlayersSymbolsSwitch[0];
+            List<string[]> oldSymbolsForSwitch = (List<string[]>)newDataForPlayersSymbolsSwitch[1];
+            List<string[]> newSymbolsForSwitch = (List<string[]>)newDataForPlayersSymbolsSwitch[0];
             int teamsNumbers = oldSymbolsForSwitch.Count - 1;
 
             GameObject[,,] gameBoardWithChangedData = ChangeDataForOldSymbolsForSwitch(gameBoard, oldSymbolsForSwitch);
@@ -861,14 +863,67 @@ namespace Assets.Scripts
             return symbolsForSwitchOld;
         }
 
-        public static List<string[]> SetUpNewTeamGameSymbols(List<List<string[]>> newDataForPlayersSymbolsSwitch, List<string[]> teamGameSymbols)
+        public static List<string[]> SetUpNewTeamGameSymbols(ArrayList newDataForPlayersSymbolsSwitch, List<string[]> teamGameSymbols)
         {
             //List<string[]> oldSymbolsForSwitch = newDataForPlayersSymbolsSwitch[1];
-            //List<string[]> newSymbolsForSwitch = newDataForPlayersSymbolsSwitch[0];
-            List<int[]> randomIndexesForSwitch = newDataForPlayersSymbolsSwitch[2];
-            List<string[]> newSymbolsForSwitch1 = new List<string[]>();
+            List<string[]> newSymbolsForSwitch = (List<string[]>)newDataForPlayersSymbolsSwitch[0];
+            
+            List<int[]> randomIndexesForSwitch = (List<int[]>)newDataForPlayersSymbolsSwitch[2];
+            //List<int[]> randomIndexesForSwitch2 =  new List<int[]>();
+            //List<string[]> newSymbolsForSwitch = new List<string[]>();
 
             int teamsNumbers = teamGameSymbols.Count;
+
+
+
+            //int[] tab11 = { 2 };
+            //int[] tab22 = { 1 };
+            //int[] tab33 = { 1 };
+            //int[] tab44 = { 0 };
+
+            //randomIndexesForSwitch2.Insert(0, tab11);
+            //randomIndexesForSwitch2.Insert(1, tab22);
+            //randomIndexesForSwitch2.Insert(2, tab33);
+            //randomIndexesForSwitch2.Insert(3, tab44);
+
+            Debug.Log("TEAM GAME SWITCHED SYMBOLS START ------------------------------------------------  ");
+            Debug.Log("INDEXES START ------------------------------------------------  ");
+
+            for (int team = 0; team < randomIndexesForSwitch.Count; team++)
+            {
+                Debug.Log("TEAM:" + team);
+                int[] test = randomIndexesForSwitch[team];
+                for (int i = 0; i < test.Length; i++)
+                {
+
+                    Debug.Log($"team {team}, symbol index[{i}] = " + test[i]);
+
+                }
+
+            }
+
+            Debug.Log("INDEXES END ------------------------------------------------  ");
+            Debug.Log("OLD SYMBOLS START ------------------------------------------------  ");
+
+            for (int team = 0; team < teamGameSymbols.Count; team++)
+            {
+                Debug.Log("TEAM:" + team);
+                string[] test = teamGameSymbols[team];
+                for (int i = 0; i < test.Length; i++)
+                {
+
+                    Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
+
+                }
+
+            }
+
+            Debug.Log("OLD SYMBOLS END ------------------------------------------------  ");
+
+           
+
+
+
 
             // for test - bug
             //string[] tab1 = { "F" };
@@ -876,27 +931,29 @@ namespace Assets.Scripts
             //string[] tab3 = { "T" };
             //string[] tab4 = { "X" };
 
-            string[] tab1 = { "F" };
-            string[] tab2 = { "L" };
-            string[] tab3 = { "T" };
-            string[] tab4 = { "X" };
+            //string[] tab1 = { "F" };
+            //string[] tab2 = { "L" };
+            //string[] tab3 = { "T" };
+            //string[] tab4 = { "X" };
 
-            newSymbolsForSwitch1.Insert(0, tab1);
-            newSymbolsForSwitch1.Insert(1, tab2);
-            newSymbolsForSwitch1.Insert(2, tab3);
-            newSymbolsForSwitch1.Insert(3, tab4);
+            //newSymbolsForSwitch1.Insert(0, tab1);
+            //newSymbolsForSwitch1.Insert(1, tab2);
+            //newSymbolsForSwitch1.Insert(2, tab3);
+            //newSymbolsForSwitch1.Insert(3, tab4);
 
-            List<string[]> teamGameSymbolsForSwitch = ChangeDataForOldSymbolsForSwitch(teamGameSymbols);
-            List<string[]> symbolsForSwitchNew = ChangeDataForNewSymbolsForSwitch(newSymbolsForSwitch1);
+            //List<string[]> teamGameSymbolsForSwitch = ChangeDataForOldSymbolsForSwitch(teamGameSymbols);
+            //List<string[]> symbolsForSwitchNew = ChangeDataForNewSymbolsForSwitch(newSymbolsForSwitch1);
             //List<string[]> symbolsForSwitchOld = ChangeDataForOldSymbolsForSwitch(oldSymbolsForSwitch);
 
             List<string[]> newTeamsSymbols = new List<string[]>();
 
             for (int i = 0; i < teamsNumbers; i++)
             {
+                Debug.Log("team : " + i);
                 string[] oldTeamSymbols = teamGameSymbols[i];
-                string[] newTeamSymbols = symbolsForSwitchNew[i];
+                string[] newTeamSymbols = newSymbolsForSwitch[i];
                 
+                int[] indexesForSwitch = randomIndexesForSwitch[i];
                 int oldSymbolsNumber = oldTeamSymbols.Length;
                 //Debug.Log("oldSymbolsNumber: " + oldSymbolsNumber);
                 int newSymbolsNumber = newTeamSymbols.Length;
@@ -904,8 +961,36 @@ namespace Assets.Scripts
 
                 string[] switchedSymbols = new string[oldSymbolsNumber];
 
+                int indexSymbol = 0;
+                int indexesCounted = 0;
+                int oldIndex = 0;
+
                 for (int j = 0; j < oldSymbolsNumber; j++)
                 {
+
+                    if (indexesCounted < newSymbolsNumber)
+                    {
+                       oldIndex = indexesForSwitch[indexSymbol];
+                       indexesCounted++;
+                    }
+
+           
+                    if (oldIndex == j)
+                    {
+                        string newSymbol = newTeamSymbols[indexSymbol];
+                        switchedSymbols[j] = newSymbol;
+                        indexSymbol++;
+                    }
+                    else
+                    {
+                        string oldSymbol = oldTeamSymbols[j];
+                        switchedSymbols[j] = oldSymbol;
+                    }
+
+
+
+
+                    
 
                     //string currentSymbol = 
                     ////Debug.Log("currentCubePlaySymbol: " + currentCubePlaySymbol);
@@ -969,13 +1054,13 @@ namespace Assets.Scripts
 
 
 
-            Debug.Log("TEAM GAME SWITCHED SYMBOLS START ------------------------------------------------  ");
-            Debug.Log("OLD SYMBOLS START ------------------------------------------------  ");
+            //Debug.Log("TEAM GAME SWITCHED SYMBOLS START ------------------------------------------------  ");
+            Debug.Log("NEW SYMBOLS START ------------------------------------------------  ");
 
-            for (int team = 0; team < teamGameSymbols.Count; team++)
+            for (int team = 0; team < newSymbolsForSwitch.Count; team++)
             {
                 Debug.Log("TEAM:" + team);
-                string[] test = teamGameSymbols[team];
+                string[] test = newSymbolsForSwitch[team];
                 for (int i = 0; i < test.Length; i++)
                 {
 
@@ -985,24 +1070,7 @@ namespace Assets.Scripts
 
             }
 
-            Debug.Log("OLD SYMBOLS START ------------------------------------------------  ");
-
-            Debug.Log("NEW SYMBOLS START ------------------------------------------------  ");
-
-            for (int team = 0; team < newSymbolsForSwitch1.Count; team++)
-            {
-                Debug.Log("TEAM:" + team);
-                string[] test = newSymbolsForSwitch1[team];
-                for (int i = 0; i < test.Length; i++)
-                {
-
-                    Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
-
-                }
-
-            }
-
-            Debug.Log("NEW SYMBOLS START ------------------------------------------------  ");
+            Debug.Log("NEW SYMBOLS END ------------------------------------------------  ");
 
             Debug.Log("SWITCHED SYMBOLS START ------------------------------------------------  ");
 
@@ -1019,7 +1087,7 @@ namespace Assets.Scripts
 
             }
 
-            Debug.Log("SWITCHED SYMBOLS START ------------------------------------------------  ");
+            Debug.Log("SWITCHED SYMBOLS END ------------------------------------------------  ");
 
 
             return newTeamsSymbols;

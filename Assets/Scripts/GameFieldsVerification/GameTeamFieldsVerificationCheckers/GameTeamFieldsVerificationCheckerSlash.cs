@@ -31,13 +31,13 @@ namespace Assets.Scripts
                     {
                         int[,] winnerCoordinateXYForCubePlay = (int[,])listCheckerSlash[1];
 
-                        for (int aaai = 0; aaai < winnerCoordinateXYForCubePlay.GetLength(0); aaai++)
-                        {
-                            for (int z = 0; z < winnerCoordinateXYForCubePlay.GetLength(1); z++)
-                            {
-                                UnityEngine.Debug.Log($"coordinateXYToMark: [{aaai}, {z}] = " + winnerCoordinateXYForCubePlay[aaai, z]);
-                            }
-                        }
+                        //for (int aaai = 0; aaai < winnerCoordinateXYForCubePlay.GetLength(0); aaai++)
+                        //{
+                        //    for (int z = 0; z < winnerCoordinateXYForCubePlay.GetLength(1); z++)
+                        //    {
+                        //        UnityEngine.Debug.Log($"coordinateXYToMark: [{aaai}, {z}] = " + winnerCoordinateXYForCubePlay[aaai, z]);
+                        //    }
+                        //}
 
                         return listCheckerSlash;
 

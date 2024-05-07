@@ -151,7 +151,8 @@ internal class Game : MonoBehaviour
 
     private string[] _newPlayersSymbols;  
     private List<string[]> _newDataForPlayersSymbols;
-    private List<List<string[]>> _newDataForPlayersSymbolsSwitch;
+    //private List<List<string[]>> _newDataForPlayersSymbolsSwitch;
+    private ArrayList _newDataForPlayersSymbolsSwitch;
     private bool _isDoubleRandomChange;
     private int _switchChange; // 0 single, 1 double
     private string[] _oldSymbolsForChange; 
@@ -857,16 +858,31 @@ internal class Game : MonoBehaviour
                             //_timeForHide = _timeForTimers[0];
                             //Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
 
-                            // change to arrayList!!!!!!!!!!!!!!!!!!!
                             _newDataForPlayersSymbolsSwitch = PlayGameSwitchPlayersSymbolsMethods.GetPlayersSymbolsForSwitch(_teamGameSymbols);
 
-                            ////_oldSymbolsForChange = _newDataForPlayersSymbols[0];
-                            ////_newSymbolsForChange = _newDataForPlayersSymbols[1];
-                            ////_newPlayersSymbols = _newDataForPlayersSymbols[2];
 
                              PlayGameSwitchPlayersSymbolsMethods.SetUpSwitchedPlayersSymbolsForGameBoard(_gameBoard, _newDataForPlayersSymbolsSwitch);
 
                              _teamGameSymbols = PlayGameSwitchPlayersSymbolsMethods.SetUpNewTeamGameSymbols(_newDataForPlayersSymbolsSwitch, _teamGameSymbols);
+
+
+                            // to do
+                            //_gameButtonsChangePlayersSymbolsTop = PlayGameSwitchPlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
+                            //_gameButtonsChangePlayersSymbols = PlayGameSwitchPlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
+
+
+                            _gameButtonsChangePlayersSymbolsTop = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D);
+                            _gameButtonsChangePlayersSymbols = PlayGameSwitchPlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _newDataForPlayersSymbolsSwitch);
+
+
+                            // to do
+                            //_playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
+
+
+
+
+                            // to do
+                            //_gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
 
 
                             ////if (_isDoubleRandomChange == true)
@@ -932,7 +948,7 @@ internal class Game : MonoBehaviour
                     {
                         PlayGameMenuAndTimerButtonsActions.ShowTimerFoGameBoard();
                         PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
-                        //PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbolsTop);
+                        PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbolsTop);
                         //PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbols);
                         _isTimeToHidePlayGameElements = true;
                         _timeForUnhidePlayGameElements = _timeForTimers[2];
