@@ -872,7 +872,7 @@ internal class Game : MonoBehaviour
 
 
                             _gameButtonsChangePlayersSymbolsTop = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D);
-                            _gameButtonsChangePlayersSymbols = PlayGameSwitchPlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _newDataForPlayersSymbolsSwitch);
+                            _gameButtonsChangePlayersSymbols = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _newDataForPlayersSymbolsSwitch);
 
 
                             // to do
@@ -949,7 +949,7 @@ internal class Game : MonoBehaviour
                         PlayGameMenuAndTimerButtonsActions.ShowTimerFoGameBoard();
                         PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
                         PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbolsTop);
-                        //PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbols);
+                        PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbols);
                         _isTimeToHidePlayGameElements = true;
                         _timeForUnhidePlayGameElements = _timeForTimers[2];
                     }

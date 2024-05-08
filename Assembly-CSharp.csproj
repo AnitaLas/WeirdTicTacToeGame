@@ -74,7 +74,7 @@
     <Compile Include="Assets\Scripts\CommonMethods.cs" />
     <Compile Include="Assets\Scripts\ScreenVerification\ScreenVerificationMethods.cs" />
     <Compile Include="Assets\Scripts\GameFieldsVerification\GameTeamFieldsVerificationCheckers\GameTeamFieldsVerificationCheckerVertical.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtons\PlayGameChangePlayersSymbolsButtonsMethods.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameSwitchPlayersSymbolsButtons\PlayGameSwitchPlayersSymbolsButtonsMethods.cs" />
     <Compile Include="Assets\Scripts\GameInformation\GameInformationText\GameInformationCreateText.cs" />
     <Compile Include="Assets\Scripts\GameConfigurationChangePlayersSymbols.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonButtonsName.cs" />
@@ -99,7 +99,7 @@
     <Compile Include="Assets\Scripts\PlayGame\PlayGameHelpButtons\PlayGameHelpButtonsActions.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethodsActionsDestroy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameSwitchPlayersSymbolsMethods.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameSwitchPlayersSymbolsButtons\PlayGameSwitchPlayersSymbolsMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationTeamNumbers\GameConfigurationTeamNumbersButtons\GameConfigurationTeamNumbersButtonsAction.cs" />
     <Compile Include="Assets\Scripts\GameCommonMethods\GameCommonMethodsSetUpCoordinates.cs" />
@@ -169,6 +169,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\CreateTable\CreateTableCommonMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameSwitchPlayersSymbolsButtons\PlayGameSwitchPlayersSymbolsButtonsCreate.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameTimer\PlayGameTimerCommonMethods.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameHelpButtons\PlayGameHelpButtons.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtons\GameConfigurationButtonsActions.cs" />
@@ -233,7 +234,7 @@
     <Compile Include="Assets\Scripts\GameStart\GameStartCommon\GameStartCommonButtonsTagName.cs" />
     <Compile Include="Assets\Scripts\GameCommonMethods\GameCommonMethodsMain.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameChangeCubePlay\PlayGameChangeCubePlayHelpText.cs" />
-    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameSwitchPlayersSymbolsButtonsCreate.cs" />
+    <Compile Include="Assets\Scripts\PlayGame\PlayGameChangePlayersSymbols\PlayGameChangePlayersSymbolsButtons\PlayGameChangePlayersSymbolsButtonsMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -177,5 +177,12 @@ namespace Assets.Scripts
             string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
             return tagName;
         }
+
+        public static string GetButtonNameSwitchBetweenTeamsForInformation()
+        {
+            int dictionatyId = 11;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
     }
 }
