@@ -146,7 +146,7 @@ namespace Assets.Scripts
                 maxSymbolsNumberForSwitch = minSymbolsNumberForSwitch;
             }
 
-            //maxSymbolsNumberForSwitch = 1;
+            //maxSymbolsNumberForSwitch = 2;
             Debug.Log("maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
 
             int teamsNumbers = teamGameSymbols.Count;
@@ -886,39 +886,39 @@ namespace Assets.Scripts
             //randomIndexesForSwitch2.Insert(2, tab33);
             //randomIndexesForSwitch2.Insert(3, tab44);
 
-            Debug.Log("TEAM GAME SWITCHED SYMBOLS START ------------------------------------------------  ");
-            Debug.Log("INDEXES START ------------------------------------------------  ");
+            //Debug.Log("TEAM GAME SWITCHED SYMBOLS START ------------------------------------------------  ");
+            //Debug.Log("INDEXES START ------------------------------------------------  ");
 
-            for (int team = 0; team < randomIndexesForSwitch.Count; team++)
-            {
-                Debug.Log("TEAM:" + team);
-                int[] test = randomIndexesForSwitch[team];
-                for (int i = 0; i < test.Length; i++)
-                {
+            //for (int team = 0; team < randomIndexesForSwitch.Count; team++)
+            //{
+            //    Debug.Log("TEAM:" + team);
+            //    int[] test = randomIndexesForSwitch[team];
+            //    for (int i = 0; i < test.Length; i++)
+            //    {
 
-                    Debug.Log($"team {team}, symbol index[{i}] = " + test[i]);
+            //        Debug.Log($"team {team}, symbol index[{i}] = " + test[i]);
 
-                }
+            //    }
 
-            }
+            //}
 
-            Debug.Log("INDEXES END ------------------------------------------------  ");
-            Debug.Log("OLD SYMBOLS START ------------------------------------------------  ");
+            //Debug.Log("INDEXES END ------------------------------------------------  ");
+            //Debug.Log("OLD SYMBOLS START ------------------------------------------------  ");
 
-            for (int team = 0; team < teamGameSymbols.Count; team++)
-            {
-                Debug.Log("TEAM:" + team);
-                string[] test = teamGameSymbols[team];
-                for (int i = 0; i < test.Length; i++)
-                {
+            //for (int team = 0; team < teamGameSymbols.Count; team++)
+            //{
+            //    Debug.Log("TEAM:" + team);
+            //    string[] test = teamGameSymbols[team];
+            //    for (int i = 0; i < test.Length; i++)
+            //    {
 
-                    Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
+            //        Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
 
-                }
+            //    }
 
-            }
+            //}
 
-            Debug.Log("OLD SYMBOLS END ------------------------------------------------  ");
+            //Debug.Log("OLD SYMBOLS END ------------------------------------------------  ");
 
            
 
@@ -949,7 +949,7 @@ namespace Assets.Scripts
 
             for (int i = 0; i < teamsNumbers; i++)
             {
-                Debug.Log("team : " + i);
+                //Debug.Log("team : " + i);
                 string[] oldTeamSymbols = teamGameSymbols[i];
                 string[] newTeamSymbols = newSymbolsForSwitch[i];
                 
@@ -1055,43 +1055,224 @@ namespace Assets.Scripts
 
 
             //Debug.Log("TEAM GAME SWITCHED SYMBOLS START ------------------------------------------------  ");
-            Debug.Log("NEW SYMBOLS START ------------------------------------------------  ");
+            //Debug.Log("NEW SYMBOLS START ------------------------------------------------  ");
 
-            for (int team = 0; team < newSymbolsForSwitch.Count; team++)
-            {
-                Debug.Log("TEAM:" + team);
-                string[] test = newSymbolsForSwitch[team];
-                for (int i = 0; i < test.Length; i++)
-                {
+            //for (int team = 0; team < newSymbolsForSwitch.Count; team++)
+            //{
+            //    Debug.Log("TEAM:" + team);
+            //    string[] test = newSymbolsForSwitch[team];
+            //    for (int i = 0; i < test.Length; i++)
+            //    {
 
-                    Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
+            //        Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
 
-                }
+            //    }
 
-            }
+            //}
 
-            Debug.Log("NEW SYMBOLS END ------------------------------------------------  ");
+            //Debug.Log("NEW SYMBOLS END ------------------------------------------------  ");
 
-            Debug.Log("SWITCHED SYMBOLS START ------------------------------------------------  ");
+            //Debug.Log("SWITCHED SYMBOLS START ------------------------------------------------  ");
 
-            for (int team = 0; team < newTeamsSymbols.Count; team++)
-            {
-                Debug.Log("TEAM:" + team);
-                string[] test = newTeamsSymbols[team];
-                for (int i = 0; i < test.Length; i++)
-                {
+            //for (int team = 0; team < newTeamsSymbols.Count; team++)
+            //{
+            //    Debug.Log("TEAM:" + team);
+            //    string[] test = newTeamsSymbols[team];
+            //    for (int i = 0; i < test.Length; i++)
+            //    {
 
-                    Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
+            //        Debug.Log($"team {team}, symbol test[{i}] = " + test[i]);
 
-                }
+            //    }
 
-            }
+            //}
 
-            Debug.Log("SWITCHED SYMBOLS END ------------------------------------------------  ");
+            //Debug.Log("SWITCHED SYMBOLS END ------------------------------------------------  ");
 
 
             return newTeamsSymbols;
         }
 
+        // -----
+        public static string[] GetNewPlayersSymbolsMove(string[] playersSymbols, string[] playerSymbolMove, string[] newSymbolsForChande)
+        {
+            int playerSymbolMoveLength = playerSymbolMove.Length;
+            int newSymbolsToChangeLength = newSymbolsForChande.Length;
+            int oldSymbolsToChangeLength = oldSymbolsForChande.Length;
+
+            for (int i = 0; i < oldSymbolsForChande.Length; i++)
+            {
+                Debug.Log($"a: {i}, oldSymbolsForChande: {oldSymbolsForChande[i]}");
+            }
+            Debug.Log($" ----------------------- ");
+
+            for (int i = 0; i < newSymbolsForChande.Length; i++)
+            {
+                Debug.Log($"b: {i}, newSymbolsForChande: {newSymbolsForChande[i]}");
+            }
+            Debug.Log($" ----------------------- ");
+
+            for (int i = 0; i < playerSymbolMove.Length; i++)
+            {
+                Debug.Log($"OLD: {i}, playerSymbolMove: {playerSymbolMove[i]}");
+            }
+            Debug.Log($" ----------------------- ");
+
+            string firstSymbol = playerSymbolMove[0];
+
+            int index = 0;
+
+            for (int i = 0; i < oldSymbolsToChangeLength; i++)
+            {
+                string oldSymbol = oldSymbolsForChande[i];
+                Debug.Log("i: oldSymbol: " + oldSymbol);
+                if (oldSymbol == firstSymbol)
+                {
+                    Debug.Log("i: " + i);
+                    index = i;
+                    break;
+                }
+            }
+
+            int indexForChange = 0;
+
+            for (int z = 0; z < newSymbolsToChangeLength; z++)
+            {
+                string newSymbol = newSymbolsForChande[z];
+                //string oldSymbol = oldSymbolsForChande[z];
+
+               // Debug.Log($"z: {z}, newSymbol: {newSymbolsForChande[z]}");
+                //Debug.Log($"z: {z}, oldSymbol: {oldSymbolsForChande[z]}");
+
+               //string currentSymbol = playerSymbolMove[z];
+
+                if (index >= z || index < z)
+                {
+                    Debug.Log("z: " + z);
+                    playerSymbolMove[indexForChange] = newSymbol;
+                    indexForChange++;
+                }
+                       
+               
+            }
+
+            for (int i = 0; i < playerSymbolMove.Length; i++)
+            {
+                Debug.Log($"NEW: {i}, playerSymbolMove: {playerSymbolMove[i]}");
+            }
+            Debug.Log($" ----------------------- ");
+
+
+
+
+
+
+            return playerSymbolMove;
+        }
+
+        public static string[] CreateTableWithTagsForPlayerSymbolMove()
+        {
+            string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
+            string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
+            string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
+
+            string[] table = new string[3];
+            table[0] = tagPlayerSymbolPrevious;
+            table[1] = tagPlayerSymbolCurrent;
+            table[2] = tagPlayerSymbolNext;
+
+            return table;
+        }
+
+        public static void ChangeDataForPlayersSymbolsMoveGameObjects(string[] oldSymbolsForChande, string[] newSymbolsForChande)
+        {
+            string[] table = CreateTableWithTagsForPlayerSymbolMove();
+            int newSymbolsToChangeLength = newSymbolsForChande.Length;
+
+            for (int i = 0; i < table.Length; i++)
+            {
+                string tagName = table[i];
+                GameObject cubePlay = GameCommonMethodsMain.GetObjectByTagName(tagName);
+                string currentSymbol = CommonMethods.GetCubePlayText(cubePlay);
+
+                for (int j = 0; j < newSymbolsToChangeLength; j++)
+                {
+                    string oldSymbol = oldSymbolsForChande[j];
+
+                    if (currentSymbol == oldSymbol)
+                    {
+                        string newSymbol = newSymbolsForChande[j];
+                        GameCommonMethodsMain.ChangeTextForFirstChild(cubePlay, newSymbol);
+                    }
+                }
+            }
+        }
+
+        public static string[] GetSymbolsAsOneTable(List<string[]> teamsSymbols, int playersNumberForChangeSymbols)
+        {
+            string[] symbols = new string[playersNumberForChangeSymbols];
+            int teamsNumbers = teamsSymbols.Count;
+            int index = 0;
+
+            for (int i = 0; i < teamsNumbers; i++)
+            {
+                string[] teamSymbols = teamsSymbols[i];
+                int playersNumbers = teamSymbols.Length;
+
+                for (int j = 0; j < playersNumbers; j++)
+                {
+                    string teamSymbol = teamSymbols[j];
+                    symbols[index] = teamSymbol;
+                    index++;
+                }
+            }
+
+
+            return symbols;
+        }
+
+        public static int GetNumbersForCountedSymbolsToChange(List<string[]> teams)
+        {
+            int playersNumbers = 0;
+            int teamsNumbers = teams.Count;
+
+            for (int i = 0; i < teamsNumbers; i++)
+            {
+                string[] teamSymbols = teams[i];
+                int symbolsNumbers = teamSymbols.Length;
+                playersNumbers = playersNumbers + symbolsNumbers;
+            }
+
+            return playersNumbers;
+        }
+
+        public static string[] SetUpNewPlayersSymbolsMove(string[] playersSymbols, string[] playerSymbolMove, ArrayList newDataForPlayersSymbolsSwitch)
+        {
+
+            List<string[]> oldTeamsSymbols = (List<string[]>)newDataForPlayersSymbolsSwitch[1];
+            List<string[]> newTeamsSymbols = (List<string[]>)newDataForPlayersSymbolsSwitch[0];
+
+            int playersNumberForChangeSymbols = GetNumbersForCountedSymbolsToChange(newTeamsSymbols);
+
+            string[] oldSymbolsForSwitch = GetSymbolsAsOneTable(oldTeamsSymbols, playersNumberForChangeSymbols);
+            string[] newSymbolsForSwitch = GetSymbolsAsOneTable(newTeamsSymbols, playersNumberForChangeSymbols);
+
+
+            // start 
+            playerSymbolMove = GetNewPlayersSymbolsMove(playersSymbols, playerSymbolMove, newSymbolsForSwitch);
+            ChangeDataForPlayersSymbolsMoveGameObjects(oldSymbolsForSwitch, newSymbolsForSwitch);
+
+
+            //Debug.Log($" -------------------- AFTER -------------------------------------- ");
+
+            //for (int i = 0; i < playerSymbolMove.Length; i++)
+            //{
+            //    Debug.Log($"_playersSymbols[{i}]: " + playerSymbolMove[i]);
+            //}
+
+            return playerSymbolMove;
+        }
+
+       
     }
 }

@@ -142,13 +142,18 @@ namespace Assets.Scripts
         // --------------------------------------------------------------------------------------------
 
 
-        public static List<GameObject[,,]> PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeTablet(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D, string[] oldSymbolsForChande, string[] newSymbolsForChande)
+        public static List<GameObject[,,]> PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeTablet(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D, ArrayList newDataForPlayersSymbolsSwitch, int playersNumberForChangeSymbols)
         {
-            int playersNumberForChangeSymbols = newSymbolsForChande.Length;
+            //int playersNumberForChangeSymbols = newSymbolsForChande.Length;
+            List<string[]> oldTeamsSymbols = (List<string[]>)newDataForPlayersSymbolsSwitch[0];
+            List<string[]> newTeamsSymbols = (List<string[]>)newDataForPlayersSymbolsSwitch[1];
+
+            string[] oldSymbolsForSwitch = GetSymbolsAsOneTable(oldTeamsSymbols, playersNumberForChangeSymbols);
+            string[] newSymbolsForSwitch = GetSymbolsAsOneTable(newTeamsSymbols, playersNumberForChangeSymbols);
 
             List<GameObject[,,]> buttonsBackground = PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundFinalForModeTablet(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumberForChangeSymbols);
-            List<GameObject[,,]> buttonsOldSymbols = PlayGameSwitchPlayersSymbolsCreateButtonsOldSymbolsFinalForModeTablet(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D, playersNumberForChangeSymbols, oldSymbolsForChande);
-            List<GameObject[,,]> buttonsNewSymbols = PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbolsFinalForModeTablet(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, playersNumberForChangeSymbols, newSymbolsForChande);
+            List<GameObject[,,]> buttonsOldSymbols = PlayGameSwitchPlayersSymbolsCreateButtonsOldSymbolsFinalForModeTablet(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D, playersNumberForChangeSymbols, oldSymbolsForSwitch);
+            List<GameObject[,,]> buttonsNewSymbols = PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbolsFinalForModeTablet(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, playersNumberForChangeSymbols, newSymbolsForSwitch);
 
             List<List<GameObject[,,]>> buttonsLists = new List<List<GameObject[,,]>>();
 

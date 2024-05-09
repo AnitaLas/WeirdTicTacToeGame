@@ -119,8 +119,7 @@ namespace Assets.Scripts
                 //Debug.Log(" test ");
 
                 //buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
-                buttons = PlayGameSwitchPlayersSymbolsButtonsMethods.PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeCellphone(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D,
-                 newDataForPlayersSymbolsSwitch, playersNumberForChangeSymbols);
+                buttons = PlayGameSwitchPlayersSymbolsButtonsMethods.PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeCellphone(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D, newDataForPlayersSymbolsSwitch, playersNumberForChangeSymbols);
 
 
 
@@ -130,7 +129,7 @@ namespace Assets.Scripts
             {
                 //Debug.Log("Upss it does not implemented yet, sorry :( ");
 
-                //buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtonsForModeTablet(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
+                buttons = PlayGameSwitchPlayersSymbolsButtonsMethods.PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeTablet(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D, newDataForPlayersSymbolsSwitch, playersNumberForChangeSymbols);
 
 
             }
