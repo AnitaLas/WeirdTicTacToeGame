@@ -133,7 +133,7 @@ namespace Assets.Scripts
             // ?????????????????????????????????????????????????????
             // ADD change for random, works = 2
             int maxSymbolsNumberForSwitch = PlayGameChangePlayersSymbolsMethods.GetMinPlayersNumberForTeam(teamGameSymbols);
-            //int maxSymbolsNumberForChange = 1;
+            Debug.Log("1 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
 
             int minSymbolsNumberForSwitch = 1;
 
@@ -147,7 +147,7 @@ namespace Assets.Scripts
             }
 
             //maxSymbolsNumberForSwitch = 2;
-            Debug.Log("maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
+            Debug.Log("2 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
 
             int teamsNumbers = teamGameSymbols.Count;
             //Debug.Log(" teamsNumbers: " + teamsNumbers);
@@ -178,11 +178,11 @@ namespace Assets.Scripts
 
                 }
 
-                //for (int i = 0; i < symbolsToSwitch.Length; i++)
-                //{
-                //    Debug.Log($"symbolsToSwitch[{i}] :" + symbolsToSwitch[i]);
-                //}
-                //Debug.Log($" --------------------------------------- ");
+                for (int i = 0; i < indexesForSwitch.Length; i++)
+                {
+                    Debug.Log($"indexesForSwitch[{i}] :" + indexesForSwitch[i]);
+                }
+                Debug.Log($" --------------------------------------- ");
 
                 oldSymbolsForSwitch.Insert(0, symbolsToSwitch);
             }
@@ -345,24 +345,24 @@ namespace Assets.Scripts
 
         //}
 
-        public static int[] GetIndexesForRightMove(int playersSymbols, int startIndex)
+        public static int[] GetIndexesForRightMove(int teamsNumbers, int startIndex)
         {
-            int[] indexes = new int[playersSymbols];
+            int[] indexes = new int[teamsNumbers];
             int index = startIndex;
 
 
-            if (playersSymbols == 2)
+            if (teamsNumbers == 2)
             {
                 indexes[0] = 1;
                 indexes[1] = 0;
             }
             else
             {
-                for (int i = 0; i < playersSymbols; i++)
+                for (int i = 0; i < teamsNumbers; i++)
                 {
                     indexes[i] = index;
 
-                    if (index < playersSymbols - 1)
+                    if (index < teamsNumbers - 1)
                     {
 
                         index++;
@@ -382,36 +382,76 @@ namespace Assets.Scripts
             return indexes;
         }
 
-        public static int[] GetIndexesForLeftMove(int playersSymbols, int startIndex)
+        public static int[] GetIndexesForLeftMove(int teamsNumbers, int startIndex)
         {
-            int[] indexes = new int[playersSymbols];
+            int[] indexes = new int[teamsNumbers];
             int index = startIndex;
 
 
-            if (playersSymbols == 2)
+            if (teamsNumbers == 2)
             {
                 indexes[0] = 1;
                 indexes[1] = 0;
             }
             else
             {
-                for (int i = 0; i < playersSymbols; i++)
+                for (int i = 0; i < teamsNumbers; i++)
                 {
-                    indexes[i] = index;
+                    Debug.Log("333 A index: " + index);
+                    //indexes[i] = index;
+                    //Debug.Log("333 B index: " + index);
+                    
+
+                    //index--;
 
                     if (index > 0)
                     {
+                        
 
-                        index--;
+                        if (index != teamsNumbers - 1)
+                        {
+                            indexes[i] = index;
+                            index--;
+                        }
+                        else
+                        {
+                            index--;
+                        }
+
                     }
                     else
                     {
-                        index = playersSymbols - 1;
-
+                        //index = teamsNumbers - 1;
+                        index = teamsNumbers - 1;
+                        indexes[i] = index;
+                        //index--;
                     }
+                    ////indexes[i] = index;
+                    ////index--;
                 }
+
+                //for (int i = 0; i < teamsNumbers; i++)
+                //{
+                //    Debug.Log("333 A index: " + index);
+                //    indexes[i] = index;
+                //    Debug.Log("333 B index: " + index);
+                //    if (index > 0)
+                //    {
+
+                //        index--;
+                //    }
+                //    else
+                //    {
+                //        index = teamsNumbers - 1;
+
+                //    }
+                //}
             }
 
+            for (int i = 0; i < teamsNumbers; i++)
+            {
+                Debug.Log("333 indexes[i]: " + indexes[i]);
+            }
 
             return indexes;
         }
@@ -419,39 +459,42 @@ namespace Assets.Scripts
         public static List<string[]> SetUpSymbolsForSwitch(List<string[]> symbolsForSwitch)
         {
             List<string[]> switchedSymbols = new List<string[]>();
-            int playersSymbols = symbolsForSwitch.Count;
+            int teamsNumbers = symbolsForSwitch.Count;
 
             int[] indexes; // = new int[playersSymbols];
             //int minIndex = 0;
-            //int maxIndex = playersSymbols - 1;
+            int minIndex = 1;
+            int maxIndex = teamsNumbers - 1;
 
+
+            // ???????????????????????????????????????? uncom
             //int startIndex = CommonMethods.ChooseRandomNumber(minIndex, maxIndex);
             //int startIndex = 3;
             int startIndex = 1;
             //Debug.Log("startIndex: " + startIndex);
 
             bool isStartIndexEven = CommonMethods.IsNumberEven(startIndex);
-            //Debug.Log("isStartIndexEven: " + isStartIndexEven);
+            Debug.Log("1234 isStartIndexEven: " + isStartIndexEven);
 
             //int index = startIndex;
 
 
             if (isStartIndexEven == true)
             {
-                indexes = GetIndexesForRightMove(playersSymbols, startIndex);
+                indexes = GetIndexesForRightMove(teamsNumbers, startIndex);
             }
             else
             {
-                indexes = GetIndexesForLeftMove(playersSymbols, startIndex);
+                indexes = GetIndexesForLeftMove(teamsNumbers, startIndex);
             }
 
 
             //Debug.Log(" final ---------------");
-            for (int i = 0; i < playersSymbols; i++)
+            for (int i = 0; i < teamsNumbers; i++)
             {
                 int finalIndex = indexes[i];
 
-                //Debug.Log("index: " + finalIndex);
+                Debug.Log("1234 index: " + finalIndex);
                 string[] team = symbolsForSwitch[finalIndex];
 
                 switchedSymbols.Insert(i, team);
@@ -460,38 +503,38 @@ namespace Assets.Scripts
             //Debug.Log(" end of set up ---------------");
             //Debug.Log(" end of set up ---------------");
 
-            //Debug.Log(" SS to switch ----------------------------------------------- ");
+            Debug.Log(" SS to switch ----------------------------------------------- ");
 
-            //for (int i = 0; i < symbolsForSwitch.Count; i++)
-            //{
-            //    string[] team = symbolsForSwitch[i];
-            //    int lenght1 = team.Length;
+            for (int i = 0; i < symbolsForSwitch.Count; i++)
+            {
+                string[] team = symbolsForSwitch[i];
+                int lenght1 = team.Length;
 
-            //    Debug.Log("team: " + i);
+                Debug.Log("team: " + i);
 
-            //    for (int j = 0; j < lenght1; j++)
-            //    {
-            //        Debug.Log($"symbol team[{j}]: " + team[j]);
-            //    }
+                for (int j = 0; j < lenght1; j++)
+                {
+                    Debug.Log($"symbol team[{j}]: " + team[j]);
+                }
 
-            //}
+            }
 
-            //Debug.Log("SS switchedSymbols: " + switchedSymbols);
+            Debug.Log("SS switchedSymbols: " + switchedSymbols);
 
-            //for (int i = 0; i < switchedSymbols.Count; i++)
-            //{
-            //    string[] team = switchedSymbols[i];
-            //    int lenght1 = team.Length;
+            for (int i = 0; i < switchedSymbols.Count; i++)
+            {
+                string[] team = switchedSymbols[i];
+                int lenght1 = team.Length;
 
-            //    Debug.Log("team: " + i);
+                Debug.Log("team: " + i);
 
-            //    for (int j = 0; j < lenght1; j++)
-            //    {
-            //        Debug.Log($"symbols team[{j}]: " + team[j]);
-            //    }
+                for (int j = 0; j < lenght1; j++)
+                {
+                    Debug.Log($"symbols team[{j}]: " + team[j]);
+                }
 
-            //}
-            //Debug.Log(" ----------------------------------------------- ");
+            }
+            Debug.Log(" ----------------------------------------------- ");
 
             return switchedSymbols;
 
@@ -511,37 +554,37 @@ namespace Assets.Scripts
             List<string[]> switchedSymbols = SetUpSymbolsForSwitch(symbolsForSwitch);
 
 
-            Debug.Log(" SYMBOLS to switch ----------------------------------------------- ");
+            //Debug.Log(" SYMBOLS to switch ----------------------------------------------- ");
 
-            for (int i = 0; i < symbolsForSwitch.Count; i++)
-            {
-                string[] team = symbolsForSwitch[i];
-                int lenght1 = team.Length;
+            //for (int i = 0; i < symbolsForSwitch.Count; i++)
+            //{
+            //    string[] team = symbolsForSwitch[i];
+            //    int lenght1 = team.Length;
 
-                Debug.Log("team: " + i);
+            //    Debug.Log("team: " + i);
 
-                for (int j = 0; j < lenght1; j++)
-                {
-                    Debug.Log($"switchedSymbols, symbol team[{j}]: " + team[j]);
-                }
+            //    for (int j = 0; j < lenght1; j++)
+            //    {
+            //        Debug.Log($"switchedSymbols, symbol team[{j}]: " + team[j]);
+            //    }
 
-            }
+            //}
 
-            Debug.Log("SYMBOLS switchedSymbols ------------------------------------------------- ");
+            //Debug.Log("SYMBOLS switchedSymbols ------------------------------------------------- ");
 
-            for (int i = 0; i < switchedSymbols.Count; i++)
-            {
-                string[] team = switchedSymbols[i];
-                int lenght1 = team.Length;
+            //for (int i = 0; i < switchedSymbols.Count; i++)
+            //{
+            //    string[] team = switchedSymbols[i];
+            //    int lenght1 = team.Length;
 
-                Debug.Log("team: " + i);
+            //    Debug.Log("team: " + i);
 
-                for (int j = 0; j < lenght1; j++)
-                {
-                    Debug.Log($"switchedSymbols, symbols team[{j}]: " + team[j]);
-                }
+            //    for (int j = 0; j < lenght1; j++)
+            //    {
+            //        Debug.Log($"switchedSymbols, symbols team[{j}]: " + team[j]);
+            //    }
 
-            }
+            //}
             //Debug.Log(" ----------------------------------------------- ");
             allDataForSwitch.Insert(0, symbolsForSwitch);
             allDataForSwitch.Insert(1, switchedSymbols);
@@ -1094,80 +1137,69 @@ namespace Assets.Scripts
         }
 
         // -----
-        public static string[] GetNewPlayersSymbolsMove(string[] playersSymbols, string[] playerSymbolMove, string[] newSymbolsForChande)
+        public static string[] GetNewPlayersSymbolsMove(string[] playerSymbolMove, string[] oldSymbolsForChande, string[] newSymbolsForChande)
         {
             int playerSymbolMoveLength = playerSymbolMove.Length;
             int newSymbolsToChangeLength = newSymbolsForChande.Length;
             int oldSymbolsToChangeLength = oldSymbolsForChande.Length;
 
-            for (int i = 0; i < oldSymbolsForChande.Length; i++)
+            string[] newPlayerSymbolMove = new string[playerSymbolMoveLength];
+
+            for (int i = 0; i < playerSymbolMoveLength; i++)
             {
-                Debug.Log($"a: {i}, oldSymbolsForChande: {oldSymbolsForChande[i]}");
-            }
-            Debug.Log($" ----------------------- ");
+                string oldSymbol = playerSymbolMove[i];
 
-            for (int i = 0; i < newSymbolsForChande.Length; i++)
-            {
-                Debug.Log($"b: {i}, newSymbolsForChande: {newSymbolsForChande[i]}");
-            }
-            Debug.Log($" ----------------------- ");
-
-            for (int i = 0; i < playerSymbolMove.Length; i++)
-            {
-                Debug.Log($"OLD: {i}, playerSymbolMove: {playerSymbolMove[i]}");
-            }
-            Debug.Log($" ----------------------- ");
-
-            string firstSymbol = playerSymbolMove[0];
-
-            int index = 0;
-
-            for (int i = 0; i < oldSymbolsToChangeLength; i++)
-            {
-                string oldSymbol = oldSymbolsForChande[i];
-                Debug.Log("i: oldSymbol: " + oldSymbol);
-                if (oldSymbol == firstSymbol)
+                for (int j = 0; j < oldSymbolsToChangeLength; j++)
                 {
-                    Debug.Log("i: " + i);
-                    index = i;
-                    break;
+                    string symbolToCompare = oldSymbolsForChande[j];
+
+                    if (oldSymbol == symbolToCompare)
+                    {
+                        string newSymbol = newSymbolsForChande[j];
+                        newPlayerSymbolMove[i] = newSymbol;
+
+                    }
+                    else
+                    {
+                        newPlayerSymbolMove[i] = oldSymbol;
+                    }
                 }
             }
 
-            int indexForChange = 0;
-
-            for (int z = 0; z < newSymbolsToChangeLength; z++)
-            {
-                string newSymbol = newSymbolsForChande[z];
-                //string oldSymbol = oldSymbolsForChande[z];
-
-               // Debug.Log($"z: {z}, newSymbol: {newSymbolsForChande[z]}");
-                //Debug.Log($"z: {z}, oldSymbol: {oldSymbolsForChande[z]}");
-
-               //string currentSymbol = playerSymbolMove[z];
-
-                if (index >= z || index < z)
-                {
-                    Debug.Log("z: " + z);
-                    playerSymbolMove[indexForChange] = newSymbol;
-                    indexForChange++;
-                }
-                       
-               
-            }
-
-            for (int i = 0; i < playerSymbolMove.Length; i++)
-            {
-                Debug.Log($"NEW: {i}, playerSymbolMove: {playerSymbolMove[i]}");
-            }
-            Debug.Log($" ----------------------- ");
 
 
 
 
 
 
-            return playerSymbolMove;
+            //for (int i = 0; i < oldSymbolsForChande.Length; i++)
+            //{
+            //    Debug.Log($"a: {i}, oldSymbolsForChande: {oldSymbolsForChande[i]}");
+            //}
+            //Debug.Log($" ----------------------- ");
+
+            //for (int i = 0; i < newSymbolsForChande.Length; i++)
+            //{
+            //    Debug.Log($"b: {i}, newSymbolsForChande: {newSymbolsForChande[i]}");
+            //}
+            //Debug.Log($" ----------------------- ");
+
+            //for (int i = 0; i < playerSymbolMove.Length; i++)
+            //{
+            //    Debug.Log($"OLD: {i}, playerSymbolMove: {playerSymbolMove[i]}");
+            //}
+            //Debug.Log($" ----------------------- ");
+
+            
+            //for (int i = 0; i < newPlayerSymbolMove.Length; i++)
+            //{
+            //    Debug.Log($"NEW: {i}, newPlayerSymbolMove: {newPlayerSymbolMove[i]}");
+            //}
+            //Debug.Log($" ----------------------- ");
+
+
+
+            return newPlayerSymbolMove;
         }
 
         public static string[] CreateTableWithTagsForPlayerSymbolMove()
@@ -1259,7 +1291,7 @@ namespace Assets.Scripts
 
 
             // start 
-            playerSymbolMove = GetNewPlayersSymbolsMove(playersSymbols, playerSymbolMove, newSymbolsForSwitch);
+            playerSymbolMove = GetNewPlayersSymbolsMove(playerSymbolMove, oldSymbolsForSwitch, newSymbolsForSwitch);
             ChangeDataForPlayersSymbolsMoveGameObjects(oldSymbolsForSwitch, newSymbolsForSwitch);
 
 

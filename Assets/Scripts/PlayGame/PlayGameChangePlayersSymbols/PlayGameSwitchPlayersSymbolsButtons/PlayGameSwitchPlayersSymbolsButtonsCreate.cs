@@ -105,18 +105,13 @@ namespace Assets.Scripts
         public static List<GameObject[,,]> GameSwitchPlayersSymbolsButtonsCreate(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, Material[] prefabCubePlayButtonsBackColour, ArrayList newDataForPlayersSymbolsSwitch)
         {
             List<string[]> teamsSymbolsForSwitch = (List<string[]>)newDataForPlayersSymbolsSwitch[1];
-            //string[] team1 = teams[0];
-            //int teamsNumbers = teams.Count;
-            //int playersNumbers = team1.Length;
-            //int playersNumberForChangeSymbols = teamsNumbers * playersNumbers;
+
             int playersNumberForChangeSymbols = GetNumbersForCountedSymbolsToChange(teamsSymbolsForSwitch);
-            //Debug.Log("playersNumberForChangeSymbols: " + playersNumberForChangeSymbols);
             List<GameObject[,,]> buttons = new List<GameObject[,,]>();
 
 
             if (playersNumberForChangeSymbols <= 6)             
             {
-                //Debug.Log(" test ");
 
                 //buttons = PlayGameChangePlayersSymbolsButtonsMethods.PlayGameChangePlayersSymbolsCreateFinalButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D, oldSymbolsForChande, newSymbolsForChande);
                 buttons = PlayGameSwitchPlayersSymbolsButtonsMethods.PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeCellphone(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D, newDataForPlayersSymbolsSwitch, playersNumberForChangeSymbols);

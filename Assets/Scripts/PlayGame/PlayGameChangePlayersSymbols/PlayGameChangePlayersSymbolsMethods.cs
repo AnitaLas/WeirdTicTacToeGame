@@ -413,24 +413,13 @@ namespace Assets.Scripts
             return oldTeamGameSymbols;
         }
 
-        //public static List<string[]> GetNewDataForPlayersSymbols(string[] playersSymbols, List<float> gameChangeTimeConfiguration, int switchChange, List<string[]> teamGameSymbols)
         public static List<string[]> GetNewDataForPlayersSymbols(string[] playersSymbols, List<float> gameChangeTimeConfiguration)
         {
             float timeForChandeRandomly = gameChangeTimeConfiguration[0];
-            //float timeForChandeBetweenTeams = gameChangeTimeConfiguration[2];
             //Debug.Log(" 1 random or for all ------");
             List<string[]> symbolsLists = new List<string[]>();
 
-            //if (switchChange == 0)
-            //{
-                symbolsLists = GetNewPlayersSymbols(playersSymbols, timeForChandeRandomly);
-            //}
-            //else
-            //{
-
-            //    symbolsLists = GetNewPlayersSymbolsForSwitch(playersSymbols, teamGameSymbols);
-
-            //}
+            symbolsLists = GetNewPlayersSymbols(playersSymbols, timeForChandeRandomly);
 
             return symbolsLists;
 
