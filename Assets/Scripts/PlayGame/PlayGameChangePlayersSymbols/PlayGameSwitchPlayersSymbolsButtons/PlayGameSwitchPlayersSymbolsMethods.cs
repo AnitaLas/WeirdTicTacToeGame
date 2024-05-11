@@ -344,116 +344,212 @@ namespace Assets.Scripts
         //    return oldSymbolsForSwitch;
 
         //}
+        //public static int[] CreateTableWithOldIndexes(int teamsNumbers)
+        //{
+        //    int[] oldIndexes = new int[teamsNumbers];
 
-        public static int[] GetIndexesForRightMove(int teamsNumbers, int startIndex)
+        //    for (int i = 0; i < teamsNumbers; i++)
+        //    {
+        //        oldIndexes[i] = i;
+        //    }
+
+        //    return oldIndexes;
+        //}
+
+        public static int[] GetIndexesForRightMove(int teamsNumbers)
         {
-            int[] indexes = new int[teamsNumbers];
-            int index = startIndex;
+            //int[] oldIndexes = CreateTableWithOldIndexes(teamsNumbers);
+            int[] newIndexes = new int[teamsNumbers];
+            //int index = startIndex;
+            newIndexes[0] = teamsNumbers - 1;
 
-
-            if (teamsNumbers == 2)
+            for (int i = 1; i < teamsNumbers; i++)
             {
-                indexes[0] = 1;
-                indexes[1] = 0;
-            }
-            else
-            {
-                for (int i = 0; i < teamsNumbers; i++)
-                {
-                    indexes[i] = index;
+                int index = i - 1;
+                newIndexes[i] = index;
+                //int index = oldIndexes[i];
+                //int indexForSwitch = index + 1;
 
-                    if (index < teamsNumbers - 1)
-                    {
+                //if (indexForSwitch < teamsNumbers)
+                //{
 
-                        index++;
+                //    newIndexes[i] = indexForSwitch;
+                //}
+                //else if (indexForSwitch == teamsNumbers)
+                //{
+                //    newIndexes[i] = 0;
+                //}
 
-                    }
-                    else
-                    {
-                        index = 0;
-                        //indexes[i] = index;
-                        //index++;
-                    }
-                }
+
 
             }
 
 
-            return indexes;
+
+
+            //int[] indexes = new int[teamsNumbers];
+            //int index = startIndex;
+
+
+            //if (teamsNumbers == 2)
+            //{
+            //    indexes[0] = 1;
+            //    indexes[1] = 0;
+            //}
+            //else
+            //{
+            //    for (int i = 0; i < teamsNumbers; i++)
+            //    {
+            //        indexes[i] = index;
+
+            //        if (index < teamsNumbers - 1)
+            //        {
+
+            //            index++;
+
+            //        }
+            //        else
+            //        {
+            //            index = 0;
+            //            //indexes[i] = index;
+            //            //index++;
+            //        }
+            //    }
+
+            //}
+            for (int i = 0; i < newIndexes.Length; i++)
+            {
+                Debug.Log("444 indexes[i]: " + newIndexes[i]);
+            }
+
+            return newIndexes;
         }
 
-        public static int[] GetIndexesForLeftMove(int teamsNumbers, int startIndex)
+
+
+
+        public static int[] GetIndexesForLeftMove(int teamsNumbers)
         {
-            int[] indexes = new int[teamsNumbers];
-            int index = startIndex;
+            //int[] oldIndexes = CreateTableWithOldIndexes(teamsNumbers);
+            int[] newIndexes = new int[teamsNumbers];
+            //int index = startIndex;
+            int lastIndex = teamsNumbers - 1;
+            newIndexes[lastIndex] = 0;
 
-
-            if (teamsNumbers == 2)
+            for (int i = 0; i < teamsNumbers - 1; i++)
             {
-                indexes[0] = 1;
-                indexes[1] = 0;
+                int index = i + 1;
+                newIndexes[i] = index;
             }
-            else
-            {
-                for (int i = 0; i < teamsNumbers; i++)
-                {
-                    Debug.Log("333 A index: " + index);
-                    //indexes[i] = index;
-                    //Debug.Log("333 B index: " + index);
-                    
 
-                    //index--;
-
-                    if (index > 0)
-                    {
-                        
-
-                        if (index != teamsNumbers - 1)
-                        {
-                            indexes[i] = index;
-                            index--;
-                        }
-                        else
-                        {
-                            index--;
-                        }
-
-                    }
-                    else
-                    {
-                        //index = teamsNumbers - 1;
-                        index = teamsNumbers - 1;
-                        indexes[i] = index;
-                        //index--;
-                    }
-                    ////indexes[i] = index;
-                    ////index--;
-                }
 
                 //for (int i = 0; i < teamsNumbers; i++)
                 //{
-                //    Debug.Log("333 A index: " + index);
-                //    indexes[i] = index;
-                //    Debug.Log("333 B index: " + index);
-                //    if (index > 0)
+                //    int index = oldIndexes[i];
+                //    int indexForSwitch = index + 1;
+
+                //    if (indexForSwitch < teamsNumbers)
                 //    {
+
+                //        newIndexes[i] = indexForSwitch;
+                //    }
+                //    else if (indexForSwitch == teamsNumbers)
+                //    {
+                //        newIndexes[i] = 0;
+                //    }
+
+
+
+                //}
+
+
+
+
+
+
+                //indexes[0] = startIndex;
+
+                //if (teamsNumbers == 2)
+                //{
+                //    indexes[0] = 1;
+                //    indexes[1] = 0;
+                //}
+                //else
+                //{
+                //    for (int i = 0; i < teamsNumbers; i++)
+                //    {
+                //        Debug.Log("333 A index: " + index);
+                //        indexes[i] = index;
+                //        Debug.Log("333 B index: " + index);
+
 
                 //        index--;
-                //    }
-                //    else
-                //    {
-                //        index = teamsNumbers - 1;
 
+                //        if (index > 0)
+                //        {
+                //            index--;
+                //            indexes[i] = index;
+
+                //            if (index == 1)
+                //            {
+                //                indexes[i] = index;
+                //                index--;
+                //            }
+                //            else
+                //            if (index == teamsNumbers - 1)
+                //            {
+                //                index = 0;
+                //                indexes[i] = index;
+                //            }
+                //            else
+                //            {
+                //                index--;
+                //                indexes[i] = index;
+                //                index--;
+
+                //            }
+
+                //        }
+                //        else if (index == 0)
+                //        {
+                //            index = teamsNumbers - 1;
+                //            indexes[i] = index;
+                //        }
+                //        else
+                //        {
+                //            index = teamsNumbers - 1;
+                //            index = teamsNumbers - 1;
+                //            indexes[i] = index;
+                //            index--;
+                //        }
+                //        //indexes[i] = index;
+                //        //index--;
+                //    }
+
+                //    for (int i = 0; i < teamsNumbers; i++)
+                //    {
+                //        Debug.Log("333 A index: " + index);
+                //        indexes[i] = index;
+                //        Debug.Log("333 B index: " + index);
+                //        if (index > 0)
+                //        {
+
+                //            index--;
+                //        }
+                //        else
+                //        {
+                //            index = teamsNumbers - 1;
+
+                //        }
                 //    }
                 //}
-            }
 
-            for (int i = 0; i < teamsNumbers; i++)
+                for (int i = 0; i < newIndexes.Length; i++)
             {
-                Debug.Log("333 indexes[i]: " + indexes[i]);
+                Debug.Log("333 indexes[i]: " + newIndexes[i]);
             }
 
-            return indexes;
+            return newIndexes;
         }
 
         public static List<string[]> SetUpSymbolsForSwitch(List<string[]> symbolsForSwitch)
@@ -463,14 +559,14 @@ namespace Assets.Scripts
 
             int[] indexes; // = new int[playersSymbols];
             //int minIndex = 0;
-            int minIndex = 1;
-            int maxIndex = teamsNumbers - 1;
+            //int minIndex = 1;
+            //int maxIndex = teamsNumbers - 1;
 
 
             // ???????????????????????????????????????? uncom
             //int startIndex = CommonMethods.ChooseRandomNumber(minIndex, maxIndex);
             //int startIndex = 3;
-            int startIndex = 1;
+            int startIndex = 0;
             //Debug.Log("startIndex: " + startIndex);
 
             bool isStartIndexEven = CommonMethods.IsNumberEven(startIndex);
@@ -481,11 +577,11 @@ namespace Assets.Scripts
 
             if (isStartIndexEven == true)
             {
-                indexes = GetIndexesForRightMove(teamsNumbers, startIndex);
+                indexes = GetIndexesForRightMove(teamsNumbers);
             }
             else
             {
-                indexes = GetIndexesForLeftMove(teamsNumbers, startIndex);
+                indexes = GetIndexesForLeftMove(teamsNumbers);
             }
 
 
@@ -1305,6 +1401,66 @@ namespace Assets.Scripts
             return playerSymbolMove;
         }
 
-       
+        // player symbol switch
+
+        public static string[] GetNewPlayersSymbols(string[] playersSymbols, ArrayList newDataForPlayersSymbolsSwitch)
+        {
+            int symbolsNumbers = playersSymbols.Length;
+            string[] newPlayersSymbols = new string[symbolsNumbers];
+            
+            List<string[]> oldTeamsSymbols = (List<string[]>)newDataForPlayersSymbolsSwitch[0];
+            List<string[]> newTeamsSymbols = (List<string[]>)newDataForPlayersSymbolsSwitch[1];
+
+            int playersNumberForChangeSymbols = GetNumbersForCountedSymbolsToChange(newTeamsSymbols);
+
+            string[] oldSymbolsForSwitch = GetSymbolsAsOneTable(oldTeamsSymbols, playersNumberForChangeSymbols);
+            string[] newSymbolsForSwitch = GetSymbolsAsOneTable(newTeamsSymbols, playersNumberForChangeSymbols);
+
+            int oldSymbolsNumbers = oldSymbolsForSwitch.Length;
+            int newSymbolsNumbers = newSymbolsForSwitch.Length;
+
+            for (int i = 0; i < symbolsNumbers; i++)
+            {
+                string currentSymbol = playersSymbols[i];
+
+                for (int a = 0; a < oldSymbolsNumbers; a++)
+                {
+                    string oldSymbol = oldSymbolsForSwitch[a];
+                    
+                    if (currentSymbol == oldSymbol)
+                    {
+                        newPlayersSymbols[i] = newSymbolsForSwitch[a];
+                    }
+                    else
+                    {
+
+                        newPlayersSymbols[i] = currentSymbol;
+                    }
+
+
+                }
+
+
+
+            }
+
+            Debug.Log($" ---------------------------------------------------------- ");
+            Debug.Log($" ---------------------------------------------------------- ");
+            for (int i = 0; i < playersSymbols.Length; i++)
+            {
+                Debug.Log($"playersSymbols[{i}]: " + playersSymbols[i]);
+            }
+            Debug.Log($" --------------------------");
+
+            for (int i = 0; i < newPlayersSymbols.Length; i++)
+            {
+                Debug.Log($"newPlayersSymbols[{i}]: " + newPlayersSymbols[i]);
+            }
+
+            Debug.Log($" ---------------------------------------------------------- ");
+            Debug.Log($" ---------------------------------------------------------- ");
+
+            return newPlayersSymbols;
+        }
     }
 }
