@@ -838,24 +838,10 @@ internal class Game : MonoBehaviour
                             {
                                 _teamGameSymbols = PlayGameChangePlayersSymbolsMethods.SetUpNewTeamGameSymbols(_teamGameSymbols, _oldSymbolsForChange, _newSymbolsForChange);
 
+                                // to do 
+                                //_playersSymbols
 
-                                // mode 1
-                                if (isSameQuantityForMovePerTeam == true)
-                                {
-                                    _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
-                                    _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
-                                }
-                                // mode 2
-                                else
-                                {
-                                    _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
-                                    _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
 
-                                    //for (int i = 0; i < _playersSymbols.Length; i++)
-                                    //{
-                                    //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
-                                    //}
-                                }
                             }
                             else
                             {
@@ -894,29 +880,13 @@ internal class Game : MonoBehaviour
                             _gameButtonsChangePlayersSymbols = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _newDataForPlayersSymbolsSwitch);
 
 
-                            // mode 1
-                            if (isSameQuantityForMovePerTeam == true)
-                            {
-                                _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
-                                _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
-                            }
-                            // mode 2
-                            else
-                            {
-                                _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
-                                _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
+                            // to do
 
-                                //for (int i = 0; i < _playersSymbols.Length; i++)
-                                //{
-                                //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
-                                //}
-                            }
-
-
+                            _playersSymbols = PlayGameSwitchPlayersSymbolsMethods.GetNewPlayersSymbols(_playersSymbols, _newDataForPlayersSymbolsSwitch);
 
 
                             // to do
-                            _playerSymbolMove = PlayGameSwitchPlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playersSymbols, _playerSymbolMove, _newDataForPlayersSymbolsSwitch);
+                            //_playerSymbolMove = PlayGameSwitchPlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playersSymbols, _playerSymbolMove, _newDataForPlayersSymbolsSwitch);
 
 
 

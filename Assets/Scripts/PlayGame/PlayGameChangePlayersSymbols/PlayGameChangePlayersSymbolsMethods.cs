@@ -467,7 +467,7 @@ namespace Assets.Scripts
         public static List<string[]> GetNewPlayersSymbols(string[] playersSymbols, float timeForChandeRandomly)
         {
             List<string[]> symbolsLists = new List<string[]>();
-            ;
+            
             int takenSymbolsLenght = playersSymbols.Length;
             bool isChangeForAll = IsChangeForAll(timeForChandeRandomly);
             int numberSymbolsToChange = GetMaxIndexForNewSymbols(isChangeForAll, takenSymbolsLenght);
