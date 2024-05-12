@@ -240,7 +240,8 @@ internal class Game : MonoBehaviour
 
 
        
-        isSameQuantityForMovePerTeam = false;
+        //isSameQuantityForMovePerTeam = false;
+        isSameQuantityForMovePerTeam = GameConfigurationChangePlayersSymbols.ConfigurationBoardGameEqualMoveQuantityForBothTeams;
 
         if (isTeamGame == false)
         {

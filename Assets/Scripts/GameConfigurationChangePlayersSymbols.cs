@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using Assets.Scripts.GameConfiguration.GameConfigurationChangePlayersSymbolsButtons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,13 +39,16 @@ namespace Assets.Scripts
         public static bool _configurationTraditionalGame2;
         public static bool _configurationTeamGame1;
         public static bool _configurationTeamGame2;
+        private static List<string[]> _configurationTeamGameSymbols;
 
         public static int timeButtonRandomly;
         public static int timeButtonForAll;
         public static int timeButtonSwitchSymbolsBetweenTeams;
+        public static List<string[]> buttonTeamMoves;
 
         public static int timeForSwitchPlayersSymbolsBetweenTeams;
         public static bool isEqualMoveQuantityForBothTeams;
+
 
         private string _tagConfigurationChangePlayerSymbolButtonSave;
         private string _tagConfigurationChangePlayerSymbolButtonBack;
@@ -66,13 +70,18 @@ namespace Assets.Scripts
         private List<GameObject[,,]> _buttonsAll;
         private List<GameObject[,,]> _buttonsMoreSpecificConfiguration;
         private GameObject[,,] _buttonsWithNumbers;
-
+        private static List<string[]> _teamGameSymbols;
         void Start()
         {
             timeButtonRandomly = 0;
             timeButtonForAll = 0;
             timeButtonSwitchSymbolsBetweenTeams = 0;
             isEqualMoveQuantityForBothTeams = true;
+
+            isEqualMoveQuantityForBothTeams = GameConfigurationChangePlayersSymbolsMethods.IsSamePlayersNumberInEachTeam(_teamGameSymbols);
+
+            _configurationTeamGameSymbols = GameConfigurationTeamMembers.ConfigurationTeamGameSymbol;
+            _teamGameSymbols = _configurationTeamGameSymbols;
 
             _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
             _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
@@ -101,7 +110,7 @@ namespace Assets.Scripts
 
             _tagConfigurationChangePlayersSymbolsBackToConfiguration = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBackByTagButtonBackToConfigurationChangePlayersSymbols();
 
-            _buttonsAll = GameConfigurationChangePlayerSymbolButtonsCreate.GameConfigurationChangePlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, isTeamGame);
+            _buttonsAll = GameConfigurationChangePlayerSymbolButtonsCreate.GameConfigurationChangePlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, isTeamGame, isEqualMoveQuantityForBothTeams);
 
         }
 
@@ -182,6 +191,14 @@ namespace Assets.Scripts
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
                         }
 
+                        // move per team - to do
+
+                        if (gameObjectTag == _tagConfigurationChangePlayersSymbolsBetweenTeams || gameObjectTag == _tagConfigurationChangePlayersSymbolsChangeNumberBetweenTeams)
+                        {
+
+                            _buttonsWithNumbers = GameConfigurationChangePlayerSymbolButtonsCreate.CreateTableForBetweenTeamsWithTime(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D);
+
+                        }
 
                         // button save
                         if (gameObjectTag == _tagConfigurationChangePlayerSymbolButtonSave)

@@ -9,7 +9,7 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationChangePlayerSymbolButtonsCreate
     {
-        public static List<GameObject[,,]> GameConfigurationChangePlayerSymbolCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D, bool isTeamGame)
+        public static List<GameObject[,,]> GameConfigurationChangePlayerSymbolCreateButtons(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D, bool isTeamGame, bool isEqualMoveQuantityForBothTeams)
         {
             List<GameObject[,,]> buttonsText = new List<GameObject[,,]>();
             List<GameObject[,,]> buttonsNumber = new List<GameObject[,,]>();
@@ -64,6 +64,12 @@ namespace Assets.Scripts
 
                 buttonsNumber.Insert(2, buttonTeamGameSwitchSymbolsNumber);
                 buttonsAll.Insert(8, buttonTeamGameSwitchSymbolsNumber);
+
+                if(isEqualMoveQuantityForBothTeams == false)
+                {
+
+
+                }
 
             }
 
