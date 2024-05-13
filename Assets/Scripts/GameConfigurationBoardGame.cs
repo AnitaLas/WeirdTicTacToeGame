@@ -64,6 +64,8 @@ namespace Assets.Scripts.GameConfiguration
         public static bool _configurationTeamGame1;
         public static bool _configurationTeamGame2;
 
+
+
         private static bool _isGame2D = true;
 
         public Touch touch;
@@ -83,11 +85,24 @@ namespace Assets.Scripts.GameConfiguration
             _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
             _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
 
-            _configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
-            _configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
+            Debug.Log("GameConfigurationBoardGame _configurationTraditionalGame1 : " + _configurationTraditionalGame1);
+            Debug.Log("GameConfigurationBoardGame _configurationTeamGame1 : " + _configurationTeamGame1);
 
+            //_configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
+            //_configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
+
+
+            _configurationTraditionalGame2 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+            _configurationTeamGame2 = GameConfigurationKindOfGame.ConfigurationTeamGame;
+
+            Debug.Log("GameConfigurationBoardGame _configurationTraditionalGame2 : " + _configurationTraditionalGame2);
+            Debug.Log("GameConfigurationBoardGame _configurationTeamGame2 : " + _configurationTeamGame2);
+
+            //isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
             isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
 
+            Debug.Log("GameConfigurationBoardGame isTeamGame : " + isTeamGame);
+            Debug.Log(" --------------------------------------------------------------------------------- ");
             //if (_configurationTraditionalGame1 == true && _configurationTeamGame1 == false)
             //{
             //    isTeamGame = false;

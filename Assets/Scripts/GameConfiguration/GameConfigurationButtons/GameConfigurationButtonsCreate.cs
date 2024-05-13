@@ -46,7 +46,7 @@ namespace Assets.Scripts
 
             int index = 0;
 
-
+            Debug.Log("BUTTON isTeamGame : " + isTeamGame);
             if (isTeamGame == false)
             {
                 battonPlayerText = GameConfigurationCreateButtonPlayerText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);

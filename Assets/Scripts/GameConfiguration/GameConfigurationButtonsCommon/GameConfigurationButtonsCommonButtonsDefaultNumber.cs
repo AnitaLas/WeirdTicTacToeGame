@@ -62,5 +62,19 @@ namespace Assets.Scripts
             string defaulNumber = GetDefaultButtonNumberForChangePlayersSymbols(dictionatyId);
             return defaulNumber;
         }
+
+        public static string GetDefaultButtonSymbolForEqualMoveQuantity()
+        {
+            int dictionatyId = 2;
+            string defaulNumber = GetDefaultButtonNumberForChangePlayersSymbols(dictionatyId);
+            return defaulNumber;
+        }
+
+        public static string GetDefaultButtonSymbolForNotEqualMoveQuantity()
+        {
+            int dictionatyId = 3;
+            string defaulNumber = GetDefaultButtonNumberForChangePlayersSymbols(dictionatyId);
+            return defaulNumber;
+        }
     }
 }

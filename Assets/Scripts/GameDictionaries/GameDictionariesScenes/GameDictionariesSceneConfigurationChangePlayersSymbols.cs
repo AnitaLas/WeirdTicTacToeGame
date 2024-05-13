@@ -29,8 +29,8 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
                 { 11, "ConfigurationChangePlayersSymbolsTableNumberBetweenTeams" },
 
                 // button: team game 2
-                //{ 12, "ConfigurationChangePlayersSymbolsButtonChangeRandomlyPlayersSymbols" },
-                //{ 13, "ConfigurationChangePlayersSymbolsButtonChangeRandomlyPlayersSymbols" },
+                { 12, "ConfigurationChangePlayersSymbolsEqualMoveQuantity" },
+                { 13, "ConfigurationChangePlayersSymbolsChangeSymbolEqualMoveQuantity" },
                 //{ 14, "ConfigurationChangePlayersSymbolsButtonChangeRandomlyPlayersSymbols" },
 
                 { 15, "ConfigurationChangePlayersSymbolsButtonBackToConfiguration" },
@@ -57,7 +57,8 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
                 //{ 8, "BETWEEN TEAMS" }, 
                 { 8, "BTW. TEAMS" }, // the same as in id 2
                 { 9, "  BTW. TEAMS" }, // the same as in id 2
-                { 10, "MOVES TEAM" }, // the same as in id 2
+               // { 10, "MOVES TEAM" }, // the same as in id 2
+                { 10, "No. OF MOVES" }, // the same as in id 2
                 { 11, "SWITCH" }, // the same as in id 2
 
 
@@ -72,6 +73,8 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
             Dictionary<int, string> buttonsDefaultNumberDictionary = new Dictionary<int, string>
             {
                 { 1, "0" }, // time
+                { 2, "=" }, // time
+                { 3, "≠" }, // time
             };
 
             return buttonsDefaultNumberDictionary;

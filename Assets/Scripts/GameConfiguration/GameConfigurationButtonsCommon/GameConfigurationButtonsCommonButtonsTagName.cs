@@ -343,6 +343,20 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetTagForButtonNumberByTagEqualMoveQuantity()
+        {
+            int dictionaryId = 12;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
+        public static string GetTagForButtonNumberByTagChangeSymbolEqualMoveQuantity()
+        {
+            int dictionaryId = 13;
+            string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
+            return tagName;
+        }
+
         public static string GetTagForButtonBackByTagButtonBackToConfigurationChangePlayersSymbols()
         {
             int dictionaryId = 15;
