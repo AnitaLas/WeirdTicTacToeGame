@@ -29,11 +29,16 @@ namespace Assets.Scripts
         private string _tagStartGameButtonStarTeamGame;
         private string _tagStartGameButtonInformations;
 
+        public static bool boolTrue = true;
+        public static bool boolFalse = false;
         //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
         //private Dictionary<int, string> _tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
 
         void Start()
         {
+            //ConfigurationTeamGame = boolTrue;
+            //ConfigurationTraditionalGame = boolFalse;
+
             isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
             //Debug.Log("1 isCellphoneMode: " + isCellphoneMode);
             //_tagUntagged = _tagCommonDictionary[1];
@@ -72,16 +77,30 @@ namespace Assets.Scripts
 
                         if (gameObjectTag == _tagStartGameButtonStartGame)
                         {
-                            ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
                             ConfigurationBoardGameDeviceModeKind = isCellphoneMode;
-                            ConfigurationTeamGame = true;
-                            ConfigurationTraditionalGame = false;
+                            //ConfigurationTeamGame = true;
+                            //ConfigurationTraditionalGame = false;
+                            ConfigurationTeamGame = boolFalse;
+                            ConfigurationTraditionalGame = boolTrue;
+                            Debug.Log("BASE 1 - ConfigurationTeamGame : " + ConfigurationTeamGame);
+                            Debug.Log("BASE 1 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
+
+                            ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
+
                         }
 
 
                         if (gameObjectTag == _tagStartGameButtonStarTeamGame)
                         {
-                           //Debug.Log("isCellphoneMode: " + isCellphoneMode);
+                            //Debug.Log("isCellphoneMode: " + isCellphoneMode);
+                            ConfigurationBoardGameDeviceModeKind = isCellphoneMode;
+                            ConfigurationTeamGame = boolTrue;
+                            ConfigurationTraditionalGame = boolFalse;
+
+                            Debug.Log("BASE 2 - ConfigurationTeamGame : " + ConfigurationTeamGame);
+                            Debug.Log("BASE 2 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
+
+
                             if (isCellphoneMode == true)
                                 ScenesChangeMainMethods.GoToSceneConfigurationGameTeamMembers();
                            else

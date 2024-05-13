@@ -48,6 +48,7 @@ namespace Assets.Scripts
 
         public static int timeForSwitchPlayersSymbolsBetweenTeams;
         public static bool isEqualMoveQuantityForBothTeams;
+        public static bool isEqualMoveQuantityForBothTeamsSetUpBeUser;
 
 
         private string _tagConfigurationChangePlayerSymbolButtonSave;
@@ -65,6 +66,9 @@ namespace Assets.Scripts
         private string _tagConfigurationChangePlayersSymbolsChangeNumberBetweenTeams;
         private string _tagConfigurationChangePlayersSymbolsTableNumberBetweenTeams;
 
+        private string _tagonfigurationChangePlayersSymbolsEqualMoveQuantity;
+        private string _tagonfigurationChangePlayersSymbolsChangeSymbolEqualMoveQuantity;
+
         private string _tagConfigurationChangePlayersSymbolsBackToConfiguration;
 
         private List<GameObject[,,]> _buttonsAll;
@@ -77,17 +81,22 @@ namespace Assets.Scripts
             timeButtonForAll = 0;
             timeButtonSwitchSymbolsBetweenTeams = 0;
             isEqualMoveQuantityForBothTeams = true;
-
-            isEqualMoveQuantityForBothTeams = GameConfigurationChangePlayersSymbolsMethods.IsSamePlayersNumberInEachTeam(_teamGameSymbols);
+            isEqualMoveQuantityForBothTeamsSetUpBeUser = true;
 
             _configurationTeamGameSymbols = GameConfigurationTeamMembers.ConfigurationTeamGameSymbol;
             _teamGameSymbols = _configurationTeamGameSymbols;
 
+            isEqualMoveQuantityForBothTeams = GameConfigurationChangePlayersSymbolsMethods.IsSamePlayersNumberInEachTeam(_teamGameSymbols);
+
+
             _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
             _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
 
-            _configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
-            _configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
+            //_configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
+            //_configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
+
+            _configurationTraditionalGame2 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+            _configurationTeamGame2 = GameConfigurationKindOfGame.ConfigurationTeamGame;
 
             isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
 
@@ -107,6 +116,9 @@ namespace Assets.Scripts
             _tagConfigurationChangePlayersSymbolsBetweenTeams = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagChangeBetweenTeams();
             _tagConfigurationChangePlayersSymbolsChangeNumberBetweenTeams = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeNumberBetweenTeams();
             _tagConfigurationChangePlayersSymbolsTableNumberBetweenTeams = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberBetweenTeams();
+
+            _tagonfigurationChangePlayersSymbolsEqualMoveQuantity = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagEqualMoveQuantity();
+            _tagonfigurationChangePlayersSymbolsChangeSymbolEqualMoveQuantity = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeSymbolEqualMoveQuantity();
 
             _tagConfigurationChangePlayersSymbolsBackToConfiguration = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBackByTagButtonBackToConfigurationChangePlayersSymbols();
 
@@ -193,11 +205,10 @@ namespace Assets.Scripts
 
                         // move per team - to do
 
-                        if (gameObjectTag == _tagConfigurationChangePlayersSymbolsBetweenTeams || gameObjectTag == _tagConfigurationChangePlayersSymbolsChangeNumberBetweenTeams)
+                        if (gameObjectTag == _tagonfigurationChangePlayersSymbolsEqualMoveQuantity || gameObjectTag == _tagonfigurationChangePlayersSymbolsChangeSymbolEqualMoveQuantity)
                         {
 
-                            _buttonsWithNumbers = GameConfigurationChangePlayerSymbolButtonsCreate.CreateTableForBetweenTeamsWithTime(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D);
-
+                            isEqualMoveQuantityForBothTeamsSetUpBeUser = GameConfigurationChangePlayersSymbolsMethods.SetUpMoveQuantityForTeamsChosenByUser();
                         }
 
                         // button save
@@ -207,7 +218,8 @@ namespace Assets.Scripts
                             ConfigurationBoardGameChangeForAllPlayersSymbolsTime = timeButtonForAll;
                             //ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = timeForSwitchPlayersSymbolsBetweenTeams;
                             ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = timeButtonSwitchSymbolsBetweenTeams;
-                            ConfigurationBoardGameEqualMoveQuantityForBothTeams = isEqualMoveQuantityForBothTeams;
+                            //ConfigurationBoardGameEqualMoveQuantityForBothTeams = isEqualMoveQuantityForBothTeams;
+                            ConfigurationBoardGameEqualMoveQuantityForBothTeams = isEqualMoveQuantityForBothTeamsSetUpBeUser;
 ;
                             ScenesChangeMainMethods.GoToSceneGame();
                         }

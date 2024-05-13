@@ -129,6 +129,7 @@
     <Compile Include="Assets\Scripts\GameDictionaries\GameDictionariesCommonPlayersSymbols.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonsCommonMethods.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationChangePlayersSymbolsButtons\GameConfigurationChangePlayersSymbolsMethods.cs" />
     <Compile Include="Assets\Scripts\PlayGame\PlayGameCommon\PlayGameCommonButtonsTagName.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\GameConfiguration\GameConfigurationButtonsCommon\GameConfigurationButtonsCommonMethods.cs" />

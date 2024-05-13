@@ -103,6 +103,8 @@ TagManager:
   - ConfigurationChangePlayersSymbolsBetweenTeams
   - ConfigurationChangePlayersSymbolsChangeNumberBetweenTeams
   - ConfigurationChangePlayersSymbolsTableNumberBetweenTeams
+  - ConfigurationChangePlayersSymbolsEqualMoveQuantity
+  - ConfigurationChangePlayersSymbolsChangeSymbolEqualMoveQuantity
   layers:
   - Default
   - TransparentFX

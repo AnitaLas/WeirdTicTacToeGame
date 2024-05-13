@@ -67,7 +67,17 @@ namespace Assets.Scripts
 
                 if(isEqualMoveQuantityForBothTeams == false)
                 {
+                    // buttons with text
+                    GameObject[,,] buttonEqualMoveQuantityText = GameConfigurationChangePlayerSymbolCreateButtonEqualMoveQuantityText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
 
+                    buttonsText.Insert(3, buttonEqualMoveQuantityText);
+                    buttonsAll.Insert(8, buttonEqualMoveQuantityText);
+
+                    // buttons with number
+                    GameObject[,,] buttonEqualMoveQuantitySymbol = GameConfigurationCreateButtonChangeSymbolEqualMoveQuantity(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+
+                    buttonsNumber.Insert(3, buttonEqualMoveQuantitySymbol);
+                    buttonsAll.Insert(9, buttonEqualMoveQuantitySymbol);
 
                 }
 
@@ -414,9 +424,27 @@ namespace Assets.Scripts
 
         // buttons: type for move per team
 
+        public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonEqualMoveQuantityText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameChangeEqualMoveQuantity();
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagEqualMoveQuantity();
+
+            GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            string frontTextToAdd = "EqualMoveQuantity_";
+            ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
+            return button;
+        }
 
 
+        public static GameObject[,,] GameConfigurationCreateButtonChangeSymbolEqualMoveQuantity(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonNumberByTagChangeSymbolEqualMoveQuantity();
+            string buttonText = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonSymbolForEqualMoveQuantity();
 
+            GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+            return button;
+        }
 
     }
 }

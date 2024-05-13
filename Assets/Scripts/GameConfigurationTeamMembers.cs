@@ -14,8 +14,8 @@ namespace Assets
     {
         //public static int ConfigurationBoardGameTeamNumber { get; set; }
 
-        public static bool ConfigurationTeamGame { get; set; }
-        public static bool ConfigurationTraditionalGame { get; set; }
+        //public static bool ConfigurationTeamGame { get; set; }
+        //public static bool ConfigurationTraditionalGame { get; set; }
         public static List<string[]> ConfigurationTeamGameSymbol { get; set; }
 
         public GameObject prefabCubePlay;
@@ -232,8 +232,8 @@ namespace Assets
                         {
                             _tablesWitPlayersChosenSymbols = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithTeamsPlayersSymbols(_buttonsGroupByTeams);
 
-                            ConfigurationTeamGame = true;
-                            ConfigurationTraditionalGame = false;
+                           // ConfigurationTeamGame = true;
+                           // ConfigurationTraditionalGame = false;
                             ConfigurationTeamGameSymbol = _tablesWitPlayersChosenSymbols;
                             ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
                         }
