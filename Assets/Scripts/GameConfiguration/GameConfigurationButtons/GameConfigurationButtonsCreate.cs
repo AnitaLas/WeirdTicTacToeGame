@@ -99,6 +99,15 @@ namespace Assets.Scripts
 
             GameConfigurationButtonsMethods.ChangeDataForGameConfigurationButtons(buttonsText, buttonsNumber, newYForButtons);
 
+
+            if (isTeamGame == true)
+            {
+
+                GameConfigurationButtonsMethods.ChangeCoordinateYForTeamGameButtons(buttonsText, buttonsNumber);
+
+            }
+            
+            
             // button save and back
             GameObject[,,] buttonSave = GameConfigurationCreateButtonSave(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] buttonBack = GameConfigurationCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);

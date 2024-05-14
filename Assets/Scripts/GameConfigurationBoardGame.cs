@@ -82,27 +82,29 @@ namespace Assets.Scripts.GameConfiguration
             //isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
             isCellphoneMode = _configurationBoardGameDeviceModeKind;
 
-            _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+            //_configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
             _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
+            isTeamGame = _configurationTeamGame1;
 
-            Debug.Log("GameConfigurationBoardGame _configurationTraditionalGame1 : " + _configurationTraditionalGame1);
+            //Debug.Log("GameConfigurationBoardGame _configurationTraditionalGame1 : " + _configurationTraditionalGame1);
             Debug.Log("GameConfigurationBoardGame _configurationTeamGame1 : " + _configurationTeamGame1);
 
             //_configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
             //_configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
 
 
-            _configurationTraditionalGame2 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
-            _configurationTeamGame2 = GameConfigurationKindOfGame.ConfigurationTeamGame;
+            //_configurationTraditionalGame2 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+            //_configurationTeamGame2 = GameConfigurationKindOfGame.ConfigurationTeamGame;
 
-            Debug.Log("GameConfigurationBoardGame _configurationTraditionalGame2 : " + _configurationTraditionalGame2);
-            Debug.Log("GameConfigurationBoardGame _configurationTeamGame2 : " + _configurationTeamGame2);
+            //Debug.Log("GameConfigurationBoardGame _configurationTraditionalGame2 : " + _configurationTraditionalGame2);
+            //Debug.Log("GameConfigurationBoardGame _configurationTeamGame2 : " + _configurationTeamGame2);
 
             //isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
-            isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
+            //isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
+            //isTeamGame = GameConfigurationKindOfGame.ConfigurationTeamGame;
 
-            Debug.Log("GameConfigurationBoardGame isTeamGame : " + isTeamGame);
-            Debug.Log(" --------------------------------------------------------------------------------- ");
+            //Debug.Log("GameConfigurationBoardGame isTeamGame : " + isTeamGame);
+            //Debug.Log(" --------------------------------------------------------------------------------- ");
             //if (_configurationTraditionalGame1 == true && _configurationTeamGame1 == false)
             //{
             //    isTeamGame = false;
@@ -167,7 +169,7 @@ namespace Assets.Scripts.GameConfiguration
                         string gameObjectTag = GameCommonMethodsMain.GetObjectTag(touch);
                         string gameObjectName = GameCommonMethodsMain.GetObjectName(touch);
                        
-                        // players
+                        // button: players
                         if (gameObjectTag == _tagConfigurationBoardGamePlayers || gameObjectTag == _tagConfigurationBoardGameChangeNumberPlayers)
                         {
                             _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForPlayers.CreateTableForPlayers(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D, isCellphoneMode);
@@ -186,7 +188,7 @@ namespace Assets.Scripts.GameConfiguration
                         }
 
 
-                        // rows
+                        // buttons: rows
                         if (gameObjectTag == _tagConfigurationBoardGameRows || gameObjectTag == _tagConfigurationBoardGameChangeNumberRows)
                         {
                             _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForRows.CreateTableForRows(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D, isCellphoneMode);
@@ -207,7 +209,7 @@ namespace Assets.Scripts.GameConfiguration
                             GameConfigurationButtonsActions.VerifyButtonsWithNumberForLenghtToCheckAndGaps();
                         }                    
 
-                        // columns
+                        // buttons: columns
                         if (gameObjectTag == _tagConfigurationBoardGameColumns || gameObjectTag == _tagConfigurationBoardGameChangeNumberColumns)
                         {
                             _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForColumns.CreateTableForColumns(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D, isCellphoneMode);
@@ -229,7 +231,7 @@ namespace Assets.Scripts.GameConfiguration
                         }
 
 
-                        // lenght to check - button victory
+                        // buttons: lenght to check - button victory
                         if (gameObjectTag == _tagConfigurationBoardGameLenghtToCheck || gameObjectTag == _tagConfigurationBoardGameChangeNumberLenghtToCheck)
                         {
                             _lenghtToCheckMax = GameConfigurationButtonsWithNumbersForLenghtToCheck.GetLenghtToCheckMax();
@@ -247,7 +249,7 @@ namespace Assets.Scripts.GameConfiguration
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
                         }
 
-                        // gaps
+                        // buttons: gaps
                         if (gameObjectTag == _tagConfigurationBoardGameGaps || gameObjectTag == _tagConfigurationBoardGameChangeNumberGaps)
                         {
                             //GameConfigurationButtonsWithNumbersForGaps.SetUpGapsNumber();
@@ -266,7 +268,7 @@ namespace Assets.Scripts.GameConfiguration
                             GameConfigurationButtonsActions.UnhideConfiguration(_buttonsAll);
                         }
 
-                        // save
+                        // button: save
                         if (gameObjectTag == _tagConfigurationBoardGameButtonSave)
                         {
                             ConfigurationBoardGameNumberOfRows = numberOfRows;
@@ -289,7 +291,7 @@ namespace Assets.Scripts.GameConfiguration
                             
                         }
 
-                        // back
+                        // button: back
                         if (gameObjectTag == _tagConfigurationBoardGameButtonBack)
                         {
                             ScenesChangeMainMethods.GoToSceneStartGame();

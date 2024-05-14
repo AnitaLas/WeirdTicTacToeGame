@@ -3,56 +3,44 @@
   "WorkspaceRootPath": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfigurationteammembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationteammembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfigurationboardgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationboardgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfigurationchangeplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationchangeplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfigurationteamnumbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationteamnumbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfigurationkindofgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationkindofgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfigurationplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\gamedictionaries\\gamedictionariescommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedictionaries\\gamedictionariescommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfiguration\\gameconfigurationchangeplayerssymbolsbuttons\\gameconfigurationchangeplayerssymbolsmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfiguration\\gameconfigurationchangeplayerssymbolsbuttons\\gameconfigurationchangeplayerssymbolsmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfiguration\\gameconfigurationbuttons\\gameconfigurationbuttonscreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfiguration\\gameconfigurationbuttons\\gameconfigurationbuttonscreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfiguration\\gameconfigurationbuttonscommon\\gameconfigurationbuttonscommonbuttonsdefaultnumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfiguration\\gameconfigurationbuttonscommon\\gameconfigurationbuttonscommonbuttonsdefaultnumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfiguration\\gameconfigurationteammembers\\gameconfigurationteammemberscommon\\gameconfigurationbuttonsteammembersbuttonsstaticdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfiguration\\gameconfigurationteammembers\\gameconfigurationteammemberscommon\\gameconfigurationbuttonsteammembersbuttonsstaticdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfiguration\\gameconfigurationbuttonscommon\\gameconfigurationbuttonscommonbuttonstagname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfiguration\\gameconfigurationbuttonscommon\\gameconfigurationbuttonscommonbuttonstagname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfiguration\\gameconfigurationteammembers\\gameconfigurationteammembersbuttons\\gameconfigurationteammembersbuttonscreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfiguration\\gameconfigurationteammembers\\gameconfigurationteammembersbuttons\\gameconfigurationteammembersbuttonscreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gamedictionaries\\gamedictionariesscenes\\gamedictionariessceneconfigurationchangeplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedictionaries\\gamedictionariesscenes\\gamedictionariessceneconfigurationchangeplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\screenverification\\screenverificationmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\screenverification\\screenverificationmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfiguration\\gameconfigurationbuttonscommon\\gameconfigurationbuttonscommonbuttonsname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfiguration\\gameconfigurationbuttonscommon\\gameconfigurationbuttonscommonbuttonsname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\gameconfigurationteammembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationteammembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\gameconfigurationteamnumbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationteamnumbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\gameconfigurationkindofgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationkindofgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\gamedictionaries\\gamedictionariescommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedictionaries\\gamedictionariescommonplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "GameDictionariesCommonPlayersSymbols.cs",
               "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameDictionaries\\GameDictionariesCommonPlayersSymbols.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameDictionaries\\GameDictionariesCommonPlayersSymbols.cs",
@@ -80,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "GameConfigurationKindOfGame.cs",
               "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationKindOfGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfigurationKindOfGame.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationKindOfGame.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameConfigurationKindOfGame.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAtwGQAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T18:14:38.473Z",
               "IsPinned": true,
@@ -94,34 +82,102 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\Game.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Game.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\Game.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Game.cs",
-              "ViewState": "AQIAAMsAAAAAAAAAAAAtwOMAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "GameConfigurationChangePlayersSymbols.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationChangePlayersSymbols.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfigurationChangePlayersSymbols.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationChangePlayersSymbols.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameConfigurationChangePlayersSymbols.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAcwGYAAACPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T17:46:41.265Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-05-14T18:06:46.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GameConfigurationPlayersSymbols.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationPlayersSymbols.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfigurationPlayersSymbols.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationPlayersSymbols.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfigurationPlayersSymbols.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAowAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "GameConfigurationButtonsCreate.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtons\\GameConfigurationButtonsCreate.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtons\\GameConfigurationButtonsCreate.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtons\\GameConfigurationButtonsCreate.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtons\\GameConfigurationButtonsCreate.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAawDAAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T18:44:47.447Z",
+              "WhenOpened": "2024-05-14T18:06:22.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameConfigurationChangePlayersSymbolsMethods.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationChangePlayersSymbolsButtons\\GameConfigurationChangePlayersSymbolsMethods.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfiguration\\GameConfigurationChangePlayersSymbolsButtons\\GameConfigurationChangePlayersSymbolsMethods.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationChangePlayersSymbolsButtons\\GameConfigurationChangePlayersSymbolsMethods.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameConfiguration\\GameConfigurationChangePlayersSymbolsButtons\\GameConfigurationChangePlayersSymbolsMethods.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T18:05:56.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameConfigurationButtonsTeamMembersButtonsStaticData.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersCommon\\GameConfigurationButtonsTeamMembersButtonsStaticData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersCommon\\GameConfigurationButtonsTeamMembersButtonsStaticData.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersCommon\\GameConfigurationButtonsTeamMembersButtonsStaticData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersCommon\\GameConfigurationButtonsTeamMembersButtonsStaticData.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAEwEYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T17:51:42.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ScreenVerificationMethods.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\ScreenVerification\\ScreenVerificationMethods.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ScreenVerification\\ScreenVerificationMethods.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\ScreenVerification\\ScreenVerificationMethods.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ScreenVerification\\ScreenVerificationMethods.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAtwFAAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T17:50:23.966Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "GameConfigurationTeamMembersButtonsCreate.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersButtons\\GameConfigurationTeamMembersButtonsCreate.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersButtons\\GameConfigurationTeamMembersButtonsCreate.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersButtons\\GameConfigurationTeamMembersButtonsCreate.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameConfiguration\\GameConfigurationTeamMembers\\GameConfigurationTeamMembersButtons\\GameConfigurationTeamMembersButtonsCreate.cs",
+              "ViewState": "AQIAAPMAAAAAAAAAAAAEwAgBAACCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T17:50:19.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GameConfigurationTeamMembers.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationTeamMembers.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfigurationTeamMembers.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationTeamMembers.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameConfigurationTeamMembers.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAowHYAAABtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T17:48:07.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "GameConfigurationTeamNumbers.cs",
               "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationTeamNumbers.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfigurationTeamNumbers.cs",
@@ -130,140 +186,6 @@
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T18:21:31.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameConfigurationChangePlayersSymbols.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationChangePlayersSymbols.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfigurationChangePlayersSymbols.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationChangePlayersSymbols.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfigurationChangePlayersSymbols.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAlwF8AAABbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T18:43:43.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameConfigurationTeamMembers.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationTeamMembers.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfigurationTeamMembers.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationTeamMembers.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfigurationTeamMembers.cs",
-              "ViewState": "AQIAANkAAAAAAAAAAAAWwOoAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T18:21:36.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "bb82985b-5773-4286-ab45-b67018281c46",
-        "Display": 0,
-        "X": 276,
-        "Y": 142,
-        "Width": 1452,
-        "Height": 792,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 4,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "GameDictionariesSceneConfigurationChangePlayersSymbols.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameDictionaries\\GameDictionariesScenes\\GameDictionariesSceneConfigurationChangePlayersSymbols.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameDictionaries\\GameDictionariesScenes\\GameDictionariesSceneConfigurationChangePlayersSymbols.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameDictionaries\\GameDictionariesScenes\\GameDictionariesSceneConfigurationChangePlayersSymbols.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameDictionaries\\GameDictionariesScenes\\GameDictionariesSceneConfigurationChangePlayersSymbols.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAwwCAAAABVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T15:25:09.245Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GameConfigurationButtonsCommonButtonsTagName.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsTagName.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsTagName.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsTagName.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsTagName.cs",
-              "ViewState": "AQIAAEMBAAAAAAAAAAAmwGABAABUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T15:25:00.407Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GameConfigurationButtonsCommonButtonsName.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsName.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsName.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsName.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsName.cs",
-              "ViewState": "AQIAAJQAAAAAAAAAAAAjwLMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T15:34:53.417Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GameConfigurationButtonsCommonButtonsDefaultNumber.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsDefaultNumber.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsDefaultNumber.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsDefaultNumber.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtonsCommon\\GameConfigurationButtonsCommonButtonsDefaultNumber.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAIwEgAAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T15:40:18.294Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameConfigurationBoardGame.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationBoardGame.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfigurationBoardGame.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationBoardGame.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfigurationBoardGame.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAmwF4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T18:11:58.906Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GameConfigurationButtonsCreate.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtons\\GameConfigurationButtonsCreate.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtons\\GameConfigurationButtonsCreate.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfiguration\\GameConfigurationButtons\\GameConfigurationButtonsCreate.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfiguration\\GameConfigurationButtons\\GameConfigurationButtonsCreate.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAmwDAAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T18:48:33.836Z",
               "EditorCaption": ""
             }
           ]

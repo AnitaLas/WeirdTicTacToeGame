@@ -10,7 +10,7 @@ namespace Assets.Scripts
     {
         public static bool ConfigurationBoardGameDeviceModeKind { get; set; }
         public static bool ConfigurationTeamGame { get; set; }
-        public static bool ConfigurationTraditionalGame { get; set; }
+        //public static bool ConfigurationTraditionalGame { get; set; }
 
         public static bool isCellphoneMode;
 
@@ -81,9 +81,9 @@ namespace Assets.Scripts
                             //ConfigurationTeamGame = true;
                             //ConfigurationTraditionalGame = false;
                             ConfigurationTeamGame = boolFalse;
-                            ConfigurationTraditionalGame = boolTrue;
+                            //ConfigurationTraditionalGame = boolTrue;
                             Debug.Log("BASE 1 - ConfigurationTeamGame : " + ConfigurationTeamGame);
-                            Debug.Log("BASE 1 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
+                            //Debug.Log("BASE 1 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
 
                             ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
 
@@ -95,10 +95,10 @@ namespace Assets.Scripts
                             //Debug.Log("isCellphoneMode: " + isCellphoneMode);
                             ConfigurationBoardGameDeviceModeKind = isCellphoneMode;
                             ConfigurationTeamGame = boolTrue;
-                            ConfigurationTraditionalGame = boolFalse;
+                            //ConfigurationTraditionalGame = boolFalse;
 
                             Debug.Log("BASE 2 - ConfigurationTeamGame : " + ConfigurationTeamGame);
-                            Debug.Log("BASE 2 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
+                            //Debug.Log("BASE 2 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
 
 
                             if (isCellphoneMode == true)

@@ -51,7 +51,8 @@ namespace Assets.Scripts
         {
             float teamOneY = 0.25f;
             float teamTwoY = 0.45f;
-            float moreThanTwoTeams = 0f;
+            //float moreThanTwoTeams = 0f;
+            float moreThanTwoTeams = 0.2f;
 
             float[] coordinateYData = new float[3];
             coordinateYData[0] = teamOneY;
@@ -66,8 +67,8 @@ namespace Assets.Scripts
         {
             float teamOneY = 1.65f;
             float teamTwoY = -1.55f;
-            //float moreThanTwoTeams = 1.8f;
-            float moreThanTwoTeams = 1.7f;
+            //float moreThanTwoTeams = 1.7f;
+            float moreThanTwoTeams = 1.1f;
 
             float[] coordinateYData = new float[3];
             coordinateYData[0] = teamOneY;
@@ -82,8 +83,8 @@ namespace Assets.Scripts
         {
             float teamOneY = 1.95f;
             float teamTwoY = -1.15f;
-            //sfloat moreThanTwoTeams = 2.2f;
-            float moreThanTwoTeams = 2.1f;
+            // moreThanTwoTeams = 2.1f;
+            float moreThanTwoTeams = 1.5f;
 
             float[] coordinateYData = new float[3];
             coordinateYData[0] = teamOneY;

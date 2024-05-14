@@ -89,6 +89,7 @@ namespace Assets.Scripts
             float[] newYForButtons = GameConfigurationButtonsMethods.GetTableWithNewYForGameConfigurationButtons(gameObjectBase, numberOfButton);
 
             GameConfigurationButtonsMethods.ChangeDataForGameConfigurationButtons(buttonsText, buttonsNumber, newYForButtons);
+            //GameConfigurationButtonsMethods.ChangeDataForGameConfigurationChangePlayerSymbolButtons(buttonsText, buttonsNumber, newYForButtons);
             //GameConfigurationButtonsMethods.ChangeDataForGameConfigurationButtonsChangePlayersSymbols(buttonsText, buttonsNumber, newYForButtons);
 
            

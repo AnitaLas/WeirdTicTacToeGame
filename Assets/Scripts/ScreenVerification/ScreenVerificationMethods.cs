@@ -77,7 +77,8 @@ namespace Assets.Scripts
             }
             else
             {
-                tableSize = Tuple.Create(3, 3);
+                //tableSize = Tuple.Create(3, 3);
+                tableSize = Tuple.Create(2, 3);
             }
 
             return tableSize;
