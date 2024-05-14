@@ -220,16 +220,16 @@ internal class Game : MonoBehaviour
 
 
         // team game parameters
-        _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+        //_configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
         _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
-
+        isTeamGame = _configurationTeamGame1;
         //_configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
         //_configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
 
-        _configurationTraditionalGame2 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
-        _configurationTeamGame2 = GameConfigurationKindOfGame.ConfigurationTeamGame;
+        //_configurationTraditionalGame2 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+        //_configurationTeamGame2 = GameConfigurationKindOfGame.ConfigurationTeamGame;
 
-        isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
+        //isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
 
         //_configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
         //playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;

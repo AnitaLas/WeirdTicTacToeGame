@@ -20,6 +20,58 @@ using Assets.Scripts;
             ChangeDataForGameConfigurationButtonsWithChosenText(buttonsNumber);
         }
 
+
+        public static void ChangeCoordinateYForTeamGameButtons(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber)
+        {
+            float newCoordinateY = 0.5f;
+
+            ChangeCoordinateYForTeamGameButtons(buttons, newCoordinateY);
+            ChangeCoordinateYForTeamGameButtons(buttonsNumber, newCoordinateY);
+
+
+        }
+
+        public static void ChangeCoordinateYForTeamGameButtons(List<GameObject[,,]> buttons, float newCoordinateY)
+        {
+            int maxIndexDepth = 1;
+            int maxIndexColumn;
+            int maxIndexRow;
+            int buttonsNumber = buttons.Count;
+            int maxButtonNumber = buttonsNumber - 1;
+
+            for (int i = 0; i < buttonsNumber; i++)
+            {
+                GameObject[,,] oneButton = buttons[i];
+
+                maxIndexColumn = oneButton.GetLength(2);
+                maxIndexRow = oneButton.GetLength(1);
+
+                for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+                {
+                    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                    {
+                        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                        {
+                            GameObject cubePlay = oneButton[indexDepth, indexRow, indexColumn];
+                            GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+
+                        }
+                    }
+                }
+            }
+        }
+        //public static void ChangeDataForGameConfigurationChangePlayerSymbolButtons(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber, float[] newYForButtons)
+        //{
+        //    float newCoordinateXForButtonWithText = -0.5f; // columns -> 14
+        //    float newCoordinateZForButtonWithText = 0.175f;
+        //    float newCoordinateXForButtonWithNumber = 0f; // columns -> 14
+        //    float newCoordinateZForButtonWithNumber = 0f;
+
+        //    ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateXForButtonWithText, newCoordinateZForButtonWithText);
+        //    ChangeCoordinatesXYZForGameConfigurationButtons(buttonsNumber, newYForButtons, newCoordinateXForButtonWithNumber, newCoordinateZForButtonWithNumber);
+        //    ChangeDataForGameConfigurationButtonsWithChosenText(buttonsNumber);
+        //}
+
         //public static void ChangeDataForGameConfigurationButtonsChangePlayersSymbols(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber, float[] newYForButtons)
         //{
         //    float newCoordinateXForButtonWithText = -0.85f; // columns -> 14

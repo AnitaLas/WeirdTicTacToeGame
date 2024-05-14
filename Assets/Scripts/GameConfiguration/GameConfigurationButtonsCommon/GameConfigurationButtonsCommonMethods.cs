@@ -113,16 +113,22 @@ namespace Assets.Scripts
             return number;
         }
 
-        public static bool IsTeamGame(bool _configurationTraditionalGame1, bool _configurationTeamGame1, bool _configurationTraditionalGame2, bool _configurationTeamGame2)
+        public static bool IsTeamGame(bool _configurationTraditionalGame, bool _configurationTeamGame1, bool _configurationTraditionalGame2, bool _configurationTeamGame2)
         {
             bool isTeamGame = false;
 
-            if (_configurationTraditionalGame1 == true && _configurationTeamGame1 == false)
+            //if (_configurationTraditionalGame1 == true && _configurationTeamGame1 == false)
+            //    isTeamGame = false;
+
+            //if (_configurationTraditionalGame2 == false && _configurationTeamGame2 == true)
+            //    isTeamGame = true;
+
+            if (_configurationTraditionalGame == true)
                 isTeamGame = false;
-
-            if (_configurationTraditionalGame2 == false && _configurationTeamGame2 == true)
+            else
                 isTeamGame = true;
-
+            //if (_configurationTeamGame2 == true)
+            //    isTeamGame = true;
 
             return isTeamGame;
         }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.GameConfiguration.GameConfigurationChangePlayersSymbolsButtons
+namespace Assets.Scripts
 {
     internal class GameConfigurationChangePlayersSymbolsMethods
     {

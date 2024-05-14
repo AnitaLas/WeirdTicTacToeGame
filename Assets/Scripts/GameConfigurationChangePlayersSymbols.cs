@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts;
-using Assets.Scripts.GameConfiguration.GameConfigurationChangePlayersSymbolsButtons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,20 +85,23 @@ namespace Assets.Scripts
             _configurationTeamGameSymbols = GameConfigurationTeamMembers.ConfigurationTeamGameSymbol;
             _teamGameSymbols = _configurationTeamGameSymbols;
 
-            isEqualMoveQuantityForBothTeams = GameConfigurationChangePlayersSymbolsMethods.IsSamePlayersNumberInEachTeam(_teamGameSymbols);
 
 
-            _configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+            //_configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
             _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
-
+            isTeamGame = _configurationTeamGame1;
             //_configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
             //_configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
 
-            _configurationTraditionalGame2 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
-            _configurationTeamGame2 = GameConfigurationKindOfGame.ConfigurationTeamGame;
+            //_configurationTraditionalGame2 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
+            //_configurationTeamGame2 = GameConfigurationKindOfGame.ConfigurationTeamGame;
 
-            isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
+            //isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
 
+            if (isTeamGame == true)
+            {
+                isEqualMoveQuantityForBothTeams = GameConfigurationChangePlayersSymbolsMethods.IsSamePlayersNumberInEachTeam(_teamGameSymbols);
+            }
 
             _tagConfigurationChangePlayerSymbolButtonSave = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangePlayersSymbolsButtonSave();
             _tagConfigurationChangePlayerSymbolButtonBack = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangePlayersSymbolsButtonBack();
