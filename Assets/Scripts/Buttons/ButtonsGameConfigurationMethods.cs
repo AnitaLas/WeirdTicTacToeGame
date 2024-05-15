@@ -14,7 +14,8 @@ namespace Assets.Scripts
             int maxIndexRow = button.GetLength(1); 
 
             float newCoordinateY = 4.5f;
-            float newCoordinateX = -0.65f;
+            //float newCoordinateX = -0.65f;
+            float newCoordinateX = -0.8f;
 
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
