@@ -45,7 +45,25 @@ namespace Assets.Scripts
                 //{ 4, "TO WIN" },
                 { 4, "VICTORY" },
                 //buttonsNameDictionary.Add(4, "LENGTH TO CHECK");
-                { 5, "GAPS" }
+                { 5, "GAPS" },
+                { 6, "GAME" },
+                { 7, "TEAM GAME" }
+            };
+
+            return buttonsNameDictionary;
+        }
+
+        public static Dictionary<int, string> DictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration()
+        {
+            Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
+            {
+                { 1, "    CHANGE" },
+                { 2, "PLAYERS NUMBER" },
+                { 3, "ROWS NUMBER" },
+                { 4, "COLUMNS NUMBER" },
+                //buttonsNameDictionary.Add(4, "LENGTH TO CHECK");
+                { 5, "LENGTH TO CHECK" },
+                { 6, "GAPS NUMBER" }
             };
 
             return buttonsNameDictionary;

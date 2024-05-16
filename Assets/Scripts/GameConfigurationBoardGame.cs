@@ -192,7 +192,7 @@ namespace Assets.Scripts.GameConfiguration
                         if (gameObjectTag == _tagConfigurationBoardGameRows || gameObjectTag == _tagConfigurationBoardGameChangeNumberRows)
                         {
                             _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForRows.CreateTableForRows(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D, isCellphoneMode);
-                            _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndRow(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
+                            _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndRow(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
                             GameConfigurationButtonsActions.HideConfiguration(_buttonsAll);
                         } 
@@ -213,7 +213,7 @@ namespace Assets.Scripts.GameConfiguration
                         if (gameObjectTag == _tagConfigurationBoardGameColumns || gameObjectTag == _tagConfigurationBoardGameChangeNumberColumns)
                         {
                             _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForColumns.CreateTableForColumns(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _isGame2D, isCellphoneMode);
-                            _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndColumn(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
+                            _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndColumn(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
                             GameConfigurationButtonsActions.HideConfiguration(_buttonsAll);
                         }
@@ -236,7 +236,7 @@ namespace Assets.Scripts.GameConfiguration
                         {
                             _lenghtToCheckMax = GameConfigurationButtonsWithNumbersForLenghtToCheck.GetLenghtToCheckMax();
                             _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForLenghtToCheck.CreateTableForLenghtToCheck(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _lenghtToCheckMax, _isGame2D, isCellphoneMode);
-                            _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndLenghtToCheck(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
+                            _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndLenghtToCheck(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
                             GameConfigurationButtonsActions.HideConfiguration(_buttonsAll);
                         }
@@ -255,7 +255,7 @@ namespace Assets.Scripts.GameConfiguration
                             //GameConfigurationButtonsWithNumbersForGaps.SetUpGapsNumber();
 
                             _buttonsWithNumbers = GameConfigurationButtonsWithNumbersForGaps.CreateTableForGapsNumber(prefabCubePlayForTableNumber, prefabCubePlayDefaultColour, _lenghtToCheckMax, _isGame2D, isCellphoneMode);
-                            _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndGaps(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
+                            _buttonsMoreSpecificConfiguration = GameConfigurationButtonsCreate.GameConfigurationCreateButtonsBackAndGaps(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
                             GameConfigurationButtonsActions.HideConfiguration(_buttonsAll);
                         }
