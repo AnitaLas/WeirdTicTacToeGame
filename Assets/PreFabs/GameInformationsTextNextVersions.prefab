@@ -66,8 +66,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\n\n\n\n\n\n\n\n\nNEXT VERSIONS\n\nTEAM game\n\nrandom switching\nplayers'
-    symbols \nbetween teams\n\n3D game"
+  m_text: '
+
+
+
+
+
+
+
+
+
+
+
+
+    NEXT VERSIONS
+
+
+
+    3D GAME'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}

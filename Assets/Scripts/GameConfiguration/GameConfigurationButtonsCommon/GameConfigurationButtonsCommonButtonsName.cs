@@ -54,6 +54,71 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetButtonNameForBoardGame()
+        {
+            int dictionatyId = 6;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForTeamGameBoardGame()
+        {
+            int dictionatyId = 7;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
+        // more specific configuration for board game configuration
+
+        public static string GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration(int dictionatyId)
+        {
+            Dictionary<int, string> buttonsNames = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration();
+            string buttonName = buttonsNames[dictionatyId];
+            return buttonName;
+        }
+
+        public static string GetButtonNameForStaticTextForAll()
+        {
+            int dictionatyId = 1;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForPlayersInformation()
+        {
+            int dictionatyId = 2;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForRowsInformation()
+        {
+            int dictionatyId = 3;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForColumnsInformation()
+        {
+            int dictionatyId = 4;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForLenghtToCheckInformation()
+        {
+            int dictionatyId = 5;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForGapsInformation()
+        {
+            int dictionatyId = 6;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration(dictionatyId);
+            return tagName;
+        }
+
         // buttons: name back &  save
         public static string GetButtonNameFromGameDictionariesScenesCommon(int dictionatyId)
         {
