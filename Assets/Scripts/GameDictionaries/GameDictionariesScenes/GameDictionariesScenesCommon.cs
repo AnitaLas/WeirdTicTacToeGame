@@ -14,7 +14,7 @@ namespace Assets.Scripts
                 { 3, "SceneConfigurationBoardGame" },
                 { 4, "SceneInformations" },
                 { 5, "SceneStartGame" },
-                { 6, "SceneConfigurationChangePlayersSymbols" },
+                { 6, "SceneConfigurationChangePlayersSymbolsByTime" },
                 { 7, "SceneConfigurationTeamNumbers" },
                 { 8, "SceneConfigurationTeamMembers" },
 

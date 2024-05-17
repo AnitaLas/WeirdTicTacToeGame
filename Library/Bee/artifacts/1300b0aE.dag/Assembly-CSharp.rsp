@@ -417,7 +417,7 @@
 "Assets/Scripts/GameConfiguration/GameConfigurationTeamNumbers/GameConfigurationTeamNumbersCommon/GameConfigurationButtonsTeamNumbersButtonsName.cs"
 "Assets/Scripts/GameConfiguration/GameConfigurationTeamNumbers/GameConfigurationTeamNumbersCommon/GameConfigurationButtonsTeamNumbersTagName.cs"
 "Assets/Scripts/GameConfigurationBoardGame.cs"
-"Assets/Scripts/GameConfigurationChangePlayersSymbols.cs"
+"Assets/Scripts/GameConfigurationChangePlayersSymbolsByTime.cs"
 "Assets/Scripts/GameConfigurationKindOfGame.cs"
 "Assets/Scripts/GameConfigurationPlayersSymbols.cs"
 "Assets/Scripts/GameConfigurationTeamMembers.cs"
