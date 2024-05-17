@@ -46,8 +46,11 @@ namespace Assets.Scripts
                 { 4, "VICTORY" },
                 //buttonsNameDictionary.Add(4, "LENGTH TO CHECK");
                 { 5, "GAPS" },
-                { 6, "GAME" },
-                { 7, "TEAM GAME" }
+                //{ 6, "GAME BASE" },
+                { 6, "   GAME BASE" },
+                //{ 7, "TEAM GAME BASE" },
+                { 7, "BOARD GAME BASE" },
+                { 8, "    SETUP" }
             };
 
             return buttonsNameDictionary;
@@ -59,11 +62,11 @@ namespace Assets.Scripts
             {
                 { 1, "    CHANGE" },
                 { 2, "PLAYERS NUMBER" },
-                { 3, "ROWS NUMBER" },
+                { 3, "  ROWS NUMBER" },
                 { 4, "COLUMNS NUMBER" },
                 //buttonsNameDictionary.Add(4, "LENGTH TO CHECK");
                 { 5, "LENGTH TO CHECK" },
-                { 6, "GAPS NUMBER" }
+                { 6, "  GAPS NUMBER" }
             };
 
             return buttonsNameDictionary;

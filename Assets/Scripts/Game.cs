@@ -207,13 +207,13 @@ internal class Game : MonoBehaviour
         _numberOfGaps = _configurationBoardGameNumberOfGaps;
 
         // set up: timer
-        _configurationBoardGameChangeRandomlyPlayersSymbolsTime = GameConfigurationChangePlayersSymbols.ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime;
+        _configurationBoardGameChangeRandomlyPlayersSymbolsTime = GameConfigurationChangePlayersSymbolsByTime.ConfigurationBoardGameChangeRandomlyPlayersSymbolsTime;
         _timeForChangeRandomly = _configurationBoardGameChangeRandomlyPlayersSymbolsTime;
 
-        _configurationBoardGameChangeForAllPlayersSymbolsTime = GameConfigurationChangePlayersSymbols.ConfigurationBoardGameChangeForAllPlayersSymbolsTime;
+        _configurationBoardGameChangeForAllPlayersSymbolsTime = GameConfigurationChangePlayersSymbolsByTime.ConfigurationBoardGameChangeForAllPlayersSymbolsTime;
         _timeForChangeForAll = _configurationBoardGameChangeForAllPlayersSymbolsTime;
 
-        _configurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = GameConfigurationChangePlayersSymbols.ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime;
+        _configurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = GameConfigurationChangePlayersSymbolsByTime.ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime;
         _timeForSwitchBetweenTeams = _configurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime;
 
         //------------------------------------
@@ -244,7 +244,7 @@ internal class Game : MonoBehaviour
 
        
         //isSameQuantityForMovePerTeam = false;
-        isSameQuantityForMovePerTeam = GameConfigurationChangePlayersSymbols.ConfigurationBoardGameEqualMoveQuantityForBothTeams;
+        isSameQuantityForMovePerTeam = GameConfigurationChangePlayersSymbolsByTime.ConfigurationBoardGameEqualMoveQuantityForBothTeams;
        // Debug.Log("isSameQuantityForMovePerTeam: " + isSameQuantityForMovePerTeam);
 
         if (isTeamGame == false)

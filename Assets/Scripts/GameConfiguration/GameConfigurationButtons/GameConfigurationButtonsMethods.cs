@@ -21,15 +21,39 @@ using Assets.Scripts;
         }
 
 
-        public static void ChangeCoordinateYForTeamGameButtons(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber)
+        public static void ChangeDataForGameConfigurationButtonsOldGame(List<GameObject[,,]> buttonsText, List<GameObject[,,]> buttonsNumber)
         {
-            float newCoordinateY = 0.5f;
+            float newCoordinateYForText = -1.25f;
+            float newCoordinateYForNumber = -1.1f;
+
+            ChangeCoordinateYForTeamGameButtons(buttonsText, newCoordinateYForText);
+            ChangeCoordinateYForTeamGameButtons(buttonsNumber, newCoordinateYForNumber);
+        }
+
+        public static void ChangeDataForGameConfigurationButtonsTeamGame(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber)
+        {
+            float newCoordinateY = -0.6f;
 
             ChangeCoordinateYForTeamGameButtons(buttons, newCoordinateY);
             ChangeCoordinateYForTeamGameButtons(buttonsNumber, newCoordinateY);
-
-
         }
+
+        public static void ChangeDataForGameConfigurationChangePlayersSymbolsButtonsTeamGame(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber)
+        {
+            float newCoordinateY = -0.6f;
+
+            ChangeCoordinateYForTeamGameButtons(buttons, newCoordinateY);
+            ChangeCoordinateYForTeamGameButtons(buttonsNumber, newCoordinateY);
+        }
+
+        public static void ChangeDataForGameConfigurationChangePlayersSymbolsButtonsOldGame(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber)
+        {
+            float newCoordinateY = 0.1f;
+
+            ChangeCoordinateYForTeamGameButtons(buttons, newCoordinateY);
+            ChangeCoordinateYForTeamGameButtons(buttonsNumber, newCoordinateY);
+        }
+
 
         public static void ChangeCoordinateYForTeamGameButtons(List<GameObject[,,]> buttons, float newCoordinateY)
         {
@@ -152,6 +176,10 @@ using Assets.Scripts;
             }
         }
 
+        // for:
+        // team game - base setups
+        // players symbols change
+
         public static float[] GetTableWithNewYForGameConfigurationButtons(GameObject prefabPlayerSymbol, int playersNumber)
         {
             float result;
@@ -159,10 +187,37 @@ using Assets.Scripts;
             float[] table = new float[playersNumber];
             float scale = GameCommonMethodsMain.GetObjectScaleX(prefabPlayerSymbol);
 
-            float halfScale = scale * 4.45f; // 6 for boardGameConfiguration without button gaps
-            float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber) - 0.5f;
+            //float halfScale = scale * 4.45f; // 6 for boardGameConfiguration without button gaps
+            float halfScale = scale * 3.851f; // 6 for boardGameConfiguration without button gaps
+            float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber);// - 0.5f;
+            //float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber) - 1.3f; // one digit after coma, two makes some gaps between prefab CubePlay
             table[0] = firstY;
            
+            int previousResultIndex; // = 0;
+
+            for (int newY = 1; newY < playersNumber; newY++)
+            {
+                previousResultIndex = newY - 1;
+                previousResult = table[previousResultIndex];
+
+                result = previousResult + scale + halfScale;
+                table[newY] = result;
+            }
+
+            return table;
+        }
+
+        public static float[] GetTableWithNewYForTeamGameConfigurationButtons(GameObject prefabPlayerSymbol, int playersNumber)
+        {
+            float result;
+            float previousResult;
+            float[] table = new float[playersNumber];
+            float scale = GameCommonMethodsMain.GetObjectScaleX(prefabPlayerSymbol);
+
+            float halfScale = scale * 4.45f; // 6 for boardGameConfiguration without button gaps
+            float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber);// - 1.251f; 
+            table[0] = firstY;
+
             int previousResultIndex; // = 0;
 
             for (int newY = 1; newY < playersNumber; newY++)

@@ -68,6 +68,13 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetButtonNameForNumber()
+        {
+            int dictionatyId = 8;
+            string tagName = GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsName(dictionatyId);
+            return tagName;
+        }
+
         // more specific configuration for board game configuration
 
         public static string GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsNameForMoreSpecificConfiguration(int dictionatyId)

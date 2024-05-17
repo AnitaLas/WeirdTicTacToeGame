@@ -13,7 +13,8 @@ namespace Assets.Scripts
             int maxIndexColumn  = button.GetLength(2);
             int maxIndexRow = button.GetLength(1); 
 
-            float newCoordinateY = 4.5f;
+            //float newCoordinateY = 4.5f;
+            float newCoordinateY = 4.35f;
             //float newCoordinateX = -0.65f;
             float newCoordinateX = -0.8f;
 

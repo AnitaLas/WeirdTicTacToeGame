@@ -86,13 +86,19 @@ namespace Assets.Scripts
             GameObject gameObjectBase = buttonRandomlyText[0, 0, 0];
             int numberOfButton = buttonsText.Count;
 
-            float[] newYForButtons = GameConfigurationButtonsMethods.GetTableWithNewYForGameConfigurationButtons(gameObjectBase, numberOfButton);
+            float[] newYForButtons = GameConfigurationButtonsMethods.GetTableWithNewYForTeamGameConfigurationButtons(gameObjectBase, numberOfButton);
 
             GameConfigurationButtonsMethods.ChangeDataForGameConfigurationButtons(buttonsText, buttonsNumber, newYForButtons);
+
+            if (isTeamGame == true)
+                GameConfigurationButtonsMethods.ChangeDataForGameConfigurationChangePlayersSymbolsButtonsTeamGame(buttonsText, buttonsNumber);
+            else
+                GameConfigurationButtonsMethods.ChangeDataForGameConfigurationChangePlayersSymbolsButtonsOldGame(buttonsText, buttonsNumber);
+
             //GameConfigurationButtonsMethods.ChangeDataForGameConfigurationChangePlayerSymbolButtons(buttonsText, buttonsNumber, newYForButtons);
             //GameConfigurationButtonsMethods.ChangeDataForGameConfigurationButtonsChangePlayersSymbols(buttonsText, buttonsNumber, newYForButtons);
 
-           
+
 
 
 
@@ -211,6 +217,9 @@ namespace Assets.Scripts
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             //GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            //float newCoordinateY = 1f;
+            //ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(button, newCoordinateY, tagName);
 
             string frontTextToAdd = "ChangeRandomly_";
             ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
