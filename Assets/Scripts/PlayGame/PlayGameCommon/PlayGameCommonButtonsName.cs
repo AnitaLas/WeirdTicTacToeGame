@@ -79,6 +79,12 @@ namespace Assets.Scripts
             string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
             return tagName;
         }
+        public static string GetButtonNameForButtonToHide()
+        {
+            int dictionatyId = 10;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
 
         // ---------------------------------------------------------------------------------------
 
