@@ -17,7 +17,8 @@ namespace Assets.Scripts
                 { 7, "GameButtonMenuConfigurationDisactivate" },
                 { 8, "GameButtonBoardGameHelpText" },
                 { 9, "GameButtonInformationTimerForPlayers" },
-                { 10, "GameButtonInformationTimerForBoardGame" }
+                { 10, "GameButtonInformationTimerForBoardGame" },
+                { 11, "GameButtonButtonToHide" }
             };
             //tagGameDictionary.Add(4, "GameButtonHideHelpButtons");
             //tagGameDictionary.Add(5, "GameButtonUnhideHelpButtons");
@@ -38,7 +39,8 @@ namespace Assets.Scripts
                 { 6, "PLAYERS SYMBOLS" },
                 { 7, "CHANGE" },
                 { 8, "SWICH" },
-                { 9, "OLD       NEW" }
+                { 9, "OLD       NEW" },
+                { 10, "ButtonToHide" }
             };
 
             return buttonsNameDictionary;

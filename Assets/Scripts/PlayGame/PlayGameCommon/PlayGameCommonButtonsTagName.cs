@@ -86,6 +86,13 @@ namespace Assets.Scripts
             return currentNumber;
         }
 
+        public static string GetTagForButtonNameByTagButtonToHide()
+        {
+            int dictionatyId = 11;
+            string currentNumber = GetTagsNameFromDictionaryTagsGame(dictionatyId);
+            return currentNumber;
+        }
+
         // ---------------------------------------------------------------------------------------
         // tags name: cubePlay
 

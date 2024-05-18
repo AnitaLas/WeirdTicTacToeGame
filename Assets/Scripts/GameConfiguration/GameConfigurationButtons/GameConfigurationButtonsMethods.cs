@@ -54,6 +54,21 @@ using Assets.Scripts;
             ChangeCoordinateYForTeamGameButtons(buttonsNumber, newCoordinateY);
         }
 
+        public static void ChangeDataForGameMenuButtons(List<GameObject[,,]> buttons, float[] newYForButtons)
+        {
+
+            float newCoordinateXForButtonWithText=  0.0f; // columns -> 14
+            float newCoordinateZForButtonWithText = 0.175f;
+
+            ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateXForButtonWithText, newCoordinateZForButtonWithText);
+        }
+
+        public static void ChangeDataForGameMenuButtonToHide(GameObject[,,] buttonToHide)
+        {
+            string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagButtonToHide();
+            float newCoordinateY = 100f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(buttonToHide, newCoordinateY, tagName);
+        }
 
         public static void ChangeCoordinateYForTeamGameButtons(List<GameObject[,,]> buttons, float newCoordinateY)
         {
