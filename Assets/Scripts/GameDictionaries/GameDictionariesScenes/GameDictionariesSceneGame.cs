@@ -30,9 +30,11 @@ namespace Assets.Scripts
         {
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
             {
-                { 1, "NEW GAME" },
-                { 2, "BACK" },
-                { 3, "HELP BUTTONS" },
+                { 1, "  NEW GAME" },
+                //{ 2, "BACK" },
+                { 2, "BACK TO GAME" },
+                //{ 3, "HELP BUTTONS" },
+                { 3, "BUTTONS" },
                 //{ 4, "BUTTONS TEXT" }
                 { 4, "BOARD TEXT" },
                 { 5, " PLAYER SYMBOL" },
@@ -40,7 +42,12 @@ namespace Assets.Scripts
                 { 7, "CHANGE" },
                 { 8, "SWICH" },
                 { 9, "OLD       NEW" },
-                { 10, "ButtonToHide" }
+                { 10, "ButtonToHide" },
+                { 11, "HELP" },
+                //{ 12, "GAME OVER" }
+                { 12, "GAME       " },
+                { 13, "OVER" },
+                { 14, "TEAM       " }
             };
 
             return buttonsNameDictionary;

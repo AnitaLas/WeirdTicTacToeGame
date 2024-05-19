@@ -45,8 +45,6 @@ namespace Assets.Scripts
             return tagName;
         }
 
-
-
         // buttons: game name
         public static string GetButtonsNameFromDictionaryButtonstGameName(int dictionatyId)
         {

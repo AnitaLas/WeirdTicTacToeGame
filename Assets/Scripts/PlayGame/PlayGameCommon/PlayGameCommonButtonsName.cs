@@ -86,6 +86,33 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetButtonNameForHelpStaticText()
+        {
+            int dictionatyId = 11;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForTextGame()
+        {
+            int dictionatyId = 12;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNameForTextOver()
+        {
+            int dictionatyId = 13;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
+        public static string GetButtonNameForTextTeam()
+        {
+            int dictionatyId = 14;
+            string tagName = GetButtonsNameFromDictionaryButtonsGameName(dictionatyId);
+            return tagName;
+        }
+
         // ---------------------------------------------------------------------------------------
 
     }
