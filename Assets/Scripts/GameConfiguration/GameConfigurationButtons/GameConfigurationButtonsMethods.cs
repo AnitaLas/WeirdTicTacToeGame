@@ -57,10 +57,23 @@ using Assets.Scripts;
         public static void ChangeDataForGameMenuButtons(List<GameObject[,,]> buttons, float[] newYForButtons)
         {
 
-            float newCoordinateXForButtonWithText=  0.0f; // columns -> 14
-            float newCoordinateZForButtonWithText = 0.175f;
+            float newCoordinateX=  -0.65f;
+            float newCoordinateZ = 0.175f;
+            float newCoordinateY = -2.05f;
 
-            ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateXForButtonWithText, newCoordinateZForButtonWithText);
+            ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateX, newCoordinateZ);
+            ChangeCoordinateYForTeamGameButtons(buttons, newCoordinateY);
+
+        }
+
+        public static void ChangeDataForGameMenuMoreSpecificText(List<GameObject[,,]> buttons, float[] newYForButtons)
+        {
+            float newCoordinateX = 0f;
+            float newCoordinateZ = 0.175f;
+            float newCoordinateY = 3.35f;
+
+            ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateX, newCoordinateZ);
+            ChangeCoordinateYForTeamGameButtons(buttons, newCoordinateY);
         }
 
         public static void ChangeDataForGameMenuButtonToHide(GameObject[,,] buttonToHide)
@@ -69,6 +82,7 @@ using Assets.Scripts;
             float newCoordinateY = 100f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(buttonToHide, newCoordinateY, tagName);
         }
+
 
         public static void ChangeCoordinateYForTeamGameButtons(List<GameObject[,,]> buttons, float newCoordinateY)
         {
@@ -231,6 +245,31 @@ using Assets.Scripts;
 
             float halfScale = scale * 4.45f; // 6 for boardGameConfiguration without button gaps
             float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber);// - 1.251f; 
+            table[0] = firstY;
+
+            int previousResultIndex; // = 0;
+
+            for (int newY = 1; newY < playersNumber; newY++)
+            {
+                previousResultIndex = newY - 1;
+                previousResult = table[previousResultIndex];
+
+                result = previousResult + scale + halfScale;
+                table[newY] = result;
+            }
+
+            return table;
+        }
+
+        public static float[] GetTableWithNewYForGameMenuButtons(GameObject prefabPlayerSymbol, int playersNumber)
+        {
+            float result;
+            float previousResult;
+            float[] table = new float[playersNumber];
+            float scale = GameCommonMethodsMain.GetObjectScaleX(prefabPlayerSymbol);
+
+            float halfScale = scale * 5.451f; 
+            float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber);
             table[0] = firstY;
 
             int previousResultIndex; // = 0;

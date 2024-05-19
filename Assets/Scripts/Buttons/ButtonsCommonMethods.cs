@@ -615,7 +615,35 @@ namespace Assets.Scripts
             }
         }
 
-       
+        public static void ChangeDataForButtonsGameEnded(GameObject[,,] button, float newCoordinateY, float newCoordinateX, string tagName)
+        {
+            int maxIndexDepth = button.GetLength(0);
+            int maxIndexColumn = button.GetLength(2);
+            int maxIndexRow = button.GetLength(1);
+
+            //float newCoordinateZ = 0.175f;
+            float newCoordinateZ = 0.175f;
+            float fontSize = 0.7f;
+            float newScale = 0.3f;
+
+            for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            {
+                for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+                {
+                    for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+                    {
+                        GameObject cubePlay = button[indexDepth, indexRow, indexColumn];
+                        GameCommonMethodsMain.TransformGameObjectToNewScale(cubePlay, newScale, newScale, newScale);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
+                        GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
+                        GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
+                        GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
+                        GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
+                        //GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
+                    }
+                }
+            }
+        }
 
     }
 }

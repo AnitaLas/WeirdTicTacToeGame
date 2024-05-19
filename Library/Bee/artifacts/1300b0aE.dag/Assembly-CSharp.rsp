@@ -488,6 +488,7 @@
 "Assets/Scripts/PlayGame/PlayGameHelpButtons/PlayGameHelpButtonsCreate.cs"
 "Assets/Scripts/PlayGame/PlayGameMenuAndTimer/PlayGameMenuAndTimerButtonsActions.cs"
 "Assets/Scripts/PlayGame/PlayGameMenuAndTimer/PlayGameMenuButtonsCreate.cs"
+"Assets/Scripts/PlayGame/PlayGameTeam/PlayGameTeamButtonsForEndedGameCreate.cs"
 "Assets/Scripts/PlayGame/PlayGameTeam/PlayGameTeamSetUpPlayersSymbols.cs"
 "Assets/Scripts/PlayGame/PlayGameTimer/PlayGameTimerButtonsCreate.cs"
 "Assets/Scripts/PlayGame/PlayGameTimer/PlayGameTimerCommonMethods.cs"

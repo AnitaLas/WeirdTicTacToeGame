@@ -484,7 +484,7 @@ internal class Game : MonoBehaviour
                                 }
                                 else
                                 {
-                                    // to do - team number, maybe? T1. T2. T3, or maby crate the button team 1 winer?
+                                    PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                 }
 
 
@@ -517,7 +517,16 @@ internal class Game : MonoBehaviour
                                     PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
                                     PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                    PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                    //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+
+                                    if (isTeamGame == false)
+                                    {
+                                        PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                    }
+                                    else
+                                    {
+                                        PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
+                                    }
 
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
@@ -660,8 +669,8 @@ internal class Game : MonoBehaviour
                                 }
                                 else
                                 {
-                                    // to do - team number, maybe? T1. T2. T3, or maby crate the button team 1 winer?
-                                  PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
+                                    PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
+                                    PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
 
                                 }
 
@@ -688,11 +697,22 @@ internal class Game : MonoBehaviour
                                 countedTagCubePlayTaken = _currentCountedTagCubePlayTaken[_index];
 
                                 if (countedTagCubePlayTaken >= _maxCubePlayNumber)
-                                {;
+                                {
                                     PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
                                     PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                    PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                    //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+
+
+
+                                    if (isTeamGame == false)
+                                    {
+                                        PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                    }
+                                    else
+                                    {
+                                        PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
+                                    }
 
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
@@ -716,7 +736,7 @@ internal class Game : MonoBehaviour
                     if (gameObjectTag == _tagGameButtonMenuConfigurationLeft || gameObjectTag == _tagGameButtonMenuConfigurationRight)
                     {
                         PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);                   
-                        _gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
+                        _gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D);
 
                         if (_isTimerActivate == true)
                         {

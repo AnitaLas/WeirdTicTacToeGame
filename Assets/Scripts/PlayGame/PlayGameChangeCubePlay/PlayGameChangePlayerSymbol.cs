@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 
+
 namespace Assets.Scripts
 {
-    internal class PlayGameChangePlayerSymbol
+    internal class PlayGameChangePlayerSymbol : MonoBehaviour
     {
         public static void SetUpPlayerSymbol(string playerSymbol, string tagPlayerSymbol)
         {
@@ -202,6 +203,96 @@ namespace Assets.Scripts
             SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
             // SetUpPlayerSymbolNext
             SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
+        }
+
+        public static void DestroyPlayerMoveCube(string tagName)
+        {
+            GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
+            Destroy(gameObject);
+
+        }
+
+        public static void DestroyPlayerMoveCubes()
+        {
+            //string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
+            //string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
+            //string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
+            Dictionary<int, string> tagsName = GameDictionariesSceneGame.DictionaryTagsPlayerSymbolMove();
+            int numberOfTags = tagsName.Count;
+
+            for (int i = 1; i <= numberOfTags; i++)
+            {
+                string tagName = tagsName[i];
+                DestroyPlayerMoveCube(tagName);
+            }
+
+
+            //DestroyPlayerMoveCube(tagPlayerSymbolCurrent);
+            //DestroyPlayerMoveCube(tagPlayerSymbolPrevious);
+            //DestroyPlayerMoveCube(tagPlayerSymbolNext);
+        }
+
+        public static void CreateButtonsForWinnerTeam(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, string teamNumber, bool isGame2D)
+        {
+            PlayGameTeamButtonsForEndedGameCreate.CreateButtonGameTeamForTextTeam(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            PlayGameTeamButtonsForEndedGameCreate.CreateButtonGameTeamForTextTeamNumber(prefabCubePlay, prefabCubePlayButtonsNumberColour, teamNumber, isGame2D);
+
+        }
+
+        public static void CreateButtonsForGameOver(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
+        {
+            PlayGameTeamButtonsForEndedGameCreate.CreateButtonGameTeamForTextGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
+            PlayGameTeamButtonsForEndedGameCreate.CreateButtonGameTeamForTextOver(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+        }
+
+        public static string GetTeamWinnerNumber(List<string[]> teamGameSymbols)
+        {
+            string winnerTeamNumber = "Upss";
+            string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
+            GameObject gameObject = CommonMethods.GetObjectByTagName(tagPlayerSymbolPrevious);
+            string previousSymbol = CommonMethods.GetCubePlayText(gameObject);
+            Debug.Log("previousSymbol: " + previousSymbol);
+
+            int teamsNumbers = teamGameSymbols.Count;
+
+            for (int i = 0; i < teamsNumbers; i++)
+            {
+                string[] team = teamGameSymbols[i];
+                int playersNumber = team.Length;
+
+                for (int j = 0; j < playersNumber; j++)
+                {
+                    string symbol = team[j];
+                    if (symbol == previousSymbol)
+                    {
+                        int number = i + 1;
+                        winnerTeamNumber = CommonMethods.ConverIntToString(number);
+                    }
+
+                }
+            }
+
+            Debug.Log("winnerTeamNumber: " + winnerTeamNumber);
+            //string teamNumber = gameObjectName.Substring(5,1);
+            return winnerTeamNumber;
+        }
+
+        public static void CreateButtonsGameTeamForWinner(bool isWinner, GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<string[]> teamGameSymbols)
+        {
+            string teamNumber = GetTeamWinnerNumber(teamGameSymbols);
+            
+            DestroyPlayerMoveCubes();
+            
+
+            if (isWinner == true)
+            {
+                CreateButtonsForWinnerTeam(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsNumberColour, teamNumber, isGame2D);
+            }
+            else
+            {
+                CreateButtonsForGameOver(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D);
+            }
+
         }
     }
 }
