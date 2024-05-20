@@ -112,7 +112,7 @@ namespace Assets.Scripts
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
-            string frontTextToAdd = "HelpButtons_";
+            string frontTextToAdd = "ButtonNewGame_";
             ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
             return button;
         }

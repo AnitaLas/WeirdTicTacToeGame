@@ -45,9 +45,9 @@ namespace Assets.Scripts
                 { 10, "ButtonToHide" },
                 { 11, "HELP" },
                 //{ 12, "GAME OVER" }
-                { 12, "GAME       " },
+                { 12, " GAME" },
                 { 13, "OVER" },
-                { 14, "TEAM       " }
+                { 14, "TEAM WIN     " }
             };
 
             return buttonsNameDictionary;

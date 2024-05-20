@@ -476,14 +476,16 @@ internal class Game : MonoBehaviour
                             {
                                 PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
-                                PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
+                                //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
 
                                 if (isTeamGame == false)
                                 {
+                                    PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
                                     PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
                                 }
                                 else
                                 {
+                                    PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                                     PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                 }
 
@@ -516,15 +518,17 @@ internal class Game : MonoBehaviour
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
-                                    PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
+                                    //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
                                     //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
 
                                     if (isTeamGame == false)
                                     {
+                                        PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
                                         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
                                     }
                                     else
                                     {
+                                        PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                                         PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     }
 
@@ -657,18 +661,20 @@ internal class Game : MonoBehaviour
                                 
                                 PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
-                                PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
+                                //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
                                 //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
 
 
                                 if (isTeamGame == false)
                                 {
+                                    PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
                                     PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
                                     PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
 
                                 }
                                 else
                                 {
+                                    PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                                     PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
 
@@ -700,17 +706,19 @@ internal class Game : MonoBehaviour
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
-                                    PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
+                                   // PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
                                     //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
 
 
 
                                     if (isTeamGame == false)
                                     {
+                                        PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
                                         PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
                                     }
                                     else
                                     {
+                                        PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                                         PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     }
 
