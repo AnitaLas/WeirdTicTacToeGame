@@ -112,6 +112,32 @@ namespace Assets.Scripts
             }
         }
 
+        public static void DestroyConfigurationMenu()
+        {
+            string tagGameButtonMenuConfigurationDisactivate = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationDisactivate();
+            string tagGameButtonMenuConfigurationRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationLeft();
+            string tagGameButtonMenuConfigurationLeft = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationRight();
+
+            string[] tagConfigurationMenu = new string[3];
+            tagConfigurationMenu[0] = tagGameButtonMenuConfigurationDisactivate;
+            tagConfigurationMenu[1] = tagGameButtonMenuConfigurationRight;
+            tagConfigurationMenu[2] = tagGameButtonMenuConfigurationLeft;
+
+            string tagName;
+
+
+            int tagConfigurationMenuLength = tagConfigurationMenu.Length;
+
+            for (int i = 1; i < tagConfigurationMenuLength; i++)
+            {
+                tagName = tagConfigurationMenu[i];
+
+                GameObject gameObject = CommonMethods.GetObjectByTagName(tagName);
+
+               Destroy(gameObject);
+            }
+        }
+
         // ---
 
         public static void DestroyPlayGameButtons(List<GameObject[,,]> helpButtons)
