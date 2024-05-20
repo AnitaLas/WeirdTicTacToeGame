@@ -179,6 +179,20 @@ namespace Assets.Scripts
             return tagName;
         }
 
+        public static string GetButtonNameSetUp()
+        {
+            int dictionatyId = 4;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationPlayerSymbolDefaultText(dictionatyId);
+            return tagName;
+        }
+
+        public static string GetButtonNamePlayersSymbols()
+        {
+            int dictionatyId = 5;
+            string tagName = GetButtonNameFromDictionaryButtonsConfigurationPlayerSymbolDefaultText(dictionatyId);
+            return tagName;
+        }
+
         // butons: players symbols change/ switch
         public static string GetButtonNameFromDictionaryButtonsConfigurationBoardGameButtonsName(int dictionatyId)
         {

@@ -28,7 +28,9 @@ namespace Assets.Scripts
             {
                 { 1, "PLAYER" },
                 { 2, "PLAYERS" },
-                { 3, "P" } // tabletMode, more than six players
+                { 3, "P" }, // tabletMode, more than six players
+                { 4, "    SETUP" },
+                { 5, "PLAYERS SYMBOLS" }
             };
 
             return buttonsNameDictionary;

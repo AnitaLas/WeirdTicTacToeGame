@@ -11,14 +11,19 @@ namespace Assets.Scripts
             // button save and back
             GameObject[,,] buttonSave = GameConfigurationPlayerSymbolCreateButtonSave(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
             GameObject[,,] buttonBack = GameConfigurationPlayerSymbolCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D);
+            GameObject[,,] buttonTopPlayersSymbols = GameConfigurationCreateInformationButtonTopPlayersSymbols(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+            GameObject[,,] buttonTopSetUp = GameConfigurationCreateInformationButtonTopSetUp(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
 
             List<GameObject[,,]> buttonsAll = new List<GameObject[,,]>();
             buttonsAll.Insert(0, buttonSave);
             buttonsAll.Insert(1, buttonBack);
+            buttonsAll.Insert(1, buttonTopPlayersSymbols);
+            buttonsAll.Insert(1, buttonTopSetUp);
 
             return buttonsAll;
         }
 
+        // butons: back & save
         public static GameObject[,,] GameConfigurationPlayerSymbolCreateButtonSave(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolButtonSave();
@@ -33,6 +38,47 @@ namespace Assets.Scripts
 
             GameObject[,,] buttonBack = GameConfigurationButtonsCommonCreate.CreateCommonButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D, tagName);
             return buttonBack;
+        }
+        // buttons: top
+
+        public static GameObject[,,] GameConfigurationCreateInformationButtonTopPlayersSymbols(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
+        {
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBoardGameButtonInformation();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayersSymbols();
+
+
+            //GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+            GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonTopForTextInformation(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
+
+            string frontTextToAdd = "TopPlayersSymbols_";
+            ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
+
+            ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
+
+            //float newCoordinateY = 4.35f;
+            //float newCoordinateX = -0.8f;
+            //ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
+
+            return button;
+        }
+
+        public static GameObject[,,] GameConfigurationCreateInformationButtonTopSetUp(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
+        {
+            //GameObject[,,] buttons;
+
+            string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBoardGameButtonInformation();
+            string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameSetUp();
+
+            GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
+
+            //string frontTextToAdd = "InformationButtonTopChange_";
+            float newCoordinateY = 3.9f;
+            float newCoordinateX = -0.4f;
+            ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
+
+            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
+
+            return button;
         }
 
         // ---
@@ -64,7 +110,8 @@ namespace Assets.Scripts
 
             buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultTextForButtons);
 
-            GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerNumber(buttonsList);
+            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerNumber(buttonsList);
+            GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForConfigurationButtonsPlayersNumbers(buttonsList);
 
             return buttonsList;
         }
@@ -112,7 +159,8 @@ namespace Assets.Scripts
 
             buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultPlayersSymbols);
 
-            GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
+            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
+            GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForConfigurationButtonsPlayersSymbols(buttonsList);
 
             return buttonsList;
         }
@@ -128,7 +176,8 @@ namespace Assets.Scripts
 
             buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultPlayersSymbols);
 
-            GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
+            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
+            GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForConfigurationButtonsPlayersSymbolsBiggerThanSix(buttonsList);
 
             return buttonsList;
         }
