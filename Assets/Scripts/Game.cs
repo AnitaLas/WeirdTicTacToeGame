@@ -612,24 +612,24 @@ internal class Game : MonoBehaviour
                                 //    {"","","X"}
                                 //};
 
-                                //_gameBoardVerification2D = new string[,]
-                                //{
-                                //    {"X","O","X"},
-                                //    {"","",""},
-                                //    {"","","X"}
-                                //};
+                                _gameBoardVerification2D = new string[,]
+                                {
+                                    {"O","X",""},
+                                    {"W","T","W"},
+                                    {"O","",""}
+                                };
 
                                 // to do xxoo + win = 3 = return error! - to fix
 
-                                //for (int i = 0; i < _gameBoardVerification2D.GetLength(0); i++)
-                                //{
-                                //    for (int j = 0; j < _gameBoardVerification2D.GetLength(1); j++)
-                                //    {
-                                //        Debug.Log($"_gameBoardVerification2D[{i}, {j}]" + _gameBoardVerification2D[i, j]);
-                                //    }
-                                //}
+                                for (int i = 0; i < _gameBoardVerification2D.GetLength(0); i++)
+                                {
+                                    for (int j = 0; j < _gameBoardVerification2D.GetLength(1); j++)
+                                    {
+                                        Debug.Log($"_gameBoardVerification2D[{i}, {j}]" + _gameBoardVerification2D[i, j]);
+                                    }
+                                }
 
-                                //Debug.Log(" --------------------------------------------------- ");
+                                Debug.Log(" --------------------------------------------------- ");
 
 
 

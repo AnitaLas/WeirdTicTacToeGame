@@ -43,7 +43,7 @@ namespace Assets.Scripts
 
         private string[] _tableWitPlayersChosenSymbols;
 
-        private List<GameObject[,,]> _buttonsBackAndSave;
+        private List<GameObject[,,]> _buttonsStatic;
         private List<GameObject[,,]> _buttonsWithPlayers;
         private List<GameObject[,,]> _buttonsWithSymbols;
         private List<GameObject[,,]> _buttonBasePlayers;
@@ -80,15 +80,15 @@ namespace Assets.Scripts
             //_numberOfPlayers = 2;
             _buttonsWithPlayers = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsWithPlayerNumber(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D, _numberOfPlayers);
             _buttonsWithSymbols = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayButtonsNumberColour, _isGame2D, _numberOfPlayers);
-            _buttonsBackAndSave = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, _numberOfPlayers);
-            _buttonBasePlayers = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationCreateInformationBaseButtonPlayers(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
+            _buttonsStatic = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationPlayerSymbolCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, _numberOfPlayers);
+            //_buttonBasePlayers = GameConfigurationPlayerSymbolButtonsCreate.GameConfigurationCreateInformationBaseButtonPlayers(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
             _configurationBaseButtons = new List<List<GameObject[,,]>>();
 
             _configurationBaseButtons.Insert(0, _buttonsWithPlayers);
             _configurationBaseButtons.Insert(1, _buttonsWithSymbols);
-            _configurationBaseButtons.Insert(2, _buttonsBackAndSave);
-            _configurationBaseButtons.Insert(3, _buttonBasePlayers); 
+            _configurationBaseButtons.Insert(2, _buttonsStatic);
+            //_configurationBaseButtons.Insert(3, _buttonBasePlayers); 
         }
 
 
