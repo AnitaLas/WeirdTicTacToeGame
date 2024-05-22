@@ -31,23 +31,43 @@ namespace Assets.Scripts
             bool checker = false;
             int columnIndex;
             int rowIndex;
-   
+
+            Debug.Log("lenghtToCheck = " + lenghtToCheck);
+            
+
+
             int teamsNumbers = teamGameSymbols.Count;
+            Debug.Log("teamsNumbers = " + teamsNumbers);
 
-            //Debug.Log("1 lenghtToCheck" + lenghtToCheck);
+            //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
+            //for (int i = 0; i < teamGameSymbols.Count; i++)
+            //{
 
-            for (int i = 0; i < teamsNumbers; i++)
+            //    string[] teamSymbols = teamGameSymbols[i];
+
+            //    for (int zz = 0; zz < teamSymbols.Length; zz++)
+            //    {
+            //        Debug.Log($"TEAM: {i}; symbol[{zz}]: " + teamSymbols[zz]);
+            //    }
+            //}
+
+            //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
+
+
+            for (int teamNumber = 0; teamNumber < teamsNumbers; teamNumber++)
             {
-                string[] teamSymbols = teamGameSymbols[i];
+                Debug.Log("1234567 teamNumber:  " + teamNumber);
+
+                string[] teamSymbols = teamGameSymbols[teamNumber];
                 int playersNumber = teamSymbols.Length;
 
-                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
-                //for (int zz = 0; zz < teamSymbols.Length; zz++)
-                //{
-                //    Debug.Log($"teamSymbols[{zz}]: " + teamSymbols[zz]);
-                //}
+                Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
+                for (int zz = 0; zz < teamSymbols.Length; zz++)
+                {
+                    Debug.Log($"TEAM: {teamNumber}; symbol[{zz}]: " + teamSymbols[zz]);
+                }
 
-                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
+                Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
 
 
                 //Debug.Log(" ----------------------- ");
@@ -55,7 +75,7 @@ namespace Assets.Scripts
                 string[] checkArray = new string[1];
                 checkArray[0] = "";
 
-                
+
                 // count matching
                 int[] matchingArray = new int[1];
                 //?
@@ -98,17 +118,24 @@ namespace Assets.Scripts
                             string currentSymbolToCheck = checkArray[0];
                             //Debug.Log("1 checkArray[0]" + checkArray[0]);
                             //Debug.Log("1 matchingArray[0]: " + matchingArray[0]);
+                            //Debug.Log($"1 !!! boardToCheck[{rowIndex}, {columnIndex}]: " + boardToCheck[rowIndex, columnIndex]);
                             //Debug.Log("--------");
+
+
+                            string matchedSymbol = "";
 
                             for (int z = 0; z < playersNumber; z++)
                             {
                                 string teamSymbol = teamSymbols[z];
+                                //Debug.Log("1_A teamSymbol: " + teamSymbol);
 
                                 if (teamSymbol.Equals(boardToCheck[rowIndex, columnIndex]))
+                                //if (teamSymbol == boardToCheck[rowIndex, columnIndex])
                                 {
- 
-                                     isMatchingArrayIncreased = true;
-                                     break;
+                                    matchedSymbol = teamSymbol;
+                                    //Debug.Log("1_A matchedSymbol: " + matchedSymbol);
+                                    isMatchingArrayIncreased = true;
+                                    break;
                                 }
 
                             }
@@ -123,18 +150,19 @@ namespace Assets.Scripts
                                 if (teamSymbol.Equals(currentSymbolToCheck))
                                 {
                                     isPreviousSymbolBelongToTeam = true;
-                                    break;
+                                  break;
                                 }
 
                             }
 
 
-                            //Debug.Log($" 3  ----------------------- ");
-                            //Debug.Log("3 !!! checkArray[0]: " + checkArray[0]);
-                            //Debug.Log($"3 !!! boardToCheck[{rowIndex}, {columnIndex}]: " + boardToCheck[rowIndex, columnIndex]);
-                            //Debug.Log("3 !!! isMatchingArrayIncreased: " + isMatchingArrayIncreased);
-                            //Debug.Log("3 !!! isPreviousSymbolBelongToTeam: " + isPreviousSymbolBelongToTeam);
-                            //Debug.Log($" 3  ----------------------- ");
+                            //Debug.Log($" 2  ----------------------- ");
+                            //Debug.Log("2 !!! matchedSymbol: " + matchedSymbol);
+                            //Debug.Log("2 !!! checkArray[0]: " + checkArray[0]);
+                            //Debug.Log($"2 !!! boardToCheck[{rowIndex}, {columnIndex}]: " + boardToCheck[rowIndex, columnIndex]);
+                            Debug.Log("2 !!! isMatchingArrayIncreased: " + isMatchingArrayIncreased);
+                            Debug.Log("2 !!! isPreviousSymbolBelongToTeam: " + isPreviousSymbolBelongToTeam);
+                            Debug.Log($"2  ----------------------- ");
                             //}
 
                             //Debug.Log("1 isMatchingArrayIncreased: " + isMatchingArrayIncreased);
@@ -151,7 +179,7 @@ namespace Assets.Scripts
                                 if (matchingArray[0] < lenghtToCheck)
                                 {
 
-
+                                    
 
                                     //Debug.Log("3 matchingArray[0] < lenghtToCheck ---------------------- ");
 
@@ -164,8 +192,8 @@ namespace Assets.Scripts
                                         checkArray[0] = boardToCheck[rowIndex, columnIndex];
                                         //matchingArray[0] = 1;
                                         matchingArray[0] = 1;
-                                       ///// Debug.Log("3 A checkArray[0]: " + checkArray[0]);
-                                        //Debug.Log("3 A matchingArray[0]: " + matchingArray[0]);
+                                         //Debug.Log("3 A checkArray[0]: " + checkArray[0]);
+                                         //Debug.Log("3 A matchingArray[0]: " + matchingArray[0]);
                                         
                                         
                                         indexYToMark[0] = 1;
@@ -242,35 +270,51 @@ namespace Assets.Scripts
                             if (isMatchingArrayIncreased == false)
                             {
 
-                                if ((boardMaxColumnIndex - columnIndex) >= lenghtToCheck)
-                                {
-                                    checkArray[0] = boardToCheck[rowIndex, columnIndex];
-                                    matchingArray[0] = 1;
-                                    //matchingArray[0] = 0;
 
-                                    indexYToMark[0] = 1;
-                                    coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-                                    coordinateXYToMark[0, 0] = rowIndex;
-                                    coordinateXYToMark[0, 1] = columnIndex;
+                                checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                //matchingArray[0] = 1;
+                                matchingArray[0] = 1;
 
-                                }
-                                else if ((boardMaxColumnIndex - columnIndex) < lenghtToCheck)
-                                {
-                                    if (rowIndex == boardMaxRowIndex)
-                                    {
-                                        checker = false;
-                                        listCheckerHorizontal.Insert(0, checker);
+                                indexYToMark[0] = 1;
+                                coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                coordinateXYToMark[0, 0] = rowIndex;
+                                coordinateXYToMark[0, 1] = columnIndex;
 
-                                        return listCheckerHorizontal;
-                                    }
-                                    else if (rowIndex < boardMaxRowIndex)
-                                    {
-                                        checkArray[0] = "";
-                                        matchingArray[0] = 0;
-                                        indexYToMark[0] = 0;
-                                        coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-                                    }
-                                }
+
+                                listCheckerHorizontal.Insert(0, checker);
+                                //if ((boardMaxColumnIndex - columnIndex) >= lenghtToCheck)
+                                //{
+                                //    checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                //    //matchingArray[0] = 1;
+                                //    matchingArray[0] = 0;
+
+                                //    indexYToMark[0] = 1;
+                                //    coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                //    coordinateXYToMark[0, 0] = rowIndex;
+                                //    coordinateXYToMark[0, 1] = columnIndex;
+
+                                //}
+                                //else if ((boardMaxColumnIndex - columnIndex) < lenghtToCheck)
+                                //{
+                                //    Debug.Log("5 !!! rowIndex: " + rowIndex);
+                                //    Debug.Log("5 !!! boardMaxRowIndex: " + boardMaxRowIndex);
+                                //    Debug.Log($"5  ----------------------- ");
+
+                                //    if (rowIndex == boardMaxRowIndex)
+                                //    {
+                                //        checker = false;
+                                //        listCheckerHorizontal.Insert(0, checker);
+
+                                //        return listCheckerHorizontal;
+                                //    }
+                                //    else if (rowIndex < boardMaxRowIndex)
+                                //    {
+                                //        checkArray[0] = "";
+                                //        matchingArray[0] = 0;
+                                //        indexYToMark[0] = 0;
+                                //        coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                //    }
+                                //}
 
                             }
 
@@ -569,7 +613,7 @@ namespace Assets.Scripts
 
             }
 
-            //Debug.Log(" ------------------------------------------------------------- ");
+            Debug.Log(" ------------------------------------------------------------- ");
             return listCheckerHorizontal;
         }
     }

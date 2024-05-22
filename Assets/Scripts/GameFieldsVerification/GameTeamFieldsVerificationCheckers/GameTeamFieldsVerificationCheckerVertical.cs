@@ -164,34 +164,46 @@ namespace Assets.Scripts
                             if (isMatchingArrayIncreased == false)
                             {
 
-                                if ((boardRowLength - rowIndex) >= lenghtToCheck)
-                                {
-                                    checkArray[0] = boardToCheck[rowIndex, columnIndex];
-                                    matchingArray[0] = 1;
+                                checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                //matchingArray[0] = 1;
+                                matchingArray[0] = 1;
 
-                                    indexYToMark[0] = 1;
+                                indexYToMark[0] = 1;
+                                coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                coordinateXYToMark[0, 0] = rowIndex;
+                                coordinateXYToMark[0, 1] = columnIndex;
 
-                                    coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-                                    coordinateXYToMark[0, 0] = rowIndex;
-                                    coordinateXYToMark[0, 1] = columnIndex;
-                                }
-                                else if ((boardRowLength - rowIndex) < lenghtToCheck)
-                                {
-                                    if (columnIndex == boardColumnLength)
-                                    {
-                                        checker = false;
 
-                                        listCheckerVertical.Insert(0, checker);
-                                        return listCheckerVertical;
-                                    }
-                                    else if (columnIndex < boardColumnLength)
-                                    {
-                                        checkArray[0] = "";
-                                        matchingArray[0] = 0;
-                                        indexYToMark[0] = 0;
-                                        coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
-                                    }
-                                }
+                                listCheckerVertical.Insert(0, checker);
+
+                                //if ((boardRowLength - rowIndex) >= lenghtToCheck)
+                                //{
+                                //    checkArray[0] = boardToCheck[rowIndex, columnIndex];
+                                //    matchingArray[0] = 1;
+
+                                //    indexYToMark[0] = 1;
+
+                                //    coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                //    coordinateXYToMark[0, 0] = rowIndex;
+                                //    coordinateXYToMark[0, 1] = columnIndex;
+                                //}
+                                //else if ((boardRowLength - rowIndex) < lenghtToCheck)
+                                //{
+                                //    if (columnIndex == boardColumnLength)
+                                //    {
+                                //        checker = false;
+
+                                //        listCheckerVertical.Insert(0, checker);
+                                //        return listCheckerVertical;
+                                //    }
+                                //    else if (columnIndex < boardColumnLength)
+                                //    {
+                                //        checkArray[0] = "";
+                                //        matchingArray[0] = 0;
+                                //        indexYToMark[0] = 0;
+                                //        coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
+                                //    }
+                                //}
 
 
 

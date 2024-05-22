@@ -70,6 +70,9 @@ namespace Assets.Scripts
 
             //string kindOfChecker = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerSlash();
 
+            // CubePlay symbol = backslash
+            //string[] matchingSymbol = new string[1];
+            //matchingSymbol[0] = "";
 
             int teamsNumbers = teamGameSymbols.Count;
 
