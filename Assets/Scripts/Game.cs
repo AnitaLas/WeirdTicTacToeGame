@@ -609,15 +609,36 @@ internal class Game : MonoBehaviour
                                 //{
                                 //    {"X","",""},
                                 //    {"","O",""},
-                                //    {"","","X"}
+                                //    {"X","","X"}
                                 //};
 
-                                _gameBoardVerification2D = new string[,]
-                                {
-                                    {"O","X",""},
-                                    {"W","T","W"},
-                                    {"O","",""}
-                                };
+                                //_gameBoardVerification2D = new string[,]
+                                //{
+                                //    {"X","","X"},
+                                //    {"","O",""},
+                                //    {"X","",""}
+                                //};
+
+                                //_gameBoardVerification2D = new string[,]
+                                //{
+                                //    {"O","X",""},
+                                //    {"W","T","W"},
+                                //    {"0","",""}
+                                //};
+
+                                //_gameBoardVerification2D = new string[,]
+                                //{
+                                //    {"O","W","O"},
+                                //    {"X","T",""},
+                                //    {"","W",""}
+                                //};
+
+                                //_gameBoardVerification2D = new string[,]
+                                //{
+                                //    {"","",""},
+                                //    {"W","T","W"},
+                                //    {"","",""}
+                                //};
 
                                 // to do xxoo + win = 3 = return error! - to fix
 
@@ -631,6 +652,19 @@ internal class Game : MonoBehaviour
 
                                 Debug.Log(" --------------------------------------------------- ");
 
+                                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
+                                //for (int i = 0; i < _teamGameSymbols.Count; i++)
+                                //{
+
+                                //    string[] teamSymbols = _teamGameSymbols[i];                                
+
+                                //    for (int zz = 0; zz < teamSymbols.Length; zz++)
+                                //    {
+                                //        Debug.Log($"TEAM: {i}; symbol[{zz}]: " + teamSymbols[zz]);
+                                //    }
+                                //}
+
+                                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
 
 
                                 _listCheckerForWinner = GameTeamFieldsVerificationCheckerMainMethod.FieldsVerificationGameTeam(_gameBoardVerification2D, _lenghtToCheck, _teamGameSymbols);

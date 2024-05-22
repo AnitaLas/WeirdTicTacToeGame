@@ -50,8 +50,9 @@ namespace Assets.Scripts
             int columnIndex;
             int rowIndex;
 
-            string[] matchingSymbol = new string[1];
-            matchingSymbol[0] = "";
+            // working one
+            //string[] matchingSymbol = new string[1];
+            //matchingSymbol[0] = "";
 
 
             int teamsNumbers = teamGameSymbols.Count;
@@ -60,7 +61,21 @@ namespace Assets.Scripts
             {
                 string[] teamSymbols = teamGameSymbols[teamNumber];
                 int playersNumber = teamSymbols.Length;
+
+                //Debug.Log(" BBBBBB ---------- TEAM SYMBOLS ------------ ");
+                //Debug.Log($" BBBBBB ---------- {teamNumber} ------------ ");
+                //for (int zz = 0; zz < teamSymbols.Length; zz++)
+                //{
+                //    Debug.Log($"teamSymbols[{zz}]: " + teamSymbols[zz]);
+                //}
+
+                //Debug.Log(" BBBBB ---------- TEAM SYMBOLS ------------ ");
+
                 //
+                //// CubePlay symbol - for slash
+                string[] matchingSymbol = new string[1];
+                matchingSymbol[0] = "";
+
                 int[] numberOfMatchingSymbols = new int[1];
                 int increaseNumberForMatchingSymbol = 1;
 
