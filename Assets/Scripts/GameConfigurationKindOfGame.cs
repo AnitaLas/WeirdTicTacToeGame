@@ -82,7 +82,7 @@ namespace Assets.Scripts
                             //ConfigurationTraditionalGame = false;
                             ConfigurationTeamGame = boolFalse;
                             //ConfigurationTraditionalGame = boolTrue;
-                            Debug.Log("BASE 1 - ConfigurationTeamGame : " + ConfigurationTeamGame);
+                            //Debug.Log("BASE 1 - ConfigurationTeamGame : " + ConfigurationTeamGame);
                             //Debug.Log("BASE 1 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
 
                             ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
@@ -97,7 +97,7 @@ namespace Assets.Scripts
                             ConfigurationTeamGame = boolTrue;
                             //ConfigurationTraditionalGame = boolFalse;
 
-                            Debug.Log("BASE 2 - ConfigurationTeamGame : " + ConfigurationTeamGame);
+                            //Debug.Log("BASE 2 - ConfigurationTeamGame : " + ConfigurationTeamGame);
                             //Debug.Log("BASE 2 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
 
 

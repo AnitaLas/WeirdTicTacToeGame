@@ -12,7 +12,7 @@ namespace Assets.Scripts
 
         public static void MessageGameOver()
         {
-            Debug.Log("Game Over :) Would you like to start new game? Yes No");
+            Debug.Log("Game Over :) Start new game");
         }
 
         public static void MessageCubePlayTaken()

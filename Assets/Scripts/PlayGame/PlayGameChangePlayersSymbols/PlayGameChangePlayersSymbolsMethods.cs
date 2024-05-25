@@ -189,17 +189,22 @@ namespace Assets.Scripts
             return isChangeForAll;
         }
 
-        public static int GetRandomMaxIndexForNewSymbols(int takenSymbolsLenght)
+        public static int GetRandomMaxIndexForNewSymbols(int takenSymbolsNumber)
         {
-            int minNumber = 1;
-            int maxNumber = takenSymbolsLenght;
+            //int minNumber = 1;
+            //int maxNumber = takenSymbolsLenght;
+            //int numberSymbolsToChange = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
+            //return numberSymbolsToChange;
+
+            int minNumber = 0;
+            int maxNumber = takenSymbolsNumber;
             int numberSymbolsToChange = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
             return numberSymbolsToChange;
 
             //int minNumber = 0;
             //int maxNumber = takenSymbolsLenght - 1;
             //int numberSymbolsToChange = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
-            //return numberSymbolsToChange + 1;
+            //return numberSymbolsToChange;
         }
 
         public static int GetRandomMaxIndexForSymbols(int takenSymbolsLenght)
@@ -215,14 +220,15 @@ namespace Assets.Scripts
             //return numberSymbolsToChange + 1;
         }
 
-        public static int GetMaxIndexForNewSymbols(bool isChangeForAll, int takenSymbolsLenght)
+        public static int GetMaxIndexForNewSymbols(bool isChangeForAll, string[] playersSymbols)
         {
             int numberSymbolsToChange;
+            int takenSymbolsNumber = playersSymbols.Length - 1 ;
 
             if (isChangeForAll == false)
-                numberSymbolsToChange = GetRandomMaxIndexForNewSymbols(takenSymbolsLenght);
+                numberSymbolsToChange = GetRandomMaxIndexForNewSymbols(takenSymbolsNumber);
             else
-                numberSymbolsToChange = takenSymbolsLenght;
+                numberSymbolsToChange = takenSymbolsNumber;
 
             return numberSymbolsToChange;
         }
@@ -417,9 +423,9 @@ namespace Assets.Scripts
         {
             float timeForChandeRandomly = gameChangeTimeConfiguration[0];
             //Debug.Log(" 1 random or for all ------");
-            List<string[]> symbolsLists = new List<string[]>();
+            //List<string[]> symbolsLists = new List<string[]>();
 
-            symbolsLists = GetNewPlayersSymbols(playersSymbols, timeForChandeRandomly);
+            List<string[]> symbolsLists = GetNewPlayersSymbols(playersSymbols, timeForChandeRandomly);
 
             return symbolsLists;
 
@@ -468,10 +474,13 @@ namespace Assets.Scripts
         {
             List<string[]> symbolsLists = new List<string[]>();
             
-            int takenSymbolsLenght = playersSymbols.Length;
+            //int takenSymbolsLenght = playersSymbols.Length;
+            //int takenSymbolsLenght = playersSymbols.Length;
             bool isChangeForAll = IsChangeForAll(timeForChandeRandomly);
-            int numberSymbolsToChange = GetMaxIndexForNewSymbols(isChangeForAll, takenSymbolsLenght);
-
+            //int numberSymbolsToChange = GetMaxIndexForNewSymbols(isChangeForAll, takenSymbolsLenght);
+            int maxIndexForChange = GetMaxIndexForNewSymbols(isChangeForAll, playersSymbols);
+            int numberSymbolsToChange = maxIndexForChange + 1;
+            Debug.Log("numberSymbolsToChange: " + numberSymbolsToChange);
             //string[] newSymbolsForChange = new string[numberSymbolsToChange];
             //string[] oldSymbolsForChange = new string[numberSymbolsToChange];
 

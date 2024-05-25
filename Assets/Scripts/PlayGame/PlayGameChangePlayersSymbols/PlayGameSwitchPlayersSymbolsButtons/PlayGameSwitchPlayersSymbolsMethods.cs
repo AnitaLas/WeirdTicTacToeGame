@@ -73,7 +73,9 @@ namespace Assets.Scripts
 
         public static int[] GetIndexesForSwitch(int playersSymbols, int maxSymbolsNumberForChange)
         {
-            int[] indexes = new int[maxSymbolsNumberForChange];
+            int maxSymbols = maxSymbolsNumberForChange + 1;
+            int[] indexes = new int[maxSymbols];
+            //int[] indexes = new int[maxSymbolsNumberForChange];
 
             string allNumbers = GetIndexesAsString(playersSymbols);
             //Debug.Log("allNumbers: " + allNumbers);
@@ -85,7 +87,8 @@ namespace Assets.Scripts
             int maxNumber = playersSymbols;
             //Debug.Log("maxNumber: " + maxNumber);
 
-            for (int i = 0; i < maxSymbolsNumberForChange; i++)
+            for (int i = 0; i < maxSymbols; i++)
+            //for (int i = 0; i < maxSymbolsNumberForChange; i++)
             {
                 //Debug.Log("1 numbers: " + numbers);
                 //Debug.Log("i: " + i);
@@ -134,7 +137,7 @@ namespace Assets.Scripts
             int maxSymbolsNumberForSwitch = PlayGameChangePlayersSymbolsMethods.GetMinPlayersNumberForTeam(teamGameSymbols);
             Debug.Log("1 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
 
-            int minSymbolsNumberForSwitch = 1;
+            int minSymbolsNumberForSwitch = 0;
 
             if (maxSymbolsNumberForSwitch > minSymbolsNumberForSwitch)
             {
