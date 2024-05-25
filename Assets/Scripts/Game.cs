@@ -140,8 +140,8 @@ internal class Game : MonoBehaviour
     private float[] _timeForTimers;
     //private float _timeForHideDefault = 3f;
     //private float _timeForHidePlayGameElementsDefault = 3f;
-    //private float _timeForHidePlayGameElementsDefault = 5f;
-    private float _timeForHidePlayGameElementsDefault = 15f;
+    private float _timeForHidePlayGameElementsDefault = 5f;
+    //private float _timeForHidePlayGameElementsDefault = 15f;
     private float _timeForUnhidePlayGameElements;
     private float _timeForHide;
     private bool _isTimeToHidePlayGameElements;
@@ -482,17 +482,23 @@ internal class Game : MonoBehaviour
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
                                     PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                    PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
+                                
                                 }
                                 else
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                                     PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
+                                    PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
+
+
+
                                 }
 
 
 
 
-                                PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
+                                //PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
 
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
@@ -501,7 +507,10 @@ internal class Game : MonoBehaviour
                                 if (_isTimerActivate == true)
                                 {
                                     _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
-                                    PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
+                                    if (isTeamGame == false)
+                                        PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
+                                    else
+                                        PlayGameTimerCommonMethods.DestroyTimer();
                                 }
                             }
                             else
@@ -539,7 +548,10 @@ internal class Game : MonoBehaviour
                                     if (_isTimerActivate == true)
                                     {
                                         _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
-                                        PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
+                                        if (isTeamGame == false)
+                                            PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
+                                        else
+                                            PlayGameTimerCommonMethods.DestroyTimer();
                                     }
                                 }
                             }
@@ -642,15 +654,15 @@ internal class Game : MonoBehaviour
 
                                 // to do xxoo + win = 3 = return error! - to fix
 
-                                for (int i = 0; i < _gameBoardVerification2D.GetLength(0); i++)
-                                {
-                                    for (int j = 0; j < _gameBoardVerification2D.GetLength(1); j++)
-                                    {
-                                        Debug.Log($"_gameBoardVerification2D[{i}, {j}]" + _gameBoardVerification2D[i, j]);
-                                    }
-                                }
+                                //for (int i = 0; i < _gameBoardVerification2D.GetLength(0); i++)
+                                //{
+                                //    for (int j = 0; j < _gameBoardVerification2D.GetLength(1); j++)
+                                //    {
+                                //        Debug.Log($"_gameBoardVerification2D[{i}, {j}]" + _gameBoardVerification2D[i, j]);
+                                //    }
+                                //}
 
-                                Debug.Log(" --------------------------------------------------- ");
+                                //Debug.Log(" --------------------------------------------------- ");
 
                                 //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
                                 //for (int i = 0; i < _teamGameSymbols.Count; i++)
@@ -723,7 +735,10 @@ internal class Game : MonoBehaviour
                                 if (_isTimerActivate == true)
                                 {
                                     _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
-                                    PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
+                                    if (isTeamGame == false)
+                                        PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
+                                    else
+                                        PlayGameTimerCommonMethods.DestroyTimer();
                                 }
                             }
                             else
@@ -763,7 +778,10 @@ internal class Game : MonoBehaviour
                                     if (_isTimerActivate == true)
                                     {
                                         _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
-                                        PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
+                                        if (isTeamGame == false)
+                                            PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
+                                        else
+                                            PlayGameTimerCommonMethods.DestroyTimer();
                                     }
                                 }
                             }

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    internal class PlayGameTimerCommonMethods
+    internal class PlayGameTimerCommonMethods : MonoBehaviour
     {
         //List<float> gameChangeTime;
         //gameChangeTime.Insert(0, );
@@ -91,5 +91,12 @@ namespace Assets.Scripts
             GameCommonMethodsMain.ChangeTextForFirstChild(timer, defaultSymbol);
         }
 
+        public static void DestroyTimer()
+        {
+            string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame();
+            GameObject timer = CommonMethods.GetObjectByTagName(tagName);
+            Destroy(timer);
+
+        }
     }
 }

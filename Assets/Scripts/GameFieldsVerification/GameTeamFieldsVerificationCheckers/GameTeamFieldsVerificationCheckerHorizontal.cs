@@ -32,12 +32,12 @@ namespace Assets.Scripts
             int columnIndex;
             int rowIndex;
 
-            Debug.Log("lenghtToCheck = " + lenghtToCheck);
+            //Debug.Log("lenghtToCheck = " + lenghtToCheck);
             
 
 
             int teamsNumbers = teamGameSymbols.Count;
-            Debug.Log("teamsNumbers = " + teamsNumbers);
+            //Debug.Log("teamsNumbers = " + teamsNumbers);
 
             //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
             //for (int i = 0; i < teamGameSymbols.Count; i++)
@@ -56,18 +56,18 @@ namespace Assets.Scripts
 
             for (int teamNumber = 0; teamNumber < teamsNumbers; teamNumber++)
             {
-                Debug.Log("1234567 teamNumber:  " + teamNumber);
+                //Debug.Log("1234567 teamNumber:  " + teamNumber);
 
                 string[] teamSymbols = teamGameSymbols[teamNumber];
                 int playersNumber = teamSymbols.Length;
 
-                Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
-                for (int zz = 0; zz < teamSymbols.Length; zz++)
-                {
-                    Debug.Log($"TEAM: {teamNumber}; symbol[{zz}]: " + teamSymbols[zz]);
-                }
+                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
+                //for (int zz = 0; zz < teamSymbols.Length; zz++)
+                //{
+                //    Debug.Log($"TEAM: {teamNumber}; symbol[{zz}]: " + teamSymbols[zz]);
+                //}
 
-                Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
+                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
 
 
                 //Debug.Log(" ----------------------- ");
@@ -160,9 +160,9 @@ namespace Assets.Scripts
                             //Debug.Log("2 !!! matchedSymbol: " + matchedSymbol);
                             //Debug.Log("2 !!! checkArray[0]: " + checkArray[0]);
                             //Debug.Log($"2 !!! boardToCheck[{rowIndex}, {columnIndex}]: " + boardToCheck[rowIndex, columnIndex]);
-                            Debug.Log("2 !!! isMatchingArrayIncreased: " + isMatchingArrayIncreased);
-                            Debug.Log("2 !!! isPreviousSymbolBelongToTeam: " + isPreviousSymbolBelongToTeam);
-                            Debug.Log($"2  ----------------------- ");
+                            //Debug.Log("2 !!! isMatchingArrayIncreased: " + isMatchingArrayIncreased);
+                           // Debug.Log("2 !!! isPreviousSymbolBelongToTeam: " + isPreviousSymbolBelongToTeam);
+                           // Debug.Log($"2  ----------------------- ");
                             //}
 
                             //Debug.Log("1 isMatchingArrayIncreased: " + isMatchingArrayIncreased);
@@ -613,7 +613,7 @@ namespace Assets.Scripts
 
             }
 
-            Debug.Log(" ------------------------------------------------------------- ");
+            //Debug.Log(" ------------------------------------------------------------- ");
             return listCheckerHorizontal;
         }
     }

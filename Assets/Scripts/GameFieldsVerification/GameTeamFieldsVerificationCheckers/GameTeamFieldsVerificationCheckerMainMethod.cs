@@ -17,31 +17,31 @@ namespace Assets.Scripts
             ArrayList checkerVertical;
             ArrayList checkerSlash;
             ArrayList checkerBackslash;
-            Debug.Log(" ------------------------------------------------------------- ");
+            //Debug.Log(" ------------------------------------------------------------- ");
             if (checker == false)
             {
                 checkerHorizontal = GameTeamFieldsVerificationCheckerHorizontal.GameTeamCheckerHorizontal(boardToCheck, lenghtToCheck, teamGameSymbols);
                 bool isHorizontalWin = (bool)checkerHorizontal[0];
-                Debug.Log("isHorizontalWin: " + isHorizontalWin);
+                //Debug.Log("isHorizontalWin: " + isHorizontalWin);
 
                 if (isHorizontalWin == false)
                 {
                     checkerVertical = GameTeamFieldsVerificationCheckerVertical.GameTeamCheckerVertical(boardToCheck, lenghtToCheck, teamGameSymbols);
                     bool isVerticalWin = (bool)checkerVertical[0];
-                    Debug.Log("isVerticalWin: " + isVerticalWin);
+                    //Debug.Log("isVerticalWin: " + isVerticalWin);
 
                     if (isVerticalWin == false)
                     {
                         checkerSlash = GameTeamFieldsVerificationCheckerSlash.GmaeTeamCheckerSlash(boardToCheck, lenghtToCheck, teamGameSymbols);
                         bool isSlashlWin = (bool)checkerSlash[0];
-                        Debug.Log("isSlashlWin: " + isSlashlWin);
+                        //Debug.Log("isSlashlWin: " + isSlashlWin);
 
                         if (isSlashlWin == false)
                         {
                             checkerBackslash = GameTeamFieldsVerificationCheckerBackslash.GameTeamCheckerBackslash(boardToCheck, lenghtToCheck, teamGameSymbols);
 
                             bool isBackslashWin = (bool)checkerBackslash[0];
-                            Debug.Log("isBackslashWin: " + isBackslashWin);
+                            //Debug.Log("isBackslashWin: " + isBackslashWin);
                             return checkerBackslash;
                         }
 

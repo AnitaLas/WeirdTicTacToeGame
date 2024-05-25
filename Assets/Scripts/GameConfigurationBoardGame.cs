@@ -87,7 +87,7 @@ namespace Assets.Scripts.GameConfiguration
             isTeamGame = _configurationTeamGame1;
 
             //Debug.Log("GameConfigurationBoardGame _configurationTraditionalGame1 : " + _configurationTraditionalGame1);
-            Debug.Log("GameConfigurationBoardGame _configurationTeamGame1 : " + _configurationTeamGame1);
+            //Debug.Log("GameConfigurationBoardGame _configurationTeamGame1 : " + _configurationTeamGame1);
 
             //_configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
             //_configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
