@@ -56,7 +56,6 @@ using Assets.Scripts;
 
         public static void ChangeDataForGameMenuButtons(List<GameObject[,,]> buttons, float[] newYForButtons)
         {
-
             float newCoordinateX=  -0.65f;
             float newCoordinateZ = 0.175f;
             float newCoordinateY = -2.05f;
@@ -72,6 +71,15 @@ using Assets.Scripts;
             float newCoordinateZ = 0.175f;
             float newCoordinateY = 3.35f;
 
+            ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateX, newCoordinateZ);
+            ChangeCoordinateYForTeamGameButtons(buttons, newCoordinateY);
+        }
+
+        public static void ChangeDataForGameInformationButtons(List<GameObject[,,]> buttons, float[] newYForButtons)
+        {
+            float newCoordinateX = -0.65f; // columns -> 14
+            float newCoordinateZ = 0f;
+            float newCoordinateY = -1.2f;
             ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateX, newCoordinateZ);
             ChangeCoordinateYForTeamGameButtons(buttons, newCoordinateY);
         }
