@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace Assets.Scripts
 {
@@ -195,7 +194,7 @@ namespace Assets.Scripts
                 maxIndexColumn = table.GetLength(2);
                 maxIndexRow = table.GetLength(1);
 
-                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
+                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i] + 0.6f;
 
                 for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
                 {
@@ -566,7 +565,7 @@ namespace Assets.Scripts
                 maxIndexColumn = table.GetLength(2);
                 maxIndexRow = table.GetLength(1);
 
-                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i];
+                yForFirstPrefabPlayerSymbol = tableWithNewCordinateForY[start - i] + 0.6f;
 
                 for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
                 {

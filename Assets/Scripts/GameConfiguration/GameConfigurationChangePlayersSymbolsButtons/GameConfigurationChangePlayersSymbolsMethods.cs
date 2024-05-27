@@ -77,20 +77,24 @@ namespace Assets.Scripts
             string symbolEqualMoves = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonSymbolForEqualMoveQuantity();
             string symbolNotEqualMoves = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonSymbolForNotEqualMoveQuantity();
 
+            //Debug.Log("currentSymbol: " + currentSymbol);
+
             if (currentSymbol == symbolEqualMoves)
             {
+                //Debug.Log("symbolEqualMoves: " + symbolEqualMoves);
                 CommonMethods.ChangeTextForCubePlay(gameObject, symbolNotEqualMoves);
                 isEqualMoveQuantityForBothTeamsSetUpBeUser = false;
             }
             else
             {
+                //Debug.Log("symbolNotEqualMoves: " + symbolNotEqualMoves);
                 CommonMethods.ChangeTextForCubePlay(gameObject, symbolEqualMoves);
                 isEqualMoveQuantityForBothTeamsSetUpBeUser = true;
             }
 
 
 
-           /// Debug.Log("isEqualMoveQuantityForBothTeamsSetUpBeUser: " + isEqualMoveQuantityForBothTeamsSetUpBeUser);
+           //Debug.Log("isEqualMoveQuantityForBothTeamsSetUpBeUser: " + isEqualMoveQuantityForBothTeamsSetUpBeUser);
 
 
             return isEqualMoveQuantityForBothTeamsSetUpBeUser;

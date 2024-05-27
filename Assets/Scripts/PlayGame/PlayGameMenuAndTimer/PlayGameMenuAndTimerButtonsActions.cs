@@ -114,27 +114,66 @@ namespace Assets.Scripts
 
         public static void DestroyConfigurationMenu()
         {
-            string tagGameButtonMenuConfigurationDisactivate = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationDisactivate();
-            string tagGameButtonMenuConfigurationRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationLeft();
-            string tagGameButtonMenuConfigurationLeft = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationRight();
+            //string tagGameButtonMenuConfigurationDisactivate = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationDisactivate();
+            //string tagGameButtonMenuConfigurationRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationLeft();
+            string tagGameButtonMenuConfigurationRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationRight();
+            string tagGameButtonMenuConfigurationLeft = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationLeft();
 
-            string[] tagConfigurationMenu = new string[3];
-            tagConfigurationMenu[0] = tagGameButtonMenuConfigurationDisactivate;
-            tagConfigurationMenu[1] = tagGameButtonMenuConfigurationRight;
-            tagConfigurationMenu[2] = tagGameButtonMenuConfigurationLeft;
+            string[] tagConfigurationMenu = new string[2];
+            tagConfigurationMenu[0] = tagGameButtonMenuConfigurationRight;
+            tagConfigurationMenu[1] = tagGameButtonMenuConfigurationLeft;
+            //tagConfigurationMenu[0] = tagGameButtonMenuConfigurationDisactivate;
 
-            string tagName;
+            //string tagName;
 
 
             int tagConfigurationMenuLength = tagConfigurationMenu.Length;
 
-            for (int i = 1; i < tagConfigurationMenuLength; i++)
+            for (int i = 0; i < tagConfigurationMenuLength; i++)
             {
-                tagName = tagConfigurationMenu[i];
+                //string tagName = tagConfigurationMenu[i];
+                //Debug.Log("DestroyConfigurationMenu() => tagName: " + tagName);
+                //GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
 
-                GameObject gameObject = CommonMethods.GetObjectByTagName(tagName);
+                //for (int j = 0; j < 5; j++)
+                //{
+                //    Destroy(gameObject);
+                //}
 
-               Destroy(gameObject);
+                string tagName = tagConfigurationMenu[i];
+
+                GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tagName);
+
+                foreach (var gameObject in gameObjects)
+                {
+                   // GameObject manuButtons = GameCommonMethodsMain.GetObjectByTagName(tagName);
+                    Destroy(gameObject);
+                }
+
+            }
+        }
+
+        public static void DestroyCubePlayForPlayersMove()
+        {
+            string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
+            string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
+            string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
+
+            string[] tagNames = new string[3];
+
+            tagNames[0] = tagPlayerSymbolCurrent;
+            tagNames[1] = tagPlayerSymbolPrevious;
+            tagNames[2] = tagPlayerSymbolNext;
+
+
+            for (int i = 0; i < 3; i++)
+            {
+                string tagName = tagNames[i];
+                //Debug.Log("DestroyConfigurationMenu() => tagName: " + tagName);
+                GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
+
+                Destroy(gameObject);
+
             }
         }
 

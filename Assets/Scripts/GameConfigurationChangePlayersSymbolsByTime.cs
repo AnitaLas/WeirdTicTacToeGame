@@ -221,6 +221,8 @@ namespace Assets.Scripts
                             //ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = timeForSwitchPlayersSymbolsBetweenTeams;
                             ConfigurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime = timeButtonSwitchSymbolsBetweenTeams;
                             //ConfigurationBoardGameEqualMoveQuantityForBothTeams = isEqualMoveQuantityForBothTeams;
+
+                            //Debug.Log("isEqualMoveQuantityForBothTeamsSetUpBeUser: " + isEqualMoveQuantityForBothTeamsSetUpBeUser);
                             ConfigurationBoardGameEqualMoveQuantityForBothTeams = isEqualMoveQuantityForBothTeamsSetUpBeUser;
 ;
                             ScenesChangeMainMethods.GoToSceneGame();
