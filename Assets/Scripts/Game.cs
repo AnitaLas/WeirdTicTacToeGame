@@ -154,6 +154,8 @@ internal class Game : MonoBehaviour
     private List<string[]> _newDataForPlayersSymbols;
     //private List<List<string[]>> _newDataForPlayersSymbolsSwitch;
     private ArrayList _newDataForPlayersSymbolsSwitch;
+    private ArrayList _dataForBoardGame;
+    private float[] _coordinatesForCubePlayFrame;
     private bool _isDoubleRandomChange;
     private int _switchChange; // 0 single, 1 double
     private string[] _oldSymbolsForChange; 
@@ -245,7 +247,7 @@ internal class Game : MonoBehaviour
        
         //isSameQuantityForMovePerTeam = false;
         isSameQuantityForMovePerTeam = GameConfigurationChangePlayersSymbolsByTime.ConfigurationBoardGameEqualMoveQuantityForBothTeams;
-       // Debug.Log("isSameQuantityForMovePerTeam: " + isSameQuantityForMovePerTeam);
+        //Debug.Log("isSameQuantityForMovePerTeam: " + isSameQuantityForMovePerTeam);
 
         if (isTeamGame == false)
         {
@@ -263,16 +265,22 @@ internal class Game : MonoBehaviour
 
             if (isSameQuantityForMovePerTeam == true)
             {
-                _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
-                _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
+                _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
+                _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
+
+                //_playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
+                //_playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
             }
 
             // mode 2
 
             else
             {
-                _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
-                _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
+                //_playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
+                //_playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
+
+                _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
+                _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
 
                 //for (int i = 0; i < _playersSymbols.Length; i++)
                 //{
@@ -295,8 +303,16 @@ internal class Game : MonoBehaviour
 
         _currentCountedTagCubePlayTaken = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
 
+
         // [gameBoard] - creating the board game with game object "CubePlay"
-        _gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode, _numberOfGaps);
+        //_gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode, _numberOfGaps);
+        _dataForBoardGame = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode, _numberOfGaps);
+
+        _gameBoard = (GameObject[,,])_dataForBoardGame[0];
+
+
+        // because gap
+        //_cubePlayForFrame = _gameBoard[0, _numberOfRows - 1, 0];
 
         PlayGameHelpButtonsCreate.CreateAtStartHelpButtons(prefabHelpButtons, _numberOfRows, _numberOfColumns, _isCellphoneMode);
 
@@ -312,7 +328,10 @@ internal class Game : MonoBehaviour
                 // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
                 _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
 
-                _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
+                _coordinatesForCubePlayFrame = (float[])_dataForBoardGame[1];
+
+                //_cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
+                _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _coordinatesForCubePlayFrame, _isGame2D);
 
                 _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
                 _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
@@ -460,16 +479,6 @@ internal class Game : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
-
-
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
 
                             if (_isWinnerExists == true)
@@ -488,6 +497,7 @@ internal class Game : MonoBehaviour
                                 else
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
+                                    PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
                                     PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
 
@@ -538,6 +548,7 @@ internal class Game : MonoBehaviour
                                     else
                                     {
                                         PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
+                                        PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
                                         PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     }
 
@@ -721,6 +732,7 @@ internal class Game : MonoBehaviour
                                 else
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
+                                    PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
                                     PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
 
@@ -768,6 +780,7 @@ internal class Game : MonoBehaviour
                                     else
                                     {
                                         PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
+                                        PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
                                         PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     }
 
@@ -817,8 +830,12 @@ internal class Game : MonoBehaviour
                             // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
                             _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
 
-                            _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
-                            
+
+                            _coordinatesForCubePlayFrame = (float[])_dataForBoardGame[1];
+
+                            //_cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
+                            _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _coordinatesForCubePlayFrame, _isGame2D);
+
                             _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
                         }
                         else

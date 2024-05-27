@@ -53,10 +53,10 @@ namespace Assets.Scripts
             return buttonsAll;
         }
 
-        public static List<List<GameObject[,,]>> GameConfigurationTeamMembersButtons(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D, bool isCellphoneMode34, int teamNumbers)
+        public static List<List<GameObject[,,]>> GameConfigurationTeamMembersButtons(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D, bool isCellphoneMode, int teamNumbers)
         {
-            bool isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
-            //Debug.Log("2 isCellphoneMode: " + isCellphoneMode); 
+            //bool isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
+           // Debug.Log("2 isCellphoneMode: " + isCellphoneMode); 
 
             List<List<GameObject[,,]>> buttonsAll = new List<List<GameObject[,,]>>();
             

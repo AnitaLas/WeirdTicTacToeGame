@@ -20,8 +20,8 @@ namespace Assets
         public Material[] prefabCubePlayButtonsNumberColour;
         public Material[] prefabCubePlayButtonsBackColour;
 
-        //private static bool _configurationBoardGameDeviceModeKind;
-        //private static bool _isCellphoneMode;
+        public static bool _configurationBoardGameDeviceModeKind;
+        public static bool isCellphoneModeScene2;
 
         private int _teamNumbers;
         private bool _isGame2D = true;
@@ -43,10 +43,13 @@ namespace Assets
 
         void Start()
         {
-            
-            //_configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
-            //_isCellphoneMode = _configurationBoardGameDeviceModeKind;
 
+            _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
+            isCellphoneModeScene2 = _configurationBoardGameDeviceModeKind;
+
+            //isCellphoneModeScene2 = ScreenVerificationMethods.IsCellphoneMode();
+
+            Debug.Log("2 team number -> isCellphoneMode: " + isCellphoneModeScene2);
             _teamNumbers = 2;
 
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();

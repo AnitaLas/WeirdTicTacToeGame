@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "R52W10E1F8M",
+    "m_SelectedDeviceId": "RZCW306CM4M",
     "m_SelectedPackage": {
-        "deviceId": "R52W10E1F8M",
+        "deviceId": "RZCW306CM4M",
         "name": "com.Alan.WeirdTicTacToe",
-        "processId": 25014,
+        "processId": 27635,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -137,18 +137,6 @@
         {
             "deviceId": "R52W10E1F8M",
             "name": "com.Alan.WeirdTicTacToe",
-            "processId": 23822,
-            "exited": true
-        },
-        {
-            "deviceId": "R52W10E1F8M",
-            "name": "com.Alan.WeirdTicTacToe",
-            "processId": 24308,
-            "exited": true
-        },
-        {
-            "deviceId": "R52W10E1F8M",
-            "name": "com.Alan.WeirdTicTacToe",
             "processId": 25214,
             "exited": true
         },
@@ -162,12 +150,108 @@
             "deviceId": "R52W10E1F8M",
             "name": "com.Alan.WeirdTicTacToe",
             "processId": 23628,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R52W10E1F8M",
             "name": "com.Alan.WeirdTicTacToe",
             "processId": 25014,
+            "exited": true
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.android.settings",
+            "processId": 18379,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 28754,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 9878,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 10994,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 12740,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 13760,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 14381,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 14890,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 15881,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 16681,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 17160,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 17667,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 23443,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 23998,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 25466,
+            "exited": false
+        },
+        {
+            "deviceId": "RZCW306CM4M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 27635,
             "exited": false
         }
     ],

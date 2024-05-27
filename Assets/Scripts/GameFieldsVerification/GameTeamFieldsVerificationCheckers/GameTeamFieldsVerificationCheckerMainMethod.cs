@@ -50,7 +50,7 @@ namespace Assets.Scripts
 
                        return checkerVertical;
                 }
-                Debug.Log(" ------------------------------------------------------------- ");
+                //Debug.Log(" ------------------------------------------------------------- ");
                 return checkerHorizontal;
 
             }

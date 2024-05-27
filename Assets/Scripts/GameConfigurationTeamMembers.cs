@@ -28,8 +28,8 @@ namespace Assets
         public Material[] prefabCubePlayButtonsBackColour;
 
         public static bool _configurationBoardGameDeviceModeKind;
-        private static int _configurationBoardGameTeamNumber;
-        public static bool _isCellphoneMode;
+        public static int _configurationBoardGameTeamNumber;
+        public static bool isCellphoneModeScene3;
 
         private int _teamNumbers;
         private int _playersNumbersForTeamGameMax;
@@ -72,12 +72,14 @@ namespace Assets
         void Start()
         {
            
-            //_configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
-            //_isCellphoneMode = _configurationBoardGameDeviceModeKind;
-            _isCellphoneMode = ScreenVerificationMethods.IsCellphoneMode();
+            _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
+            isCellphoneModeScene3 = _configurationBoardGameDeviceModeKind;
+            //isCellphoneModeScene3 = ScreenVerificationMethods.IsCellphoneMode();
+            //Debug.Log("3 team members -> isCellphoneMode: " + isCellphoneModeScene3);
+            //_isCellphoisCellphoneModeScene3neMode = ScreenVerificationMethods.IsCellphoneMode();
 
 
-            if (_isCellphoneMode == false)
+            if (isCellphoneModeScene3 == false)
             {
                 _configurationBoardGameTeamNumber = GameConfigurationTeamNumbers.ConfigurationBoardGameTeamNumber;
                 _teamNumbers = _configurationBoardGameTeamNumber;
@@ -116,7 +118,7 @@ namespace Assets
             //GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
             _buttonsStatic = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonsStatic(prefabCubePlay, buttonArrowLeft, buttonArrowRight, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
-            _buttonsWithTeams = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtons(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, _isCellphoneMode, _teamNumbers);
+            _buttonsWithTeams = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtons(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, isCellphoneModeScene3, _teamNumbers);
             //_buttonsWithNumbers = GameConfigurationTeamNumbersButtonsCreate.CreateTableForTeamGameWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, _isGame2D);
             _buttonsGroupByTeams = GameConfigurationTeamMembersButtonsMethods.CreateListButtonsByTeams(_buttonsWithTeams, _teamNumbers);
 
@@ -157,7 +159,7 @@ namespace Assets
                             _maxPlayersNumbersForTeam = GameConfigurationTeamMembersPlayersNumberVerification.GetMaxPlayersNumbersForTeam(_buttonsGroupByTeams, gameObjectName); 
                             _buttonsMoreSpecificConfiguration = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonBackAndTableWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsDefaultColour, _isGame2D, gameObjectName, _maxPlayersNumbersForTeam);
 
-                            if (_isCellphoneMode == false)
+                            if (isCellphoneModeScene3 == false)
                                 GameConfigurationTeamMembersButtonsArrowsActions.HideArrows(_buttonsArrows);
                         }
 
@@ -171,7 +173,7 @@ namespace Assets
 
                             GameConfigurationTeamMembersButtonsMethods.SetUpRightSymbolsForTeam(_buttonsGroupByTeams, _tablesWitPlayersNumbersForTeams, _tablesWitPlayersChosenSymbols);
 
-                            if (_isCellphoneMode == false)
+                            if (isCellphoneModeScene3 == false)
                                 GameConfigurationTeamMembersButtonsArrowsActions.UnhideArrows(_buttonsArrows);
                         }
 
@@ -180,7 +182,7 @@ namespace Assets
                             GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsWhenBackFromViewTableNumbers(_buttonsStatic, _buttonsWithTeams, gameObjectName);
                             GameConfigurationTeamMembersButtonsActionsCommon.DestroyButtons(_buttonsMoreSpecificConfiguration);
 
-                            if (_isCellphoneMode == false)
+                            if (isCellphoneModeScene3 == false)
                                 GameConfigurationTeamMembersButtonsArrowsActions.UnhideArrows(_buttonsArrows);
                         }
 
@@ -192,7 +194,7 @@ namespace Assets
 
                             _buttonsMoreSpecificConfiguration = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonBackAndTableWithSymbols(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsDefaultColour, _isGame2D, gameObjectName, _tablesWitPlayersChosenSymbols);
 
-                            if (_isCellphoneMode == false)
+                            if (isCellphoneModeScene3 == false)
                                 GameConfigurationTeamMembersButtonsArrowsActions.HideArrows(_buttonsArrows);
                         }     
 
@@ -201,7 +203,7 @@ namespace Assets
                             GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsAfterChangePlayerSymbol(_buttonsStatic, _buttonsWithTeams, gameObjectName);
                             GameConfigurationTeamMembersButtonsActionsCommon.DestroyButtons(_buttonsMoreSpecificConfiguration);
 
-                            if (_isCellphoneMode == false)
+                            if (isCellphoneModeScene3 == false)
                                 GameConfigurationTeamMembersButtonsArrowsActions.UnhideArrows(_buttonsArrows);
                         }
 
@@ -210,7 +212,7 @@ namespace Assets
                             GameConfigurationTeamMembersButtonsActions.UnhideTeamMembersElementsWhenBackFromViewTableSymbols(_buttonsStatic, _buttonsWithTeams, gameObjectName);
                             GameConfigurationTeamMembersButtonsActionsCommon.DestroyButtons(_buttonsMoreSpecificConfiguration);
 
-                            if (_isCellphoneMode == false)
+                            if (isCellphoneModeScene3 == false)
                                 //GameConfigurationTeamMembersButtonsArrowsActions.HideArrows(_buttonsArrows);
                                 GameConfigurationTeamMembersButtonsArrowsActions.UnhideArrows(_buttonsArrows);
                         }

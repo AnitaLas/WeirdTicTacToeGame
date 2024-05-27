@@ -102,18 +102,17 @@ namespace Assets.Scripts
                 if (number == -1)
                     isExistDigit = false;
             }
-            Debug.Log("isExistDigit: " + isExistDigit);       
+            //Debug.Log("isExistDigit: " + isExistDigit);       
             return isExistDigit; 
         }
 
-        public static string[] SetUpRightCurrentNumberForCubePlay(int numbersCubePlayMax, int numberOfGaps)
+        public static string[] SetUpRightCurrentNumberForCubePlay(int numbersCubePlayMax, int numberOfRows, int numberOfGaps)
         {
             int[] randomNumbers = GetRandomCubePlayNumbers(numbersCubePlayMax, numberOfGaps);
             int randomNumbersLenght = randomNumbers.Length;
             string[] cubePlayNumbers = new string[randomNumbersLenght];
             int number;
-
-
+           // Debug.Log("numberOfRows: " + numberOfRows);
 
             for (int i = 0; i < randomNumbersLenght; i++)
             {
@@ -163,6 +162,7 @@ namespace Assets.Scripts
 
         public static void CubePlayToHide(string cubePlayName)
         {
+            string tagCubePlayTaken = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagTaken();
             string[] defaulSymbolsForVerification = new string[3]; // future - add method which will generate that symbols
             defaulSymbolsForVerification[0] = "xD";
             defaulSymbolsForVerification[1] = ":P";
@@ -178,6 +178,7 @@ namespace Assets.Scripts
 
             GameObject cubePlay = CommonMethods.GetObjectByName(cubePlayName);
             CommonMethods.ChangeTextForCubePlay(cubePlay, defaultSymbol);
+            CommonMethods.ChangeTagForGameObject(cubePlay, tagCubePlayTaken); // help buttons
             GameCommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlay, newCoordinateY);
         }
 

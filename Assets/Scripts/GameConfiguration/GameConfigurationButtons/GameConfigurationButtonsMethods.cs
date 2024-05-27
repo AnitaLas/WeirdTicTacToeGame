@@ -251,7 +251,7 @@ using Assets.Scripts;
             float[] table = new float[playersNumber];
             float scale = GameCommonMethodsMain.GetObjectScaleX(prefabPlayerSymbol);
 
-            float halfScale = scale * 4.45f; // 6 for boardGameConfiguration without button gaps
+            float halfScale = scale * 4.451f; // 6 for boardGameConfiguration without button gaps
             float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber);// - 1.251f; 
             table[0] = firstY;
 

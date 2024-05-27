@@ -16,21 +16,63 @@ namespace Assets.Scripts
 
         public static bool IsCellphoneMode()
         {
-            bool isCellphoneMode;
+            bool isCellphoneMode = true;
             var screenSize = GetScreenSize();
             int sizeWidth = screenSize.Item1;
             int sizeHeight = screenSize.Item2;
 
-            if (sizeWidth < 1200)
+            //Debug.Log("sizeHeight: " + sizeHeight);
+            //Debug.Log("sizeWidth: " + sizeWidth);
+
+
+            //// Android size
+            //int[,] tabletSize = new int[3,3];
+
+            //// 1
+            //tabletSize[0, 0] = 768;
+            //tabletSize[0, 1] = 1024;
+
+            //// 2
+            //tabletSize[1, 0] = 1024;
+            //tabletSize[1, 1] = 768;
+
+            //// 3
+            //tabletSize[2, 0] = 601;
+            //tabletSize[2, 1] = 962;
+
+            //for (int i = 0; i < tabletSize.GetLength(0); i++)
+            //{
+               
+            //    for (int j = 0; j < tabletSize.GetLength(1); j++)
+            //    {
+            //        int widthFromabletSize = tabletSize[i, j];
+            //        int heightFromabletSize = tabletSize[i, j];
+
+
+            //        //if (sizeWidth <= widthFromabletSize)// && sizeHeight <= heightFromabletSize)
+            //        //{
+            //        //    isCellphoneMode = true;
+            //        //}
+            //        //else
+            //        //{
+            //        //    isCellphoneMode = false;
+            //        //}
+
+            //    }
+            //}
+
+            //if (sizeWidth < 1200 && sizeHeight < 1200)
+            //if (sizeWidth < 720)
+            if (sizeWidth <= 1080)
             {
-                isCellphoneMode = true;          
+                isCellphoneMode = true;
             }
             else
             {
                 isCellphoneMode = false;
             }
 
-           return isCellphoneMode;
+            return isCellphoneMode;
         }
 
         public static Tuple<int, int> GetNumberOfRowsAndColumnsForDefaulTableWithNumber(bool isCellphoneMode)
