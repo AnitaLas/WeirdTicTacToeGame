@@ -453,23 +453,19 @@ IL2CPP_EXTERN_C RuntimeClass* WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B35
 IL2CPP_EXTERN_C String_t* _stringLiteral05BE11CA8745D9E40F7E780C852B45025FB15804;
 IL2CPP_EXTERN_C String_t* _stringLiteral1DC6F9DF995F46DAA209447A040BB408185F84E7;
 IL2CPP_EXTERN_C String_t* _stringLiteral23114468D04FA2B7A2DA455B545DB914D0A3ED94;
-IL2CPP_EXTERN_C String_t* _stringLiteral45A8CC9459CA644FC21F5F7B6A243268DD95FF36;
 IL2CPP_EXTERN_C String_t* _stringLiteral5899A5A3FC88F487438CE016F7749854AB9936A4;
 IL2CPP_EXTERN_C String_t* _stringLiteral7F85A2723BB62FEF95DD6F8C5F0FF606EA62246A;
 IL2CPP_EXTERN_C String_t* _stringLiteral8ACAA4E0B28437F5FD1A41CE6591A16813F05377;
 IL2CPP_EXTERN_C String_t* _stringLiteral9ECD13393A1BC799BB4763A4E4CD5B53E220C53A;
 IL2CPP_EXTERN_C String_t* _stringLiteral9F5702523BA092DF0380FC91350DC3CDB2FAB9B8;
-IL2CPP_EXTERN_C String_t* _stringLiteralA102118586F82E0F6C38AC9E3B28E6A038A0D2E3;
 IL2CPP_EXTERN_C String_t* _stringLiteralA6107EE62A5874EF8D2DEAC7D3C0A9F07B89E096;
 IL2CPP_EXTERN_C String_t* _stringLiteralA87D266F5AAE1AF5998468D25833A8C6AD50D4FD;
 IL2CPP_EXTERN_C String_t* _stringLiteralAB3448E21FA53C63C06270903A13B17D02935BE0;
 IL2CPP_EXTERN_C String_t* _stringLiteralB0306A1DF10ED984C2632DD48F508C69BF4EAEAA;
-IL2CPP_EXTERN_C String_t* _stringLiteralCC9C4D1C21F201E487D10DEDA58C58C93BF39E9D;
 IL2CPP_EXTERN_C String_t* _stringLiteralD00074DE8ACBEBA7EF28BE447E997E8352E84502;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralE4F0F961A4FEE2C7BA361A4CF14CC9A79F8DB410;
 IL2CPP_EXTERN_C String_t* _stringLiteralE67B7F20962AF00B1EBEAE7692AB43F51B99A528;
-IL2CPP_EXTERN_C String_t* _stringLiteralF6438DB9D8665E5E4E0031C8AF24C36042ACCC0A;
 IL2CPP_EXTERN_C String_t* _stringLiteralF944DCD635F9801F7AC90A407FBC479964DEC024;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisTMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9_m0C4C5268B54C7097888C6B109527A680772EBCB5_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m23F8F2F9DD5A54329CEB47D53B4CAA8BC4A562AA_RuntimeMethod_var;
@@ -20392,29 +20388,14 @@ IL_0026:
 // UnityEngine.GameObject[,,] Assets.Scripts.CreateGameBoard::CreateBoardGameWithGaps(UnityEngine.GameObject[,,],System.Int32,System.Int32,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* CreateGameBoard_CreateBoardGameWithGaps_m99C93C62DB1F788EE861DEE4BB22BC168786AD3B (GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* ___0_boardGame, int32_t ___1_numberOfDepths, int32_t ___2_numberOfColumns, int32_t ___3_numberOfRows, int32_t ___4_numberOfGaps, const RuntimeMethod* method) 
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral45A8CC9459CA644FC21F5F7B6A243268DD95FF36);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralA102118586F82E0F6C38AC9E3B28E6A038A0D2E3);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCC9C4D1C21F201E487D10DEDA58C58C93BF39E9D);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF6438DB9D8665E5E4E0031C8AF24C36042ACCC0A);
-		s_Il2CppMethodInitialized = true;
-	}
 	int32_t V_0 = 0;
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_1 = NULL;
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_2 = NULL;
 	int32_t V_3 = 0;
 	int32_t V_4 = 0;
-	bool V_5 = false;
-	int32_t V_6 = 0;
-	bool V_7 = false;
-	int32_t V_8 = 0;
-	String_t* V_9 = NULL;
-	bool V_10 = false;
-	GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* V_11 = NULL;
+	String_t* V_5 = NULL;
+	bool V_6 = false;
+	GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* V_7 = NULL;
 	{
 		// int numbersCubePlayMax = numberOfDepths * numberOfColumns * numberOfRows;
 		int32_t L_0 = ___1_numberOfDepths;
@@ -20428,155 +20409,62 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_6;
 		L_6 = CreateGameBoardWithGaps_SetUpRightCurrentNumberForCubePlay_m73E4872E6C6113751EB51E3CA39EF94F122E7DD3(L_3, L_4, L_5, NULL);
 		V_1 = L_6;
-		// Debug.Log(" ----------------------------   cubePlayNumbers  --------------------------------------");
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralCC9C4D1C21F201E487D10DEDA58C58C93BF39E9D, NULL);
-		// for (int i = 0; i < cubePlayNumbers.Length; i++)
+		// string[] fullCubePlayName = CreateGameBoardWithGaps.GetFullCubePlayNames(cubePlayNumbers, boardGame);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_7 = V_1;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_8 = ___0_boardGame;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_9;
+		L_9 = CreateGameBoardWithGaps_GetFullCubePlayNames_mB157C5679D8D98E69F58D0036221CE8F5B5F2714(L_7, L_8, NULL);
+		V_2 = L_9;
+		// int cubePlayNumbersLenght = cubePlayNumbers.Length;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_10 = V_1;
+		NullCheck(L_10);
+		V_3 = ((int32_t)(((RuntimeArray*)L_10)->max_length));
+		// for (int i = 0; i < cubePlayNumbersLenght; i++)
 		V_4 = 0;
-		goto IL_0049;
+		goto IL_0038;
 	}
 
-IL_0021:
+IL_0022:
 	{
-		// Debug.Log($"{i} - fullCubePlayName: " + cubePlayNumbers[i]);
-		int32_t L_7 = V_4;
-		int32_t L_8 = L_7;
-		RuntimeObject* L_9 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_8);
-		String_t* L_10;
-		L_10 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralF6438DB9D8665E5E4E0031C8AF24C36042ACCC0A, L_9, NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_11 = V_1;
+		// string cubePlayName = fullCubePlayName[i];
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_11 = V_2;
 		int32_t L_12 = V_4;
 		NullCheck(L_11);
 		int32_t L_13 = L_12;
 		String_t* L_14 = (L_11)->GetAt(static_cast<il2cpp_array_size_t>(L_13));
-		String_t* L_15;
-		L_15 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_10, L_14, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_15, NULL);
-		// for (int i = 0; i < cubePlayNumbers.Length; i++)
+		V_5 = L_14;
+		// CreateGameBoardWithGaps.CubePlayToHide(cubePlayName);
+		String_t* L_15 = V_5;
+		CreateGameBoardWithGaps_CubePlayToHide_mEE2FD4CC7390D89969D61238D8635B3106DF5D0A(L_15, NULL);
+		// for (int i = 0; i < cubePlayNumbersLenght; i++)
 		int32_t L_16 = V_4;
 		V_4 = ((int32_t)il2cpp_codegen_add(L_16, 1));
 	}
 
-IL_0049:
+IL_0038:
 	{
-		// for (int i = 0; i < cubePlayNumbers.Length; i++)
+		// for (int i = 0; i < cubePlayNumbersLenght; i++)
 		int32_t L_17 = V_4;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_18 = V_1;
-		NullCheck(L_18);
-		V_5 = (bool)((((int32_t)L_17) < ((int32_t)((int32_t)(((RuntimeArray*)L_18)->max_length))))? 1 : 0);
-		bool L_19 = V_5;
+		int32_t L_18 = V_3;
+		V_6 = (bool)((((int32_t)L_17) < ((int32_t)L_18))? 1 : 0);
+		bool L_19 = V_6;
 		if (L_19)
 		{
-			goto IL_0021;
-		}
-	}
-	{
-		// string[] fullCubePlayName = CreateGameBoardWithGaps.GetFullCubePlayNames(cubePlayNumbers, boardGame);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_20 = V_1;
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_21 = ___0_boardGame;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_22;
-		L_22 = CreateGameBoardWithGaps_GetFullCubePlayNames_mB157C5679D8D98E69F58D0036221CE8F5B5F2714(L_20, L_21, NULL);
-		V_2 = L_22;
-		// fullCubePlayName[0] = "CubePlayUI_No_004_Table3DCoOrdinates_Depths_0_Row_3_Column_0";
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_23 = V_2;
-		NullCheck(L_23);
-		ArrayElementTypeCheck (L_23, _stringLiteral45A8CC9459CA644FC21F5F7B6A243268DD95FF36);
-		(L_23)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)_stringLiteral45A8CC9459CA644FC21F5F7B6A243268DD95FF36);
-		// Debug.Log(" ----------------------------   CreateBoardGameWithGaps  --------------------------------------");
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralA102118586F82E0F6C38AC9E3B28E6A038A0D2E3, NULL);
-		// for (int i = 0; i < fullCubePlayName.Length; i++)
-		V_6 = 0;
-		goto IL_009e;
-	}
-
-IL_0076:
-	{
-		// Debug.Log($"{i} - fullCubePlayName: " + fullCubePlayName[i]);
-		int32_t L_24 = V_6;
-		int32_t L_25 = L_24;
-		RuntimeObject* L_26 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_25);
-		String_t* L_27;
-		L_27 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralF6438DB9D8665E5E4E0031C8AF24C36042ACCC0A, L_26, NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_28 = V_2;
-		int32_t L_29 = V_6;
-		NullCheck(L_28);
-		int32_t L_30 = L_29;
-		String_t* L_31 = (L_28)->GetAt(static_cast<il2cpp_array_size_t>(L_30));
-		String_t* L_32;
-		L_32 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_27, L_31, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_32, NULL);
-		// for (int i = 0; i < fullCubePlayName.Length; i++)
-		int32_t L_33 = V_6;
-		V_6 = ((int32_t)il2cpp_codegen_add(L_33, 1));
-	}
-
-IL_009e:
-	{
-		// for (int i = 0; i < fullCubePlayName.Length; i++)
-		int32_t L_34 = V_6;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_35 = V_2;
-		NullCheck(L_35);
-		V_7 = (bool)((((int32_t)L_34) < ((int32_t)((int32_t)(((RuntimeArray*)L_35)->max_length))))? 1 : 0);
-		bool L_36 = V_7;
-		if (L_36)
-		{
-			goto IL_0076;
-		}
-	}
-	{
-		// int cubePlayNumbersLenght = cubePlayNumbers.Length;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_37 = V_1;
-		NullCheck(L_37);
-		V_3 = ((int32_t)(((RuntimeArray*)L_37)->max_length));
-		// for (int i = 0; i < cubePlayNumbersLenght; i++)
-		V_8 = 0;
-		goto IL_00ca;
-	}
-
-IL_00b4:
-	{
-		// string cubePlayName = fullCubePlayName[i];
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_38 = V_2;
-		int32_t L_39 = V_8;
-		NullCheck(L_38);
-		int32_t L_40 = L_39;
-		String_t* L_41 = (L_38)->GetAt(static_cast<il2cpp_array_size_t>(L_40));
-		V_9 = L_41;
-		// CreateGameBoardWithGaps.CubePlayToHide(cubePlayName);
-		String_t* L_42 = V_9;
-		CreateGameBoardWithGaps_CubePlayToHide_mEE2FD4CC7390D89969D61238D8635B3106DF5D0A(L_42, NULL);
-		// for (int i = 0; i < cubePlayNumbersLenght; i++)
-		int32_t L_43 = V_8;
-		V_8 = ((int32_t)il2cpp_codegen_add(L_43, 1));
-	}
-
-IL_00ca:
-	{
-		// for (int i = 0; i < cubePlayNumbersLenght; i++)
-		int32_t L_44 = V_8;
-		int32_t L_45 = V_3;
-		V_10 = (bool)((((int32_t)L_44) < ((int32_t)L_45))? 1 : 0);
-		bool L_46 = V_10;
-		if (L_46)
-		{
-			goto IL_00b4;
+			goto IL_0022;
 		}
 	}
 	{
 		// return boardGame;
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_47 = ___0_boardGame;
-		V_11 = L_47;
-		goto IL_00da;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_20 = ___0_boardGame;
+		V_7 = L_20;
+		goto IL_0048;
 	}
 
-IL_00da:
+IL_0048:
 	{
 		// }
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_48 = V_11;
-		return L_48;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_21 = V_7;
+		return L_21;
 	}
 }
 // System.Void Assets.Scripts.CreateGameBoard::.ctor()

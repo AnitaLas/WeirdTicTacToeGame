@@ -73,20 +73,23 @@ namespace Assets.Scripts
 
         public static int[] GetIndexesForSwitch(int playersSymbols, int maxSymbolsNumberForChange)
         {
-            int maxSymbols = maxSymbolsNumberForChange + 1;
-            int[] indexes = new int[maxSymbols];
-            //int[] indexes = new int[maxSymbolsNumberForChange];
+            //int maxSymbols = maxSymbolsNumberForChange + 1;
+            int maxSymbols = maxSymbolsNumberForChange;
+            //int maxSymbols = maxSymbolsNumberForChange;
+            //Debug.Log("1 maxSymbols: " + maxSymbols);
+            //int[] indexes = new int[maxSymbols];
+            int[] indexes = new int[maxSymbolsNumberForChange];
 
             string allNumbers = GetIndexesAsString(playersSymbols);
             //Debug.Log("allNumbers: " + allNumbers);
 
             string numbers = allNumbers;
-            //Debug.Log("numbers: " + numbers);
+            //Debug.Log("1 numbers: " + numbers);
 
-            int minNumber = 0;
-            int maxNumber = playersSymbols;
-            //Debug.Log("maxNumber: " + maxNumber);
-
+            int minIndexNumber = 0;
+            int maxIndexNumber = playersSymbols - 1;
+            //Debug.Log(" 1 maxIndexNumber: " + maxIndexNumber);
+            //Debug.Log(" -----------  ");
             for (int i = 0; i < maxSymbols; i++)
             //for (int i = 0; i < maxSymbolsNumberForChange; i++)
             {
@@ -94,7 +97,7 @@ namespace Assets.Scripts
                 //Debug.Log("i: " + i);
                 //Debug.Log("minNumber: " + minNumber);
                 //Debug.Log("maxNumber: " + maxNumber);
-                int randomIndexToChange = CommonMethods.ChooseRandomNumber(minNumber, maxNumber);
+                int randomIndexToChange = CommonMethods.ChooseRandomNumber(minIndexNumber, maxIndexNumber);
 
                 //Debug.Log("randomIndexToChange: " + randomIndexToChange);
 
@@ -105,12 +108,13 @@ namespace Assets.Scripts
                 indexes[i] = finaleIndex;
 
 
-                maxNumber--;
+                maxIndexNumber--;
                 numbers = numbers.Remove(randomIndexToChange, 1);
                 //Debug.Log("2 numbers: " + numbers);
                 //Debug.Log("2 numbers: " + numbers.Remove(randomIndexToChange,1));
             }
             //Debug.Log(" -----------  ");
+            //Debug.Log("indexes.Length: " + indexes.Length);
 
             //for (int i = 0; i < indexes.Length; i++)
             //{
@@ -137,23 +141,24 @@ namespace Assets.Scripts
             int maxSymbolsNumberForSwitch = PlayGameChangePlayersSymbolsMethods.GetMinPlayersNumberForTeam(teamGameSymbols);
             Debug.Log("1 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
 
-            int minSymbolsNumberForSwitch = 0;
+            int minSymbolsNumberForSwitch = 1;
 
             if (maxSymbolsNumberForSwitch > minSymbolsNumberForSwitch)
             {
                 maxSymbolsNumberForSwitch = CommonMethods.ChooseRandomNumber(minSymbolsNumberForSwitch, maxSymbolsNumberForSwitch);
+                Debug.Log("2 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
             }
             else
             {
                 maxSymbolsNumberForSwitch = minSymbolsNumberForSwitch;
             }
 
-            //maxSymbolsNumberForSwitch = 2;
-            Debug.Log("2 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
+            //maxSymbolsNumberForSwitch = 3;
+            Debug.Log("3 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
 
             int teamsNumbers = teamGameSymbols.Count;
             //Debug.Log(" teamsNumbers: " + teamsNumbers);
-            //Debug.Log($" --------------------------------------- ");
+            Debug.Log($" --------------------------------------- ");
 
             int[] indexesForSwitch;
             int numbersOfSymbolsToSwitch;
@@ -180,11 +185,11 @@ namespace Assets.Scripts
 
                 }
 
-                for (int i = 0; i < indexesForSwitch.Length; i++)
-                {
-                    Debug.Log($"indexesForSwitch[{i}] :" + indexesForSwitch[i]);
-                }
-                Debug.Log($" --------------------------------------- ");
+                //for (int i = 0; i < indexesForSwitch.Length; i++)
+                //{
+                //    Debug.Log($"indexesForSwitch[{i}] :" + indexesForSwitch[i]);
+                //}
+                //Debug.Log($" --------------------------------------- ");
 
                 oldSymbolsForSwitch.Insert(0, symbolsToSwitch);
             }
@@ -419,10 +424,10 @@ namespace Assets.Scripts
             //    }
 
             //}
-            for (int i = 0; i < newIndexes.Length; i++)
-            {
-                Debug.Log("444 indexes[i]: " + newIndexes[i]);
-            }
+            //for (int i = 0; i < newIndexes.Length; i++)
+            //{
+            //    Debug.Log("444 indexes[i]: " + newIndexes[i]);
+            //}
 
             return newIndexes;
         }
@@ -572,7 +577,7 @@ namespace Assets.Scripts
             //Debug.Log("startIndex: " + startIndex);
 
             bool isStartIndexEven = CommonMethods.IsNumberEven(startIndex);
-            Debug.Log("1234 isStartIndexEven: " + isStartIndexEven);
+           // Debug.Log("1234 isStartIndexEven: " + isStartIndexEven);
 
             //int index = startIndex;
 
@@ -592,7 +597,7 @@ namespace Assets.Scripts
             {
                 int finalIndex = indexes[i];
 
-                Debug.Log("1234 index: " + finalIndex);
+                //Debug.Log("1234 index: " + finalIndex);
                 string[] team = symbolsForSwitch[finalIndex];
 
                 switchedSymbols.Insert(i, team);
@@ -601,38 +606,38 @@ namespace Assets.Scripts
             //Debug.Log(" end of set up ---------------");
             //Debug.Log(" end of set up ---------------");
 
-            Debug.Log(" SS to switch ----------------------------------------------- ");
+            //Debug.Log(" SS to switch ----------------------------------------------- ");
 
-            for (int i = 0; i < symbolsForSwitch.Count; i++)
-            {
-                string[] team = symbolsForSwitch[i];
-                int lenght1 = team.Length;
+            //for (int i = 0; i < symbolsForSwitch.Count; i++)
+            //{
+            //    string[] team = symbolsForSwitch[i];
+            //    int lenght1 = team.Length;
 
-                Debug.Log("team: " + i);
+            //    Debug.Log("team: " + i);
 
-                for (int j = 0; j < lenght1; j++)
-                {
-                    Debug.Log($"symbol team[{j}]: " + team[j]);
-                }
+            //    for (int j = 0; j < lenght1; j++)
+            //    {
+            //        Debug.Log($"symbol team[{j}]: " + team[j]);
+            //    }
 
-            }
+            //}
 
-            Debug.Log("SS switchedSymbols: " + switchedSymbols);
+            //Debug.Log("SS switchedSymbols: " + switchedSymbols);
 
-            for (int i = 0; i < switchedSymbols.Count; i++)
-            {
-                string[] team = switchedSymbols[i];
-                int lenght1 = team.Length;
+            //for (int i = 0; i < switchedSymbols.Count; i++)
+            //{
+            //    string[] team = switchedSymbols[i];
+            //    int lenght1 = team.Length;
 
-                Debug.Log("team: " + i);
+            //    Debug.Log("team: " + i);
 
-                for (int j = 0; j < lenght1; j++)
-                {
-                    Debug.Log($"symbols team[{j}]: " + team[j]);
-                }
+            //    for (int j = 0; j < lenght1; j++)
+            //    {
+            //        Debug.Log($"symbols team[{j}]: " + team[j]);
+            //    }
 
-            }
-            Debug.Log(" ----------------------------------------------- ");
+            //}
+            //Debug.Log(" ----------------------------------------------- ");
 
             return switchedSymbols;
 
@@ -1571,7 +1576,7 @@ namespace Assets.Scripts
             for (int z = 0; z < newSymbolsToChange; z++)
             {
                 string newSymbol = finalNewSymbolsForSwitch[z];
-                Debug.Log("8888 newSymbol: " + newSymbol);
+                //Debug.Log("8888 newSymbol: " + newSymbol);
                 string oldSymbol = oldSymbolsForSwitch[z];
 
                 //for (int i = 0; i < gameBoardVerification2D.GetLength(0); i++)
@@ -1584,9 +1589,9 @@ namespace Assets.Scripts
 
                         if (currentSymbol == oldSymbol)
                         {
-                            Debug.Log("8888 ---: " + newSymbol);
+                            //Debug.Log("8888 ---: " + newSymbol);
                             string symbol = RemoveExtraStaticTextFromStringToGetSymbol(newSymbol);
-                            Debug.Log("8888 --- 2: " + symbol);
+                            //Debug.Log("8888 --- 2: " + symbol);
                             gameBoardVerification2D[i, j] = symbol;
                         }
                     }

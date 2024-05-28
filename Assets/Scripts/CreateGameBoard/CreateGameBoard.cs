@@ -57,20 +57,20 @@ namespace Assets.Scripts
             int numbersCubePlayMax = numberOfDepths * numberOfColumns * numberOfRows;
             string[] cubePlayNumbers = CreateGameBoardWithGaps.SetUpRightCurrentNumberForCubePlay( numbersCubePlayMax, numberOfRows, numberOfGaps);
 
-            Debug.Log(" ----------------------------   cubePlayNumbers  --------------------------------------");
-            for (int i = 0; i < cubePlayNumbers.Length; i++)
-            {
-                Debug.Log($"{i} - fullCubePlayName: " + cubePlayNumbers[i]);
-            }
+            //Debug.Log(" ----------------------------   cubePlayNumbers  --------------------------------------");
+            //for (int i = 0; i < cubePlayNumbers.Length; i++)
+            //{
+            //    Debug.Log($"{i} - fullCubePlayName: " + cubePlayNumbers[i]);
+            //}
 
             string[] fullCubePlayName = CreateGameBoardWithGaps.GetFullCubePlayNames(cubePlayNumbers, boardGame);
 
-            fullCubePlayName[0] = "CubePlayUI_No_004_Table3DCoOrdinates_Depths_0_Row_3_Column_0";
-            Debug.Log(" ----------------------------   CreateBoardGameWithGaps  --------------------------------------");
-            for (int i = 0; i < fullCubePlayName.Length; i++)
-            {
-                Debug.Log($"{i} - fullCubePlayName: " + fullCubePlayName[i]);
-            }
+            //fullCubePlayName[0] = "CubePlayUI_No_004_Table3DCoOrdinates_Depths_0_Row_3_Column_0";
+            //Debug.Log(" ----------------------------   CreateBoardGameWithGaps  --------------------------------------");
+            //for (int i = 0; i < fullCubePlayName.Length; i++)
+            //{
+            //    Debug.Log($"{i} - fullCubePlayName: " + fullCubePlayName[i]);
+            //}
 
             int cubePlayNumbersLenght = cubePlayNumbers.Length;
                 

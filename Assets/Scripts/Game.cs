@@ -489,8 +489,8 @@ internal class Game : MonoBehaviour
 
                                 if (isTeamGame == false)
                                 {
-                                    PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                    PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                    //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
+                                    PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, cubePlaySymbol);
                                     PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
                                 
                                 }
@@ -498,7 +498,7 @@ internal class Game : MonoBehaviour
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                                     PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
-                                    PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
+                                    PlayGameChangePlayerSymbol.CreateButtonsWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
 
 
@@ -542,14 +542,16 @@ internal class Game : MonoBehaviour
 
                                     if (isTeamGame == false)
                                     {
-                                        PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                        PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                        //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
+                                        //PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, cubePlaySymbol);
+                                        PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, cubePlaySymbol);
+
                                     }
                                     else
                                     {
                                         PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                                         PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
-                                        PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
+                                        PlayGameChangePlayerSymbol.CreateButtonsWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     }
 
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
@@ -724,8 +726,9 @@ internal class Game : MonoBehaviour
 
                                 if (isTeamGame == false)
                                 {
-                                    PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                    PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                    //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
+                                   // PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, cubePlaySymbol);
+                                    PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, cubePlaySymbol);
                                     PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
 
                                 }
@@ -733,7 +736,7 @@ internal class Game : MonoBehaviour
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                                     PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
-                                    PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
+                                    PlayGameChangePlayerSymbol.CreateButtonsWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
 
                                 }
@@ -774,14 +777,16 @@ internal class Game : MonoBehaviour
 
                                     if (isTeamGame == false)
                                     {
-                                        PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                        PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
+                                        //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
+                                        //PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, cubePlaySymbol);
+                                        PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, cubePlaySymbol);
+
                                     }
                                     else
                                     {
                                         PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                                         PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
-                                        PlayGameChangePlayerSymbol.CreateButtonsGameTeamForWinner(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
+                                        PlayGameChangePlayerSymbol.CreateButtonsWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     }
 
                                     PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);

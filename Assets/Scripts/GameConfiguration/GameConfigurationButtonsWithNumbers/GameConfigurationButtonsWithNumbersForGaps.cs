@@ -79,11 +79,9 @@ namespace Assets.Scripts
 
             if ((number1 == 3) && (number2 == 3))
                 minNumber = 2; // because -> GameConfigurationButtonsWithNumbersCommonMethods.ChangeDataForTableWithNumbers
-
             else
-            {
                 minNumber = 0;
-            }
+            
             return minNumber;
         }
 

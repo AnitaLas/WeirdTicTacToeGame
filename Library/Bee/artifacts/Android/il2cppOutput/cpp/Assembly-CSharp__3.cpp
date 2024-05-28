@@ -3281,6 +3281,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PlayGameCommonButtonsTagName_GetTag
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_SetUpPlayerSymbol_m7B96BF0CBB3E6D8D4A838052483FE622669C8A12 (String_t* ___0_playerSymbol, String_t* ___1_tagPlayerSymbol, const RuntimeMethod* method) ;
 // System.Void Assets.Scripts.PlayGameChangePlayerSymbol::ChangePlayerSymbol(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_ChangePlayerSymbol_m39F48E7C13AE929DAA62476D69363CD0221205F7 (String_t* ___0_playerSymbol, String_t* ___1_tagPlayerSymbolDictionary, const RuntimeMethod* method) ;
+// System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DisactivateConfigurationMenu()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameMenuAndTimerButtonsActions_DisactivateConfigurationMenu_mDFFE49158C7745962F2F8BBC3328FA01C8C4DB21 (const RuntimeMethod* method) ;
+// System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyCubePlayForPlayersMove()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameMenuAndTimerButtonsActions_DestroyCubePlayForPlayersMove_m2F71FAA72EBE1E4DE2E367E3CC4FF99375B67AF3 (const RuntimeMethod* method) ;
+// System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyConfigurationMenu()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameMenuAndTimerButtonsActions_DestroyConfigurationMenu_mB6F6EBF92F4190E01A81561C4A8209A050268E00 (const RuntimeMethod* method) ;
+// System.Void Assets.Scripts.PlayGameChangePlayerSymbol::CreateButtonsForGameOver(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_CreateButtonsForGameOver_m452EEA3CD20B0A915BE464701693B91C041BCFC6 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___1_prefabCubePlayDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayButtonsNumberColour, bool ___3_isGame2D, const RuntimeMethod* method) ;
 // System.Collections.Generic.Dictionary`2<System.Int32,System.String> Assets.Scripts.GameDictionariesSceneGame::DictionaryTagsPlayerSymbolMove()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_t291007AFA4B4075BA87D802F2E42017CB8C857C9* GameDictionariesSceneGame_DictionaryTagsPlayerSymbolMove_mFA9417C33569322C7D0636597C888F7823314A90 (const RuntimeMethod* method) ;
 // System.Int32 System.Collections.Generic.Dictionary`2<System.Int32,System.String>::get_Count()
@@ -3306,8 +3314,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PlayGameChangePlayerSymbol_GetTeamW
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_DestroyPlayerMoveCubes_m197204C5926C40FA4861EBC7920B3E764351FFAB (const RuntimeMethod* method) ;
 // System.Void Assets.Scripts.PlayGameChangePlayerSymbol::CreateButtonsForWinnerTeam(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.String,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_CreateButtonsForWinnerTeam_m1C3C2D780CAEA169D98AF66573D34B50D24E459C (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___1_prefabCubePlayDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayButtonsNumberColour, String_t* ___3_teamNumber, bool ___4_isGame2D, const RuntimeMethod* method) ;
-// System.Void Assets.Scripts.PlayGameChangePlayerSymbol::CreateButtonsForGameOver(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_CreateButtonsForGameOver_m452EEA3CD20B0A915BE464701693B91C041BCFC6 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___1_prefabCubePlayDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayButtonsNumberColour, bool ___3_isGame2D, const RuntimeMethod* method) ;
 // System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagTaken()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PlayGameCommonButtonsTagName_GetTagForButtonNameByTagTaken_mE653EEA56FD9F5AB25759C1681361432EBFE3751 (const RuntimeMethod* method) ;
 // System.Void Assets.Scripts.GameCommonMethodsMain::ChangeTagForGameObject(UnityEngine.RaycastHit,System.String)
@@ -26441,8 +26447,8 @@ IL_013e:
 		return L_86;
 	}
 }
-// System.Void Assets.Scripts.PlayGameChangePlayerSymbol::SetUpPlayerSymbolForWinner(System.Boolean,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_SetUpPlayerSymbolForWinner_mB9875AFA4D89EE245B9EBE38C7763D3CB5622A17 (bool ___0_isWinner, String_t* ___1_winnerPlayerSymbol, const RuntimeMethod* method) 
+// System.Void Assets.Scripts.PlayGameChangePlayerSymbol::ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(System.Boolean,UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished_m48B9641CEF369DE0567591170C583B5B9038BA99 (bool ___0_isWinner, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___3_prefabCubePlayButtonsNumberColour, bool ___4_isGame2D, String_t* ___5_winnerPlayerSymbol, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -26450,61 +26456,69 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_SetUpPlayerSy
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3B2C1C62D4D1C2A0C8A9AC42DB00D33C654F9AD0);
 		s_Il2CppMethodInitialized = true;
 	}
-	String_t* V_0 = NULL;
+	bool V_0 = false;
 	String_t* V_1 = NULL;
 	String_t* V_2 = NULL;
 	String_t* V_3 = NULL;
-	bool V_4 = false;
+	String_t* V_4 = NULL;
 	{
-		// string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
-		String_t* L_0;
-		L_0 = PlayGameCommonButtonsTagName_GetTagForButtonNameByTagPlayerSymbolCurrent_m30E2FEC1EDD8E5A9733186891A72F5BBC8F0F113(NULL);
-		V_0 = L_0;
-		// string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
-		String_t* L_1;
-		L_1 = PlayGameCommonButtonsTagName_GetTagForButtonNameByTagPlayerSymbolPrevious_m4107DB2445EAD5D45C5124EB2D810685B3AA9491(NULL);
-		V_1 = L_1;
-		// string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
-		String_t* L_2;
-		L_2 = PlayGameCommonButtonsTagName_GetTagForButtonNameByTagPlayerSymbolNext_m637B8CC14185B4918B401A11EF74EE43100835B1(NULL);
-		V_2 = L_2;
-		// string defaultSymbol = "-";
-		V_3 = _stringLiteral3B2C1C62D4D1C2A0C8A9AC42DB00D33C654F9AD0;
 		// if (isWinner == true)
-		bool L_3 = ___0_isWinner;
-		V_4 = L_3;
-		bool L_4 = V_4;
-		if (!L_4)
+		bool L_0 = ___0_isWinner;
+		V_0 = L_0;
+		bool L_1 = V_0;
+		if (!L_1)
 		{
-			goto IL_002c;
+			goto IL_0044;
 		}
 	}
 	{
-		// SetUpPlayerSymbol(winnerPlayerSymbol, tagPlayerSymbolCurrent);
-		String_t* L_5 = ___1_winnerPlayerSymbol;
-		String_t* L_6 = V_0;
-		PlayGameChangePlayerSymbol_SetUpPlayerSymbol_m7B96BF0CBB3E6D8D4A838052483FE622669C8A12(L_5, L_6, NULL);
-		goto IL_0036;
-	}
-
-IL_002c:
-	{
-		// SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolCurrent);
-		String_t* L_7 = V_3;
-		String_t* L_8 = V_0;
-		PlayGameChangePlayerSymbol_SetUpPlayerSymbol_m7B96BF0CBB3E6D8D4A838052483FE622669C8A12(L_7, L_8, NULL);
-	}
-
-IL_0036:
-	{
+		// PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
+		PlayGameMenuAndTimerButtonsActions_DisactivateConfigurationMenu_mDFFE49158C7745962F2F8BBC3328FA01C8C4DB21(NULL);
+		// string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
+		String_t* L_2;
+		L_2 = PlayGameCommonButtonsTagName_GetTagForButtonNameByTagPlayerSymbolCurrent_m30E2FEC1EDD8E5A9733186891A72F5BBC8F0F113(NULL);
+		V_1 = L_2;
+		// string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
+		String_t* L_3;
+		L_3 = PlayGameCommonButtonsTagName_GetTagForButtonNameByTagPlayerSymbolPrevious_m4107DB2445EAD5D45C5124EB2D810685B3AA9491(NULL);
+		V_2 = L_3;
+		// string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
+		String_t* L_4;
+		L_4 = PlayGameCommonButtonsTagName_GetTagForButtonNameByTagPlayerSymbolNext_m637B8CC14185B4918B401A11EF74EE43100835B1(NULL);
+		V_3 = L_4;
+		// string defaultSymbol = "-";
+		V_4 = _stringLiteral3B2C1C62D4D1C2A0C8A9AC42DB00D33C654F9AD0;
 		// SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
-		String_t* L_9 = V_3;
+		String_t* L_5 = V_4;
+		String_t* L_6 = V_2;
+		PlayGameChangePlayerSymbol_SetUpPlayerSymbol_m7B96BF0CBB3E6D8D4A838052483FE622669C8A12(L_5, L_6, NULL);
+		// SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
+		String_t* L_7 = V_4;
+		String_t* L_8 = V_3;
+		PlayGameChangePlayerSymbol_SetUpPlayerSymbol_m7B96BF0CBB3E6D8D4A838052483FE622669C8A12(L_7, L_8, NULL);
+		// SetUpPlayerSymbol(winnerPlayerSymbol, tagPlayerSymbolCurrent);
+		String_t* L_9 = ___5_winnerPlayerSymbol;
 		String_t* L_10 = V_1;
 		PlayGameChangePlayerSymbol_SetUpPlayerSymbol_m7B96BF0CBB3E6D8D4A838052483FE622669C8A12(L_9, L_10, NULL);
-		// SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
-		String_t* L_11 = V_3;
-		String_t* L_12 = V_2;
-		PlayGameChangePlayerSymbol_SetUpPlayerSymbol_m7B96BF0CBB3E6D8D4A838052483FE622669C8A12(L_11, L_12, NULL);
+		goto IL_005d;
+	}
+
+IL_0044:
+	{
+		// PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
+		PlayGameMenuAndTimerButtonsActions_DestroyCubePlayForPlayersMove_m2F71FAA72EBE1E4DE2E367E3CC4FF99375B67AF3(NULL);
+		// PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
+		PlayGameMenuAndTimerButtonsActions_DestroyConfigurationMenu_mB6F6EBF92F4190E01A81561C4A8209A050268E00(NULL);
+		// CreateButtonsForGameOver(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = ___1_prefabCubePlay;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_12 = ___2_prefabCubePlayDefaultColour;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_13 = ___3_prefabCubePlayButtonsNumberColour;
+		bool L_14 = ___4_isGame2D;
+		PlayGameChangePlayerSymbol_CreateButtonsForGameOver_m452EEA3CD20B0A915BE464701693B91C041BCFC6(L_11, L_12, L_13, L_14, NULL);
+	}
+
+IL_005d:
+	{
 		// }
 		return;
 	}
@@ -26809,8 +26823,8 @@ IL_00b1:
 		return L_35;
 	}
 }
-// System.Void Assets.Scripts.PlayGameChangePlayerSymbol::CreateButtonsGameTeamForWinner(System.Boolean,UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Collections.Generic.List`1<System.String[]>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_CreateButtonsGameTeamForWinner_m78C8EB5B582F609371DBFFF193217E19F17C92BF (bool ___0_isWinner, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___3_prefabCubePlayButtonsNumberColour, bool ___4_isGame2D, List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* ___5_teamGameSymbols, const RuntimeMethod* method) 
+// System.Void Assets.Scripts.PlayGameChangePlayerSymbol::CreateButtonsWhenGameFinished(System.Boolean,UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Collections.Generic.List`1<System.String[]>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameChangePlayerSymbol_CreateButtonsWhenGameFinished_mA1E52A36B8C8D36B974F15F04F016BDA2DDC5E55 (bool ___0_isWinner, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___3_prefabCubePlayButtonsNumberColour, bool ___4_isGame2D, List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* ___5_teamGameSymbols, const RuntimeMethod* method) 
 {
 	String_t* V_0 = NULL;
 	bool V_1 = false;

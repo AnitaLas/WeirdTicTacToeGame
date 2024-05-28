@@ -153,7 +153,7 @@ namespace Assets.Scripts.GameConfiguration
             _tagConfigurationBoardGameButtonBackToConfiguration = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBackByTagButtonBackToConfiguration();
     
 
-            _buttonsAll = GameConfigurationButtonsCreate.GameConfigurationCreateButtons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, isTeamGame);
+            _buttonsAll = GameConfigurationButtonsCreate.GameConfigurationCreateButtons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, isTeamGame, _lenghtToCheckMax);
         }
 
 
@@ -211,7 +211,8 @@ namespace Assets.Scripts.GameConfiguration
                             //GameConfigurationButtonsWithNumbersForLenghtToCheck.VerifyAndSetUpNewMaxLength(_tableWithChangedNumber);                               
                             //GameCommonMethodsSetUpButtonWithNumber.VerifyAndSetUpLenghtToCheckAndGapsForButtonWithNumbers();
                             GameConfigurationButtonsActions.VerifyButtonsWithNumberForLenghtToCheckAndGaps();
-                        }                    
+                            //GameConfigurationButtonsActions.VerifyButtonsWithNumberForLenghtToCheckAndGaps(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, isTeamGame, _lenghtToCheckMax);
+                        }
 
                         // buttons: columns
                         if (gameObjectTag == _tagConfigurationBoardGameColumns || gameObjectTag == _tagConfigurationBoardGameChangeNumberColumns)
@@ -232,6 +233,7 @@ namespace Assets.Scripts.GameConfiguration
                             //GameConfigurationButtonsWithNumbersForLenghtToCheck.VerifyAndSetUpNewMaxLength(_tableWithChangedNumber);
                             //GameCommonMethodsSetUpButtonWithNumber.VerifyAndSetUpLenghtToCheckAndGapsForButtonWithNumbers();
                             GameConfigurationButtonsActions.VerifyButtonsWithNumberForLenghtToCheckAndGaps();
+                            //GameConfigurationButtonsActions.VerifyButtonsWithNumberForLenghtToCheckAndGaps(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, isTeamGame, _lenghtToCheckMax);
                         }
 
 
