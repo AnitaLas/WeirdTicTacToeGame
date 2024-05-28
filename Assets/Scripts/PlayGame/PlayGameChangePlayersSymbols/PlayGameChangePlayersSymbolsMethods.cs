@@ -480,7 +480,7 @@ namespace Assets.Scripts
             //int numberSymbolsToChange = GetMaxIndexForNewSymbols(isChangeForAll, takenSymbolsLenght);
             int maxIndexForChange = GetMaxIndexForNewSymbols(isChangeForAll, playersSymbols);
             int numberSymbolsToChange = maxIndexForChange + 1;
-            Debug.Log("numberSymbolsToChange: " + numberSymbolsToChange);
+            //Debug.Log("numberSymbolsToChange: " + numberSymbolsToChange);
             //string[] newSymbolsForChange = new string[numberSymbolsToChange];
             //string[] oldSymbolsForChange = new string[numberSymbolsToChange];
 

@@ -923,10 +923,11 @@ internal class Game : MonoBehaviour
                         PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);
                         _isTimeToHidePlayGameElements = false;
                         //_timeForHide = _timeForTimers[indexTimeForHide];
-                        //Debug.Log("2 _switchChange: " + _switchChange);
+                        //Debug.Log("_switchChange: " + _switchChange);
 
                         if (_switchChange == 0)
                         {
+                            //Debug.Log("1 A - _switchChange: " + _switchChange);
                             //Debug.Log("2 == 0 - _switchChange: " + _switchChange);
                             //_timeForHide = _timeForTimers[0];
                             if (_isDoubleRandomChange == false)
@@ -966,8 +967,13 @@ internal class Game : MonoBehaviour
 
                             _gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
 
-                        }
 
+                            // new added
+                            if (_isDoubleRandomChange == true)
+                                _switchChange = PlayGameChangePlayersSymbolsMethods.SetUpNewSwitchChange(_switchChange);
+                            //Debug.Log("1 B - _switchChange: " + _switchChange);
+                        }
+                        else
                         if (_switchChange == 1)
                         {
                             //Debug.Log("2 == 1 - _switchChange: " + _switchChange);
@@ -998,6 +1004,7 @@ internal class Game : MonoBehaviour
 
                             if (_isDoubleRandomChange == true)
                                 _switchChange = PlayGameChangePlayersSymbolsMethods.SetUpNewSwitchChange(_switchChange);
+                            Debug.Log("2 == 1 - _switchChange: " + _switchChange);
                         }
 
                         //if (_isDoubleRandomChange == true)

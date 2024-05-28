@@ -95,8 +95,8 @@ namespace Assets.Scripts
             {
                 //Debug.Log("1 numbers: " + numbers);
                 //Debug.Log("i: " + i);
-                //Debug.Log("minNumber: " + minNumber);
-                //Debug.Log("maxNumber: " + maxNumber);
+                Debug.Log("minIndexNumber: " + minIndexNumber);
+                Debug.Log("maxIndexNumber: " + maxIndexNumber);
                 int randomIndexToChange = CommonMethods.ChooseRandomNumber(minIndexNumber, maxIndexNumber);
 
                 //Debug.Log("randomIndexToChange: " + randomIndexToChange);
@@ -139,14 +139,14 @@ namespace Assets.Scripts
             // ?????????????????????????????????????????????????????
             // ADD change for random, works = 2
             int maxSymbolsNumberForSwitch = PlayGameChangePlayersSymbolsMethods.GetMinPlayersNumberForTeam(teamGameSymbols);
-            Debug.Log("1 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
+           // Debug.Log("1 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
 
             int minSymbolsNumberForSwitch = 1;
 
             if (maxSymbolsNumberForSwitch > minSymbolsNumberForSwitch)
             {
                 maxSymbolsNumberForSwitch = CommonMethods.ChooseRandomNumber(minSymbolsNumberForSwitch, maxSymbolsNumberForSwitch);
-                Debug.Log("2 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
+                //Debug.Log("2 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
             }
             else
             {
@@ -154,11 +154,11 @@ namespace Assets.Scripts
             }
 
             //maxSymbolsNumberForSwitch = 3;
-            Debug.Log("3 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
+            //Debug.Log("3 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
 
             int teamsNumbers = teamGameSymbols.Count;
             //Debug.Log(" teamsNumbers: " + teamsNumbers);
-            Debug.Log($" --------------------------------------- ");
+            //Debug.Log($" --------------------------------------- ");
 
             int[] indexesForSwitch;
             int numbersOfSymbolsToSwitch;
