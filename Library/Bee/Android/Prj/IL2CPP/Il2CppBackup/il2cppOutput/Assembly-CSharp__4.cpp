@@ -2433,8 +2433,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* GameConfigurationButtonsCommonButto
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* GameConfigurationButtonsCommonButtonsTagName_GetTagForTableWithNumbersByTagTableNumberGaps_mC7EC791C45887425F49B0DE7EA156DF9F586018F (const RuntimeMethod* method) ;
 // System.String Assets.Scripts.GameConfigurationButtonsCommonButtonsTagName::GetTagForButtonBackByTagButtonBackToConfiguration()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* GameConfigurationButtonsCommonButtonsTagName_GetTagForButtonBackByTagButtonBackToConfiguration_m6F0F6EC4B8B3BE410B70226C6F4E0DBE6C2002E1 (const RuntimeMethod* method) ;
-// System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.GameConfigurationButtonsCreate::GameConfigurationCreateButtons(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* GameConfigurationButtonsCreate_GameConfigurationCreateButtons_mF7A6CE7626F7AED95B2808CA3D213879CADC775C (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___1_prefabCubePlayButtonsDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayButtonsBackColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___3_prefabCubePlayButtonsNumberColour, bool ___4_isGame2D, bool ___5_isTeamGame, const RuntimeMethod* method) ;
+// System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.GameConfigurationButtonsCreate::GameConfigurationCreateButtons(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Boolean,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* GameConfigurationButtonsCreate_GameConfigurationCreateButtons_mCECF990A48540B6550BE9955890A756FD96556D2 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___1_prefabCubePlayButtonsDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayButtonsBackColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___3_prefabCubePlayButtonsNumberColour, bool ___4_isGame2D, bool ___5_isTeamGame, int32_t ___6_lenghtToCheckMax, const RuntimeMethod* method) ;
 // System.Int32 UnityEngine.Input::get_touchCount()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Input_get_touchCount_m057388BFC67A0F4CA53764B1022867ED81D01E39 (const RuntimeMethod* method) ;
 // UnityEngine.Touch[] UnityEngine.Input::get_touches()
@@ -20421,17 +20421,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameConfigurationBoardGame_Start_m157F84
 		L_21 = GameConfigurationButtonsCommonButtonsTagName_GetTagForButtonBackByTagButtonBackToConfiguration_m6F0F6EC4B8B3BE410B70226C6F4E0DBE6C2002E1(NULL);
 		__this->____tagConfigurationBoardGameButtonBackToConfiguration_42 = L_21;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____tagConfigurationBoardGameButtonBackToConfiguration_42), (void*)L_21);
-		// _buttonsAll = GameConfigurationButtonsCreate.GameConfigurationCreateButtons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, isTeamGame);
+		// _buttonsAll = GameConfigurationButtonsCreate.GameConfigurationCreateButtons(prefabCubePlayForTableNumber, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D, isTeamGame, _lenghtToCheckMax);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22 = __this->___prefabCubePlayForTableNumber_19;
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_23 = __this->___prefabCubePlayButtonsDefaultColour_21;
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_24 = __this->___prefabCubePlayButtonsBackColour_22;
 		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_25 = __this->___prefabCubePlayButtonsNumberColour_23;
 		bool L_26 = ((GameConfigurationBoardGame_tC96D3C87C8014D6EB9F1DB43345E66508409917A_StaticFields*)il2cpp_codegen_static_fields_for(GameConfigurationBoardGame_tC96D3C87C8014D6EB9F1DB43345E66508409917A_il2cpp_TypeInfo_var))->____isGame2D_48;
 		bool L_27 = ((GameConfigurationBoardGame_tC96D3C87C8014D6EB9F1DB43345E66508409917A_StaticFields*)il2cpp_codegen_static_fields_for(GameConfigurationBoardGame_tC96D3C87C8014D6EB9F1DB43345E66508409917A_il2cpp_TypeInfo_var))->___isTeamGame_17;
-		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_28;
-		L_28 = GameConfigurationButtonsCreate_GameConfigurationCreateButtons_mF7A6CE7626F7AED95B2808CA3D213879CADC775C(L_22, L_23, L_24, L_25, L_26, L_27, NULL);
-		__this->____buttonsAll_51 = L_28;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____buttonsAll_51), (void*)L_28);
+		int32_t L_28 = ((GameConfigurationBoardGame_tC96D3C87C8014D6EB9F1DB43345E66508409917A_StaticFields*)il2cpp_codegen_static_fields_for(GameConfigurationBoardGame_tC96D3C87C8014D6EB9F1DB43345E66508409917A_il2cpp_TypeInfo_var))->____lenghtToCheckMax_9;
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_29;
+		L_29 = GameConfigurationButtonsCreate_GameConfigurationCreateButtons_mCECF990A48540B6550BE9955890A756FD96556D2(L_22, L_23, L_24, L_25, L_26, L_27, L_28, NULL);
+		__this->____buttonsAll_51 = L_29;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____buttonsAll_51), (void*)L_29);
 		// }
 		return;
 	}

@@ -40,16 +40,20 @@ namespace Assets.Scripts
 
         public static void VerifyButtonsWithNumberForLenghtToCheckAndGaps()
         {
-            //int lowerNumberBetweenRowsNumberAndColumnsNumber = GameCommonMethodsSetUpButtonWithNumber.GetLowerNumberBetweenRowsNumberAndColumnsNumber();
-            //int currentLenghtToCheck = GetLengthToCheckNumber();
-            //int currentGapsNumber = GetGapsNumber();
-            //bool isCurrentLenghtToCheckBiggerThanRowsNumberAndColumnsNumber = VerifyIfCurrentNumberIsLowerThanRowsNumberOrColumnsNumber(lowerNumberBetweenRowsNumberAndColumnsNumber, currentLenghtToCheck);
-            //bool isCurrentGapsNumberBiggerThanRowsNumberAndColumnsNumber = VerifyIfCurrentNumberIsLowerThanRowsNumberOrColumnsNumber(lowerNumberBetweenRowsNumberAndColumnsNumber, currentGapsNumber);
-
             GameConfigurationButtonsWithNumbersForLenghtToCheck.VerifyAndSetUpLenghtToCheck();
             GameConfigurationButtonsWithNumbersForGaps.VerifyAndSetUpGapsNumber();
-
-
         }
+
+        //public static void VerifyButtonsWithNumberFordGaps(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, bool isTeamGame, int lenghtToCheckMax)
+        //{
+        //    int minGapsNumber = 3;
+
+        //    GameConfigurationButtonsWithNumbersForLenghtToCheck.VerifyAndSetUpLenghtToCheck();
+
+        //    if (lenghtToCheckMax > minGapsNumber)
+        //        GameConfigurationButtonsWithNumbersForGaps.VerifyAndSetUpGapsNumber();
+        //    else
+        //        GameConfigurationButtonsCreate.GameConfigurationCreateButtonsGap(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D, isTeamGame, lenghtToCheckMax);
+        //}
     }
 }

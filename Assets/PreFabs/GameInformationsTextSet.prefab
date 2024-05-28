@@ -67,9 +67,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\n\n\n\nMODE CELLPHONE\n\n6 = max players\n9 = max rows\n9 = max columns\n\nTEAM
-    GAME\n2 =  teams number\n3 = max players numbers \n       per team\n-----------------------------------\n\nMODE
+    GAME\n2 = teams number\n3 = max players numbers \n       per team\n-----------------------------------\n\nMODE
     TABLET\n\n12 = max players\n15 = max rows \n15 = max columns\n\nTEAM GAME\n6
-    =  max teams number\n6 = max players numbers \n       per team"
+    = max teams number\n6 = max players numbers \n       per team"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}

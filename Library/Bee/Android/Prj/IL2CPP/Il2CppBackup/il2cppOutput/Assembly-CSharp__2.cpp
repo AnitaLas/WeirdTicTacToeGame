@@ -7514,8 +7514,8 @@ IL_0026:
 		return L_10;
 	}
 }
-// System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.GameConfigurationButtonsCreate::GameConfigurationCreateButtons(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* GameConfigurationButtonsCreate_GameConfigurationCreateButtons_mF7A6CE7626F7AED95B2808CA3D213879CADC775C (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___1_prefabCubePlayButtonsDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayButtonsBackColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___3_prefabCubePlayButtonsNumberColour, bool ___4_isGame2D, bool ___5_isTeamGame, const RuntimeMethod* method) 
+// System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.GameConfigurationButtonsCreate::GameConfigurationCreateButtons(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Boolean,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* GameConfigurationButtonsCreate_GameConfigurationCreateButtons_mCECF990A48540B6550BE9955890A756FD96556D2 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___1_prefabCubePlayButtonsDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayButtonsBackColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___3_prefabCubePlayButtonsNumberColour, bool ___4_isGame2D, bool ___5_isTeamGame, int32_t ___6_lenghtToCheckMax, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -9374,6 +9374,64 @@ IL_0045:
 		// }
 		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_20 = V_4;
 		return L_20;
+	}
+}
+// System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.GameConfigurationButtonsCreate::GameConfigurationCreateButtonsGap(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Boolean,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* GameConfigurationButtonsCreate_GameConfigurationCreateButtonsGap_mA116907187079843E816D81872DEAA84B342A32D (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefabCubePlay, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___1_prefabCubePlayButtonsDefaultColour, MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* ___2_prefabCubePlayButtonsNumberColour, bool ___3_isGame2D, bool ___4_isTeamGame, int32_t ___5_lenghtToCheckMax, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_Insert_m8F5012CE8737C2B8F3FF11CDC6DC5B536D13AE1D_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_mF7D7BA69C0285B773890BDFEE83D33EBB6047A54_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* V_0 = NULL;
+	GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* V_1 = NULL;
+	GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* V_2 = NULL;
+	List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* V_3 = NULL;
+	{
+		// List<GameObject[,,]> buttons = new List<GameObject[,,]>();
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_0 = (List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85*)il2cpp_codegen_object_new(List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85_il2cpp_TypeInfo_var);
+		NullCheck(L_0);
+		List_1__ctor_mF7D7BA69C0285B773890BDFEE83D33EBB6047A54(L_0, List_1__ctor_mF7D7BA69C0285B773890BDFEE83D33EBB6047A54_RuntimeMethod_var);
+		V_0 = L_0;
+		// battonGapText = GameConfigurationCreateButtonGapText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = ___0_prefabCubePlay;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_2 = ___1_prefabCubePlayButtonsDefaultColour;
+		bool L_3 = ___3_isGame2D;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_4;
+		L_4 = GameConfigurationButtonsCreate_GameConfigurationCreateButtonGapText_mE69CA2DE5921AF2309135476FD9144B56F759F91(L_1, L_2, L_3, NULL);
+		V_1 = L_4;
+		// battonGapNumber = GameConfigurationCreateButtonGapNumber(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = ___0_prefabCubePlay;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_6 = ___2_prefabCubePlayButtonsNumberColour;
+		bool L_7 = ___3_isGame2D;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_8;
+		L_8 = GameConfigurationButtonsCreate_GameConfigurationCreateButtonGapNumber_m4BAE0DB37366E9A5FE7DADCADE0959938B52DB70(L_5, L_6, L_7, NULL);
+		V_2 = L_8;
+		// buttons.Insert(0, battonGapText);
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_9 = V_0;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_10 = V_1;
+		NullCheck(L_9);
+		List_1_Insert_m8F5012CE8737C2B8F3FF11CDC6DC5B536D13AE1D(L_9, 0, L_10, List_1_Insert_m8F5012CE8737C2B8F3FF11CDC6DC5B536D13AE1D_RuntimeMethod_var);
+		// buttons.Insert(1, battonGapNumber);
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_11 = V_0;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_12 = V_2;
+		NullCheck(L_11);
+		List_1_Insert_m8F5012CE8737C2B8F3FF11CDC6DC5B536D13AE1D(L_11, 1, L_12, List_1_Insert_m8F5012CE8737C2B8F3FF11CDC6DC5B536D13AE1D_RuntimeMethod_var);
+		// return buttons;
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_13 = V_0;
+		V_3 = L_13;
+		goto IL_002f;
+	}
+
+IL_002f:
+	{
+		// }
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_14 = V_3;
+		return L_14;
 	}
 }
 // System.Void Assets.Scripts.GameConfigurationButtonsCreate::.ctor()
@@ -15784,7 +15842,7 @@ IL_001a:
 	{
 		// minNumber = 2; // because -> GameConfigurationButtonsWithNumbersCommonMethods.ChangeDataForTableWithNumbers
 		V_0 = 2;
-		goto IL_0028;
+		goto IL_0026;
 	}
 
 IL_0024:
@@ -15793,15 +15851,15 @@ IL_0024:
 		V_0 = 0;
 	}
 
-IL_0028:
+IL_0026:
 	{
 		// return minNumber;
 		int32_t L_10 = V_0;
 		V_5 = L_10;
-		goto IL_002d;
+		goto IL_002b;
 	}
 
-IL_002d:
+IL_002b:
 	{
 		// }
 		int32_t L_11 = V_5;
@@ -16478,8 +16536,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21
 	String_t* V_4 = NULL;
 	GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* V_5 = NULL;
 	{
-		// int start = 3;
-		V_1 = 3;
+		// int start = 2;
+		V_1 = 2;
 		// int end = ScreenVerificationMethods.GetMaxPRowsOrColumnsNumberForConfiguration(isCellphoneMode);
 		bool L_0 = ___3_isCellphoneMode;
 		int32_t L_1;

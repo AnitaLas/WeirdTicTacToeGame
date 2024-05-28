@@ -49,7 +49,7 @@ namespace Assets
 
             //isCellphoneModeScene2 = ScreenVerificationMethods.IsCellphoneMode();
 
-            Debug.Log("2 team number -> isCellphoneMode: " + isCellphoneModeScene2);
+            //Debug.Log("2 team number -> isCellphoneMode: " + isCellphoneModeScene2);
             _teamNumbers = 2;
 
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();

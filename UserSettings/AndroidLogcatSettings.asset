@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "RZCW306CM4M",
+    "m_SelectedDeviceId": "R52W10E1F8M",
     "m_SelectedPackage": {
-        "deviceId": "RZCW306CM4M",
+        "deviceId": "R52W10E1F8M",
         "name": "com.Alan.WeirdTicTacToe",
-        "processId": 27635,
+        "processId": 976,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -162,6 +162,24 @@
             "deviceId": "R52W10E1F8M",
             "name": "com.android.settings",
             "processId": 18379,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 25042,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 32528,
+            "exited": false
+        },
+        {
+            "deviceId": "R52W10E1F8M",
+            "name": "com.Alan.WeirdTicTacToe",
+            "processId": 976,
             "exited": false
         },
         {
