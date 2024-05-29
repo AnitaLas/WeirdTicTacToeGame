@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.TextCore.Text;
@@ -197,6 +198,17 @@ namespace Assets.Scripts
                 symbols[i] = symbol;
             }
 
+
+            //Debug.Log(" ----------- GetFirstPlayersSymbolFromTeams --------------------");
+
+            //for (int i = 0; i < symbols.Length; i++)
+            //{
+            //    Debug.Log($">>> symbols: {symbols[i]}");
+            //}
+
+            //Debug.Log(" ----------- GetFirstPlayersSymbolFromTeams --------------------");
+
+
             return symbols;
 
         }
@@ -231,6 +243,7 @@ namespace Assets.Scripts
         public static List<string[]> CreateTeablesWithTheSameLenght(List<string[]> teamsSymbols)
         {
             int maxPlayerNumbersInTeam = GetBiggestPlayerNumbersInTeam(teamsSymbols);
+            //Debug.Log("maxPlayerNumbersInTeam: " + maxPlayerNumbersInTeam);
             int teamsNumbers = teamsSymbols.Count;
 
             string staticSymbol = "*";
@@ -259,6 +272,21 @@ namespace Assets.Scripts
                 newTeamsSymbols.Insert(i, newTable);
             }
 
+            //for (int i = 0; i < newTeamsSymbols.Count; i++)
+            //{
+            //    string[] teamSymbols = newTeamsSymbols[i];
+            //    int symbolsNumbers = teamSymbols.Length;
+            
+
+            //    for (int j = 0; j < symbolsNumbers; j++)
+            //    {
+            //        Debug.Log($"team {i} : " + teamSymbols[j]);
+            //    }
+            //    Debug.Log(" ---------------  ");
+            //}
+
+
+
             return newTeamsSymbols;
 
         }
@@ -285,27 +313,223 @@ namespace Assets.Scripts
                 else
                 {
                     newSymbols[i] = previousSymbols[i];
+                    Debug.Log($" ZZZZZZZZZ              newSymbols {i} : " + previousSymbols[i]);
 
                 }
             }
+
+            Debug.Log(" -------- GetSymbolsToCompare -------  ");
+
+            for (int j = 0; j < newSymbols.Length; j++)
+            {
+                Debug.Log($"newSymbols {j} : " + newSymbols[j]);
+            }
+
+            Debug.Log(" ---------------  ");
+
 
             return newSymbols;
         }
 
 
+        //public static string[] CreateTableWithTheSameQuantitiesForPlayersMoves_v1(List<string[]> teamsSymbols)
+        //{
+        //    int teamsNumbers = teamsSymbols.Count;
+        //    Debug.Log("teamsNumbers :" + teamsNumbers);
+
+        //    int[] playersNumberInTeams = GetPlayersNumbersForEachTeam(teamsSymbols);
+
+        //    //Debug.Log(" ----------- 1 CreateTableWithTheSameQuantitiesForPlayersMoves playersNumberInTeams --------------------");
+
+        //    //for (int i = 0; i < playersNumberInTeams.Length; i++)
+        //    //{
+        //    //    Debug.Log($">>> playersNumberInTeams: {playersNumberInTeams[i]}");
+        //    //}
+
+        //    //Debug.Log(" ----------- 1 CreateTableWithTheSameQuantitiesForPlayersMoves playersNumberInTeams --------------------");
+
+
+        //    List<string[]> symbols = CreateTeablesWithTheSameLenght(teamsSymbols);
+
+        //    bool isFisrtSymbolsAsSameAsLastOne = false;
+
+        //    int index = 1;
+        //    //int index = 0;
+
+        //    //int maxPlayersNumberInTeam = 4;
+            
+        //    string[] previousSymbols = GetFirstPlayersSymbolFromTeams(teamsSymbols);
+
+        //    string firstSymbols = GetSymbolsAsOneString(previousSymbols);
+
+        //    string playersSymbols = firstSymbols;
+
+        //    string finalListWithSymbols = firstSymbols;
+
+        //    Debug.Log("1 finalListWithSymbols: " + finalListWithSymbols);
+
+
+        //    while (isFisrtSymbolsAsSameAsLastOne == false)
+        //    {
+        //        //index++;
+        //        Debug.Log("1 IIIIII index: " + index);
+        //        string[] symbolsToCompare = GetSymbolsToCompare(symbols, previousSymbols, playersNumberInTeams, index);
+
+        //        string symbolsToCompareOneString = GetSymbolsAsOneString(symbolsToCompare);
+        //        Debug.Log("symbolsToCompareOneString: " + symbolsToCompareOneString);
+
+        //        isFisrtSymbolsAsSameAsLastOne = IsFisrtSymbolsAsTheSameAsLastOne(playersSymbols, symbolsToCompareOneString);
+
+        //        if (isFisrtSymbolsAsSameAsLastOne == false)
+        //        {
+        //            finalListWithSymbols = finalListWithSymbols + symbolsToCompareOneString;
+        //            Debug.Log("2 finalListWithSymbols: " + finalListWithSymbols);
+        //        }
+        //        Debug.Log("2 IIIIII index: " + index);
+        //        index++;
+        //        Debug.Log("3 IIIIII index: " + index);
+        //        if (index > teamsNumbers + 1)               
+        //        {
+        //            index = 0;
+        //        }
+                
+        //    }
+
+        //    Debug.Log("3 finalListWithSymbols: " + finalListWithSymbols);
+
+        //    int newSymbolLength = finalListWithSymbols.Length;
+
+        //    string[] finalSymbols = new string[newSymbolLength];
+
+        //    for (int i = 0; i < newSymbolLength; i++)
+        //    {
+        //        string character = finalListWithSymbols.Substring(i, 1);
+        //        finalSymbols[i] = character;
+        //    }
+
+        //    Debug.Log(" ----------- CreateTableWithTheSameQuantitiesForPlayersMoves --------------------");
+
+        //    for (int i = 0; i < finalSymbols.Length; i++)
+        //    {
+        //        Debug.Log($">>> finalSymbols: {finalSymbols[i]}");
+        //    }
+
+        //    Debug.Log(" ----------- CreateTableWithTheSameQuantitiesForPlayersMoves --------------------");
+
+        //    return finalSymbols;
+
+        //}
+        public static List<string[]> GetTeamsOrderByAscendingPlayerNumberInTeam(List<string[]> teamsSymbols)
+        {
+            List<string[]> teams = new List<string[]>();
+
+            int teamsNumber = teamsSymbols.Count;
+            int[] numbers = new int[teamsNumber];
+
+            for (int i = 0; i < teamsNumber; i++)
+            {
+
+                string[] team = teamsSymbols[i];
+                int playersNumber = team.Length;
+                numbers[i] = playersNumber;
+            }
+
+
+            var newOrder = numbers.OrderBy(x => x);
+            int index = 0;
+
+            foreach (int value in newOrder)
+            {
+                for (int a = 0; a < teamsNumber; a++)
+                {
+                    int number = numbers[a];
+
+                    if (number == value)
+                    {
+                        string[] teamSymbols = teamsSymbols[a];
+                        teams.Insert(index, teamSymbols);
+                    }
+
+                }
+
+
+            }
+
+
+
+
+            //int teamsNumber = teamsSymbols.Count;
+            //string numbers = "";
+
+            //for (int i = 0; i < teamsNumber; i++)
+            //{
+
+            //    string[] team = teamsSymbols[i];
+            //    int playersNumber = team.Length;
+            //    numbers = numbers + playersNumber;
+            //}
+
+            // ---
+            //string orderedNumbers = "";
+            //string numbers2 = numbers;
+            //int number = 0;
+            //for (int z = 0; z < teamsNumber; z++)
+            //{
+
+            //    string numberText = numbers2.Substring(0, 1);
+            //    int nextNumber = CommonMethods.ConvertStringToInt(numberText);
+
+            //    if (nextNumber > number)
+            //    {
+            //        orderedNumbers = orderedNumbers + numberText;
+            //        number = nextNumber;
+            //    }
+            //    else
+            //    {
+            //        orderedNumbers = numberText + orderedNumbers;
+            //        number = nextNumber;
+            //    }
+
+            //    numbers2.Remove(0,1);
+            //}
+
+
+
+
+
+            //int number = newOrder;
+
+            return teams;
+
+        }
+
         public static string[] CreateTableWithTheSameQuantitiesForPlayersMoves(List<string[]> teamsSymbols)
         {
             int teamsNumbers = teamsSymbols.Count;
+            Debug.Log("teamsNumbers :" + teamsNumbers);
 
             int[] playersNumberInTeams = GetPlayersNumbersForEachTeam(teamsSymbols);
+
+            //Debug.Log(" ----------- 1 CreateTableWithTheSameQuantitiesForPlayersMoves playersNumberInTeams --------------------");
+
+            //for (int i = 0; i < playersNumberInTeams.Length; i++)
+            //{
+            //    Debug.Log($">>> playersNumberInTeams: {playersNumberInTeams[i]}");
+            //}
+
+            //Debug.Log(" ----------- 1 CreateTableWithTheSameQuantitiesForPlayersMoves playersNumberInTeams --------------------");
+
+            List<string[]> teamsOrderByAscendingPlayerNumberInTeam = GetTeamsOrderByAscendingPlayerNumberInTeam(teamsSymbols);
 
             List<string[]> symbols = CreateTeablesWithTheSameLenght(teamsSymbols);
 
             bool isFisrtSymbolsAsSameAsLastOne = false;
 
-            int index = 1;
+            int indexForSymbols = 1;
+            //int index = 0;
 
-            
+            //int maxPlayersNumberInTeam = 4;
+
             string[] previousSymbols = GetFirstPlayersSymbolFromTeams(teamsSymbols);
 
             string firstSymbols = GetSymbolsAsOneString(previousSymbols);
@@ -314,27 +538,37 @@ namespace Assets.Scripts
 
             string finalListWithSymbols = firstSymbols;
 
+            Debug.Log("1 finalListWithSymbols: " + finalListWithSymbols);
+
+
             while (isFisrtSymbolsAsSameAsLastOne == false)
             {
-
-                string[] symbolsToCompare = GetSymbolsToCompare(symbols, previousSymbols, playersNumberInTeams, index);
+                //index++;
+                Debug.Log("1 IIIIII indexForSymbols: " + indexForSymbols);
+                string[] symbolsToCompare = GetSymbolsToCompare(symbols, previousSymbols, playersNumberInTeams, indexForSymbols);
 
                 string symbolsToCompareOneString = GetSymbolsAsOneString(symbolsToCompare);
+                Debug.Log("symbolsToCompareOneString: " + symbolsToCompareOneString);
 
                 isFisrtSymbolsAsSameAsLastOne = IsFisrtSymbolsAsTheSameAsLastOne(playersSymbols, symbolsToCompareOneString);
 
                 if (isFisrtSymbolsAsSameAsLastOne == false)
                 {
                     finalListWithSymbols = finalListWithSymbols + symbolsToCompareOneString;
+                    Debug.Log("2 finalListWithSymbols: " + finalListWithSymbols);
                 }
+                Debug.Log("2 IIIIII indexForSymbols: " + indexForSymbols);
+                indexForSymbols++;
+                Debug.Log("3 IIIIII indexForSymbols: " + indexForSymbols);
 
-                index++;
-
-                if (index > teamsNumbers)
+                if (indexForSymbols > teamsNumbers + 1)
                 {
-                    index = 0;
+                    indexForSymbols = 0;
                 }
+
             }
+
+            Debug.Log("3 finalListWithSymbols: " + finalListWithSymbols);
 
             int newSymbolLength = finalListWithSymbols.Length;
 
@@ -345,6 +579,15 @@ namespace Assets.Scripts
                 string character = finalListWithSymbols.Substring(i, 1);
                 finalSymbols[i] = character;
             }
+
+            //Debug.Log(" ----------- CreateTableWithTheSameQuantitiesForPlayersMoves --------------------");
+
+            //for (int i = 0; i < finalSymbols.Length; i++)
+            //{
+            //    Debug.Log($">>> finalSymbols: {finalSymbols[i]}");
+            //}
+
+            //Debug.Log(" ----------- CreateTableWithTheSameQuantitiesForPlayersMoves --------------------");
 
             return finalSymbols;
 

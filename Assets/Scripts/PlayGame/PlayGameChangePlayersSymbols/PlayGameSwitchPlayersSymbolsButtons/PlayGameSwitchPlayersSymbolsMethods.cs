@@ -71,6 +71,8 @@ namespace Assets.Scripts
             return numbers;
         }
 
+
+        // TO FIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public static int[] GetIndexesForSwitch(int playersSymbols, int maxSymbolsNumberForChange)
         {
             //int maxSymbols = maxSymbolsNumberForChange + 1;
@@ -95,8 +97,8 @@ namespace Assets.Scripts
             {
                 //Debug.Log("1 numbers: " + numbers);
                 //Debug.Log("i: " + i);
-                Debug.Log("minIndexNumber: " + minIndexNumber);
-                Debug.Log("maxIndexNumber: " + maxIndexNumber);
+                //Debug.Log("minIndexNumber: " + minIndexNumber);
+                //Debug.Log("maxIndexNumber: " + maxIndexNumber);
                 int randomIndexToChange = CommonMethods.ChooseRandomNumber(minIndexNumber, maxIndexNumber);
 
                 //Debug.Log("randomIndexToChange: " + randomIndexToChange);
@@ -139,7 +141,7 @@ namespace Assets.Scripts
             // ?????????????????????????????????????????????????????
             // ADD change for random, works = 2
             int maxSymbolsNumberForSwitch = PlayGameChangePlayersSymbolsMethods.GetMinPlayersNumberForTeam(teamGameSymbols);
-           // Debug.Log("1 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
+            //Debug.Log("1 maxSymbolsNumberForSwitch: " + maxSymbolsNumberForSwitch);
 
             int minSymbolsNumberForSwitch = 1;
 

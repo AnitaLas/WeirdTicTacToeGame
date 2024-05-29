@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\playgame\\playgameteam\\playgameteamsetupplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playgame\\playgameteam\\playgameteamsetupplayerssymbols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\playgame\\playgamechangeplayerssymbols\\playgamechangeplayerssymbolsmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playgame\\playgamechangeplayerssymbols\\playgamechangeplayerssymbolsmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\playgame\\playgamechangeplayerssymbols\\playgameswitchplayerssymbolsbuttons\\playgameswitchplayerssymbolsmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playgame\\playgamechangeplayerssymbols\\playgameswitchplayerssymbolsbuttons\\playgameswitchplayerssymbolsmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\commonmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\commonmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\gameconfigurationteamnumbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameconfigurationteamnumbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\playgame\\playgamemenuandtimer\\playgamemenuandtimerbuttonsactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playgame\\playgamemenuandtimer\\playgamemenuandtimerbuttonsactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\assets\\scripts\\playgame\\playgamechangecubeplay\\playgamechangeplayersymbol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playgame\\playgamechangecubeplay\\playgamechangeplayersymbol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|c:\\projects\\game_weirdtictactoe\\weirdtictactoegame\\assets\\scripts\\playgame\\playgamechangeplayerssymbols\\playgameswitchplayerssymbolsbuttons\\playgameswitchplayerssymbolsmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E2E0F28-9AC6-1A69-22DA-DCB18271ACBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playgame\\playgamechangeplayerssymbols\\playgameswitchplayerssymbolsbuttons\\playgameswitchplayerssymbolsmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,38 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\Game.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\Game.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game.cs",
-              "ViewState": "AQIAALkDAAAAAAAAAAAnwNIDAAAeAAAA",
+              "ViewState": "AQIAAPwAAAAAAAAAAAAnwAsBAABxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T09:34:41.118Z",
               "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CommonMethods.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\CommonMethods.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CommonMethods.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\CommonMethods.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CommonMethods.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAnwHYAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T19:14:14.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -79,59 +54,55 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameChangePlayersSymbolsMethods.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameChangePlayersSymbolsMethods.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameChangePlayersSymbolsMethods.cs",
-              "ViewState": "AQIAACsBAAAAAAAAAAAwwDwBAAAoAAAA",
+              "ViewState": "AQIAANkBAAAAAAAAAAAwwPkBAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-28T14:07:09.033Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GameConfigurationTeamNumbers.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationTeamNumbers.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameConfigurationTeamNumbers.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\GameConfigurationTeamNumbers.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameConfigurationTeamNumbers.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAewDMAAAAOAAAA",
+              "DocumentIndex": 0,
+              "Title": "PlayGameTeamSetUpPlayersSymbols.cs",
+              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameTeam\\PlayGameTeamSetUpPlayersSymbols.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayGame\\PlayGameTeam\\PlayGameTeamSetUpPlayersSymbols.cs",
+              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameTeam\\PlayGameTeamSetUpPlayersSymbols.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayGame\\PlayGameTeam\\PlayGameTeamSetUpPlayersSymbols.cs",
+              "ViewState": "AQIAAKQBAAAAAAAAAAAewLcBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T11:58:45.888Z"
+              "WhenOpened": "2024-05-29T14:49:06.024Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "PlayGameSwitchPlayersSymbolsMethods.cs",
               "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameSwitchPlayersSymbolsButtons\\PlayGameSwitchPlayersSymbolsMethods.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameSwitchPlayersSymbolsButtons\\PlayGameSwitchPlayersSymbolsMethods.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameSwitchPlayersSymbolsButtons\\PlayGameSwitchPlayersSymbolsMethods.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayGame\\PlayGameChangePlayersSymbols\\PlayGameSwitchPlayersSymbolsButtons\\PlayGameSwitchPlayersSymbolsMethods.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAIAwwF8AAAA1AAAA",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAewFAAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-28T11:56:58.856Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PlayGameMenuAndTimerButtonsActions.cs",
-              "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameMenuAndTimer\\PlayGameMenuAndTimerButtonsActions.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayGame\\PlayGameMenuAndTimer\\PlayGameMenuAndTimerButtonsActions.cs",
-              "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameMenuAndTimer\\PlayGameMenuAndTimerButtonsActions.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayGame\\PlayGameMenuAndTimer\\PlayGameMenuAndTimerButtonsActions.cs",
-              "ViewState": "AQIAAKYAAAAAAAAAAAAnwLcAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T11:24:43.457Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "PlayGameChangePlayerSymbol.cs",
               "DocumentMoniker": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameChangeCubePlay\\PlayGameChangePlayerSymbol.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayGame\\PlayGameChangeCubePlay\\PlayGameChangePlayerSymbol.cs",
               "ToolTip": "C:\\PROJECTS\\Game_WeirdTicTacToe\\WeirdTicTacToeGame\\Assets\\Scripts\\PlayGame\\PlayGameChangeCubePlay\\PlayGameChangePlayerSymbol.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayGame\\PlayGameChangeCubePlay\\PlayGameChangePlayerSymbol.cs",
-              "ViewState": "AQIAAKAAAAAAAAAAAAAewLEAAAAJAAAA",
+              "ViewState": "AQIAAM8AAAAAAAAAAAAnwLEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T08:57:37.383Z"
+              "WhenOpened": "2024-05-28T08:57:37.383Z",
+              "EditorCaption": ""
             }
           ]
         }
