@@ -140,8 +140,8 @@ internal class Game : MonoBehaviour
     private float[] _timeForTimers;
     //private float _timeForHideDefault = 3f;
     //private float _timeForHidePlayGameElementsDefault = 3f;
-    private float _timeForHidePlayGameElementsDefault = 5f;
-    //private float _timeForHidePlayGameElementsDefault = 15f;
+    //private float _timeForHidePlayGameElementsDefault = 5f;
+    private float _timeForHidePlayGameElementsDefault = 20f;
     private float _timeForUnhidePlayGameElements;
     private float _timeForHide;
     private bool _isTimeToHidePlayGameElements;
@@ -260,13 +260,23 @@ internal class Game : MonoBehaviour
         {
             _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
 
-
+            Debug.Log("isSameQuantityForMovePerTeam: " + isSameQuantityForMovePerTeam);
             // mode 1
 
             if (isSameQuantityForMovePerTeam == true)
             {
                 _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
                 _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
+
+                //string textWithDoubleSymbols = "GAME SCENE:  ";
+                //for (int i = 0; i < _playersSymbols.Length; i++)
+                //{
+                //    string symbol = _playersSymbols[i];
+                //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
+
+                //}
+
+                //Debug.Log("GAME SCENE textWithDoubleSymbols: " + textWithDoubleSymbols);
 
                 //_playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
                 //_playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
@@ -935,12 +945,31 @@ internal class Game : MonoBehaviour
                             else
                                 _timeForHide = _timeForTimers[1];
                             //Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
-                            _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsMethods.GetNewDataForPlayersSymbols(_playersSymbols, _gameChangeTimeConfiguration);
+
+
+                            //Debug.Log(" ----------- PLAYER SYMBOLS --------------------");
+
+                            //for (int i = 0; i < _playersSymbols.Length; i++)
+                            //{
+                            //    Debug.Log($"_playersSymbols: {_playersSymbols[i]}");
+                            //}
+
+                            //Debug.Log(" ----------- PLAYER SYMBOLS --------------------");
+
+                            _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsMethods.GetNewDataForPlayersSymbols(_playersSymbols, _teamGameSymbols, _gameChangeTimeConfiguration, isSameQuantityForMovePerTeam, isTeamGame);
 
                             _oldSymbolsForChange = _newDataForPlayersSymbols[0];
                             _newSymbolsForChange = _newDataForPlayersSymbols[1];
                             _newPlayersSymbols = _newDataForPlayersSymbols[2];
-                            
+
+                            //Debug.Log(" ----------- OLD/ NEW--------------------"); 
+
+                            //for (int i = 0; i < _oldSymbolsForChange.Length; i++)
+                            //{
+                            //    Debug.Log($"old symbol: {_oldSymbolsForChange[i]}, new Symbol {_newSymbolsForChange[i]}");
+                            //}
+
+                            //Debug.Log(" ----------- OLD/ NEW--------------------");
 
                             if (isTeamGame == true)
                             {
@@ -1004,7 +1033,7 @@ internal class Game : MonoBehaviour
 
                             if (_isDoubleRandomChange == true)
                                 _switchChange = PlayGameChangePlayersSymbolsMethods.SetUpNewSwitchChange(_switchChange);
-                            Debug.Log("2 == 1 - _switchChange: " + _switchChange);
+                            //Debug.Log("2 == 1 - _switchChange: " + _switchChange);
                         }
 
                         //if (_isDoubleRandomChange == true)
