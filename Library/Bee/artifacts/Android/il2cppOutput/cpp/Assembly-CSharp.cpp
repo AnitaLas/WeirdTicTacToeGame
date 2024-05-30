@@ -662,6 +662,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralD579F97F4A33C344330AED1285CC5B545618BC19
 IL2CPP_EXTERN_C String_t* _stringLiteralD99C319B457682A09D028AF022D0B2EE6B4D48A6;
 IL2CPP_EXTERN_C String_t* _stringLiteralDECFB8F380101725B06EAE2D3F983211A277171C;
 IL2CPP_EXTERN_C String_t* _stringLiteralE2138FA8D137D1C6C81747FE1638815DDE9177B0;
+IL2CPP_EXTERN_C String_t* _stringLiteralE89BB87399B89D62F2F81FCE7A3FF136DD6B22F0;
 IL2CPP_EXTERN_C String_t* _stringLiteralEE3657997C5E6EC82CDE374326A95906F03A3315;
 IL2CPP_EXTERN_C String_t* _stringLiteralEF516EC7240CA160FD729299C926B5EDB246658A;
 IL2CPP_EXTERN_C String_t* _stringLiteralF1B6AAF37DDF842141E903D071B58A3BDF13A5C6;
@@ -7414,6 +7415,12 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t GameConfigurationBoardGame_get_ConfigurationBoardGameNumberOfPlayers_mEA698999D4C32260A01AFB995C4901B16570DCF5_inline (const RuntimeMethod* method) ;
 // System.Int32 Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetPlayersNumber(System.Collections.Generic.List`1<System.String[]>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PlayGameTeamSetUpPlayersSymbols_GetPlayersNumber_mC486A361237022749DE6CD01A2E433D4C3D30D34 (List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* ___0_teamsSymbols, const RuntimeMethod* method) ;
+// System.String System.Boolean::ToString()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Boolean_ToString_m6646C8026B1DF381A1EE8CD13549175E9703CC63 (bool* __this, const RuntimeMethod* method) ;
+// System.String System.String::Concat(System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m9E3155FB84015C823606188F53B47CB44C444991 (String_t* ___0_str0, String_t* ___1_str1, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Debug::Log(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
 // System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithTheSameQuantitiesForPlayersMoves(System.Collections.Generic.List`1<System.String[]>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* PlayGameTeamSetUpPlayersSymbols_CreateTableWithTheSameQuantitiesForPlayersMoves_m96B48DBD5FF1BFCFD95FE974E97AA94670577F1C (List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* ___0_teamsSymbols, const RuntimeMethod* method) ;
 // System.Int32 Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetPlayersNumber(System.String[])
@@ -7602,8 +7609,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameTimerCommonMethods_CountdownSeco
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865 (const RuntimeMethod* method) ;
 // System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::ShowTimerForChangePlayersSymbols()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameMenuAndTimerButtonsActions_ShowTimerForChangePlayersSymbols_m91FD4B90AD9791DA2B11C45289F3F885D50CE865 (const RuntimeMethod* method) ;
-// System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameChangePlayersSymbolsMethods::GetNewDataForPlayersSymbols(System.String[],System.Collections.Generic.List`1<System.Single>)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* PlayGameChangePlayersSymbolsMethods_GetNewDataForPlayersSymbols_m7F5B63A2068394094BE748072E01FD4A4A39E0C4 (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_playersSymbols, List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* ___1_gameChangeTimeConfiguration, const RuntimeMethod* method) ;
+// System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameChangePlayersSymbolsMethods::GetNewDataForPlayersSymbols(System.String[],System.Collections.Generic.List`1<System.String[]>,System.Collections.Generic.List`1<System.Single>,System.Boolean,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* PlayGameChangePlayersSymbolsMethods_GetNewDataForPlayersSymbols_m16F6080B3C8FD8729B934B89A34640FF34FC96EF (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_playersSymbols, List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* ___1_teamGameSymbols, List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* ___2_gameChangeTimeConfiguration, bool ___3_isSameQuantityForMovePerTeam, bool ___4_isTeamGame, const RuntimeMethod* method) ;
 // T System.Collections.Generic.List`1<System.String[]>::get_Item(System.Int32)
 inline StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9 (List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* __this, int32_t ___0_index, const RuntimeMethod* method)
 {
@@ -7621,6 +7628,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t2A4E873ED3471F389629F9EC957C1A725F891
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* PlayGameChangePlayersSymbolsMethods_SetUpNewPlayersSymbolsMove_m4E0E50D45714F2B9962CFDF347592870D384B722 (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_playerSymbolMove, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___1_oldSymbolsForChande, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___2_newSymbolsForChande, const RuntimeMethod* method) ;
 // System.String[,] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewGameBoardVerification2D(System.String[,],System.String[],System.String[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* PlayGameChangePlayersSymbolsMethods_SetUpNewGameBoardVerification2D_m3D167645A373FEAAE3B7D2C60865DF6388E68436 (StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* ___0_gameBoardVerification2D, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___1_oldSymbolsForChande, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___2_newSymbolsForChande, const RuntimeMethod* method) ;
+// System.Int32 Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewSwitchChange(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PlayGameChangePlayersSymbolsMethods_SetUpNewSwitchChange_m26BC7A6825841845A648EAF8649E42C6A9C2BC16 (int32_t ___0_currentNumberForSwitchChange, const RuntimeMethod* method) ;
 // System.Collections.ArrayList Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetPlayersSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* PlayGameSwitchPlayersSymbolsMethods_GetPlayersSymbolsForSwitch_m088663BCB7EE22922A998EF4005026F1B324169F (List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* ___0_teamGameSymbols, const RuntimeMethod* method) ;
 // System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpSwitchedPlayersSymbolsForGameBoard(UnityEngine.GameObject[,,],System.Collections.ArrayList)
@@ -7637,8 +7646,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* PlayGameSwitchPlayersSymbolsMethods_SetUpNewPlayersSymbolsMove_mEF60267B326F73E0746D80BA8BF9640DF39073BD (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_playerSymbolMove, ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ___1_newDataForPlayersSymbolsSwitch, const RuntimeMethod* method) ;
 // System.String[,] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpNewGameBoardVerification2D(System.String[,],System.Collections.ArrayList)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* PlayGameSwitchPlayersSymbolsMethods_SetUpNewGameBoardVerification2D_m8C1B1255A9F7D8E543BF4BBAF19F66C227CB91CB (StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* ___0_gameBoardVerification2D, ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* ___1_newDataForPlayersSymbolsSwitch, const RuntimeMethod* method) ;
-// System.Int32 Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewSwitchChange(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PlayGameChangePlayersSymbolsMethods_SetUpNewSwitchChange_m26BC7A6825841845A648EAF8649E42C6A9C2BC16 (int32_t ___0_currentNumberForSwitchChange, const RuntimeMethod* method) ;
 // System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::ShowTimerFoGameBoard()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayGameMenuAndTimerButtonsActions_ShowTimerFoGameBoard_mDBA122C13E71039A2F679ADC51E67AA908C38994 (const RuntimeMethod* method) ;
 // System.Void System.Collections.ArrayList::.ctor()
@@ -7713,12 +7720,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Material_SetMatrix_m1F4E20583C898A1C1DBA
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* __this, const RuntimeMethod* method) ;
 // System.String System.Char::ToString()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C (Il2CppChar* __this, const RuntimeMethod* method) ;
-// System.String System.String::Concat(System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m9E3155FB84015C823606188F53B47CB44C444991 (String_t* ___0_str0, String_t* ___1_str1, const RuntimeMethod* method) ;
 // System.Void TMPro.TMP_InputValidator::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_InputValidator__ctor_mD15E0AFA50E8CA10B2849A66A5B96D50B7EA66F3 (TMP_InputValidator_t3429AF61284AE19180C3FB81C0C7D2F90165EA98* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Debug::Log(System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
 // System.Int32 System.String::get_Length()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline (String_t* __this, const RuntimeMethod* method) ;
 // UnityEngine.GameObject UnityEngine.Component::get_gameObject()
@@ -8320,6 +8323,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_Start_m81FFBF966FD86236D5383C0295E7
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameConfigurationBoardGame_tC96D3C87C8014D6EB9F1DB43345E66508409917A_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameConfigurationKindOfGame_t7D8EAA0329A6F5BE3E756085CF97F610339CA331_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0_il2cpp_TypeInfo_var);
@@ -8328,6 +8332,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_Start_m81FFBF966FD86236D5383C0295E7
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_mC29D3D824786832A31096310B3B3016B8B42B802_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE89BB87399B89D62F2F81FCE7A3FF136DD6B22F0);
 		s_Il2CppMethodInitialized = true;
 	}
 	bool V_0 = false;
@@ -8515,7 +8520,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_Start_m81FFBF966FD86236D5383C0295E7
 		// _playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
 		int32_t L_41 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____configurationBoardGameNumberOfPlayers_15;
 		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____playersNumberGivenForConfiguration_25 = L_41;
-		goto IL_0216;
+		goto IL_0230;
 	}
 
 IL_01b7:
@@ -8526,143 +8531,150 @@ IL_01b7:
 		int32_t L_43;
 		L_43 = PlayGameTeamSetUpPlayersSymbols_GetPlayersNumber_mC486A361237022749DE6CD01A2E433D4C3D30D34(L_42, NULL);
 		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____playersNumberGivenForConfiguration_25 = L_43;
+		// Debug.Log("isSameQuantityForMovePerTeam: " + isSameQuantityForMovePerTeam);
+		String_t* L_44;
+		L_44 = Boolean_ToString_m6646C8026B1DF381A1EE8CD13549175E9703CC63((&((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->___isSameQuantityForMovePerTeam_58), NULL);
+		String_t* L_45;
+		L_45 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralE89BB87399B89D62F2F81FCE7A3FF136DD6B22F0, L_44, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_45, NULL);
 		// if (isSameQuantityForMovePerTeam == true)
-		bool L_44 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->___isSameQuantityForMovePerTeam_58;
-		V_1 = L_44;
-		bool L_45 = V_1;
-		if (!L_45)
+		bool L_46 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->___isSameQuantityForMovePerTeam_58;
+		V_1 = L_46;
+		bool L_47 = V_1;
+		if (!L_47)
 		{
-			goto IL_01f4;
+			goto IL_020e;
 		}
 	}
 	{
 		// _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_46 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_47;
-		L_47 = PlayGameTeamSetUpPlayersSymbols_CreateTableWithTheSameQuantitiesForPlayersMoves_m96B48DBD5FF1BFCFD95FE974E97AA94670577F1C(L_46, NULL);
-		__this->____playersSymbols_60 = L_47;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____playersSymbols_60), (void*)L_47);
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_48 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_49;
+		L_49 = PlayGameTeamSetUpPlayersSymbols_CreateTableWithTheSameQuantitiesForPlayersMoves_m96B48DBD5FF1BFCFD95FE974E97AA94670577F1C(L_48, NULL);
+		__this->____playersSymbols_60 = L_49;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____playersSymbols_60), (void*)L_49);
 		// _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_48 = __this->____playersSymbols_60;
-		int32_t L_49;
-		L_49 = PlayGameTeamSetUpPlayersSymbols_GetPlayersNumber_m3369A180F08419A95D815417BD4F86CCED72B8FC(L_48, NULL);
-		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____playersNumberGivenForConfiguration_25 = L_49;
-		goto IL_0215;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_50 = __this->____playersSymbols_60;
+		int32_t L_51;
+		L_51 = PlayGameTeamSetUpPlayersSymbols_GetPlayersNumber_m3369A180F08419A95D815417BD4F86CCED72B8FC(L_50, NULL);
+		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____playersNumberGivenForConfiguration_25 = L_51;
+		goto IL_022f;
 	}
 
-IL_01f4:
+IL_020e:
 	{
 		// _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_50 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
-		int32_t L_51;
-		L_51 = PlayGameTeamSetUpPlayersSymbols_GetPlayersNumber_mC486A361237022749DE6CD01A2E433D4C3D30D34(L_50, NULL);
-		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____playersNumberGivenForConfiguration_25 = L_51;
-		// _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
 		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_52 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_53;
-		L_53 = PlayGameTeamSetUpPlayersSymbols_CreateTableWithDifferentQuantitiesForPlayersMoves_m4C91F0A67C29E3188200B5069CD823EF30E0E04F(L_52, NULL);
-		__this->____playersSymbols_60 = L_53;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____playersSymbols_60), (void*)L_53);
+		int32_t L_53;
+		L_53 = PlayGameTeamSetUpPlayersSymbols_GetPlayersNumber_mC486A361237022749DE6CD01A2E433D4C3D30D34(L_52, NULL);
+		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____playersNumberGivenForConfiguration_25 = L_53;
+		// _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_54 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_55;
+		L_55 = PlayGameTeamSetUpPlayersSymbols_CreateTableWithDifferentQuantitiesForPlayersMoves_m4C91F0A67C29E3188200B5069CD823EF30E0E04F(L_54, NULL);
+		__this->____playersSymbols_60 = L_55;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____playersSymbols_60), (void*)L_55);
 	}
 
-IL_0215:
+IL_022f:
 	{
 	}
 
-IL_0216:
+IL_0230:
 	{
 		// _gameBoardVerification2D = GameConfigurationButtonsCommonMethods.CreateEmptyTable2D(_numberOfRows, _numberOfColumns);
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		int32_t L_54 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
-		int32_t L_55 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfColumns_27;
-		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_56;
-		L_56 = GameConfigurationButtonsCommonMethods_CreateEmptyTable2D_m3F12F3149E9184FF97AC941C23A87D8CA1B9F5B5(L_54, L_55, NULL);
-		__this->____gameBoardVerification2D_66 = L_56;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameBoardVerification2D_66), (void*)L_56);
+		int32_t L_56 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
+		int32_t L_57 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfColumns_27;
+		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_58;
+		L_58 = GameConfigurationButtonsCommonMethods_CreateEmptyTable2D_m3F12F3149E9184FF97AC941C23A87D8CA1B9F5B5(L_56, L_57, NULL);
+		__this->____gameBoardVerification2D_66 = L_58;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameBoardVerification2D_66), (void*)L_58);
 		// PlayGameChangePlayerSymbol.SetUpPlayerSymbolForMoveAtStart(_playersSymbols);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_57 = __this->____playersSymbols_60;
-		PlayGameChangePlayerSymbol_SetUpPlayerSymbolForMoveAtStart_m120E1E4E7B1AAAC53EFB0A269E18706883470153(L_57, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_59 = __this->____playersSymbols_60;
+		PlayGameChangePlayerSymbol_SetUpPlayerSymbolForMoveAtStart_m120E1E4E7B1AAAC53EFB0A269E18706883470153(L_59, NULL);
 		// _playerSymbolMove = PlayGameChangePlayerSymbol.CreateTableWithPlayersSymbolsMove(_playersSymbols);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_58 = __this->____playersSymbols_60;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_59;
-		L_59 = PlayGameChangePlayerSymbol_CreateTableWithPlayersSymbolsMove_mFE30EC520513934B681F808EB2D7DDD0C4D3CC33(L_58, NULL);
-		__this->____playerSymbolMove_71 = L_59;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____playerSymbolMove_71), (void*)L_59);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_60 = __this->____playersSymbols_60;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_61;
+		L_61 = PlayGameChangePlayerSymbol_CreateTableWithPlayersSymbolsMove_mFE30EC520513934B681F808EB2D7DDD0C4D3CC33(L_60, NULL);
+		__this->____playerSymbolMove_71 = L_61;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____playerSymbolMove_71), (void*)L_61);
 		// _currentPlayer = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_60;
-		L_60 = GameCommonMethodsMain_CreateTableWithGivenLengthAndGivenValue_m627933B3353339004AB8D93A064A2F38CE9A785C(1, 0, NULL);
-		__this->____currentPlayer_61 = L_60;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____currentPlayer_61), (void*)L_60);
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_62;
+		L_62 = GameCommonMethodsMain_CreateTableWithGivenLengthAndGivenValue_m627933B3353339004AB8D93A064A2F38CE9A785C(1, 0, NULL);
+		__this->____currentPlayer_61 = L_62;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____currentPlayer_61), (void*)L_62);
 		// _currentCountedTagCubePlayTaken = GameCommonMethodsMain.CreateTableWithGivenLengthAndGivenValue(1, 0);
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_61;
-		L_61 = GameCommonMethodsMain_CreateTableWithGivenLengthAndGivenValue_m627933B3353339004AB8D93A064A2F38CE9A785C(1, 0, NULL);
-		__this->____currentCountedTagCubePlayTaken_62 = L_61;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____currentCountedTagCubePlayTaken_62), (void*)L_61);
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_63;
+		L_63 = GameCommonMethodsMain_CreateTableWithGivenLengthAndGivenValue_m627933B3353339004AB8D93A064A2F38CE9A785C(1, 0, NULL);
+		__this->____currentCountedTagCubePlayTaken_62 = L_63;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____currentCountedTagCubePlayTaken_62), (void*)L_63);
 		// _dataForBoardGame = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode, _numberOfGaps);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_62 = __this->___prefabCubePlay_4;
-		int32_t L_63 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfDepths_35;
-		int32_t L_64 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
-		int32_t L_65 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfColumns_27;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_66 = __this->___prefabCubePlayDefaultColour_8;
-		bool L_67 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
-		bool L_68 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isCellphoneMode_28;
-		int32_t L_69 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfGaps_29;
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_70;
-		L_70 = CreateGameBoard_CreateBoardGame_m951421B01D803D50ED6A78ADC649B80A4EC191D5(L_62, L_63, L_64, L_65, L_66, L_67, L_68, L_69, NULL);
-		__this->____dataForBoardGame_91 = L_70;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____dataForBoardGame_91), (void*)L_70);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_64 = __this->___prefabCubePlay_4;
+		int32_t L_65 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfDepths_35;
+		int32_t L_66 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
+		int32_t L_67 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfColumns_27;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_68 = __this->___prefabCubePlayDefaultColour_8;
+		bool L_69 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
+		bool L_70 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isCellphoneMode_28;
+		int32_t L_71 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfGaps_29;
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_72;
+		L_72 = CreateGameBoard_CreateBoardGame_m951421B01D803D50ED6A78ADC649B80A4EC191D5(L_64, L_65, L_66, L_67, L_68, L_69, L_70, L_71, NULL);
+		__this->____dataForBoardGame_91 = L_72;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____dataForBoardGame_91), (void*)L_72);
 		// _gameBoard = (GameObject[,,])_dataForBoardGame[0];
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_71 = __this->____dataForBoardGame_91;
-		NullCheck(L_71);
-		RuntimeObject* L_72;
-		L_72 = VirtualFuncInvoker1< RuntimeObject*, int32_t >::Invoke(25 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_71, 0);
-		__this->____gameBoard_65 = ((GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0*)Castclass((RuntimeObject*)L_72, GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0_il2cpp_TypeInfo_var));
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameBoard_65), (void*)((GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0*)Castclass((RuntimeObject*)L_72, GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0_il2cpp_TypeInfo_var)));
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_73 = __this->____dataForBoardGame_91;
+		NullCheck(L_73);
+		RuntimeObject* L_74;
+		L_74 = VirtualFuncInvoker1< RuntimeObject*, int32_t >::Invoke(25 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_73, 0);
+		__this->____gameBoard_65 = ((GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0*)Castclass((RuntimeObject*)L_74, GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0_il2cpp_TypeInfo_var));
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameBoard_65), (void*)((GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0*)Castclass((RuntimeObject*)L_74, GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0_il2cpp_TypeInfo_var)));
 		// PlayGameHelpButtonsCreate.CreateAtStartHelpButtons(prefabHelpButtons, _numberOfRows, _numberOfColumns, _isCellphoneMode);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_73 = __this->___prefabHelpButtons_7;
-		int32_t L_74 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
-		int32_t L_75 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfColumns_27;
-		bool L_76 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isCellphoneMode_28;
-		PlayGameHelpButtonsCreate_CreateAtStartHelpButtons_m2D2E5350061F0567B406FF3C4B9517363695E91C(L_73, L_74, L_75, L_76, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_75 = __this->___prefabHelpButtons_7;
+		int32_t L_76 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
+		int32_t L_77 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfColumns_27;
+		bool L_78 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isCellphoneMode_28;
+		PlayGameHelpButtonsCreate_CreateAtStartHelpButtons_m2D2E5350061F0567B406FF3C4B9517363695E91C(L_75, L_76, L_77, L_78, NULL);
 		// if (_isCellphoneMode == true)
-		bool L_77 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isCellphoneMode_28;
-		V_2 = L_77;
-		bool L_78 = V_2;
-		if (!L_78)
+		bool L_79 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isCellphoneMode_28;
+		V_2 = L_79;
+		bool L_80 = V_2;
+		if (!L_80)
 		{
-			goto IL_03b1;
+			goto IL_03cb;
 		}
 	}
 	{
 		// if (_numberOfColumns > 5 || _numberOfRows > 5)
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		int32_t L_79 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfColumns_27;
-		if ((((int32_t)L_79) > ((int32_t)5)))
+		int32_t L_81 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfColumns_27;
+		if ((((int32_t)L_81) > ((int32_t)5)))
 		{
-			goto IL_02e8;
+			goto IL_0302;
 		}
 	}
 	{
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		int32_t L_80 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
-		G_B10_0 = ((((int32_t)L_80) > ((int32_t)5))? 1 : 0);
-		goto IL_02e9;
+		int32_t L_82 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
+		G_B10_0 = ((((int32_t)L_82) > ((int32_t)5))? 1 : 0);
+		goto IL_0303;
 	}
 
-IL_02e8:
+IL_0302:
 	{
 		G_B10_0 = 1;
 	}
 
-IL_02e9:
+IL_0303:
 	{
 		V_3 = (bool)G_B10_0;
-		bool L_81 = V_3;
-		if (!L_81)
+		bool L_83 = V_3;
+		if (!L_83)
 		{
-			goto IL_0393;
+			goto IL_03ad;
 		}
 	}
 	{
@@ -8670,189 +8682,189 @@ IL_02e9:
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
 		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isBoarGameHelpTextVisible_34 = (bool)0;
 		// _cubePlayForFrame = _gameBoard[0, _numberOfRows - 1, 0];
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_82 = __this->____gameBoard_65;
-		int32_t L_83 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
-		NullCheck(L_82);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_84;
-		L_84 = (L_82)->GetAt(0, ((int32_t)il2cpp_codegen_subtract(L_83, 1)), 0);
-		__this->____cubePlayForFrame_77 = L_84;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____cubePlayForFrame_77), (void*)L_84);
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_84 = __this->____gameBoard_65;
+		int32_t L_85 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
+		NullCheck(L_84);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_86;
+		L_86 = (L_84)->GetAt(0, ((int32_t)il2cpp_codegen_subtract(L_85, 1)), 0);
+		__this->____cubePlayForFrame_77 = L_86;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____cubePlayForFrame_77), (void*)L_86);
 		// _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_85 = __this->____cubePlayForFrame_77;
-		NullCheck(L_85);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_86;
-		L_86 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_85, NULL);
-		NullCheck(L_86);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_87;
-		L_87 = Transform_get_localScale_m804A002A53A645CDFCD15BB0F37209162720363F(L_86, NULL);
-		float L_88 = L_87.___x_2;
-		__this->____cubePlayForFrameScale_39 = L_88;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_87 = __this->____cubePlayForFrame_77;
+		NullCheck(L_87);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_88;
+		L_88 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_87, NULL);
+		NullCheck(L_88);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_89;
+		L_89 = Transform_get_localScale_m804A002A53A645CDFCD15BB0F37209162720363F(L_88, NULL);
+		float L_90 = L_89.___x_2;
+		__this->____cubePlayForFrameScale_39 = L_90;
 		// _coordinatesForCubePlayFrame = (float[])_dataForBoardGame[1];
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_89 = __this->____dataForBoardGame_91;
-		NullCheck(L_89);
-		RuntimeObject* L_90;
-		L_90 = VirtualFuncInvoker1< RuntimeObject*, int32_t >::Invoke(25 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_89, 1);
-		__this->____coordinatesForCubePlayFrame_92 = ((SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)Castclass((RuntimeObject*)L_90, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var));
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____coordinatesForCubePlayFrame_92), (void*)((SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)Castclass((RuntimeObject*)L_90, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var)));
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_91 = __this->____dataForBoardGame_91;
+		NullCheck(L_91);
+		RuntimeObject* L_92;
+		L_92 = VirtualFuncInvoker1< RuntimeObject*, int32_t >::Invoke(25 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_91, 1);
+		__this->____coordinatesForCubePlayFrame_92 = ((SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)Castclass((RuntimeObject*)L_92, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var));
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____coordinatesForCubePlayFrame_92), (void*)((SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)Castclass((RuntimeObject*)L_92, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var)));
 		// _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _coordinatesForCubePlayFrame, _isGame2D);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_91 = __this->___prefabCubePlayFrame_6;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_92 = __this->____cubePlayForFrame_77;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_93 = __this->____coordinatesForCubePlayFrame_92;
-		bool L_94 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_95;
-		L_95 = PlayGameFrameCreate_CreateCubePlayFrameForPlayerMove_m77FF5672BD86A2D1B8619D645190105692A4B049(L_91, L_92, L_93, L_94, NULL);
-		__this->____cubePlayFrame_67 = L_95;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____cubePlayFrame_67), (void*)L_95);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_93 = __this->___prefabCubePlayFrame_6;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_94 = __this->____cubePlayForFrame_77;
+		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_95 = __this->____coordinatesForCubePlayFrame_92;
+		bool L_96 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_97;
+		L_97 = PlayGameFrameCreate_CreateCubePlayFrameForPlayerMove_m77FF5672BD86A2D1B8619D645190105692A4B049(L_93, L_94, L_95, L_96, NULL);
+		__this->____cubePlayFrame_67 = L_97;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____cubePlayFrame_67), (void*)L_97);
 		// _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
-		int32_t L_96 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_97;
-		L_97 = PlayGameFrameMove_CreateTableForMoveIndexForFrame_m09476D5715DE55B089F720E2404D6A55374F5F6E(L_96, NULL);
-		__this->____moveIndexForFrame_68 = L_97;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____moveIndexForFrame_68), (void*)L_97);
+		int32_t L_98 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____numberOfRows_26;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_99;
+		L_99 = PlayGameFrameMove_CreateTableForMoveIndexForFrame_m09476D5715DE55B089F720E2404D6A55374F5F6E(L_98, NULL);
+		__this->____moveIndexForFrame_68 = L_99;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____moveIndexForFrame_68), (void*)L_99);
 		// _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_98 = __this->____gameBoard_65;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_99 = __this->____playersSymbols_60;
-		bool L_100 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isBoarGameHelpTextVisible_34;
-		bool L_101;
-		L_101 = PlayGameChangeCubePlayHelpText_ChangeBoarGameHelpTextVisibility_mF73710463E476F2D10DD1CD6E338FC6B3389B0DA(L_98, L_99, L_100, NULL);
-		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isBoarGameHelpTextVisible_34 = L_101;
-		goto IL_03b0;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_100 = __this->____gameBoard_65;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_101 = __this->____playersSymbols_60;
+		bool L_102 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isBoarGameHelpTextVisible_34;
+		bool L_103;
+		L_103 = PlayGameChangeCubePlayHelpText_ChangeBoarGameHelpTextVisibility_mF73710463E476F2D10DD1CD6E338FC6B3389B0DA(L_100, L_101, L_102, NULL);
+		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isBoarGameHelpTextVisible_34 = L_103;
+		goto IL_03ca;
 	}
 
-IL_0393:
+IL_03ad:
 	{
 		// _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_102 = __this->____gameBoard_65;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_103 = __this->____playersSymbols_60;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_104 = __this->____gameBoard_65;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_105 = __this->____playersSymbols_60;
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		bool L_104 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isBoarGameHelpTextVisible_34;
-		bool L_105;
-		L_105 = PlayGameChangeCubePlayHelpText_ChangeBoarGameHelpTextVisibility_mF73710463E476F2D10DD1CD6E338FC6B3389B0DA(L_102, L_103, L_104, NULL);
-		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isBoarGameHelpTextVisible_34 = L_105;
+		bool L_106 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isBoarGameHelpTextVisible_34;
+		bool L_107;
+		L_107 = PlayGameChangeCubePlayHelpText_ChangeBoarGameHelpTextVisibility_mF73710463E476F2D10DD1CD6E338FC6B3389B0DA(L_104, L_105, L_106, NULL);
+		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isBoarGameHelpTextVisible_34 = L_107;
 	}
 
-IL_03b0:
+IL_03ca:
 	{
 	}
 
-IL_03b1:
+IL_03cb:
 	{
 		// _isTimerActivate = PlayGameTimerCommonMethods.IsTimerActivate(_timeForChangeRandomly, _timeForChangeForAll, _timeForSwitchBetweenTeams);
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		float L_106 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForChangeRandomly_31;
-		float L_107 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForChangeForAll_32;
-		float L_108 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForSwitchBetweenTeams_33;
-		bool L_109;
-		L_109 = PlayGameTimerCommonMethods_IsTimerActivate_m14FB85ADD4570332042873AA3A50BC8BFE166AF1(L_106, L_107, L_108, NULL);
-		__this->____isTimerActivate_84 = L_109;
+		float L_108 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForChangeRandomly_31;
+		float L_109 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForChangeForAll_32;
+		float L_110 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForSwitchBetweenTeams_33;
+		bool L_111;
+		L_111 = PlayGameTimerCommonMethods_IsTimerActivate_m14FB85ADD4570332042873AA3A50BC8BFE166AF1(L_108, L_109, L_110, NULL);
+		__this->____isTimerActivate_84 = L_111;
 		// if (_isTimerActivate == true)
-		bool L_110 = __this->____isTimerActivate_84;
-		V_4 = L_110;
-		bool L_111 = V_4;
-		if (!L_111)
+		bool L_112 = __this->____isTimerActivate_84;
+		V_4 = L_112;
+		bool L_113 = V_4;
+		if (!L_113)
 		{
-			goto IL_04d4;
+			goto IL_04ee;
 		}
 	}
 	{
 		// _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
-		bool L_112;
-		L_112 = PlayGameTimerCommonMethods_TurnOnTimer_m4304429F5C2828C0C2586E678D0B2A33E5CAE6BC(NULL);
-		__this->____switchTimer_85 = L_112;
+		bool L_114;
+		L_114 = PlayGameTimerCommonMethods_TurnOnTimer_m4304429F5C2828C0C2586E678D0B2A33E5CAE6BC(NULL);
+		__this->____switchTimer_85 = L_114;
 		// if (_switchTimer == true)
-		bool L_113 = __this->____switchTimer_85;
-		V_5 = L_113;
-		bool L_114 = V_5;
-		if (!L_114)
+		bool L_115 = __this->____switchTimer_85;
+		V_5 = L_115;
+		bool L_116 = V_5;
+		if (!L_116)
 		{
-			goto IL_04d3;
+			goto IL_04ed;
 		}
 	}
 	{
 		// _gameChangeTimeConfiguration = new List<float>();
-		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_115 = (List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918*)il2cpp_codegen_object_new(List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918_il2cpp_TypeInfo_var);
-		NullCheck(L_115);
-		List_1__ctor_mC29D3D824786832A31096310B3B3016B8B42B802(L_115, List_1__ctor_mC29D3D824786832A31096310B3B3016B8B42B802_RuntimeMethod_var);
-		__this->____gameChangeTimeConfiguration_76 = L_115;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameChangeTimeConfiguration_76), (void*)L_115);
+		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_117 = (List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918*)il2cpp_codegen_object_new(List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918_il2cpp_TypeInfo_var);
+		NullCheck(L_117);
+		List_1__ctor_mC29D3D824786832A31096310B3B3016B8B42B802(L_117, List_1__ctor_mC29D3D824786832A31096310B3B3016B8B42B802_RuntimeMethod_var);
+		__this->____gameChangeTimeConfiguration_76 = L_117;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameChangeTimeConfiguration_76), (void*)L_117);
 		// _gameChangeTimeConfiguration.Insert(0, _timeForChangeRandomly);
-		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_116 = __this->____gameChangeTimeConfiguration_76;
-		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		float L_117 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForChangeRandomly_31;
-		NullCheck(L_116);
-		List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13(L_116, 0, L_117, List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13_RuntimeMethod_var);
-		// _gameChangeTimeConfiguration.Insert(1, _timeForChangeForAll);
 		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_118 = __this->____gameChangeTimeConfiguration_76;
-		float L_119 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForChangeForAll_32;
+		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
+		float L_119 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForChangeRandomly_31;
 		NullCheck(L_118);
-		List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13(L_118, 1, L_119, List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13_RuntimeMethod_var);
-		// _gameChangeTimeConfiguration.Insert(2, _timeForSwitchBetweenTeams);
+		List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13(L_118, 0, L_119, List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13_RuntimeMethod_var);
+		// _gameChangeTimeConfiguration.Insert(1, _timeForChangeForAll);
 		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_120 = __this->____gameChangeTimeConfiguration_76;
-		float L_121 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForSwitchBetweenTeams_33;
+		float L_121 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForChangeForAll_32;
 		NullCheck(L_120);
-		List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13(L_120, 2, L_121, List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13_RuntimeMethod_var);
-		// _gameChangeTimeConfiguration.Insert(3, _timeForHidePlayGameElementsDefault);
+		List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13(L_120, 1, L_121, List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13_RuntimeMethod_var);
+		// _gameChangeTimeConfiguration.Insert(2, _timeForSwitchBetweenTeams);
 		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_122 = __this->____gameChangeTimeConfiguration_76;
-		float L_123 = __this->____timeForHidePlayGameElementsDefault_80;
+		float L_123 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____timeForSwitchBetweenTeams_33;
 		NullCheck(L_122);
-		List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13(L_122, 3, L_123, List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13_RuntimeMethod_var);
+		List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13(L_122, 2, L_123, List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13_RuntimeMethod_var);
+		// _gameChangeTimeConfiguration.Insert(3, _timeForHidePlayGameElementsDefault);
+		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_124 = __this->____gameChangeTimeConfiguration_76;
+		float L_125 = __this->____timeForHidePlayGameElementsDefault_80;
+		NullCheck(L_124);
+		List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13(L_124, 3, L_125, List_1_Insert_mC1AB5BCBBAB1A0C67BC0AE0E51977EBF5C76EB13_RuntimeMethod_var);
 		// _gameButtonsTimer = PlayGameTimerButtonsCreate.GameTimerButtonsCreate(prefabTimer);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_124 = __this->___prefabTimer_5;
-		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_125;
-		L_125 = PlayGameTimerButtonsCreate_GameTimerButtonsCreate_mA0E1EFBFD364C75EEE7C85551B200BF1A815470A(L_124, NULL);
-		__this->____gameButtonsTimer_73 = L_125;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsTimer_73), (void*)L_125);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_126 = __this->___prefabTimer_5;
+		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_127;
+		L_127 = PlayGameTimerButtonsCreate_GameTimerButtonsCreate_mA0E1EFBFD364C75EEE7C85551B200BF1A815470A(L_126, NULL);
+		__this->____gameButtonsTimer_73 = L_127;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsTimer_73), (void*)L_127);
 		// _timeForTimers = PlayGameTimerCommonMethods.SetupTimer(_gameChangeTimeConfiguration);
-		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_126 = __this->____gameChangeTimeConfiguration_76;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_127;
-		L_127 = PlayGameTimerCommonMethods_SetupTimer_m6140E599B44437B133593916DEE09FC58F044050(L_126, NULL);
-		__this->____timeForTimers_79 = L_127;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____timeForTimers_79), (void*)L_127);
-		// _startDataForTimer = PlayGameChangePlayersSymbolsMethods.SetUpStartSwitchChange(_gameChangeTimeConfiguration);
 		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_128 = __this->____gameChangeTimeConfiguration_76;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_129;
-		L_129 = PlayGameChangePlayersSymbolsMethods_SetUpStartSwitchChange_m91379B42F62464CCB353F5EC4953A4D80ED4991A(L_128, NULL);
-		__this->____startDataForTimer_86 = L_129;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____startDataForTimer_86), (void*)L_129);
+		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_129;
+		L_129 = PlayGameTimerCommonMethods_SetupTimer_m6140E599B44437B133593916DEE09FC58F044050(L_128, NULL);
+		__this->____timeForTimers_79 = L_129;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____timeForTimers_79), (void*)L_129);
+		// _startDataForTimer = PlayGameChangePlayersSymbolsMethods.SetUpStartSwitchChange(_gameChangeTimeConfiguration);
+		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_130 = __this->____gameChangeTimeConfiguration_76;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_131;
+		L_131 = PlayGameChangePlayersSymbolsMethods_SetUpStartSwitchChange_m91379B42F62464CCB353F5EC4953A4D80ED4991A(L_130, NULL);
+		__this->____startDataForTimer_86 = L_131;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____startDataForTimer_86), (void*)L_131);
 		// _switchChange = _startDataForTimer[0];
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_130 = __this->____startDataForTimer_86;
-		NullCheck(L_130);
-		int32_t L_131 = 0;
-		int32_t L_132 = (L_130)->GetAt(static_cast<il2cpp_array_size_t>(L_131));
-		__this->____switchChange_94 = L_132;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_132 = __this->____startDataForTimer_86;
+		NullCheck(L_132);
+		int32_t L_133 = 0;
+		int32_t L_134 = (L_132)->GetAt(static_cast<il2cpp_array_size_t>(L_133));
+		__this->____switchChange_94 = L_134;
 		// indexTimeForHide = _startDataForTimer[1];
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_133 = __this->____startDataForTimer_86;
-		NullCheck(L_133);
-		int32_t L_134 = 1;
-		int32_t L_135 = (L_133)->GetAt(static_cast<il2cpp_array_size_t>(L_134));
-		__this->___indexTimeForHide_87 = L_135;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_135 = __this->____startDataForTimer_86;
+		NullCheck(L_135);
+		int32_t L_136 = 1;
+		int32_t L_137 = (L_135)->GetAt(static_cast<il2cpp_array_size_t>(L_136));
+		__this->___indexTimeForHide_87 = L_137;
 		// _timeForHide = _timeForTimers[indexTimeForHide];
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_136 = __this->____timeForTimers_79;
-		int32_t L_137 = __this->___indexTimeForHide_87;
-		NullCheck(L_136);
-		int32_t L_138 = L_137;
-		float L_139 = (L_136)->GetAt(static_cast<il2cpp_array_size_t>(L_138));
-		__this->____timeForHide_82 = L_139;
+		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_138 = __this->____timeForTimers_79;
+		int32_t L_139 = __this->___indexTimeForHide_87;
+		NullCheck(L_138);
+		int32_t L_140 = L_139;
+		float L_141 = (L_138)->GetAt(static_cast<il2cpp_array_size_t>(L_140));
+		__this->____timeForHide_82 = L_141;
 		// _timeForUnhidePlayGameElements = _timeForTimers[2]; // must to be change
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_140 = __this->____timeForTimers_79;
-		NullCheck(L_140);
-		int32_t L_141 = 2;
-		float L_142 = (L_140)->GetAt(static_cast<il2cpp_array_size_t>(L_141));
-		__this->____timeForUnhidePlayGameElements_81 = L_142;
+		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_142 = __this->____timeForTimers_79;
+		NullCheck(L_142);
+		int32_t L_143 = 2;
+		float L_144 = (L_142)->GetAt(static_cast<il2cpp_array_size_t>(L_143));
+		__this->____timeForUnhidePlayGameElements_81 = L_144;
 		// _isTimeToHidePlayGameElements = true;
 		__this->____isTimeToHidePlayGameElements_83 = (bool)1;
 		// _isDoubleRandomChange = PlayGameChangePlayersSymbolsMethods.IsDoubleRandomChange(_gameChangeTimeConfiguration);
-		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_143 = __this->____gameChangeTimeConfiguration_76;
-		bool L_144;
-		L_144 = PlayGameChangePlayersSymbolsMethods_IsDoubleRandomChange_m0F4F6336876C5CA5FE2B3889F37DEF0B8971D92C(L_143, NULL);
-		__this->____isDoubleRandomChange_93 = L_144;
+		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_145 = __this->____gameChangeTimeConfiguration_76;
+		bool L_146;
+		L_146 = PlayGameChangePlayersSymbolsMethods_IsDoubleRandomChange_m0F4F6336876C5CA5FE2B3889F37DEF0B8971D92C(L_145, NULL);
+		__this->____isDoubleRandomChange_93 = L_146;
 	}
 
-IL_04d3:
+IL_04ed:
 	{
 	}
 
-IL_04d4:
+IL_04ee:
 	{
 		// }
 		return;
@@ -8947,6 +8959,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Game_Update_mA1557241B926376A448DF2A5713
 	bool V_65 = false;
 	bool V_66 = false;
 	bool V_67 = false;
+	bool V_68 = false;
 	int32_t G_B3_0 = 0;
 	int32_t G_B11_0 = 0;
 	int32_t G_B45_0 = 0;
@@ -10334,7 +10347,7 @@ IL_0aba:
 		bool L_385 = V_58;
 		if (!L_385)
 		{
-			goto IL_0e47;
+			goto IL_0e84;
 		}
 	}
 	{
@@ -10344,7 +10357,7 @@ IL_0aba:
 		bool L_387 = V_59;
 		if (!L_387)
 		{
-			goto IL_0e44;
+			goto IL_0e81;
 		}
 	}
 	{
@@ -10360,7 +10373,7 @@ IL_0aba:
 		bool L_391 = V_60;
 		if (!L_391)
 		{
-			goto IL_0dd3;
+			goto IL_0e10;
 		}
 	}
 	{
@@ -10375,7 +10388,7 @@ IL_0aba:
 		bool L_395 = V_61;
 		if (!L_395)
 		{
-			goto IL_0dd0;
+			goto IL_0e0d;
 		}
 	}
 	{
@@ -10392,7 +10405,7 @@ IL_0aba:
 		bool L_398 = V_62;
 		if (!L_398)
 		{
-			goto IL_0cc4;
+			goto IL_0d01;
 		}
 	}
 	{
@@ -10427,277 +10440,304 @@ IL_0b7c:
 
 IL_0b8a:
 	{
-		// _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsMethods.GetNewDataForPlayersSymbols(_playersSymbols, _gameChangeTimeConfiguration);
+		// _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsMethods.GetNewDataForPlayersSymbols(_playersSymbols, _teamGameSymbols, _gameChangeTimeConfiguration, isSameQuantityForMovePerTeam, isTeamGame);
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_407 = __this->____playersSymbols_60;
-		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_408 = __this->____gameChangeTimeConfiguration_76;
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_409;
-		L_409 = PlayGameChangePlayersSymbolsMethods_GetNewDataForPlayersSymbols_m7F5B63A2068394094BE748072E01FD4A4A39E0C4(L_407, L_408, NULL);
-		__this->____newDataForPlayersSymbols_89 = L_409;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____newDataForPlayersSymbols_89), (void*)L_409);
-		// _oldSymbolsForChange = _newDataForPlayersSymbols[0];
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_410 = __this->____newDataForPlayersSymbols_89;
-		NullCheck(L_410);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_411;
-		L_411 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_410, 0, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
-		__this->____oldSymbolsForChange_95 = L_411;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____oldSymbolsForChange_95), (void*)L_411);
-		// _newSymbolsForChange = _newDataForPlayersSymbols[1];
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_412 = __this->____newDataForPlayersSymbols_89;
-		NullCheck(L_412);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_413;
-		L_413 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_412, 1, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
-		__this->____newSymbolsForChange_96 = L_413;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____newSymbolsForChange_96), (void*)L_413);
-		// _newPlayersSymbols = _newDataForPlayersSymbols[2];
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_414 = __this->____newDataForPlayersSymbols_89;
-		NullCheck(L_414);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_415;
-		L_415 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_414, 2, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
-		__this->____newPlayersSymbols_88 = L_415;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____newPlayersSymbols_88), (void*)L_415);
-		// if (isTeamGame == true)
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		bool L_416 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->___isTeamGame_57;
-		V_64 = L_416;
-		bool L_417 = V_64;
-		if (!L_417)
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_408 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
+		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_409 = __this->____gameChangeTimeConfiguration_76;
+		bool L_410 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->___isSameQuantityForMovePerTeam_58;
+		bool L_411 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->___isTeamGame_57;
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_412;
+		L_412 = PlayGameChangePlayersSymbolsMethods_GetNewDataForPlayersSymbols_m16F6080B3C8FD8729B934B89A34640FF34FC96EF(L_407, L_408, L_409, L_410, L_411, NULL);
+		__this->____newDataForPlayersSymbols_89 = L_412;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____newDataForPlayersSymbols_89), (void*)L_412);
+		// _oldSymbolsForChange = _newDataForPlayersSymbols[0];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_413 = __this->____newDataForPlayersSymbols_89;
+		NullCheck(L_413);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_414;
+		L_414 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_413, 0, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		__this->____oldSymbolsForChange_95 = L_414;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____oldSymbolsForChange_95), (void*)L_414);
+		// _newSymbolsForChange = _newDataForPlayersSymbols[1];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_415 = __this->____newDataForPlayersSymbols_89;
+		NullCheck(L_415);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_416;
+		L_416 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_415, 1, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		__this->____newSymbolsForChange_96 = L_416;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____newSymbolsForChange_96), (void*)L_416);
+		// _newPlayersSymbols = _newDataForPlayersSymbols[2];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_417 = __this->____newDataForPlayersSymbols_89;
+		NullCheck(L_417);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_418;
+		L_418 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_417, 2, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		__this->____newPlayersSymbols_88 = L_418;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____newPlayersSymbols_88), (void*)L_418);
+		// if (isTeamGame == true)
+		bool L_419 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->___isTeamGame_57;
+		V_64 = L_419;
+		bool L_420 = V_64;
+		if (!L_420)
 		{
-			goto IL_0c01;
+			goto IL_0c1c;
 		}
 	}
 	{
 		// _teamGameSymbols = PlayGameChangePlayersSymbolsMethods.SetUpNewTeamGameSymbols(_teamGameSymbols, _oldSymbolsForChange, _newSymbolsForChange);
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_418 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_419 = __this->____oldSymbolsForChange_95;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_420 = __this->____newSymbolsForChange_96;
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_421;
-		L_421 = PlayGameChangePlayersSymbolsMethods_SetUpNewTeamGameSymbols_mC358C827B867AC9467AAA2857336AC42431C0164(L_418, L_419, L_420, NULL);
-		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30 = L_421;
-		Il2CppCodeGenWriteBarrier((void**)(&((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30), (void*)L_421);
-		goto IL_0c0f;
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_421 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_422 = __this->____oldSymbolsForChange_95;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_423 = __this->____newSymbolsForChange_96;
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_424;
+		L_424 = PlayGameChangePlayersSymbolsMethods_SetUpNewTeamGameSymbols_mC358C827B867AC9467AAA2857336AC42431C0164(L_421, L_422, L_423, NULL);
+		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30 = L_424;
+		Il2CppCodeGenWriteBarrier((void**)(&((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30), (void*)L_424);
+		// _playersSymbols = _newPlayersSymbols;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_425 = __this->____newPlayersSymbols_88;
+		__this->____playersSymbols_60 = L_425;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____playersSymbols_60), (void*)L_425);
+		goto IL_0c2a;
 	}
 
-IL_0c01:
+IL_0c1c:
 	{
 		// _playersSymbols = _newPlayersSymbols;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_422 = __this->____newPlayersSymbols_88;
-		__this->____playersSymbols_60 = L_422;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____playersSymbols_60), (void*)L_422);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_426 = __this->____newPlayersSymbols_88;
+		__this->____playersSymbols_60 = L_426;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____playersSymbols_60), (void*)L_426);
 	}
 
-IL_0c0f:
+IL_0c2a:
 	{
 		// PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChange, _newSymbolsForChange);
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_423 = __this->____gameBoard_65;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_424 = __this->____oldSymbolsForChange_95;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_425 = __this->____newSymbolsForChange_96;
-		PlayGameChangePlayersSymbolsMethods_SetUpNewPlayersSymbolsForGameBoard_mCBA5628CF1369A7C84501AE6D690DB4FD19522AC(L_423, L_424, L_425, NULL);
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_427 = __this->____gameBoard_65;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_428 = __this->____oldSymbolsForChange_95;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_429 = __this->____newSymbolsForChange_96;
+		PlayGameChangePlayersSymbolsMethods_SetUpNewPlayersSymbolsForGameBoard_mCBA5628CF1369A7C84501AE6D690DB4FD19522AC(L_427, L_428, L_429, NULL);
 		// _gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_426 = __this->___prefabCubePlay_4;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_427 = __this->___prefabCubePlayButtonsDefaultColour_10;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_428 = __this->___prefabCubePlayButtonsNumberColour_11;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_430 = __this->___prefabCubePlay_4;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_431 = __this->___prefabCubePlayButtonsDefaultColour_10;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_432 = __this->___prefabCubePlayButtonsNumberColour_11;
 		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		bool L_429 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
-		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_430 = __this->____gameChangeTimeConfiguration_76;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_431 = __this->____newSymbolsForChange_96;
-		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_432;
-		L_432 = PlayGameChangePlayersSymbolsButtonsCreate_GameChangePlayersSymbolsButtonsTopCreate_mB76D3A7B437D48CFF787690B6B44501CE2C8AAA2(L_426, L_427, L_428, L_429, L_430, L_431, NULL);
-		__this->____gameButtonsChangePlayersSymbolsTop_74 = L_432;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsChangePlayersSymbolsTop_74), (void*)L_432);
+		bool L_433 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
+		List_1_t0D1C46FD8DDDE974D93CA4F3474EEC05AF950918* L_434 = __this->____gameChangeTimeConfiguration_76;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_435 = __this->____newSymbolsForChange_96;
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_436;
+		L_436 = PlayGameChangePlayersSymbolsButtonsCreate_GameChangePlayersSymbolsButtonsTopCreate_mB76D3A7B437D48CFF787690B6B44501CE2C8AAA2(L_430, L_431, L_432, L_433, L_434, L_435, NULL);
+		__this->____gameButtonsChangePlayersSymbolsTop_74 = L_436;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsChangePlayersSymbolsTop_74), (void*)L_436);
 		// _gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_433 = __this->___prefabCubePlay_4;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_434 = __this->___prefabCubePlayButtonsDefaultColour_10;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_435 = __this->___prefabCubePlayButtonsNumberColour_11;
-		bool L_436 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_437 = __this->___prefabCubePlayButtonsBackColour_9;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_438 = __this->____oldSymbolsForChange_95;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_439 = __this->____newSymbolsForChange_96;
-		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_440;
-		L_440 = PlayGameChangePlayersSymbolsButtonsCreate_GameChangePlayersSymbolsButtonsCreate_mF964DAA9DCE8CA534162D97DD8FF4DFC5C069033(L_433, L_434, L_435, L_436, L_437, L_438, L_439, NULL);
-		__this->____gameButtonsChangePlayersSymbols_75 = L_440;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsChangePlayersSymbols_75), (void*)L_440);
-		// _playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_441 = __this->____playerSymbolMove_71;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_437 = __this->___prefabCubePlay_4;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_438 = __this->___prefabCubePlayButtonsDefaultColour_10;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_439 = __this->___prefabCubePlayButtonsNumberColour_11;
+		bool L_440 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_441 = __this->___prefabCubePlayButtonsBackColour_9;
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_442 = __this->____oldSymbolsForChange_95;
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_443 = __this->____newSymbolsForChange_96;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_444;
-		L_444 = PlayGameChangePlayersSymbolsMethods_SetUpNewPlayersSymbolsMove_m4E0E50D45714F2B9962CFDF347592870D384B722(L_441, L_442, L_443, NULL);
-		__this->____playerSymbolMove_71 = L_444;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____playerSymbolMove_71), (void*)L_444);
-		// _gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
-		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_445 = __this->____gameBoardVerification2D_66;
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_444;
+		L_444 = PlayGameChangePlayersSymbolsButtonsCreate_GameChangePlayersSymbolsButtonsCreate_mF964DAA9DCE8CA534162D97DD8FF4DFC5C069033(L_437, L_438, L_439, L_440, L_441, L_442, L_443, NULL);
+		__this->____gameButtonsChangePlayersSymbols_75 = L_444;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsChangePlayersSymbols_75), (void*)L_444);
+		// _playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_445 = __this->____playerSymbolMove_71;
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_446 = __this->____oldSymbolsForChange_95;
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_447 = __this->____newSymbolsForChange_96;
-		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_448;
-		L_448 = PlayGameChangePlayersSymbolsMethods_SetUpNewGameBoardVerification2D_m3D167645A373FEAAE3B7D2C60865DF6388E68436(L_445, L_446, L_447, NULL);
-		__this->____gameBoardVerification2D_66 = L_448;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameBoardVerification2D_66), (void*)L_448);
-	}
-
-IL_0cc4:
-	{
-		// if (_switchChange == 1)
-		int32_t L_449 = __this->____switchChange_94;
-		V_65 = (bool)((((int32_t)L_449) == ((int32_t)1))? 1 : 0);
-		bool L_450 = V_65;
-		if (!L_450)
-		{
-			goto IL_0dcf;
-		}
-	}
-	{
-		// _timeForHide = _timeForTimers[1];
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_451 = __this->____timeForTimers_79;
-		NullCheck(L_451);
-		int32_t L_452 = 1;
-		float L_453 = (L_451)->GetAt(static_cast<il2cpp_array_size_t>(L_452));
-		__this->____timeForHide_82 = L_453;
-		// _newDataForPlayersSymbolsSwitch = PlayGameSwitchPlayersSymbolsMethods.GetPlayersSymbolsForSwitch(_teamGameSymbols);
-		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_454 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_455;
-		L_455 = PlayGameSwitchPlayersSymbolsMethods_GetPlayersSymbolsForSwitch_m088663BCB7EE22922A998EF4005026F1B324169F(L_454, NULL);
-		__this->____newDataForPlayersSymbolsSwitch_90 = L_455;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____newDataForPlayersSymbolsSwitch_90), (void*)L_455);
-		// PlayGameSwitchPlayersSymbolsMethods.SetUpSwitchedPlayersSymbolsForGameBoard(_gameBoard, _newDataForPlayersSymbolsSwitch);
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_456 = __this->____gameBoard_65;
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_457 = __this->____newDataForPlayersSymbolsSwitch_90;
-		PlayGameSwitchPlayersSymbolsMethods_SetUpSwitchedPlayersSymbolsForGameBoard_m9F51148E9A77A6CCFAB734AC86D61563ED17CC23(L_456, L_457, NULL);
-		// _teamGameSymbols = PlayGameSwitchPlayersSymbolsMethods.SetUpNewTeamGameSymbols(_newDataForPlayersSymbolsSwitch, _teamGameSymbols);
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_458 = __this->____newDataForPlayersSymbolsSwitch_90;
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_459 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_460;
-		L_460 = PlayGameSwitchPlayersSymbolsMethods_SetUpNewTeamGameSymbols_m36F9C1EA2CE9808AC252C0BD35A18C55CAD9F842(L_458, L_459, NULL);
-		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30 = L_460;
-		Il2CppCodeGenWriteBarrier((void**)(&((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30), (void*)L_460);
-		// _gameButtonsChangePlayersSymbolsTop = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_461 = __this->___prefabCubePlay_4;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_462 = __this->___prefabCubePlayButtonsDefaultColour_10;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_463 = __this->___prefabCubePlayButtonsNumberColour_11;
-		bool L_464 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
-		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_465;
-		L_465 = PlayGameSwitchPlayersSymbolsButtonsCreate_GameSwitchPlayersSymbolsButtonsTopCreate_m744AB6EF65F0CB76035280A348F5E1A5132041C8(L_461, L_462, L_463, L_464, NULL);
-		__this->____gameButtonsChangePlayersSymbolsTop_74 = L_465;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsChangePlayersSymbolsTop_74), (void*)L_465);
-		// _gameButtonsChangePlayersSymbols = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _newDataForPlayersSymbolsSwitch);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_466 = __this->___prefabCubePlay_4;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_467 = __this->___prefabCubePlayButtonsDefaultColour_10;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_468 = __this->___prefabCubePlayButtonsNumberColour_11;
-		bool L_469 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_470 = __this->___prefabCubePlayButtonsBackColour_9;
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_471 = __this->____newDataForPlayersSymbolsSwitch_90;
-		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_472;
-		L_472 = PlayGameSwitchPlayersSymbolsButtonsCreate_GameSwitchPlayersSymbolsButtonsCreate_mB73CBB12601EE8FF1356CC9AF9D9223C0F895897(L_466, L_467, L_468, L_469, L_470, L_471, NULL);
-		__this->____gameButtonsChangePlayersSymbols_75 = L_472;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsChangePlayersSymbols_75), (void*)L_472);
-		// _playersSymbols = PlayGameSwitchPlayersSymbolsMethods.GetNewPlayersSymbols(_playersSymbols, _newDataForPlayersSymbolsSwitch);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_473 = __this->____playersSymbols_60;
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_474 = __this->____newDataForPlayersSymbolsSwitch_90;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_475;
-		L_475 = PlayGameSwitchPlayersSymbolsMethods_GetNewPlayersSymbols_mA9A2510F93692E8087B56E76144208BD4447A5A6(L_473, L_474, NULL);
-		__this->____playersSymbols_60 = L_475;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____playersSymbols_60), (void*)L_475);
-		// _playerSymbolMove = PlayGameSwitchPlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _newDataForPlayersSymbolsSwitch);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_476 = __this->____playerSymbolMove_71;
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_477 = __this->____newDataForPlayersSymbolsSwitch_90;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_478;
-		L_478 = PlayGameSwitchPlayersSymbolsMethods_SetUpNewPlayersSymbolsMove_mEF60267B326F73E0746D80BA8BF9640DF39073BD(L_476, L_477, NULL);
-		__this->____playerSymbolMove_71 = L_478;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____playerSymbolMove_71), (void*)L_478);
-		// _gameBoardVerification2D = PlayGameSwitchPlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _newDataForPlayersSymbolsSwitch);
-		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_479 = __this->____gameBoardVerification2D_66;
-		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_480 = __this->____newDataForPlayersSymbolsSwitch_90;
-		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_481;
-		L_481 = PlayGameSwitchPlayersSymbolsMethods_SetUpNewGameBoardVerification2D_m8C1B1255A9F7D8E543BF4BBAF19F66C227CB91CB(L_479, L_480, NULL);
-		__this->____gameBoardVerification2D_66 = L_481;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameBoardVerification2D_66), (void*)L_481);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_448;
+		L_448 = PlayGameChangePlayersSymbolsMethods_SetUpNewPlayersSymbolsMove_m4E0E50D45714F2B9962CFDF347592870D384B722(L_445, L_446, L_447, NULL);
+		__this->____playerSymbolMove_71 = L_448;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____playerSymbolMove_71), (void*)L_448);
+		// _gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
+		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_449 = __this->____gameBoardVerification2D_66;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_450 = __this->____oldSymbolsForChange_95;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_451 = __this->____newSymbolsForChange_96;
+		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_452;
+		L_452 = PlayGameChangePlayersSymbolsMethods_SetUpNewGameBoardVerification2D_m3D167645A373FEAAE3B7D2C60865DF6388E68436(L_449, L_450, L_451, NULL);
+		__this->____gameBoardVerification2D_66 = L_452;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameBoardVerification2D_66), (void*)L_452);
 		// if (_isDoubleRandomChange == true)
-		bool L_482 = __this->____isDoubleRandomChange_93;
-		V_66 = L_482;
-		bool L_483 = V_66;
-		if (!L_483)
+		bool L_453 = __this->____isDoubleRandomChange_93;
+		V_65 = L_453;
+		bool L_454 = V_65;
+		if (!L_454)
 		{
-			goto IL_0dce;
+			goto IL_0cfb;
 		}
 	}
 	{
 		// _switchChange = PlayGameChangePlayersSymbolsMethods.SetUpNewSwitchChange(_switchChange);
-		int32_t L_484 = __this->____switchChange_94;
-		int32_t L_485;
-		L_485 = PlayGameChangePlayersSymbolsMethods_SetUpNewSwitchChange_m26BC7A6825841845A648EAF8649E42C6A9C2BC16(L_484, NULL);
-		__this->____switchChange_94 = L_485;
+		int32_t L_455 = __this->____switchChange_94;
+		int32_t L_456;
+		L_456 = PlayGameChangePlayersSymbolsMethods_SetUpNewSwitchChange_m26BC7A6825841845A648EAF8649E42C6A9C2BC16(L_455, NULL);
+		__this->____switchChange_94 = L_456;
 	}
 
-IL_0dce:
+IL_0cfb:
+	{
+		goto IL_0e0c;
+	}
+
+IL_0d01:
+	{
+		// if (_switchChange == 1)
+		int32_t L_457 = __this->____switchChange_94;
+		V_66 = (bool)((((int32_t)L_457) == ((int32_t)1))? 1 : 0);
+		bool L_458 = V_66;
+		if (!L_458)
+		{
+			goto IL_0e0c;
+		}
+	}
+	{
+		// _timeForHide = _timeForTimers[1];
+		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_459 = __this->____timeForTimers_79;
+		NullCheck(L_459);
+		int32_t L_460 = 1;
+		float L_461 = (L_459)->GetAt(static_cast<il2cpp_array_size_t>(L_460));
+		__this->____timeForHide_82 = L_461;
+		// _newDataForPlayersSymbolsSwitch = PlayGameSwitchPlayersSymbolsMethods.GetPlayersSymbolsForSwitch(_teamGameSymbols);
+		il2cpp_codegen_runtime_class_init_inline(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var);
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_462 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_463;
+		L_463 = PlayGameSwitchPlayersSymbolsMethods_GetPlayersSymbolsForSwitch_m088663BCB7EE22922A998EF4005026F1B324169F(L_462, NULL);
+		__this->____newDataForPlayersSymbolsSwitch_90 = L_463;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____newDataForPlayersSymbolsSwitch_90), (void*)L_463);
+		// PlayGameSwitchPlayersSymbolsMethods.SetUpSwitchedPlayersSymbolsForGameBoard(_gameBoard, _newDataForPlayersSymbolsSwitch);
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_464 = __this->____gameBoard_65;
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_465 = __this->____newDataForPlayersSymbolsSwitch_90;
+		PlayGameSwitchPlayersSymbolsMethods_SetUpSwitchedPlayersSymbolsForGameBoard_m9F51148E9A77A6CCFAB734AC86D61563ED17CC23(L_464, L_465, NULL);
+		// _teamGameSymbols = PlayGameSwitchPlayersSymbolsMethods.SetUpNewTeamGameSymbols(_newDataForPlayersSymbolsSwitch, _teamGameSymbols);
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_466 = __this->____newDataForPlayersSymbolsSwitch_90;
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_467 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30;
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_468;
+		L_468 = PlayGameSwitchPlayersSymbolsMethods_SetUpNewTeamGameSymbols_m36F9C1EA2CE9808AC252C0BD35A18C55CAD9F842(L_466, L_467, NULL);
+		((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30 = L_468;
+		Il2CppCodeGenWriteBarrier((void**)(&((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____teamGameSymbols_30), (void*)L_468);
+		// _gameButtonsChangePlayersSymbolsTop = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_469 = __this->___prefabCubePlay_4;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_470 = __this->___prefabCubePlayButtonsDefaultColour_10;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_471 = __this->___prefabCubePlayButtonsNumberColour_11;
+		bool L_472 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_473;
+		L_473 = PlayGameSwitchPlayersSymbolsButtonsCreate_GameSwitchPlayersSymbolsButtonsTopCreate_m744AB6EF65F0CB76035280A348F5E1A5132041C8(L_469, L_470, L_471, L_472, NULL);
+		__this->____gameButtonsChangePlayersSymbolsTop_74 = L_473;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsChangePlayersSymbolsTop_74), (void*)L_473);
+		// _gameButtonsChangePlayersSymbols = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _newDataForPlayersSymbolsSwitch);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_474 = __this->___prefabCubePlay_4;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_475 = __this->___prefabCubePlayButtonsDefaultColour_10;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_476 = __this->___prefabCubePlayButtonsNumberColour_11;
+		bool L_477 = ((Game_tA6A98F81416961C425C0982A763372581DF081F1_StaticFields*)il2cpp_codegen_static_fields_for(Game_tA6A98F81416961C425C0982A763372581DF081F1_il2cpp_TypeInfo_var))->____isGame2D_37;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_478 = __this->___prefabCubePlayButtonsBackColour_9;
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_479 = __this->____newDataForPlayersSymbolsSwitch_90;
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_480;
+		L_480 = PlayGameSwitchPlayersSymbolsButtonsCreate_GameSwitchPlayersSymbolsButtonsCreate_mB73CBB12601EE8FF1356CC9AF9D9223C0F895897(L_474, L_475, L_476, L_477, L_478, L_479, NULL);
+		__this->____gameButtonsChangePlayersSymbols_75 = L_480;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameButtonsChangePlayersSymbols_75), (void*)L_480);
+		// _playersSymbols = PlayGameSwitchPlayersSymbolsMethods.GetNewPlayersSymbols(_playersSymbols, _newDataForPlayersSymbolsSwitch);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_481 = __this->____playersSymbols_60;
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_482 = __this->____newDataForPlayersSymbolsSwitch_90;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_483;
+		L_483 = PlayGameSwitchPlayersSymbolsMethods_GetNewPlayersSymbols_mA9A2510F93692E8087B56E76144208BD4447A5A6(L_481, L_482, NULL);
+		__this->____playersSymbols_60 = L_483;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____playersSymbols_60), (void*)L_483);
+		// _playerSymbolMove = PlayGameSwitchPlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _newDataForPlayersSymbolsSwitch);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_484 = __this->____playerSymbolMove_71;
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_485 = __this->____newDataForPlayersSymbolsSwitch_90;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_486;
+		L_486 = PlayGameSwitchPlayersSymbolsMethods_SetUpNewPlayersSymbolsMove_mEF60267B326F73E0746D80BA8BF9640DF39073BD(L_484, L_485, NULL);
+		__this->____playerSymbolMove_71 = L_486;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____playerSymbolMove_71), (void*)L_486);
+		// _gameBoardVerification2D = PlayGameSwitchPlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _newDataForPlayersSymbolsSwitch);
+		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_487 = __this->____gameBoardVerification2D_66;
+		ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A* L_488 = __this->____newDataForPlayersSymbolsSwitch_90;
+		StringU5BU2CU5D_tF2843FC5B60496ACCA54AD6538897DBA3E19A7EF* L_489;
+		L_489 = PlayGameSwitchPlayersSymbolsMethods_SetUpNewGameBoardVerification2D_m8C1B1255A9F7D8E543BF4BBAF19F66C227CB91CB(L_487, L_488, NULL);
+		__this->____gameBoardVerification2D_66 = L_489;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameBoardVerification2D_66), (void*)L_489);
+		// if (_isDoubleRandomChange == true)
+		bool L_490 = __this->____isDoubleRandomChange_93;
+		V_67 = L_490;
+		bool L_491 = V_67;
+		if (!L_491)
+		{
+			goto IL_0e0b;
+		}
+	}
+	{
+		// _switchChange = PlayGameChangePlayersSymbolsMethods.SetUpNewSwitchChange(_switchChange);
+		int32_t L_492 = __this->____switchChange_94;
+		int32_t L_493;
+		L_493 = PlayGameChangePlayersSymbolsMethods_SetUpNewSwitchChange_m26BC7A6825841845A648EAF8649E42C6A9C2BC16(L_492, NULL);
+		__this->____switchChange_94 = L_493;
+	}
+
+IL_0e0b:
 	{
 	}
 
-IL_0dcf:
+IL_0e0c:
 	{
 	}
 
-IL_0dd0:
+IL_0e0d:
 	{
-		goto IL_0e41;
+		goto IL_0e7e;
 	}
 
-IL_0dd3:
+IL_0e10:
 	{
 		// _timeForUnhidePlayGameElements -= 1 * Time.deltaTime;
-		float L_486 = __this->____timeForUnhidePlayGameElements_81;
-		float L_487;
-		L_487 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		__this->____timeForUnhidePlayGameElements_81 = ((float)il2cpp_codegen_subtract(L_486, ((float)il2cpp_codegen_multiply((1.0f), L_487))));
+		float L_494 = __this->____timeForUnhidePlayGameElements_81;
+		float L_495;
+		L_495 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		__this->____timeForUnhidePlayGameElements_81 = ((float)il2cpp_codegen_subtract(L_494, ((float)il2cpp_codegen_multiply((1.0f), L_495))));
 		// if (_timeForUnhidePlayGameElements < 0)
-		float L_488 = __this->____timeForUnhidePlayGameElements_81;
-		V_67 = (bool)((((float)L_488) < ((float)(0.0f)))? 1 : 0);
-		bool L_489 = V_67;
-		if (!L_489)
+		float L_496 = __this->____timeForUnhidePlayGameElements_81;
+		V_68 = (bool)((((float)L_496) < ((float)(0.0f)))? 1 : 0);
+		bool L_497 = V_68;
+		if (!L_497)
 		{
-			goto IL_0e40;
+			goto IL_0e7d;
 		}
 	}
 	{
 		// PlayGameMenuAndTimerButtonsActions.ShowTimerFoGameBoard();
 		PlayGameMenuAndTimerButtonsActions_ShowTimerFoGameBoard_mDBA122C13E71039A2F679ADC51E67AA908C38994(NULL);
 		// PlayGameMenuAndTimerButtonsActions.UnhidePlayGameElements(_gameBoard);
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_490 = __this->____gameBoard_65;
-		PlayGameMenuAndTimerButtonsActions_UnhidePlayGameElements_mAC0CC25C449EBA1F965DAB5BAE2FAC7F5A04C559(L_490, NULL);
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_498 = __this->____gameBoard_65;
+		PlayGameMenuAndTimerButtonsActions_UnhidePlayGameElements_mAC0CC25C449EBA1F965DAB5BAE2FAC7F5A04C559(L_498, NULL);
 		// PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbolsTop);
-		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_491 = __this->____gameButtonsChangePlayersSymbolsTop_74;
-		PlayGameMenuAndTimerButtonsActions_DestroyPlayGameButtons_m49D4C1314D0A86FA08EFDE16BCDC955D4B9FDC83(L_491, NULL);
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_499 = __this->____gameButtonsChangePlayersSymbolsTop_74;
+		PlayGameMenuAndTimerButtonsActions_DestroyPlayGameButtons_m49D4C1314D0A86FA08EFDE16BCDC955D4B9FDC83(L_499, NULL);
 		// PlayGameMenuAndTimerButtonsActions.DestroyPlayGameButtons(_gameButtonsChangePlayersSymbols);
-		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_492 = __this->____gameButtonsChangePlayersSymbols_75;
-		PlayGameMenuAndTimerButtonsActions_DestroyPlayGameButtons_m49D4C1314D0A86FA08EFDE16BCDC955D4B9FDC83(L_492, NULL);
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_500 = __this->____gameButtonsChangePlayersSymbols_75;
+		PlayGameMenuAndTimerButtonsActions_DestroyPlayGameButtons_m49D4C1314D0A86FA08EFDE16BCDC955D4B9FDC83(L_500, NULL);
 		// _isTimeToHidePlayGameElements = true;
 		__this->____isTimeToHidePlayGameElements_83 = (bool)1;
 		// _timeForUnhidePlayGameElements = _timeForTimers[2];
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_493 = __this->____timeForTimers_79;
-		NullCheck(L_493);
-		int32_t L_494 = 2;
-		float L_495 = (L_493)->GetAt(static_cast<il2cpp_array_size_t>(L_494));
-		__this->____timeForUnhidePlayGameElements_81 = L_495;
+		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_501 = __this->____timeForTimers_79;
+		NullCheck(L_501);
+		int32_t L_502 = 2;
+		float L_503 = (L_501)->GetAt(static_cast<il2cpp_array_size_t>(L_502));
+		__this->____timeForUnhidePlayGameElements_81 = L_503;
 	}
 
-IL_0e40:
+IL_0e7d:
 	{
 	}
 
-IL_0e41:
+IL_0e7e:
 	{
-		goto IL_0e46;
+		goto IL_0e83;
 	}
 
-IL_0e44:
-	{
-	}
-
-IL_0e46:
+IL_0e81:
 	{
 	}
 
-IL_0e47:
+IL_0e83:
+	{
+	}
+
+IL_0e84:
 	{
 		// }
 		return;

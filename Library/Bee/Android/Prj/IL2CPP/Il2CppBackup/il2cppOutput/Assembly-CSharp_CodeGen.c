@@ -2592,527 +2592,541 @@ extern void PlayGameChangePlayersSymbolsMethods_GetOldSymbols_m7F943995F1F683550
 extern void PlayGameChangePlayersSymbolsMethods_GetNewPlayersSymbols_m470829ECBB7D4B43323F11F5466DB1BB937823F6 (void);
 // 0x0000050A System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewTeamGameSymbols(System.Collections.Generic.List`1<System.String[]>,System.String[],System.String[])
 extern void PlayGameChangePlayersSymbolsMethods_SetUpNewTeamGameSymbols_mC358C827B867AC9467AAA2857336AC42431C0164 (void);
-// 0x0000050B System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameChangePlayersSymbolsMethods::GetNewDataForPlayersSymbols(System.String[],System.Collections.Generic.List`1<System.Single>)
-extern void PlayGameChangePlayersSymbolsMethods_GetNewDataForPlayersSymbols_m7F5B63A2068394094BE748072E01FD4A4A39E0C4 (void);
-// 0x0000050C System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameChangePlayersSymbolsMethods::GetNewPlayersSymbols(System.String[],System.Single)
-extern void PlayGameChangePlayersSymbolsMethods_GetNewPlayersSymbols_m7D205A1C6D571F04FC6E61FE895E186C731F806C (void);
-// 0x0000050D System.Void Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpPlayerSymbols(System.Collections.Generic.List`1<UnityEngine.GameObject[,,]>,System.String[])
+// 0x0000050B System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameChangePlayersSymbolsMethods::GetNewDataForPlayersSymbols(System.String[],System.Collections.Generic.List`1<System.String[]>,System.Collections.Generic.List`1<System.Single>,System.Boolean,System.Boolean)
+extern void PlayGameChangePlayersSymbolsMethods_GetNewDataForPlayersSymbols_m16F6080B3C8FD8729B934B89A34640FF34FC96EF (void);
+// 0x0000050C System.String[] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::GetPlayersSymbolsInOneTable(System.Collections.Generic.List`1<System.String[]>)
+extern void PlayGameChangePlayersSymbolsMethods_GetPlayersSymbolsInOneTable_m876ACC23815EF1F74FC12D4045B867C29A82A3CA (void);
+// 0x0000050D System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameChangePlayersSymbolsMethods::GetNewPlayersSymbols(System.String[],System.Collections.Generic.List`1<System.String[]>,System.Single,System.Boolean,System.Boolean)
+extern void PlayGameChangePlayersSymbolsMethods_GetNewPlayersSymbols_mA5885C3C2161636FCFAF0FE8C8E2E7B010E0E20A (void);
+// 0x0000050E System.Void Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpPlayerSymbols(System.Collections.Generic.List`1<UnityEngine.GameObject[,,]>,System.String[])
 extern void PlayGameChangePlayersSymbolsMethods_SetUpPlayerSymbols_m723148F420A70789205CA58E024A5DC0DE02B781 (void);
-// 0x0000050E System.String[,] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewGameBoardVerification2D(System.String[,],System.String[],System.String[])
+// 0x0000050F System.String[,] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewGameBoardVerification2D(System.String[,],System.String[],System.String[])
 extern void PlayGameChangePlayersSymbolsMethods_SetUpNewGameBoardVerification2D_m3D167645A373FEAAE3B7D2C60865DF6388E68436 (void);
-// 0x0000050F System.String[] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::CreateTableWithTagsForPlayerSymbolMove()
+// 0x00000510 System.String[] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::CreateTableWithTagsForPlayerSymbolMove()
 extern void PlayGameChangePlayersSymbolsMethods_CreateTableWithTagsForPlayerSymbolMove_mF7709549BB6972E6099FF983BCF5587161166EBE (void);
-// 0x00000510 System.Void Assets.Scripts.PlayGameChangePlayersSymbolsMethods::ChangeDataForPlayersSymbolsMoveGameObjects(System.String[],System.String[])
+// 0x00000511 System.Void Assets.Scripts.PlayGameChangePlayersSymbolsMethods::ChangeDataForPlayersSymbolsMoveGameObjects(System.String[],System.String[])
 extern void PlayGameChangePlayersSymbolsMethods_ChangeDataForPlayersSymbolsMoveGameObjects_m07DDAC8D3B26AC51BFE73B135780E2F1B4044C3E (void);
-// 0x00000511 System.String[] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::GetNewPlayersSymbolsMove(System.String[],System.String[],System.String[])
+// 0x00000512 System.String[] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::GetNewPlayersSymbolsMove(System.String[],System.String[],System.String[])
 extern void PlayGameChangePlayersSymbolsMethods_GetNewPlayersSymbolsMove_mB650A102C7B7EAB0A230986E17F51D0C26CEB092 (void);
-// 0x00000512 System.String[] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewPlayersSymbolsMove(System.String[],System.String[],System.String[])
+// 0x00000513 System.String[] Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewPlayersSymbolsMove(System.String[],System.String[],System.String[])
 extern void PlayGameChangePlayersSymbolsMethods_SetUpNewPlayersSymbolsMove_m4E0E50D45714F2B9962CFDF347592870D384B722 (void);
-// 0x00000513 System.Void Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewPlayersSymbolsForGameBoard(UnityEngine.GameObject[,,],System.String[],System.String[])
+// 0x00000514 System.Void Assets.Scripts.PlayGameChangePlayersSymbolsMethods::SetUpNewPlayersSymbolsForGameBoard(UnityEngine.GameObject[,,],System.String[],System.String[])
 extern void PlayGameChangePlayersSymbolsMethods_SetUpNewPlayersSymbolsForGameBoard_mCBA5628CF1369A7C84501AE6D690DB4FD19522AC (void);
-// 0x00000514 System.Void Assets.Scripts.PlayGameChangePlayersSymbolsMethods::.ctor()
+// 0x00000515 System.Void Assets.Scripts.PlayGameChangePlayersSymbolsMethods::.ctor()
 extern void PlayGameChangePlayersSymbolsMethods__ctor_m669116C2BB8EB42275FBCEF1EB399C2329960E4D (void);
-// 0x00000515 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::GameSwitchPlayersSymbolsButtonsTopCreate(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean)
+// 0x00000516 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::GameSwitchPlayersSymbolsButtonsTopCreate(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_GameSwitchPlayersSymbolsButtonsTopCreate_m744AB6EF65F0CB76035280A348F5E1A5132041C8 (void);
-// 0x00000516 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameSwitchPlayersSymbolsButtonsCreateTopPlayersSymbols(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x00000517 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameSwitchPlayersSymbolsButtonsCreateTopPlayersSymbols(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_PlayGameSwitchPlayersSymbolsButtonsCreateTopPlayersSymbols_m1C2CEA5CEEE65B9F34180C0DAFD801043A9A71E0 (void);
-// 0x00000517 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameSwitchlayersSymbolsButtonCreateTopChange(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x00000518 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameSwitchlayersSymbolsButtonCreateTopChange(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_PlayGameSwitchlayersSymbolsButtonCreateTopChange_mEAD9B7E4C1171F73CF585486655302C7B759CF1D (void);
-// 0x00000518 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateTopSwitchBetweenTeams(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x00000519 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateTopSwitchBetweenTeams(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_PlayGameChangePlayersSymbolsButtonsCreateTopSwitchBetweenTeams_m33EE129FB6F39029518248DDB9133EC0C0A7134E (void);
-// 0x00000519 System.Int32 Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::GetNumbersForCountedSymbolsToChange(System.Collections.Generic.List`1<System.String[]>)
+// 0x0000051A System.Int32 Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::GetNumbersForCountedSymbolsToChange(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_GetNumbersForCountedSymbolsToChange_m14E06B5057B30BEBAA5CE90EDC1E48B062110371 (void);
-// 0x0000051A System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::GameSwitchPlayersSymbolsButtonsCreate(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean,UnityEngine.Material[],System.Collections.ArrayList)
+// 0x0000051B System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::GameSwitchPlayersSymbolsButtonsCreate(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],System.Boolean,UnityEngine.Material[],System.Collections.ArrayList)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_GameSwitchPlayersSymbolsButtonsCreate_mB73CBB12601EE8FF1356CC9AF9D9223C0F895897 (void);
-// 0x0000051B UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldAndNewBackground(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x0000051C UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldAndNewBackground(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldAndNewBackground_m4C9F90A8EA01FFB913BEE2D41988E1528BDCB1A6 (void);
-// 0x0000051C UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldAndNewBackgroundForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x0000051D UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldAndNewBackgroundForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldAndNewBackgroundForModeTablet_m3EC702161C56D1413E55BA63BD8596BDE6DF44D5 (void);
-// 0x0000051D UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldSymbol(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x0000051E UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldSymbol(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForOldSymbol_m45A4B677236D9E05AD01C3793141F2F329D58744 (void);
-// 0x0000051E UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForNewSymbol(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x0000051F UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForNewSymbol(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate_PlayGameChangePlayersSymbolsButtonsCreateSingleButtonForNewSymbol_m766C6182BA3D07FC59470C2E73BB4C75C8DB813C (void);
-// 0x0000051F System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::.ctor()
+// 0x00000520 System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsCreate::.ctor()
 extern void PlayGameSwitchPlayersSymbolsButtonsCreate__ctor_m1993EF15FC4C46FA2233EBA503EA23B732C09549 (void);
-// 0x00000520 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::GetSymbolsAsOneTable(System.Collections.Generic.List`1<System.String[]>,System.Int32)
+// 0x00000521 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::GetSymbolsAsOneTable(System.Collections.Generic.List`1<System.String[]>,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_GetSymbolsAsOneTable_mB25434AA326F7A107C23E0770C8DB36B849E601D (void);
-// 0x00000521 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeCellphone(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Collections.ArrayList,System.Int32)
+// 0x00000522 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeCellphone(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Collections.ArrayList,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeCellphone_mC66450B862D35EAC79254A6C0CB105C27AA71306 (void);
-// 0x00000522 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsBackground(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
+// 0x00000523 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsBackground(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateButtonsBackground_m04B514859BDB8DB84AAC49F63AF78E6508267B26 (void);
-// 0x00000523 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundFinal(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
+// 0x00000524 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundFinal(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundFinal_m7FD9F9B0DD61E01D8D6693CE4058414EA62F5462 (void);
-// 0x00000524 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameChangePlayersSymbolsCreateButtonsOldSymbols(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
+// 0x00000525 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameChangePlayersSymbolsCreateButtonsOldSymbols(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameChangePlayersSymbolsCreateButtonsOldSymbols_mCE8C22743AC30D198ADFA8072475AB9BE6B130D3 (void);
-// 0x00000525 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsOldSymbolsFinal(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32,System.String[])
+// 0x00000526 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsOldSymbolsFinal(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32,System.String[])
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateButtonsOldSymbolsFinal_m6F421D018492BE7DB877F4359EF8BDD73487519E (void);
-// 0x00000526 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbols(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
+// 0x00000527 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbols(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbols_m39E146F0172F167589C716580178DFCD8E0429BE (void);
-// 0x00000527 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbolsFinal(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32,System.String[])
+// 0x00000528 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbolsFinal(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32,System.String[])
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbolsFinal_m577F668FFB0A22F8E30F80DF20FB09507A6E17BF (void);
-// 0x00000528 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Collections.ArrayList,System.Int32)
+// 0x00000529 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean,System.Collections.ArrayList,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateFinalButtonsForModeTablet_m9CE8508A9D8E24674D6A06422CD3EE14077A3EB3 (void);
-// 0x00000529 System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundFinalForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
+// 0x0000052A System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundFinalForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundFinalForModeTablet_m6CB475DA5ED1B939670A85BF0D82F71E51D7DB2F (void);
-// 0x0000052A System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
+// 0x0000052B System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundForModeTablet_mCDD1D9A3426EBFC0F553B5F6142FE7A336BC6AFF (void);
-// 0x0000052B System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsOldSymbolsFinalForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32,System.String[])
+// 0x0000052C System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsOldSymbolsFinalForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32,System.String[])
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateButtonsOldSymbolsFinalForModeTablet_mE8DF679E8A63526521D124B42ECFEC5EEA2869B5 (void);
-// 0x0000052C System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbolsFinalForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32,System.String[])
+// 0x0000052D System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbolsFinalForModeTablet(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.Int32,System.String[])
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbolsFinalForModeTablet_m447896234DDC63151EBDFD12C464FB5045571A17 (void);
-// 0x0000052D System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::ChangeDataForSwitchPlayersSymbols(System.Collections.Generic.List`1<UnityEngine.GameObject[,,]>,System.Single)
+// 0x0000052E System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::ChangeDataForSwitchPlayersSymbols(System.Collections.Generic.List`1<UnityEngine.GameObject[,,]>,System.Single)
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods_ChangeDataForSwitchPlayersSymbols_m5AE5EF22842200CB49DF03DE40E1B201011BBD52 (void);
-// 0x0000052E System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::.ctor()
+// 0x0000052F System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsButtonsMethods::.ctor()
 extern void PlayGameSwitchPlayersSymbolsButtonsMethods__ctor_m60859315FE7112067EA66C20D5013C67BCE9911A (void);
-// 0x0000052F System.String Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesForSwitchAsString(System.Int32)
+// 0x00000530 System.String Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesForSwitchAsString(System.Int32)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetIndexesForSwitchAsString_m4EB393946E2EA05EA47D9681AF5731DE2188595B (void);
-// 0x00000530 System.String Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesAsString(System.Int32)
+// 0x00000531 System.String Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesAsString(System.Int32)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetIndexesAsString_m64C383FC3C99D6AB92B651C6147A1E9DB5928455 (void);
-// 0x00000531 System.String Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetStaicIndexesForSwitch()
+// 0x00000532 System.String Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetStaicIndexesForSwitch()
 extern void PlayGameSwitchPlayersSymbolsMethods_GetStaicIndexesForSwitch_m5EE16827A0AD88D55E68E15F506D1B28DC68CA07 (void);
-// 0x00000532 System.Int32[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesForSwitch(System.Int32,System.Int32)
+// 0x00000533 System.Int32[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesForSwitch(System.Int32,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetIndexesForSwitch_m56CF755139CDDED3B303F18EAB27255B3F71350C (void);
-// 0x00000533 System.Collections.ArrayList Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetSymoblsForSwitch(System.Collections.Generic.List`1<System.String[]>)
+// 0x00000534 System.Collections.ArrayList Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetSymoblsForSwitch(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetSymoblsForSwitch_m6225E4ADB7C337B27147DFFAA27A4BA3E7E72CEB (void);
-// 0x00000534 System.Int32[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesForRightMove(System.Int32)
+// 0x00000535 System.Int32[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesForRightMove(System.Int32)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetIndexesForRightMove_m301318AB1AEB3C91B144775A0A5E627A5C448AEF (void);
-// 0x00000535 System.Int32[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesForLeftMove(System.Int32)
+// 0x00000536 System.Int32[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetIndexesForLeftMove(System.Int32)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetIndexesForLeftMove_m86AE0FBF60DCB0E2EE614525EE0AA7AD39BDE00D (void);
-// 0x00000536 System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>)
+// 0x00000537 System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsMethods_SetUpSymbolsForSwitch_mBF434C5E405A8C524BB3A036E32311A6C6940D97 (void);
-// 0x00000537 System.Collections.ArrayList Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetPlayersSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>)
+// 0x00000538 System.Collections.ArrayList Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetPlayersSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetPlayersSymbolsForSwitch_m088663BCB7EE22922A998EF4005026F1B324169F (void);
-// 0x00000538 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForOldSymbolsForSwitch(UnityEngine.GameObject[,,],System.Collections.Generic.List`1<System.String[]>)
+// 0x00000539 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForOldSymbolsForSwitch(UnityEngine.GameObject[,,],System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsMethods_ChangeDataForOldSymbolsForSwitch_m4A27D87A34586859227A20A8BE50ED08795DC3C2 (void);
-// 0x00000539 System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SwitchOldSymbolsForNew(UnityEngine.GameObject[,,],System.Collections.Generic.List`1<System.String[]>,System.Collections.Generic.List`1<System.String[]>)
+// 0x0000053A System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SwitchOldSymbolsForNew(UnityEngine.GameObject[,,],System.Collections.Generic.List`1<System.String[]>,System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsMethods_SwitchOldSymbolsForNew_mF6FDADE58403F55321BDAFC26BE6325513C4B9A5 (void);
-// 0x0000053A System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpFinalSymbolsForGameBoard(UnityEngine.GameObject[,,])
+// 0x0000053B System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpFinalSymbolsForGameBoard(UnityEngine.GameObject[,,])
 extern void PlayGameSwitchPlayersSymbolsMethods_SetUpFinalSymbolsForGameBoard_mA2DE6CA5290F534F385EC8BC37720263AC2564A2 (void);
-// 0x0000053B System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>,System.String)
+// 0x0000053C System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>,System.String)
 extern void PlayGameSwitchPlayersSymbolsMethods_ChangeDataForSymbolsForSwitch_mE14967B55273692D9B9DAB32B0D16FFEA511329E (void);
-// 0x0000053C System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpSwitchedPlayersSymbolsForGameBoard(UnityEngine.GameObject[,,],System.Collections.ArrayList)
+// 0x0000053D System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpSwitchedPlayersSymbolsForGameBoard(UnityEngine.GameObject[,,],System.Collections.ArrayList)
 extern void PlayGameSwitchPlayersSymbolsMethods_SetUpSwitchedPlayersSymbolsForGameBoard_m9F51148E9A77A6CCFAB734AC86D61563ED17CC23 (void);
-// 0x0000053D System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForNewSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>)
+// 0x0000053E System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForNewSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsMethods_ChangeDataForNewSymbolsForSwitch_m77C31C2B53AC2161C5727F0AF28898E781927D6A (void);
-// 0x0000053E System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForOldSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>)
+// 0x0000053F System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForOldSymbolsForSwitch(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsMethods_ChangeDataForOldSymbolsForSwitch_mC2DAD0DEA04FA0D357C8BBE2FDCE6480627B88AD (void);
-// 0x0000053F System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpNewTeamGameSymbols(System.Collections.ArrayList,System.Collections.Generic.List`1<System.String[]>)
+// 0x00000540 System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpNewTeamGameSymbols(System.Collections.ArrayList,System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsMethods_SetUpNewTeamGameSymbols_m36F9C1EA2CE9808AC252C0BD35A18C55CAD9F842 (void);
-// 0x00000540 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetNewPlayersSymbolsMove(System.String[],System.String[],System.String[])
+// 0x00000541 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetNewPlayersSymbolsMove(System.String[],System.String[],System.String[])
 extern void PlayGameSwitchPlayersSymbolsMethods_GetNewPlayersSymbolsMove_mD75BE5A38ABEF8D0B51AAFEB3BAB3B1F900C34C6 (void);
-// 0x00000541 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::CreateTableWithTagsForPlayerSymbolMove()
+// 0x00000542 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::CreateTableWithTagsForPlayerSymbolMove()
 extern void PlayGameSwitchPlayersSymbolsMethods_CreateTableWithTagsForPlayerSymbolMove_mB0FB6C07D388E922FA3B82AEF66567BB14DF050C (void);
-// 0x00000542 System.String Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::RemoveExtraStaticTextFromStringToGetSymbol(System.String)
+// 0x00000543 System.String Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::RemoveExtraStaticTextFromStringToGetSymbol(System.String)
 extern void PlayGameSwitchPlayersSymbolsMethods_RemoveExtraStaticTextFromStringToGetSymbol_mCCD77A152F898E49E35749D627092627297D5BE1 (void);
-// 0x00000543 System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForPlayersSymbolsMoveGameObjects(System.String[],System.String[])
+// 0x00000544 System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForPlayersSymbolsMoveGameObjects(System.String[],System.String[])
 extern void PlayGameSwitchPlayersSymbolsMethods_ChangeDataForPlayersSymbolsMoveGameObjects_m4ACBAEF5EBED0A0693EC51385B3BF912668776EA (void);
-// 0x00000544 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetSymbolsAsOneTable(System.Collections.Generic.List`1<System.String[]>,System.Int32)
+// 0x00000545 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetSymbolsAsOneTable(System.Collections.Generic.List`1<System.String[]>,System.Int32)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetSymbolsAsOneTable_mE696BC59399393207722981098BBBBAF33E6246F (void);
-// 0x00000545 System.Int32 Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetNumbersForCountedSymbolsToChange(System.Collections.Generic.List`1<System.String[]>)
+// 0x00000546 System.Int32 Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetNumbersForCountedSymbolsToChange(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetNumbersForCountedSymbolsToChange_mA1B40AC3DA7BA6689ACDD7DF80C8AB695AB45C1E (void);
-// 0x00000546 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpNewPlayersSymbolsMove(System.String[],System.Collections.ArrayList)
+// 0x00000547 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpNewPlayersSymbolsMove(System.String[],System.Collections.ArrayList)
 extern void PlayGameSwitchPlayersSymbolsMethods_SetUpNewPlayersSymbolsMove_mEF60267B326F73E0746D80BA8BF9640DF39073BD (void);
-// 0x00000547 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForNewSymbolsForSwitch(System.String[])
+// 0x00000548 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::ChangeDataForNewSymbolsForSwitch(System.String[])
 extern void PlayGameSwitchPlayersSymbolsMethods_ChangeDataForNewSymbolsForSwitch_m4DDCCB873D4B9736D7A48E5A86F2410BC17947A9 (void);
-// 0x00000548 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetNewPlayersSymbols(System.String[],System.Collections.ArrayList)
+// 0x00000549 System.String[] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::GetNewPlayersSymbols(System.String[],System.Collections.ArrayList)
 extern void PlayGameSwitchPlayersSymbolsMethods_GetNewPlayersSymbols_mA9A2510F93692E8087B56E76144208BD4447A5A6 (void);
-// 0x00000549 System.String[,] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpNewGameBoardVerification2D(System.String[,],System.Collections.ArrayList)
+// 0x0000054A System.String[,] Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::SetUpNewGameBoardVerification2D(System.String[,],System.Collections.ArrayList)
 extern void PlayGameSwitchPlayersSymbolsMethods_SetUpNewGameBoardVerification2D_m8C1B1255A9F7D8E543BF4BBAF19F66C227CB91CB (void);
-// 0x0000054A System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::.ctor()
+// 0x0000054B System.Void Assets.Scripts.PlayGameSwitchPlayersSymbolsMethods::.ctor()
 extern void PlayGameSwitchPlayersSymbolsMethods__ctor_m95E15CCD518D1C5C4E9817F1BDA5501BE73B6B60 (void);
-// 0x0000054B System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonsNameFromDictionaryButtonsGameName(System.Int32)
+// 0x0000054C System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonsNameFromDictionaryButtonsGameName(System.Int32)
 extern void PlayGameCommonButtonsName_GetButtonsNameFromDictionaryButtonsGameName_m6885371B1BEF011534EFC157BD1FFC9117794BB5 (void);
-// 0x0000054C System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForNewGame()
+// 0x0000054D System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForNewGame()
 extern void PlayGameCommonButtonsName_GetButtonNameForNewGame_mFCC01F81E8E1971A7A22B62067DCD2A7207D2E1E (void);
-// 0x0000054D System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForGameMenuBack()
+// 0x0000054E System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForGameMenuBack()
 extern void PlayGameCommonButtonsName_GetButtonNameForGameMenuBack_mC9B314A8B3BF28CB81EB2091A0FC7238EC087C66 (void);
-// 0x0000054E System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForHelpButtons()
+// 0x0000054F System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForHelpButtons()
 extern void PlayGameCommonButtonsName_GetButtonNameForHelpButtons_m2FFD169E78CC7E4734DC15BF6CFC46D7E11A9345 (void);
-// 0x0000054F System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForBoardText()
+// 0x00000550 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForBoardText()
 extern void PlayGameCommonButtonsName_GetButtonNameForBoardText_mFE8B48B5719B88CAC0EE4408F7C6F2137BD813BB (void);
-// 0x00000550 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForPlayerSymbol()
+// 0x00000551 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForPlayerSymbol()
 extern void PlayGameCommonButtonsName_GetButtonNameForPlayerSymbol_m3BDA3A7719772FD9AB511ABF23F09A9A1EE44E40 (void);
-// 0x00000551 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForPlayersSymbols()
+// 0x00000552 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForPlayersSymbols()
 extern void PlayGameCommonButtonsName_GetButtonNameForPlayersSymbols_mE2E9EDD9BE7117955AC6D046180B76CE7D05E650 (void);
-// 0x00000552 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForChange()
+// 0x00000553 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForChange()
 extern void PlayGameCommonButtonsName_GetButtonNameForChange_m487BF7D046754AAC5431BFDBAB1F378D9A6BBDF9 (void);
-// 0x00000553 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForSwitch()
+// 0x00000554 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForSwitch()
 extern void PlayGameCommonButtonsName_GetButtonNameForSwitch_mCC262E71847243339CECAD5A59C3B9FEC93E4F22 (void);
-// 0x00000554 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForOldAndNew()
+// 0x00000555 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForOldAndNew()
 extern void PlayGameCommonButtonsName_GetButtonNameForOldAndNew_m3FA4B5309D3B180A62C6F574D1B69604094930A0 (void);
-// 0x00000555 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForButtonToHide()
+// 0x00000556 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForButtonToHide()
 extern void PlayGameCommonButtonsName_GetButtonNameForButtonToHide_m4B060ED2794042E22B6FF8C01E1308C0613DBA8F (void);
-// 0x00000556 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForHelpStaticText()
+// 0x00000557 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForHelpStaticText()
 extern void PlayGameCommonButtonsName_GetButtonNameForHelpStaticText_mE4E781F1A9D4EE8CDC5CAB26C2E073E5B90F258E (void);
-// 0x00000557 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForTextGame()
+// 0x00000558 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForTextGame()
 extern void PlayGameCommonButtonsName_GetButtonNameForTextGame_m761009C618EF237F8447EA8C8C266B8947AE0FA1 (void);
-// 0x00000558 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForTextOver()
+// 0x00000559 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForTextOver()
 extern void PlayGameCommonButtonsName_GetButtonNameForTextOver_m5EA2C6C90B6D1188D1F3D49E0B62C7904326A025 (void);
-// 0x00000559 System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForTextTeam()
+// 0x0000055A System.String Assets.Scripts.PlayGameCommonButtonsName::GetButtonNameForTextTeam()
 extern void PlayGameCommonButtonsName_GetButtonNameForTextTeam_m28824EC01E6717B04F3548AD6E1B11D0EB43F2CF (void);
-// 0x0000055A System.Void Assets.Scripts.PlayGameCommonButtonsName::.ctor()
+// 0x0000055B System.Void Assets.Scripts.PlayGameCommonButtonsName::.ctor()
 extern void PlayGameCommonButtonsName__ctor_m6964C298A8F4F78BA529239E7FBDB1B6921650B1 (void);
-// 0x0000055B System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagsNameFromDictionaryTagsGame(System.Int32)
+// 0x0000055C System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagsNameFromDictionaryTagsGame(System.Int32)
 extern void PlayGameCommonButtonsTagName_GetTagsNameFromDictionaryTagsGame_mB8B8C6DF578E4692536788E831ACF352A333EC18 (void);
-// 0x0000055C System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagMenuConfigurationLeft()
+// 0x0000055D System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagMenuConfigurationLeft()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagMenuConfigurationLeft_mFEED9B77474A79BC7A9254FC93BB3D25244D5E08 (void);
-// 0x0000055D System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagMenuConfigurationRight()
+// 0x0000055E System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagMenuConfigurationRight()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagMenuConfigurationRight_m17389A3DDFED9F2EBC990AAAFB459E291B2AD916 (void);
-// 0x0000055E System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagNewGame()
+// 0x0000055F System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagNewGame()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagNewGame_mC8649B34EC5A2F9239BFC91C54310DCAE76D12C1 (void);
-// 0x0000055F System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagHelpButtons()
+// 0x00000560 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagHelpButtons()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagHelpButtons_m3482620945D629AB6EC9F3FCCA019A2EBAA1D204 (void);
-// 0x00000560 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagMenuBack()
+// 0x00000561 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagMenuBack()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagMenuBack_m1A8966737AD39CC51F7F0363D46007B67DCAE555 (void);
-// 0x00000561 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagParentObjectHelpButtons()
+// 0x00000562 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagParentObjectHelpButtons()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagParentObjectHelpButtons_mBA420CD9E82FC64AC0ABBB9DD348CF03C0AA8269 (void);
-// 0x00000562 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagMenuConfigurationDisactivate()
+// 0x00000563 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagMenuConfigurationDisactivate()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagMenuConfigurationDisactivate_m5A7A71CADA86A408A5477CE0688EEE2CC5A25605 (void);
-// 0x00000563 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagBoardGameHelpText()
+// 0x00000564 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagBoardGameHelpText()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagBoardGameHelpText_m7B421757D0995FEEEE447C49CC0F71FEF83D715D (void);
-// 0x00000564 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagInformationTimerForPlayers()
+// 0x00000565 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagInformationTimerForPlayers()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagInformationTimerForPlayers_mD9C96F3900625FE2464DF7518C3F5B1DFEA4860E (void);
-// 0x00000565 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagInformationTimerForBoardGame()
+// 0x00000566 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagInformationTimerForBoardGame()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagInformationTimerForBoardGame_m9C222FED346FCAB2279093EEC9FEEA026EC0F57B (void);
-// 0x00000566 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagButtonToHide()
+// 0x00000567 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagButtonToHide()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagButtonToHide_m5A8EBB70A03139D1A0E7ACE1556943A32E8784BF (void);
-// 0x00000567 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagsNameFromDictionaryTagsCubePlay(System.Int32)
+// 0x00000568 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagsNameFromDictionaryTagsCubePlay(System.Int32)
 extern void PlayGameCommonButtonsTagName_GetTagsNameFromDictionaryTagsCubePlay_mA3F80A9BB4CEE4EE709E5EDAA4EF4319288AC793 (void);
-// 0x00000568 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagFree()
+// 0x00000569 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagFree()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagFree_m55068B966B2D7BC0BCC4D5E7469A5947A1523379 (void);
-// 0x00000569 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagTaken()
+// 0x0000056A System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagTaken()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagTaken_mE653EEA56FD9F5AB25759C1681361432EBFE3751 (void);
-// 0x0000056A System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagFrame()
+// 0x0000056B System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagFrame()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagFrame_m1DA2B4843E2A5977923712687339A1D90CFDC98E (void);
-// 0x0000056B System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagGameOver()
+// 0x0000056C System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagGameOver()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagGameOver_mE4EF9D4418440A2F3746F9679114F50EE170ACE3 (void);
-// 0x0000056C System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagGameWin()
+// 0x0000056D System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagGameWin()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagGameWin_mC3C350DADE7D41E2492C52AF022E528D189D9C5E (void);
-// 0x0000056D System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagsNameFromDictionaryTagsHelpButtons(System.Int32)
+// 0x0000056E System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagsNameFromDictionaryTagsHelpButtons(System.Int32)
 extern void PlayGameCommonButtonsTagName_GetTagsNameFromDictionaryTagsHelpButtons_m6B6EAC9B276ECB77B76182D3B47CDC1AA5CB7308 (void);
-// 0x0000056E System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagArrowRight()
+// 0x0000056F System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagArrowRight()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagArrowRight_mE573143D22B76A275008C877A94B7FA680A316FD (void);
-// 0x0000056F System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagArrowDown()
+// 0x00000570 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagArrowDown()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagArrowDown_m8B858BC50025AE7F7D72DAB56805D126352A27FD (void);
-// 0x00000570 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagArrowLeft()
+// 0x00000571 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagArrowLeft()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagArrowLeft_mD2AB415D65BC50B2B0A5CBE615B7D9BF720422F7 (void);
-// 0x00000571 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagArrowUp()
+// 0x00000572 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagArrowUp()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagArrowUp_mDFCCD8DB09584A4DB8763FBF99751E7DF1FB1D82 (void);
-// 0x00000572 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagButtonConfirm()
+// 0x00000573 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagButtonConfirm()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagButtonConfirm_m5C7290018A4669F78910F1D753A0C70B1299E50A (void);
-// 0x00000573 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagsNameFromDictionaryTagPlayerSymbolMove(System.Int32)
+// 0x00000574 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagsNameFromDictionaryTagPlayerSymbolMove(System.Int32)
 extern void PlayGameCommonButtonsTagName_GetTagsNameFromDictionaryTagPlayerSymbolMove_m0DE6418D8F7A8FBE83E116860C8D957D0463C279 (void);
-// 0x00000574 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagPlayerSymbolCurrent()
+// 0x00000575 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagPlayerSymbolCurrent()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagPlayerSymbolCurrent_m30E2FEC1EDD8E5A9733186891A72F5BBC8F0F113 (void);
-// 0x00000575 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagPlayerSymbolPrevious()
+// 0x00000576 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagPlayerSymbolPrevious()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagPlayerSymbolPrevious_m4107DB2445EAD5D45C5124EB2D810685B3AA9491 (void);
-// 0x00000576 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagPlayerSymbolNext()
+// 0x00000577 System.String Assets.Scripts.PlayGameCommonButtonsTagName::GetTagForButtonNameByTagPlayerSymbolNext()
 extern void PlayGameCommonButtonsTagName_GetTagForButtonNameByTagPlayerSymbolNext_m637B8CC14185B4918B401A11EF74EE43100835B1 (void);
-// 0x00000577 System.Void Assets.Scripts.PlayGameCommonButtonsTagName::.ctor()
+// 0x00000578 System.Void Assets.Scripts.PlayGameCommonButtonsTagName::.ctor()
 extern void PlayGameCommonButtonsTagName__ctor_m5FA3238E997F47E86CD4C4BB04CB0F64A689289C (void);
-// 0x00000578 System.String Assets.Scripts.PlayGameCommonPlayersSymbols::GetStringWithPlayersSymbols(System.Int32)
+// 0x00000579 System.String Assets.Scripts.PlayGameCommonPlayersSymbols::GetStringWithPlayersSymbols(System.Int32)
 extern void PlayGameCommonPlayersSymbols_GetStringWithPlayersSymbols_m385E33435764914A56A950E729B9425622920779 (void);
-// 0x00000579 System.String Assets.Scripts.PlayGameCommonPlayersSymbols::GetStringWithAllSymbols()
+// 0x0000057A System.String Assets.Scripts.PlayGameCommonPlayersSymbols::GetStringWithAllSymbols()
 extern void PlayGameCommonPlayersSymbols_GetStringWithAllSymbols_mA25477B72A082CD2B00CE6A6517AF361E204E15B (void);
-// 0x0000057A System.String Assets.Scripts.PlayGameCommonPlayersSymbols::GetStringWitDefaultSymbols()
+// 0x0000057B System.String Assets.Scripts.PlayGameCommonPlayersSymbols::GetStringWitDefaultSymbols()
 extern void PlayGameCommonPlayersSymbols_GetStringWitDefaultSymbols_m04F4575B3FA1C83E57EECFA14EA58EAAEE1382BC (void);
-// 0x0000057B System.Void Assets.Scripts.PlayGameCommonPlayersSymbols::.ctor()
+// 0x0000057C System.Void Assets.Scripts.PlayGameCommonPlayersSymbols::.ctor()
 extern void PlayGameCommonPlayersSymbols__ctor_m2429DF969A27808CAB5FF829ACC64B2CAD1BA7B6 (void);
-// 0x0000057C System.Void Assets.Scripts.CreateFrameForMove::.ctor()
+// 0x0000057D System.Void Assets.Scripts.CreateFrameForMove::.ctor()
 extern void CreateFrameForMove__ctor_m886148A22B51DB865C8C3AF158A94C675861860E (void);
-// 0x0000057D System.Void Assets.Scripts.PlayGameFrameActions::HideCubePlayFrame()
+// 0x0000057E System.Void Assets.Scripts.PlayGameFrameActions::HideCubePlayFrame()
 extern void PlayGameFrameActions_HideCubePlayFrame_mC3237A5E0FD7995F1237294421CEF94A52B0B912 (void);
-// 0x0000057E System.Void Assets.Scripts.PlayGameFrameActions::UnhideCubePlayFrame()
+// 0x0000057F System.Void Assets.Scripts.PlayGameFrameActions::UnhideCubePlayFrame()
 extern void PlayGameFrameActions_UnhideCubePlayFrame_mF9075724BB8472A9171A90B96CF83E5AAC21B419 (void);
-// 0x0000057F System.Void Assets.Scripts.PlayGameFrameActions::DestroyCubePlayFrame()
+// 0x00000580 System.Void Assets.Scripts.PlayGameFrameActions::DestroyCubePlayFrame()
 extern void PlayGameFrameActions_DestroyCubePlayFrame_m06D70D09F0D031AFCE420BDCB85A0B296080CE5E (void);
-// 0x00000580 System.Void Assets.Scripts.PlayGameFrameActions::DestroyMoveIndexForFrame(System.Int32[])
+// 0x00000581 System.Void Assets.Scripts.PlayGameFrameActions::DestroyMoveIndexForFrame(System.Int32[])
 extern void PlayGameFrameActions_DestroyMoveIndexForFrame_m7D1D8436AB68A35758EE00F9111CD589CDB6B8D5 (void);
-// 0x00000581 System.Boolean Assets.Scripts.PlayGameFrameActions::IsCubePlayFrameExsist(UnityEngine.GameObject)
+// 0x00000582 System.Boolean Assets.Scripts.PlayGameFrameActions::IsCubePlayFrameExsist(UnityEngine.GameObject)
 extern void PlayGameFrameActions_IsCubePlayFrameExsist_mC89CADFFBC7937E0158BA1525BA8D0E7AB53513F (void);
-// 0x00000582 System.Void Assets.Scripts.PlayGameFrameActions::.ctor()
+// 0x00000583 System.Void Assets.Scripts.PlayGameFrameActions::.ctor()
 extern void PlayGameFrameActions__ctor_mD267282612FE7F51D62E45D0F5C9A0BBEB79610A (void);
-// 0x00000583 UnityEngine.GameObject Assets.Scripts.PlayGameFrameCreate::CreateCubePlayFrameForWinner(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)
+// 0x00000584 UnityEngine.GameObject Assets.Scripts.PlayGameFrameCreate::CreateCubePlayFrameForWinner(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)
 extern void PlayGameFrameCreate_CreateCubePlayFrameForWinner_m1C4B2E5A2745816C8EF9167307D7480EA24DEFF6 (void);
-// 0x00000584 UnityEngine.GameObject Assets.Scripts.PlayGameFrameCreate::CreateCubePlayFrameForPlayerMove_v1(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)
+// 0x00000585 UnityEngine.GameObject Assets.Scripts.PlayGameFrameCreate::CreateCubePlayFrameForPlayerMove_v1(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)
 extern void PlayGameFrameCreate_CreateCubePlayFrameForPlayerMove_v1_mE69DA1E9B334070A2D625E485EA324AC80D2DF2C (void);
-// 0x00000585 UnityEngine.GameObject Assets.Scripts.PlayGameFrameCreate::CreateCubePlayFrameForPlayerMove(UnityEngine.GameObject,UnityEngine.GameObject,System.Single[],System.Boolean)
+// 0x00000586 UnityEngine.GameObject Assets.Scripts.PlayGameFrameCreate::CreateCubePlayFrameForPlayerMove(UnityEngine.GameObject,UnityEngine.GameObject,System.Single[],System.Boolean)
 extern void PlayGameFrameCreate_CreateCubePlayFrameForPlayerMove_m77FF5672BD86A2D1B8619D645190105692A4B049 (void);
-// 0x00000586 System.Void Assets.Scripts.PlayGameFrameCreate::.ctor()
+// 0x00000587 System.Void Assets.Scripts.PlayGameFrameCreate::.ctor()
 extern void PlayGameFrameCreate__ctor_mE05943E576C218C2A8821D94B34EE7A49428AF54 (void);
-// 0x00000587 System.Int32[] Assets.Scripts.PlayGameFrameMove::CreateTableForMoveIndexForFrame(System.Int32)
+// 0x00000588 System.Int32[] Assets.Scripts.PlayGameFrameMove::CreateTableForMoveIndexForFrame(System.Int32)
 extern void PlayGameFrameMove_CreateTableForMoveIndexForFrame_m09476D5715DE55B089F720E2404D6A55374F5F6E (void);
-// 0x00000588 System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexXForRight(System.Int32[],UnityEngine.GameObject,System.Single,System.Int32)
+// 0x00000589 System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexXForRight(System.Int32[],UnityEngine.GameObject,System.Single,System.Int32)
 extern void PlayGameFrameMove_SetUpNewMoveIndexXForRight_mF1A61A43DEDCB6E335E168E5CD78A1B5BBF77FCF (void);
-// 0x00000589 System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexYForUp(System.Int32[],UnityEngine.GameObject,System.Single,System.Int32)
+// 0x0000058A System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexYForUp(System.Int32[],UnityEngine.GameObject,System.Single,System.Int32)
 extern void PlayGameFrameMove_SetUpNewMoveIndexYForUp_mB1B48C34445DAAE1C192608BABF3D7DCD0ED54BD (void);
-// 0x0000058A System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexXForLeft(System.Int32[],UnityEngine.GameObject,System.Single,System.Int32)
+// 0x0000058B System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexXForLeft(System.Int32[],UnityEngine.GameObject,System.Single,System.Int32)
 extern void PlayGameFrameMove_SetUpNewMoveIndexXForLeft_m8796A2EC9989BEA1ED52238870C75B0E393D5886 (void);
-// 0x0000058B System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexYForDown(System.Int32[],UnityEngine.GameObject,System.Single,System.Int32)
+// 0x0000058C System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexYForDown(System.Int32[],UnityEngine.GameObject,System.Single,System.Int32)
 extern void PlayGameFrameMove_SetUpNewMoveIndexYForDown_m91E4A57544C1B7EB9CAAAB86EBBE5B0C8F041A42 (void);
-// 0x0000058C System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexXYForCubePlayFrame(System.Int32[],System.String,UnityEngine.GameObject,System.Single,System.Int32,System.Int32)
+// 0x0000058D System.Int32[] Assets.Scripts.PlayGameFrameMove::SetUpNewMoveIndexXYForCubePlayFrame(System.Int32[],System.String,UnityEngine.GameObject,System.Single,System.Int32,System.Int32)
 extern void PlayGameFrameMove_SetUpNewMoveIndexXYForCubePlayFrame_m0228F3939A473A3EBE75F100AB52A444F8DED2B5 (void);
-// 0x0000058D System.Void Assets.Scripts.PlayGameFrameMove::SetUpNewXYForCubePlayFrame(UnityEngine.GameObject,UnityEngine.GameObject)
+// 0x0000058E System.Void Assets.Scripts.PlayGameFrameMove::SetUpNewXYForCubePlayFrame(UnityEngine.GameObject,UnityEngine.GameObject)
 extern void PlayGameFrameMove_SetUpNewXYForCubePlayFrame_m5E691B3F3CC89B992CB9510AFE0BD7271D4B9772 (void);
-// 0x0000058E UnityEngine.GameObject Assets.Scripts.PlayGameFrameMove::GetCubePlayFrame()
+// 0x0000058F UnityEngine.GameObject Assets.Scripts.PlayGameFrameMove::GetCubePlayFrame()
 extern void PlayGameFrameMove_GetCubePlayFrame_m30DFC170431E0865F278F3102A14AB48F344648F (void);
-// 0x0000058F System.Void Assets.Scripts.PlayGameFrameMove::.ctor()
+// 0x00000590 System.Void Assets.Scripts.PlayGameFrameMove::.ctor()
 extern void PlayGameFrameMove__ctor_m9E101CAD57A014739F8A69632F8B0B8E7B90B552 (void);
-// 0x00000590 System.Void Assets.Scripts.PlayGameHelpButtons1::.ctor()
+// 0x00000591 System.Void Assets.Scripts.PlayGameHelpButtons1::.ctor()
 extern void PlayGameHelpButtons1__ctor_m1B57CB3D5FD372C1DD8B03A0E43B651F1D35528A (void);
-// 0x00000591 System.Void Assets.Scripts.PlayGameHelpButtonsActions::HelpButtonsActionsCreateOrDestroy(UnityEngine.GameObject)
+// 0x00000592 System.Void Assets.Scripts.PlayGameHelpButtonsActions::HelpButtonsActionsCreateOrDestroy(UnityEngine.GameObject)
 extern void PlayGameHelpButtonsActions_HelpButtonsActionsCreateOrDestroy_m78A08F50184B16F3361C5889F38080B0CBB08D05 (void);
-// 0x00000592 System.Void Assets.Scripts.PlayGameHelpButtonsActions::DestroyHelpButtons()
+// 0x00000593 System.Void Assets.Scripts.PlayGameHelpButtonsActions::DestroyHelpButtons()
 extern void PlayGameHelpButtonsActions_DestroyHelpButtons_m6207A57EBCF222DB0E17F8986839652AB878DE12 (void);
-// 0x00000593 System.Void Assets.Scripts.PlayGameHelpButtonsActions::.ctor()
+// 0x00000594 System.Void Assets.Scripts.PlayGameHelpButtonsActions::.ctor()
 extern void PlayGameHelpButtonsActions__ctor_m96D3DA78054746BD8284E7B7B22649D8ABF92597 (void);
-// 0x00000594 System.Void Assets.Scripts.PlayGameHelpButtonsCreate::CreateHelpButtons(UnityEngine.GameObject)
+// 0x00000595 System.Void Assets.Scripts.PlayGameHelpButtonsCreate::CreateHelpButtons(UnityEngine.GameObject)
 extern void PlayGameHelpButtonsCreate_CreateHelpButtons_mA9B388C0CE4D472D7ADB16847FBD1825F850ADB1 (void);
-// 0x00000595 System.Void Assets.Scripts.PlayGameHelpButtonsCreate::CreateAtStartHelpButtons(UnityEngine.GameObject,System.Int32,System.Int32,System.Boolean)
+// 0x00000596 System.Void Assets.Scripts.PlayGameHelpButtonsCreate::CreateAtStartHelpButtons(UnityEngine.GameObject,System.Int32,System.Int32,System.Boolean)
 extern void PlayGameHelpButtonsCreate_CreateAtStartHelpButtons_m2D2E5350061F0567B406FF3C4B9517363695E91C (void);
-// 0x00000596 System.Void Assets.Scripts.PlayGameHelpButtonsCreate::.ctor()
+// 0x00000597 System.Void Assets.Scripts.PlayGameHelpButtonsCreate::.ctor()
 extern void PlayGameHelpButtonsCreate__ctor_mB780FB6542E5564DF40E2C6A25367D6180459AE1 (void);
-// 0x00000597 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideBoardGame(UnityEngine.GameObject[,,])
+// 0x00000598 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideBoardGame(UnityEngine.GameObject[,,])
 extern void PlayGameMenuAndTimerButtonsActions_HideBoardGame_mBF8B8C082F4D70EBAC229E694820C71143347C89 (void);
-// 0x00000598 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideBoardGame(UnityEngine.GameObject[,,])
+// 0x00000599 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideBoardGame(UnityEngine.GameObject[,,])
 extern void PlayGameMenuAndTimerButtonsActions_UnhideBoardGame_mF384827B5F9DB8D9B1CA67EF3619CE74A87FEACA (void);
-// 0x00000599 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideHelpButtons()
+// 0x0000059A System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideHelpButtons()
 extern void PlayGameMenuAndTimerButtonsActions_HideHelpButtons_mD9EA1B03D77ACA5D0C8B13209F021FC9B71C2BDF (void);
-// 0x0000059A System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideHelpButtons()
+// 0x0000059B System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideHelpButtons()
 extern void PlayGameMenuAndTimerButtonsActions_UnhideHelpButtons_mB9EBBF4CFA9B8E2CFEF9B47ED579D2B37A5C6F43 (void);
-// 0x0000059B System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideTopObjects()
+// 0x0000059C System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideTopObjects()
 extern void PlayGameMenuAndTimerButtonsActions_HideTopObjects_mA7E64450C00B83579D9186B7392EBE2A844327A7 (void);
-// 0x0000059C System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideTopObjects()
+// 0x0000059D System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideTopObjects()
 extern void PlayGameMenuAndTimerButtonsActions_UnhideTopObjects_mE2436D0C14C6C446FED20D9258F79087CCF91844 (void);
-// 0x0000059D System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhidePlayGameElements(UnityEngine.GameObject[,,])
+// 0x0000059E System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhidePlayGameElements(UnityEngine.GameObject[,,])
 extern void PlayGameMenuAndTimerButtonsActions_UnhidePlayGameElements_mAC0CC25C449EBA1F965DAB5BAE2FAC7F5A04C559 (void);
-// 0x0000059E System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HidePlayGameElements(UnityEngine.GameObject[,,])
+// 0x0000059F System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HidePlayGameElements(UnityEngine.GameObject[,,])
 extern void PlayGameMenuAndTimerButtonsActions_HidePlayGameElements_mA762E5708366A29FD4A11F223999E71AC2312536 (void);
-// 0x0000059F System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhidePlayGameElementsHelpButtons(UnityEngine.GameObject[,,])
+// 0x000005A0 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhidePlayGameElementsHelpButtons(UnityEngine.GameObject[,,])
 extern void PlayGameMenuAndTimerButtonsActions_UnhidePlayGameElementsHelpButtons_m2B172F143AAC55025798AC452EFC35E7C43A3D45 (void);
-// 0x000005A0 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DisactivateConfigurationMenu()
+// 0x000005A1 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DisactivateConfigurationMenu()
 extern void PlayGameMenuAndTimerButtonsActions_DisactivateConfigurationMenu_mDFFE49158C7745962F2F8BBC3328FA01C8C4DB21 (void);
-// 0x000005A1 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyConfigurationMenu()
+// 0x000005A2 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyConfigurationMenu()
 extern void PlayGameMenuAndTimerButtonsActions_DestroyConfigurationMenu_mB6F6EBF92F4190E01A81561C4A8209A050268E00 (void);
-// 0x000005A2 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyCubePlayForPlayersMove()
+// 0x000005A3 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyCubePlayForPlayersMove()
 extern void PlayGameMenuAndTimerButtonsActions_DestroyCubePlayForPlayersMove_m2F71FAA72EBE1E4DE2E367E3CC4FF99375B67AF3 (void);
-// 0x000005A3 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyPlayGameButtons(System.Collections.Generic.List`1<UnityEngine.GameObject[,,]>)
+// 0x000005A4 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyPlayGameButtons(System.Collections.Generic.List`1<UnityEngine.GameObject[,,]>)
 extern void PlayGameMenuAndTimerButtonsActions_DestroyPlayGameButtons_m49D4C1314D0A86FA08EFDE16BCDC955D4B9FDC83 (void);
-// 0x000005A4 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyElements()
+// 0x000005A5 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::DestroyElements()
 extern void PlayGameMenuAndTimerButtonsActions_DestroyElements_m8B0FA4C03FDF40A2A1AEBA344F66A73F96B3E2E8 (void);
-// 0x000005A5 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideObjectPlayerSymbolPrevious()
+// 0x000005A6 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideObjectPlayerSymbolPrevious()
 extern void PlayGameMenuAndTimerButtonsActions_HideObjectPlayerSymbolPrevious_mE83B5AF2735181C63EADF726106C734DA17FFD47 (void);
-// 0x000005A6 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideTimerForGameBoard()
+// 0x000005A7 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideTimerForGameBoard()
 extern void PlayGameMenuAndTimerButtonsActions_HideTimerForGameBoard_m158771CB6F4E0EAD0F7C3B13A9C4E2CCFCFFEC20 (void);
-// 0x000005A7 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideTimerForChangePlayersSymbols()
+// 0x000005A8 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::HideTimerForChangePlayersSymbols()
 extern void PlayGameMenuAndTimerButtonsActions_HideTimerForChangePlayersSymbols_m7C68FF5F12E5915787F763E30837838E7104FE38 (void);
-// 0x000005A8 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideTimerForGameBoard()
+// 0x000005A9 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideTimerForGameBoard()
 extern void PlayGameMenuAndTimerButtonsActions_UnhideTimerForGameBoard_mB969B0DA899E298F61694321F9D309484CBADD17 (void);
-// 0x000005A9 System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideTimerForChangePlayersSymbols()
+// 0x000005AA System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::UnhideTimerForChangePlayersSymbols()
 extern void PlayGameMenuAndTimerButtonsActions_UnhideTimerForChangePlayersSymbols_mB77BD20936ED00CFF77905B78B1B32987DD7D961 (void);
-// 0x000005AA System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::ShowTimerForChangePlayersSymbols()
+// 0x000005AB System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::ShowTimerForChangePlayersSymbols()
 extern void PlayGameMenuAndTimerButtonsActions_ShowTimerForChangePlayersSymbols_m91FD4B90AD9791DA2B11C45289F3F885D50CE865 (void);
-// 0x000005AB System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::ShowTimerFoGameBoard()
+// 0x000005AC System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::ShowTimerFoGameBoard()
 extern void PlayGameMenuAndTimerButtonsActions_ShowTimerFoGameBoard_mDBA122C13E71039A2F679ADC51E67AA908C38994 (void);
-// 0x000005AC System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::.ctor()
+// 0x000005AD System.Void Assets.Scripts.PlayGameMenuAndTimerButtonsActions::.ctor()
 extern void PlayGameMenuAndTimerButtonsActions__ctor_m1E78ADDF5F1B72E852EAB824891FE80FEDF55944 (void);
-// 0x000005AD System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonsMenu(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean)
+// 0x000005AE System.Collections.Generic.List`1<UnityEngine.GameObject[,,]> Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonsMenu(UnityEngine.GameObject,UnityEngine.Material[],UnityEngine.Material[],UnityEngine.Material[],System.Boolean)
 extern void PlayGameMenuButtonsCreate_CreateButtonsMenu_m244F2258BA2D7EDB6B13C05388FB31BBC5938B7A (void);
-// 0x000005AE UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenuStaticTextForHelpBoardText(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005AF UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenuStaticTextForHelpBoardText(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameMenuButtonsCreate_CreateButtonGameMenuStaticTextForHelpBoardText_m3D32BA55AEA7A83A762CA39E2869F1F28B1C5874 (void);
-// 0x000005AF UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenuStaticTextForHelpButtons(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005B0 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenuStaticTextForHelpButtons(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameMenuButtonsCreate_CreateButtonGameMenuStaticTextForHelpButtons_m253E44965DCE3C8C7EA1C88ECF43BC698DA01FCC (void);
-// 0x000005B0 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenuNewGame(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005B1 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenuNewGame(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameMenuButtonsCreate_CreateButtonGameMenuNewGame_m970D272E7FE1FB2FF2A3A7BA931F4BE8D7BF41F8 (void);
-// 0x000005B1 System.Void Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonNewGame(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005B2 System.Void Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonNewGame(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameMenuButtonsCreate_CreateButtonNewGame_m436661F0FEE7BC2105E771CD137D5EFC94F25FD3 (void);
-// 0x000005B2 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenuHelpButtons(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005B3 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenuHelpButtons(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameMenuButtonsCreate_CreateButtonGameMenuHelpButtons_mE7BE4AAF4EE6F15FFA05B70371CFEE9318ABD6D5 (void);
-// 0x000005B3 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtoGameMenuBackToGame(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005B4 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtoGameMenuBackToGame(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameMenuButtonsCreate_CreateButtoGameMenuBackToGame_m49F63657B1945D4FAC539AA5666D8E42BDA489CA (void);
-// 0x000005B4 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenunBoarGameHelpText(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005B5 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenunBoarGameHelpText(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameMenuButtonsCreate_CreateButtonGameMenunBoarGameHelpText_mBDB825468B397AF696DCAF45A325930C9D97555C (void);
-// 0x000005B5 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenunButtonToHide(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005B6 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameMenuButtonsCreate::CreateButtonGameMenunButtonToHide(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameMenuButtonsCreate_CreateButtonGameMenunButtonToHide_m5B12A57A1EABCF43CC40C15797C319160C456D39 (void);
-// 0x000005B6 System.Void Assets.Scripts.PlayGameMenuButtonsCreate::.ctor()
+// 0x000005B7 System.Void Assets.Scripts.PlayGameMenuButtonsCreate::.ctor()
 extern void PlayGameMenuButtonsCreate__ctor_m8338F2025B31CAFC43E58EC55ECC8AADA2FA4D7F (void);
-// 0x000005B7 System.Void Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonsForWinnerTeam()
+// 0x000005B8 System.Void Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonsForWinnerTeam()
 extern void PlayGameTeamButtonsForEndedGameCreate_CreateButtonsForWinnerTeam_m8C0D2BDDA6FEA2C95983B9815B32A470F8C0DAEB (void);
-// 0x000005B8 System.Void Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonsForGameOver()
+// 0x000005B9 System.Void Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonsForGameOver()
 extern void PlayGameTeamButtonsForEndedGameCreate_CreateButtonsForGameOver_m4A48E97723C48EF2AD9E749CF82B8FD13909E965 (void);
-// 0x000005B9 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateCommonButtonGameTeamBackgroundForEndedGameForText(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.String,System.String)
+// 0x000005BA UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateCommonButtonGameTeamBackgroundForEndedGameForText(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.String,System.String)
 extern void PlayGameTeamButtonsForEndedGameCreate_CreateCommonButtonGameTeamBackgroundForEndedGameForText_mC8784BC3B2F5AC5B0CE80889DD450D9E742F04A5 (void);
-// 0x000005BA UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateCommonButtonGameTeamTopForEndedGameForText(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.String,System.String)
+// 0x000005BB UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateCommonButtonGameTeamTopForEndedGameForText(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.String,System.String)
 extern void PlayGameTeamButtonsForEndedGameCreate_CreateCommonButtonGameTeamTopForEndedGameForText_mA7637285234741E229E16C9B78A8BD70E66CA4DA (void);
-// 0x000005BB UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonForTeamNumber(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.String,System.String)
+// 0x000005BC UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonForTeamNumber(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean,System.String,System.String)
 extern void PlayGameTeamButtonsForEndedGameCreate_CreateButtonForTeamNumber_m1D1E6605293D887164745F6BFFF4EED2BE1D9125 (void);
-// 0x000005BC UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonGameTeamForTextGame(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005BD UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonGameTeamForTextGame(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameTeamButtonsForEndedGameCreate_CreateButtonGameTeamForTextGame_mF95A49588DBFB4E7252825FB9120070973EE02FF (void);
-// 0x000005BD UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonGameTeamForTextOver(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005BE UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonGameTeamForTextOver(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameTeamButtonsForEndedGameCreate_CreateButtonGameTeamForTextOver_m88339716F56328AF4214A3F952D5E7314786BF47 (void);
-// 0x000005BE UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonGameTeamForTextTeam(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
+// 0x000005BF UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonGameTeamForTextTeam(UnityEngine.GameObject,UnityEngine.Material[],System.Boolean)
 extern void PlayGameTeamButtonsForEndedGameCreate_CreateButtonGameTeamForTextTeam_m9B6EC430D80389D61E7B335A14A06F318262EEE7 (void);
-// 0x000005BF UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonGameTeamForTextTeamNumber(UnityEngine.GameObject,UnityEngine.Material[],System.String,System.Boolean)
+// 0x000005C0 UnityEngine.GameObject[,,] Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::CreateButtonGameTeamForTextTeamNumber(UnityEngine.GameObject,UnityEngine.Material[],System.String,System.Boolean)
 extern void PlayGameTeamButtonsForEndedGameCreate_CreateButtonGameTeamForTextTeamNumber_m3D21EA99BAD241983761E2916C8C907B73019F79 (void);
-// 0x000005C0 System.Void Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::.ctor()
+// 0x000005C1 System.Void Assets.Scripts.PlayGameTeamButtonsForEndedGameCreate::.ctor()
 extern void PlayGameTeamButtonsForEndedGameCreate__ctor_mCCD6CE354817B0CC558A67374B2851D6F84ED6BE (void);
-// 0x000005C1 System.Int32[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetPlayersNumbersForEachTeam(System.Collections.Generic.List`1<System.String[]>)
+// 0x000005C2 System.Int32[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetPlayersNumbersForEachTeam(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameTeamSetUpPlayersSymbols_GetPlayersNumbersForEachTeam_mDF0384FE54659EAA3D8BBC7AB7CEB5173EF5F096 (void);
-// 0x000005C2 System.Int32 Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetPlayersNumber(System.Collections.Generic.List`1<System.String[]>)
+// 0x000005C3 System.Int32 Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetPlayersNumber(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameTeamSetUpPlayersSymbols_GetPlayersNumber_mC486A361237022749DE6CD01A2E433D4C3D30D34 (void);
-// 0x000005C3 System.Int32 Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetPlayersNumber(System.String[])
+// 0x000005C4 System.Int32 Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetPlayersNumber(System.String[])
 extern void PlayGameTeamSetUpPlayersSymbols_GetPlayersNumber_m3369A180F08419A95D815417BD4F86CCED72B8FC (void);
-// 0x000005C4 System.Int32 Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetBiggestPlayerNumbersInTeam(System.Collections.Generic.List`1<System.String[]>)
+// 0x000005C5 System.Int32 Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetBiggestPlayerNumbersInTeam(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameTeamSetUpPlayersSymbols_GetBiggestPlayerNumbersInTeam_mADC383A0C545FA0DD88C53A70EEEF84A917DB711 (void);
-// 0x000005C5 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithAllSymbols(System.Collections.Generic.List`1<System.String[]>,System.Int32)
+// 0x000005C6 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithAllSymbols(System.Collections.Generic.List`1<System.String[]>,System.Int32)
 extern void PlayGameTeamSetUpPlayersSymbols_CreateTableWithAllSymbols_m8AE1A0719F523219EB71CF5FC9D93A51558BF8CA (void);
-// 0x000005C6 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithAllSymbolsForCorrectPlayersMove(System.String[],System.Int32)
+// 0x000005C7 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithAllSymbolsForCorrectPlayersMove(System.String[],System.Int32)
 extern void PlayGameTeamSetUpPlayersSymbols_CreateTableWithAllSymbolsForCorrectPlayersMove_m910F52EE74D1B7EDE845036DEB47BBC26965263E (void);
-// 0x000005C7 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithFinalSymbols(System.String[],System.Int32)
+// 0x000005C8 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithFinalSymbols(System.String[],System.Int32)
 extern void PlayGameTeamSetUpPlayersSymbols_CreateTableWithFinalSymbols_mCD2B4F95BE891C2E9AE8E617C0531B4E1CAE6556 (void);
-// 0x000005C8 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithDifferentQuantitiesForPlayersMoves(System.Collections.Generic.List`1<System.String[]>)
+// 0x000005C9 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithDifferentQuantitiesForPlayersMoves(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameTeamSetUpPlayersSymbols_CreateTableWithDifferentQuantitiesForPlayersMoves_m4C91F0A67C29E3188200B5069CD823EF30E0E04F (void);
-// 0x000005C9 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetFirstPlayersSymbolFromTeams(System.Collections.Generic.List`1<System.String[]>)
+// 0x000005CA System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetFirstPlayersSymbolFromTeams(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameTeamSetUpPlayersSymbols_GetFirstPlayersSymbolFromTeams_mE04BE5C8A29EE7828D1F47BECD9C97402BCFA55E (void);
-// 0x000005CA System.String Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetSymbolsAsOneString(System.String[])
+// 0x000005CB System.String Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetSymbolsAsOneString(System.String[])
 extern void PlayGameTeamSetUpPlayersSymbols_GetSymbolsAsOneString_mC9070FCE625BA6FF53CBD8A3E1997DA470E234F7 (void);
-// 0x000005CB System.Boolean Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::IsFisrtSymbolsAsTheSameAsLastOne(System.String,System.String)
+// 0x000005CC System.Boolean Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::IsFisrtSymbolsAsTheSameAsLastOne(System.String,System.String)
 extern void PlayGameTeamSetUpPlayersSymbols_IsFisrtSymbolsAsTheSameAsLastOne_mF43412A498E0505E1192466FCC08017F5AE3DB07 (void);
-// 0x000005CC System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTeablesWithTheSameLenght(System.Collections.Generic.List`1<System.String[]>)
+// 0x000005CD System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTeablesWithTheSameLenght(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameTeamSetUpPlayersSymbols_CreateTeablesWithTheSameLenght_m5D14061B3BD2873934DB4B0206C08D27A3AB67A5 (void);
-// 0x000005CD System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetSymbolsToCompare(System.Collections.Generic.List`1<System.String[]>,System.String[],System.Int32[],System.Int32)
-extern void PlayGameTeamSetUpPlayersSymbols_GetSymbolsToCompare_m51A46364E24A8D2D427C396EB7083D658443EB2F (void);
-// 0x000005CE System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithTheSameQuantitiesForPlayersMoves(System.Collections.Generic.List`1<System.String[]>)
+// 0x000005CE System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetFirstSymbolsToCompare(System.Collections.Generic.List`1<System.String[]>,System.String[],System.Int32[],System.Int32)
+extern void PlayGameTeamSetUpPlayersSymbols_GetFirstSymbolsToCompare_m863FDE6A185A1B3EF6667895B6DD3456102F2EF8 (void);
+// 0x000005CF System.Collections.Generic.List`1<System.String[]> Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetTeamsOrderByAscendingPlayerNumberInTeam(System.Collections.Generic.List`1<System.String[]>)
+extern void PlayGameTeamSetUpPlayersSymbols_GetTeamsOrderByAscendingPlayerNumberInTeam_mB9405D7F148327907D3A2FE9E75B46E6F116029B (void);
+// 0x000005D0 System.Int32[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetMaxIndexesForSetUpNextSymobls(System.Int32[])
+extern void PlayGameTeamSetUpPlayersSymbols_GetMaxIndexesForSetUpNextSymobls_m5148D0A02371F16387F6E1A5EFEC9E61463FB0C8 (void);
+// 0x000005D1 System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithTheSameQuantitiesForPlayersMoves(System.Collections.Generic.List`1<System.String[]>)
 extern void PlayGameTeamSetUpPlayersSymbols_CreateTableWithTheSameQuantitiesForPlayersMoves_m96B48DBD5FF1BFCFD95FE974E97AA94670577F1C (void);
-// 0x000005CF System.Void Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::.ctor()
+// 0x000005D2 System.Collections.Generic.List`1<System.Collections.Generic.List`1<System.String[]>> Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetNextSymbolsToCompare(System.Collections.Generic.List`1<System.Collections.Generic.List`1<System.String[]>>,System.Collections.Generic.List`1<System.String[]>,System.Int32,System.Int32,System.Int32[],System.Int32[])
+extern void PlayGameTeamSetUpPlayersSymbols_GetNextSymbolsToCompare_mA25C35FBAD56CD82A2E00DA3387D1720CF38741C (void);
+// 0x000005D3 System.Void Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::.ctor()
 extern void PlayGameTeamSetUpPlayersSymbols__ctor_m762BC1650C5DA56E84DD383C93CB71713FD7FE8A (void);
-// 0x000005D0 System.Collections.Generic.List`1<UnityEngine.GameObject> Assets.Scripts.PlayGameTimerButtonsCreate::GameTimerButtonsCreate(UnityEngine.GameObject)
+// 0x000005D4 System.Void Assets.Scripts.PlayGameTeamSetUpPlayersSymbols/<>c::.cctor()
+extern void U3CU3Ec__cctor_m4732562C40CF3778D26904384813972D3589EBA7 (void);
+// 0x000005D5 System.Void Assets.Scripts.PlayGameTeamSetUpPlayersSymbols/<>c::.ctor()
+extern void U3CU3Ec__ctor_m97837C080855E9071B02348071BEFFAD5525A5A4 (void);
+// 0x000005D6 System.Int32 Assets.Scripts.PlayGameTeamSetUpPlayersSymbols/<>c::<GetTeamsOrderByAscendingPlayerNumberInTeam>b__13_0(System.String[])
+extern void U3CU3Ec_U3CGetTeamsOrderByAscendingPlayerNumberInTeamU3Eb__13_0_m75429D8807427E36EAA64FBF07BFD55478ED17B3 (void);
+// 0x000005D7 System.Collections.Generic.List`1<UnityEngine.GameObject> Assets.Scripts.PlayGameTimerButtonsCreate::GameTimerButtonsCreate(UnityEngine.GameObject)
 extern void PlayGameTimerButtonsCreate_GameTimerButtonsCreate_mA0E1EFBFD364C75EEE7C85551B200BF1A815470A (void);
-// 0x000005D1 UnityEngine.GameObject Assets.Scripts.PlayGameTimerButtonsCreate::PlayGameTimerButtonsCreateSingleButtonCountdownSeconds(UnityEngine.GameObject)
+// 0x000005D8 UnityEngine.GameObject Assets.Scripts.PlayGameTimerButtonsCreate::PlayGameTimerButtonsCreateSingleButtonCountdownSeconds(UnityEngine.GameObject)
 extern void PlayGameTimerButtonsCreate_PlayGameTimerButtonsCreateSingleButtonCountdownSeconds_m8433F3CAC4A8E3F70C9DD4C8B7BD5769F05C9A2D (void);
-// 0x000005D2 UnityEngine.GameObject Assets.Scripts.PlayGameTimerButtonsCreate::PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForBoardGame(UnityEngine.GameObject)
+// 0x000005D9 UnityEngine.GameObject Assets.Scripts.PlayGameTimerButtonsCreate::PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForBoardGame(UnityEngine.GameObject)
 extern void PlayGameTimerButtonsCreate_PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForBoardGame_mACF743539140F8586961CDD41678807239EBE64B (void);
-// 0x000005D3 UnityEngine.GameObject Assets.Scripts.PlayGameTimerButtonsCreate::PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForChangePlayersSymbols(UnityEngine.GameObject)
+// 0x000005DA UnityEngine.GameObject Assets.Scripts.PlayGameTimerButtonsCreate::PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForChangePlayersSymbols(UnityEngine.GameObject)
 extern void PlayGameTimerButtonsCreate_PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForChangePlayersSymbols_m4C15AC6CE3E7C5C2CEFB7C4E7DC57430CD4568D6 (void);
-// 0x000005D4 System.Void Assets.Scripts.PlayGameTimerButtonsCreate::ChangeDataForTimer(UnityEngine.GameObject,System.String,System.Single,System.Single,System.Single)
+// 0x000005DB System.Void Assets.Scripts.PlayGameTimerButtonsCreate::ChangeDataForTimer(UnityEngine.GameObject,System.String,System.Single,System.Single,System.Single)
 extern void PlayGameTimerButtonsCreate_ChangeDataForTimer_m76D2C141652D72A0AEDD9846A82684DF9B23F096 (void);
-// 0x000005D5 System.Void Assets.Scripts.PlayGameTimerButtonsCreate::.ctor()
+// 0x000005DC System.Void Assets.Scripts.PlayGameTimerButtonsCreate::.ctor()
 extern void PlayGameTimerButtonsCreate__ctor_m9C4FF558A9A542EC00ED2F8795558017B6C6DA9D (void);
-// 0x000005D6 System.Boolean Assets.Scripts.PlayGameTimerCommonMethods::IsTimerActivate(System.Single,System.Single,System.Single)
+// 0x000005DD System.Boolean Assets.Scripts.PlayGameTimerCommonMethods::IsTimerActivate(System.Single,System.Single,System.Single)
 extern void PlayGameTimerCommonMethods_IsTimerActivate_m14FB85ADD4570332042873AA3A50BC8BFE166AF1 (void);
-// 0x000005D7 System.Boolean Assets.Scripts.PlayGameTimerCommonMethods::TurnOffTimer()
+// 0x000005DE System.Boolean Assets.Scripts.PlayGameTimerCommonMethods::TurnOffTimer()
 extern void PlayGameTimerCommonMethods_TurnOffTimer_m9E303F1F317B30394F997D110F00BDDCB61E16BD (void);
-// 0x000005D8 System.Boolean Assets.Scripts.PlayGameTimerCommonMethods::TurnOnTimer()
+// 0x000005DF System.Boolean Assets.Scripts.PlayGameTimerCommonMethods::TurnOnTimer()
 extern void PlayGameTimerCommonMethods_TurnOnTimer_m4304429F5C2828C0C2586E678D0B2A33E5CAE6BC (void);
-// 0x000005D9 System.Single[] Assets.Scripts.PlayGameTimerCommonMethods::SetupTimer(System.Collections.Generic.List`1<System.Single>)
+// 0x000005E0 System.Single[] Assets.Scripts.PlayGameTimerCommonMethods::SetupTimer(System.Collections.Generic.List`1<System.Single>)
 extern void PlayGameTimerCommonMethods_SetupTimer_m6140E599B44437B133593916DEE09FC58F044050 (void);
-// 0x000005DA System.Void Assets.Scripts.PlayGameTimerCommonMethods::CountdownSeconds(System.Single,System.String)
+// 0x000005E1 System.Void Assets.Scripts.PlayGameTimerCommonMethods::CountdownSeconds(System.Single,System.String)
 extern void PlayGameTimerCommonMethods_CountdownSeconds_m6A14A059711B7FB90B5DC3CDD991A32CAF2AF389 (void);
-// 0x000005DB System.Void Assets.Scripts.PlayGameTimerCommonMethods::CountdownSecondsForChangePlayersSymbols(System.Single)
+// 0x000005E2 System.Void Assets.Scripts.PlayGameTimerCommonMethods::CountdownSecondsForChangePlayersSymbols(System.Single)
 extern void PlayGameTimerCommonMethods_CountdownSecondsForChangePlayersSymbols_m2FA1311CB55DC0F88378380AF8408E2413AF3045 (void);
-// 0x000005DC System.Void Assets.Scripts.PlayGameTimerCommonMethods::CountdownSecondsForBoarGame(System.Single)
+// 0x000005E3 System.Void Assets.Scripts.PlayGameTimerCommonMethods::CountdownSecondsForBoarGame(System.Single)
 extern void PlayGameTimerCommonMethods_CountdownSecondsForBoarGame_m246F072DA9F5C74355A532C3E49A0CCBF3FC40AE (void);
-// 0x000005DD System.Void Assets.Scripts.PlayGameTimerCommonMethods::SetUpDefaultSymbolForTimerAferWin()
+// 0x000005E4 System.Void Assets.Scripts.PlayGameTimerCommonMethods::SetUpDefaultSymbolForTimerAferWin()
 extern void PlayGameTimerCommonMethods_SetUpDefaultSymbolForTimerAferWin_m23EC91D060F04298E52251C61FDF11DEDE6348A8 (void);
-// 0x000005DE System.Void Assets.Scripts.PlayGameTimerCommonMethods::DestroyTimer()
+// 0x000005E5 System.Void Assets.Scripts.PlayGameTimerCommonMethods::DestroyTimer()
 extern void PlayGameTimerCommonMethods_DestroyTimer_mA40B7C316BADBC057F951AEFE4FB1AB907B575E2 (void);
-// 0x000005DF System.Void Assets.Scripts.PlayGameTimerCommonMethods::.ctor()
+// 0x000005E6 System.Void Assets.Scripts.PlayGameTimerCommonMethods::.ctor()
 extern void PlayGameTimerCommonMethods__ctor_m562AA2D727AE8482A88484329C72F24E48077BE8 (void);
-// 0x000005E0 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScencesNameFromDictionaryScencesName(System.Int32)
+// 0x000005E7 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScencesNameFromDictionaryScencesName(System.Int32)
 extern void ScenesChangeCommonSceneName_GetScencesNameFromDictionaryScencesName_mDA7CB1DB13D941272684A44195BBE7AC6C9C0DD9 (void);
-// 0x000005E1 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneGame()
+// 0x000005E8 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneGame()
 extern void ScenesChangeCommonSceneName_GetScenceNameSceneGame_mA1A3842380D2F47A1DE5E0410AE63F92E38C1ADA (void);
-// 0x000005E2 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationPlayersSymbols()
+// 0x000005E9 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationPlayersSymbols()
 extern void ScenesChangeCommonSceneName_GetScenceNameSceneConfigurationPlayersSymbols_m65E3E8E2BC2A2002CA8CD95B12E28891F36BE98C (void);
-// 0x000005E3 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationBoardGame()
+// 0x000005EA System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationBoardGame()
 extern void ScenesChangeCommonSceneName_GetScenceNameSceneConfigurationBoardGame_m772FBF3FB9F28B68AF062A892A591CC0B6FED0C7 (void);
-// 0x000005E4 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneInformations()
+// 0x000005EB System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneInformations()
 extern void ScenesChangeCommonSceneName_GetScenceNameSceneInformations_mC051A03E5C54C7D2AD570D969CE4B9A60C7A0F88 (void);
-// 0x000005E5 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneStartGame()
+// 0x000005EC System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneStartGame()
 extern void ScenesChangeCommonSceneName_GetScenceNameSceneStartGame_m25555614A764755F3D9298CB1FEE17C12D2BABD9 (void);
-// 0x000005E6 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationChangePlayersSymbols()
+// 0x000005ED System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationChangePlayersSymbols()
 extern void ScenesChangeCommonSceneName_GetScenceNameSceneConfigurationChangePlayersSymbols_m7087F82453006A9514D25B7FF0047E607489BDCF (void);
-// 0x000005E7 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationGameTeamNumbers()
+// 0x000005EE System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationGameTeamNumbers()
 extern void ScenesChangeCommonSceneName_GetScenceNameSceneConfigurationGameTeamNumbers_m88002925C7AB04A9AEF0912EB9255F410E1CE10D (void);
-// 0x000005E8 System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationGameTeamMembers()
+// 0x000005EF System.String Assets.Scripts.ScenesChangeCommonSceneName::GetScenceNameSceneConfigurationGameTeamMembers()
 extern void ScenesChangeCommonSceneName_GetScenceNameSceneConfigurationGameTeamMembers_m070234E825C99035D047F129D95133A67637F32A (void);
-// 0x000005E9 System.Void Assets.Scripts.ScenesChangeCommonSceneName::.ctor()
+// 0x000005F0 System.Void Assets.Scripts.ScenesChangeCommonSceneName::.ctor()
 extern void ScenesChangeCommonSceneName__ctor_m702F04A39F4A57A6F07C07031CD52447979FAA86 (void);
-// 0x000005EA System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneStartGame()
+// 0x000005F1 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneStartGame()
 extern void ScenesChangeMainMethods_GoToSceneStartGame_mF7E758EC6C4282AE9786A92D0D9864D1D547AA83 (void);
-// 0x000005EB System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneInformations()
+// 0x000005F2 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneInformations()
 extern void ScenesChangeMainMethods_GoToSceneInformations_mE0BAFA157B1AB1A9EF59CFC5A9259ACE471BB729 (void);
-// 0x000005EC System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationBoardGame()
+// 0x000005F3 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationBoardGame()
 extern void ScenesChangeMainMethods_GoToSceneConfigurationBoardGame_mA8CCE83A2238F901AE2361B97AE9D2357EBD91FD (void);
-// 0x000005ED System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationPlayersSymbols()
+// 0x000005F4 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationPlayersSymbols()
 extern void ScenesChangeMainMethods_GoToSceneConfigurationPlayersSymbols_m82043EE3E2D5C2DAD50D61F35F280EA50D8C2CF3 (void);
-// 0x000005EE System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneGame()
+// 0x000005F5 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneGame()
 extern void ScenesChangeMainMethods_GoToSceneGame_mDE65C8AB94EC8F6F0D1FC2C61E29D16D7FEC29CE (void);
-// 0x000005EF System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationChangePlayersSymbols()
+// 0x000005F6 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationChangePlayersSymbols()
 extern void ScenesChangeMainMethods_GoToSceneConfigurationChangePlayersSymbols_m2259C09A63DDF4CC8DDB890B27321EC27550C69A (void);
-// 0x000005F0 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationGameTeamNumbers()
+// 0x000005F7 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationGameTeamNumbers()
 extern void ScenesChangeMainMethods_GoToSceneConfigurationGameTeamNumbers_m0BF05D888EBAA5945274CEA5157AD0DB22C8C0DA (void);
-// 0x000005F1 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationGameTeamMembers()
+// 0x000005F8 System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneConfigurationGameTeamMembers()
 extern void ScenesChangeMainMethods_GoToSceneConfigurationGameTeamMembers_m6F7CBC21B31592703BD7DD9C9B8885870D6376B3 (void);
-// 0x000005F2 System.Void Assets.Scripts.ScenesChangeMainMethods::.ctor()
+// 0x000005F9 System.Void Assets.Scripts.ScenesChangeMainMethods::.ctor()
 extern void ScenesChangeMainMethods__ctor_mB10F31CDBCBF61CF74B737B576471F8C698C6700 (void);
-// 0x000005F3 System.Tuple`2<System.Int32,System.Int32> Assets.Scripts.ScreenVerificationMethods::GetScreenSize()
+// 0x000005FA System.Tuple`2<System.Int32,System.Int32> Assets.Scripts.ScreenVerificationMethods::GetScreenSize()
 extern void ScreenVerificationMethods_GetScreenSize_mFE2D6D340533704101AD46D90D8445B6281A50FF (void);
-// 0x000005F4 System.Boolean Assets.Scripts.ScreenVerificationMethods::IsCellphoneMode()
+// 0x000005FB System.Boolean Assets.Scripts.ScreenVerificationMethods::IsCellphoneMode()
 extern void ScreenVerificationMethods_IsCellphoneMode_mC41C35241FED024448EB173104E55F4AB569143A (void);
-// 0x000005F5 System.Tuple`2<System.Int32,System.Int32> Assets.Scripts.ScreenVerificationMethods::GetNumberOfRowsAndColumnsForDefaulTableWithNumber(System.Boolean)
+// 0x000005FC System.Tuple`2<System.Int32,System.Int32> Assets.Scripts.ScreenVerificationMethods::GetNumberOfRowsAndColumnsForDefaulTableWithNumber(System.Boolean)
 extern void ScreenVerificationMethods_GetNumberOfRowsAndColumnsForDefaulTableWithNumber_mA8A2860BC1776CBEF30ABE04929D13367B27DE98 (void);
-// 0x000005F6 System.Tuple`2<System.Int32,System.Int32> Assets.Scripts.ScreenVerificationMethods::GetSizeForTableWithSymbolsForTeamMembers(System.Boolean)
+// 0x000005FD System.Tuple`2<System.Int32,System.Int32> Assets.Scripts.ScreenVerificationMethods::GetSizeForTableWithSymbolsForTeamMembers(System.Boolean)
 extern void ScreenVerificationMethods_GetSizeForTableWithSymbolsForTeamMembers_m785D0B2921D97546528F3245A2638ADE4EFA02CF (void);
-// 0x000005F7 System.Tuple`2<System.Int32,System.Int32> Assets.Scripts.ScreenVerificationMethods::GetSizeForTableWithPlayersNumbersForTeamMembers(System.Boolean)
+// 0x000005FE System.Tuple`2<System.Int32,System.Int32> Assets.Scripts.ScreenVerificationMethods::GetSizeForTableWithPlayersNumbersForTeamMembers(System.Boolean)
 extern void ScreenVerificationMethods_GetSizeForTableWithPlayersNumbersForTeamMembers_m1705909E58B60811B0A79DDB699DE6D4116BEB1C (void);
-// 0x000005F8 System.Int32 Assets.Scripts.ScreenVerificationMethods::GetMaxPlayerNumberForConfiguration(System.Boolean)
+// 0x000005FF System.Int32 Assets.Scripts.ScreenVerificationMethods::GetMaxPlayerNumberForConfiguration(System.Boolean)
 extern void ScreenVerificationMethods_GetMaxPlayerNumberForConfiguration_m1ADCFFC44C245B3F5586CF432CFD053E370EDE75 (void);
-// 0x000005F9 System.Int32 Assets.Scripts.ScreenVerificationMethods::GetMaxPRowsOrColumnsNumberForConfiguration(System.Boolean)
+// 0x00000600 System.Int32 Assets.Scripts.ScreenVerificationMethods::GetMaxPRowsOrColumnsNumberForConfiguration(System.Boolean)
 extern void ScreenVerificationMethods_GetMaxPRowsOrColumnsNumberForConfiguration_m75C598CFD0B073B88D17B26F4519C172D6B094C2 (void);
-// 0x000005FA System.Void Assets.Scripts.ScreenVerificationMethods::.ctor()
+// 0x00000601 System.Void Assets.Scripts.ScreenVerificationMethods::.ctor()
 extern void ScreenVerificationMethods__ctor_m09A92FC5BE3F236F3CE97A2A4618528350BF0991 (void);
-// 0x000005FB System.Void Assets.Scripts.Scenes.ScenesChangeCommon::ChangeScene(System.String)
+// 0x00000602 System.Void Assets.Scripts.Scenes.ScenesChangeCommon::ChangeScene(System.String)
 extern void ScenesChangeCommon_ChangeScene_mC5A060695FAB092F75E58B3BDC1C14B3EDE1296A (void);
-// 0x000005FC System.Void Assets.Scripts.Scenes.ScenesChangeCommon::.ctor()
+// 0x00000603 System.Void Assets.Scripts.Scenes.ScenesChangeCommon::.ctor()
 extern void ScenesChangeCommon__ctor_mF7D7128BE9C71AE5A06BF064D7D03139408CE0AE (void);
-// 0x000005FD System.Collections.Generic.Dictionary`2<System.Int32,System.String> Assets.Scripts.GameDictionaries.GameDictionariesScenes.GameDictionariesSceneConfigurationChangePlayersSymbols::DictionaryTagsNameConfigurationChangePlayersSymbols()
+// 0x00000604 System.Collections.Generic.Dictionary`2<System.Int32,System.String> Assets.Scripts.GameDictionaries.GameDictionariesScenes.GameDictionariesSceneConfigurationChangePlayersSymbols::DictionaryTagsNameConfigurationChangePlayersSymbols()
 extern void GameDictionariesSceneConfigurationChangePlayersSymbols_DictionaryTagsNameConfigurationChangePlayersSymbols_m4D601D1B671420676222BF6316866288E4A52874 (void);
-// 0x000005FE System.Collections.Generic.Dictionary`2<System.Int32,System.String> Assets.Scripts.GameDictionaries.GameDictionariesScenes.GameDictionariesSceneConfigurationChangePlayersSymbols::DictionaryButtonsConfigurationChangePlayersSymbolsButtonsName()
+// 0x00000605 System.Collections.Generic.Dictionary`2<System.Int32,System.String> Assets.Scripts.GameDictionaries.GameDictionariesScenes.GameDictionariesSceneConfigurationChangePlayersSymbols::DictionaryButtonsConfigurationChangePlayersSymbolsButtonsName()
 extern void GameDictionariesSceneConfigurationChangePlayersSymbols_DictionaryButtonsConfigurationChangePlayersSymbolsButtonsName_m3C29C76242AC0C3086109A8134267718FBF4A5D7 (void);
-// 0x000005FF System.Collections.Generic.Dictionary`2<System.Int32,System.String> Assets.Scripts.GameDictionaries.GameDictionariesScenes.GameDictionariesSceneConfigurationChangePlayersSymbols::DictionaryButtonsConfigurationChangePlayersSymbolsDefaultNumbers()
+// 0x00000606 System.Collections.Generic.Dictionary`2<System.Int32,System.String> Assets.Scripts.GameDictionaries.GameDictionariesScenes.GameDictionariesSceneConfigurationChangePlayersSymbols::DictionaryButtonsConfigurationChangePlayersSymbolsDefaultNumbers()
 extern void GameDictionariesSceneConfigurationChangePlayersSymbols_DictionaryButtonsConfigurationChangePlayersSymbolsDefaultNumbers_m6487F9434DCC3DA42B68BCCD4D6626EDAECBF3AD (void);
-// 0x00000600 System.Void Assets.Scripts.GameDictionaries.GameDictionariesScenes.GameDictionariesSceneConfigurationChangePlayersSymbols::.ctor()
+// 0x00000607 System.Void Assets.Scripts.GameDictionaries.GameDictionariesScenes.GameDictionariesSceneConfigurationChangePlayersSymbols::.ctor()
 extern void GameDictionariesSceneConfigurationChangePlayersSymbols__ctor_mCE53E2638ABF40FE599A535A545DDC10DEC989E0 (void);
-// 0x00000601 System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameNumberOfPlayers()
+// 0x00000608 System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameNumberOfPlayers()
 extern void GameConfigurationBoardGame_get_ConfigurationBoardGameNumberOfPlayers_mEA698999D4C32260A01AFB995C4901B16570DCF5 (void);
-// 0x00000602 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameNumberOfPlayers(System.Int32)
+// 0x00000609 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameNumberOfPlayers(System.Int32)
 extern void GameConfigurationBoardGame_set_ConfigurationBoardGameNumberOfPlayers_m50711F7D6F47D89223DC9D6F2D22C629752CD0CC (void);
-// 0x00000603 System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameNumberOfRows()
+// 0x0000060A System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameNumberOfRows()
 extern void GameConfigurationBoardGame_get_ConfigurationBoardGameNumberOfRows_m9F9A384D9A8F02ED481F558ABE7215235B57E407 (void);
-// 0x00000604 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameNumberOfRows(System.Int32)
+// 0x0000060B System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameNumberOfRows(System.Int32)
 extern void GameConfigurationBoardGame_set_ConfigurationBoardGameNumberOfRows_m3326067259DFF0B700A64DB14ECCE9C9218DA03F (void);
-// 0x00000605 System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameNumberOfColumns()
+// 0x0000060C System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameNumberOfColumns()
 extern void GameConfigurationBoardGame_get_ConfigurationBoardGameNumberOfColumns_m38A32828020A907E16669429EFAF4B6FB8BB3205 (void);
-// 0x00000606 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameNumberOfColumns(System.Int32)
+// 0x0000060D System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameNumberOfColumns(System.Int32)
 extern void GameConfigurationBoardGame_set_ConfigurationBoardGameNumberOfColumns_m93785AC7C19FA1BA8E1D28938A82B90735209DC0 (void);
-// 0x00000607 System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameLenghtToCheck()
+// 0x0000060E System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameLenghtToCheck()
 extern void GameConfigurationBoardGame_get_ConfigurationBoardGameLenghtToCheck_m53EEE365C83799E60965290900E204A55A5721DE (void);
-// 0x00000608 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameLenghtToCheck(System.Int32)
+// 0x0000060F System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameLenghtToCheck(System.Int32)
 extern void GameConfigurationBoardGame_set_ConfigurationBoardGameLenghtToCheck_m4110CC96FB0E5F40EE0C31B17293A315E25BDC1C (void);
-// 0x00000609 System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameNumberOfGaps()
+// 0x00000610 System.Int32 Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::get_ConfigurationBoardGameNumberOfGaps()
 extern void GameConfigurationBoardGame_get_ConfigurationBoardGameNumberOfGaps_m291DAFE6E00D85ADF7584DE38B97D66B2BA30E61 (void);
-// 0x0000060A System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameNumberOfGaps(System.Int32)
+// 0x00000611 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::set_ConfigurationBoardGameNumberOfGaps(System.Int32)
 extern void GameConfigurationBoardGame_set_ConfigurationBoardGameNumberOfGaps_m83B7DA550535945F226B226B7EC4F1C1CA9280DE (void);
-// 0x0000060B System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::Start()
+// 0x00000612 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::Start()
 extern void GameConfigurationBoardGame_Start_m157F84CB7F1A8BD9122524FACBC8C0098183CCD0 (void);
-// 0x0000060C System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::Update()
+// 0x00000613 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::Update()
 extern void GameConfigurationBoardGame_Update_m210293C9CC06E9D6A31D1F003E79FAA06AA7D8A1 (void);
-// 0x0000060D System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::.ctor()
+// 0x00000614 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::.ctor()
 extern void GameConfigurationBoardGame__ctor_m53097F6D6C86DBFB31524F2A70F98DC5CBAC7D16 (void);
-// 0x0000060E System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::.cctor()
+// 0x00000615 System.Void Assets.Scripts.GameConfiguration.GameConfigurationBoardGame::.cctor()
 extern void GameConfigurationBoardGame__cctor_m8021FB638A83C46CC64F762F3447AA771514F0D0 (void);
-static Il2CppMethodPointer s_methodPointers[1550] = 
+static Il2CppMethodPointer s_methodPointers[1557] = 
 {
 	Game_Start_m81FFBF966FD86236D5383C0295E70170EAE3F1DB,
 	Game_Update_mA1557241B926376A448DF2A57135D7BD10A5A51F,
@@ -4404,8 +4418,9 @@ static Il2CppMethodPointer s_methodPointers[1550] =
 	PlayGameChangePlayersSymbolsMethods_GetOldSymbols_m7F943995F1F683550CAA3611A25329E7ACAE7BF1,
 	PlayGameChangePlayersSymbolsMethods_GetNewPlayersSymbols_m470829ECBB7D4B43323F11F5466DB1BB937823F6,
 	PlayGameChangePlayersSymbolsMethods_SetUpNewTeamGameSymbols_mC358C827B867AC9467AAA2857336AC42431C0164,
-	PlayGameChangePlayersSymbolsMethods_GetNewDataForPlayersSymbols_m7F5B63A2068394094BE748072E01FD4A4A39E0C4,
-	PlayGameChangePlayersSymbolsMethods_GetNewPlayersSymbols_m7D205A1C6D571F04FC6E61FE895E186C731F806C,
+	PlayGameChangePlayersSymbolsMethods_GetNewDataForPlayersSymbols_m16F6080B3C8FD8729B934B89A34640FF34FC96EF,
+	PlayGameChangePlayersSymbolsMethods_GetPlayersSymbolsInOneTable_m876ACC23815EF1F74FC12D4045B867C29A82A3CA,
+	PlayGameChangePlayersSymbolsMethods_GetNewPlayersSymbols_mA5885C3C2161636FCFAF0FE8C8E2E7B010E0E20A,
 	PlayGameChangePlayersSymbolsMethods_SetUpPlayerSymbols_m723148F420A70789205CA58E024A5DC0DE02B781,
 	PlayGameChangePlayersSymbolsMethods_SetUpNewGameBoardVerification2D_m3D167645A373FEAAE3B7D2C60865DF6388E68436,
 	PlayGameChangePlayersSymbolsMethods_CreateTableWithTagsForPlayerSymbolMove_mF7709549BB6972E6099FF983BCF5587161166EBE,
@@ -4598,9 +4613,15 @@ static Il2CppMethodPointer s_methodPointers[1550] =
 	PlayGameTeamSetUpPlayersSymbols_GetSymbolsAsOneString_mC9070FCE625BA6FF53CBD8A3E1997DA470E234F7,
 	PlayGameTeamSetUpPlayersSymbols_IsFisrtSymbolsAsTheSameAsLastOne_mF43412A498E0505E1192466FCC08017F5AE3DB07,
 	PlayGameTeamSetUpPlayersSymbols_CreateTeablesWithTheSameLenght_m5D14061B3BD2873934DB4B0206C08D27A3AB67A5,
-	PlayGameTeamSetUpPlayersSymbols_GetSymbolsToCompare_m51A46364E24A8D2D427C396EB7083D658443EB2F,
+	PlayGameTeamSetUpPlayersSymbols_GetFirstSymbolsToCompare_m863FDE6A185A1B3EF6667895B6DD3456102F2EF8,
+	PlayGameTeamSetUpPlayersSymbols_GetTeamsOrderByAscendingPlayerNumberInTeam_mB9405D7F148327907D3A2FE9E75B46E6F116029B,
+	PlayGameTeamSetUpPlayersSymbols_GetMaxIndexesForSetUpNextSymobls_m5148D0A02371F16387F6E1A5EFEC9E61463FB0C8,
 	PlayGameTeamSetUpPlayersSymbols_CreateTableWithTheSameQuantitiesForPlayersMoves_m96B48DBD5FF1BFCFD95FE974E97AA94670577F1C,
+	PlayGameTeamSetUpPlayersSymbols_GetNextSymbolsToCompare_mA25C35FBAD56CD82A2E00DA3387D1720CF38741C,
 	PlayGameTeamSetUpPlayersSymbols__ctor_m762BC1650C5DA56E84DD383C93CB71713FD7FE8A,
+	U3CU3Ec__cctor_m4732562C40CF3778D26904384813972D3589EBA7,
+	U3CU3Ec__ctor_m97837C080855E9071B02348071BEFFAD5525A5A4,
+	U3CU3Ec_U3CGetTeamsOrderByAscendingPlayerNumberInTeamU3Eb__13_0_m75429D8807427E36EAA64FBF07BFD55478ED17B3,
 	PlayGameTimerButtonsCreate_GameTimerButtonsCreate_mA0E1EFBFD364C75EEE7C85551B200BF1A815470A,
 	PlayGameTimerButtonsCreate_PlayGameTimerButtonsCreateSingleButtonCountdownSeconds_m8433F3CAC4A8E3F70C9DD4C8B7BD5769F05C9A2D,
 	PlayGameTimerButtonsCreate_PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForBoardGame_mACF743539140F8586961CDD41678807239EBE64B,
@@ -4665,1564 +4686,1571 @@ static Il2CppMethodPointer s_methodPointers[1550] =
 	GameConfigurationBoardGame__ctor_m53097F6D6C86DBFB31524F2A70F98DC5CBAC7D16,
 	GameConfigurationBoardGame__cctor_m8021FB638A83C46CC64F762F3447AA771514F0D0,
 };
-static const int32_t s_InvokerIndices[1550] = 
+static const int32_t s_InvokerIndices[1557] = 
 {
-	4543,
-	4543,
-	4543,
-	7083,
-	4543,
-	4543,
-	3615,
-	4543,
-	4543,
-	4543,
-	4543,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
+	4555,
+	4555,
+	4555,
+	7096,
+	4555,
+	4555,
+	3625,
+	4555,
+	4555,
+	4555,
+	4555,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
 	885,
-	4543,
+	4555,
 	885,
-	4543,
-	4441,
-	3615,
-	4441,
-	3615,
-	4441,
-	3615,
-	4441,
-	3615,
-	4441,
-	3615,
-	4543,
-	4543,
-	3615,
-	3615,
-	2019,
-	2019,
+	4555,
+	4453,
+	3625,
+	4453,
+	3625,
+	4453,
+	3625,
+	4453,
+	3625,
+	4453,
+	3625,
+	4555,
+	4555,
+	3625,
+	3625,
+	2021,
+	2021,
 	1002,
 	1002,
 	1021,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	3175,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	4543,
-	4543,
-	3615,
-	3175,
-	3175,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	4441,
-	4441,
-	4543,
-	7083,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	4543,
-	4543,
-	3593,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	4543,
-	3593,
-	4543,
-	4543,
-	4543,
-	2019,
-	2019,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	3183,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	4555,
+	4555,
+	3625,
+	3183,
+	3183,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	4453,
+	4453,
+	4555,
+	7096,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	4555,
+	4555,
+	3603,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	4555,
+	3603,
+	4555,
+	4555,
+	4555,
+	2021,
+	2021,
 	1002,
 	1002,
 	1021,
-	4543,
-	4543,
-	4543,
-	4543,
-	3615,
-	3615,
-	4543,
-	4543,
-	4543,
-	4543,
-	3615,
-	4543,
-	3615,
-	3615,
-	3615,
-	3615,
-	3593,
-	4543,
-	4543,
-	4543,
-	4543,
-	3593,
-	4543,
-	4543,
-	4543,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	4543,
-	4543,
-	3615,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	4543,
-	4543,
-	3615,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	4543,
-	4543,
-	3615,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	4543,
-	4543,
-	3615,
-	4441,
-	4543,
-	4543,
+	4555,
+	4555,
+	4555,
+	4555,
+	3625,
+	3625,
+	4555,
+	4555,
+	4555,
+	4555,
+	3625,
+	4555,
+	3625,
+	3625,
+	3625,
+	3625,
+	3603,
+	4555,
+	4555,
+	4555,
+	4555,
+	3603,
+	4555,
+	4555,
+	4555,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	4555,
+	4555,
+	3625,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	4555,
+	4555,
+	3625,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	4555,
+	4555,
+	3625,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	4555,
+	4555,
+	3625,
+	4453,
+	4555,
+	4555,
 	1337,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	4543,
-	4543,
-	3175,
-	4441,
-	4543,
-	3593,
-	4543,
-	4360,
-	4441,
-	4543,
-	4441,
-	7047,
-	6911,
-	4543,
-	4543,
-	4543,
-	7039,
-	6907,
-	4543,
-	4543,
-	4543,
-	5001,
-	5001,
-	4543,
-	5317,
-	4739,
-	5869,
-	5869,
-	5440,
-	5869,
-	5870,
-	5652,
-	5307,
-	6402,
-	6402,
-	6398,
-	6398,
-	6398,
-	6570,
-	6402,
-	6402,
-	6402,
-	6402,
-	6402,
-	6195,
-	6195,
-	6739,
-	6398,
-	5870,
-	5440,
-	5440,
-	4543,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	4543,
-	6911,
-	6911,
-	6398,
-	6911,
-	6911,
-	4543,
-	6911,
-	4543,
-	6911,
-	4543,
-	5652,
-	5652,
-	4543,
-	6806,
-	6813,
-	6735,
-	6747,
-	5670,
-	6662,
-	6260,
-	6093,
-	6567,
-	6563,
-	6137,
-	6652,
-	6599,
-	6805,
-	6596,
-	6811,
-	5441,
-	6658,
-	6205,
-	6205,
-	6739,
-	6205,
-	6398,
-	6398,
-	6398,
-	6739,
-	6386,
-	6402,
-	6205,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	4555,
+	4555,
+	3183,
+	4453,
+	4555,
+	3603,
+	4555,
+	4372,
+	4453,
+	4555,
+	4453,
+	7060,
+	6924,
+	4555,
+	4555,
+	4555,
+	7052,
+	6920,
+	4555,
+	4555,
+	4555,
+	5014,
+	5014,
+	4555,
+	5331,
+	4751,
+	5883,
+	5883,
+	5454,
+	5883,
+	5884,
+	5666,
+	5321,
+	6415,
+	6415,
+	6411,
+	6411,
+	6411,
+	6583,
+	6415,
+	6415,
+	6415,
+	6415,
+	6415,
 	6209,
 	6209,
-	5670,
-	6194,
-	6195,
-	6739,
-	6741,
-	6739,
-	6739,
-	6739,
-	6741,
-	6739,
-	6739,
-	6398,
-	6408,
-	6398,
-	6137,
-	6398,
-	6911,
-	6570,
-	6813,
-	6402,
-	6402,
-	6402,
-	6402,
-	6402,
-	4543,
-	4704,
-	4738,
-	4995,
-	4543,
-	7047,
-	7047,
-	6194,
-	6138,
-	5670,
-	6194,
-	5317,
-	5317,
-	5651,
-	6911,
-	6194,
-	4543,
-	6194,
-	6570,
-	5651,
-	6209,
-	6911,
-	4543,
-	7047,
-	6262,
-	6261,
-	6806,
-	5556,
-	6806,
-	5651,
-	6813,
-	4989,
-	4543,
-	4543,
-	4739,
-	4543,
-	4705,
-	4543,
-	5441,
-	5708,
-	5555,
-	5345,
-	5018,
-	5344,
-	4543,
-	7083,
-	6205,
-	5863,
-	4543,
-	6398,
-	5675,
-	4543,
-	5652,
-	6194,
-	4543,
-	6806,
-	6813,
-	6735,
-	5670,
-	6662,
-	6260,
-	6093,
-	6567,
-	6563,
-	6652,
-	6599,
-	6805,
-	6596,
-	6811,
-	5441,
-	6205,
-	6205,
-	6739,
-	6205,
-	6398,
-	6398,
-	6398,
-	6739,
-	6386,
-	6402,
-	6584,
-	6205,
-	6209,
-	6209,
-	5670,
-	6194,
-	6195,
-	6739,
-	6741,
-	6739,
-	6739,
-	6739,
-	6741,
-	6739,
-	6739,
-	6398,
-	6408,
-	6398,
-	6137,
-	6137,
-	6398,
-	6570,
-	4543,
-	6813,
-	6402,
-	6402,
-	6402,
-	6402,
-	6402,
-	4543,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6398,
-	7083,
-	4543,
-	6735,
-	4743,
-	5320,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5006,
-	5674,
-	5006,
-	5674,
-	5006,
-	5674,
-	5006,
-	5674,
-	5006,
-	4808,
-	4543,
-	5865,
-	6398,
-	6398,
-	6398,
-	6398,
-	6398,
-	6398,
-	6398,
-	6911,
-	6402,
-	5436,
-	6205,
-	6205,
-	6205,
-	6270,
-	6911,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	5322,
-	5322,
-	5001,
-	5001,
-	5001,
-	5001,
-	5001,
-	5001,
-	5001,
-	5001,
-	4543,
-	6194,
-	5604,
-	6147,
-	6147,
-	6147,
-	6147,
-	6147,
-	6147,
-	6147,
-	6147,
-	5129,
-	4543,
-	7047,
-	6662,
-	7039,
-	6209,
-	4543,
-	4804,
-	6194,
-	4741,
-	5317,
-	5651,
-	4543,
-	6911,
-	6147,
-	6147,
-	6147,
-	4543,
-	5320,
-	4543,
-	5328,
-	5003,
-	7039,
-	7039,
-	7083,
-	7047,
-	7039,
-	4543,
-	5328,
-	5003,
-	7039,
-	7083,
-	7047,
-	7039,
-	4543,
-	5327,
-	5320,
-	4543,
-	5320,
-	4543,
-	5327,
-	4543,
-	6209,
-	5320,
-	4804,
-	7047,
-	5317,
-	5651,
-	6739,
-	4543,
-	4804,
-	7047,
-	7047,
-	5317,
-	5651,
-	6739,
-	4543,
-	4804,
-	7047,
-	7047,
-	5317,
-	5651,
-	6209,
-	4543,
-	5676,
-	4543,
-	6570,
-	7017,
-	4543,
-	4742,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5006,
-	5674,
-	5674,
-	5674,
-	5674,
-	5006,
-	5674,
-	5674,
-	5674,
-	5674,
-	5006,
-	5674,
-	5674,
-	4543,
-	5865,
-	6398,
-	6398,
-	5877,
-	4543,
-	6270,
-	6205,
-	6658,
-	6205,
-	5852,
-	6393,
-	6393,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6402,
-	4543,
-	4804,
-	5317,
-	5651,
-	6739,
-	5007,
-	4543,
-	6398,
-	6911,
+	6752,
+	6411,
+	5884,
+	5454,
+	5454,
+	4555,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	4555,
+	6924,
+	6924,
+	6411,
+	6924,
+	6924,
+	4555,
+	6924,
+	4555,
+	6924,
+	4555,
+	5666,
+	5666,
+	4555,
+	6819,
+	6826,
+	6748,
+	6760,
+	5684,
+	6675,
+	6273,
+	6107,
+	6580,
+	6576,
+	6151,
+	6665,
+	6612,
+	6818,
+	6609,
+	6824,
+	5455,
+	6671,
+	6219,
+	6219,
+	6752,
+	6219,
+	6411,
+	6411,
+	6411,
+	6752,
 	6399,
-	6398,
-	6913,
-	6911,
-	7083,
-	4543,
-	4811,
-	5674,
-	5674,
-	5674,
-	5674,
-	5321,
-	5321,
-	5321,
-	5321,
-	5321,
-	5321,
-	5006,
-	5674,
-	5674,
-	5674,
-	5674,
-	5006,
-	4543,
-	5001,
-	5001,
-	4806,
-	4806,
-	5001,
-	4806,
-	4543,
-	5599,
-	5599,
-	5599,
-	6911,
-	6911,
-	4543,
+	6415,
+	6219,
+	6223,
+	6223,
+	5684,
+	6208,
 	6209,
-	4543,
-	6398,
-	5865,
-	5865,
-	6398,
-	5865,
-	5865,
-	5865,
-	5865,
-	4543,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	4543,
-	4710,
-	4707,
-	5674,
-	5674,
-	5674,
-	5674,
-	5322,
-	5674,
-	4999,
-	4999,
-	4999,
-	5674,
-	5674,
-	5320,
-	5321,
-	5674,
-	4708,
-	5321,
-	5006,
-	4709,
-	4543,
-	5001,
-	5001,
-	5322,
-	6739,
-	4543,
-	5870,
-	5870,
-	5870,
-	6402,
-	5865,
-	6735,
-	6398,
-	6662,
-	6662,
-	7083,
-	6911,
-	7083,
-	6911,
-	6911,
-	6205,
-	6739,
-	6739,
-	6739,
-	6739,
-	5851,
-	6739,
-	6739,
-	6658,
-	6205,
-	5670,
-	5317,
-	5317,
-	5081,
-	5865,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	4543,
-	7039,
-	6808,
-	6808,
-	6808,
-	6808,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	7039,
-	6662,
-	6147,
-	6393,
-	4543,
-	6147,
-	5604,
-	4543,
-	5006,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	4543,
-	5001,
-	5001,
-	4543,
-	5870,
-	5870,
-	4543,
-	6735,
-	7047,
-	7047,
-	6735,
-	7047,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	7070,
-	6918,
-	7070,
-	6918,
-	7070,
-	6918,
-	7017,
-	6901,
-	4543,
-	4543,
-	4543,
-	7017,
-	6901,
-	7017,
-	6901,
-	4543,
-	4543,
-	4543,
-	7083,
-	7047,
-	6911,
-	4543,
-	4543,
-	4543,
-	7047,
-	4543,
-	7047,
-	4543,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	7047,
-	7047,
-	4543,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	7047,
-	7047,
-	4543,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	7047,
-	7047,
-	7047,
-	4543,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	7047,
-	7047,
-	7047,
-	4543,
-	6205,
-	5317,
-	4543,
-	6205,
-	4543,
-	6205,
-	4543,
-	6205,
-	5317,
-	4543,
-	6205,
-	4543,
-	6911,
-	7083,
-	7083,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	5671,
-	4996,
-	4543,
-	4543,
-	5671,
-	4543,
-	5671,
-	4543,
-	5671,
-	4996,
-	4543,
-	5671,
-	4543,
-	6911,
-	6911,
-	7083,
-	7083,
-	4543,
-	5327,
-	5674,
-	5674,
-	5674,
-	5674,
-	4543,
-	6398,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	6911,
-	6911,
-	6911,
-	4543,
-	6911,
-	6911,
-	6911,
-	4543,
-	6911,
-	6911,
-	6911,
-	4543,
-	6911,
-	6911,
-	6911,
-	6911,
-	6911,
-	4543,
-	4543,
-	4543,
-	4543,
-	5091,
-	5674,
-	5674,
-	5674,
-	5674,
-	4543,
-	5441,
-	4543,
-	6911,
-	6911,
-	6918,
-	4543,
-	5091,
-	5674,
-	5674,
-	5674,
-	5674,
-	5674,
-	4543,
-	5001,
-	6398,
-	5870,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	6398,
-	5862,
-	6398,
-	4758,
-	4760,
-	4847,
-	4689,
-	4689,
-	4689,
-	4689,
-	5192,
-	4689,
-	4689,
-	4689,
-	5192,
-	5192,
-	5192,
-	4689,
+	6752,
+	6754,
+	6752,
+	6752,
+	6752,
+	6754,
+	6752,
+	6752,
+	6411,
+	6421,
+	6411,
+	6151,
+	6411,
+	6924,
+	6583,
+	6826,
+	6415,
+	6415,
+	6415,
+	6415,
+	6415,
+	4555,
+	4716,
+	4750,
+	5008,
+	4555,
+	7060,
+	7060,
+	6208,
+	6152,
+	5684,
+	6208,
+	5331,
+	5331,
+	5665,
+	6924,
+	6208,
+	4555,
+	6208,
+	6583,
+	5665,
+	6223,
+	6924,
+	4555,
+	7060,
+	6275,
+	6274,
+	6819,
+	5570,
+	6819,
+	5665,
+	6826,
+	5002,
+	4555,
+	4555,
+	4751,
+	4555,
+	4717,
+	4555,
+	5455,
+	5722,
+	5569,
+	5359,
+	5032,
+	5358,
+	4555,
+	7096,
+	6219,
+	5877,
+	4555,
+	6411,
+	5689,
+	4555,
+	5666,
+	6208,
+	4555,
+	6819,
+	6826,
+	6748,
+	5684,
+	6675,
+	6273,
+	6107,
+	6580,
+	6576,
+	6665,
+	6612,
+	6818,
+	6609,
+	6824,
+	5455,
+	6219,
+	6219,
+	6752,
+	6219,
+	6411,
+	6411,
+	6411,
+	6752,
+	6399,
+	6415,
+	6597,
+	6219,
+	6223,
+	6223,
+	5684,
+	6208,
 	6209,
-	4762,
-	4543,
-	7083,
-	6398,
-	5862,
-	6398,
-	4758,
-	4760,
-	4847,
+	6752,
+	6754,
+	6752,
+	6752,
+	6752,
+	6754,
+	6752,
+	6752,
+	6411,
+	6421,
+	6411,
+	6151,
+	6151,
+	6411,
+	6583,
+	4555,
+	6826,
+	6415,
+	6415,
+	6415,
+	6415,
+	6415,
+	4555,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6411,
+	7096,
+	4555,
+	6748,
+	4755,
+	5334,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5019,
+	5688,
+	5019,
+	5688,
+	5019,
+	5688,
+	5019,
+	5688,
+	5019,
+	4821,
+	4555,
+	5879,
+	6411,
+	6411,
+	6411,
+	6411,
+	6411,
+	6411,
+	6411,
+	6924,
+	6415,
+	5450,
+	6219,
+	6219,
+	6219,
+	6283,
+	6924,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	5336,
+	5336,
+	5014,
+	5014,
+	5014,
+	5014,
+	5014,
+	5014,
+	5014,
+	5014,
+	4555,
+	6208,
+	5618,
+	6161,
+	6161,
+	6161,
+	6161,
+	6161,
+	6161,
+	6161,
+	6161,
+	5143,
+	4555,
+	7060,
+	6675,
+	7052,
+	6223,
+	4555,
+	4816,
+	6208,
+	4753,
+	5331,
+	5665,
+	4555,
+	6924,
+	6161,
+	6161,
+	6161,
+	4555,
+	5334,
+	4555,
+	5342,
+	5016,
+	7052,
+	7052,
+	7096,
+	7060,
+	7052,
+	4555,
+	5342,
+	5016,
+	7052,
+	7096,
+	7060,
+	7052,
+	4555,
+	5341,
+	5334,
+	4555,
+	5334,
+	4555,
+	5341,
+	4555,
+	6223,
+	5334,
+	4816,
+	7060,
+	5331,
+	5665,
+	6752,
+	4555,
+	4816,
+	7060,
+	7060,
+	5331,
+	5665,
+	6752,
+	4555,
+	4816,
+	7060,
+	7060,
+	5331,
+	5665,
+	6223,
+	4555,
+	5690,
+	4555,
+	6583,
+	7030,
+	4555,
+	4754,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5019,
+	5688,
+	5688,
+	5688,
+	5688,
+	5019,
+	5688,
+	5688,
+	5688,
+	5688,
+	5019,
+	5688,
+	5688,
+	4555,
+	5879,
+	6411,
+	6411,
+	5891,
+	4555,
+	6283,
+	6219,
+	6671,
+	6219,
+	5866,
+	6406,
+	6406,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6415,
+	4555,
+	4816,
+	5331,
+	5665,
+	6752,
+	5020,
+	4555,
+	6411,
+	6924,
+	6412,
+	6411,
+	6926,
+	6924,
+	7096,
+	4555,
+	4824,
+	5688,
+	5688,
+	5688,
+	5688,
+	5335,
+	5335,
+	5335,
+	5335,
+	5335,
+	5335,
+	5019,
+	5688,
+	5688,
+	5688,
+	5688,
+	5019,
+	4555,
+	5014,
+	5014,
+	4818,
+	4818,
+	5014,
+	4818,
+	4555,
+	5613,
+	5613,
+	5613,
+	6924,
+	6924,
+	4555,
+	6223,
+	4555,
+	6411,
+	5879,
+	5879,
+	6411,
+	5879,
+	5879,
+	5879,
+	5879,
+	4555,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	4555,
+	4722,
+	4719,
+	5688,
+	5688,
+	5688,
+	5688,
+	5336,
+	5688,
+	5012,
+	5012,
+	5012,
+	5688,
+	5688,
+	5334,
+	5335,
+	5688,
 	4720,
-	4720,
-	4720,
-	4720,
-	5192,
-	4720,
-	4720,
-	4720,
-	5192,
-	5192,
-	5192,
-	4720,
-	4848,
-	4543,
-	7083,
-	5522,
-	6398,
-	6398,
-	5862,
-	4543,
-	5670,
-	5328,
-	4543,
-	6398,
-	6911,
-	6739,
-	6398,
-	5325,
-	4836,
-	6911,
-	7083,
-	5091,
-	5431,
-	6739,
-	4836,
-	4543,
-	6205,
-	6911,
-	6911,
-	6913,
-	4543,
-	5001,
-	5001,
-	5001,
-	5001,
-	5001,
-	5001,
-	4543,
-	4809,
-	5674,
-	5674,
-	5674,
-	5674,
-	4740,
-	5674,
-	5674,
-	5674,
-	5674,
-	4543,
-	4745,
-	5321,
-	5321,
-	5321,
-	5000,
-	5321,
-	5000,
-	4745,
-	5321,
-	5321,
-	5000,
-	5000,
-	6402,
-	4543,
-	6662,
-	6658,
-	6209,
-	6570,
-	6739,
-	6658,
-	6574,
-	6658,
-	6658,
-	6134,
-	6662,
-	6739,
-	6739,
-	6205,
-	6205,
-	6205,
-	5669,
-	5328,
-	5676,
-	6209,
-	6211,
-	6398,
-	5676,
-	7047,
-	6398,
-	5676,
-	5676,
+	5335,
+	5019,
+	4721,
+	4555,
+	5014,
+	5014,
+	5336,
+	6752,
+	4555,
+	5884,
+	5884,
+	5884,
+	6415,
+	5879,
+	6748,
+	6411,
+	6675,
+	6675,
+	7096,
+	6924,
+	7096,
+	6924,
+	6924,
+	6219,
+	6752,
+	6752,
+	6752,
+	6752,
 	5865,
-	4543,
-	5327,
-	5674,
-	5674,
-	5674,
-	6662,
-	4809,
-	5674,
-	5674,
-	5674,
-	5674,
-	4543,
-	6205,
-	4744,
-	5321,
-	5321,
-	5321,
-	5000,
-	5321,
-	5000,
-	4744,
-	5321,
-	5321,
-	5000,
-	5000,
-	6402,
-	4543,
-	6735,
-	6735,
-	7047,
-	6194,
-	6739,
-	6735,
-	6735,
-	6739,
-	6739,
-	6209,
-	5865,
-	6911,
-	6209,
-	6398,
-	6739,
-	6739,
-	6209,
-	5676,
-	7047,
-	6739,
-	6398,
-	6205,
-	6662,
-	6209,
-	6739,
-	6209,
-	6209,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	6735,
-	7047,
-	7047,
-	7047,
-	4543,
-	6735,
-	7047,
-	7047,
-	4543,
-	4543,
+	6752,
+	6752,
+	6671,
+	6219,
+	5684,
+	5331,
+	5331,
+	5095,
+	5879,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	4555,
+	7052,
+	6821,
+	6821,
+	6821,
+	6821,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	7052,
+	6675,
+	6161,
+	6406,
+	4555,
+	6161,
+	5618,
+	4555,
+	5019,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	4555,
+	5014,
+	5014,
+	4555,
+	5884,
+	5884,
+	4555,
+	6748,
+	7060,
+	7060,
+	6748,
+	7060,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
 	7083,
+	6931,
 	7083,
+	6931,
 	7083,
-	6911,
-	6570,
-	4543,
-	5674,
-	5674,
-	5327,
-	4543,
-	6735,
-	5330,
-	5330,
-	5330,
-	5330,
-	4813,
-	6398,
-	7047,
-	4543,
-	4543,
-	6911,
-	7083,
-	4543,
-	6911,
-	5416,
-	4543,
-	6911,
-	6911,
-	7083,
-	7083,
-	7083,
-	7083,
-	6911,
-	6911,
-	6911,
-	7083,
-	7083,
-	7083,
-	6911,
-	7083,
-	7083,
-	7083,
-	7083,
-	7083,
-	7083,
-	7083,
-	7083,
-	4543,
-	5006,
-	5674,
-	5674,
-	5674,
-	5861,
-	5674,
-	5674,
-	5674,
-	5674,
-	4543,
-	7083,
-	7083,
-	5001,
-	5001,
-	5001,
-	5674,
-	5674,
-	5674,
-	5327,
-	4543,
-	6739,
-	6662,
-	6662,
-	6662,
-	6205,
-	6205,
-	6205,
-	6739,
-	6739,
-	6739,
-	6009,
-	6739,
-	5328,
-	6739,
-	4543,
-	6739,
-	6739,
-	6739,
-	6739,
-	5094,
-	4543,
-	5534,
-	7017,
-	7017,
-	6739,
-	6413,
-	6918,
-	6918,
-	7083,
-	7083,
-	4543,
-	6735,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	7047,
-	4543,
-	7083,
-	7083,
-	7083,
-	7083,
-	7083,
-	7083,
-	7083,
-	7083,
-	4543,
-	7047,
-	7017,
-	6728,
-	6728,
-	6728,
-	6651,
-	6651,
-	4543,
-	6911,
-	4543,
-	7047,
-	7047,
-	7047,
-	4543,
-	7039,
-	6907,
-	7039,
-	6907,
-	7039,
-	6907,
-	7039,
-	6907,
-	7039,
-	6907,
-	4543,
-	4543,
-	4543,
-	7083,
+	6931,
+	7030,
+	6914,
+	4555,
+	4555,
+	4555,
+	7030,
+	6914,
+	7030,
+	6914,
+	4555,
+	4555,
+	4555,
+	7096,
+	7060,
+	6924,
+	4555,
+	4555,
+	4555,
+	7060,
+	4555,
+	7060,
+	4555,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	7060,
+	7060,
+	4555,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	7060,
+	7060,
+	4555,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	7060,
+	7060,
+	7060,
+	4555,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	7060,
+	7060,
+	7060,
+	4555,
+	6219,
+	5331,
+	4555,
+	6219,
+	4555,
+	6219,
+	4555,
+	6219,
+	5331,
+	4555,
+	6219,
+	4555,
+	6924,
+	7096,
+	7096,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	5685,
+	5009,
+	4555,
+	4555,
+	5685,
+	4555,
+	5685,
+	4555,
+	5685,
+	5009,
+	4555,
+	5685,
+	4555,
+	6924,
+	6924,
+	7096,
+	7096,
+	4555,
+	5341,
+	5688,
+	5688,
+	5688,
+	5688,
+	4555,
+	6411,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	6924,
+	6924,
+	6924,
+	4555,
+	6924,
+	6924,
+	6924,
+	4555,
+	6924,
+	6924,
+	6924,
+	4555,
+	6924,
+	6924,
+	6924,
+	6924,
+	6924,
+	4555,
+	4555,
+	4555,
+	4555,
+	5105,
+	5688,
+	5688,
+	5688,
+	5688,
+	4555,
+	5455,
+	4555,
+	6924,
+	6924,
+	6931,
+	4555,
+	5105,
+	5688,
+	5688,
+	5688,
+	5688,
+	5688,
+	4555,
+	5014,
+	6411,
+	5884,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	6411,
+	5876,
+	6411,
+	4770,
+	4772,
+	4860,
+	4701,
+	4701,
+	4701,
+	4701,
+	5206,
+	4701,
+	4701,
+	4701,
+	5206,
+	5206,
+	5206,
+	4701,
+	6223,
+	4774,
+	4555,
+	7096,
+	6411,
+	5876,
+	6411,
+	4770,
+	4772,
+	4860,
+	4732,
+	4732,
+	4732,
+	4732,
+	5206,
+	4732,
+	4732,
+	4732,
+	5206,
+	5206,
+	5206,
+	4732,
+	4861,
+	4555,
+	7096,
+	5536,
+	6411,
+	6411,
+	5876,
+	4555,
+	5684,
+	5342,
+	4555,
+	6411,
+	6924,
+	6752,
+	6411,
+	5339,
+	4849,
+	6924,
+	7096,
+	5105,
+	5445,
+	6752,
+	4849,
+	4555,
+	6219,
+	6924,
+	6924,
+	6926,
+	4555,
+	5014,
+	5014,
+	5014,
+	5014,
+	5014,
+	5014,
+	4555,
+	4822,
+	5688,
+	5688,
+	5688,
+	5688,
+	4752,
+	5688,
+	5688,
+	5688,
+	5688,
+	4555,
+	4757,
+	5335,
+	5335,
+	5335,
+	5013,
+	5335,
+	5013,
+	4757,
+	5335,
+	5335,
+	5013,
+	5013,
+	6415,
+	4555,
+	6675,
+	6671,
+	6223,
+	6583,
+	6752,
+	6671,
+	6587,
+	6671,
+	6671,
+	6148,
+	6675,
+	6752,
+	6752,
+	6219,
+	6219,
+	6219,
+	5683,
+	5342,
+	5690,
+	5017,
+	6752,
+	5022,
+	6411,
+	5690,
+	7060,
+	6411,
+	5690,
+	5690,
+	5879,
+	4555,
+	5341,
+	5688,
+	5688,
+	5688,
+	6675,
+	4822,
+	5688,
+	5688,
+	5688,
+	5688,
+	4555,
+	6219,
+	4756,
+	5335,
+	5335,
+	5335,
+	5013,
+	5335,
+	5013,
+	4756,
+	5335,
+	5335,
+	5013,
+	5013,
+	6415,
+	4555,
+	6748,
+	6748,
+	7060,
+	6208,
+	6752,
+	6748,
+	6748,
+	6752,
+	6752,
+	6223,
+	5879,
+	6924,
+	6223,
+	6411,
+	6752,
+	6752,
+	6223,
+	5690,
+	7060,
+	6752,
+	6411,
+	6219,
+	6675,
+	6223,
+	6752,
+	6223,
+	6223,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	6748,
+	7060,
+	7060,
+	7060,
+	4555,
+	6748,
+	7060,
+	7060,
+	4555,
+	4555,
+	7096,
+	7096,
+	7096,
+	6924,
+	6583,
+	4555,
+	5688,
+	5688,
+	5341,
+	4555,
+	6748,
+	5344,
+	5344,
+	5344,
+	5344,
+	4826,
+	6411,
+	7060,
+	4555,
+	4555,
+	6924,
+	7096,
+	4555,
+	6924,
+	5430,
+	4555,
+	6924,
+	6924,
+	7096,
+	7096,
+	7096,
+	7096,
+	6924,
+	6924,
+	6924,
+	7096,
+	7096,
+	7096,
+	6924,
+	7096,
+	7096,
+	7096,
+	7096,
+	7096,
+	7096,
+	7096,
+	7096,
+	4555,
+	5019,
+	5688,
+	5688,
+	5688,
+	5875,
+	5688,
+	5688,
+	5688,
+	5688,
+	4555,
+	7096,
+	7096,
+	5014,
+	5014,
+	5014,
+	5688,
+	5688,
+	5688,
+	5341,
+	4555,
+	6752,
+	6675,
+	6675,
+	6675,
+	6219,
+	6219,
+	6219,
+	6752,
+	6752,
+	6752,
+	6023,
+	6752,
+	5342,
+	6752,
+	6752,
+	6752,
+	4819,
+	4555,
+	7096,
+	4555,
+	2976,
+	6752,
+	6752,
+	6752,
+	6752,
+	5108,
+	4555,
+	5548,
+	7030,
+	7030,
+	6752,
+	6426,
+	6931,
+	6931,
+	7096,
+	7096,
+	4555,
+	6748,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	7060,
+	4555,
+	7096,
+	7096,
+	7096,
+	7096,
+	7096,
+	7096,
+	7096,
+	7096,
+	4555,
+	7060,
+	7030,
+	6741,
+	6741,
+	6741,
+	6664,
+	6664,
+	4555,
+	6924,
+	4555,
+	7060,
+	7060,
+	7060,
+	4555,
+	7052,
+	6920,
+	7052,
+	6920,
+	7052,
+	6920,
+	7052,
+	6920,
+	7052,
+	6920,
+	4555,
+	4555,
+	4555,
+	7096,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	1550,
+	1557,
 	s_methodPointers,
 	0,
 	NULL,

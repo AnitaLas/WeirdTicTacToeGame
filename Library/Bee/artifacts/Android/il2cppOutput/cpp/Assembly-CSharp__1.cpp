@@ -414,7 +414,6 @@ IL2CPP_EXTERN_C RuntimeClass* ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8
 IL2CPP_EXTERN_C RuntimeClass* Comparison_1_tB7DE1436CB53924C2FC41FF926D074C1ACC14D89_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Convert_t7097FF336D592F7C06D88A98349A44646F91EFFC_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CreateTablePrefabCalculateScale_t9B7D770600DF648A2CE5CCCBE8C1C5C1092A1A92_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GameConfigurationKindOfGame_t7D8EAA0329A6F5BE3E756085CF97F610339CA331_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GameConfigurationTeamMembers_tEC20F8B6D1F2E1B2559BA4A044605CF46CC95AC2_il2cpp_TypeInfo_var;
@@ -465,7 +464,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralB0306A1DF10ED984C2632DD48F508C69BF4EAEAA
 IL2CPP_EXTERN_C String_t* _stringLiteralD00074DE8ACBEBA7EF28BE447E997E8352E84502;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralE4F0F961A4FEE2C7BA361A4CF14CC9A79F8DB410;
-IL2CPP_EXTERN_C String_t* _stringLiteralE67B7F20962AF00B1EBEAE7692AB43F51B99A528;
 IL2CPP_EXTERN_C String_t* _stringLiteralF944DCD635F9801F7AC90A407FBC479964DEC024;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisTMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9_m0C4C5268B54C7097888C6B109527A680772EBCB5_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisTextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957_m23F8F2F9DD5A54329CEB47D53B4CAA8BC4A562AA_RuntimeMethod_var;
@@ -5932,10 +5930,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void GameConfigurationTeamMembers
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScenesChangeMainMethods_GoToSceneConfigurationBoardGame_mA8CCE83A2238F901AE2361B97AE9D2357EBD91FD (const RuntimeMethod* method) ;
 // System.Void Assets.Scripts.ScenesChangeMainMethods::GoToSceneStartGame()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScenesChangeMainMethods_GoToSceneStartGame_mF7E758EC6C4282AE9786A92D0D9864D1D547AA83 (const RuntimeMethod* method) ;
-// System.String System.Boolean::ToString()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Boolean_ToString_m6646C8026B1DF381A1EE8CD13549175E9703CC63 (bool* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Debug::Log(System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
 // System.String Assets.Scripts.GameConfigurationButtonsTeamNumbersTagName::GetTagNameForButtonByTagTeamNumbersButtonSave()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* GameConfigurationButtonsTeamNumbersTagName_GetTagNameForButtonByTagTeamNumbersButtonSave_m9CCB7F8F75E6B493ADEC03D0DC5530305FD8CC26 (const RuntimeMethod* method) ;
 // System.String Assets.Scripts.GameConfigurationButtonsTeamNumbersTagName::GetTagNameForButtonByTagTeamNumbersButtonBack()
@@ -12758,10 +12752,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameConfigurationTeamNumbers_Start_m1781
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameConfigurationKindOfGame_t7D8EAA0329A6F5BE3E756085CF97F610339CA331_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameConfigurationTeamNumbers_tC73B533D26EEFF031EB8DBA78EFDB0536CE47FFE_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE67B7F20962AF00B1EBEAE7692AB43F51B99A528);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -12773,51 +12765,44 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameConfigurationTeamNumbers_Start_m1781
 		// isCellphoneModeScene2 = _configurationBoardGameDeviceModeKind;
 		bool L_1 = ((GameConfigurationTeamNumbers_tC73B533D26EEFF031EB8DBA78EFDB0536CE47FFE_StaticFields*)il2cpp_codegen_static_fields_for(GameConfigurationTeamNumbers_tC73B533D26EEFF031EB8DBA78EFDB0536CE47FFE_il2cpp_TypeInfo_var))->____configurationBoardGameDeviceModeKind_10;
 		((GameConfigurationTeamNumbers_tC73B533D26EEFF031EB8DBA78EFDB0536CE47FFE_StaticFields*)il2cpp_codegen_static_fields_for(GameConfigurationTeamNumbers_tC73B533D26EEFF031EB8DBA78EFDB0536CE47FFE_il2cpp_TypeInfo_var))->___isCellphoneModeScene2_11 = L_1;
-		// Debug.Log("2 team number -> isCellphoneMode: " + isCellphoneModeScene2);
-		String_t* L_2;
-		L_2 = Boolean_ToString_m6646C8026B1DF381A1EE8CD13549175E9703CC63((&((GameConfigurationTeamNumbers_tC73B533D26EEFF031EB8DBA78EFDB0536CE47FFE_StaticFields*)il2cpp_codegen_static_fields_for(GameConfigurationTeamNumbers_tC73B533D26EEFF031EB8DBA78EFDB0536CE47FFE_il2cpp_TypeInfo_var))->___isCellphoneModeScene2_11), NULL);
-		String_t* L_3;
-		L_3 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralE67B7F20962AF00B1EBEAE7692AB43F51B99A528, L_2, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_3, NULL);
 		// _teamNumbers = 2;
 		__this->____teamNumbers_12 = 2;
 		// _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
-		String_t* L_4;
-		L_4 = GameConfigurationButtonsCommonButtonsTagName_GetTagNameUntagged_mED014E8657FD2B131848764872F32C0C0E9C0808(NULL);
-		__this->____tagUntagged_15 = L_4;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____tagUntagged_15), (void*)L_4);
+		String_t* L_2;
+		L_2 = GameConfigurationButtonsCommonButtonsTagName_GetTagNameUntagged_mED014E8657FD2B131848764872F32C0C0E9C0808(NULL);
+		__this->____tagUntagged_15 = L_2;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____tagUntagged_15), (void*)L_2);
 		// _tagConfigurationTeamNumbersButtonSave = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersButtonSave();
-		String_t* L_5;
-		L_5 = GameConfigurationButtonsTeamNumbersTagName_GetTagNameForButtonByTagTeamNumbersButtonSave_m9CCB7F8F75E6B493ADEC03D0DC5530305FD8CC26(NULL);
-		__this->____tagConfigurationTeamNumbersButtonSave_16 = L_5;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____tagConfigurationTeamNumbersButtonSave_16), (void*)L_5);
+		String_t* L_3;
+		L_3 = GameConfigurationButtonsTeamNumbersTagName_GetTagNameForButtonByTagTeamNumbersButtonSave_m9CCB7F8F75E6B493ADEC03D0DC5530305FD8CC26(NULL);
+		__this->____tagConfigurationTeamNumbersButtonSave_16 = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____tagConfigurationTeamNumbersButtonSave_16), (void*)L_3);
 		// _tagConfigurationTeamNumbersButtonBack = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersButtonBack();
-		String_t* L_6;
-		L_6 = GameConfigurationButtonsTeamNumbersTagName_GetTagNameForButtonByTagTeamNumbersButtonBack_m9CB093D52AD4CB32B4AC2F75E93AF40C961FA243(NULL);
-		__this->____tagConfigurationTeamNumbersButtonBack_17 = L_6;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____tagConfigurationTeamNumbersButtonBack_17), (void*)L_6);
+		String_t* L_4;
+		L_4 = GameConfigurationButtonsTeamNumbersTagName_GetTagNameForButtonByTagTeamNumbersButtonBack_m9CB093D52AD4CB32B4AC2F75E93AF40C961FA243(NULL);
+		__this->____tagConfigurationTeamNumbersButtonBack_17 = L_4;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____tagConfigurationTeamNumbersButtonBack_17), (void*)L_4);
 		// _tagConfigurationTeamNumbersTableWithNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersTableWithNumbers();
-		String_t* L_7;
-		L_7 = GameConfigurationButtonsTeamNumbersTagName_GetTagNameForButtonByTagTeamNumbersTableWithNumbers_m8F4FAB1A7B86BC78D8FA186156EE35A0E283FA01(NULL);
-		__this->____tagConfigurationTeamNumbersTableWithNumbers_18 = L_7;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____tagConfigurationTeamNumbersTableWithNumbers_18), (void*)L_7);
+		String_t* L_5;
+		L_5 = GameConfigurationButtonsTeamNumbersTagName_GetTagNameForButtonByTagTeamNumbersTableWithNumbers_m8F4FAB1A7B86BC78D8FA186156EE35A0E283FA01(NULL);
+		__this->____tagConfigurationTeamNumbersTableWithNumbers_18 = L_5;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____tagConfigurationTeamNumbersTableWithNumbers_18), (void*)L_5);
 		// GameConfigurationTeamNumbersButtonsCreate.GameConfigurationTeamNumbersButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___prefabCubePlay_5;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_9 = __this->___prefabCubePlayButtonsDefaultColour_7;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_10 = __this->___prefabCubePlayButtonsNumberColour_8;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_11 = __this->___prefabCubePlayButtonsBackColour_9;
-		bool L_12 = __this->____isGame2D_13;
-		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_13;
-		L_13 = GameConfigurationTeamNumbersButtonsCreate_GameConfigurationTeamNumbersButtons_m3C51930BD0ACF2B4E0425F3A83AA6A8931D552AF(L_8, L_9, L_10, L_11, L_12, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->___prefabCubePlay_5;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_7 = __this->___prefabCubePlayButtonsDefaultColour_7;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_8 = __this->___prefabCubePlayButtonsNumberColour_8;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_9 = __this->___prefabCubePlayButtonsBackColour_9;
+		bool L_10 = __this->____isGame2D_13;
+		List_1_t2A4E873ED3471F389629F9EC957C1A725F891E85* L_11;
+		L_11 = GameConfigurationTeamNumbersButtonsCreate_GameConfigurationTeamNumbersButtons_m3C51930BD0ACF2B4E0425F3A83AA6A8931D552AF(L_6, L_7, L_8, L_9, L_10, NULL);
 		// _buttonsWithNumbers = GameConfigurationTeamNumbersButtonsCreate.CreateTableForTeamGameWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, _isGame2D);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___prefabCubePlay_5;
-		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_15 = __this->___prefabCubePlayDefaultColour_6;
-		bool L_16 = __this->____isGame2D_13;
-		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_17;
-		L_17 = GameConfigurationTeamNumbersButtonsCreate_CreateTableForTeamGameWithNumbers_m0FE78485B8703D08A0EB1C91125ECF334E08E784(L_14, L_15, L_16, NULL);
-		__this->____buttonsWithNumbers_14 = L_17;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____buttonsWithNumbers_14), (void*)L_17);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = __this->___prefabCubePlay_5;
+		MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* L_13 = __this->___prefabCubePlayDefaultColour_6;
+		bool L_14 = __this->____isGame2D_13;
+		GameObjectU5BU2CU2CU5D_t292963417B78AD0240E21720B50541AF958195F0* L_15;
+		L_15 = GameConfigurationTeamNumbersButtonsCreate_CreateTableForTeamGameWithNumbers_m0FE78485B8703D08A0EB1C91125ECF334E08E784(L_12, L_13, L_14, NULL);
+		__this->____buttonsWithNumbers_14 = L_15;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____buttonsWithNumbers_14), (void*)L_15);
 		// }
 		return;
 	}
