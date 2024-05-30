@@ -140,8 +140,8 @@ internal class Game : MonoBehaviour
     private float[] _timeForTimers;
     //private float _timeForHideDefault = 3f;
     //private float _timeForHidePlayGameElementsDefault = 3f;
-    //private float _timeForHidePlayGameElementsDefault = 5f;
-    private float _timeForHidePlayGameElementsDefault = 20f;
+    private float _timeForHidePlayGameElementsDefault = 5f;
+    //private float _timeForHidePlayGameElementsDefault = 20f;
     private float _timeForUnhidePlayGameElements;
     private float _timeForHide;
     private bool _isTimeToHidePlayGameElements;
@@ -977,7 +977,7 @@ internal class Game : MonoBehaviour
 
                                 // to do 
                                 //_playersSymbols
-
+                                _playersSymbols = _newPlayersSymbols;
 
                             }
                             else
