@@ -679,7 +679,7 @@ namespace Assets.Scripts
 
             string finalListWithSymbols = firstSymbols;
 
-            Debug.Log("1 finalListWithSymbols: " + finalListWithSymbols);
+            Debug.Log("11111111111 finalListWithSymbols: " + finalListWithSymbols);
             string[] currentsymbolsToCompare;
 
             // ----
@@ -694,11 +694,43 @@ namespace Assets.Scripts
 
             string[] nextSymbolsToCompare = GetFirstSymbolsToCompare(symbols, previousSymbols, playersNumberInTeams, indexForSymbols);
 
+            //string[] previousSymbolsToGetSymbols = previousSymbols;
+            //string[] waitSymbolsToGetSymbols = previousSymbols;
+            //string[] newSymbolsToGetSymbols = nextSymbolsToCompare;
+
+
             string[] previousSymbolsToGetSymbols = previousSymbols;
             string[] waitSymbolsToGetSymbols = previousSymbols;
-            string[] newSymbolsToGetSymbols = nextSymbolsToCompare;
+            string[] newSymbolsToGetSymbols = previousSymbols;
 
+            Debug.Log(" ---------------- START previousSymbolsToGetSymbols");
+            
+            for (int z = 0; z < previousSymbolsToGetSymbols.Length; z++)
+            {
 
+                Debug.Log($"previousSymbolsToGetSymbols {z} : " + previousSymbolsToGetSymbols[z]);
+
+            }
+
+            Debug.Log(" ---------------- START waitSymbolsToGetSymbols");
+
+            for (int z = 0; z < waitSymbolsToGetSymbols.Length; z++)
+            {
+
+                Debug.Log($"waitSymbolsToGetSymbols {z} : " + waitSymbolsToGetSymbols[z]);
+
+            }
+
+            Debug.Log(" ---------------- START newSymbolsToGetSymbols");
+
+            for (int z = 0; z < waitSymbolsToGetSymbols.Length; z++)
+            {
+
+                Debug.Log($"newSymbolsToGetSymbols {z} : " + newSymbolsToGetSymbols[z]);
+
+            }
+
+            Debug.Log(" ---------------- END start list");
             int indexForListWithPartialSymbols = 1;
 
             List<string[]> startListWithPartialSymbols = new List<string[]>();
@@ -716,6 +748,7 @@ namespace Assets.Scripts
 
 
 
+
             int aAaaa = 1;
             while (isFisrtSymbolsAsSameAsLastOne == false)
             //while (aAaaa < 20)
@@ -727,21 +760,39 @@ namespace Assets.Scripts
 
 
                List<string[]> lastList = symbolsToCompare[indexForListWithPartialSymbols];
-               currentsymbolsToCompare = lastList[2];
+                //currentsymbolsToCompare = lastList[2];
+                if (indexForListWithPartialSymbols <2)
+                {
+                    
+                    currentsymbolsToCompare = lastList[2];
+                    Debug.Log("111111 A currentsymbolsToCompare: " + currentsymbolsToCompare);
+                }
+                else if (indexForListWithPartialSymbols == 2)
+                {
+                    currentsymbolsToCompare = lastList[1];
+                    Debug.Log("111111 B currentsymbolsToCompare: " + currentsymbolsToCompare);
+                }
+                else
+                {
+                    currentsymbolsToCompare = lastList[0];
+                    Debug.Log("111111 C currentsymbolsToCompare: " + currentsymbolsToCompare);
+
+                }
+
 
 
                 indexForListWithPartialSymbols++;
 
                 //string symbolsToCompareOneString = GetSymbolsAsOneString(symbolsToCompare);
                 string symbolsToCompareOneString = GetSymbolsAsOneString(currentsymbolsToCompare);
-                Debug.Log("symbolsToCompareOneString: " + symbolsToCompareOneString);
+                Debug.Log("111111 symbolsToCompareOneString: " + symbolsToCompareOneString);
 
                 isFisrtSymbolsAsSameAsLastOne = IsFisrtSymbolsAsTheSameAsLastOne(firstSymbolsToCompare, symbolsToCompareOneString);
 
                 if (isFisrtSymbolsAsSameAsLastOne == false)
                 {
                     finalListWithSymbols = finalListWithSymbols + symbolsToCompareOneString;
-                    Debug.Log("2 finalListWithSymbols: " + finalListWithSymbols);
+                    Debug.Log("2111111111 finalListWithSymbols: " + finalListWithSymbols);
                 }
                 //Debug.Log(" indexForSymbols: " + indexForSymbols);
 
@@ -974,10 +1025,10 @@ namespace Assets.Scripts
             int currentListNumberSymbolsToCompare = symbolsToCompare.Count;
             int teamsNumbers = teamsSymbols.Count;
 
+           
 
 
-
-            Debug.Log($" --------------------------------------- ");
+            //Debug.Log($" --------------------------------------- ");
             string[] newSymbols = new string[teamsNumbers];
 
             for (int i = 0; i < teamsNumbers; i++)
@@ -991,27 +1042,35 @@ namespace Assets.Scripts
                 {
                     string symbol = teamSymbols[indexForSymbols];
                     newSymbols[i] = symbol;
-                    Debug.Log($"1 newSymbols: " + symbol);
+                    //Debug.Log($"1 newSymbols: " + symbol);
                 }
                 else
                 {
                     int indexForTeamSymbol = maxIndexsNextSymobls[i];
 
                     //int indexForPreviousSymbols = (currentListNumberSymbolsToCompare - 1) - indexForTeamSymbol;
+                    //int indexForPreviousSymbols = (indexForListWithPartialSymbols - 1) - indexForTeamSymbol;
                     int indexForPreviousSymbols = (indexForListWithPartialSymbols - 1) - indexForTeamSymbol;
-                    Debug.Log($"1 indexForPreviousSymbols: " + indexForPreviousSymbols);
+
+                    if (indexForPreviousSymbols < 0)
+                    {
+                        indexForPreviousSymbols = 0;
+                    } 
+
+
+                    //Debug.Log($"1 indexForPreviousSymbols: " + indexForPreviousSymbols);
 
                     List<string[]> listPreviousSymbols = symbolsToCompare[indexForPreviousSymbols];
 
                     string[] previousSymbols = listPreviousSymbols[0];
 
 
-                    for (int z = 0; z < previousSymbols.Length; z++)
-                    {
+                    //for (int z = 0; z < previousSymbols.Length; z++)
+                    //{
 
-                        Debug.Log($"2 A table previousSymbols {z} : " + previousSymbols[z]);
+                    //    Debug.Log($"2 A table previousSymbols {z} : " + previousSymbols[z]);
 
-                    }
+                    //}
 
 
                     //int indexForSymbol = indexForTeamSymbol;
@@ -1031,10 +1090,10 @@ namespace Assets.Scripts
                     //    indexForSymbol = 0;
                     //}
 
-                    Debug.Log($"2 B indexForTeamSymbol: " + indexForTeamSymbol);
+                   // Debug.Log($"2 B indexForTeamSymbol: " + indexForTeamSymbol);
                     newSymbols[i] = previousSymbols[indexForSymbol];
 
-                    Debug.Log($"2 C previousSymbols {i} : " + previousSymbols[i]);
+                    //Debug.Log($"2 C previousSymbols {i} : " + previousSymbols[i]);
                     
                     
                     
@@ -1053,8 +1112,53 @@ namespace Assets.Scripts
             }
 
             List<string[]> lastList = symbolsToCompare[currentListNumberSymbolsToCompare - 1];
+            string[] oldPreviousSymbolsToGetSymbols = lastList[0];
             string[] oldWaitSymbolsToGetSymbols = lastList[1];
             string[] oldNewSymbolsToGetSymbols = lastList[2];
+
+
+            Debug.Log(" ---------------- NEXT oldPreviousSymbolsToGetSymbols");
+
+            for (int z = 0; z < oldPreviousSymbolsToGetSymbols.Length; z++)
+            {
+
+                Debug.Log($"oldPreviousSymbolsToGetSymbols {z} : " + oldPreviousSymbolsToGetSymbols[z]);
+
+            }
+
+            Debug.Log(" ---------------- NEXT oldWaitSymbolsToGetSymbols");
+
+            for (int z = 0; z < oldWaitSymbolsToGetSymbols.Length; z++)
+            {
+
+                Debug.Log($"oldWaitSymbolsToGetSymbols {z} : " + oldWaitSymbolsToGetSymbols[z]);
+
+            }
+
+
+            Debug.Log(" ---------------- NEXT oldNewSymbolsToGetSymbols");
+
+            for (int z = 0; z < oldNewSymbolsToGetSymbols.Length; z++)
+            {
+
+                Debug.Log($"oldNewSymbolsToGetSymbols {z} : " + oldNewSymbolsToGetSymbols[z]);
+
+            }
+
+            Debug.Log(" ---------------- END start list");
+
+
+            Debug.Log(" ------------------------------------------------------------- NEW NEXT newSymbols");
+
+            for (int z = 0; z < newSymbols.Length; z++)
+            {
+
+                Debug.Log($"newSymbols {z} : " + newSymbols[z]);
+
+            }
+
+            Debug.Log(" ------------------------------------------------------------- NEW NEXT newSymbols");
+
 
             List<string[]> nextListWithPartialSymbols = new List<string[]>();
 
@@ -1062,9 +1166,70 @@ namespace Assets.Scripts
             string[] waitSymbolsToGetSymbols = oldNewSymbolsToGetSymbols;
             string[] newSymbolsToGetSymbols = newSymbols;
 
-            nextListWithPartialSymbols.Insert(0, previousSymbolsToGetSymbols);
-            nextListWithPartialSymbols.Insert(1, waitSymbolsToGetSymbols);
-            nextListWithPartialSymbols.Insert(2, newSymbolsToGetSymbols);
+
+            nextListWithPartialSymbols.Insert(0, waitSymbolsToGetSymbols);
+            //nextListWithPartialSymbols.Insert(1, newSymbolsToGetSymbols);
+            Debug.Log("indexForListWithPartialSymbols: " + indexForListWithPartialSymbols);
+            if (indexForListWithPartialSymbols == 1)
+            {
+                //nextListWithPartialSymbols.Insert(1, waitSymbolsToGetSymbols);
+                nextListWithPartialSymbols.Insert(1, waitSymbolsToGetSymbols);
+            }
+            else
+            {
+                nextListWithPartialSymbols.Insert(1, newSymbolsToGetSymbols);
+            }
+
+            nextListWithPartialSymbols.Insert(2, newSymbols);
+
+            Debug.Log(" ---------------- SWITCH NEXT ----------------------------------------");
+
+            Debug.Log(" ---------------- SWITCH NEXT PreviousSymbolsToGetSymbols");
+
+            for (int z = 0; z < waitSymbolsToGetSymbols.Length; z++)
+            {
+
+                Debug.Log($"waitSymbolsToGetSymbols {z} : " + waitSymbolsToGetSymbols[z]);
+
+            }
+
+            Debug.Log(" ---------------- SWITCH NEXT ne WaitSymbolsToGetSymbols");
+
+            for (int z = 0; z < newSymbolsToGetSymbols.Length; z++)
+            {
+
+                Debug.Log($"newSymbolsToGetSymbols {z} : " + newSymbolsToGetSymbols[z]);
+
+            }
+
+
+            Debug.Log(" ---------------- SWITCH NEXT NewSymbolsToGetSymbols");
+
+            for (int z = 0; z < newSymbols.Length; z++)
+            {
+
+                Debug.Log($"newSymbols {z} : " + newSymbols[z]);
+
+            }
+
+            Debug.Log(" ---------------- END start list");
+
+
+//            Debug.Log(" ---------------- NEXT newSymbols");
+
+            //for (int z = 0; z < newSymbols.Length; z++)
+            //{
+
+            //    Debug.Log($"newSymbols {z} : " + newSymbols[z]);
+
+            //}
+
+            //Debug.Log(" ---------------- END newSymbols");
+
+
+            //nextListWithPartialSymbols.Insert(0, previousSymbolsToGetSymbols);
+            //nextListWithPartialSymbols.Insert(1, waitSymbolsToGetSymbols);
+            //nextListWithPartialSymbols.Insert(2, newSymbolsToGetSymbols);
 
 
             //List<List<string[]>> nextSymbolsToCompare = new List<List<string[]>>();
