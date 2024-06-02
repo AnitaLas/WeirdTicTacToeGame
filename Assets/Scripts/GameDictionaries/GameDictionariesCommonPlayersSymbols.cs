@@ -15,7 +15,8 @@ namespace Assets.Scripts
             {
                 { 1, "ABCDEFGHIJKLMNOPQRSTUVWXYZ" }, // that will be work only max for 13 players, PlayGameChangePlayersSymbolsComnonMethods -> GetNewPlayersSymbols
                 //{ 2, "OXWTALFUNVCRDEGHIJKLMPQSYZ" }, // up
-                { 2, "AZBCDEOXWTALFUNVCRDEGHIJKLMPQSYZ" }, // for tests
+                //{ 2, "AZBCDEOXWTALFUNVCRDEGHIJKLMPQSYZ" }, // for tests
+                { 2, "AZBCEFOXWTALUNVCRDEGHIJKLMPQSYZ" }, // for tests
             };
 
             return tagStartGameDictionary;

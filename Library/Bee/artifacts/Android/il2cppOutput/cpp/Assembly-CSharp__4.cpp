@@ -244,23 +244,22 @@ IL2CPP_EXTERN_C RuntimeClass* StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9
 IL2CPP_EXTERN_C RuntimeClass* Tuple_2_t2F6D3A468ECD22214480F0F1418F937091191487_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_tCF53EF46850F714FFB6BD8BBFB4AB56CA7276A30_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral017F827184B3D53AADEFA2200E7545019A14EA2A;
-IL2CPP_EXTERN_C String_t* _stringLiteral02C03CF6C6A0EB5BCA1971BB6CB897EA4738D6E0;
 IL2CPP_EXTERN_C String_t* _stringLiteral04AB165E0183800DE807972C44B507EB176FAFEA;
 IL2CPP_EXTERN_C String_t* _stringLiteral0B0F27E308292BDEA051DA16C1F1D74F14EE96A4;
 IL2CPP_EXTERN_C String_t* _stringLiteral0D2FE55161304D6A2592C91CDDAC587DB62EB2BC;
 IL2CPP_EXTERN_C String_t* _stringLiteral13722CBB7726ABB5583C1844ABF5E14C6F9DDEFC;
-IL2CPP_EXTERN_C String_t* _stringLiteral14FE69F5EE19B97D238ACF2E8EE9FEBF43C3AB16;
 IL2CPP_EXTERN_C String_t* _stringLiteral155EE2D9182004C3D356E22198759C4667BD7D3E;
+IL2CPP_EXTERN_C String_t* _stringLiteral16AE9F1F9996DF5DCAC1542EC4F8A57AF9D07B2B;
 IL2CPP_EXTERN_C String_t* _stringLiteral1CAC8BD043B853E71774C94A2C3FEC658CB2C64D;
 IL2CPP_EXTERN_C String_t* _stringLiteral1D49D2806898AFB00531AAE5489789368BFDE247;
 IL2CPP_EXTERN_C String_t* _stringLiteral1FA13CA565DC9B5105D70A528D26A6FC7A57049E;
+IL2CPP_EXTERN_C String_t* _stringLiteral21EDA1CE81190A85866F486B493605760767B385;
 IL2CPP_EXTERN_C String_t* _stringLiteral23A650FA3B8B6E2D385B7803609AA298A2154C15;
-IL2CPP_EXTERN_C String_t* _stringLiteral26241A2F4868D430502F90C89EBD915DD61C2357;
+IL2CPP_EXTERN_C String_t* _stringLiteral247E463606232DAD207485DA0FAA3C580F76D962;
+IL2CPP_EXTERN_C String_t* _stringLiteral275106721D53F21D2EB851E9B6CF46CCC9ED5751;
 IL2CPP_EXTERN_C String_t* _stringLiteral31F2F8F74528BA5C139AE6B5299DC076C9054D3E;
 IL2CPP_EXTERN_C String_t* _stringLiteral33F3CCC8C96B52CBA9D88D899779B6191CE15B79;
 IL2CPP_EXTERN_C String_t* _stringLiteral36C6B54EF9B99B0CF91A868688D218EE9242C7B2;
-IL2CPP_EXTERN_C String_t* _stringLiteral37EA7A4386E07C06F815AC672AA5FEA68DD95562;
-IL2CPP_EXTERN_C String_t* _stringLiteral383E2B0781F336AB9CC5A9D6E47B167BA6D99360;
 IL2CPP_EXTERN_C String_t* _stringLiteral38E0A1AD45836C115034BAB7142878D39180B140;
 IL2CPP_EXTERN_C String_t* _stringLiteral3B2C1C62D4D1C2A0C8A9AC42DB00D33C654F9AD0;
 IL2CPP_EXTERN_C String_t* _stringLiteral431281838CA42C6F77FB07AD840110966E8E7C82;
@@ -270,16 +269,16 @@ IL2CPP_EXTERN_C String_t* _stringLiteral4F588BBE0DB5763F8E409B5DACE4E9F0C0EBA43D
 IL2CPP_EXTERN_C String_t* _stringLiteral53A5A654A7820DA36B744E07DD35A8673E0E0C92;
 IL2CPP_EXTERN_C String_t* _stringLiteral5537FE045F8C9196D3BD8A95AB27107066CFA23F;
 IL2CPP_EXTERN_C String_t* _stringLiteral5AB46B52EEE37FF694E55B0794126282EF4E8086;
+IL2CPP_EXTERN_C String_t* _stringLiteral5BABBCFECBC0DFFDE830189DF73DFCB0A6723D59;
 IL2CPP_EXTERN_C String_t* _stringLiteral6574C6EFCF757A6302640FAA9824077C6B79DE94;
 IL2CPP_EXTERN_C String_t* _stringLiteral6AB8EE0A1B8C44131C83E9E246666DF91640F039;
 IL2CPP_EXTERN_C String_t* _stringLiteral700A9E6642F5A8B6ECC5448BDB8E4D41B3FA43CC;
-IL2CPP_EXTERN_C String_t* _stringLiteral7139847C96372F56881017C5CF8D309D6F83DA2A;
 IL2CPP_EXTERN_C String_t* _stringLiteral7D9BD9F0F1720BEAF4EBFFAC6B8990638E2A7AE4;
-IL2CPP_EXTERN_C String_t* _stringLiteral80505CC9F242442458B69E22F70A1E1DC40E2E79;
 IL2CPP_EXTERN_C String_t* _stringLiteral838054DCCCEEED487A9C96DA7660D6542408DDD4;
-IL2CPP_EXTERN_C String_t* _stringLiteral9353D0EBD5443AF70F1D62F3190AEA5704E347AF;
 IL2CPP_EXTERN_C String_t* _stringLiteral95DDD58CD9894FD2D4722816A7B9AA675ABE61E9;
+IL2CPP_EXTERN_C String_t* _stringLiteral96840D1826A32621FE67533E083399C5937F8B7F;
 IL2CPP_EXTERN_C String_t* _stringLiteral99C165894B2900048144F5DEF682937FE73CA541;
+IL2CPP_EXTERN_C String_t* _stringLiteral9A5F82D65603D4C3ED0564EC97C6AB843C1C9B1B;
 IL2CPP_EXTERN_C String_t* _stringLiteral9D834EB337D284C04FEDE7929A99BCA993778B95;
 IL2CPP_EXTERN_C String_t* _stringLiteralA424DFB12BFAC40489EF31FCB2C960F16B858D75;
 IL2CPP_EXTERN_C String_t* _stringLiteralA4B0B6C964991275D47D403AB9690BECCC3992FE;
@@ -293,18 +292,19 @@ IL2CPP_EXTERN_C String_t* _stringLiteralB667C2E71E5EF77803A3B9FFBDCCF62189201009
 IL2CPP_EXTERN_C String_t* _stringLiteralC12CC52CD2EF017CB4A025717B994FFC18EE6200;
 IL2CPP_EXTERN_C String_t* _stringLiteralC42BEAB8F8B151B8287F8136F218DED0A8F87299;
 IL2CPP_EXTERN_C String_t* _stringLiteralC54D8F55A1EF3C8680BCC2228688167AE619A7E0;
-IL2CPP_EXTERN_C String_t* _stringLiteralCB684841F0BC77E8F9EDE4D2CB15D7FDA65D6B00;
+IL2CPP_EXTERN_C String_t* _stringLiteralD50CB37168535EDFBAC10842AB2F701DF10A28FD;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralDAB2672CA8232D45E00C6269CB8ED52A45006A9B;
 IL2CPP_EXTERN_C String_t* _stringLiteralE280D065A824A791F8305234D3E093FC9A5A90C7;
 IL2CPP_EXTERN_C String_t* _stringLiteralE361885328E2042DC6D3ED8D662D4388EB514251;
 IL2CPP_EXTERN_C String_t* _stringLiteralE42E8BB820D4F7550A0F04619F4E15FDC56943B9;
+IL2CPP_EXTERN_C String_t* _stringLiteralE58EE25A9FC53272E8883AE405F0B5F2FF3F1217;
 IL2CPP_EXTERN_C String_t* _stringLiteralE71F6F54BD97F9F971FBB400455FF9B7FDD7A664;
 IL2CPP_EXTERN_C String_t* _stringLiteralE8AE0B6FEB4D9EAE21C4277B6B7E370BB4417061;
 IL2CPP_EXTERN_C String_t* _stringLiteralEADE8EEFC62EA5E74144D317D9DCC7EC2740059C;
 IL2CPP_EXTERN_C String_t* _stringLiteralEEFF1D4B8D94D197FAB3AE3971EDC40B4B1278DC;
-IL2CPP_EXTERN_C String_t* _stringLiteralF2A7F00941F91A895256F0CAA19787E6D5F47AA7;
 IL2CPP_EXTERN_C String_t* _stringLiteralF944DCD635F9801F7AC90A407FBC479964DEC024;
+IL2CPP_EXTERN_C String_t* _stringLiteralF9630D645344918BC7348BA93EA6033F6E8E152B;
 IL2CPP_EXTERN_C String_t* _stringLiteralFBD63CB1B215E83EC21252C9A19797DF2D88F096;
 IL2CPP_EXTERN_C String_t* _stringLiteralFC88642D9A5508243E7C337503B7E8372828E51D;
 IL2CPP_EXTERN_C String_t* _stringLiteralFE338B13058792D2D189B107E316559E62E27C06;
@@ -18629,8 +18629,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F16
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral383E2B0781F336AB9CC5A9D6E47B167BA6D99360);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral46107B48248E54F7835B704C0220E4ADBC896197);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE58EE25A9FC53272E8883AE405F0B5F2FF3F1217);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
@@ -18653,7 +18653,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F16
 		V_1 = L_2;
 		// for (int i = 0; i < teamsNumbers; i++)
 		V_3 = 0;
-		goto IL_0072;
+		goto IL_005b;
 	}
 
 IL_0010:
@@ -18705,32 +18705,25 @@ IL_004e:
 
 IL_0052:
 	{
-		// Debug.Log($"1 A table maxIndexes: " + maxIndexForTeam);
-		String_t* L_20;
-		L_20 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&V_2), NULL);
-		String_t* L_21;
-		L_21 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral383E2B0781F336AB9CC5A9D6E47B167BA6D99360, L_20, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_21, NULL);
 		// maxIndexes[i] = maxIndexForTeam;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_22 = V_1;
-		int32_t L_23 = V_3;
-		int32_t L_24 = V_2;
-		NullCheck(L_22);
-		(L_22)->SetAt(static_cast<il2cpp_array_size_t>(L_23), (int32_t)L_24);
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_20 = V_1;
+		int32_t L_21 = V_3;
+		int32_t L_22 = V_2;
+		NullCheck(L_20);
+		(L_20)->SetAt(static_cast<il2cpp_array_size_t>(L_21), (int32_t)L_22);
 		// for (int i = 0; i < teamsNumbers; i++)
-		int32_t L_25 = V_3;
-		V_3 = ((int32_t)il2cpp_codegen_add(L_25, 1));
+		int32_t L_23 = V_3;
+		V_3 = ((int32_t)il2cpp_codegen_add(L_23, 1));
 	}
 
-IL_0072:
+IL_005b:
 	{
 		// for (int i = 0; i < teamsNumbers; i++)
-		int32_t L_26 = V_3;
-		int32_t L_27 = V_0;
-		V_5 = (bool)((((int32_t)L_26) < ((int32_t)L_27))? 1 : 0);
-		bool L_28 = V_5;
-		if (L_28)
+		int32_t L_24 = V_3;
+		int32_t L_25 = V_0;
+		V_5 = (bool)((((int32_t)L_24) < ((int32_t)L_25))? 1 : 0);
+		bool L_26 = V_5;
+		if (L_26)
 		{
 			goto IL_0010;
 		}
@@ -18738,41 +18731,56 @@ IL_0072:
 	{
 		// for (int z = 0; z < maxIndexes.Length; z++)
 		V_6 = 0;
-		goto IL_0089;
-	}
-
-IL_0081:
-	{
-		// for (int z = 0; z < maxIndexes.Length; z++)
-		int32_t L_29 = V_6;
-		V_6 = ((int32_t)il2cpp_codegen_add(L_29, 1));
-	}
-
-IL_0089:
-	{
-		// for (int z = 0; z < maxIndexes.Length; z++)
-		int32_t L_30 = V_6;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_31 = V_1;
-		NullCheck(L_31);
-		V_7 = (bool)((((int32_t)L_30) < ((int32_t)((int32_t)(((RuntimeArray*)L_31)->max_length))))? 1 : 0);
-		bool L_32 = V_7;
-		if (L_32)
-		{
-			goto IL_0081;
-		}
-	}
-	{
-		// return maxIndexes;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_33 = V_1;
-		V_8 = L_33;
 		goto IL_009b;
+	}
+
+IL_006a:
+	{
+		// Debug.Log($"INDEX FOR LIST {z} : " + maxIndexes[z]);
+		int32_t L_27 = V_6;
+		int32_t L_28 = L_27;
+		RuntimeObject* L_29 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_28);
+		String_t* L_30;
+		L_30 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralE58EE25A9FC53272E8883AE405F0B5F2FF3F1217, L_29, NULL);
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_31 = V_1;
+		int32_t L_32 = V_6;
+		NullCheck(L_31);
+		String_t* L_33;
+		L_33 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5(((L_31)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_32))), NULL);
+		String_t* L_34;
+		L_34 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_30, L_33, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_34, NULL);
+		// for (int z = 0; z < maxIndexes.Length; z++)
+		int32_t L_35 = V_6;
+		V_6 = ((int32_t)il2cpp_codegen_add(L_35, 1));
 	}
 
 IL_009b:
 	{
+		// for (int z = 0; z < maxIndexes.Length; z++)
+		int32_t L_36 = V_6;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_37 = V_1;
+		NullCheck(L_37);
+		V_7 = (bool)((((int32_t)L_36) < ((int32_t)((int32_t)(((RuntimeArray*)L_37)->max_length))))? 1 : 0);
+		bool L_38 = V_7;
+		if (L_38)
+		{
+			goto IL_006a;
+		}
+	}
+	{
+		// return maxIndexes;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_39 = V_1;
+		V_8 = L_39;
+		goto IL_00ad;
+	}
+
+IL_00ad:
+	{
 		// }
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_34 = V_8;
-		return L_34;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_40 = V_8;
+		return L_40;
 	}
 }
 // System.String[] Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::CreateTableWithTheSameQuantitiesForPlayersMoves(System.Collections.Generic.List`1<System.String[]>)
@@ -18792,9 +18800,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral37EA7A4386E07C06F815AC672AA5FEA68DD95562);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCB684841F0BC77E8F9EDE4D2CB15D7FDA65D6B00);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF2A7F00941F91A895256F0CAA19787E6D5F47AA7);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5BABBCFECBC0DFFDE830189DF73DFCB0A6723D59);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9A5F82D65603D4C3ED0564EC97C6AB843C1C9B1B);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD50CB37168535EDFBAC10842AB2F701DF10A28FD);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
@@ -18825,10 +18833,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 	bool V_25 = false;
 	bool V_26 = false;
 	bool V_27 = false;
-	int32_t V_28 = 0;
-	String_t* V_29 = NULL;
-	bool V_30 = false;
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_31 = NULL;
+	bool V_28 = false;
+	int32_t V_29 = 0;
+	String_t* V_30 = NULL;
+	bool V_31 = false;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_32 = NULL;
 	{
 		// int teamsNumbers = teamsSymbols.Count;
 		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_0 = ___0_teamsSymbols;
@@ -18868,10 +18877,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 		// string finalListWithSymbols = firstSymbols;
 		String_t* L_11 = V_7;
 		V_9 = L_11;
-		// Debug.Log("1 finalListWithSymbols: " + finalListWithSymbols);
+		// Debug.Log("11111111111 finalListWithSymbols: " + finalListWithSymbols);
 		String_t* L_12 = V_9;
 		String_t* L_13;
-		L_13 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralCB684841F0BC77E8F9EDE4D2CB15D7FDA65D6B00, L_12, NULL);
+		L_13 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral9A5F82D65603D4C3ED0564EC97C6AB843C1C9B1B, L_12, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_13, NULL);
 		// List<List<string[]>> symbolsToCompare = new List<List<string[]>>();
@@ -18903,8 +18912,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 		// string[] waitSymbolsToGetSymbols = previousSymbols;
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_25 = V_6;
 		V_16 = L_25;
-		// string[] newSymbolsToGetSymbols = nextSymbolsToCompare;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_26 = V_14;
+		// string[] newSymbolsToGetSymbols = previousSymbols;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_26 = V_6;
 		V_17 = L_26;
 		// int indexForListWithPartialSymbols = 1;
 		V_18 = 1;
@@ -18938,7 +18947,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F
 		V_10 = L_36;
 		// int aAaaa = 1;
 		V_20 = 1;
-		goto IL_0158;
+		goto IL_0173;
 	}
 
 IL_00bd:
@@ -18960,69 +18969,94 @@ IL_00bd:
 		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_46;
 		L_46 = List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC(L_44, L_45, List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC_RuntimeMethod_var);
 		V_23 = L_46;
-		// currentsymbolsToCompare = lastList[2];
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_47 = V_23;
-		NullCheck(L_47);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_48;
-		L_48 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_47, 2, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
-		V_10 = L_48;
-		// indexForListWithPartialSymbols++;
-		int32_t L_49 = V_18;
-		V_18 = ((int32_t)il2cpp_codegen_add(L_49, 1));
-		// string symbolsToCompareOneString = GetSymbolsAsOneString(currentsymbolsToCompare);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_50 = V_10;
-		String_t* L_51;
-		L_51 = PlayGameTeamSetUpPlayersSymbols_GetSymbolsAsOneString_mC9070FCE625BA6FF53CBD8A3E1997DA470E234F7(L_50, NULL);
-		V_24 = L_51;
-		// Debug.Log("symbolsToCompareOneString: " + symbolsToCompareOneString);
-		String_t* L_52 = V_24;
-		String_t* L_53;
-		L_53 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral37EA7A4386E07C06F815AC672AA5FEA68DD95562, L_52, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_53, NULL);
-		// isFisrtSymbolsAsSameAsLastOne = IsFisrtSymbolsAsTheSameAsLastOne(firstSymbolsToCompare, symbolsToCompareOneString);
-		String_t* L_54 = V_8;
-		String_t* L_55 = V_24;
-		bool L_56;
-		L_56 = PlayGameTeamSetUpPlayersSymbols_IsFisrtSymbolsAsTheSameAsLastOne_mF43412A498E0505E1192466FCC08017F5AE3DB07(L_54, L_55, NULL);
-		V_3 = L_56;
-		// if (isFisrtSymbolsAsSameAsLastOne == false)
-		bool L_57 = V_3;
-		V_25 = (bool)((((int32_t)L_57) == ((int32_t)0))? 1 : 0);
-		bool L_58 = V_25;
-		if (!L_58)
+		// if (indexForListWithPartialSymbols < 1)
+		int32_t L_47 = V_18;
+		V_25 = (bool)((((int32_t)L_47) < ((int32_t)1))? 1 : 0);
+		bool L_48 = V_25;
+		if (!L_48)
 		{
-			goto IL_0139;
+			goto IL_00f4;
+		}
+	}
+	{
+		// currentsymbolsToCompare = lastList[1]; //2
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_49 = V_23;
+		NullCheck(L_49);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_50;
+		L_50 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_49, 1, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		V_10 = L_50;
+		goto IL_0100;
+	}
+
+IL_00f4:
+	{
+		// currentsymbolsToCompare = lastList[2]; //1
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_51 = V_23;
+		NullCheck(L_51);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_52;
+		L_52 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_51, 2, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		V_10 = L_52;
+	}
+
+IL_0100:
+	{
+		// indexForListWithPartialSymbols++;
+		int32_t L_53 = V_18;
+		V_18 = ((int32_t)il2cpp_codegen_add(L_53, 1));
+		// string symbolsToCompareOneString = GetSymbolsAsOneString(currentsymbolsToCompare);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_54 = V_10;
+		String_t* L_55;
+		L_55 = PlayGameTeamSetUpPlayersSymbols_GetSymbolsAsOneString_mC9070FCE625BA6FF53CBD8A3E1997DA470E234F7(L_54, NULL);
+		V_24 = L_55;
+		// Debug.Log("111111 symbolsToCompareOneString: " + symbolsToCompareOneString);
+		String_t* L_56 = V_24;
+		String_t* L_57;
+		L_57 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral5BABBCFECBC0DFFDE830189DF73DFCB0A6723D59, L_56, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_57, NULL);
+		// isFisrtSymbolsAsSameAsLastOne = IsFisrtSymbolsAsTheSameAsLastOne(firstSymbolsToCompare, symbolsToCompareOneString);
+		String_t* L_58 = V_8;
+		String_t* L_59 = V_24;
+		bool L_60;
+		L_60 = PlayGameTeamSetUpPlayersSymbols_IsFisrtSymbolsAsTheSameAsLastOne_mF43412A498E0505E1192466FCC08017F5AE3DB07(L_58, L_59, NULL);
+		V_3 = L_60;
+		// if (isFisrtSymbolsAsSameAsLastOne == false)
+		bool L_61 = V_3;
+		V_26 = (bool)((((int32_t)L_61) == ((int32_t)0))? 1 : 0);
+		bool L_62 = V_26;
+		if (!L_62)
+		{
+			goto IL_0154;
 		}
 	}
 	{
 		// finalListWithSymbols = finalListWithSymbols + symbolsToCompareOneString;
-		String_t* L_59 = V_9;
-		String_t* L_60 = V_24;
-		String_t* L_61;
-		L_61 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_59, L_60, NULL);
-		V_9 = L_61;
-		// Debug.Log("2 finalListWithSymbols: " + finalListWithSymbols);
-		String_t* L_62 = V_9;
-		String_t* L_63;
-		L_63 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralF2A7F00941F91A895256F0CAA19787E6D5F47AA7, L_62, NULL);
+		String_t* L_63 = V_9;
+		String_t* L_64 = V_24;
+		String_t* L_65;
+		L_65 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_63, L_64, NULL);
+		V_9 = L_65;
+		// Debug.Log("2111111111 finalListWithSymbols: " + finalListWithSymbols);
+		String_t* L_66 = V_9;
+		String_t* L_67;
+		L_67 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralD50CB37168535EDFBAC10842AB2F701DF10A28FD, L_66, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_63, NULL);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_67, NULL);
 	}
 
-IL_0139:
+IL_0154:
 	{
 		// indexForSymbols++;
-		int32_t L_64 = V_4;
-		V_4 = ((int32_t)il2cpp_codegen_add(L_64, 1));
+		int32_t L_68 = V_4;
+		V_4 = ((int32_t)il2cpp_codegen_add(L_68, 1));
 		// if (indexForSymbols > teamsNumbers + 1)
-		int32_t L_65 = V_4;
-		int32_t L_66 = V_0;
-		V_26 = (bool)((((int32_t)L_65) > ((int32_t)((int32_t)il2cpp_codegen_add(L_66, 1))))? 1 : 0);
-		bool L_67 = V_26;
-		if (!L_67)
+		int32_t L_69 = V_4;
+		int32_t L_70 = V_0;
+		V_27 = (bool)((((int32_t)L_69) > ((int32_t)((int32_t)il2cpp_codegen_add(L_70, 1))))? 1 : 0);
+		bool L_71 = V_27;
+		if (!L_71)
 		{
-			goto IL_0151;
+			goto IL_016c;
 		}
 	}
 	{
@@ -19030,85 +19064,85 @@ IL_0139:
 		V_4 = 0;
 	}
 
-IL_0151:
+IL_016c:
 	{
 		// aAaaa++;
-		int32_t L_68 = V_20;
-		V_20 = ((int32_t)il2cpp_codegen_add(L_68, 1));
+		int32_t L_72 = V_20;
+		V_20 = ((int32_t)il2cpp_codegen_add(L_72, 1));
 	}
 
-IL_0158:
+IL_0173:
 	{
 		// while (isFisrtSymbolsAsSameAsLastOne == false)
-		bool L_69 = V_3;
-		V_27 = (bool)((((int32_t)L_69) == ((int32_t)0))? 1 : 0);
-		bool L_70 = V_27;
-		if (L_70)
+		bool L_73 = V_3;
+		V_28 = (bool)((((int32_t)L_73) == ((int32_t)0))? 1 : 0);
+		bool L_74 = V_28;
+		if (L_74)
 		{
 			goto IL_00bd;
 		}
 	}
 	{
 		// int newSymbolLength = finalListWithSymbols.Length;
-		String_t* L_71 = V_9;
-		NullCheck(L_71);
-		int32_t L_72;
-		L_72 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_71, NULL);
-		V_21 = L_72;
-		// string[] finalSymbols = new string[newSymbolLength];
-		int32_t L_73 = V_21;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_74 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)L_73);
-		V_22 = L_74;
-		// for (int i = 0; i < newSymbolLength; i++)
-		V_28 = 0;
-		goto IL_0197;
-	}
-
-IL_017c:
-	{
-		// string character = finalListWithSymbols.Substring(i, 1);
 		String_t* L_75 = V_9;
-		int32_t L_76 = V_28;
 		NullCheck(L_75);
-		String_t* L_77;
-		L_77 = String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE(L_75, L_76, 1, NULL);
-		V_29 = L_77;
-		// finalSymbols[i] = character;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_78 = V_22;
-		int32_t L_79 = V_28;
-		String_t* L_80 = V_29;
-		NullCheck(L_78);
-		ArrayElementTypeCheck (L_78, L_80);
-		(L_78)->SetAt(static_cast<il2cpp_array_size_t>(L_79), (String_t*)L_80);
+		int32_t L_76;
+		L_76 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_75, NULL);
+		V_21 = L_76;
+		// string[] finalSymbols = new string[newSymbolLength];
+		int32_t L_77 = V_21;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_78 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)L_77);
+		V_22 = L_78;
 		// for (int i = 0; i < newSymbolLength; i++)
-		int32_t L_81 = V_28;
-		V_28 = ((int32_t)il2cpp_codegen_add(L_81, 1));
+		V_29 = 0;
+		goto IL_01b2;
 	}
 
 IL_0197:
 	{
+		// string character = finalListWithSymbols.Substring(i, 1);
+		String_t* L_79 = V_9;
+		int32_t L_80 = V_29;
+		NullCheck(L_79);
+		String_t* L_81;
+		L_81 = String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE(L_79, L_80, 1, NULL);
+		V_30 = L_81;
+		// finalSymbols[i] = character;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_82 = V_22;
+		int32_t L_83 = V_29;
+		String_t* L_84 = V_30;
+		NullCheck(L_82);
+		ArrayElementTypeCheck (L_82, L_84);
+		(L_82)->SetAt(static_cast<il2cpp_array_size_t>(L_83), (String_t*)L_84);
 		// for (int i = 0; i < newSymbolLength; i++)
-		int32_t L_82 = V_28;
-		int32_t L_83 = V_21;
-		V_30 = (bool)((((int32_t)L_82) < ((int32_t)L_83))? 1 : 0);
-		bool L_84 = V_30;
-		if (L_84)
+		int32_t L_85 = V_29;
+		V_29 = ((int32_t)il2cpp_codegen_add(L_85, 1));
+	}
+
+IL_01b2:
+	{
+		// for (int i = 0; i < newSymbolLength; i++)
+		int32_t L_86 = V_29;
+		int32_t L_87 = V_21;
+		V_31 = (bool)((((int32_t)L_86) < ((int32_t)L_87))? 1 : 0);
+		bool L_88 = V_31;
+		if (L_88)
 		{
-			goto IL_017c;
+			goto IL_0197;
 		}
 	}
 	{
 		// return finalSymbols;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_85 = V_22;
-		V_31 = L_85;
-		goto IL_01a9;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_89 = V_22;
+		V_32 = L_89;
+		goto IL_01c4;
 	}
 
-IL_01a9:
+IL_01c4:
 	{
 		// }
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_86 = V_31;
-		return L_86;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_90 = V_32;
+		return L_90;
 	}
 }
 // System.Collections.Generic.List`1<System.Collections.Generic.List`1<System.String[]>> Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::GetNextSymbolsToCompare(System.Collections.Generic.List`1<System.Collections.Generic.List`1<System.String[]>>,System.Collections.Generic.List`1<System.String[]>,System.Int32,System.Int32,System.Int32[],System.Int32[])
@@ -19128,224 +19162,247 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D7
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral02C03CF6C6A0EB5BCA1971BB6CB897EA4738D6E0);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral14FE69F5EE19B97D238ACF2E8EE9FEBF43C3AB16);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral26241A2F4868D430502F90C89EBD915DD61C2357);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral16AE9F1F9996DF5DCAC1542EC4F8A57AF9D07B2B);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral21EDA1CE81190A85866F486B493605760767B385);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral247E463606232DAD207485DA0FAA3C580F76D962);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral275106721D53F21D2EB851E9B6CF46CCC9ED5751);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5537FE045F8C9196D3BD8A95AB27107066CFA23F);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7139847C96372F56881017C5CF8D309D6F83DA2A);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral80505CC9F242442458B69E22F70A1E1DC40E2E79);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9353D0EBD5443AF70F1D62F3190AEA5704E347AF);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral96840D1826A32621FE67533E083399C5937F8B7F);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF9630D645344918BC7348BA93EA6033F6E8E152B);
 		s_Il2CppMethodInitialized = true;
 	}
-	int32_t V_0 = 0;
+	List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* V_0 = NULL;
 	int32_t V_1 = 0;
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_2 = NULL;
-	List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* V_3 = NULL;
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_4 = NULL;
+	int32_t V_2 = 0;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_3 = NULL;
+	List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* V_4 = NULL;
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_5 = NULL;
-	List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* V_6 = NULL;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_6 = NULL;
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_7 = NULL;
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_8 = NULL;
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_9 = NULL;
-	int32_t V_10 = 0;
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_11 = NULL;
-	int32_t V_12 = 0;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_10 = NULL;
+	int32_t V_11 = 0;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_12 = NULL;
 	int32_t V_13 = 0;
-	bool V_14 = false;
-	String_t* V_15 = NULL;
-	int32_t V_16 = 0;
+	int32_t V_14 = 0;
+	bool V_15 = false;
+	String_t* V_16 = NULL;
 	int32_t V_17 = 0;
-	List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* V_18 = NULL;
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_19 = NULL;
-	int32_t V_20 = 0;
+	int32_t V_18 = 0;
+	List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* V_19 = NULL;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_20 = NULL;
 	int32_t V_21 = 0;
 	bool V_22 = false;
-	bool V_23 = false;
-	List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* V_24 = NULL;
+	int32_t V_23 = 0;
+	bool V_24 = false;
+	bool V_25 = false;
+	int32_t V_26 = 0;
+	bool V_27 = false;
+	bool V_28 = false;
+	List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* V_29 = NULL;
 	{
 		// Debug.Log($" ------------------------ GetNextSymbolsToCompare ------------------------------------ ");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral5537FE045F8C9196D3BD8A95AB27107066CFA23F, NULL);
-		// int currentListNumberSymbolsToCompare = symbolsToCompare.Count;
-		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_0 = ___0_symbolsToCompare;
-		NullCheck(L_0);
-		int32_t L_1;
-		L_1 = List_1_get_Count_m6F8D04AAE67199DE3C85D1C29587798D41E37F0D_inline(L_0, List_1_get_Count_m6F8D04AAE67199DE3C85D1C29587798D41E37F0D_RuntimeMethod_var);
-		V_0 = L_1;
-		// int teamsNumbers = teamsSymbols.Count;
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_2 = ___1_teamsSymbols;
+		// Debug.Log($"indexForListWithPartialSymbols: " + indexForListWithPartialSymbols);
+		String_t* L_0;
+		L_0 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&___2_indexForListWithPartialSymbols), NULL);
+		String_t* L_1;
+		L_1 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral16AE9F1F9996DF5DCAC1542EC4F8A57AF9D07B2B, L_0, NULL);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_1, NULL);
+		// List<string[]> nextListWithPartialSymbols = new List<string[]>();
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_2 = (List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED*)il2cpp_codegen_object_new(List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED_il2cpp_TypeInfo_var);
 		NullCheck(L_2);
-		int32_t L_3;
-		L_3 = List_1_get_Count_m4C9664A55C20ADC38997EE29A957C5CC3A7068E4_inline(L_2, List_1_get_Count_m4C9664A55C20ADC38997EE29A957C5CC3A7068E4_RuntimeMethod_var);
-		V_1 = L_3;
-		// Debug.Log($" --------------------------------------- ");
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral9353D0EBD5443AF70F1D62F3190AEA5704E347AF, NULL);
+		List_1__ctor_m51867D7C9A5A1C3DE4C23B746BAC6CF661BA1929(L_2, List_1__ctor_m51867D7C9A5A1C3DE4C23B746BAC6CF661BA1929_RuntimeMethod_var);
+		V_0 = L_2;
+		// int currentListIndexSymbolsToCompare = symbolsToCompare.Count - 1;
+		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_3 = ___0_symbolsToCompare;
+		NullCheck(L_3);
+		int32_t L_4;
+		L_4 = List_1_get_Count_m6F8D04AAE67199DE3C85D1C29587798D41E37F0D_inline(L_3, List_1_get_Count_m6F8D04AAE67199DE3C85D1C29587798D41E37F0D_RuntimeMethod_var);
+		V_1 = ((int32_t)il2cpp_codegen_subtract(L_4, 1));
+		// int teamsNumbers = teamsSymbols.Count;
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_5 = ___1_teamsSymbols;
+		NullCheck(L_5);
+		int32_t L_6;
+		L_6 = List_1_get_Count_m4C9664A55C20ADC38997EE29A957C5CC3A7068E4_inline(L_5, List_1_get_Count_m4C9664A55C20ADC38997EE29A957C5CC3A7068E4_RuntimeMethod_var);
+		V_2 = L_6;
 		// string[] newSymbols = new string[teamsNumbers];
-		int32_t L_4 = V_1;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_5 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)L_4);
-		V_2 = L_5;
+		int32_t L_7 = V_2;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_8 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)L_7);
+		V_3 = L_8;
 		// for (int i = 0; i < teamsNumbers; i++)
-		V_10 = 0;
-		goto IL_0142;
+		V_11 = 0;
+		goto IL_013f;
 	}
 
-IL_0034:
+IL_0048:
 	{
 		// string[] teamSymbols = teamsSymbols[i];
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_6 = ___1_teamsSymbols;
-		int32_t L_7 = V_10;
-		NullCheck(L_6);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_8;
-		L_8 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_6, L_7, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
-		V_11 = L_8;
-		// int teamNumbers = teamSymbols.Length - 1;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_9 = V_11;
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_9 = ___1_teamsSymbols;
+		int32_t L_10 = V_11;
 		NullCheck(L_9);
-		V_12 = ((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_9)->max_length)), 1));
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_11;
+		L_11 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_9, L_10, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		V_12 = L_11;
+		// int teamNumbers = teamSymbols.Length - 1;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_12 = V_12;
+		NullCheck(L_12);
+		V_13 = ((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_12)->max_length)), 1));
 		// int playersNumberInTeam = playersNumberInTeams[i];
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_10 = ___5_playersNumberInTeams;
-		int32_t L_11 = V_10;
-		NullCheck(L_10);
-		int32_t L_12 = L_11;
-		int32_t L_13 = (L_10)->GetAt(static_cast<il2cpp_array_size_t>(L_12));
-		V_13 = L_13;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_13 = ___5_playersNumberInTeams;
+		int32_t L_14 = V_11;
+		NullCheck(L_13);
+		int32_t L_15 = L_14;
+		int32_t L_16 = (L_13)->GetAt(static_cast<il2cpp_array_size_t>(L_15));
+		V_14 = L_16;
 		// if (indexForSymbols < playersNumberInTeam)
-		int32_t L_14 = ___3_indexForSymbols;
-		int32_t L_15 = V_13;
-		V_14 = (bool)((((int32_t)L_14) < ((int32_t)L_15))? 1 : 0);
-		bool L_16 = V_14;
-		if (!L_16)
+		int32_t L_17 = ___3_indexForSymbols;
+		int32_t L_18 = V_14;
+		V_15 = (bool)((((int32_t)L_17) < ((int32_t)L_18))? 1 : 0);
+		bool L_19 = V_15;
+		if (!L_19)
 		{
-			goto IL_007e;
+			goto IL_0080;
 		}
 	}
 	{
 		// string symbol = teamSymbols[indexForSymbols];
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_17 = V_11;
-		int32_t L_18 = ___3_indexForSymbols;
-		NullCheck(L_17);
-		int32_t L_19 = L_18;
-		String_t* L_20 = (L_17)->GetAt(static_cast<il2cpp_array_size_t>(L_19));
-		V_15 = L_20;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_20 = V_12;
+		int32_t L_21 = ___3_indexForSymbols;
+		NullCheck(L_20);
+		int32_t L_22 = L_21;
+		String_t* L_23 = (L_20)->GetAt(static_cast<il2cpp_array_size_t>(L_22));
+		V_16 = L_23;
 		// newSymbols[i] = symbol;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_21 = V_2;
-		int32_t L_22 = V_10;
-		String_t* L_23 = V_15;
-		NullCheck(L_21);
-		ArrayElementTypeCheck (L_21, L_23);
-		(L_21)->SetAt(static_cast<il2cpp_array_size_t>(L_22), (String_t*)L_23);
-		// Debug.Log($"1 newSymbols: " + symbol);
-		String_t* L_24 = V_15;
-		String_t* L_25;
-		L_25 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral80505CC9F242442458B69E22F70A1E1DC40E2E79, L_24, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_25, NULL);
-		goto IL_013b;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_24 = V_3;
+		int32_t L_25 = V_11;
+		String_t* L_26 = V_16;
+		NullCheck(L_24);
+		ArrayElementTypeCheck (L_24, L_26);
+		(L_24)->SetAt(static_cast<il2cpp_array_size_t>(L_25), (String_t*)L_26);
+		goto IL_0138;
 	}
 
-IL_007e:
+IL_0080:
 	{
-		// int indexForTeamSymbol = maxIndexsNextSymobls[i];
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_26 = ___4_maxIndexsNextSymobls;
-		int32_t L_27 = V_10;
-		NullCheck(L_26);
-		int32_t L_28 = L_27;
-		int32_t L_29 = (L_26)->GetAt(static_cast<il2cpp_array_size_t>(L_28));
-		V_16 = L_29;
-		// int indexForPreviousSymbols = (indexForListWithPartialSymbols - 1) - indexForTeamSymbol;
-		int32_t L_30 = ___2_indexForListWithPartialSymbols;
-		int32_t L_31 = V_16;
-		V_17 = ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_subtract(L_30, 1)), L_31));
-		// Debug.Log($"1 indexForPreviousSymbols: " + indexForPreviousSymbols);
-		String_t* L_32;
-		L_32 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&V_17), NULL);
-		String_t* L_33;
-		L_33 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral02C03CF6C6A0EB5BCA1971BB6CB897EA4738D6E0, L_32, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_33, NULL);
-		// List<string[]> listPreviousSymbols = symbolsToCompare[indexForPreviousSymbols];
-		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_34 = ___0_symbolsToCompare;
-		int32_t L_35 = V_17;
-		NullCheck(L_34);
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_36;
-		L_36 = List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC(L_34, L_35, List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC_RuntimeMethod_var);
-		V_18 = L_36;
-		// string[] previousSymbols = listPreviousSymbols[0];
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_37 = V_18;
-		NullCheck(L_37);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_38;
-		L_38 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_37, 0, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
-		V_19 = L_38;
-		// for (int z = 0; z < previousSymbols.Length; z++)
-		V_21 = 0;
-		goto IL_00e7;
-	}
-
-IL_00be:
-	{
-		// Debug.Log($"2 A table previousSymbols {z} : " + previousSymbols[z]);
-		int32_t L_39 = V_21;
-		int32_t L_40 = L_39;
-		RuntimeObject* L_41 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_40);
-		String_t* L_42;
-		L_42 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral14FE69F5EE19B97D238ACF2E8EE9FEBF43C3AB16, L_41, NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_43 = V_19;
-		int32_t L_44 = V_21;
-		NullCheck(L_43);
-		int32_t L_45 = L_44;
-		String_t* L_46 = (L_43)->GetAt(static_cast<il2cpp_array_size_t>(L_45));
-		String_t* L_47;
-		L_47 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_42, L_46, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_47, NULL);
-		// for (int z = 0; z < previousSymbols.Length; z++)
-		int32_t L_48 = V_21;
-		V_21 = ((int32_t)il2cpp_codegen_add(L_48, 1));
-	}
-
-IL_00e7:
-	{
-		// for (int z = 0; z < previousSymbols.Length; z++)
-		int32_t L_49 = V_21;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_50 = V_19;
-		NullCheck(L_50);
-		V_22 = (bool)((((int32_t)L_49) < ((int32_t)((int32_t)(((RuntimeArray*)L_50)->max_length))))? 1 : 0);
-		bool L_51 = V_22;
-		if (L_51)
+		// int indexForTeamSymbolsList = maxIndexsNextSymobls[i];
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_27 = ___4_maxIndexsNextSymobls;
+		int32_t L_28 = V_11;
+		NullCheck(L_27);
+		int32_t L_29 = L_28;
+		int32_t L_30 = (L_27)->GetAt(static_cast<il2cpp_array_size_t>(L_29));
+		V_17 = L_30;
+		// int indexForPreviousSymbols = 0;
+		V_18 = 0;
+		// if (currentListIndexSymbolsToCompare < 2)
+		int32_t L_31 = V_1;
+		V_22 = (bool)((((int32_t)L_31) < ((int32_t)2))? 1 : 0);
+		bool L_32 = V_22;
+		if (!L_32)
 		{
-			goto IL_00be;
+			goto IL_009c;
 		}
 	}
 	{
-		// int indexForSymbol = i;
-		int32_t L_52 = V_10;
-		V_20 = L_52;
-		// Debug.Log($"2 B indexForTeamSymbol: " + indexForTeamSymbol);
-		String_t* L_53;
-		L_53 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&V_16), NULL);
-		String_t* L_54;
-		L_54 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral7139847C96372F56881017C5CF8D309D6F83DA2A, L_53, NULL);
+		// indexForPreviousSymbols = 0;
+		V_18 = 0;
+		goto IL_00a4;
+	}
+
+IL_009c:
+	{
+		// indexForPreviousSymbols = currentListIndexSymbolsToCompare - indexForTeamSymbolsList;
+		int32_t L_33 = V_1;
+		int32_t L_34 = V_17;
+		V_18 = ((int32_t)il2cpp_codegen_subtract(L_33, L_34));
+	}
+
+IL_00a4:
+	{
+		// List<string[]> listPreviousSymbols = symbolsToCompare[indexForPreviousSymbols];
+		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_35 = ___0_symbolsToCompare;
+		int32_t L_36 = V_18;
+		NullCheck(L_35);
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_37;
+		L_37 = List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC(L_35, L_36, List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC_RuntimeMethod_var);
+		V_19 = L_37;
+		// previousSymbols = listPreviousSymbols[1];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_38 = V_19;
+		NullCheck(L_38);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_39;
+		L_39 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_38, 1, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		V_20 = L_39;
+		// for (int z = 0; z < previousSymbols.Length; z++)
+		V_23 = 0;
+		goto IL_00e6;
+	}
+
+IL_00bd:
+	{
+		// Debug.Log($"AND WHAT NOW? table previousSymbols {z} : " + previousSymbols[z]);
+		int32_t L_40 = V_23;
+		int32_t L_41 = L_40;
+		RuntimeObject* L_42 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_41);
+		String_t* L_43;
+		L_43 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralF9630D645344918BC7348BA93EA6033F6E8E152B, L_42, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_44 = V_20;
+		int32_t L_45 = V_23;
+		NullCheck(L_44);
+		int32_t L_46 = L_45;
+		String_t* L_47 = (L_44)->GetAt(static_cast<il2cpp_array_size_t>(L_46));
+		String_t* L_48;
+		L_48 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_43, L_47, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_54, NULL);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_48, NULL);
+		// for (int z = 0; z < previousSymbols.Length; z++)
+		int32_t L_49 = V_23;
+		V_23 = ((int32_t)il2cpp_codegen_add(L_49, 1));
+	}
+
+IL_00e6:
+	{
+		// for (int z = 0; z < previousSymbols.Length; z++)
+		int32_t L_50 = V_23;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_51 = V_20;
+		NullCheck(L_51);
+		V_24 = (bool)((((int32_t)L_50) < ((int32_t)((int32_t)(((RuntimeArray*)L_51)->max_length))))? 1 : 0);
+		bool L_52 = V_24;
+		if (L_52)
+		{
+			goto IL_00bd;
+		}
+	}
+	{
+		// int indexForSymbol = i; //team number
+		int32_t L_53 = V_11;
+		V_21 = L_53;
+		// Debug.Log("indexForSymbol: " + indexForSymbol);
+		String_t* L_54;
+		L_54 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&V_21), NULL);
+		String_t* L_55;
+		L_55 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral21EDA1CE81190A85866F486B493605760767B385, L_54, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_55, NULL);
 		// newSymbols[i] = previousSymbols[indexForSymbol];
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_55 = V_2;
-		int32_t L_56 = V_10;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_57 = V_19;
-		int32_t L_58 = V_20;
-		NullCheck(L_57);
-		int32_t L_59 = L_58;
-		String_t* L_60 = (L_57)->GetAt(static_cast<il2cpp_array_size_t>(L_59));
-		NullCheck(L_55);
-		ArrayElementTypeCheck (L_55, L_60);
-		(L_55)->SetAt(static_cast<il2cpp_array_size_t>(L_56), (String_t*)L_60);
-		// Debug.Log($"2 C previousSymbols {i} : " + previousSymbols[i]);
-		int32_t L_61 = V_10;
-		int32_t L_62 = L_61;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_56 = V_3;
+		int32_t L_57 = V_11;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_58 = V_20;
+		int32_t L_59 = V_21;
+		NullCheck(L_58);
+		int32_t L_60 = L_59;
+		String_t* L_61 = (L_58)->GetAt(static_cast<il2cpp_array_size_t>(L_60));
+		NullCheck(L_56);
+		ArrayElementTypeCheck (L_56, L_61);
+		(L_56)->SetAt(static_cast<il2cpp_array_size_t>(L_57), (String_t*)L_61);
+		// Debug.Log($"newSymbols[{1}] : " + newSymbols[i]);
+		int32_t L_62 = 1;
 		RuntimeObject* L_63 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_62);
 		String_t* L_64;
-		L_64 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral26241A2F4868D430502F90C89EBD915DD61C2357, L_63, NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_65 = V_19;
-		int32_t L_66 = V_10;
+		L_64 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral275106721D53F21D2EB851E9B6CF46CCC9ED5751, L_63, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_65 = V_3;
+		int32_t L_66 = V_11;
 		NullCheck(L_65);
 		int32_t L_67 = L_66;
 		String_t* L_68 = (L_65)->GetAt(static_cast<il2cpp_array_size_t>(L_67));
@@ -19354,94 +19411,175 @@ IL_00e7:
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_69, NULL);
 	}
 
-IL_013b:
+IL_0138:
 	{
 		// for (int i = 0; i < teamsNumbers; i++)
-		int32_t L_70 = V_10;
-		V_10 = ((int32_t)il2cpp_codegen_add(L_70, 1));
+		int32_t L_70 = V_11;
+		V_11 = ((int32_t)il2cpp_codegen_add(L_70, 1));
 	}
 
-IL_0142:
+IL_013f:
 	{
 		// for (int i = 0; i < teamsNumbers; i++)
-		int32_t L_71 = V_10;
-		int32_t L_72 = V_1;
-		V_23 = (bool)((((int32_t)L_71) < ((int32_t)L_72))? 1 : 0);
-		bool L_73 = V_23;
+		int32_t L_71 = V_11;
+		int32_t L_72 = V_2;
+		V_25 = (bool)((((int32_t)L_71) < ((int32_t)L_72))? 1 : 0);
+		bool L_73 = V_25;
 		if (L_73)
 		{
-			goto IL_0034;
+			goto IL_0048;
 		}
 	}
 	{
-		// List<string[]> lastList = symbolsToCompare[currentListNumberSymbolsToCompare - 1];
+		// List<string[]> lastList = symbolsToCompare[currentListIndexSymbolsToCompare];
 		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_74 = ___0_symbolsToCompare;
-		int32_t L_75 = V_0;
+		int32_t L_75 = V_1;
 		NullCheck(L_74);
 		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_76;
-		L_76 = List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC(L_74, ((int32_t)il2cpp_codegen_subtract(L_75, 1)), List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC_RuntimeMethod_var);
-		V_3 = L_76;
-		// string[] oldWaitSymbolsToGetSymbols = lastList[1];
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_77 = V_3;
+		L_76 = List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC(L_74, L_75, List_1_get_Item_mB3B2277EEA6A664E3F22BEF41EE10A0DBE37EFFC_RuntimeMethod_var);
+		V_4 = L_76;
+		// string[] oldPreviousSymbolsToGetSymbols = lastList[0];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_77 = V_4;
 		NullCheck(L_77);
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_78;
-		L_78 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_77, 1, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
-		V_4 = L_78;
-		// string[] oldNewSymbolsToGetSymbols = lastList[2];
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_79 = V_3;
+		L_78 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_77, 0, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		V_5 = L_78;
+		// string[] oldWaitSymbolsToGetSymbols = lastList[1];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_79 = V_4;
 		NullCheck(L_79);
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_80;
-		L_80 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_79, 2, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
-		V_5 = L_80;
-		// List<string[]> nextListWithPartialSymbols = new List<string[]>();
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_81 = (List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED*)il2cpp_codegen_object_new(List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED_il2cpp_TypeInfo_var);
+		L_80 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_79, 1, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		V_6 = L_80;
+		// string[] oldNewSymbolsToGetSymbols = lastList[2];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_81 = V_4;
 		NullCheck(L_81);
-		List_1__ctor_m51867D7C9A5A1C3DE4C23B746BAC6CF661BA1929(L_81, List_1__ctor_m51867D7C9A5A1C3DE4C23B746BAC6CF661BA1929_RuntimeMethod_var);
-		V_6 = L_81;
-		// string[] previousSymbolsToGetSymbols = oldWaitSymbolsToGetSymbols;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_82 = V_4;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_82;
+		L_82 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_81, 2, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
 		V_7 = L_82;
-		// string[] waitSymbolsToGetSymbols = oldNewSymbolsToGetSymbols;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_83 = V_5;
-		V_8 = L_83;
-		// string[] newSymbolsToGetSymbols = newSymbols;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_84 = V_2;
-		V_9 = L_84;
-		// nextListWithPartialSymbols.Insert(0, previousSymbolsToGetSymbols);
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_85 = V_6;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_86 = V_7;
-		NullCheck(L_85);
-		List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362(L_85, 0, L_86, List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362_RuntimeMethod_var);
-		// nextListWithPartialSymbols.Insert(1, waitSymbolsToGetSymbols);
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_87 = V_6;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_88 = V_8;
+		// Debug.Log(" ------------------------------------------------------------- NEW NEXT newSymbols");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral247E463606232DAD207485DA0FAA3C580F76D962, NULL);
+		// for (int z = 0; z < newSymbols.Length; z++)
+		V_26 = 0;
+		goto IL_01ac;
+	}
+
+IL_0184:
+	{
+		// Debug.Log($"newSymbols {z} : " + newSymbols[z]);
+		int32_t L_83 = V_26;
+		int32_t L_84 = L_83;
+		RuntimeObject* L_85 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_84);
+		String_t* L_86;
+		L_86 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral96840D1826A32621FE67533E083399C5937F8B7F, L_85, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_87 = V_3;
+		int32_t L_88 = V_26;
 		NullCheck(L_87);
-		List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362(L_87, 1, L_88, List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362_RuntimeMethod_var);
-		// nextListWithPartialSymbols.Insert(2, newSymbolsToGetSymbols);
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_89 = V_6;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_90 = V_9;
-		NullCheck(L_89);
-		List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362(L_89, 2, L_90, List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362_RuntimeMethod_var);
+		int32_t L_89 = L_88;
+		String_t* L_90 = (L_87)->GetAt(static_cast<il2cpp_array_size_t>(L_89));
+		String_t* L_91;
+		L_91 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_86, L_90, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_91, NULL);
+		// for (int z = 0; z < newSymbols.Length; z++)
+		int32_t L_92 = V_26;
+		V_26 = ((int32_t)il2cpp_codegen_add(L_92, 1));
+	}
+
+IL_01ac:
+	{
+		// for (int z = 0; z < newSymbols.Length; z++)
+		int32_t L_93 = V_26;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_94 = V_3;
+		NullCheck(L_94);
+		V_27 = (bool)((((int32_t)L_93) < ((int32_t)((int32_t)(((RuntimeArray*)L_94)->max_length))))? 1 : 0);
+		bool L_95 = V_27;
+		if (L_95)
+		{
+			goto IL_0184;
+		}
+	}
+	{
+		// Debug.Log(" ------------------------------------------------------------- NEW NEXT newSymbols");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral247E463606232DAD207485DA0FAA3C580F76D962, NULL);
+		// nextListWithPartialSymbols.Insert(0, oldWaitSymbolsToGetSymbols);
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_96 = V_0;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_97 = V_6;
+		NullCheck(L_96);
+		List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362(L_96, 0, L_97, List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362_RuntimeMethod_var);
+		// if (indexForListWithPartialSymbols == 1)
+		int32_t L_98 = ___2_indexForListWithPartialSymbols;
+		V_28 = (bool)((((int32_t)L_98) == ((int32_t)1))? 1 : 0);
+		bool L_99 = V_28;
+		if (!L_99)
+		{
+			goto IL_01e6;
+		}
+	}
+	{
+		// nextListWithPartialSymbols.Insert(1, oldWaitSymbolsToGetSymbols);
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_100 = V_0;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_101 = V_6;
+		NullCheck(L_100);
+		List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362(L_100, 1, L_101, List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362_RuntimeMethod_var);
+		goto IL_01f2;
+	}
+
+IL_01e6:
+	{
+		// nextListWithPartialSymbols.Insert(1, oldNewSymbolsToGetSymbols);
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_102 = V_0;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_103 = V_7;
+		NullCheck(L_102);
+		List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362(L_102, 1, L_103, List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362_RuntimeMethod_var);
+	}
+
+IL_01f2:
+	{
+		// nextListWithPartialSymbols.Insert(2, newSymbols);
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_104 = V_0;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_105 = V_3;
+		NullCheck(L_104);
+		List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362(L_104, 2, L_105, List_1_Insert_mB28BF3EEBEE27832D472F6250F5F472EACB4C362_RuntimeMethod_var);
+		// string[] previousNEW = nextListWithPartialSymbols[0];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_106 = V_0;
+		NullCheck(L_106);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_107;
+		L_107 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_106, 0, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		V_8 = L_107;
+		// string[] waitNEW = nextListWithPartialSymbols[1];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_108 = V_0;
+		NullCheck(L_108);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_109;
+		L_109 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_108, 1, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		V_9 = L_109;
+		// string[] newNEW = nextListWithPartialSymbols[2];
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_110 = V_0;
+		NullCheck(L_110);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_111;
+		L_111 = List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9(L_110, 2, List_1_get_Item_m4BA8B6B2564FB6EBB18BF12EAE65683993DDC6E9_RuntimeMethod_var);
+		V_10 = L_111;
 		// symbolsToCompare.Insert(indexForListWithPartialSymbols, nextListWithPartialSymbols);
-		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_91 = ___0_symbolsToCompare;
-		int32_t L_92 = ___2_indexForListWithPartialSymbols;
-		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_93 = V_6;
-		NullCheck(L_91);
-		List_1_Insert_m1542F98B5117346B58791A32B471760B19EBB023(L_91, L_92, L_93, List_1_Insert_m1542F98B5117346B58791A32B471760B19EBB023_RuntimeMethod_var);
+		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_112 = ___0_symbolsToCompare;
+		int32_t L_113 = ___2_indexForListWithPartialSymbols;
+		List_1_t77EDD3ECA98BCC1B49E3106C8CB923CA87D088ED* L_114 = V_0;
+		NullCheck(L_112);
+		List_1_Insert_m1542F98B5117346B58791A32B471760B19EBB023(L_112, L_113, L_114, List_1_Insert_m1542F98B5117346B58791A32B471760B19EBB023_RuntimeMethod_var);
 		// Debug.Log($" ------------------------ GetNextSymbolsToCompare ------------------------------------ ");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral5537FE045F8C9196D3BD8A95AB27107066CFA23F, NULL);
 		// return symbolsToCompare;
-		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_94 = ___0_symbolsToCompare;
-		V_24 = L_94;
-		goto IL_01b9;
+		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_115 = ___0_symbolsToCompare;
+		V_29 = L_115;
+		goto IL_022f;
 	}
 
-IL_01b9:
+IL_022f:
 	{
 		// }
-		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_95 = V_24;
-		return L_95;
+		List_1_t998AB797C2806AFC1D5DAAE3FEE17D85D61D799E* L_116 = V_29;
+		return L_116;
 	}
 }
 // System.Void Assets.Scripts.PlayGameTeamSetUpPlayersSymbols::.ctor()
