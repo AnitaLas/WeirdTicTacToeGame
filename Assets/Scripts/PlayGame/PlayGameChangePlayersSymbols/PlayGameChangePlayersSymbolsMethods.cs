@@ -226,12 +226,14 @@ namespace Assets.Scripts
         {
             int numberSymbolsToChange;
             int takenSymbolsNumber = playersSymbols.Length - 1 ;
-            Debug.Log("takenSymbolsNumber: " + takenSymbolsNumber);
+            //Debug.Log("takenSymbolsNumber: " + takenSymbolsNumber);
             if (isChangeForAll == false)
                 numberSymbolsToChange = GetRandomMaxIndexForNewSymbols(takenSymbolsNumber);
             else
                 numberSymbolsToChange = takenSymbolsNumber;
 
+
+            Debug.Log("numberSymbolsToChange: " + numberSymbolsToChange);
             return numberSymbolsToChange;
         }
 
