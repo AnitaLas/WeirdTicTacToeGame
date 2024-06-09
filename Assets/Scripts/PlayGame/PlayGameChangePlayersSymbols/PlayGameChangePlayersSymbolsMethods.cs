@@ -233,7 +233,7 @@ namespace Assets.Scripts
                 numberSymbolsToChange = takenSymbolsNumber;
 
 
-            Debug.Log("numberSymbolsToChange: " + numberSymbolsToChange);
+            //Debug.Log("numberSymbolsToChange: " + numberSymbolsToChange);
             return numberSymbolsToChange;
         }
 
@@ -976,6 +976,24 @@ namespace Assets.Scripts
             int maxIndexRow = gameBoard.GetLength(1);
             int newSymbolsToChange = newSymbolsForChande.Length;
 
+            //Debug.Log("TUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
+
+            //Debug.Log("--------------------- OLD SYMBOLS-------------------------------------");
+            //for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            //{
+            //    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+            //    {
+            //        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+            //        {
+            //            GameObject cubePlay = gameBoard[indexDepth, indexRow, indexColumn];
+            //            string oldSymbol = CommonMethods.GetCubePlayText(cubePlay);
+            //            Debug.Log("oldSymbol:" + oldSymbol);
+            //        }
+            //    }
+            //}
+
+            //Debug.Log("--------------------- OLD SYMBOLS-------------------------------------");
+
             for (int i = 0; i < newSymbolsToChange; i++)
             {
                 string newSymbol = newSymbolsForChande[i];
@@ -998,7 +1016,30 @@ namespace Assets.Scripts
                     }
                 }
             }
+
+
+
+
+
+            //Debug.Log("--------------------- NEW SYMBOLS-------------------------------------");
+            //for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
+            //{
+            //    for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
+            //    {
+            //        for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
+            //        {
+            //            GameObject cubePlay = gameBoard[indexDepth, indexRow, indexColumn];
+            //            string newSymbol = CommonMethods.GetCubePlayText(cubePlay);
+            //            Debug.Log("newSymbol:" + newSymbol);
+            //        }
+            //    }
+            //}
+
+            //Debug.Log("--------------------- NEW SYMBOLS-------------------------------------");
+
         }
+
+
 
         // switch symbols between team
 
@@ -1173,5 +1214,212 @@ namespace Assets.Scripts
         //    return symbolsLists;
 
         //}
+
+        public static string[] ChangeDataForSymbolsForChange(string[] symbols, string staticText)
+        {
+            int numberOfSymbols = symbols.Length;
+            string[] newSymbols = new string[numberOfSymbols];
+
+            for (int i = 0; i < numberOfSymbols; i++)
+            {
+                string symbol = symbols[i]; 
+                string newSymbol = symbol + staticText;
+                newSymbols[i] = newSymbol;
+            }
+
+            return newSymbols;
+        }
+
+        public static string[] ChangeDataForNewSymbolsForChange(string[] newSymbolsForChange)
+        {
+            string staticText = "new";
+            string[] newSymbols = ChangeDataForSymbolsForChange(newSymbolsForChange, staticText);
+            return newSymbols;
+
+        }
+
+        public static string[] ChangeDataForOldSymbolsForChange(string[] oldSymbolsForChange)
+        {
+            string staticText = "old";
+            string[] newSymbols = ChangeDataForSymbolsForChange(oldSymbolsForChange, staticText);
+            return newSymbols;
+        }
+
+        public static string[] ChangeDataForPlayersSymbolsForChange(string[] playersSymbols)
+        {
+            int numberOfSymbols = playersSymbols.Length;
+            string[] newPlayersSymbols = new string[numberOfSymbols];
+
+            string staticText = "old";
+
+            for (int i = 0; i < numberOfSymbols; i++)
+            {
+                string symbol = playersSymbols[i];
+                string newSymbol = symbol + staticText;
+                newPlayersSymbols[i] = newSymbol;
+            }
+
+            return newPlayersSymbols;
+        }
+
+        public static string RemoveExtraStaticTextFromStringToGetSymbol(string symbol)
+        {
+            string newSymbol = symbol.Substring(0, 1);
+            return newSymbol;
+        }
+
+        public static string[] ChangePlayersSymbols(string[] playersSymbolsForChange, string[] symbolsForChangeNew, string[] symbolsForChangeOld)
+        {
+
+            int numberOfSymbols = playersSymbolsForChange.Length;
+            int numberOfSymbolsForChange = symbolsForChangeNew.Length;
+
+           // string[] playersSymbolsAfterChange = new string[numberOfSymbolsForChange];
+
+            for (int i = 0; i < numberOfSymbols; i++)
+            {
+                string currentSymbol = playersSymbolsForChange[i];
+
+                for (int a = 0; a < numberOfSymbolsForChange; a++)
+                {
+                    string oldSymbol = symbolsForChangeOld[a];
+
+                    if (currentSymbol == oldSymbol)
+                    {
+                        string newSymbol = symbolsForChangeNew[a];
+                        playersSymbolsForChange[i] = newSymbol;
+                    }
+                }
+            }
+
+            //Debug.Log("--------------- ChangePlayersSymbols() ---------------------");
+
+            //for (int i = 0; i < symbolsForChangeNew.Length; i++)
+            //{
+            //    Debug.Log($"symbolsForChangeOld[{i}]: " + symbolsForChangeOld[i]);
+            //}
+
+            //Debug.Log("--------------- ChangePlayersSymbols()  ---------------------");
+
+            return playersSymbolsForChange;
+        }
+
+
+        public static string[] FinalPlayersSymbols(string[] playersSymbolsAfterChange)
+        {
+            int numberOfSymbols = playersSymbolsAfterChange.Length;
+            string[] finalSymbols = new string[numberOfSymbols];
+
+            for (int i = 0; i < numberOfSymbols; i++)
+            {
+                string symbol = playersSymbolsAfterChange[i];
+                string newSymbol = RemoveExtraStaticTextFromStringToGetSymbol(symbol);
+                finalSymbols[i] = newSymbol;
+
+            }
+
+
+            return finalSymbols;
+        }
+        public static string[] SetUpNewPlayersSymbolsForTeamGame(string[] playersSymbols, string[] oldSymbolsForChange, string[] newSymbolsForChange)
+        {
+
+            Debug.Log("--------------- BEFORE PS ---------------------");
+
+            for (int i = 0; i < playersSymbols.Length; i++)
+            {
+                Debug.Log($"playersSymbols[{i}]: " + playersSymbols[i]);
+            }
+
+            Debug.Log("--------------- BEFORE PS ---------------------");
+
+            string[] playersSymbolsForChange = ChangeDataForPlayersSymbolsForChange(playersSymbols);
+
+            Debug.Log("--------------- playersSymbolsForChange ---------------------");
+
+            for (int i = 0; i < playersSymbolsForChange.Length; i++)
+            {
+                Debug.Log($"playersSymbolsForChange[{i}]: " + playersSymbolsForChange[i]);
+            }
+
+            Debug.Log("--------------- playersSymbolsForChange  ---------------------");
+
+
+
+
+
+            string[] symbolsForChangeNew = ChangeDataForNewSymbolsForChange(newSymbolsForChange);
+
+            Debug.Log("--------------- symbolsForChangeNew ---------------------");
+
+            for (int i = 0; i < symbolsForChangeNew.Length; i++)
+            {
+                Debug.Log($"symbolsForChangeNew[{i}]: " + symbolsForChangeNew[i]);
+            }
+
+            Debug.Log("--------------- symbolsForChangeNew  ---------------------");
+
+
+
+
+            string[] symbolsForChangeOld = ChangeDataForOldSymbolsForChange(oldSymbolsForChange);
+
+
+            Debug.Log("--------------- symbolsForChangeOld ---------------------");
+
+            for (int i = 0; i < symbolsForChangeNew.Length; i++)
+            {
+                Debug.Log($"symbolsForChangeOld[{i}]: " + symbolsForChangeOld[i]);
+            }
+
+            Debug.Log("--------------- symbolsForChangeOld  ---------------------");
+
+            int numberOfSymbols = playersSymbols.Length;
+            int numberOfSymbolsForChange = symbolsForChangeNew.Length;
+
+            string[] newPlayersSymbols = new string[numberOfSymbols];
+
+            // change symbols
+            //for (int i = 0; i < numberOfSymbols;i++)
+            //{
+            //    string currentSymbol = playersSymbolsForChange[i];
+
+            //    for (int a = 0; a < numberOfSymbolsForChange; a++)
+            //    {
+            //        string oldSymbol = symbolsForChangeOld[a];
+
+            //        if (currentSymbol == oldSymbol)
+            //        {
+            //            string newSymbol = playersSymbolsForChange[i];
+
+            //        }
+            //    }
+            //}
+
+            string[] playersSymbolsAfterChange = ChangePlayersSymbols(playersSymbolsForChange, symbolsForChangeNew, symbolsForChangeOld);
+
+            // remove staticText
+
+            //for (int i = 0; i < numberOfSymbols; i++)
+            //{
+            //    string symbol = playersSymbolsForChange[i];
+            //    string newSymbol = RemoveExtraStaticTextFromStringToGetSymbol(symbol);
+            //    playersSymbolsForChange[i] = newSymbol;
+
+            //}
+
+            string[] playersSymbolsFinal = FinalPlayersSymbols(playersSymbolsAfterChange);
+
+            Debug.Log("--------------- AFTER PS ---------------------");
+
+            for (int i = 0; i < playersSymbolsFinal.Length; i++)
+            {
+                Debug.Log($"playersSymbolsFinal[{i}]: " + playersSymbolsFinal[i]);
+            }
+
+            Debug.Log("--------------- AFTER PS ---------------------");
+
+            return playersSymbolsFinal;
+        }
     }
 }

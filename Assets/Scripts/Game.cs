@@ -260,7 +260,7 @@ internal class Game : MonoBehaviour
         {
             _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
 
-            Debug.Log("isSameQuantityForMovePerTeam: " + isSameQuantityForMovePerTeam);
+            //Debug.Log("isSameQuantityForMovePerTeam: " + isSameQuantityForMovePerTeam);
             // mode 1
 
             if (isSameQuantityForMovePerTeam == true)
@@ -465,10 +465,30 @@ internal class Game : MonoBehaviour
 
                             _gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
+
+                            //Debug.Log("--------------- BEFORE CON ---------------------");
+
+                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
+                            //{
+                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
+                            //}
+
+                            //Debug.Log("--------------- BEFORE CON ---------------------");
+
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
 
+
+                            //Debug.Log("--------------- AFTER CON ---------------------");
+
+                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
+                            //{
+                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
+                            //}
+
+                            //Debug.Log("--------------- AFTER CON ---------------------");
+
                             //_listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
-                           // Debug.Log("isTeamGame 2: " + isTeamGame);
+                            // Debug.Log("isTeamGame 2: " + isTeamGame);
 
                             if (isTeamGame == false)
                             {
@@ -609,12 +629,31 @@ internal class Game : MonoBehaviour
                                 _moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
                             }
 
-                            _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
+                            //_playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
 
                             //_listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
 
 
+                            //Debug.Log("--------------- BEFORE CON ---------------------");
 
+                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
+                            //{
+                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
+                            //}
+                            //Debug.Log("_currentPlayer: " + _currentPlayer);
+                            //Debug.Log("--------------- BEFORE CON ---------------------");
+
+                            _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
+
+
+                            //Debug.Log("--------------- AFTER CON ---------------------");
+
+                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
+                            //{
+                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
+                            //}
+                            //Debug.Log("_currentPlayer: " + _currentPlayer);
+                            //Debug.Log("--------------- AFTER CON ---------------------");
 
 
 
@@ -977,7 +1016,8 @@ internal class Game : MonoBehaviour
 
                                 // to do 
                                 //_playersSymbols
-                                _playersSymbols = _newPlayersSymbols;
+                                //_playersSymbols = _newPlayersSymbols;
+                                _playersSymbols = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsForTeamGame(_playersSymbols, _oldSymbolsForChange, _newSymbolsForChange);
 
                             }
                             else
@@ -990,7 +1030,29 @@ internal class Game : MonoBehaviour
                             _gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
                             _gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
 
+                            // ??????????????????????????????????????????????????
+
+                            //Debug.Log("--------------- BEFORE 2 ---------------------");
+
+                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
+                            //{
+                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
+                            //}
+                            //Debug.Log("_currentPlayer: " + _currentPlayer);
+                            //Debug.Log("--------------- BEFORE 2 ---------------------");
+
                             _playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
+
+                            //Debug.Log("--------------- AFTER 2 ---------------------");
+
+                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
+                            //{
+                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
+                            //}
+                            //Debug.Log("_currentPlayer: " + _currentPlayer);
+                            //Debug.Log("--------------- AFTER 2 ---------------------");
+
+                            //_playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
 
 
 
@@ -1025,7 +1087,29 @@ internal class Game : MonoBehaviour
                             _playersSymbols = PlayGameSwitchPlayersSymbolsMethods.GetNewPlayersSymbols(_playersSymbols, _newDataForPlayersSymbolsSwitch);
 
 
+                            // ??????????????????????????????????????????????????
+
+                            //Debug.Log("--------------- BEFORE 1 ---------------------");
+
+                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
+                            //{
+                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
+                            //}
+
+                            //Debug.Log("--------------- BEFORE 1 ---------------------");
+
                             _playerSymbolMove = PlayGameSwitchPlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _newDataForPlayersSymbolsSwitch);
+
+                            //_playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
+
+                            //Debug.Log("--------------- AFTER 1 ---------------------");
+
+                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
+                            //{
+                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
+                            //}
+
+                            //Debug.Log("--------------- AFTER 1 ---------------------");
 
 
                             _gameBoardVerification2D = PlayGameSwitchPlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _newDataForPlayersSymbolsSwitch);

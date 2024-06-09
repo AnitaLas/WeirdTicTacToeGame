@@ -961,7 +961,8 @@ namespace Assets.Scripts
             List<string[]> newSymbolsForSwitch = (List<string[]>)newDataForPlayersSymbolsSwitch[0];
             int teamsNumbers = oldSymbolsForSwitch.Count - 1;
 
-            GameObject[,,] gameBoardWithChangedData = ChangeDataForOldSymbolsForSwitch(gameBoard, oldSymbolsForSwitch);
+            //GameObject[,,] gameBoardWithChangedData = ChangeDataForOldSymbolsForSwitch(gameBoard, oldSymbolsForSwitch);
+            ChangeDataForOldSymbolsForSwitch(gameBoard, oldSymbolsForSwitch);
 
             // adding to symbols from the list symbol "n", maybe add this symbol when we create the list ???
             //string staticTextForNew = "new";
@@ -1568,6 +1569,8 @@ namespace Assets.Scripts
             string[] oldSymbolsForSwitch = GetSymbolsAsOneTable(oldTeamsSymbols, playersNumberForChangeSymbols);
             string[] newSymbolsForSwitch = GetSymbolsAsOneTable(newTeamsSymbols, playersNumberForChangeSymbols);
 
+
+            // one method must be created PlayGameChangePlayersSymbolsMethods + PlayGameSwitchPlayersSymbolsMethods
             string[] finalNewSymbolsForSwitch = ChangeDataForNewSymbolsForSwitch(newSymbolsForSwitch);
 
 
