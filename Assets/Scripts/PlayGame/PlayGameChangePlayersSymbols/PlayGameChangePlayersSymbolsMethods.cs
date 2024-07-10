@@ -1324,25 +1324,25 @@ namespace Assets.Scripts
         public static string[] SetUpNewPlayersSymbolsForTeamGame(string[] playersSymbols, string[] oldSymbolsForChange, string[] newSymbolsForChange)
         {
 
-            Debug.Log("--------------- BEFORE PS ---------------------");
+            //Debug.Log("--------------- BEFORE PS ---------------------");
 
-            for (int i = 0; i < playersSymbols.Length; i++)
-            {
-                Debug.Log($"playersSymbols[{i}]: " + playersSymbols[i]);
-            }
+            //for (int i = 0; i < playersSymbols.Length; i++)
+            //{
+            //    Debug.Log($"playersSymbols[{i}]: " + playersSymbols[i]);
+            //}
 
-            Debug.Log("--------------- BEFORE PS ---------------------");
+            //Debug.Log("--------------- BEFORE PS ---------------------");
 
             string[] playersSymbolsForChange = ChangeDataForPlayersSymbolsForChange(playersSymbols);
 
-            Debug.Log("--------------- playersSymbolsForChange ---------------------");
+            //Debug.Log("--------------- playersSymbolsForChange ---------------------");
 
-            for (int i = 0; i < playersSymbolsForChange.Length; i++)
-            {
-                Debug.Log($"playersSymbolsForChange[{i}]: " + playersSymbolsForChange[i]);
-            }
+            //for (int i = 0; i < playersSymbolsForChange.Length; i++)
+            //{
+            //    Debug.Log($"playersSymbolsForChange[{i}]: " + playersSymbolsForChange[i]);
+            //}
 
-            Debug.Log("--------------- playersSymbolsForChange  ---------------------");
+            //Debug.Log("--------------- playersSymbolsForChange  ---------------------");
 
 
 
@@ -1350,14 +1350,14 @@ namespace Assets.Scripts
 
             string[] symbolsForChangeNew = ChangeDataForNewSymbolsForChange(newSymbolsForChange);
 
-            Debug.Log("--------------- symbolsForChangeNew ---------------------");
+            //Debug.Log("--------------- symbolsForChangeNew ---------------------");
 
-            for (int i = 0; i < symbolsForChangeNew.Length; i++)
-            {
-                Debug.Log($"symbolsForChangeNew[{i}]: " + symbolsForChangeNew[i]);
-            }
+            //for (int i = 0; i < symbolsForChangeNew.Length; i++)
+            //{
+            //    Debug.Log($"symbolsForChangeNew[{i}]: " + symbolsForChangeNew[i]);
+            //}
 
-            Debug.Log("--------------- symbolsForChangeNew  ---------------------");
+            //Debug.Log("--------------- symbolsForChangeNew  ---------------------");
 
 
 
@@ -1365,14 +1365,14 @@ namespace Assets.Scripts
             string[] symbolsForChangeOld = ChangeDataForOldSymbolsForChange(oldSymbolsForChange);
 
 
-            Debug.Log("--------------- symbolsForChangeOld ---------------------");
+            //Debug.Log("--------------- symbolsForChangeOld ---------------------");
 
-            for (int i = 0; i < symbolsForChangeNew.Length; i++)
-            {
-                Debug.Log($"symbolsForChangeOld[{i}]: " + symbolsForChangeOld[i]);
-            }
+            //for (int i = 0; i < symbolsForChangeNew.Length; i++)
+            //{
+            //    Debug.Log($"symbolsForChangeOld[{i}]: " + symbolsForChangeOld[i]);
+            //}
 
-            Debug.Log("--------------- symbolsForChangeOld  ---------------------");
+            //Debug.Log("--------------- symbolsForChangeOld  ---------------------");
 
             int numberOfSymbols = playersSymbols.Length;
             int numberOfSymbolsForChange = symbolsForChangeNew.Length;
@@ -1410,14 +1410,14 @@ namespace Assets.Scripts
 
             string[] playersSymbolsFinal = FinalPlayersSymbols(playersSymbolsAfterChange);
 
-            Debug.Log("--------------- AFTER PS ---------------------");
+            //Debug.Log("--------------- AFTER PS ---------------------");
 
-            for (int i = 0; i < playersSymbolsFinal.Length; i++)
-            {
-                Debug.Log($"playersSymbolsFinal[{i}]: " + playersSymbolsFinal[i]);
-            }
+            //for (int i = 0; i < playersSymbolsFinal.Length; i++)
+            //{
+            //    Debug.Log($"playersSymbolsFinal[{i}]: " + playersSymbolsFinal[i]);
+            //}
 
-            Debug.Log("--------------- AFTER PS ---------------------");
+            //Debug.Log("--------------- AFTER PS ---------------------");
 
             return playersSymbolsFinal;
         }

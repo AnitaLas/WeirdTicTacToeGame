@@ -7,7 +7,7 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
     buildToolsVersion '30.0.2'
 
     compileOptions {
@@ -16,13 +16,13 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 33
-        targetSdkVersion 33
+        minSdkVersion 34
+        targetSdkVersion 34
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
-        versionCode 1
-        versionName '2024.1'
+        versionCode 3
+        versionName '2024.1.1'
         consumerProguardFiles 'proguard-unity.txt'
     }
 
