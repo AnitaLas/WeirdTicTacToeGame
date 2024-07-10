@@ -246,42 +246,143 @@ namespace Assets.Scripts
             PlayGameTeamButtonsForEndedGameCreate.CreateButtonGameTeamForTextOver(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
         }
 
-        public static string GetTeamWinnerNumber(List<string[]> teamGameSymbols)
+        public static int GetSumOfPlayersNumberInTeams(List<string[]> teamGameSymbols)
         {
-            string winnerTeamNumber = "Upss";
-            string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
-            GameObject gameObject = CommonMethods.GetObjectByTagName(tagPlayerSymbolPrevious);
-            string previousSymbol = CommonMethods.GetCubePlayText(gameObject);
-            Debug.Log("previousSymbol: " + previousSymbol);
-
             int teamsNumbers = teamGameSymbols.Count;
+            int sumOfPlayers = 0;
 
             for (int i = 0; i < teamsNumbers; i++)
             {
-                string[] team = teamGameSymbols[i];
-                int playersNumber = team.Length;
+                string[] teamGameSymbol = teamGameSymbols[i];
+                int symbolsNumbers = teamGameSymbol.Length;
+                sumOfPlayers = sumOfPlayers + symbolsNumbers;
+            }
 
-                for (int j = 0; j < playersNumber; j++)
+            return sumOfPlayers;
+        }
+
+        public static string GetTeamWinnerNumber(List<string[]> teamGameSymbols)
+        {
+            string winnerTeamNumber = "Upss";
+            //string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
+            //string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
+            //GameObject gameObjectPrevious = CommonMethods.GetObjectByTagName(tagPlayerSymbolPrevious);
+            //GameObject gameObjectCurrent = CommonMethods.GetObjectByTagName(tagPlayerSymbolCurrent);
+            //string previousSymbol = CommonMethods.GetCubePlayText(gameObjectPrevious);
+            //string currentSymbol = CommonMethods.GetCubePlayText(gameObjectCurrent);
+            //Debug.Log("previousSymbol: " + previousSymbol);
+
+            //GameObject gameObjectForWinnerSymbols;
+            string symbolToCompare;
+            int teamsNumbers = teamGameSymbols.Count;
+
+            int sumOfPlayers = GetSumOfPlayersNumberInTeams(teamGameSymbols);
+
+            if (sumOfPlayers <= 2)
+            {
+                string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
+                GameObject gameObjectPrevious = CommonMethods.GetObjectByTagName(tagPlayerSymbolCurrent);
+                symbolToCompare = CommonMethods.GetCubePlayText(gameObjectPrevious);
+
+                for (int i = 0; i < teamsNumbers; i++)
                 {
-                    string symbol = team[j];
-                    if (symbol == previousSymbol)
-                    {
-                        int number = i + 1;
-                        winnerTeamNumber = CommonMethods.ConverIntToString(number);
-                    }
+                    string[] team = teamGameSymbols[i];
+                    int playersNumber = team.Length;
+                    //Debug.Log("-- -- playersNumber: " + playersNumber);
 
+
+                    for (int j = 0; j < playersNumber; j++)
+                    {
+                        string symbol = team[j];
+                        //Debug.Log("-- -- symbol: " + symbol);
+
+                        if (symbol != symbolToCompare)
+                        {
+                            int number = i + 1;
+                            winnerTeamNumber = CommonMethods.ConverIntToString(number);
+                        }
+
+                    }
+                }
+            }
+            else
+            {
+                string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
+                GameObject gameObjectCurrent = CommonMethods.GetObjectByTagName(tagPlayerSymbolPrevious);
+                symbolToCompare = CommonMethods.GetCubePlayText(gameObjectCurrent);
+
+                for (int i = 0; i < teamsNumbers; i++)
+                {
+                    string[] team = teamGameSymbols[i];
+                    int playersNumber = team.Length;
+                    //Debug.Log("-- -- playersNumber: " + playersNumber);
+
+
+                    for (int j = 0; j < playersNumber; j++)
+                    {
+                        string symbol = team[j];
+                        //Debug.Log("-- -- symbol: " + symbol);
+
+                        if (symbol == symbolToCompare)
+                        {
+                            int number = i + 1;
+                            winnerTeamNumber = CommonMethods.ConverIntToString(number);
+                        }
+
+                    }
                 }
             }
 
-            Debug.Log("winnerTeamNumber: " + winnerTeamNumber);
+            //Debug.Log("-- -- symbolToCompare: " + symbolToCompare);
+            //Debug.Log("-----------------------------------------------------");
+
+            
+            //Debug.Log("winnerTeamNumber: " + winnerTeamNumber);
             //string teamNumber = gameObjectName.Substring(5,1);
             return winnerTeamNumber;
         }
 
+
+        //public static string GetTeamWinnerNumber(List<string[]> teamGameSymbols)
+        //{
+        //    string winnerTeamNumber = "Upss";
+        //    string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
+        //    GameObject gameObject = CommonMethods.GetObjectByTagName(tagPlayerSymbolPrevious);
+        //    string previousSymbol = CommonMethods.GetCubePlayText(gameObject);
+        //    //Debug.Log("previousSymbol: " + previousSymbol);
+
+        //    int teamsNumbers = teamGameSymbols.Count;
+
+        //    for (int i = 0; i < teamsNumbers; i++)
+        //    {
+        //        string[] team = teamGameSymbols[i];
+        //        int playersNumber = team.Length;
+        //        Debug.Log("-- -- playersNumber: " + playersNumber);
+
+
+        //        for (int j = 0; j < playersNumber; j++)
+        //        {
+        //            string symbol = team[j];
+        //            Debug.Log("-- -- symbol: " + symbol);
+
+        //            if (symbol == previousSymbol)
+        //            {
+        //                int number = i + 1;
+        //                winnerTeamNumber = CommonMethods.ConverIntToString(number);
+        //            }
+
+        //        }
+        //    }
+
+        //    //Debug.Log("winnerTeamNumber: " + winnerTeamNumber);
+        //    //string teamNumber = gameObjectName.Substring(5,1);
+        //    return winnerTeamNumber;
+        //}
         public static void CreateButtonsWhenGameFinished(bool isWinner, GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<string[]> teamGameSymbols)
         {
             string teamNumber = GetTeamWinnerNumber(teamGameSymbols);
-            
+            //Debug.Log("-- -- teamNumber: " + teamNumber);
+
             DestroyPlayerMoveCubes();
             
 

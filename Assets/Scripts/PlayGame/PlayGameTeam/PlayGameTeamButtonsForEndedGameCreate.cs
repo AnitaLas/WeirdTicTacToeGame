@@ -142,6 +142,8 @@ namespace Assets.Scripts
             string buttonText = $"-{teamNumber}-";
             //string buttonText = "33";
 
+            //Debug.Log("-- -- buttonText: " + buttonText);
+
             //GameObject[,,] button = CreateCommonButtonGameTeamTopForEndedGameForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             GameObject[,,] button = CreateButtonForTeamNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
