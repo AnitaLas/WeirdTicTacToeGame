@@ -12,3 +12,8 @@ Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/intermediates/intermediary_
 Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/intermediates/module_bundle/debug/out/base.zip
 Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/outputs/apk/debug/launcher-debug.apk
 Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/outputs/bundle/debug/launcher-debug.aab
+.vs/
+Temp/
+Library/PackageCashe/
+
+
