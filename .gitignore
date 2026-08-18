@@ -15,5 +15,8 @@ Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/outputs/bundle/debug/launch
 .vs/
 Temp/
 Library/PackageCashe/
+Obj/
+Logs/
+UserSettings/
 
 
