@@ -6,14 +6,9 @@
 💔 Can cause a heart attack.  
 🤯 It works – somehow.  
 
-
-
-**Available on Google Play:**
-👉 [Tic Tac Toe – Weird Edition on Google Play](https://play.google.com/store/apps/details?id=com.Alan.WeirdTicTacToe)
-
 ---
 
-## 🧩 Overview
+## 📖 Overview
 
 **Tic Tac Toe – Weird Edition** is a creative twist on the classic Tic Tac Toe game that lets players customize almost every aspect of the gameplay.
 You can set up multiple players, choose the number of columns and rows, and define how many fields must be crossed to win (the *victory condition*). Each player can also change their default symbol for a personalized experience.
@@ -23,7 +18,7 @@ The menu also allows players to start a new game or return to an ongoing one.
 
 ---
 
-## 📱 Game Modes
+## ⚙️ Game Modes
 
 Tic Tac Toe – Weird Edition includes two main modes: **Cellphone Mode** and **Tablet Mode**.
 
@@ -55,7 +50,7 @@ The game also supports **team-based matches**.
 
 ---
 
-## ⏱️ Timer Options
+## ⏰ Timer Options
 
 Timers add an extra challenge and randomness to the gameplay:
 
@@ -72,24 +67,40 @@ In **team games**, up to **two timers** can be used simultaneously.
 
 ---
 
-## ⚙️ Additional Features
+## ➕ Additional Features
 
-The **Team Moves Button (=/≠)** appears when teams have different numbers of players.
+The **TEAM MOVES** button is displayed only when the teams have different numbers of players.
 
-* **Team 1 symbols:** `O`, `S`.
-* **Team 2 symbols:** `W`, `T`, `A`.
+**TEAM 1 symbols:** `O`, `X`  
+**TEAM 2 symbols:** `W`, `T`, `A`
 
-Symbol sequences alternate dynamically depending on the team configuration, making every round unpredictable and fun.
+### Team Moves: `=`
+
+- Both teams have the same number of players.
+- Symbol change sequence:  
+  `O → W → X → T → A → O → W → X → T → A`
+
+### Team Moves: `≠`
+
+- The teams have a different number of players.
+- Symbol change sequence:  
+  `O → W → X → T → O → A → O → W → X → T → O → A`
 
 ---
 
-## 🟢 Availability
+## 📦 APK Downloads
 
-Tic Tac Toe – Weird Edition is currently available only on Android devices.
+The project includes **three Android APK versions**, built for **API levels 34, 35, and 36**.
+
+You can find all APK versions here:
+
+`docs/AndroidAPKs`
 
 ---
 
-### 💡 Summary
+## 👉 Mobile Version
 
-Tic Tac Toe – Weird Edition offers a fully customizable and fun multiplayer experience that reimagines the classic board game.
-With adjustable boards, team play, and dynamic timers, every match is unique, unpredictable, and perfect for group play on Android.
+Here is a short preview of **Weird Tic Tac Toe** running on a mobile device:
+
+  
+![Weird Tic Tac Toe – Mobile Version](docs/images/ezgif.com-optimize.gif)
