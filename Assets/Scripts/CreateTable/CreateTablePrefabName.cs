@@ -18,16 +18,6 @@ namespace Assets.Scripts
         /// <param name="currentNumberCubePlayName"></param>
         /// <param name="indeZYXForPrefabCubePlay"></param>
         /// <returns></returns>
-        //public static string CreateNameForPrefabCubePlay_oldVersion(int currentNumberCubePlayName, Tuple<int, int, int> indeZYXForPrefabCubePlay)
-        //{
-        //    int cubePlayIndexDepths = indeZYXForPrefabCubePlay.Item1;
-        //    int cubePlayIndexRow = indeZYXForPrefabCubePlay.Item2;
-        //    int cubePlayIndexColumn = indeZYXForPrefabCubePlay.Item3;
-
-        //    string cubePlayName = $"CubePlayUI_No_{currentNumberCubePlayName}_Table3DCoOrdinates_Depths_{cubePlayIndexDepths}_Row_{cubePlayIndexRow}_Column_{cubePlayIndexColumn}";
-            
-        //    return cubePlayName;
-        //}
 
         public static string CreateNameForPrefabCubePlay(int currentNumberCubePlayName, int numbersCubePlayMax, Tuple<int, int, int> indeZYXForPrefabCubePlay)
         {
@@ -35,7 +25,6 @@ namespace Assets.Scripts
             int cubePlayIndexRow = indeZYXForPrefabCubePlay.Item2;
             int cubePlayIndexColumn = indeZYXForPrefabCubePlay.Item3;
             string rightCurrentNumber = SetUpRightCurrentNumber(currentNumberCubePlayName, numbersCubePlayMax);
-           
 
             string cubePlayName = $"CubePlayUI_No_{rightCurrentNumber}_Table3DCoOrdinates_Depths_{cubePlayIndexDepths}_Row_{cubePlayIndexRow}_Column_{cubePlayIndexColumn}";
 
@@ -50,23 +39,20 @@ namespace Assets.Scripts
             string finalNumber;
             int currentNumbertLenght = currentNumber.Length;
             int maxNumberLenght = maxNumber.Length;
-            
+
             string number = currentNumber;
 
             if (currentNumbertLenght <= maxNumberLenght)
             {
                 for (int i = currentNumbertLenght; i < maxNumberLenght; i++)
                 {
-                    number = staticString + number;               
+                    number = staticString + number;
                 }
             }
 
             finalNumber = staticString + number;
-            //Debug.Log("finalNumber: " + finalNumber);
-            
+
             return finalNumber;
         }
-
-
     }
 }

@@ -23,7 +23,7 @@ namespace Assets.Scripts
                     listCheckerSlash = CheckerFromLeftBottomToRightTopForOne(boardToCheck, nextRowIndexToCheck, nextColumnIndexToCheck, lenghtToCheck);
 
                     bool isSlashWin = (bool)listCheckerSlash[0];
-;
+                    ;
                     if (isSlashWin == true)
                     {
                         return listCheckerSlash;
@@ -120,8 +120,6 @@ namespace Assets.Scripts
                                 listCheckerSlash.Insert(0, checker);
                                 listCheckerSlash.Insert(1, coordinateXYToMark);
 
-                                //Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
-                                //string kindOfChecker = checkerDictionary[3];
                                 string kindOfChecker = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerSlash();
                                 listCheckerSlash.Insert(2, kindOfChecker);
                             }
@@ -131,7 +129,7 @@ namespace Assets.Scripts
                             if ((boardColumnLength - columnIndex) < lenghtToCheck)
                             {
                                 if ((boardRowLength - rowIndex) < lenghtToCheck)
-                                {                                
+                                {
                                     checker = false;
                                     listCheckerSlash.Insert(0, checker);
                                     return listCheckerSlash;
@@ -147,7 +145,7 @@ namespace Assets.Scripts
                             }
                         }
                     }
-                }        
+                }
             }
 
             return listCheckerSlash;

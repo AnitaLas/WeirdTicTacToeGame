@@ -33,7 +33,7 @@ namespace Assets.Scripts
                 finalTextForButton = defaultTextForButtons[i];
 
                 buttonBack = GameConfigurationPlayerSymbolCreateOneButtonForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, finalTextForButton);
-                buttonsList.Insert(i, buttonBack);             
+                buttonsList.Insert(i, buttonBack);
             }
 
             return buttonsList;

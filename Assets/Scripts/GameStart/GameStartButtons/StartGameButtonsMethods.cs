@@ -52,7 +52,7 @@ namespace Assets.Scripts
             int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
-    
+
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
                 for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)

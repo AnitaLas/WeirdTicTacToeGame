@@ -10,6 +10,5 @@ namespace Assets.Scripts.Scenes
         {
             SceneManager.LoadScene(sceneName);
         }
-
     }
 }

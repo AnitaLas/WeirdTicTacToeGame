@@ -10,7 +10,6 @@ namespace Assets.Scripts
     {
         public static bool ConfigurationBoardGameDeviceModeKind { get; set; }
         public static bool ConfigurationTeamGame { get; set; }
-        //public static bool ConfigurationTraditionalGame { get; set; }
 
         private static bool isCellphoneModeScene1;
 
@@ -31,33 +30,23 @@ namespace Assets.Scripts
 
         public static bool boolTrue = true;
         public static bool boolFalse = false;
-        //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        //private Dictionary<int, string> _tagStartGameButtonsDictionary = GameDictionariesSceneStartGame.DictionaryTagsStartGame();
 
         void Start()
         {
-            //ConfigurationTeamGame = boolTrue;
-            //ConfigurationTraditionalGame = boolFalse;
-
             isCellphoneModeScene1 = ScreenVerificationMethods.IsCellphoneMode();
-            //Debug.Log("1 kind of game -> isCellphoneMode: " + isCellphoneModeScene1);
-            //_tagUntagged = _tagCommonDictionary[1];
-            _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 
+            _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 
             _tagStartGameButtonStartGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartGame();
             _tagStartGameButtonStarTeamGame = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartTeamGame();
+
             _tagStartGameButtonInformations = GameStartCommonButtonsTagName.GetTagForButtonNameByTagInformation();
 
             GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
-            //GameNameTextCreate.CreateGameNameForStart(gameName);
         }
 
         void Update()
         {
-            //isCellphoneModeScene1 = ScreenVerificationMethods.IsCellphoneMode();
-            //Debug.Log("3 isCellphoneMode: " + isCellphoneModeScene1);
-
             if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
@@ -78,35 +67,20 @@ namespace Assets.Scripts
                         if (gameObjectTag == _tagStartGameButtonStartGame)
                         {
                             ConfigurationBoardGameDeviceModeKind = isCellphoneModeScene1;
-                            //ConfigurationTeamGame = true;
-                            //ConfigurationTraditionalGame = false;
                             ConfigurationTeamGame = boolFalse;
-                            //ConfigurationTraditionalGame = boolTrue;
-                            //Debug.Log("BASE 1 - ConfigurationTeamGame : " + ConfigurationTeamGame);
-                            //Debug.Log("BASE 1 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
-
                             ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
-
                         }
-
 
                         if (gameObjectTag == _tagStartGameButtonStarTeamGame)
                         {
-                            //Debug.Log("isCellphoneMode: " + isCellphoneMode);
                             ConfigurationBoardGameDeviceModeKind = isCellphoneModeScene1;
                             ConfigurationTeamGame = boolTrue;
-                            //ConfigurationTraditionalGame = boolFalse;
-
-                            //Debug.Log("BASE 2 - ConfigurationTeamGame : " + ConfigurationTeamGame);
-                            //Debug.Log("BASE 2 - ConfigurationTraditionalGame : " + ConfigurationTraditionalGame);
-
 
                             if (isCellphoneModeScene1 == true)
                                 ScenesChangeMainMethods.GoToSceneConfigurationGameTeamMembers();
-                           else
+                            else
                                 ScenesChangeMainMethods.GoToSceneConfigurationGameTeamNumbers();
                         }
-
 
                         if (gameObjectTag == _tagStartGameButtonInformations)
                         {
@@ -116,5 +90,5 @@ namespace Assets.Scripts
                 }
             }
         }
-    }                
+    }
 }

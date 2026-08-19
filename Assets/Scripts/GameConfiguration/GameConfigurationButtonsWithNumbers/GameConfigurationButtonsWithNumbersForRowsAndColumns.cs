@@ -8,11 +8,8 @@ namespace Assets.Scripts
         public static GameObject[,,] CreateTableForRowsAndColumns(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, bool isCellphoneMode)
         {
             GameObject[,,] table;
-            //int start = 3;
             int start = 2;
-            //int end = 10;
             int end = ScreenVerificationMethods.GetMaxPRowsOrColumnsNumberForConfiguration(isCellphoneMode);
-            //float newCoordinateY = 100f;
             float newCoordinateY = 0f;
             string inactiveText = "-";
 

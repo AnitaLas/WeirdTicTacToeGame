@@ -1,0 +1,5 @@
+# ninja log v5
+1	351	8088387268889619	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	9c6e01d4404e869a
+355	662	8088387271596208	C:/PROJECTS/Game_WeirdTicTacToe/WeirdTicTacToeGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4q5y5a59/obj/arm64-v8a/libswappywrapper.so	bfccf27bc79665af
+4	626	8088390280492675	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	9c6e01d4404e869a
+628	2101	8088390289488386	C:/PROJECTS/Game_WeirdTicTacToe/WeirdTicTacToeGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4q5y5a59/obj/arm64-v8a/libswappywrapper.so	bfccf27bc79665af

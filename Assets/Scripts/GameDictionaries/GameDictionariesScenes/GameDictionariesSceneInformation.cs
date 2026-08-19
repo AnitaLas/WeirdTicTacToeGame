@@ -27,11 +27,7 @@ namespace Assets.Scripts
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
             {
                 { 1, "  CONTACT" },
-                //buttonsNameDictionary.Add(2, "NEXT VERSIONS");
-                //{ 2, "GAME VERSIONS" },
                 { 2, "  VERSIONS" },
-                //{ 3, "SET" }
-                //{ 3, "DEFAULT SET" }
                 { 3, "MAX SETTINGS" }
             };
 

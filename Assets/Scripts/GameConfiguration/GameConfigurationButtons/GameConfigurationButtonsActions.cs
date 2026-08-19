@@ -1,4 +1,5 @@
-﻿using Assets.Scripts;using System.Collections.Generic;
+﻿using Assets.Scripts;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -21,7 +22,7 @@ namespace Assets.Scripts
         {
             ButtonsCommonMethodsActions.GameObjectToHide(gameObjects);
         }
-      
+
         public static void DestroyHelpButtons(List<GameObject[,,]> gameObjects)
         {
             ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(gameObjects);
@@ -43,17 +44,5 @@ namespace Assets.Scripts
             GameConfigurationButtonsWithNumbersForLenghtToCheck.VerifyAndSetUpLenghtToCheck();
             GameConfigurationButtonsWithNumbersForGaps.VerifyAndSetUpGapsNumber();
         }
-
-        //public static void VerifyButtonsWithNumberFordGaps(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsDefaultColour, Material[] prefabCubePlayButtonsBackColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, bool isTeamGame, int lenghtToCheckMax)
-        //{
-        //    int minGapsNumber = 3;
-
-        //    GameConfigurationButtonsWithNumbersForLenghtToCheck.VerifyAndSetUpLenghtToCheck();
-
-        //    if (lenghtToCheckMax > minGapsNumber)
-        //        GameConfigurationButtonsWithNumbersForGaps.VerifyAndSetUpGapsNumber();
-        //    else
-        //        GameConfigurationButtonsCreate.GameConfigurationCreateButtonsGap(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D, isTeamGame, lenghtToCheckMax);
-        //}
     }
 }

@@ -17,9 +17,7 @@ namespace Assets.Scripts
             bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
 
             if (isGameObjectWithTagExsist == true)
-            {
                 DestroyText(gameObjectTagToDestoy);
-            }
         }
 
         public static void DestroyGameObjectsWithText(List<string> gameObjectTagToDestoy)

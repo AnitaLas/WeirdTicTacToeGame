@@ -8,7 +8,7 @@ namespace Assets.Scripts
     {
 
         public static GameObject[,,] CreateTableWithNumbers(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D, string[,,] defaultTextForCubePlay)
-        {         
+        {
             // [prefabCubePlay][prefabCubePlayNewZ]
             bool isNumberOfRowsEven = GameCommonMethodsMain.IsNumberEven(numberOfRows);
             //string prefabName = "CubePlayUI";
@@ -88,7 +88,6 @@ namespace Assets.Scripts
             // [prefabCubePlayTextDefault] - start
             // [prefabCubePlayTextDefault] - default text for new prefab "CubePlay"
 
-            //string[,,] defaultTextForPrefabCubePlay = GameConfigurationTableForSepUp.CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns);
             string[,,] defaultTextForPrefabCubePlay = defaultTextForCubePlay;
 
             int[] countedPrefabCubePlay = new int[1];
@@ -158,20 +157,17 @@ namespace Assets.Scripts
                         countedPrefabCubePlay = GameCommonMethodsMain.SetUpNewCurrentNumberByAddition(countedPrefabCubePlay, index);
 
                         // create new prefab "CubePlay"
-                        //var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(x, y, z), Quaternion.identity);
-
                         float newX = GameCommonMethodsSetUpCoordinates.RoundCoordinateXYZ(x);
                         float newY = GameCommonMethodsSetUpCoordinates.RoundCoordinateXYZ(y);
                         float newZ = GameCommonMethodsSetUpCoordinates.RoundCoordinateXYZ(z);
 
                         var newPrefabCubePlay = Instantiate(prefabCubePlay, new Vector3(newX, newY, newZ), Quaternion.identity);
-                        
+
                         // [prefabCubePlayName] chcange the name for new prefab "CubePlay"
                         int currentNumberCubePlayName = numbersCubePlayName[0];
                         var currentIndexXYForPrefabCubePlay = GameCommonMethodsMain.GetIndexZYXForGameObject(prefabCubePlayNumbers, currentNumberCubePlayName);
 
                         // [prefabCubePlayName]
-                        //string prefabCubePlayName = CreateTablePrefabName.CreateNameForPrefabCubePlay(currentNumberCubePlayName, currentIndexXYForPrefabCubePlay);
                         string prefabCubePlayName = CreateTablePrefabName.CreateNameForPrefabCubePlay(currentNumberCubePlayName, numbersCubePlayMax, currentIndexXYForPrefabCubePlay);
                         newPrefabCubePlay.name = prefabCubePlayName;
 
@@ -192,16 +188,12 @@ namespace Assets.Scripts
                         //---------------------------------
 
                         int currentIndexPrefabCubePlayZ = indexForCubePlayCoordinateZ[0];
-                        // Debug.Log("currentNumberPrefabCubePlayZ = " + currentIndexPrefabCubePlayZ);
 
                         var newCountedNumberPrefabCubePlayForYForNewZ = CreateTableCommonMethods.GetNewCountedNumberForCubeRowsAndNewIndexForTheTableSetting(coordinateZForPrefabCubePlayLenght, currentIndexPrefabCubePlayZ, numberOfRows, currentCountedNumberForCubeRows, isNumberOfRowsEven);
-                        // var newCountedNumberPrefabCubePlayForYForNewZ = CreateGameBoardMethods.GetNewCountedNumberForCubeRowsAndNewIndexForTheTableSetting(coordinateZForPrefabCubePlayLenght, currentIndexPrefabCubePlayZ, numberOfRows, currentCountedNumberForCubeRows, isNumberOfRowsEven);
 
                         int newIndexPrefabCubePlayForCoordinateZ = newCountedNumberPrefabCubePlayForYForNewZ.Item1;
-                        //Debug.Log("newNumberPrefabCubePlayZ = " + newNumberPrefabCubePlayZ);
 
                         int newCountedNumberOfRows = newCountedNumberPrefabCubePlayForYForNewZ.Item2;
-                        // Debug.Log("newCountedNumberOfRows = " + newCountedNumberOfRows);
 
                         indexForCubePlayCoordinateZ[0] = newIndexPrefabCubePlayForCoordinateZ;
                         countedNumberCubePlayForRowsForCoordinateZ[0] = newCountedNumberOfRows;
@@ -211,7 +203,6 @@ namespace Assets.Scripts
                 }
             }
             return gameBoard;
-            // [gameBoard] create game board - end
         }
     }
 }

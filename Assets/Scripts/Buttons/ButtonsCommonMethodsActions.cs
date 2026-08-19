@@ -6,7 +6,6 @@ namespace Assets.Scripts
 {
     internal class ButtonsCommonMethodsActions
     {
-
         public static void GameObjectToHide(List<GameObject[,,]> gameObjects)
         {
             float newCoordinateY = 100f;
@@ -56,7 +55,7 @@ namespace Assets.Scripts
 
         public static void GameObjectToUnhide(string gameObjectTagName)
         {
-            float newCoordinateY = -100f;;
+            float newCoordinateY = -100f; ;
             ButtonsCommonMethods.ChangeCoordinateYForOneGameObjectByTagName(gameObjectTagName, newCoordinateY);
         }
 
@@ -73,33 +72,5 @@ namespace Assets.Scripts
             float newCoordinateY = -100f; ;
             ButtonsCommonMethods.ChangeCoordinateYForGameObjectsTagName(gameObjectTagsName, newCoordinateY);
         }
-
-        // ---
-
-        //public static void HideVisibleTablesWithNumber(List<GameObject[,,]> tablesWithNumber)
-        //{
-        //    GameObject[,,] table;
-        //    GameObject gameObject;
-
-        //    bool isTableVisible;
-        //    string tagName;
-        //    int tableNumber = tablesWithNumber.Count;
-
-        //    for (int i = 0; i < tableNumber; i++)
-        //    {
-        //        table = tablesWithNumber[i];
-        //        gameObject = table[0, 0, 0];
-        //        isTableVisible = ButtonsCommonMethods.IsTableWithNumberVisible(table);
-        //        tagName = CommonMethodsMain.GetObjectTag(gameObject);
-
-        //        if (tagName != null)
-        //        {
-        //            if (isTableVisible == true)
-        //            {
-        //                GameObjectToHide(table);
-        //            }
-        //        }
-        //    }
-        //}
     }
 }

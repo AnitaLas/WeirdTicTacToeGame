@@ -8,7 +8,6 @@ namespace Assets.Scripts
 {
     internal class PlayGameCommonPlayersSymbols
     {
-
         public static string GetStringWithPlayersSymbols(int dictionatyId)
         {
             Dictionary<int, string> defaulNumbers = GameDictionariesCommonPlayersSymbols.DictionaryPlayersSymbols();
@@ -29,7 +28,5 @@ namespace Assets.Scripts
             string currentNumber = GetStringWithPlayersSymbols(dictionatyId);
             return currentNumber;
         }
-
-
     }
 }

@@ -12,10 +12,6 @@ namespace Assets
 {
     internal class GameConfigurationTeamMembers : MonoBehaviour
     {
-        //public static int ConfigurationBoardGameTeamNumber { get; set; }
-
-        //public static bool ConfigurationTeamGame { get; set; }
-        //public static bool ConfigurationTraditionalGame { get; set; }
         public static List<string[]> ConfigurationTeamGameSymbol { get; set; }
 
         public GameObject prefabCubePlay;
@@ -40,8 +36,6 @@ namespace Assets
         private bool _isGame2D = true;
         private string _tagUntagged;
 
-
-
         private string _tagConfigurationTeamMembersButtonSave;
         private string _tagConfigurationTeamNMembersButtonBack;
         private string _tagConfigurationTeamMembers;
@@ -52,11 +46,9 @@ namespace Assets
         private string _configurationTeamMembersTableWithAllSymbols;
         private string _configurationTeamMembersArrowLeft;
         private string _configurationTeamMembersArrowRight;
-        //private string _configurationTeamMembersDefaultSymbols;
+
         private string _configurationTeamMembersButtonBackToConfigurationFromChangePlayersNumber;
         private string _configurationTeamMembersButtonBackToConfigurationFromChangePlayersSymbol;
-
-        //private string _tagConfigurationTeamMembersInactiveField;
 
         private List<List<GameObject[,,]>> _buttonsWithTeams;
         private List<List<GameObject[,,]>> _buttonsGroupByTeams;
@@ -68,16 +60,10 @@ namespace Assets
         private List<string[]> _tablesWitPlayersChosenSymbols;
         private int[] _tablesWitPlayersNumbersForTeams;
 
-
         void Start()
         {
-           
             _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
             isCellphoneModeScene3 = _configurationBoardGameDeviceModeKind;
-            //isCellphoneModeScene3 = ScreenVerificationMethods.IsCellphoneMode();
-            //Debug.Log("3 team members -> isCellphoneMode: " + isCellphoneModeScene3);
-            //_isCellphoisCellphoneModeScene3neMode = ScreenVerificationMethods.IsCellphoneMode();
-
 
             if (isCellphoneModeScene3 == false)
             {
@@ -86,20 +72,13 @@ namespace Assets
 
                 _buttonsArrows = GameConfigurationTeamMembersButtonsArrowsCreate.GameConfigurationTeamMembersCreateButtonsArrows(buttonArrowLeft, buttonArrowRight);
                 _indexForOneTeamGameButtonsVisible = 0;
-
-                //_playersNumbersForTeamGameMax = GameConfigurationTeamMembersButtonsMethods.SetUpMaxPlayersNumbersForTeamGameAtStart();
-               // _playersNumbersForTeamGameCounted = GameConfigurationTeamMembersButtonsMethods.SetUpPlayersNumbersForTeamGameAtStart(_teamNumbers);
-                //_countedPlayersNumber = GameConfigurationTeamMembersPlayersNumberVerification.GatSumOfPlayersNumbers(_buttonsGroupByTeams);
-
             }
             else
             {
                 _teamNumbers = GameConfigurationButtonsTeamMembersButtonsStaticData.GetDefaultTeamGameNumber();
             }
 
-
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
-
 
             _tagConfigurationTeamMembersButtonSave = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonSave();
             _tagConfigurationTeamNMembersButtonBack = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonBack();
@@ -115,22 +94,11 @@ namespace Assets
             _configurationTeamMembersArrowLeft = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonArrowLeft();
             _configurationTeamMembersArrowRight = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersButtonArrowRight();
 
-            //GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
-
             _buttonsStatic = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonsStatic(prefabCubePlay, buttonArrowLeft, buttonArrowRight, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsWithTeams = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtons(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D, isCellphoneModeScene3, _teamNumbers);
-            //_buttonsWithNumbers = GameConfigurationTeamNumbersButtonsCreate.CreateTableForTeamGameWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, _isGame2D);
+
             _buttonsGroupByTeams = GameConfigurationTeamMembersButtonsMethods.CreateListButtonsByTeams(_buttonsWithTeams, _teamNumbers);
-
-            //_maxPlayersNumbersForTeam = GameConfigurationTeamMembersPlayersNumberVerification.GetMaxPlayersNumbersForTeam(_buttonsGroupByTeams);
-
-
-
-
-
-
         }
-
         void Update()
         {
 
@@ -156,7 +124,7 @@ namespace Assets
                         if (gameObjectTag == _tagConfigurationTeamMembersDefaultNumber)
                         {
                             GameConfigurationTeamMembersButtonsActions.HideTeamMembersElementsPlayersNumbers(_buttonsStatic, _buttonsWithTeams, gameObjectName);
-                            _maxPlayersNumbersForTeam = GameConfigurationTeamMembersPlayersNumberVerification.GetMaxPlayersNumbersForTeam(_buttonsGroupByTeams, gameObjectName); 
+                            _maxPlayersNumbersForTeam = GameConfigurationTeamMembersPlayersNumberVerification.GetMaxPlayersNumbersForTeam(_buttonsGroupByTeams, gameObjectName);
                             _buttonsMoreSpecificConfiguration = GameConfigurationTeamMembersButtonsCreate.GameConfigurationTeamMembersButtonBackAndTableWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsDefaultColour, _isGame2D, gameObjectName, _maxPlayersNumbersForTeam);
 
                             if (isCellphoneModeScene3 == false)
@@ -196,7 +164,7 @@ namespace Assets
 
                             if (isCellphoneModeScene3 == false)
                                 GameConfigurationTeamMembersButtonsArrowsActions.HideArrows(_buttonsArrows);
-                        }     
+                        }
 
                         if (gameObjectTag == _configurationTeamMembersTableWithAllSymbols)
                         {
@@ -213,7 +181,6 @@ namespace Assets
                             GameConfigurationTeamMembersButtonsActionsCommon.DestroyButtons(_buttonsMoreSpecificConfiguration);
 
                             if (isCellphoneModeScene3 == false)
-                                //GameConfigurationTeamMembersButtonsArrowsActions.HideArrows(_buttonsArrows);
                                 GameConfigurationTeamMembersButtonsArrowsActions.UnhideArrows(_buttonsArrows);
                         }
 
@@ -233,31 +200,17 @@ namespace Assets
                         if (gameObjectTag == _tagConfigurationTeamMembersButtonSave)
                         {
                             _tablesWitPlayersChosenSymbols = GameConfigurationTeamMembersButtonsMethods.CreateTablesWithTeamsPlayersSymbols(_buttonsGroupByTeams);
-
-                           // ConfigurationTeamGame = true;
-                           // ConfigurationTraditionalGame = false;
                             ConfigurationTeamGameSymbol = _tablesWitPlayersChosenSymbols;
                             ScenesChangeMainMethods.GoToSceneConfigurationBoardGame();
                         }
 
-
                         if (gameObjectTag == _tagConfigurationTeamNMembersButtonBack)
                         {
-                            //if (_isCellphoneMode == true)
-                            //    ScenesChangeMainMethods.GoToSceneStartGame();
-                            //else
-                            //    ScenesChangeMainMethods.GoToSceneConfigurationGameTeamNumbers();
                             ScenesChangeMainMethods.GoToSceneStartGame();
                         }
-
-
                     }
                 }
             }
         }
-
-
-
-
     }
 }

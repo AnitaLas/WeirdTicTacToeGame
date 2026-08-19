@@ -10,20 +10,16 @@ namespace Assets.Scripts
 {
     internal class CreateGameBoardWithGaps
     {
-        // Destroy - no, bur only Hide, because she 
         public static int[] GetRandomCubePlayNumbers(int numbersCubePlayMax, int numberOfGaps)
         {
             int number = -1;
-            int[] randomNumbers = CreateGameBoardCommonMethods.CreateTableWithOneNumber( number, numberOfGaps);
-            //int halfNumberMax = numbersCubePlayMax / 2;
+            int[] randomNumbers = CreateGameBoardCommonMethods.CreateTableWithOneNumber(number, numberOfGaps);
             int minNumber = 1;
-      
+
             int randomNumber = CommonMethods.ChooseRandomNumber(minNumber, numbersCubePlayMax);
             randomNumbers[0] = randomNumber;
-            //Debug.Log($"randomNumber v1: " + randomNumber);
             int newRandomNumber = randomNumber;
-            //bool isExistDigitEqualToZeroInTable = CheckIsExistDigitEqualToZeroInTable(randomNumbers);
-            bool isExistDigitEqualToZeroInTable = true;// = true;
+            bool isExistDigitEqualToZeroInTable = true;
 
             do
             {
@@ -36,56 +32,13 @@ namespace Assets.Scripts
                         int numberToCheck = randomNumbers[i];
 
                         if (numberToCheck != newRandomNumber)
-                        {
                             randomNumbers[i] = newRandomNumber;
-                        }
                     }
                 }
 
                 isExistDigitEqualToZeroInTable = CheckIsExistDigitEqualToZeroInTable(randomNumbers);
 
-            } while (isExistDigitEqualToZeroInTable == true) ;
-
-
-            //for (int i = 1; i < numberOfGaps; i++)
-            //{
-            //    newRandomNumber = CommonMethods.ChooseRandomNumber(minNumber, numbersCubePlayMax);
-            //    //Debug.Log($"randomNumber: " + randomNumber);
-
-            //    for (int j = 0; j < numberOfGaps; j++)
-            //    {
-            //        //Debug.Log($"randomNumber {j} : " + randomNumbers[j]);
-
-
-
-            //        int numberToCheck = randomNumbers[i];
-            //        //randomNumber = randomNumbers[1];
-
-            //        if (numberToCheck != newRandomNumber)
-            //        { 
-            //        randomNumbers[i] = newRandomNumber;
-            //        }
-            //        //else
-            //        //{
-            //        //    if(numberToCheck < halfNumberMax)
-            //        //        randomNumbers[i] = CommonMethods.ChooseRandomNumber(numberToCheck, numbersCubePlayMax);
-            //        //    else
-            //        //        randomNumbers[i] = CommonMethods.ChooseRandomNumber(minNumber, numberToCheck);
-            //        //   //randomNumbers[i] = CommonMethods.ChooseRandomNumber(minNumber, numbersCubePlayMax);
-            //        //}
-
-
-
-            //    }
-
-            //Debug.Log(" --- ");
-            //}
-
-            //Debug.Log(" ----------------------------   GetRandomCubePlayNumbers  --------------------------------------");
-            //for (int i = 0; i < randomNumbers.Length; i++)
-            //{
-            //    Debug.Log($"{i} - randomNumber: " + randomNumbers[i]);
-            //}
+            } while (isExistDigitEqualToZeroInTable == true);
 
             return randomNumbers;
         }
@@ -102,8 +55,7 @@ namespace Assets.Scripts
                 if (number == -1)
                     isExistDigit = false;
             }
-            //Debug.Log("isExistDigit: " + isExistDigit);       
-            return isExistDigit; 
+            return isExistDigit;
         }
 
         public static string[] SetUpRightCurrentNumberForCubePlay(int numbersCubePlayMax, int numberOfRows, int numberOfGaps)
@@ -112,7 +64,6 @@ namespace Assets.Scripts
             int randomNumbersLenght = randomNumbers.Length;
             string[] cubePlayNumbers = new string[randomNumbersLenght];
             int number;
-           // Debug.Log("numberOfRows: " + numberOfRows);
 
             for (int i = 0; i < randomNumbersLenght; i++)
             {
@@ -131,12 +82,9 @@ namespace Assets.Scripts
             int cubePlayNumbersLenght = cubePlayNumbers.Length;
             string[] namesToDestroy = new string[cubePlayNumbersLenght];
 
-            //Debug.Log($"------------------------------------   GetFullCubePlayNames   -----------------------------");
-
             for (int i = 0; i < cubePlayNumbersLenght; i++)
             {
                 string particalName = cubePlayNumbers[i];
-                //Debug.Log($"{i} - particalName: " + particalName);
 
                 for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
                 {
@@ -145,18 +93,17 @@ namespace Assets.Scripts
                         for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                         {
                             GameObject cubePlay = boardGame[indexDepth, indexRow, indexColumn];
-                            string fullName = cubePlay.name;                        
+                            string fullName = cubePlay.name;
 
                             bool isParticalNameContained = fullName.Contains(particalName);
                             if (isParticalNameContained == true)
-                                namesToDestroy[i] = fullName;                             
+                                namesToDestroy[i] = fullName;
                         }
                     }
                 }
             }
-           
-            return namesToDestroy;
 
+            return namesToDestroy;
         }
 
 

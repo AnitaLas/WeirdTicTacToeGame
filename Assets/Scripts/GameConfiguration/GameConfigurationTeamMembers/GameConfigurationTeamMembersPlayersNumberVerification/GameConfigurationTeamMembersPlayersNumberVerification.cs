@@ -9,22 +9,12 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationTeamMembersPlayersNumberVerification
     {
-        //--
         public static int SetUpMaxPlayersNumbersForTeamGameAtStart()
         {
             string defaultMaxPlayersNumbersFromDictionary = GameConfigurationButtonsTeamMembersButtonsName.GetDefaultButtonMaxNumberForTeamMembers();
             int number = CommonMethods.ConvertStringToInt(defaultMaxPlayersNumbersFromDictionary);
             return number;
         }
-
-
-        //public static int SetUpPlayersNumbersForTeamGameAtStart(int teamNumbers)
-        //{
-        //    string defaultPlayersNumbersFromDictionary = GameConfigurationButtonsTeamMembersButtonsName.GetDefaultButtonNumberForTeamMembers();
-        //    int defaultPlayersNumbersForTeams = CommonMethods.ConvertStringToInt(defaultPlayersNumbersFromDictionary);
-        //    int playersNumbers = teamNumbers * defaultPlayersNumbersForTeams;
-        //    return playersNumbers;
-        //}
 
         public static int GatSumOfPlayersNumbers(List<List<GameObject[,,]>> buttonsWithTeams)
         {
@@ -42,9 +32,6 @@ namespace Assets.Scripts
                 int number = CommonMethods.ConvertStringToInt(numberText);
                 countedPlayersNumber = countedPlayersNumber + number;
             }
-
-            //Debug.Log(" countedPlayersNumber:" + countedPlayersNumber);
-
             return countedPlayersNumber;
         }
 
@@ -67,13 +54,9 @@ namespace Assets.Scripts
             int maxPlayersNumbers = 0;
 
             if (sumOfPlayersNumbers < playersNumbersForTeamGameMax)
-            {
                 maxPlayersNumbers = playersNumbersForTeamGameMax - sumOfPlayersNumbers + number;
-            }
             else
-            {
                 maxPlayersNumbers = number;
-            }
 
             return maxPlayersNumbers;
         }

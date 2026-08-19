@@ -13,10 +13,8 @@ namespace Assets.Scripts
 {
     internal class CommonMethods
     {
-
         // double 14/15 digits after coma
         // float 6/7 digits after coma
-
         public static float ConvertDoubleToFloat(double number)
         {
             string doubleToString = number.ToString();
@@ -73,7 +71,6 @@ namespace Assets.Scripts
 
         // even number - 2 4 6 
         // odd number - 3 5 7
-
         public static bool IsNumberEven(int number)
         {
             bool isNumberEven;
@@ -106,13 +103,6 @@ namespace Assets.Scripts
             }
         }
 
-        //public static int ChooseRandomNumber(int maxNumber)
-        //{
-        //    Random random = new Random();
-        //    int randomNumber = random.Next(0, maxNumber);
-        //    return randomNumber;
-        //}
-
         public static int ChooseRandomNumber(int minNumber, int maxNumber)
         {
             Random random = new Random();
@@ -137,12 +127,6 @@ namespace Assets.Scripts
             float result = decimal.ToSingle(number);
             return result;
         }
-
-        //public static decimal RoundDown(decimal number)
-        //{
-        //    decimal result = Math.Floor(number);
-        //    return result;
-        //}
 
         public static decimal RoundUp(decimal number)
         {
@@ -245,16 +229,12 @@ namespace Assets.Scripts
             string gameObjectName = gameObjectFullName.Substring(0, 8);
 
             if (gameObjectName.Equals("CubePlay"))
-            {
                 ChangeTextForFirstChild(gameObject, gameObjectText);
 
-            }
 
             if (gameObjectName.Equals("PlayerSymbol"))
-            {
                 ChangeTextForSecondChild(gameObject, gameObjectText);
 
-            }
         }
 
         public static string GetCubePlayText(GameObject gameObject)
@@ -268,16 +248,6 @@ namespace Assets.Scripts
             return text;
         }
 
-        //public static string GetTextForPlayerSymbolChild(GameObject gameObject, int childNumber)
-        //{
-        //    //string gameObjectName = GetObjectName(gameObject);
-        //    // game object: prefab PlayerSymbol -> PlayerSymbolText -> PlayerSymbolCanvas ->
-        //    var newPrefabPlayerSymbolCanvas = gameObject.transform.GetChild(childNumber).transform.GetChild(0);
-        //    // game object: prefab PlayerSymbol -> PlayerSymbolCanvas -> PlayerSymbolText
-        //    string newPrefabCubePlayCanvasText = newPrefabPlayerSymbolCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
-        //    return newPrefabCubePlayCanvasText;
-        //}
-
         public static void ChangeTextColourForCubePlay(GameObject gameObject, Color textColor)
         {
             var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
@@ -290,32 +260,6 @@ namespace Assets.Scripts
             var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
             newPrefabCubePlayCanvasText.fontSize = fontSize;
         }
-
-        //public static void ChangeTextAlignmentBottom(GameObject gameObject)
-        //{
-        //    var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
-        //    newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Bottom;
-        //}
-
-        //public static void ChangeTextAlignmenTop(GameObject gameObject)
-        //{
-        //    var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
-        //    newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Top;
-        //}
-
-        //public static Color GetNewColor(int dictionaryColorId)
-        //{
-        //    Dictionary<int, Tuple<float, float, float, float>> colorDictionary = GameDictionariesScenesCommon.DictionaryColor();
-        //    var newColor = colorDictionary[dictionaryColorId];
-
-        //    float r = newColor.Item1;
-        //    float g = newColor.Item2;
-        //    float b = newColor.Item3;
-        //    float a = newColor.Item4;
-
-        //    Color newTextColor = new Color(r, g, b, a);
-        //    return newTextColor;
-        //}
 
         //[TextChange] - end
         // --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -346,10 +290,7 @@ namespace Assets.Scripts
                     for (int indexColumn = 0; indexColumn < lenghtForColumns; indexColumn++)
                     {
                         if (table[indexDepth, indexRow, indexColumn].Equals(currentNumberForPrefabCubePlay))
-                        {
-
                             return Tuple.Create(indexDepth, indexRow, indexColumn);
-                        }
                     }
                 }
             }
@@ -379,10 +320,8 @@ namespace Assets.Scripts
                         string cubePlayNameFromTable = cubePlay.name;
 
                         if (cubePlayNameFromTable == cubePlayName)
-                        {
-
                             return Tuple.Create(indexDepth, indexRow, indexColumn);
-                        }
+
                     }
                 }
             }
@@ -410,9 +349,7 @@ namespace Assets.Scripts
                         string cubePlayNameFromTable = cubePlay.name;
 
                         if (cubePlayNameFromTable == cubePlayName)
-                        {
                             return cubePlay;
-                        }
                     }
                 }
             }
@@ -464,18 +401,6 @@ namespace Assets.Scripts
             return gameObjectName;
         }
 
-        //public static string GetParentObjectName(RaycastHit touchGameObject)
-        //{
-        //    string gameObjectParentName = touchGameObject.collider.transform.parent.name;
-        //    return gameObjectParentName;
-        //}
-
-        //public static string GetParentObjectName(GameObject gameObject)
-        //{
-        //    string gameObjectParentName = gameObject.transform.parent.name;
-        //    return gameObjectParentName;
-        //}
-
         public static string GetObjectTag(GameObject gameObject)
         {
             string gameObjectTagName = gameObject.tag;
@@ -484,7 +409,6 @@ namespace Assets.Scripts
 
         public static GameObject GetObjectByTagName(string tagName)
         {
-            //GameObject gameObject = GameObject.FindWithTag(tagName);
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tagName);
             GameObject gameObject = gameObjects[0];
             return gameObject;
@@ -533,36 +457,14 @@ namespace Assets.Scripts
         public static int CheckAndReturnLowerNumber(int numberOne, int numberTwo)
         {
             if (numberTwo > numberOne)
-            {
                 return numberOne;
-            }
-            else if (numberTwo < numberOne)
-            {
-                return numberTwo;
-            }
-            else
-            {
-                // verticalLenght = horizontalLenght
-                return numberTwo;
-            }
-        }
 
-        //public static int CheckAndReturnBiggerNumber(int numberOne, int numberTwo)
-        //{
-        //    if (numberTwo > numberOne)
-        //    {
-        //        return numberTwo;
-        //    }
-        //    else if (numberTwo < numberOne)
-        //    {
-        //        return numberOne;
-        //    }
-        //    else
-        //    {
-        //        // verticalLenght = horizontalLenght
-        //        return numberOne;
-        //    }
-        //}
+            else if (numberTwo < numberOne)
+                return numberTwo;
+
+            else
+                return numberTwo;
+        }
 
         public static void ChangeColourForGameObject(GameObject gameObject, Material newColour)
         {
@@ -581,13 +483,11 @@ namespace Assets.Scripts
             int numberOfTagsLength = numberOfTags.Length;
 
             if (numberOfTagsLength > 0)
-            {
                 return true;
-            }
+
             else
-            {
                 return false;
-            }
+
         }
 
         // ---------------------------
@@ -670,6 +570,5 @@ namespace Assets.Scripts
                 gameObject.transform.position = new Vector3(newCoordinateX, y, z);
             }
         }
-
     }
 }

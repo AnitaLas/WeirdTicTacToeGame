@@ -9,7 +9,6 @@ namespace Assets.Scripts
     internal class GameStartCommonButtonsName
     {
         // --- button name
-
         public static string GetButtonsNameFromDictionaryButtonsStartGameName(int dictionatyId)
         {
             Dictionary<int, string> buttonsNames = GameDictionariesSceneStartGame.DictionaryButtonsStartGameName();
@@ -80,6 +79,5 @@ namespace Assets.Scripts
             string tagName = GetButtonsNameFromDictionaryButtonstGameName(dictionatyId);
             return tagName;
         }
-
     }
 }

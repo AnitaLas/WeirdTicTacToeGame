@@ -20,16 +20,12 @@ namespace Assets.Scripts
 
         public static void DisactivateChosenCubePlay(GameObject cubePlayMarkByFrame)
         {
-            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
-            //string tagCubePlayTaken = tagCubePlayDictionary[2];
             string tagCubePlayTaken = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagTaken();
             GameCommonMethodsMain.ChangeTagForGameObject(cubePlayMarkByFrame, tagCubePlayTaken);
         }
 
         public static void DisactivateChosenCubePlay(RaycastHit touch)
         {
-            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
-            //string tagCubePlayTaken = tagCubePlayDictionary[2];
             string tagCubePlayTaken = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagTaken();
             GameCommonMethodsMain.ChangeTagForGameObject(touch, tagCubePlayTaken);
         }

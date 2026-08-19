@@ -21,22 +21,19 @@ namespace Assets.Scripts
 
         public static void ChangeBoarGameHelpTextToInvisible(GameObject[,,] boardGame, string[] playersSymbols)
         {
-            int dictionaryColorId = 4;
-            Color textColour = GameCommonMethodsMain.GetNewColor(dictionaryColorId);
+            Color textColour = GameCommonMethodsMain.GetNewColor(4);
             ChangeCubePlayTextVisibility(boardGame, playersSymbols, textColour);
         }
 
         public static void ChangeBoarGameHelpTextToVisible(GameObject[,,] boardGame, string[] playersSymbols)
         {
-            int dictionaryColorId = 3;
-            Color textColour = GameCommonMethodsMain.GetNewColor(dictionaryColorId);
+            Color textColour = GameCommonMethodsMain.GetNewColor(3);
             ChangeCubePlayTextVisibility(boardGame, playersSymbols, textColour);
         }
 
         public static void ChangeCubePlayTextVisibility(GameObject[,,] boardGame, string[] playersSymbols, Color textColour)
         {
-            int dictionaryColorId = 2;
-            Color defaultColour = GameCommonMethodsMain.GetNewColor(dictionaryColorId);
+            Color defaultColour = GameCommonMethodsMain.GetNewColor(2);
 
             int maxIndexDepth = boardGame.GetLength(0);
             int maxIndexColumn = boardGame.GetLength(2);

@@ -32,7 +32,7 @@ namespace Assets.Scripts
             for (columnIndex = 0; columnIndex <= boardColumnLength; columnIndex++)
             {
                 checkArray[0] = "";
-             
+
                 for (rowIndex = 0; rowIndex <= boardRowLength; rowIndex++)
                 {
                     if (checkArray[0].Equals(""))
@@ -70,8 +70,6 @@ namespace Assets.Scripts
                             listCheckerVertical.Insert(0, checker);
                             listCheckerVertical.Insert(1, coordinateXYToMark);
 
-                            //Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
-                            //string kindOfChecker = checkerDictionary[2];
                             string kindOfChecker = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerVertical();
                             listCheckerVertical.Insert(2, kindOfChecker);
 
@@ -80,7 +78,7 @@ namespace Assets.Scripts
                     }
                     else if (checkArray[0] != boardToCheck[rowIndex, columnIndex])
                     {
-                        if ((boardRowLength - rowIndex) >= lenghtToCheck) 
+                        if ((boardRowLength - rowIndex) >= lenghtToCheck)
                         {
                             checkArray[0] = boardToCheck[rowIndex, columnIndex];
                             matchingArray[0] = 1;
@@ -89,19 +87,19 @@ namespace Assets.Scripts
 
                             coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
                             coordinateXYToMark[0, 0] = rowIndex;
-                            coordinateXYToMark[0, 1] = columnIndex;                       
+                            coordinateXYToMark[0, 1] = columnIndex;
                         }
                         else if ((boardRowLength - rowIndex) < lenghtToCheck)
                         {
-                           if (columnIndex == boardColumnLength)
-                           {
+                            if (columnIndex == boardColumnLength)
+                            {
                                 checker = false;
 
                                 listCheckerVertical.Insert(0, checker);
                                 return listCheckerVertical;
                             }
-                           else if (columnIndex < boardColumnLength)
-                           {
+                            else if (columnIndex < boardColumnLength)
+                            {
                                 checkArray[0] = "";
                                 matchingArray[0] = 0;
                                 indexYToMark[0] = 0;

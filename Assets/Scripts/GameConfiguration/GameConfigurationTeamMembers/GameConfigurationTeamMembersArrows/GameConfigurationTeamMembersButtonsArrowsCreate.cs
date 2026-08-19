@@ -9,10 +9,8 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationTeamMembersButtonsArrowsCreate
     {
-
         public static List<GameObject> GameConfigurationTeamMembersCreateButtonsArrows(GameObject buttonArrowLeft, GameObject buttonArrowRight)
         {
-
             List<GameObject> buttonsAll = new List<GameObject>();
 
             GameObject arrowLeft = GameConfigurationTeamMembersButtonsCreateCommon.CreateButtonArrow(buttonArrowLeft);
@@ -23,7 +21,5 @@ namespace Assets.Scripts
 
             return buttonsAll;
         }
-
-
     }
 }

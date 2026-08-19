@@ -27,7 +27,6 @@ namespace Assets.Scripts
             return cubePlayForFrame;
         }
 
-
         public static GameObject CreateCubePlayFrameForPlayerMove_v1(GameObject prefabCubePlayFrame, GameObject cubePlayForFrame, bool isGame2D)
         {
             if (isGame2D == true)
@@ -52,13 +51,8 @@ namespace Assets.Scripts
             return cubePlayForFrame;
         }
 
-        //public static GameObject CreateCubePlayFrameForPlayerMove(GameObject prefabCubePlayFrame, GameObject cubePlayForFrame, bool isGame2D)
         public static GameObject CreateCubePlayFrameForPlayerMove(GameObject prefabCubePlayFrame, GameObject cubePlayForFrame, float[] _coordinatesForCubePlayFrame, bool isGame2D)
         {
-            //Debug.Log("_coordinatesForCubePlayFrame[0]: " + _coordinatesForCubePlayFrame[0]);
-            //Debug.Log("_coordinatesForCubePlayFrame[1]: " + _coordinatesForCubePlayFrame[1]);
-            //Debug.Log("_coordinatesForCubePlayFrame[2]: " + _coordinatesForCubePlayFrame[2]);
-
             if (isGame2D == true)
             {
                 float cubePlayScaleX = cubePlayForFrame.transform.localScale.x;
@@ -73,12 +67,7 @@ namespace Assets.Scripts
                 float y = _coordinatesForCubePlayFrame[1];
                 float z = _coordinatesForCubePlayFrame[2] - cubePlayScaleX / 2 - topForAllCubePlay;
 
-
-                
-
                 var newPrefabCubePlay = Instantiate(prefabCubePlayFrame, new Vector3(x, y, z), Quaternion.identity);
-
-                //GameCommonMethodsSetUpCoordinates.ChangeYForGameObject(cubePlayForFrame, -200);
 
                 return cubePlayForFrame;
             }

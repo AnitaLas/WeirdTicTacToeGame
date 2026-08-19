@@ -13,12 +13,10 @@ namespace Assets.Scripts
         public static void CreateButtonsForWinnerTeam()
         {
 
-
         }
 
         public static void CreateButtonsForGameOver()
         {
-
 
         }
 
@@ -30,12 +28,7 @@ namespace Assets.Scripts
 
             string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGame(numberOfRows, numberOfColumns, buttonText);
 
-            GameObject[,,]  button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
-
-            //float newCoordinateY = 4.8f;
-            //float newCoordinateX = 0f;
-
-            //ButtonsCommonMethods.ChangeDataForButtonsGameEnded(button, newCoordinateY, newCoordinateX, tagName);
+            GameObject[,,] button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
             return button;
         }
@@ -88,8 +81,6 @@ namespace Assets.Scripts
             string tagName = GameStartCommonButtonsTagName.GetTagForButtonNameByTagInactiveField();
             string buttonText = PlayGameCommonButtonsName.GetButtonNameForTextGame();
 
-            //GameObject[,,] button = CreateCommonButtonGameTeamBackgroundForEndedGameForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
-
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             float newCoordinateY = 4.8f;
@@ -120,8 +111,6 @@ namespace Assets.Scripts
             string tagName = GameStartCommonButtonsTagName.GetTagForButtonNameByTagInactiveField();
             string buttonText = PlayGameCommonButtonsName.GetButtonNameForTextTeam();
 
-            //GameObject[,,] button = CreateCommonButtonGameTeamBackgroundForEndedGameForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
-
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             float newCoordinateY = 4.8f;
@@ -138,13 +127,8 @@ namespace Assets.Scripts
         public static GameObject[,,] CreateButtonGameTeamForTextTeamNumber(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, string teamNumber, bool isGame2D)
         {
             string tagName = GameStartCommonButtonsTagName.GetTagForButtonNameByTagInactiveField();
-            //string buttonText = $"_{teamNumber}_";
             string buttonText = $"-{teamNumber}-";
-            //string buttonText = "33";
 
-            //Debug.Log("-- -- buttonText: " + buttonText);
-
-            //GameObject[,,] button = CreateCommonButtonGameTeamTopForEndedGameForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             GameObject[,,] button = CreateButtonForTeamNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             return button;

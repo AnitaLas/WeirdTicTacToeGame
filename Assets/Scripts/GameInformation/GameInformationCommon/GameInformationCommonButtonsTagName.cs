@@ -58,9 +58,7 @@ namespace Assets.Scripts
             return tagName;
         }
 
-
         // button: text
-
         public static string GetTagTextByTagInformationTextContact()
         {
             int dictionatyId = 5;
@@ -81,6 +79,5 @@ namespace Assets.Scripts
             string tagName = GetTagsNameFromDictionaryTagsGameInformation(dictionatyId);
             return tagName;
         }
-
     }
 }

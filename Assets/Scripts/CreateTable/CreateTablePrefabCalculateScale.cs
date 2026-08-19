@@ -27,7 +27,7 @@ namespace Assets.Scripts
         {
             prefab.transform.localScale = new Vector3(newScaleX, newScaleY, newScaleZ);
         }
-        
+
         /// <summary>
         /// <para> prefab = CubePlay </para>
         /// </summary>
@@ -35,7 +35,7 @@ namespace Assets.Scripts
         /// <param name="numberOfRows"></param>
         /// <param name="numberOfColumns"></param>
         /// <returns></returns>
-        public static float  ScaleForPrefabCubePlay(double numberOfDepths, double numberOfRows, double numberOfColumns)
+        public static float ScaleForPrefabCubePlay(double numberOfDepths, double numberOfRows, double numberOfColumns)
         {
             double newScaleForX = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleX, numberOfColumns, _prefabCubePlayMaxNumberWidthXPhone);
             double newScaleForY = CalculateNewScaleForPrefab(_prefabCubePlayDefaultScaleY, numberOfRows, _prefabCubePlayMaxNumberHeightYPhone);
@@ -93,13 +93,11 @@ namespace Assets.Scripts
             float[] newScaleForPrefabCubePlay = { maxValue };
 
             if (numberOfRows != maxNumberOfRows || numberOfColumns != maxNnumberOfColumns || numberOfDepths != maxNnumberOfDepths)
-            {               
+            {
                 for (int i = 0; i < newScaleForXYZLenght; i++)
                 {
                     if (newScaleForXYZ[i] < newScaleForPrefabCubePlay[0])
-                    {                     
                         newScaleForPrefabCubePlay[0] = newScaleForXYZ[i];
-                    }
                 }
             }
             else
@@ -134,9 +132,7 @@ namespace Assets.Scripts
                     for (int i = 0; i < newScaleForXYZLenght; i++)
                     {
                         if (newScaleForXYZ[i] < newScaleForPrefabCubePlay[0])
-                        {
                             newScaleForPrefabCubePlay[0] = newScaleForXYZ[i];
-                        }
                     }
                 }
                 else
@@ -152,9 +148,7 @@ namespace Assets.Scripts
                     for (int i = 0; i < newScaleForXYZLenght; i++)
                     {
                         if (newScaleForXYZ[i] < newScaleForPrefabCubePlay[0])
-                        {
                             newScaleForPrefabCubePlay[0] = newScaleForXYZ[i];
-                        }
                     }
                 }
                 else
@@ -169,9 +163,7 @@ namespace Assets.Scripts
                 for (int i = 0; i < newScaleForXYZLenght; i++)
                 {
                     if (newScaleForXYZ[i] < newScaleForPrefabCubePlay[0])
-                    {
                         newScaleForPrefabCubePlay[0] = newScaleForXYZ[i];
-                    }
                 }
             }
             else

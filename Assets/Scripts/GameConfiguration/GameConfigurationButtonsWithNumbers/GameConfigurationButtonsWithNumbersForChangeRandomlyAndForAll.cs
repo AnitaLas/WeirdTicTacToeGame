@@ -9,7 +9,6 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersForChangeRandomlyAndForAll
     {
-
         public static void SetUpDefaultTime(string gameObjectTagName)
         {
             GameObject button = CommonMethods.GetObjectByTagName(gameObjectTagName);

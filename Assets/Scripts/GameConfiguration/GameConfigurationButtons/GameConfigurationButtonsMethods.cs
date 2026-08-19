@@ -3,8 +3,8 @@ using UnityEngine;
 using Assets.Scripts;
 
 
-    namespace Assets.Scripts
-    {
+namespace Assets.Scripts
+{
     internal class GameConfigurationButtonsMethods
     {
 
@@ -56,7 +56,7 @@ using Assets.Scripts;
 
         public static void ChangeDataForGameMenuButtons(List<GameObject[,,]> buttons, float[] newYForButtons)
         {
-            float newCoordinateX=  -0.65f;
+            float newCoordinateX = -0.65f;
             float newCoordinateZ = 0.175f;
             float newCoordinateY = -2.05f;
 
@@ -121,62 +121,6 @@ using Assets.Scripts;
                 }
             }
         }
-        //public static void ChangeDataForGameConfigurationChangePlayerSymbolButtons(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber, float[] newYForButtons)
-        //{
-        //    float newCoordinateXForButtonWithText = -0.5f; // columns -> 14
-        //    float newCoordinateZForButtonWithText = 0.175f;
-        //    float newCoordinateXForButtonWithNumber = 0f; // columns -> 14
-        //    float newCoordinateZForButtonWithNumber = 0f;
-
-        //    ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateXForButtonWithText, newCoordinateZForButtonWithText);
-        //    ChangeCoordinatesXYZForGameConfigurationButtons(buttonsNumber, newYForButtons, newCoordinateXForButtonWithNumber, newCoordinateZForButtonWithNumber);
-        //    ChangeDataForGameConfigurationButtonsWithChosenText(buttonsNumber);
-        //}
-
-        //public static void ChangeDataForGameConfigurationButtonsChangePlayersSymbols(List<GameObject[,,]> buttons, List<GameObject[,,]> buttonsNumber, float[] newYForButtons)
-        //{
-        //    float newCoordinateXForButtonWithText = -0.85f; // columns -> 14
-        //    //float newCoordinateXForButtonWithText = -0.0f; // columns -> 14
-        //    float newCoordinateZForButtonWithText = 0.175f;
-        //    float newCoordinateXForButtonWithNumber = 0.25f; // columns -> 14
-        //    float newCoordinateZForButtonWithNumber = 0f;
-
-        //    ChangeCoordinatesXYZForGameConfigurationButtons(buttons, newYForButtons, newCoordinateXForButtonWithText, newCoordinateZForButtonWithText);
-        //    ChangeCoordinatesXYZForGameConfigurationButtons(buttonsNumber, newYForButtons, newCoordinateXForButtonWithNumber, newCoordinateZForButtonWithNumber);
-        //    ChangeDataForGameConfigurationButtonsWithChosenText(buttonsNumber);
-        //    ChangeCoordinatesYForGameConfigurationButtons(buttonsNumber);
-        //}
-
-        //public static void ChangeCoordinatesYForGameConfigurationButtons(List<GameObject[,,]> buttons)
-        //{
-        //    int maxIndexDepth = 1;
-        //    int maxIndexColumn;
-        //    int maxIndexRow;
-        //    int buttonsNumber = buttons.Count;
-        //    int maxButtonNumber = buttonsNumber - 1;
-
-        //    float newCoordinateY = -0.2f;
-
-        //    for (int i = 0; i < buttonsNumber; i++)
-        //    {
-        //        GameObject[,,] oneButton = buttons[i];
-
-        //        maxIndexColumn = oneButton.GetLength(2);
-        //        maxIndexRow = oneButton.GetLength(1);
-
-        //        for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
-        //        {
-        //            for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
-        //            {
-        //                for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
-        //                {
-        //                    GameObject cubePlay = oneButton[indexDepth, indexRow, indexColumn];
-        //                    GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
 
         public static void ChangeCoordinatesXYZForGameConfigurationButtons(List<GameObject[,,]> buttons, float[] newYForButtons, float newCoordinateX, float newCoordinateZ)
         {
@@ -186,7 +130,7 @@ using Assets.Scripts;
             int buttonsNumber = buttons.Count;
             int maxButtonNumber = buttonsNumber - 1;
 
-            float newCoordinateY; 
+            float newCoordinateY;
 
             for (int i = 0; i < buttonsNumber; i++)
             {
@@ -229,7 +173,7 @@ using Assets.Scripts;
             float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber);// - 0.5f;
             //float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber) - 1.3f; // one digit after coma, two makes some gaps between prefab CubePlay
             table[0] = firstY;
-           
+
             int previousResultIndex; // = 0;
 
             for (int newY = 1; newY < playersNumber; newY++)
@@ -276,7 +220,7 @@ using Assets.Scripts;
             float[] table = new float[playersNumber];
             float scale = GameCommonMethodsMain.GetObjectScaleX(prefabPlayerSymbol);
 
-            float halfScale = scale * 5.451f; 
+            float halfScale = scale * 5.451f;
             float firstY = GetFirstPositionForPrefabCubePlay(scale, playersNumber);
             table[0] = firstY;
 
@@ -311,7 +255,6 @@ using Assets.Scripts;
 
                 yForFirstPrefabPlayerSymbol = -playersNumberFloat;
                 return yForFirstPrefabPlayerSymbol;
-
             }
             else
             {
@@ -330,7 +273,7 @@ using Assets.Scripts;
             int maxIndexColumn;
             int maxIndexRow;
             int buttonsNumber = buttons.Count;
-            
+
             float newCoordinateY = -0.6f;
             float newCoordinateX = 1.6f;
             float newCoordinateZ = 0.45f;
@@ -360,6 +303,6 @@ using Assets.Scripts;
                     }
                 }
             }
-        }     
+        }
     }
 }

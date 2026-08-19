@@ -6,11 +6,9 @@ using UnityEngine;
 namespace Assets.Scripts
 {
     internal class ButtonsGameConfigurationPlayerSymbolMethods
-    {     
+    {
         public static void ChangeGameConfigurationPlayerSymbolInformationButtonsWithPlayerNumber(GameObject[,,] singleConfigurationButtonTable)
         {
-            //Dictionary<int, string> tagNameDictionary = GameDictionariesSceneConfigurationPlayerSymbols.DictionaryTagNameConfigurationPlayersSymbols();
-            //string tagName = tagNameDictionary[3];
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolChange();
 
             GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
@@ -25,13 +23,10 @@ namespace Assets.Scripts
             string playerNumberToSetUp;
 
             if (zeroNumber.Equals(stringToCompare))
-            {
-                playerNumberToSetUp = playerNumber.Substring(1,1);
-            }
+                playerNumberToSetUp = playerNumber.Substring(1, 1);
+
             else
-            {
                 playerNumberToSetUp = playerNumber;
-            }
 
             int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);

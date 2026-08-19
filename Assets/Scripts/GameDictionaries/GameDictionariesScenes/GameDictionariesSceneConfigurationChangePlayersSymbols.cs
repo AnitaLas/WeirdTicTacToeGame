@@ -35,7 +35,6 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
 
                 { 15, "ConfigurationChangePlayersSymbolsButtonBackToConfiguration" },
                 { 16, "ConfigurationChangePlayersSymbolsButtonInformation" },
-
             };
 
             return configurationBoardGameDictionaryTag;
@@ -45,26 +44,17 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
         {
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
             {
-                //{ 1, "CHANGE RANDOMLY PLAYERS SYMBOLS" },
                 { 1, "PLAYERS SYMBOLS" },
                 { 2, "    CHANGE" }, // spaces are needed for the button name; do not remove it! It is an easy (short/ lazy) fix, the method for button name requires changes
                 { 3, "RANDOMLY" },
                 { 4, "FOR ALL" },
-                //{ 5, "TIME - SECONDS" },
                 { 5, "TIME IN SECONDS" },
                 { 6, "   RANDOMLY" }, // the same as in id 2
                 { 7, "    FOR ALL" }, // the same as in id 2
-                //{ 8, "BETWEEN TEAMS" }, 
                 { 8, "BTW. TEAMS" }, // the same as in id 2
                 { 9, "  BTW. TEAMS" }, // the same as in id 2
                 { 10, "TEAM MOVES" }, // the same as in id 2
-                //{ 10, "MOVES TEAM" }, // the same as in id 2
-                //{ 10, "No. OF MOVES" }, // the same as in id 2
-                //{ 10, "MOVES PER TEAM" }, // the same as in id 2
                 { 11, "SWITCH" }, // the same as in id 2
-
-
-
             };
 
             return buttonsNameDictionary;
@@ -81,7 +71,5 @@ namespace Assets.Scripts.GameDictionaries.GameDictionariesScenes
 
             return buttonsDefaultNumberDictionary;
         }
-
-
     }
 }

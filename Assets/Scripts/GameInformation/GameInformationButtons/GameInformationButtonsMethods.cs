@@ -9,7 +9,7 @@ namespace Assets.Scripts
         {
             GameObject[] gameObjects = GameCommonMethodsMain.GetObjectsListWithTagName(oldTag);
 
-            foreach (GameObject gameObject in gameObjects) 
+            foreach (GameObject gameObject in gameObjects)
             {
                 GameCommonMethodsMain.ChangeTagForGameObject(gameObject, newTag);
             }

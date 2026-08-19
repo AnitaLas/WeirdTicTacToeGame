@@ -9,14 +9,12 @@ namespace Assets.Scripts
 {
     internal class GameNameButtonsCommonMethods
     {
-
         public static void ChangeDataForSingleStargGameButtons(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX, float newCoordinateZ)
         {
             int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
             int maxIndexColumn = singleConfigurationButtonTable.GetLength(2);
             int maxIndexRow = singleConfigurationButtonTable.GetLength(1);
 
-            //float newCoordinateZ = 0.175f;
             float fontSize = 0.7f;
             float newScale = 0.3f;
 
@@ -36,11 +34,5 @@ namespace Assets.Scripts
                 }
             }
         }
-
-
-
-
-
-
     }
 }

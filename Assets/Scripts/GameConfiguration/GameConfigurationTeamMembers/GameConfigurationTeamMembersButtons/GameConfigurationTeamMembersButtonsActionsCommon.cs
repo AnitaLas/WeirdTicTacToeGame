@@ -18,7 +18,6 @@ namespace Assets.Scripts
             {
                 GameObject[,,] button = buttons[i];
                 ButtonsCommonMethodsActions.GameObjectToHide(button);
-
             }
         }
 
@@ -30,7 +29,6 @@ namespace Assets.Scripts
             {
                 List<GameObject[,,]> list = listWithListElements[i];
                 ButtonsCommonMethodsActions.GameObjectToHide(list);
-
             }
         }
 
@@ -48,7 +46,6 @@ namespace Assets.Scripts
             {
                 GameObject[,,] button = buttons[i];
                 ButtonsCommonMethodsActions.GameObjectToUnhide(button);
-
             }
         }
 
@@ -61,7 +58,6 @@ namespace Assets.Scripts
             {
                 List<GameObject[,,]> list = listWithListElements[i];
                 ButtonsCommonMethodsActions.GameObjectToUnhide(list);
-
             }
         }
 
@@ -86,9 +82,5 @@ namespace Assets.Scripts
         {
             ButtonsCommonMethodsActionsDestroy.DestroyGameObjectsList(gameObjects);
         }
-
-
-    
-
     }
 }

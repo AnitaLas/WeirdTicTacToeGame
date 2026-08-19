@@ -370,18 +370,5 @@ namespace Assets.Scripts
             string tagName = GetTagsNameFromDictionaryTagsNameConfigurationChangePlayersSymbols(dictionaryId);
             return tagName;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

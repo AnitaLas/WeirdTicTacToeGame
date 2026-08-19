@@ -3,7 +3,7 @@
 namespace Assets.Scripts
 {
     internal class GameDictionariesGameFieldsVerificationCommon
-    {      
+    {
         public static Dictionary<int, string> DictionaryChecker()
         {
             Dictionary<int, string> checkerDictionary = new Dictionary<int, string>();

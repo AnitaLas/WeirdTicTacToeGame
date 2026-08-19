@@ -9,8 +9,6 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersForTeamMembers
     {
-
-
         public static GameObject[,,] CreateTableWithOptionToChooseForTeamMembersNumbers(GameObject[,,] tableWtithNumber, string tagName)
         {
             string frontTextToAdd = "TeamMembers_NewNo_";
@@ -45,8 +43,6 @@ namespace Assets.Scripts
 
             string tagNumbers = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersTableWithNumbers();
 
-            //string tagInactiveField = GameConfigurationButtonsTeamMembersTagName.GetTagNameForButtonByTagTeamMembersInactiveField();
-
             var numbers = ScreenVerificationMethods.GetSizeForTableWithPlayersNumbersForTeamMembers(isCellphoneMode);
             int numberOfDepths = 1;
             int numberOfRows = numbers.Item1;
@@ -58,7 +54,6 @@ namespace Assets.Scripts
             return tableWithNumberFinal;
         }
 
-
         // new class 
         public static GameObject[,,] CreateTableWithTeamMembersSymbols(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
@@ -67,12 +62,12 @@ namespace Assets.Scripts
             tableWithNumber = CreateTableMainMethodsForButtons.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
 
             return tableWithNumber;
-        }     
+        }
 
         public static string[] CreateTableWithSymbolsForCubePlay()
         {
             int maxCubePlayNumber = 12;
-            string[] tableString = new string[maxCubePlayNumber];         
+            string[] tableString = new string[maxCubePlayNumber];
 
             for (int i = 0; i < maxCubePlayNumber; i++)
             {
@@ -80,7 +75,6 @@ namespace Assets.Scripts
                 tableString[i] = numberString;
             }
 
-            //Debug.Log(" -------- 2222 ------------- ");
             return tableString;
         }
 
@@ -140,11 +134,6 @@ namespace Assets.Scripts
             int maxIndexColumn = tableWtithNumber.GetLength(2);
             int maxIndexRow = tableWtithNumber.GetLength(1);
 
-            //string tagInactiveField = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersInactiveField();
-            //string tagTableWithNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersTableWithNumbers();
-            //string textToCompare = "0";
-            //string newText = "-";
-
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
                 for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
@@ -152,14 +141,7 @@ namespace Assets.Scripts
                     for (int indexRow = 0; indexRow < maxIndexRow; indexRow++)
                     {
                         GameObject cubePlay = tableWtithNumber[indexDepth, indexRow, indexColumn];
-                        //GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagTableWithNumbers);
                         string oldText = CommonMethods.GetCubePlayText(cubePlay);
-
-                        //if (oldText.Equals(textToCompare))
-                        //{
-                        //    CommonMethods.ChangeTextForFirstChild(cubePlay, newText);
-                        //    CommonMethods.ChangeTagForGameObject(cubePlay, tagInactiveField);
-                        //}
                     }
                 }
             }

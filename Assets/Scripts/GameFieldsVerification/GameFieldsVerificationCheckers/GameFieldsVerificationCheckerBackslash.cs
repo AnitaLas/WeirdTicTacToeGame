@@ -29,7 +29,7 @@ namespace Assets.Scripts
                     {
                         return listCheckerBackslash;
                     }
-                    else if (isBackslashWin == false && (nextRowIndexToCheck == boardRowLength)) 
+                    else if (isBackslashWin == false && (nextRowIndexToCheck == boardRowLength))
                     {
                         return listCheckerBackslash;
                     }
@@ -108,7 +108,7 @@ namespace Assets.Scripts
                             else if (numberOfMatchingSymbols[0] == lenghtToCheck)
                             {
                                 checker = true;
-                               
+
                                 int currentIndexY = indexYToMark[0];
                                 coordinateXYToMark[currentIndexY, 0] = rowIndex;
                                 coordinateXYToMark[currentIndexY, 1] = columnIndex;
@@ -116,8 +116,6 @@ namespace Assets.Scripts
                                 listCheckerBackslash.Insert(0, checker);
                                 listCheckerBackslash.Insert(1, coordinateXYToMark);
 
-                                //Dictionary<int, string> checkerDictionary = GameDictionariesGameFieldsVerification.DictionaryChecker();
-                                //string kindOfChecker = checkerDictionary[4];
                                 string kindOfChecker = GameFieldsVerificationCommonMethods.GetFieldsVerificationCheckerBackslash();
                                 listCheckerBackslash.Insert(2, kindOfChecker);
                             }
@@ -127,7 +125,7 @@ namespace Assets.Scripts
                             if ((boardColumnLength - columnIndex) > lenghtToCheck)
                             {
                                 if ((boardRowLength - rowIndex) > lenghtToCheck)
-                                {                                   
+                                {
                                     checker = false;
                                     listCheckerBackslash.Insert(0, checker);
                                     return listCheckerBackslash;
@@ -146,7 +144,7 @@ namespace Assets.Scripts
                             listCheckerBackslash.Insert(0, checker);
                             return listCheckerBackslash;
                         }
-                    }          
+                    }
                 }
             }
 

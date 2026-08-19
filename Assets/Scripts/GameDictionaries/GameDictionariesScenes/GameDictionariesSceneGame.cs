@@ -20,8 +20,6 @@ namespace Assets.Scripts
                 { 10, "GameButtonInformationTimerForBoardGame" },
                 { 11, "GameButtonButtonToHide" }
             };
-            //tagGameDictionary.Add(4, "GameButtonHideHelpButtons");
-            //tagGameDictionary.Add(5, "GameButtonUnhideHelpButtons");
 
             return tagGameDictionary;
         }
@@ -31,11 +29,8 @@ namespace Assets.Scripts
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
             {
                 { 1, "  NEW GAME" },
-                //{ 2, "BACK" },
                 { 2, "BACK TO GAME" },
-                //{ 3, "HELP BUTTONS" },
                 { 3, "BUTTONS" },
-                //{ 4, "BUTTONS TEXT" }
                 { 4, "BOARD TEXT" },
                 { 5, " PLAYER SYMBOL" },
                 { 6, "PLAYERS SYMBOLS" },
@@ -44,7 +39,6 @@ namespace Assets.Scripts
                 { 9, "OLD       NEW" },
                 { 10, "ButtonToHide" },
                 { 11, "HELP" },
-                //{ 12, "GAME OVER" }
                 { 12, " GAME" },
                 { 13, "OVER" },
                 { 14, "TEAM WIN     " }
@@ -108,5 +102,3 @@ namespace Assets.Scripts
         }
     }
 }
-
-

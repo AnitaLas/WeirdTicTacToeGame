@@ -10,8 +10,7 @@ namespace Assets
 {
     internal class GameConfigurationTeamNumbers : MonoBehaviour
     {
-
-        public static int ConfigurationBoardGameTeamNumber { get; set; }    
+        public static int ConfigurationBoardGameTeamNumber { get; set; }
 
         public GameObject prefabCubePlay;
 
@@ -26,20 +25,13 @@ namespace Assets
         private int _teamNumbers;
         private bool _isGame2D = true;
 
-
         private GameObject[,,] _buttonsWithNumbers;
 
         private string _tagUntagged;
 
         private string _tagConfigurationTeamNumbersButtonSave;
         private string _tagConfigurationTeamNumbersButtonBack;
-        //private string _tagConfigurationTeamNumbers;
-        //private string _tagConfigurationTeamNumbersChangeNumber;
         private string _tagConfigurationTeamNumbersTableWithNumbers;
-
-        //private string _tagConfigurationTeamNumbersInactiveField;
-
-
 
         void Start()
         {
@@ -47,31 +39,21 @@ namespace Assets
             _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
             isCellphoneModeScene2 = _configurationBoardGameDeviceModeKind;
 
-            //isCellphoneModeScene2 = ScreenVerificationMethods.IsCellphoneMode();
-
-            //Debug.Log("2 team number -> isCellphoneMode: " + isCellphoneModeScene2);
             _teamNumbers = 2;
 
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
 
-
             _tagConfigurationTeamNumbersButtonSave = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersButtonSave();
             _tagConfigurationTeamNumbersButtonBack = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersButtonBack();
-            
-            //_tagConfigurationTeamNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersDefaultNumber();
-            //_tagConfigurationTeamNumbersChangeNumber = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersChange();
-            _tagConfigurationTeamNumbersTableWithNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersTableWithNumbers();
 
-            //GameStartButtonsCreate.CreateButtonsStartGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
+            _tagConfigurationTeamNumbersTableWithNumbers = GameConfigurationButtonsTeamNumbersTagName.GetTagNameForButtonByTagTeamNumbersTableWithNumbers();
 
             GameConfigurationTeamNumbersButtonsCreate.GameConfigurationTeamNumbersButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsWithNumbers = GameConfigurationTeamNumbersButtonsCreate.CreateTableForTeamGameWithNumbers(prefabCubePlay, prefabCubePlayDefaultColour, _isGame2D);
-
         }
 
         void Update()
         {
-
             if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
@@ -92,16 +74,12 @@ namespace Assets
 
                         if (gameObjectTag == _tagConfigurationTeamNumbersTableWithNumbers)
                         {
-
                             _teamNumbers = GameConfigurationTeamNumbersButtonsAction.SetUpChosenNumberForConfigurationTeamNumbers(_buttonsWithNumbers, gameObjectName);
-
                         }
-
 
                         if (gameObjectTag == _tagConfigurationTeamNumbersButtonSave)
                         {
                             ConfigurationBoardGameTeamNumber = _teamNumbers;
-
                             ScenesChangeMainMethods.GoToSceneConfigurationGameTeamMembers();
                         }
 
@@ -110,14 +88,9 @@ namespace Assets
                         {
                             ScenesChangeMainMethods.GoToSceneStartGame();
                         }
-
-
                     }
                 }
             }
         }
-
-
-
     }
 }

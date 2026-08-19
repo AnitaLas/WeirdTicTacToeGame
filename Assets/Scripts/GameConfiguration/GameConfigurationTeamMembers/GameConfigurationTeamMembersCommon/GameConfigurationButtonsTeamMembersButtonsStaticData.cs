@@ -8,23 +8,6 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsTeamMembersButtonsStaticData
     {
-
-        //public static Tuple<int, int> GetSizeForTableWithDefaulSymbols(bool isCellphoneMode)
-        //{
-        //    Tuple<int, int> tableSize;
-
-        //    if (isCellphoneMode == true)
-        //    {
-        //        tableSize = Tuple.Create(1, 3); // rows, columns
-        //    }
-        //    else
-        //    {
-        //        tableSize = Tuple.Create(3, 3);
-        //    }
-
-        //    return tableSize;
-        //}
-
         public static int GetDefaultTeamGameNumber()
         {
             int number = 2;
@@ -35,7 +18,6 @@ namespace Assets.Scripts
         {
             float teamOneY = 0.5f;
             float teamTwoY = -1.1f;
-            //float moreThanTwoTeams = -0.25f;
             float moreThanTwoTeams = -0f;
 
             float[] coordinateYData = new float[3];
@@ -51,7 +33,6 @@ namespace Assets.Scripts
         {
             float teamOneY = 0.25f;
             float teamTwoY = 0.45f;
-            //float moreThanTwoTeams = 0f;
             float moreThanTwoTeams = 0.2f;
 
             float[] coordinateYData = new float[3];
@@ -67,7 +48,6 @@ namespace Assets.Scripts
         {
             float teamOneY = 1.65f;
             float teamTwoY = -1.55f;
-            //float moreThanTwoTeams = 1.7f;
             float moreThanTwoTeams = 1.1f;
 
             float[] coordinateYData = new float[3];
@@ -83,7 +63,6 @@ namespace Assets.Scripts
         {
             float teamOneY = 1.95f;
             float teamTwoY = -1.15f;
-            // moreThanTwoTeams = 2.1f;
             float moreThanTwoTeams = 1.5f;
 
             float[] coordinateYData = new float[3];
@@ -94,7 +73,5 @@ namespace Assets.Scripts
             float coordinateY = coordinateYData[teamNumebr];
             return coordinateY;
         }
-
-
     }
 }

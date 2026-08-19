@@ -6,7 +6,7 @@ namespace Assets.Scripts
     {
         public static ArrayList FieldsVerification(string[,] boardToCheck, int lenghtToCheck)
         {
-            ArrayList listChecker = new ArrayList(); 
+            ArrayList listChecker = new ArrayList();
 
             bool checker = false;
 
@@ -15,7 +15,7 @@ namespace Assets.Scripts
             ArrayList checkerSlash;
             ArrayList checkerBackslash;
 
-            if(checker == false)
+            if (checker == false)
             {
                 checkerHorizontal = GameFieldsVerificationCheckerHorizontal.CheckerHorizontal(boardToCheck, lenghtToCheck);
                 bool isHorizontalWin = (bool)checkerHorizontal[0];
@@ -31,7 +31,7 @@ namespace Assets.Scripts
                         bool isSlashlWin = (bool)checkerSlash[0];
 
                         if (isSlashlWin == false)
-                        {                     
+                        {
                             checkerBackslash = GameFieldsVerificationCheckerBackslash.CheckerBackslash(boardToCheck, lenghtToCheck);
                             return checkerBackslash;
                         }
@@ -48,7 +48,7 @@ namespace Assets.Scripts
             else
             {
                 return listChecker;
-            }         
+            }
         }
     }
 }

@@ -40,15 +40,9 @@ namespace Assets.Scripts
                 { 1, "PLAYERS" },
                 { 2, "ROWS" },
                 { 3, "COLUMNS" },
-                //buttonsNameDictionary.Add(4, "CROSS OUT");
-                //{ 4, "MARK TO WIN" },
-                //{ 4, "TO WIN" },
                 { 4, "VICTORY" },
-                //buttonsNameDictionary.Add(4, "LENGTH TO CHECK");
                 { 5, "GAPS" },
-                //{ 6, "GAME BASE" },
                 { 6, "   GAME BASE" },
-                //{ 7, "TEAM GAME BASE" },
                 { 7, "BOARD GAME BASE" },
                 { 8, "    SETUP" }
             };
@@ -64,7 +58,6 @@ namespace Assets.Scripts
                 { 2, "PLAYERS NUMBER" },
                 { 3, "  ROWS NUMBER" },
                 { 4, "COLUMNS NUMBER" },
-                //buttonsNameDictionary.Add(4, "LENGTH TO CHECK");
                 { 5, "LENGTH TO CHECK" },
                 { 6, "  GAPS NUMBER" }
             };

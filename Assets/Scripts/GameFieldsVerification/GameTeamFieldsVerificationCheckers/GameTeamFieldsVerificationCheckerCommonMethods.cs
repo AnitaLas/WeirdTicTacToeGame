@@ -9,6 +9,5 @@ namespace Assets.Scripts
     internal class GameTeamFieldsVerificationCheckerCommonMethods
     {
         //???? team game cheker -> isPreviousSymbolBelongToTeam & isMatchingArrayIncreased ??? to rethinking
-
     }
 }

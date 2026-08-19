@@ -9,10 +9,6 @@ namespace Assets.Scripts
 {
     internal class ScenesChangeCommonSceneName
     {
-        //public static void ChangeScene(string sceneName)
-        //{
-        //    SceneManager.LoadScene(sceneName);
-        //}
 
         // sccenes: name
         public static string GetScencesNameFromDictionaryScencesName(int dictionatyId)

@@ -41,9 +41,9 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableWithNumber;
             string[,,] defaultTextForPrefabCubePlay = CreateTableWithTextForPrefabCubePlay(numberOfDepths, numberOfRows, numberOfColumns, textForHelpButtonLines);
-            
+
             tableWithNumber = CreateTableMainMethodsForButtons.CreateTableWithNumbers(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, defaultTextForPrefabCubePlay);
-            
+
             return tableWithNumber;
         }
 
@@ -100,7 +100,6 @@ namespace Assets.Scripts
                 }
             }
         }
-    
         public static void ChangeDataForSingleCommonButton(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX, string tagToSetUp)
         {
             float newScale = 0.4f;
@@ -110,16 +109,6 @@ namespace Assets.Scripts
             ChangingCoordinatesXYForBoundaryPrefabCubePlay(singleConfigurationButtonTable, newScale);
             SetUpFinalCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newCoordinateY, newCoordinateX);
         }
-
-        //public static void ChangeDataForSingleGameConfigurationCommonButton(GameObject[,,] singleConfigurationButtonTable, string tagToSetUp)
-        //{
-        //    float newScale = 0.5f;
-
-        //    ChangeBaseDataForSingleCommonButton(singleConfigurationButtonTable, newScale, tagToSetUp);
-        //    CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(singleConfigurationButtonTable, newScale);
-        //    ChangingCoordinatesXYForBoundaryPrefabCubePlay(singleConfigurationButtonTable, newScale);
-        //}
-
         public static void ChangeBaseDataForSingleCommonButton(GameObject[,,] singleConfigurationButtonTable, float newScale, string tagToSetUp)
         {
             int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
@@ -128,7 +117,7 @@ namespace Assets.Scripts
 
             float newCoordinateZ = 0.225f;
             float fontSize = 0.55f;
-  
+
             for (int indexDepth = 0; indexDepth < maxIndexDepth; indexDepth++)
             {
                 for (int indexColumn = 0; indexColumn < maxIndexColumn; indexColumn++)
@@ -144,8 +133,6 @@ namespace Assets.Scripts
                 }
             }
         }
-
-
         public static void SetUpFinalCoordinatesXYForPrefabCubePlay(GameObject[,,] singleConfigurationButtonTable, float newCoordinateY, float newCoordinateX)
         {
             int maxIndexDepth = singleConfigurationButtonTable.GetLength(0);
@@ -227,9 +214,9 @@ namespace Assets.Scripts
         public static string[,,] CreateTableWithTextForPrefabCubePlay(int numberOfDepths, int numberOfRows, int numberOfColumns, string[] textForHelpButtonLines)
         {
             string[,,] newTable = new string[numberOfDepths, numberOfRows, numberOfColumns];
-            
+
             string[] numbers = CreateTableWithTextForPrefabCubePlay(numberOfRows, numberOfColumns, textForHelpButtonLines);
-           
+
             string[,,] numbers3D = CreateTableForDefaultTextWithNumbers(numbers, numberOfDepths, numberOfRows, numberOfColumns);
 
             for (int indexDepth = 0; indexDepth < numberOfDepths; indexDepth++)
@@ -388,7 +375,7 @@ namespace Assets.Scripts
 
         public static bool IsTableWithNumberVisible(GameObject[,,] tableWithNumber)
         {
-            bool isTableVisible;        
+            bool isTableVisible;
             GameObject gameObject = tableWithNumber[0, 0, 0];
 
             float y = 70f; // reason -> hide/unkide 100/ -100
@@ -456,26 +443,7 @@ namespace Assets.Scripts
             }
         }
 
-        //public static void ChangeCoordinateYForGameObjectsTagName(string[] helpButtons, float newCoordinateY)
-        //{
-        //    string tagName;
-        //    int helpButtonsLength = helpButtons.Length;
-
-        //    for (int i = 0; i < helpButtonsLength; i++)
-        //    {
-        //        tagName = helpButtons[i];
-        //        GameObject[] gameObjects = GameCommonMethodsMain.GetObjectsListWithTagName(tagName);
-        //        int NumberOfgameObjects = gameObjects.Length;
-
-        //        for (int j = 0; j < NumberOfgameObjects; j++)
-        //        {
-        //            GameObject gameObject = gameObjects[j];
-        //            CommonMethodsSetUpCoordinates.SetUpNewYForGameObject(gameObject, newCoordinateY);
-        //        }
-        //    }
-        //}
-
-        public static void ChangeCoordinateYForGameObjectsTagName(Dictionary<int,string> tagsNameDictionary, float newCoordinateY)
+        public static void ChangeCoordinateYForGameObjectsTagName(Dictionary<int, string> tagsNameDictionary, float newCoordinateY)
         {
             string tagName;
             int helpButtonsLength = tagsNameDictionary.Count;
@@ -580,7 +548,6 @@ namespace Assets.Scripts
                         GameCommonMethodsSetUpCoordinates.ChangeZForGameObject(cubePlay, newCoordinateZ);
                         GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                         GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
-                        //GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
                 }
             }
@@ -609,7 +576,6 @@ namespace Assets.Scripts
                         GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                         GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
                         GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
-                        //GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
                 }
             }
@@ -621,7 +587,6 @@ namespace Assets.Scripts
             int maxIndexColumn = button.GetLength(2);
             int maxIndexRow = button.GetLength(1);
 
-            //float newCoordinateZ = 0.175f;
             float newCoordinateZ = 0.175f;
             float fontSize = 0.7f;
             float newScale = 0.3f;
@@ -639,7 +604,6 @@ namespace Assets.Scripts
                         GameCommonMethodsSetUpCoordinates.SetUpNewXForGameObject(cubePlay, newCoordinateX);
                         GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
                         GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagName);
-                        //GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagToSetUp);
                     }
                 }
             }

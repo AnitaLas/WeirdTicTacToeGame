@@ -11,7 +11,6 @@ namespace Assets.Scripts
 {
     internal class PlayGameSwitchPlayersSymbolsButtonsMethods
     {
-
         public static string[] GetSymbolsAsOneTable(List<string[]> teamsSymbols, int playersNumberForChangeSymbols)
         {
             string[] symbols = new string[playersNumberForChangeSymbols];
@@ -30,7 +29,6 @@ namespace Assets.Scripts
                     index++;
                 }
             }
-
 
             return symbols;
         }
@@ -89,7 +87,7 @@ namespace Assets.Scripts
 
         public static List<GameObject[,,]> PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundFinal(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, int playersNumberForChangeSymbols)
         {
-            List<GameObject[,,]> buttonsList = PlayGameSwitchPlayersSymbolsCreateButtonsBackground(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumberForChangeSymbols);          
+            List<GameObject[,,]> buttonsList = PlayGameSwitchPlayersSymbolsCreateButtonsBackground(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumberForChangeSymbols);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerNumber(buttonsList);
             return buttonsList;
         }
@@ -132,7 +130,7 @@ namespace Assets.Scripts
         public static List<GameObject[,,]> PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbolsFinal(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, int playersNumberForChangeSymbols, string[] newSymbolsForChande)
         {
             List<GameObject[,,]> buttonsList = PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbols(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, playersNumberForChangeSymbols);
-            
+
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
             PlayGameChangePlayersSymbolsMethods.SetUpPlayerSymbols(buttonsList, newSymbolsForChande);
 
@@ -185,7 +183,6 @@ namespace Assets.Scripts
         public static List<GameObject[,,]> PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundFinalForModeTablet(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, int playersNumberForChangeSymbols)
         {
             List<GameObject[,,]> buttonsList = PlayGameSwitchPlayersSymbolsCreateButtonsBackgroundForModeTablet(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumberForChangeSymbols);
-            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerNumber(buttonsList);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
             return buttonsList;
         }
@@ -206,10 +203,10 @@ namespace Assets.Scripts
         public static List<GameObject[,,]> PlayGameSwitchPlayersSymbolsCreateButtonsOldSymbolsFinalForModeTablet(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, int playersNumberForChangeSymbols, string[] oldSymbolsForChande)
         {
             List<GameObject[,,]> buttonsList = PlayGameChangePlayersSymbolsCreateButtonsOldSymbols(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, playersNumberForChangeSymbols);
-            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
+
             PlayGameChangePlayersSymbolsMethods.SetUpPlayerSymbols(buttonsList, oldSymbolsForChande);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
-            //float newCoordinateY = 0.35f;
+
             float newCoordinateX = 1.15f;
             ChangeDataForSwitchPlayersSymbols(buttonsList, newCoordinateX);
 
@@ -220,11 +217,9 @@ namespace Assets.Scripts
         {
             List<GameObject[,,]> buttonsList = PlayGameSwitchPlayersSymbolsCreateButtonsNewSymbols(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, playersNumberForChangeSymbols);
 
-            // GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
             PlayGameChangePlayersSymbolsMethods.SetUpPlayerSymbols(buttonsList, newSymbolsForChande);
 
-            //float newCoordinateY = 0.35f;
             float newCoordinateX = 0.2f;
             ChangeDataForSwitchPlayersSymbols(buttonsList, newCoordinateX);
 
@@ -244,7 +239,7 @@ namespace Assets.Scripts
 
             float newCoordinateY = 0.3f;
             float newScale = 0.8f;
-            float newScaleZ =1f;
+            float newScaleZ = 1f;
             int start = buttonsNumber - 1;
             int playerNumber;
 

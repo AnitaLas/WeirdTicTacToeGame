@@ -8,7 +8,6 @@ namespace Assets.Scripts
 
         public static float[] CreateTableWithCoordinatesZ()
         {
-            //float[] table = new float[3];
             float[] table = new float[2];
             table[0] = -0.05f;
             table[1] = 0.05f;
@@ -54,7 +53,6 @@ namespace Assets.Scripts
             // default divide = 2 to find half of length, point [0,0] in Unity
             int divide = 2;
             double doubleNumber = PositionMinOrMaxXYZForCubePlayCalculate(lengthForAllPrefabCubePlayInOneLine, divide, round);
-            //float floatNumber = CommonMethods.RoundAndConvertDoubleToFloat(doubleNumber, 6);
             float floatNumber = GameCommonMethodsMain.RoundAndConvertDoubleToFloat(doubleNumber, round);
             return floatNumber;
         }
@@ -159,13 +157,10 @@ namespace Assets.Scripts
                     currentCountedNumberOfRows = 1;
 
                     if (isNumberOfRowsEven == true)
-                    {
                         newIndexForCubePlayData = indexForPreviousColour;
-                    }
+
                     else
-                    {
                         newIndexForCubePlayData = indexForPreviousColour + 1;
-                    }
 
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
                     return newDataForCubePlayColour;
@@ -186,13 +181,11 @@ namespace Assets.Scripts
                     currentCountedNumberOfRows = 1;
 
                     if (isNumberOfRowsEven == true)
-                    {
                         newIndexForCubePlayData = indexForPreviousColour;
-                    }
+
                     else
-                    {
                         newIndexForCubePlayData = 0;
-                    }
+
 
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
                     return newDataForCubePlayColour;
@@ -213,13 +206,11 @@ namespace Assets.Scripts
                     currentCountedNumberOfRows = 0;
 
                     if (isNumberOfRowsEven == true)
-                    {
                         newIndexForCubePlayData = indexForPreviousColour;
-                    }
+
                     else
-                    {
                         newIndexForCubePlayData = indexForPreviousColour + 1;
-                    }
+
 
                     var newDataForCubePlayColour = new Tuple<int, int>(newIndexForCubePlayData, currentCountedNumberOfRows);
                     return newDataForCubePlayColour;

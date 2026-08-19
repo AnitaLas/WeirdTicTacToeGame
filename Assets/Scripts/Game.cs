@@ -28,11 +28,10 @@ internal class Game : MonoBehaviour
     public Material[] prefabCubePlayDefaultColour;
     //public Material[] prefabCubePlayButtonsTimerColour;
 
-    public Material[] prefabCubePlayButtonsBackColour; 
-    public Material[] prefabCubePlayButtonsDefaultColour; 
-    public Material[] prefabCubePlayButtonsNumberColour; 
-    public Material[] cubePlayColourWin;
-
+    public Material[] prefabCubePlayButtonsBackColour;
+    public Material[] prefabCubePlayButtonsDefaultColour;
+    public Material[] prefabCubePlayButtonsNumberColour;
+    public Material[] cubePlayColourWin; // Material name: test
 
     private static int _configurationBoardGameNumberOfRows;
     private static int _configurationBoardGameNumberOfColumns;
@@ -56,43 +55,32 @@ internal class Game : MonoBehaviour
     private static bool _isCellphoneMode; // = 3;// 6;
     private static int _numberOfGaps; // = 3;// 6;
     private static List<string[]> _teamGameSymbols; // = 3;// 6;
-    
-    
-    private static float _timeForChangeRandomly; 
-    private static float _timeForChangeForAll; 
-    private static float _timeForSwitchBetweenTeams; 
-    //private static bool _isBoarGameHelpTextVisible; // = 3;// 6;
+
+    private static float _timeForChangeRandomly;
+    private static float _timeForChangeForAll;
+    private static float _timeForSwitchBetweenTeams;
     private static bool _isBoarGameHelpTextVisible; // = 3;// 6;
 
     // default = 1; this is needed for future version 3D WeirdTicTacToeGame
     // it is not possible to change from UI
     private static int _numberOfDepths = 1;
 
-   // private static int lenghtToCheckMax;
     private static int _lenghtToCheck;
 
     private static bool _isGame2D = true;
 
     private int _maxCubePlayNumber; // = numberOfRows * numberOfColumns * numberOfDepths;
 
-
     private float _cubePlayForFrameScale;
-
-
-    //private Dictionary<int, string> _tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
 
     private string _tagCubePlayFree;
     private string _tagCubePlayTaken;
 
-    //private Dictionary<int, string> _tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
-
-    private string _tagArrowRight; 
-    private string _tagArrowLeft; 
-    private string _tagArrowUp; 
-    private string _tagArrowDown; 
-    private string _tagButtonConfirm; 
-
-    //private Dictionary<int, string> _tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
+    private string _tagArrowRight;
+    private string _tagArrowLeft;
+    private string _tagArrowUp;
+    private string _tagArrowDown;
+    private string _tagButtonConfirm;
 
     private string _tagGameButtonMenuConfigurationLeft;
     private string _tagGameButtonMenuConfigurationRight;
@@ -109,7 +97,7 @@ internal class Game : MonoBehaviour
     public static bool isSameQuantityForMovePerTeam;
 
     private int _index;
-   
+
     private string[] _playersSymbols;
     private int[] _currentPlayer;
     private int[] _currentCountedTagCubePlayTaken;
@@ -135,13 +123,9 @@ internal class Game : MonoBehaviour
 
     private GameObject _cubePlayForFrame;
 
-
     private float[] _timeForHidePlayGameElements;
     private float[] _timeForTimers;
-    //private float _timeForHideDefault = 3f;
-    //private float _timeForHidePlayGameElementsDefault = 3f;
     private float _timeForHidePlayGameElementsDefault = 5f;
-    //private float _timeForHidePlayGameElementsDefault = 20f;
     private float _timeForUnhidePlayGameElements;
     private float _timeForHide;
     private bool _isTimeToHidePlayGameElements;
@@ -150,18 +134,15 @@ internal class Game : MonoBehaviour
     private int[] _startDataForTimer;
     private int indexTimeForHide;
 
-    private string[] _newPlayersSymbols;  
+    private string[] _newPlayersSymbols;
     private List<string[]> _newDataForPlayersSymbols;
-    //private List<List<string[]>> _newDataForPlayersSymbolsSwitch;
     private ArrayList _newDataForPlayersSymbolsSwitch;
     private ArrayList _dataForBoardGame;
     private float[] _coordinatesForCubePlayFrame;
     private bool _isDoubleRandomChange;
     private int _switchChange; // 0 single, 1 double
-    private string[] _oldSymbolsForChange; 
-    private string[] _newSymbolsForChange; 
-
-
+    private string[] _oldSymbolsForChange;
+    private string[] _newSymbolsForChange;
 
     void Start()
     {
@@ -184,7 +165,6 @@ internal class Game : MonoBehaviour
         _tagGameButtonBoardGameHelpText = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagBoardGameHelpText();
 
         _index = 0;
-
 
         // set up: device mode kind
         _configurationBoardGameDeviceModeKind = GameConfigurationKindOfGame.ConfigurationBoardGameDeviceModeKind;
@@ -219,88 +199,37 @@ internal class Game : MonoBehaviour
         _timeForSwitchBetweenTeams = _configurationBoardGameSwitchPlayersSymbolsBetweenTeamsTime;
 
         //------------------------------------
-
-
-        // team game parameters
-        //_configurationTraditionalGame1 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
         _configurationTeamGame1 = GameConfigurationKindOfGame.ConfigurationTeamGame;
         isTeamGame = _configurationTeamGame1;
-        //_configurationTraditionalGame2 = GameConfigurationTeamMembers.ConfigurationTraditionalGame;
-        //_configurationTeamGame2 = GameConfigurationTeamMembers.ConfigurationTeamGame;
-
-        //_configurationTraditionalGame2 = GameConfigurationKindOfGame.ConfigurationTraditionalGame;
-        //_configurationTeamGame2 = GameConfigurationKindOfGame.ConfigurationTeamGame;
-
-        //isTeamGame = GameConfigurationButtonsCommonMethods.IsTeamGame(_configurationTraditionalGame1, _configurationTeamGame1, _configurationTraditionalGame2, _configurationTeamGame2);
-
-        //_configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
-        //playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
-
-        //Debug.Log("isTeamGame 1: " + isTeamGame);
-
-
 
         _configurationTeamGameSymbols = GameConfigurationTeamMembers.ConfigurationTeamGameSymbol;
         _teamGameSymbols = _configurationTeamGameSymbols;
 
-
-       
-        //isSameQuantityForMovePerTeam = false;
         isSameQuantityForMovePerTeam = GameConfigurationChangePlayersSymbolsByTime.ConfigurationBoardGameEqualMoveQuantityForBothTeams;
-        //Debug.Log("isSameQuantityForMovePerTeam: " + isSameQuantityForMovePerTeam);
 
         if (isTeamGame == false)
         {
             _playersSymbols = GameConfigurationPlayersSymbols.ConfigurationPlayerSymbolTableWitPlayersChosenSymbols;
             _configurationBoardGameNumberOfPlayers = GameConfigurationBoardGame.ConfigurationBoardGameNumberOfPlayers;
             _playersNumberGivenForConfiguration = _configurationBoardGameNumberOfPlayers;
-
         }
         else
         {
             _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
 
-            //Debug.Log("isSameQuantityForMovePerTeam: " + isSameQuantityForMovePerTeam);
             // mode 1
-
             if (isSameQuantityForMovePerTeam == true)
             {
                 _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
                 _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
-
-                //string textWithDoubleSymbols = "GAME SCENE:  ";
-                //for (int i = 0; i < _playersSymbols.Length; i++)
-                //{
-                //    string symbol = _playersSymbols[i];
-                //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
-
-                //}
-
-                //Debug.Log("GAME SCENE textWithDoubleSymbols: " + textWithDoubleSymbols);
-
-                //_playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
-                //_playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
             }
 
             // mode 2
-
             else
             {
-                //_playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithTheSameQuantitiesForPlayersMoves(_teamGameSymbols);
-                //_playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_playersSymbols);
-
                 _playersNumberGivenForConfiguration = PlayGameTeamSetUpPlayersSymbols.GetPlayersNumber(_teamGameSymbols);
                 _playersSymbols = PlayGameTeamSetUpPlayersSymbols.CreateTableWithDifferentQuantitiesForPlayersMoves(_teamGameSymbols);
-
-                //for (int i = 0; i < _playersSymbols.Length; i++)
-                //{
-                //    Debug.Log($"_playersSymbols[{i}]: " + _playersSymbols[i]);
-                //}
-
-
-
             }
-
         }
 
 
@@ -315,7 +244,6 @@ internal class Game : MonoBehaviour
 
 
         // [gameBoard] - creating the board game with game object "CubePlay"
-        //_gameBoard = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode, _numberOfGaps);
         _dataForBoardGame = CreateGameBoard.CreateBoardGame(prefabCubePlay, _numberOfDepths, _numberOfRows, _numberOfColumns, prefabCubePlayDefaultColour, _isGame2D, _isCellphoneMode, _numberOfGaps);
 
         _gameBoard = (GameObject[,,])_dataForBoardGame[0];
@@ -330,7 +258,7 @@ internal class Game : MonoBehaviour
         // [mode]
         if (_isCellphoneMode == true)
         {
-          
+
             if (_numberOfColumns > 5 || _numberOfRows > 5)
             {
                 _isBoarGameHelpTextVisible = false;
@@ -340,28 +268,22 @@ internal class Game : MonoBehaviour
 
                 _coordinatesForCubePlayFrame = (float[])_dataForBoardGame[1];
 
-                //_cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
                 _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _coordinatesForCubePlayFrame, _isGame2D);
 
                 _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
                 _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
-            } 
+            }
             else
             {
                 _isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
             }
         }
-        //else
-        //{
-        //    //_isBoarGameHelpTextVisible = PlayGameChangeCubePlayHelpText.ChangeBoarGameHelpTextVisibility(_gameBoard, _playersSymbols, _isBoarGameHelpTextVisible);
-        //}
-
 
         //---------------------------------------------------------------------------
         // TIMER ACTION - start
 
         _isTimerActivate = PlayGameTimerCommonMethods.IsTimerActivate(_timeForChangeRandomly, _timeForChangeForAll, _timeForSwitchBetweenTeams);
-        
+
         if (_isTimerActivate == true)
         {
             _switchTimer = PlayGameTimerCommonMethods.TurnOnTimer();
@@ -381,37 +303,17 @@ internal class Game : MonoBehaviour
                 _switchChange = _startDataForTimer[0];
                 indexTimeForHide = _startDataForTimer[1];
 
-                //Debug.Log("indexTimeForHide: " + indexTimeForHide);
-
-
-                //Debug.Log("isDoubleRandomChange: " + isDoubleRandomChange);
-
-                //_timeForHide = _timeForTimers[0];;
-                //_timeForHide = _timeForTimers[2];
                 _timeForHide = _timeForTimers[indexTimeForHide];
-                //Debug.Log("_timeForHide: " + _timeForHide);
-
 
                 _timeForUnhidePlayGameElements = _timeForTimers[2]; // must to be change
-                //_timeForUnhidePlayGameElements = _timeForTimers[indexTimeForHide]; // must to be change
-                //Debug.Log("_timeForUnhidePlayGameElements: " + _timeForUnhidePlayGameElements);
 
-                //_isTimeToHidePlayGameElements = true;
                 _isTimeToHidePlayGameElements = true;
 
                 _isDoubleRandomChange = PlayGameChangePlayersSymbolsMethods.IsDoubleRandomChange(_gameChangeTimeConfiguration);
-                //Debug.Log("1 _isDoubleRandomChange: " + _isDoubleRandomChange);
-                // if (_isDoubleRandomChange == true)
-
-
-               // Debug.Log("1 _switchChange: " + _switchChange);
-
-
             }
         }
 
         // TIMER ACTION - end
-
 
     }
 
@@ -437,14 +339,14 @@ internal class Game : MonoBehaviour
 
                     int currentPlayerNumber = _currentPlayer[0];
                     GameObject cubePlay = GameCommonMethodsMain.GetCubePlay(_gameBoard, gameObjectName);
-                    
+
                     // move by arrows 
                     if (gameObjectTag == _tagArrowRight || gameObjectTag == _tagArrowLeft || gameObjectTag == _tagArrowDown || gameObjectTag == _tagArrowUp)
                     {
                         _cubePlayFrame = PlayGameFrameMove.GetCubePlayFrame();
-                        _moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(_moveIndexForFrame, gameObjectTag, _cubePlayFrame, _cubePlayForFrameScale, _numberOfRows, _numberOfColumns);                  
+                        _moveIndexForFrame = PlayGameFrameMove.SetUpNewMoveIndexXYForCubePlayFrame(_moveIndexForFrame, gameObjectTag, _cubePlayFrame, _cubePlayForFrameScale, _numberOfRows, _numberOfColumns);
                     }
-                    
+
                     if (gameObjectTag == _tagButtonConfirm)
                     {
                         int indexX = _moveIndexForFrame[_moveIndexForFrameX];
@@ -465,49 +367,12 @@ internal class Game : MonoBehaviour
 
                             _gameBoardVerification2D[cubePlayIndexY, cubePlayIndexX] = cubePlaySymbol;
 
-
-                            //Debug.Log("--------------- BEFORE CON ---------------------");
-
-                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                            //{
-                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                            //}
-
-                            //Debug.Log("--------------- BEFORE CON ---------------------");
-
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
 
-
-                            //Debug.Log("--------------- AFTER CON ---------------------");
-
-                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                            //{
-                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                            //}
-
-                            //Debug.Log("--------------- AFTER CON ---------------------");
-
-                            //_listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
-                            // Debug.Log("isTeamGame 2: " + isTeamGame);
-
                             if (isTeamGame == false)
-                            {
-                                //Debug.Log("isTeamGame 3: " + isTeamGame);
                                 _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
-                            }
                             else
-                            {
-                                //Debug.Log("isTeamGame 4: " + isTeamGame);
                                 _listCheckerForWinner = GameTeamFieldsVerificationCheckerMainMethod.FieldsVerificationGameTeam(_gameBoardVerification2D, _lenghtToCheck, _teamGameSymbols);
-                            
-                            
-                            
-                            
-                            
-                            
-                            }
-
-
 
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
 
@@ -515,14 +380,10 @@ internal class Game : MonoBehaviour
                             {
                                 PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
-                                //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-
                                 if (isTeamGame == false)
                                 {
-                                    //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
                                     PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, cubePlaySymbol);
                                     PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
-                                
                                 }
                                 else
                                 {
@@ -530,15 +391,7 @@ internal class Game : MonoBehaviour
                                     PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
                                     PlayGameChangePlayerSymbol.CreateButtonsWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
-
-
-
                                 }
-
-
-
-
-                                //PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
 
                                 PlayGameMenuButtonsCreate.CreateButtonNewGame(prefabCubePlay, prefabCubePlayButtonsDefaultColour, _isGame2D);
 
@@ -547,6 +400,7 @@ internal class Game : MonoBehaviour
                                 if (_isTimerActivate == true)
                                 {
                                     _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
+
                                     if (isTeamGame == false)
                                         PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
                                     else
@@ -567,13 +421,8 @@ internal class Game : MonoBehaviour
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
-                                    //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                    //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
-
                                     if (isTeamGame == false)
                                     {
-                                        //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                        //PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, cubePlaySymbol);
                                         PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, cubePlaySymbol);
 
                                     }
@@ -591,6 +440,7 @@ internal class Game : MonoBehaviour
                                     if (_isTimerActivate == true)
                                     {
                                         _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
+
                                         if (isTeamGame == false)
                                             PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
                                         else
@@ -599,12 +449,12 @@ internal class Game : MonoBehaviour
                                 }
                             }
                         }
-                        else 
+                        else
                         {
                             GameFieldsVerificationCommonMessages.MessageCubePlayTaken();
                         }
                     }
-                    
+
                     if (gameObjectTag == _tagCubePlayFree || gameObjectTag == _tagCubePlayTaken)
                     {
                         if (gameObjectTag == _tagCubePlayFree)
@@ -629,154 +479,22 @@ internal class Game : MonoBehaviour
                                 _moveIndexForFrame[_moveIndexForFrameY] = cubePlayIndexY;
                             }
 
-                            //_playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
-
-                            //_listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
-
-
-                            //Debug.Log("--------------- BEFORE CON ---------------------");
-
-                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                            //{
-                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                            //}
-                            //Debug.Log("_currentPlayer: " + _currentPlayer);
-                            //Debug.Log("--------------- BEFORE CON ---------------------");
-
                             _playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
 
 
-                            //Debug.Log("--------------- AFTER CON ---------------------");
-
-                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                            //{
-                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                            //}
-                            //Debug.Log("_currentPlayer: " + _currentPlayer);
-                            //Debug.Log("--------------- AFTER CON ---------------------");
-
-
-
-
-
-
-
-
-
-
-                            //Debug.Log("isTeamGame 2: " + isTeamGame);
-
                             if (isTeamGame == false)
-                            {
-                                //Debug.Log("isTeamGame 3: " + isTeamGame);
                                 _listCheckerForWinner = GameFieldsVerificationCheckerMainMethod.FieldsVerification(_gameBoardVerification2D, _lenghtToCheck);
-                            }
                             else
-                            {
-                                //_gameBoardVerification2D = 
-                                // Debug.Log("isTeamGame 1: " + isTeamGame);
-
-
-
-
-                                //_gameBoardVerification2D = new string[,]
-                                //{
-                                //    {"X","",""},
-                                //    {"","O",""},
-                                //    {"X","","X"}
-                                //};
-
-                                //_gameBoardVerification2D = new string[,]
-                                //{
-                                //    {"X","","X"},
-                                //    {"","O",""},
-                                //    {"X","",""}
-                                //};
-
-                                //_gameBoardVerification2D = new string[,]
-                                //{
-                                //    {"O","X",""},
-                                //    {"W","T","W"},
-                                //    {"0","",""}
-                                //};
-
-                                //_gameBoardVerification2D = new string[,]
-                                //{
-                                //    {"O","W","O"},
-                                //    {"X","T",""},
-                                //    {"","W",""}
-                                //};
-
-                                //_gameBoardVerification2D = new string[,]
-                                //{
-                                //    {"","",""},
-                                //    {"W","T","W"},
-                                //    {"","",""}
-                                //};
-
-                                // to do xxoo + win = 3 = return error! - to fix
-
-                                //for (int i = 0; i < _gameBoardVerification2D.GetLength(0); i++)
-                                //{
-                                //    for (int j = 0; j < _gameBoardVerification2D.GetLength(1); j++)
-                                //    {
-                                //        Debug.Log($"_gameBoardVerification2D[{i}, {j}]" + _gameBoardVerification2D[i, j]);
-                                //    }
-                                //}
-
-                                //Debug.Log(" --------------------------------------------------- ");
-
-                                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
-                                //for (int i = 0; i < _teamGameSymbols.Count; i++)
-                                //{
-
-                                //    string[] teamSymbols = _teamGameSymbols[i];                                
-
-                                //    for (int zz = 0; zz < teamSymbols.Length; zz++)
-                                //    {
-                                //        Debug.Log($"TEAM: {i}; symbol[{zz}]: " + teamSymbols[zz]);
-                                //    }
-                                //}
-
-                                //Debug.Log(" ---------- TEAM SYMBOLS ------------ ");
-
-
                                 _listCheckerForWinner = GameTeamFieldsVerificationCheckerMainMethod.FieldsVerificationGameTeam(_gameBoardVerification2D, _lenghtToCheck, _teamGameSymbols);
 
-
-
-
-
-
-                            }
-
-
-
-
-
-
-
-
-
-
                             _isWinnerExists = (bool)_listCheckerForWinner[0];
-                            //Debug.Log(" ----------- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz ");
-                            //Debug.Log("_isWinnerExists: " + _isWinnerExists);
 
                             if (_isWinnerExists == true)
                             {
-                                
-                                
                                 PlayGameMenuAndTimerButtonsActions.DestroyElements();
-
-                                //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
-
 
                                 if (isTeamGame == false)
                                 {
-                                    //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                   // PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, cubePlaySymbol);
                                     PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, cubePlaySymbol);
                                     PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
 
@@ -787,7 +505,6 @@ internal class Game : MonoBehaviour
                                     PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
                                     PlayGameChangePlayerSymbol.CreateButtonsWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _teamGameSymbols);
                                     PlayGameChangeCubePlayForTeamWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols, _teamGameSymbols);
-
                                 }
 
                                 //PlayGameChangeCubePlayForWinner.ChangeAllCubePlayAfterWin(_gameBoard, cubePlaySymbol, _listCheckerForWinner, prefabCubePlayFrame, cubePlayColourWin, _playersSymbols);
@@ -799,6 +516,7 @@ internal class Game : MonoBehaviour
                                 if (_isTimerActivate == true)
                                 {
                                     _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
+
                                     if (isTeamGame == false)
                                         PlayGameTimerCommonMethods.SetUpDefaultSymbolForTimerAferWin();
                                     else
@@ -819,18 +537,8 @@ internal class Game : MonoBehaviour
                                 {
                                     PlayGameMenuAndTimerButtonsActions.DestroyElements();
 
-                                   // PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                    //PlayGameChangePlayerSymbol.SetUpPlayerSymbolForWinner(_isWinnerExists, cubePlaySymbol);
-
-
-
                                     if (isTeamGame == false)
-                                    {
-                                        //PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
-                                        //PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, cubePlaySymbol);
                                         PlayGameChangePlayerSymbol.ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(_isWinnerExists, prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, cubePlaySymbol);
-
-                                    }
                                     else
                                     {
                                         PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
@@ -854,22 +562,20 @@ internal class Game : MonoBehaviour
                             }
                         }
                         else
-                        {
                             GameFieldsVerificationCommonMessages.MessageCubePlayTaken();
-                        }
                     }
 
 
                     if (gameObjectTag == _tagGameButtonMenuConfigurationLeft || gameObjectTag == _tagGameButtonMenuConfigurationRight)
                     {
-                        PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);                   
+                        PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);
                         _gameButtonsMenu = PlayGameMenuButtonsCreate.CreateButtonsMenu(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, prefabCubePlayButtonsNumberColour, _isGame2D);
 
                         if (_isTimerActivate == true)
                         {
                             _switchTimer = PlayGameTimerCommonMethods.TurnOffTimer();
                             PlayGameMenuAndTimerButtonsActions.HideTimerForGameBoard();
-                        }                      
+                        }
                     }
 
                     if (gameObjectTag == _tagGameButtonHelpButtons)
@@ -884,10 +590,7 @@ internal class Game : MonoBehaviour
                             // scale for cubePlayFrame taken from cubePlay, it is cube so one cooridinate is enought
                             _cubePlayForFrameScale = _cubePlayForFrame.transform.localScale.x;
 
-
                             _coordinatesForCubePlayFrame = (float[])_dataForBoardGame[1];
-
-                            //_cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _isGame2D);
                             _cubePlayFrame = PlayGameFrameCreate.CreateCubePlayFrameForPlayerMove(prefabCubePlayFrame, _cubePlayForFrame, _coordinatesForCubePlayFrame, _isGame2D);
 
                             _moveIndexForFrame = PlayGameFrameMove.CreateTableForMoveIndexForFrame(_numberOfRows);
@@ -931,34 +634,22 @@ internal class Game : MonoBehaviour
                     }
 
 
-                    if (gameObjectTag ==  _tagGameButtonNewGame)
+                    if (gameObjectTag == _tagGameButtonNewGame)
                     {
-                        //ScenesChange.GoToSceneConfigurationBoardGame(); 
                         ScenesChangeMainMethods.GoToSceneStartGame();
                     }
                 }
-            }   
+            }
         }
         // PLAYER ACTION - end
-
-
-
-
-
 
 
         // TIMER ACTION - start
 
         if (_isTimerActivate == true)
         {
-            
-
             if (_switchTimer == true)
             {
-                //int indexTimeForHide = 0;
-                //PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
-                //PlayGameTimerCommonMethods.CountdownSecondsForBoarGame(_timeForHide);
-
                 PlayGameTimerCommonMethods.CountdownSecondsForChangePlayersSymbols(_timeForUnhidePlayGameElements);
                 PlayGameTimerCommonMethods.CountdownSecondsForBoarGame(_timeForHide);
 
@@ -971,29 +662,13 @@ internal class Game : MonoBehaviour
                         PlayGameMenuAndTimerButtonsActions.ShowTimerForChangePlayersSymbols();
                         PlayGameMenuAndTimerButtonsActions.HidePlayGameElements(_gameBoard);
                         _isTimeToHidePlayGameElements = false;
-                        //_timeForHide = _timeForTimers[indexTimeForHide];
-                        //Debug.Log("_switchChange: " + _switchChange);
 
                         if (_switchChange == 0)
                         {
-                            //Debug.Log("1 A - _switchChange: " + _switchChange);
-                            //Debug.Log("2 == 0 - _switchChange: " + _switchChange);
-                            //_timeForHide = _timeForTimers[0];
                             if (_isDoubleRandomChange == false)
                                 _timeForHide = _timeForTimers[0];
                             else
                                 _timeForHide = _timeForTimers[1];
-                            //Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
-
-
-                            //Debug.Log(" ----------- PLAYER SYMBOLS --------------------");
-
-                            //for (int i = 0; i < _playersSymbols.Length; i++)
-                            //{
-                            //    Debug.Log($"_playersSymbols: {_playersSymbols[i]}");
-                            //}
-
-                            //Debug.Log(" ----------- PLAYER SYMBOLS --------------------");
 
                             _newDataForPlayersSymbols = PlayGameChangePlayersSymbolsMethods.GetNewDataForPlayersSymbols(_playersSymbols, _teamGameSymbols, _gameChangeTimeConfiguration, isSameQuantityForMovePerTeam, isTeamGame);
 
@@ -1001,178 +676,56 @@ internal class Game : MonoBehaviour
                             _newSymbolsForChange = _newDataForPlayersSymbols[1];
                             _newPlayersSymbols = _newDataForPlayersSymbols[2];
 
-                            //Debug.Log(" ----------- OLD/ NEW--------------------"); 
-
-                            //for (int i = 0; i < _oldSymbolsForChange.Length; i++)
-                            //{
-                            //    Debug.Log($"old symbol: {_oldSymbolsForChange[i]}, new Symbol {_newSymbolsForChange[i]}");
-                            //}
-
-                            //Debug.Log(" ----------- OLD/ NEW--------------------");
-
                             if (isTeamGame == true)
                             {
                                 _teamGameSymbols = PlayGameChangePlayersSymbolsMethods.SetUpNewTeamGameSymbols(_teamGameSymbols, _oldSymbolsForChange, _newSymbolsForChange);
-
-                                // to do 
-                                //_playersSymbols
-                                //_playersSymbols = _newPlayersSymbols;
                                 _playersSymbols = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsForTeamGame(_playersSymbols, _oldSymbolsForChange, _newSymbolsForChange);
-
                             }
                             else
-                            {
                                 _playersSymbols = _newPlayersSymbols;
-                            }
+
 
                             PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChange, _newSymbolsForChange);
 
                             _gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
                             _gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
 
-                            // ??????????????????????????????????????????????????
-
-                            //Debug.Log("--------------- BEFORE 2 ---------------------");
-
-                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                            //{
-                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                            //}
-                            //Debug.Log("_currentPlayer: " + _currentPlayer);
-                            //Debug.Log("--------------- BEFORE 2 ---------------------");
-
                             _playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
 
-                            //Debug.Log("--------------- AFTER 2 ---------------------");
-
-                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                            //{
-                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                            //}
-                            //Debug.Log("_currentPlayer: " + _currentPlayer);
-                            //Debug.Log("--------------- AFTER 2 ---------------------");
-
-                            //_playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
-
-
-
                             _gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
-
 
                             // new added
                             if (_isDoubleRandomChange == true)
                                 _switchChange = PlayGameChangePlayersSymbolsMethods.SetUpNewSwitchChange(_switchChange);
-                            //Debug.Log("1 B - _switchChange: " + _switchChange);
                         }
                         else
                         if (_switchChange == 1)
                         {
-                            //Debug.Log("2 == 1 - _switchChange: " + _switchChange);
                             _timeForHide = _timeForTimers[1];
-                            //_timeForHide = _timeForTimers[0];
-                            //Debug.Log("2 == 1 - _timeForHide: " + _timeForHide);
 
                             _newDataForPlayersSymbolsSwitch = PlayGameSwitchPlayersSymbolsMethods.GetPlayersSymbolsForSwitch(_teamGameSymbols);
 
+                            PlayGameSwitchPlayersSymbolsMethods.SetUpSwitchedPlayersSymbolsForGameBoard(_gameBoard, _newDataForPlayersSymbolsSwitch);
 
-                             PlayGameSwitchPlayersSymbolsMethods.SetUpSwitchedPlayersSymbolsForGameBoard(_gameBoard, _newDataForPlayersSymbolsSwitch);
-
-                             _teamGameSymbols = PlayGameSwitchPlayersSymbolsMethods.SetUpNewTeamGameSymbols(_newDataForPlayersSymbolsSwitch, _teamGameSymbols);
-
+                            _teamGameSymbols = PlayGameSwitchPlayersSymbolsMethods.SetUpNewTeamGameSymbols(_newDataForPlayersSymbolsSwitch, _teamGameSymbols);
 
                             _gameButtonsChangePlayersSymbolsTop = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D);
                             _gameButtonsChangePlayersSymbols = PlayGameSwitchPlayersSymbolsButtonsCreate.GameSwitchPlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _newDataForPlayersSymbolsSwitch);
 
-
-                            _playersSymbols = PlayGameSwitchPlayersSymbolsMethods.GetNewPlayersSymbols(_playersSymbols, _newDataForPlayersSymbolsSwitch);
-
-
-                            // ??????????????????????????????????????????????????
-
-                            //Debug.Log("--------------- BEFORE 1 ---------------------");
-
-                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                            //{
-                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                            //}
-
-                            //Debug.Log("--------------- BEFORE 1 ---------------------");
+                            _playersSymbols = PlayGameSwitchPlayersSymbolsMethods.GetNewPlayersSymbols(_playersSymbols, _newDataForPlayersSymbolsSwitch); ;
 
                             _playerSymbolMove = PlayGameSwitchPlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _newDataForPlayersSymbolsSwitch);
-
-                            //_playerSymbolMove = PlayGameChangePlayerSymbol.ChangeCurrentPlayersSymbolsMove(_playerSymbolMove, _playersSymbols, _playersNumberGivenForConfiguration, _currentPlayer);
-
-                            //Debug.Log("--------------- AFTER 1 ---------------------");
-
-                            //for (int i = 0; i < _playerSymbolMove.Length; i++)
-                            //{
-                            //    Debug.Log($"_playerSymbolMove[{i}]: " + _playerSymbolMove[i]);
-                            //}
-
-                            //Debug.Log("--------------- AFTER 1 ---------------------");
-
 
                             _gameBoardVerification2D = PlayGameSwitchPlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _newDataForPlayersSymbolsSwitch);
 
 
                             if (_isDoubleRandomChange == true)
                                 _switchChange = PlayGameChangePlayersSymbolsMethods.SetUpNewSwitchChange(_switchChange);
-                            //Debug.Log("2 == 1 - _switchChange: " + _switchChange);
                         }
-
-                        //if (_isDoubleRandomChange == true)
-                        //    _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
-
-
-                        //_oldSymbolsForChande = _newDataForPlayersSymbols[0];
-                        //_newSymbolsForChande = _newDataForPlayersSymbols[1];
-                        //_newPlayersSymbols = _newDataForPlayersSymbols[2];
-
-                        //for (int i = 0; i < _oldSymbolsForChande.Length; i++)
-                        //{
-                        //    Debug.Log($"_oldSymbolsForChande[{i}]" + _oldSymbolsForChande[i]);
-                        //}
-                        //Debug.Log(" ----------------------------------------------------------- ");
-
-                        //for (int i = 0; i < _newSymbolsForChande.Length; i++)
-                        //{
-                        //    Debug.Log($"_newSymbolsForChande[{i}]" + _newSymbolsForChande[i]);
-                        //}
-                        //Debug.Log(" ----------------------------------------------------------- ");
-
-                        //for (int i = 0; i < _newPlayersSymbols.Length; i++)
-                        //{
-                        //    Debug.Log($"_newPlayersSymbols[{i}]" + _newPlayersSymbols[i]);
-                        //}
-                        //Debug.Log(" ----------------------------------------------------------- ");
-                        //Debug.Log(" ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz ");
-
-
-                        //PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsForGameBoard(_gameBoard, _oldSymbolsForChange, _newSymbolsForChange);
-
-                        //_gameButtonsChangePlayersSymbolsTop = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsTopCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, _gameChangeTimeConfiguration, _newSymbolsForChange);
-                        //_gameButtonsChangePlayersSymbols = PlayGameChangePlayersSymbolsButtonsCreate.GameChangePlayersSymbolsButtonsCreate(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, _isGame2D, prefabCubePlayButtonsBackColour, _oldSymbolsForChange, _newSymbolsForChange);
-
-                        //_playerSymbolMove = PlayGameChangePlayersSymbolsMethods.SetUpNewPlayersSymbolsMove(_playerSymbolMove, _oldSymbolsForChange, _newSymbolsForChange);
-
-
-
-                        //_gameBoardVerification2D = PlayGameChangePlayersSymbolsMethods.SetUpNewGameBoardVerification2D(_gameBoardVerification2D, _oldSymbolsForChange, _newSymbolsForChange);
-
-                        //if (_isDoubleRandomChange == true)
-                        //{
-                        //    _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
-                        //}
-
-                        //Debug.Log("_isDoubleRandomChange: " + _isDoubleRandomChange);
-                        // if (_isDoubleRandomChange == true)
-                        // _switchChange = PlayGameChangePlayersSymbolsComnonMethods.SetUpNewSwitchChange(_switchChange);
-
                     }
                 }
                 else
                 {
-                    //Debug.Log("_timeForUnhidePlayGameElements: " + _timeForUnhidePlayGameElements);
                     _timeForUnhidePlayGameElements -= 1 * Time.deltaTime;
 
                     if (_timeForUnhidePlayGameElements < 0)
@@ -1184,7 +737,6 @@ internal class Game : MonoBehaviour
                         _isTimeToHidePlayGameElements = true;
                         _timeForUnhidePlayGameElements = _timeForTimers[2];
                     }
-
                 }
             }
             else
@@ -1192,16 +744,7 @@ internal class Game : MonoBehaviour
                 //true = stop time, in future, can set up the main configuration for time, false = stop
                 //where the user can set up if this time will be stopped or counted from the beginning
             }
-
-
-
-
-
-
-
         }
-
-
 
         // TIMER ACTION - end
     }

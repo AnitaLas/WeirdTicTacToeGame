@@ -34,14 +34,12 @@ namespace Assets.Scripts
                         currentIndex = index[0];
 
                         if (currentIndex >= tableLenght)
-                        {
                             stringAlphabet = "-";
-                        } 
+
                         else
-                        {
                             stringAlphabet = tableWithCharacters[currentIndex];
-                        }
-                         newTable[indexDepth, indexRow, indexColumn] = stringAlphabet;
+
+                        newTable[indexDepth, indexRow, indexColumn] = stringAlphabet;
 
                         index[0] = index[0] + 1;
                     }
@@ -102,7 +100,7 @@ namespace Assets.Scripts
                             GameObject chosenPlayerSymbol = table[indexDepth, indexRow, indexColumn];
                             string chosenPlayerSymbolText = GameCommonMethodsMain.GetCubePlayText(chosenPlayerSymbol);
 
-                            tableWitPlayersChosenSymbols[index] = chosenPlayerSymbolText;                          
+                            tableWitPlayersChosenSymbols[index] = chosenPlayerSymbolText;
                         }
                     }
                 }
@@ -114,7 +112,7 @@ namespace Assets.Scripts
         public static GameObject[,,] ChangeDataForTableWithSymbols(GameObject[,,] tableWithSymbolsBase, string[] tableWitPlayersChosenSymbols, Material[] prefabSymbolPlayerMaterialInactiveField, string tagConfigurationPlayerSymbolChooseSymbol, string tagConfigurationBoardGameInactiveFieldt)
         {
             Material cubeColourInactiveField = prefabSymbolPlayerMaterialInactiveField[0];
-;           
+            ;
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWithSymbolsBase.GetLength(2);
             int maxIndexRow = tableWithSymbolsBase.GetLength(1);
@@ -137,9 +135,8 @@ namespace Assets.Scripts
                         GameCommonMethodsMain.ChangeTextFontSize(cubePlay, fontSize);
 
                         if (!cubePlayText.Equals(inactiveField))
-                        {
-                            GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationPlayerSymbolChooseSymbol);                                              
-                        }
+                            GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationPlayerSymbolChooseSymbol);
+
                         else
                         {
                             GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveFieldt);

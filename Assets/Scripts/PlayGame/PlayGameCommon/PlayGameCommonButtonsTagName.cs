@@ -212,7 +212,5 @@ namespace Assets.Scripts
             string currentNumber = GetTagsNameFromDictionaryTagPlayerSymbolMove(dictionatyId);
             return currentNumber;
         }
-
-        
     }
 }

@@ -10,8 +10,6 @@ namespace Assets.Script
 {
     internal class GameNameButtonsCommonCreate
     {
-
-
         public static GameObject[,,] CreateCommonButtonForStartGameFourRows(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
         {
             GameObject[,,] button;
@@ -53,9 +51,5 @@ namespace Assets.Script
 
             return button;
         }
-
-
-       
-
     }
 }

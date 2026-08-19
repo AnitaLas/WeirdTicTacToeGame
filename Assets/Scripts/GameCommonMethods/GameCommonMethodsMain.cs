@@ -12,10 +12,8 @@ namespace Assets.Scripts
 {
     internal class GameCommonMethodsMain
     {
-
         // double 14/15 digits after coma
         // float 6/7 digits after coma
-
         public static float ConvertDoubleToFloat(double number)
         {
             string doubleToString = number.ToString();
@@ -66,7 +64,6 @@ namespace Assets.Scripts
 
         // even number - 2 4 6 
         // odd number - 3 5 7
-
         public static bool IsNumberEven(int number)
         {
             bool isNumberEven;
@@ -99,13 +96,6 @@ namespace Assets.Scripts
             }
         }
 
-        //public static int ChooseRandomNumber(int maxNumber)
-        //{
-        //    Random random = new Random();
-        //    int randomNumber = random.Next(0, maxNumber);
-        //    return randomNumber;
-        //}
-
         public static int ConvertDecimalToInt(decimal number)
         {
             int result = decimal.ToInt32(number);
@@ -123,12 +113,6 @@ namespace Assets.Scripts
             float result = decimal.ToSingle(number);
             return result;
         }
-
-        //public static decimal RoundDown(decimal number)
-        //{
-        //    decimal result = Math.Floor(number);
-        //    return result;
-        //}
 
         public static decimal RoundUp(decimal number)
         {
@@ -220,26 +204,17 @@ namespace Assets.Scripts
             string gameObjectName = gameObjectFullName.Substring(0, 8);
 
             if (gameObjectName.Equals("CubePlay")) // to fix, no static string!
-            {
                 ChangeTextForFirstChild(gameObject, gameObjectText);
 
-            }
-
             if (gameObjectName.Equals("PlayerSymbol")) // to fix, no static string!
-            {
                 ChangeTextForSecondChild(gameObject, gameObjectText);
-
-            }
         }
 
         public static string GetCubePlayText(GameObject gameObject)
         {
-            // game object: prefab CubePlay -> CubePlayCanvas ->
             var newPrefabCubePlayCanvas = gameObject.transform.GetChild(0);
-            // game object: prefab CubePlay -> CubePlayCanvas -> CubePlayText
             var newPrefabCubePlayCanvasText = newPrefabCubePlayCanvas.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             string text = newPrefabCubePlayCanvasText.text;
-            //Debug.Log("text = " + text);
             return text;
         }
 
@@ -247,7 +222,6 @@ namespace Assets.Scripts
         {
             var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
             newPrefabCubePlayCanvasText.color = textColor;
-
         }
 
         public static void ChangeTextFontSize(GameObject gameObject, float fontSize)
@@ -256,27 +230,20 @@ namespace Assets.Scripts
             newPrefabCubePlayCanvasText.fontSize = fontSize;
         }
 
-        //public static void ChangeTextAlignmentBottom(GameObject gameObject)
-        //{
-        //    var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
-        //    newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Bottom;
-        //}
-
-        //public static void ChangeTextAlignmenTop(GameObject gameObject)
-        //{
-        //    var newPrefabCubePlayCanvasText = GetCubePlayTextMeshProUGUI(gameObject);
-        //    newPrefabCubePlayCanvasText.alignment = TextAlignmentOptions.Top;
-        //}
-
         public static Color GetNewColor(int dictionaryColorId)
         {
             Dictionary<int, Tuple<float, float, float, float>> colorDictionary = GameDictionariesScenesCommon.DictionaryColor();
             var newColor = colorDictionary[dictionaryColorId];
 
-            float r = newColor.Item1;
-            float g = newColor.Item2;
-            float b = newColor.Item3;
-            float a = newColor.Item4;
+            //float r = newColor.Item1;
+            //float g = newColor.Item2;
+            //float b = newColor.Item3;
+            //float a = newColor.Item4;
+
+            float r = newColor.Item1 / 255f;
+            float g = newColor.Item2 / 255f; ;
+            float b = newColor.Item3 / 255f; ;
+            float a = newColor.Item4 / 255f; ;
 
             Color newTextColor = new Color(r, g, b, a);
             return newTextColor;
@@ -311,10 +278,7 @@ namespace Assets.Scripts
                     for (int indexColumn = 0; indexColumn < lenghtForColumns; indexColumn++)
                     {
                         if (table[indexDepth, indexRow, indexColumn].Equals(currentNumberForPrefabCubePlay))
-                        {
-
                             return Tuple.Create(indexDepth, indexRow, indexColumn);
-                        }
                     }
                 }
             }
@@ -344,9 +308,7 @@ namespace Assets.Scripts
                         string cubePlayNameFromTable = cubePlay.name;
 
                         if (cubePlayNameFromTable == cubePlayName)
-                        {
                             return Tuple.Create(indexDepth, indexRow, indexColumn);
-                        }
                     }
                 }
             }
@@ -374,13 +336,10 @@ namespace Assets.Scripts
                         string cubePlayNameFromTable = cubePlay.name;
 
                         if (cubePlayNameFromTable == cubePlayName)
-                        {
                             return cubePlay;
-                        }
                     }
                 }
             }
-
             return cubePlay = table[0, 0, 0];
         }
 
@@ -428,18 +387,6 @@ namespace Assets.Scripts
             return gameObjectName;
         }
 
-        //public static string GetParentObjectName(RaycastHit touchGameObject)
-        //{
-        //    string gameObjectParentName = touchGameObject.collider.transform.parent.name;
-        //    return gameObjectParentName;
-        //}
-
-        //public static string GetParentObjectName(GameObject gameObject)
-        //{
-        //    string gameObjectParentName = gameObject.transform.parent.name;
-        //    return gameObjectParentName;
-        //}
-
         public static string GetObjectTag(GameObject gameObject)
         {
             string gameObjectTagName = gameObject.tag;
@@ -448,7 +395,6 @@ namespace Assets.Scripts
 
         public static GameObject GetObjectByTagName(string tagName)
         {
-            //GameObject gameObject = GameObject.FindWithTag(tagName);
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tagName);
             GameObject gameObject = gameObjects[0];
             return gameObject;
@@ -497,35 +443,25 @@ namespace Assets.Scripts
         public static int GetLowerNumber(int numberOne, int numberTwo)
         {
             if (numberTwo > numberOne)
-            {
                 return numberOne;
-            }
+
             else if (numberTwo < numberOne)
-            {
                 return numberTwo;
-            }
+
             else
-            {
-                // verticalLenght = horizontalLenght
                 return numberTwo;
-            }
         }
 
         public static int GetBiggerNumber(int numberOne, int numberTwo)
         {
             if (numberTwo > numberOne)
-            {
                 return numberTwo;
-            }
+
             else if (numberTwo < numberOne)
-            {
                 return numberOne;
-            }
+
             else
-            {
-                //verticalLenght = horizontalLenght
                 return numberOne;
-            }
         }
 
         public static void ChangeColourForGameObject(GameObject gameObject, Material newColour)
@@ -540,13 +476,9 @@ namespace Assets.Scripts
             int numberOfTagsLength = numberOfTags.Length;
 
             if (numberOfTagsLength > 0)
-            {
                 return true;
-            }
             else
-            {
                 return false;
-            }
         }
     }
 }

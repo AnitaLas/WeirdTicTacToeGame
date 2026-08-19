@@ -11,10 +11,10 @@ namespace Assets.Scripts
             GameObject[,,] table;
             int start = 1;
             int end = ScreenVerificationMethods.GetMaxPlayerNumberForConfiguration(isCellphoneMode);
-            float newCoordinateY = 0f; 
+            float newCoordinateY = 0f;
             string inactiveText = "-";
 
-            table = GameConfigurationButtonsWithNumbersCommonMethods.ChangeDataForTableWithNumbers( tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
+            table = GameConfigurationButtonsWithNumbersCommonMethods.ChangeDataForTableWithNumbers(tableWtithNumber, tagConfigurationBoardGameTableNumberForAll, tagConfigurationBoardGameInactiveField, start, end, newCoordinateY, inactiveText);
             return table;
         }
 
@@ -23,14 +23,7 @@ namespace Assets.Scripts
             GameObject[,,] tableWithNumbers;
             GameObject[,,] tableWithNumberFinal;
 
-            //Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            //string tagConfigurationBoardGameTableNumberPlayers = configurationBoardGameDictionaryTag[11];
-            //string tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
-
-            //int dictionatyId = 11;
-            //string tagConfigurationBoardGameTableNumberPlayers = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
             string tagConfigurationBoardGameTableNumberPlayers = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberPlayers();
-            
             string tagConfigurationBoardGameInactiveField = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInactiveField();
 
             var numbers = ScreenVerificationMethods.GetNumberOfRowsAndColumnsForDefaulTableWithNumber(isCellphoneMode);
@@ -45,4 +38,3 @@ namespace Assets.Scripts
         }
     }
 }
-

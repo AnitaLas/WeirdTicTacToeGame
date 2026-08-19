@@ -6,14 +6,10 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsCommonCreate
     {
-        // ---
         public static GameObject[,,] CreateCommonButtonSave(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary)
         {
             GameObject[,,] tableButtonNewGame;
 
-            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
-
-            //string buttonText = buttonsGameNameDictionary[1];
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForButtonSave();
 
             int numberOfDepths = 1;
@@ -36,9 +32,6 @@ namespace Assets.Scripts
         {
             GameObject[,,] tableButtonNewGame;
 
-            //Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
-
-            //string buttonText = buttonsGameNameDictionary[2];
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameForButtonBack();
 
             int numberOfDepths = 1;
@@ -56,33 +49,6 @@ namespace Assets.Scripts
 
             return tableButtonNewGame;
         }
-
-        //public static GameObject[,,] CreateCommonButtonBackToConfiguration(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary)
-        //{
-        //    GameObject[,,] tableButtonNewGame;
-
-        //    Dictionary<int, string> buttonsGameNameDictionary = GameDictionariesScenesCommon.DictionaryButtonsCommonName();
-
-        //    string buttonText = buttonsGameNameDictionary[2];
-
-        //    int numberOfDepths = 1;
-        //    int numberOfRows = 3;
-        //    int numberOfColumns = 6;
-
-        //    string[] tableWithTextForButtonNewGame = ButtonsText.CreateTableWithButtonNameForGameConfiguration(numberOfRows, numberOfColumns, buttonText);
-
-        //    tableButtonNewGame = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
-
-        //    float newCoordinateY = -4.5f;
-        //    float newCoordinateX = 0.42f;
-
-        //    ButtonsCommonMethods.ChangeDataForSingleCommonButton(tableButtonNewGame, newCoordinateY, newCoordinateX, tagNameDictionary);
-        //    GameConfigurationButtonsActions.HideButtonBackToConfiguration(tableButtonNewGame);
-
-        //    return tableButtonNewGame;
-        //}
-        // ---
-
         public static GameObject[,,] CreateCommonButtonForText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
         {
             GameObject[,,] tableButtonNewGame;
@@ -97,7 +63,7 @@ namespace Assets.Scripts
 
             float newCoordinateY = 0f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(tableButtonNewGame, newCoordinateY, tagNameDictionary);
-            
+
             float newScale = 0.3f;
             ButtonsCommonMethods.CreatingOneButtonByChangingCoordinatesXYForPrefabCubePlay(tableButtonNewGame, newScale);
 

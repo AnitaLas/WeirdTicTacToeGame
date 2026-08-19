@@ -11,8 +11,8 @@ namespace Assets.Scripts
     {
         public static List<GameObject> GameTimerButtonsCreate(GameObject prefabTimer)
         {
-            GameObject battonTimerForBoardGame = PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForBoardGame(prefabTimer);           
-            GameObject battonTimerForPlayers = PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForChangePlayersSymbols(prefabTimer);           
+            GameObject battonTimerForBoardGame = PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForBoardGame(prefabTimer);
+            GameObject battonTimerForPlayers = PlayGameTimerButtonsCreateSingleButtonCountdownSecondsForChangePlayersSymbols(prefabTimer);
 
             List<GameObject> buttonsAll = new List<GameObject>();
             buttonsAll.Insert(0, battonTimerForBoardGame);

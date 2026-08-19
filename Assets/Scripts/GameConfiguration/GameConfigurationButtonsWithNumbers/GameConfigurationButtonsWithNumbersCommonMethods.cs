@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersCommonMethods : MonoBehaviour
-    {   
+    {
         public static GameObject[,,] CreateTableWithNumbers(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             GameObject[,,] tableWithNumber;
@@ -30,7 +30,7 @@ namespace Assets.Scripts
             return numbers;
         }
 
-        public static GameObject[,,] ChangeDataForTableWithNumbers(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, int start, int end, float newCoordinateY, string inactiveText )
+        public static GameObject[,,] ChangeDataForTableWithNumbers(GameObject[,,] tableWtithNumber, string tagConfigurationBoardGameTableNumberForAll, string tagConfigurationBoardGameInactiveField, int start, int end, float newCoordinateY, string inactiveText)
         {
             int maxIndexDepth = 1;
             int maxIndexColumn = tableWtithNumber.GetLength(2);
@@ -49,7 +49,7 @@ namespace Assets.Scripts
                         GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameTableNumberForAll);
                         GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(cubePlay, newCoordinateY);
 
-                        if (start >= cubePlayTextInt || (end + 1)<= cubePlayTextInt)
+                        if (start >= cubePlayTextInt || (end + 1) <= cubePlayTextInt)
                         {
                             GameCommonMethodsMain.ChangeTextForCubePlay(cubePlay, inactiveText);
                             GameCommonMethodsMain.ChangeTagForGameObject(cubePlay, tagConfigurationBoardGameInactiveField);
@@ -77,7 +77,7 @@ namespace Assets.Scripts
                     {
                         currentIndex = index[0];
                         string stringNumber = table[currentIndex];
-                        
+
                         newTable[indexDepth, indexRow, indexColumn] = stringNumber;
                         index[0] = index[0] + 1;
                     }

@@ -8,7 +8,6 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsTeamMembersButtonsName
     {
-
         public static string GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersName(int dictionatyId)
         {
             Dictionary<int, string> buttonsNames = GameDictionariesSceneTeamMembers.DictionaryButtonsConfigurationTeamMembersName();
@@ -59,7 +58,6 @@ namespace Assets.Scripts
         }
 
         // default numbers:
-
         public static string GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultNumbers(int dictionatyId)
         {
             Dictionary<int, string> buttonsNames = GameDictionariesSceneTeamMembers.DictionaryButtonsConfigurationTeamMembersDefaultNumbers();
@@ -82,7 +80,6 @@ namespace Assets.Scripts
         }
 
         // default symbols:
-
         public static string GetButtonsNameFromDictionaryButtonsConfigurationTeamMembersDefaultSymbols(int dictionatyId)
         {
             Dictionary<int, string> buttonsNames = GameDictionariesSceneTeamMembers.DictionaryButtonsConfigurationTeamMembersDefaultSymbols();

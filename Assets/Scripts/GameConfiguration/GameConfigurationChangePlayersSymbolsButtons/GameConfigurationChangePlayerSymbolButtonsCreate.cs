@@ -26,18 +26,12 @@ namespace Assets.Scripts
             GameObject[,,] buttonForAllText = GameConfigurationChangePlayerSymbolCreateButtonChangeForAllText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
 
             // buttons with number
-            GameObject[,,]  battonRandomlyNumber = GameConfigurationCreateButtonChangeRandomlyNumber(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
-            GameObject[,,]  battonForAllNumber = GameConfigurationCreateButtonChangeForAllNumber(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+            GameObject[,,] battonRandomlyNumber = GameConfigurationCreateButtonChangeRandomlyNumber(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
+            GameObject[,,] battonForAllNumber = GameConfigurationCreateButtonChangeForAllNumber(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
 
-
-
-
-
-           
             buttonsText.Insert(0, buttonRandomlyText);
             buttonsText.Insert(1, buttonForAllText);
 
-            
             buttonsNumber.Insert(0, battonRandomlyNumber);
             buttonsNumber.Insert(1, battonForAllNumber);
 
@@ -50,7 +44,6 @@ namespace Assets.Scripts
             buttonsAll.Insert(5, buttonForAllText);
             buttonsAll.Insert(6, battonForAllNumber);
 
-            //Debug.Log("4 isTeamGame: " + isTeamGame);
             if (isTeamGame == true)
             {
                 // buttons with text
@@ -65,7 +58,7 @@ namespace Assets.Scripts
                 buttonsNumber.Insert(2, buttonTeamGameSwitchSymbolsNumber);
                 buttonsAll.Insert(8, buttonTeamGameSwitchSymbolsNumber);
 
-                if(isEqualMoveQuantityForBothTeams == false)
+                if (isEqualMoveQuantityForBothTeams == false)
                 {
                     // buttons with text
                     GameObject[,,] buttonEqualMoveQuantityText = GameConfigurationChangePlayerSymbolCreateButtonEqualMoveQuantityText(prefabCubePlay, prefabCubePlayButtonsDefaultColour, isGame2D);
@@ -78,9 +71,7 @@ namespace Assets.Scripts
 
                     buttonsNumber.Insert(3, buttonEqualMoveQuantitySymbol);
                     buttonsAll.Insert(9, buttonEqualMoveQuantitySymbol);
-
                 }
-
             }
 
             GameObject gameObjectBase = buttonRandomlyText[0, 0, 0];
@@ -94,17 +85,6 @@ namespace Assets.Scripts
                 GameConfigurationButtonsMethods.ChangeDataForGameConfigurationChangePlayersSymbolsButtonsTeamGame(buttonsText, buttonsNumber);
             else
                 GameConfigurationButtonsMethods.ChangeDataForGameConfigurationChangePlayersSymbolsButtonsOldGame(buttonsText, buttonsNumber);
-
-            //GameConfigurationButtonsMethods.ChangeDataForGameConfigurationChangePlayerSymbolButtons(buttonsText, buttonsNumber, newYForButtons);
-            //GameConfigurationButtonsMethods.ChangeDataForGameConfigurationButtonsChangePlayersSymbols(buttonsText, buttonsNumber, newYForButtons);
-
-
-
-
-
-
-
-
 
             return buttonsAll;
         }
@@ -129,38 +109,28 @@ namespace Assets.Scripts
         // buttons: top: player symbols & change
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopPlayerSymbol(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            //GameObject[,,] buttons;
-
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameToPlayersSymbols();
 
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsFourRows(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
-
-            //string frontTextToAdd = "InformationButtonTopPlayersSymbols_";
+            ;
             float newCoordinateY = 4.35f;
             float newCoordinateX = -0.8f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
-
-            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
 
             return button;
         }
 
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopChange(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
         {
-            //GameObject[,,] buttons;
-
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameTopChange();
 
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
-            //string frontTextToAdd = "InformationButtonTopChange_";
             float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
-
-            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
 
             return button;
         }
@@ -169,19 +139,14 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopCommonInformation(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
-            //GameObject[,,] buttons;
-
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameTimeInSeconds();
 
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsFourRows(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
-            //string frontTextToAdd = "InformationButtonTopPlayersSymbols_";
             float newCoordinateY = 4.35f;
             float newCoordinateX = -0.8f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
-
-            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
 
             return button;
         }
@@ -216,10 +181,6 @@ namespace Assets.Scripts
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangeRandomly();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
-            //GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
-
-            //float newCoordinateY = 1f;
-            //ButtonsCommonMethods.ChangeDataForSingleGameConfigurationButtons(button, newCoordinateY, tagName);
 
             string frontTextToAdd = "ChangeRandomly_";
             ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
@@ -254,19 +215,14 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopRandomly(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
         {
-            //GameObject[,,] buttons;
-
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameChangeRandomlyForInformation();
 
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
-            //string frontTextToAdd = "InformationButtonTopChange_";
             float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
-
-            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
 
             return button;
         }
@@ -291,7 +247,6 @@ namespace Assets.Scripts
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameChangeAll();
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonChangForAll();
 
-            //GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             string frontTextToAdd = "ChangeForAll_";
@@ -327,19 +282,14 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopForAll(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
         {
-            //GameObject[,,] buttons;
-
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameChangeForAllForInformation();
 
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
-            //string frontTextToAdd = "InformationButtonTopChange_";
             float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
-
-            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
 
             return button;
         }
@@ -358,7 +308,6 @@ namespace Assets.Scripts
             return buttonsAll;
         }
 
-
         // buttons: switch symbols beetween teams
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonSwitchRandomlyText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
@@ -366,7 +315,6 @@ namespace Assets.Scripts
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagChangeBetweenTeams();
 
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
-            //GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             string frontTextToAdd = "ChangeBetweenTeams_";
             ButtonsCommonMethods.ChangeNameForGameConfigurationButtons(button, frontTextToAdd);
@@ -401,19 +349,14 @@ namespace Assets.Scripts
 
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonTopBetweenTeams(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
         {
-            //GameObject[,,] buttons;
-
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInformation();
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameChangeBetweenTeamsForInformation();
 
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
-            //string frontTextToAdd = "InformationButtonTopChange_";
             float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
-
-            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
 
             return button;
         }
@@ -433,7 +376,6 @@ namespace Assets.Scripts
         }
 
         // buttons: type for move per team
-
         public static GameObject[,,] GameConfigurationChangePlayerSymbolCreateButtonEqualMoveQuantityText(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameChangeEqualMoveQuantity();
@@ -455,6 +397,5 @@ namespace Assets.Scripts
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             return button;
         }
-
     }
 }

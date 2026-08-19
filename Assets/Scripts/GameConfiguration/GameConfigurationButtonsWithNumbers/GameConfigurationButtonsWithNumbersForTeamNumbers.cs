@@ -9,8 +9,6 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersForTeamNumbers
     {
-
-
         public static GameObject[,,] CreateTableWithTeamNumbers(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             GameObject[,,] tableWithNumber;
@@ -22,16 +20,16 @@ namespace Assets.Scripts
 
         public static int[] CreateTableWithNumbers()
         {
-            int maxTeamNumber = 6; 
+            int maxTeamNumber = 6;
             int minTeamNumber = 2;
             int[] table = new int[maxTeamNumber];
 
             int index = 0;
 
             for (int i = minTeamNumber; i <= maxTeamNumber; i++)
-            {           
+            {
                 table[index] = i;
-                index ++;
+                index++;
             }
 
             for (int i = (maxTeamNumber + 1); i < table.Length; i++)
@@ -55,7 +53,6 @@ namespace Assets.Scripts
                 tableString[i] = numberString;
             }
 
-            //Debug.Log(" -------- 2222 ------------- ");
             return tableString;
         }
 
@@ -131,7 +128,7 @@ namespace Assets.Scripts
                         string oldText = CommonMethods.GetCubePlayText(cubePlay);
 
                         if (oldText.Equals(textToCompare))
-                        {                          
+                        {
                             CommonMethods.ChangeTextForFirstChild(cubePlay, newText);
                             CommonMethods.ChangeTagForGameObject(cubePlay, tagInactiveField);
                         }

@@ -30,25 +30,13 @@ namespace Assets.Scripts
         private string _tagGameInformationsTextNextVersions;
         private string _tagGameInformationsTextSet;
 
-        //private Dictionary<int, string> _tagCommonDictionary = GameDictionariesScenesCommon.DictionaryTagCommon();
-        //private Dictionary<int, string> _tagGameInformations = GameDictionariesSceneInformation.DictionaryTagsGameInformation();
-
         private GameObject[,,] _buttonBack;
         private List<GameObject[,,]> _buttonsAll;
         private List<string> _gameObjectsWithText;
 
         void Start()
         {
-            //_tagUntagged = _tagCommonDictionary[1];
             _tagUntagged = GameConfigurationButtonsCommonButtonsTagName.GetTagNameUntagged();
-            //_tagGameInformationsButtonBack = _tagGameInformations[1];
-            //_tagGameInformationsButtonBackToMenu = _tagGameInformations[4];
-            //_tagGameInformationsButtonContact = _tagGameInformations[2];
-            //_tagGameInformationsButtonNextVersions = _tagGameInformations[3];
-            //_tagGameInformationsTextContact = _tagGameInformations[5];
-            //_tagGameInformationsTextNextVersions = _tagGameInformations[6];
-            //_tagGameInformationsButtontSet = _tagGameInformations[7];
-            //_tagGameInformationsTextSet = _tagGameInformations[8];
 
             _tagGameInformationsButtonBack = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtonBack();
             _tagGameInformationsButtonBackToMenu = GameInformationCommonButtonsTagName.GetTagForButtonNameByTagInformationButtonBackToMenu();
@@ -62,12 +50,10 @@ namespace Assets.Scripts
             _buttonBack = GameInformationButtonsCreate.GameInformationsCreateButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, _isGame2D);
             _buttonsAll = GameInformationButtonsCreate.GameInformationsCreateButtons(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
-            //GameInformationTextCreate.CreateGameName(gameName);
             GameNameButtons.CreateButtonGameName(prefabCubePlay, prefabCubePlayButtonsDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, _isGame2D);
 
             _gameObjectsWithText = new List<string>();
         }
-
 
         void Update()
         {

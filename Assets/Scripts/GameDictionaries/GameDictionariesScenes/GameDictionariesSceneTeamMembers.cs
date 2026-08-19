@@ -8,7 +8,6 @@ namespace Assets.Scripts
 {
     internal class GameDictionariesSceneTeamMembers
     {
-
         public static Dictionary<int, string> DictionaryTagsNameConfigurationTeamMembers()
         {
             Dictionary<int, string> tagTeamNumbers = new Dictionary<int, string>
@@ -50,8 +49,6 @@ namespace Assets.Scripts
         {
             Dictionary<int, string> buttonsDefaultNumberDictionary = new Dictionary<int, string>
             {
-                //{ 1, "0" }, 
-                //{ 2, "1" }, 
                 { 3, "2" },
                 { 11, "12" },
             };
@@ -63,14 +60,12 @@ namespace Assets.Scripts
         {
             Dictionary<int, string> buttonsDefaultSymbols = new Dictionary<int, string>
             {
-                { 1, "<" }, 
-                { 2, ">" }, 
+                { 1, "<" },
+                { 2, ">" },
 
             };
 
             return buttonsDefaultSymbols;
         }
-
-
     }
 }

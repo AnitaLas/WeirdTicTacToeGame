@@ -18,32 +18,9 @@ namespace Assets.Scripts
             bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(gameObjectTagToDestoy);
 
             if (isGameObjectWithTagExsist == true)
-            {
                 DestroySingleGameObjectWithTag(gameObjectTagToDestoy);
-            }
+
         }
-
-        //public static void DestroyGameObjectsWithTag(List<string> gameObjectsWithTagToDestoy)
-        //{
-        //    int numberOfGameObjectTagToDestroy = gameObjectsWithTagToDestoy.Count;
-
-        //    for (int i = 0; i < numberOfGameObjectTagToDestroy; i++)
-        //    {
-        //        string gameObjectTagToDestroy = gameObjectsWithTagToDestoy[i];
-        //        DestroySingleGameObjectWithTagIfExsist(gameObjectTagToDestroy);
-        //    }
-        //}
-
-        //public static void DestroyGameObjectsWithTag(Dictionary<int, string> gameObjectsWithTagToDestoy)
-        //{
-        //    int numberOfGameObjectTagToDestroy = gameObjectsWithTagToDestoy.Count;
-
-        //    for (int i = 1; i <= numberOfGameObjectTagToDestroy; i++)
-        //    {
-        //        string gameObjectTagToDestroy = gameObjectsWithTagToDestoy[i];
-        //        DestroySingleGameObjectWithTagIfExsist(gameObjectTagToDestroy);
-        //    }
-        //}
 
         public static void DestroyGameObjectsWithTag(Dictionary<int, string> gameObjectsWithTagToDestoy, string parentObjectTagName)
         {
@@ -63,32 +40,6 @@ namespace Assets.Scripts
                 DestroyTable3D(button);
             }
         }
-
-        //public static void DestroyGameObjectsWithTag(string[] helpButtonsTag, string tagGameButtonParentObjectHelpButtons)
-        //{
-        //    bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
-
-        //    if (isGameObjectWithTagExsist == true)
-        //    {
-        //        DestroyGameObjectsWithTag(helpButtonsTag);
-        //    }
-        //}
-
-
-        //public static void DestroyGameObjectsWithTag(string[] gameObjectsWithTagToDestoy)
-        //{
-        //    string tagName;
-        //    int helpButtonsLength = gameObjectsWithTagToDestoy.Length;
-
-        //    GameObject helpButton;
-
-        //    for (int i = 0; i < helpButtonsLength; i++)
-        //    {
-        //        tagName = gameObjectsWithTagToDestoy[i];
-        //        helpButton = GameCommonMethodsMain.GetObjectByTagName(tagName);
-        //        Destroy(helpButton);
-        //    }
-        //}
 
         public static void DestroyTable3D(GameObject[,,] table)
         {
@@ -117,7 +68,7 @@ namespace Assets.Scripts
                         }
                     }
                 }
-            }            
+            }
         }
     }
 }

@@ -9,15 +9,12 @@ namespace Assets.Scripts
 {
     internal class PlayGameTimerCommonMethods : MonoBehaviour
     {
-        //List<float> gameChangeTime;
-        //gameChangeTime.Insert(0, );
-
         public static bool IsTimerActivate(float _timeForChandeRandomly, float _timeForChandeForAll, float _timeForSwitchBetweenTeams)
         {
             bool isActive;
 
             if (_timeForChandeRandomly != 0 || _timeForChandeForAll != 0 || _timeForSwitchBetweenTeams != 0)
-                isActive = true;  
+                isActive = true;
             else
                 isActive = false;
 
@@ -58,22 +55,18 @@ namespace Assets.Scripts
 
         public static void CountdownSeconds(float _timeForUnhidePlayGameElements, string tagName)
         {
-           
             GameObject timer = CommonMethods.GetObjectByTagName(tagName);
 
             _timeForUnhidePlayGameElements -= 1 * Time.deltaTime;
 
             if (_timeForUnhidePlayGameElements > 0)
-            {
-                //CommonMethods.ChangeTextForCubePlay(timer, _timeForUnhidePlayGameElements.ToString("0"));
                 GameCommonMethodsMain.ChangeTextForFirstChild(timer, _timeForUnhidePlayGameElements.ToString("0"));
-            }
+
         }
 
         public static void CountdownSecondsForChangePlayersSymbols(float timeCountdown)
         {
             string objectTagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForPlayers();
-            //Debug.Log("test");
             CountdownSeconds(timeCountdown, objectTagName);
         }
 
@@ -96,7 +89,6 @@ namespace Assets.Scripts
             string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame();
             GameObject timer = CommonMethods.GetObjectByTagName(tagName);
             Destroy(timer);
-
         }
     }
 }

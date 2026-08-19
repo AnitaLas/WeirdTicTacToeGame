@@ -10,7 +10,6 @@ namespace Assets.Scripts
 {
     internal class PlayGameChangePlayersSymbolsButtonsMethods
     {
-
         public static List<GameObject[,,]> PlayGameChangePlayersSymbolsCreateFinalButtonsForModeCellphone(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D, string[] oldSymbolsForChande, string[] newSymbolsForChande)
         {
             int playersNumberForChangeSymbols = newSymbolsForChande.Length;
@@ -44,6 +43,7 @@ namespace Assets.Scripts
 
             return buttonsFinalList;
         }
+
         // battons background: with text old and new
         public static List<GameObject[,,]> PlayGameChangePlayersSymbolsCreateButtonsBackground(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, int playersNumberForChangeSymbols)
         {
@@ -60,7 +60,7 @@ namespace Assets.Scripts
 
         public static List<GameObject[,,]> PlayGameChangePlayersSymbolsCreateButtonsBackgroundFinal(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, int playersNumberForChangeSymbols)
         {
-            List<GameObject[,,]> buttonsList = PlayGameChangePlayersSymbolsCreateButtonsBackground(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumberForChangeSymbols);          
+            List<GameObject[,,]> buttonsList = PlayGameChangePlayersSymbolsCreateButtonsBackground(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumberForChangeSymbols);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerNumber(buttonsList);
             return buttonsList;
         }
@@ -82,8 +82,10 @@ namespace Assets.Scripts
         public static List<GameObject[,,]> PlayGameChangePlayersSymbolsCreateButtonsOldSymbolsFinal(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, int playersNumberForChangeSymbols, string[] oldSymbolsForChande)
         {
             List<GameObject[,,]> buttonsList = PlayGameChangePlayersSymbolsCreateButtonsOldSymbols(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, playersNumberForChangeSymbols);
+
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
             PlayGameChangePlayersSymbolsMethods.SetUpPlayerSymbols(buttonsList, oldSymbolsForChande);
+
             return buttonsList;
         }
 
@@ -103,7 +105,7 @@ namespace Assets.Scripts
         public static List<GameObject[,,]> PlayGameChangePlayersSymbolsCreateButtonsNewSymbolsFinal(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, int playersNumberForChangeSymbols, string[] newSymbolsForChande)
         {
             List<GameObject[,,]> buttonsList = PlayGameChangePlayersSymbolsCreateButtonsNewSymbols(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, playersNumberForChangeSymbols);
-            
+
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
             PlayGameChangePlayersSymbolsMethods.SetUpPlayerSymbols(buttonsList, newSymbolsForChande);
 
@@ -151,7 +153,7 @@ namespace Assets.Scripts
         public static List<GameObject[,,]> PlayGameChangePlayersSymbolsCreateButtonsBackgroundFinalForModeTablet(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, int playersNumberForChangeSymbols)
         {
             List<GameObject[,,]> buttonsList = PlayGameChangePlayersSymbolsCreateButtonsBackgroundForModeTablet(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumberForChangeSymbols);
-            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerNumber(buttonsList);
+
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
             return buttonsList;
         }
@@ -172,10 +174,10 @@ namespace Assets.Scripts
         public static List<GameObject[,,]> PlayGameChangePlayersSymbolsCreateButtonsOldSymbolsFinalForModeTablet(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, int playersNumberForChangeSymbols, string[] oldSymbolsForChande)
         {
             List<GameObject[,,]> buttonsList = PlayGameChangePlayersSymbolsCreateButtonsOldSymbols(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, playersNumberForChangeSymbols);
-            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
+
             PlayGameChangePlayersSymbolsMethods.SetUpPlayerSymbols(buttonsList, oldSymbolsForChande);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
-            //float newCoordinateY = 0.35f;
+
             float newCoordinateX = 1.15f;
             ChangeDataForChangePlayersSymbols(buttonsList, newCoordinateX);
 
@@ -186,11 +188,9 @@ namespace Assets.Scripts
         {
             List<GameObject[,,]> buttonsList = PlayGameChangePlayersSymbolsCreateButtonsNewSymbols(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, playersNumberForChangeSymbols);
 
-            // GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
             PlayGameChangePlayersSymbolsMethods.SetUpPlayerSymbols(buttonsList, newSymbolsForChande);
 
-            //float newCoordinateY = 0.35f;
             float newCoordinateX = 0.2f;
             ChangeDataForChangePlayersSymbols(buttonsList, newCoordinateX);
 
@@ -210,7 +210,7 @@ namespace Assets.Scripts
 
             float newCoordinateY = 0.3f;
             float newScale = 0.8f;
-            float newScaleZ =1f;
+            float newScaleZ = 1f;
             int start = buttonsNumber - 1;
             int playerNumber;
 

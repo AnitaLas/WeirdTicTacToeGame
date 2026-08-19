@@ -10,7 +10,6 @@ namespace Assets.Scripts
 {
     internal class GameCommonMethodsSetUpCoordinates
     {
-
         public static float RoundCoordinateXYZ(float coordinate)
         {
             double roundedCoordinate = coordinate;

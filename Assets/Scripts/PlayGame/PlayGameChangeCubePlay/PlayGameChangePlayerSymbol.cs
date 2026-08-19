@@ -20,11 +20,6 @@ namespace Assets.Scripts
 
         public static void SetUpPlayerSymbolForMoveAtStart(string[] playersSymbols)
         {
-            //Dictionary<int, string> tagPlayerSymbolMoveDictionary = GameDictionariesSceneGame.DictionaryTagPlayerSymbolMove();
-            //string tagPlayerSymbolCurrent = tagPlayerSymbolMoveDictionary[1];
-            //string tagPlayerSymbolPrevious = tagPlayerSymbolMoveDictionary[2];
-            //string tagPlayerSymbolNext = tagPlayerSymbolMoveDictionary[3];
-
             string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
             string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
             string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
@@ -50,7 +45,7 @@ namespace Assets.Scripts
                 // SetUpPlayerSymbolNext
                 SetUpPlayerSymbol(secondPlayerSymbol, tagPlayerSymbolNext);
 
-            } 
+            }
             else
             {
                 // SetUpPlayerSymbolPrevious
@@ -74,10 +69,9 @@ namespace Assets.Scripts
             if (playersNumber >= 3)
             {
                 // PlayerSymbolPrevious
-                playerSymbolMove[0] = playersSymbols[playersNumber-1];
+                playerSymbolMove[0] = playersSymbols[playersNumber - 1];
                 // PlayerSymbolNext
                 playerSymbolMove[2] = playersSymbols[1];
-
             }
 
             return playerSymbolMove;
@@ -88,16 +82,10 @@ namespace Assets.Scripts
         {
             GameObject playerSymbolMove = GameCommonMethodsMain.GetObjectByTagName(tagPlayerSymbolDictionary);
             GameCommonMethodsMain.ChangeTextForFirstChild(playerSymbolMove, playerSymbol);
-        }   
+        }
 
         public static string[] ChangeCurrentPlayersSymbolsMove(string[] playerSymbolMove, string[] playersSymbols, int playersNumberGivenForConfiguration, int[] currentPlayer)
         {
-            //Dictionary<int, string> tagPlayerSymbolMoveDictionary = GameDictionariesSceneGame.DictionaryTagPlayerSymbolMove();
-
-            //string tagPlayerSymbolCurrent = tagPlayerSymbolMoveDictionary[1];
-            //string tagPlayerSymbolPrevious = tagPlayerSymbolMoveDictionary[2];
-            //string tagPlayerSymbolNext = tagPlayerSymbolMoveDictionary[3];
-
             string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
             string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
             string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
@@ -111,7 +99,7 @@ namespace Assets.Scripts
             string newPlayerSymbolNext;
 
             if (playersNumberGivenForConfiguration == 2)
-            {            
+            {
                 if (playersSymbols[0] == playerSymbolMove[1])
                 {
                     newPlayerSymbolCurrent = playersSymbols[1];
@@ -176,7 +164,6 @@ namespace Assets.Scripts
 
         public static void ChangeGameObjectsForPlayersSymbolsMovesWhenGameFinished(bool isWinner, GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, string winnerPlayerSymbol)
         {
-
             if (isWinner == true)
             {
                 PlayGameMenuAndTimerButtonsActions.DisactivateConfigurationMenu();
@@ -197,27 +184,17 @@ namespace Assets.Scripts
                 PlayGameMenuAndTimerButtonsActions.DestroyCubePlayForPlayersMove();
                 PlayGameMenuAndTimerButtonsActions.DestroyConfigurationMenu();
                 CreateButtonsForGameOver(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D);
-
             }
-
-            //// SetUpPlayerSymbolPrevious
-            //SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolPrevious);
-            //// SetUpPlayerSymbolNext
-            //SetUpPlayerSymbol(defaultSymbol, tagPlayerSymbolNext);
         }
 
         public static void DestroyPlayerMoveCube(string tagName)
         {
             GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
             Destroy(gameObject);
-
         }
 
         public static void DestroyPlayerMoveCubes()
         {
-            //string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
-            //string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
-            //string tagPlayerSymbolNext = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolNext();
             Dictionary<int, string> tagsName = GameDictionariesSceneGame.DictionaryTagsPlayerSymbolMove();
             int numberOfTags = tagsName.Count;
 
@@ -226,11 +203,6 @@ namespace Assets.Scripts
                 string tagName = tagsName[i];
                 DestroyPlayerMoveCube(tagName);
             }
-
-
-            //DestroyPlayerMoveCube(tagPlayerSymbolCurrent);
-            //DestroyPlayerMoveCube(tagPlayerSymbolPrevious);
-            //DestroyPlayerMoveCube(tagPlayerSymbolNext);
         }
 
         public static void CreateButtonsForWinnerTeam(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, string teamNumber, bool isGame2D)
@@ -264,15 +236,7 @@ namespace Assets.Scripts
         public static string GetTeamWinnerNumber(List<string[]> teamGameSymbols)
         {
             string winnerTeamNumber = "Upss";
-            //string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
-            //string tagPlayerSymbolCurrent = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolCurrent();
-            //GameObject gameObjectPrevious = CommonMethods.GetObjectByTagName(tagPlayerSymbolPrevious);
-            //GameObject gameObjectCurrent = CommonMethods.GetObjectByTagName(tagPlayerSymbolCurrent);
-            //string previousSymbol = CommonMethods.GetCubePlayText(gameObjectPrevious);
-            //string currentSymbol = CommonMethods.GetCubePlayText(gameObjectCurrent);
-            //Debug.Log("previousSymbol: " + previousSymbol);
 
-            //GameObject gameObjectForWinnerSymbols;
             string symbolToCompare;
             int teamsNumbers = teamGameSymbols.Count;
 
@@ -288,20 +252,16 @@ namespace Assets.Scripts
                 {
                     string[] team = teamGameSymbols[i];
                     int playersNumber = team.Length;
-                    //Debug.Log("-- -- playersNumber: " + playersNumber);
-
 
                     for (int j = 0; j < playersNumber; j++)
                     {
                         string symbol = team[j];
-                        //Debug.Log("-- -- symbol: " + symbol);
 
                         if (symbol != symbolToCompare)
                         {
                             int number = i + 1;
                             winnerTeamNumber = CommonMethods.ConverIntToString(number);
                         }
-
                     }
                 }
             }
@@ -315,13 +275,10 @@ namespace Assets.Scripts
                 {
                     string[] team = teamGameSymbols[i];
                     int playersNumber = team.Length;
-                    //Debug.Log("-- -- playersNumber: " + playersNumber);
-
 
                     for (int j = 0; j < playersNumber; j++)
                     {
                         string symbol = team[j];
-                        //Debug.Log("-- -- symbol: " + symbol);
 
                         if (symbol == symbolToCompare)
                         {
@@ -333,68 +290,19 @@ namespace Assets.Scripts
                 }
             }
 
-            //Debug.Log("-- -- symbolToCompare: " + symbolToCompare);
-            //Debug.Log("-----------------------------------------------------");
-
-            
-            //Debug.Log("winnerTeamNumber: " + winnerTeamNumber);
-            //string teamNumber = gameObjectName.Substring(5,1);
             return winnerTeamNumber;
         }
-
-
-        //public static string GetTeamWinnerNumber(List<string[]> teamGameSymbols)
-        //{
-        //    string winnerTeamNumber = "Upss";
-        //    string tagPlayerSymbolPrevious = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagPlayerSymbolPrevious();
-        //    GameObject gameObject = CommonMethods.GetObjectByTagName(tagPlayerSymbolPrevious);
-        //    string previousSymbol = CommonMethods.GetCubePlayText(gameObject);
-        //    //Debug.Log("previousSymbol: " + previousSymbol);
-
-        //    int teamsNumbers = teamGameSymbols.Count;
-
-        //    for (int i = 0; i < teamsNumbers; i++)
-        //    {
-        //        string[] team = teamGameSymbols[i];
-        //        int playersNumber = team.Length;
-        //        Debug.Log("-- -- playersNumber: " + playersNumber);
-
-
-        //        for (int j = 0; j < playersNumber; j++)
-        //        {
-        //            string symbol = team[j];
-        //            Debug.Log("-- -- symbol: " + symbol);
-
-        //            if (symbol == previousSymbol)
-        //            {
-        //                int number = i + 1;
-        //                winnerTeamNumber = CommonMethods.ConverIntToString(number);
-        //            }
-
-        //        }
-        //    }
-
-        //    //Debug.Log("winnerTeamNumber: " + winnerTeamNumber);
-        //    //string teamNumber = gameObjectName.Substring(5,1);
-        //    return winnerTeamNumber;
-        //}
         public static void CreateButtonsWhenGameFinished(bool isWinner, GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D, List<string[]> teamGameSymbols)
         {
             string teamNumber = GetTeamWinnerNumber(teamGameSymbols);
-            //Debug.Log("-- -- teamNumber: " + teamNumber);
 
             DestroyPlayerMoveCubes();
-            
 
             if (isWinner == true)
-            {
                 CreateButtonsForWinnerTeam(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsNumberColour, teamNumber, isGame2D);
-            }
-            else
-            {
-                CreateButtonsForGameOver(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D);
-            }
 
+            else
+                CreateButtonsForGameOver(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsNumberColour, isGame2D);
         }
     }
 }

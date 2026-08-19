@@ -42,7 +42,5 @@ namespace Assets.Scripts
             string tagName = GetTagsNameFromDictionaryTagsStartGame(dictionatyId);
             return tagName;
         }
-
-
     }
 }

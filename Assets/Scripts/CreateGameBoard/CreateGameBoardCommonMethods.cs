@@ -326,59 +326,6 @@ namespace Assets.Scripts
             return newTable;
         }
 
-
-        // it can be remove in future - rong interpretation
-        /// <summary>
-        /// <para> create table for board game - for logic </para>
-        /// <para> create the table which is identictal as is create in logic </para>
-        /// GameBoardCreate line 54 int[,] tableForBoardGame
-        /// </summary>
-        /// <param name="numberOfRows"></param>
-        /// <param name="numberOfColumns"></param>
-        /// <returns></returns>
-        //public static Tuple<int, int, int> GetXYZForTable3DForBoardGame(int numberOfDepths, int numberOfRows, int numberOfColumns, int currentNumberOfDepth, int currentNumberOfRow, int currentNumberOfColumn)
-        //{
-        //    int[,,] gameBoard = new int[numberOfDepths, numberOfRows, numberOfColumns];
-
-        //    int newNumberOfRow;
-        //    int newNumberOfColumn;
-        //    int newNumberOfDepth = numberOfDepths;
-
-        //    if (currentNumberOfRow + numberOfRows - 1 > numberOfRows - currentNumberOfRow)
-        //    {
-        //        newNumberOfRow = Math.Abs(currentNumberOfRow - 1);
-        //        newNumberOfColumn = currentNumberOfColumn;
-        //        newNumberOfDepth = currentNumberOfDepth;
-
-        //        var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
-        //        return newXYZ;
-        //    }
-        //    else
-        //    {
-        //        if (currentNumberOfColumn < numberOfColumns - 1)
-        //        {
-        //            newNumberOfRow = numberOfRows - 1;
-        //            newNumberOfColumn = currentNumberOfColumn + 1;
-        //            newNumberOfDepth = currentNumberOfDepth;
-
-        //            var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
-        //            return newXYZ;
-        //        }
-        //        else
-        //        {
-        //            newNumberOfRow = numberOfRows - 1;
-        //            newNumberOfColumn = currentNumberOfColumn + 1;
-        //            newNumberOfDepth = currentNumberOfDepth;
-
-        //            var newXYZ = Tuple.Create(newNumberOfDepth, newNumberOfRow, newNumberOfColumn);
-        //            return newXYZ;
-
-        //        }
-        //    }
-        //}
-
-        // ---- 
-
         public static void ChangeDataForBoardGameAtStart(GameObject[,,] boardGame)
         {
             int maxIndexDepth = boardGame.GetLength(0);
@@ -398,6 +345,7 @@ namespace Assets.Scripts
                     }
                 }
             }
+
         }
 
 

@@ -27,14 +27,7 @@ namespace Assets.Scripts
             GameObject[,,] tableWithNumbers;
             GameObject[,,] tableWithNumberFinal;
 
-            //Dictionary<int, string> configurationBoardGameDictionaryTag = GameDictionariesSceneConfigurationBoardGame.DictionaryTagConfigurationBoardGame();
-            //string tagConfigurationBoardGameTableNumberLenghtToCheck = configurationBoardGameDictionaryTag[17];
-            //string tagConfigurationBoardGameInactiveField = configurationBoardGameDictionaryTag[20];
-
-            //int dictionatyId = 17;
-            //string tagConfigurationBoardGameTableNumberLenghtToCheck = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(dictionatyId);
             string tagConfigurationBoardGameTableNumberLenghtToCheck = GameConfigurationButtonsCommonButtonsTagName.GetTagForTableWithNumbersByTagTableNumberGaps();
-            
             string tagConfigurationBoardGameInactiveField = GameConfigurationButtonsCommonButtonsTagName.GetTagNameForInactiveField();
 
             var numbers = ScreenVerificationMethods.GetNumberOfRowsAndColumnsForDefaulTableWithNumber(isCellphoneMode);
@@ -62,7 +55,7 @@ namespace Assets.Scripts
             {
                 int lowerNumber = GameCommonMethodsMain.GetLowerNumber(number1, number2);
                 int biggerNumber = GameCommonMethodsMain.GetLowerNumber(number1, number2);
-                //int result = biggerNumber / lowerNumber; // hmmm ???
+
                 int result = lowerNumber - 1;
                 maxNumber = result;
             }
@@ -81,7 +74,7 @@ namespace Assets.Scripts
                 minNumber = 2; // because -> GameConfigurationButtonsWithNumbersCommonMethods.ChangeDataForTableWithNumbers
             else
                 minNumber = 0;
-            
+
             return minNumber;
         }
 
@@ -100,7 +93,6 @@ namespace Assets.Scripts
 
         public static GameObject GetObjectGaps()
         {
-            //string tagConfigurationBoardGameChangeNumberGaps = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(16);
             string tagConfigurationBoardGameChangeNumberGaps = GameConfigurationButtonsCommonButtonsTagName.GetTagButtonNumberByTagChangeNumberGaps();
             GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagConfigurationBoardGameChangeNumberGaps);
             return gameObject;
@@ -108,15 +100,9 @@ namespace Assets.Scripts
 
         public static int GetCurrentGapsNumber()
         {
-            //string tagConfigurationBoardGameChangeNumberGaps = GameConfigurationButtonsCommonButtonsTagName.GetTagNameFromDictionaryTagConfigurationBoardGame(16);
             string tagConfigurationBoardGameChangeNumberGaps = GameConfigurationButtonsCommonButtonsTagName.GetTagButtonNumberByTagChangeNumberGaps();
             int number = GameConfigurationButtonsCommonMethodsForButtonsWithNumberForLenghtToChcekAndGaps.GetNumberFromConfiguration(tagConfigurationBoardGameChangeNumberGaps);
             return number;
         }
-
-
-
-
-
     }
 }

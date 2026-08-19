@@ -11,7 +11,6 @@ namespace Assets.Scripts
     {
 
         // --- button name
-
         public static string GetButtonsNameFromDictionaryButtonsConfigurationBoardGameButtonsName(int dictionatyId)
         {
             Dictionary<int, string> buttonsNames = GameDictionariesSceneConfigurationBoardGame.DictionaryButtonsConfigurationBoardGameButtonsName();

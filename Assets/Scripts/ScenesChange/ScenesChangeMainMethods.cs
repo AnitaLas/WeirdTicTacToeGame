@@ -9,7 +9,6 @@ namespace Assets.Scripts
 {
     internal class ScenesChangeMainMethods
     {
-
         public static void GoToSceneStartGame()
         {
             string sceneName = ScenesChangeCommonSceneName.GetScenceNameSceneStartGame();
@@ -57,6 +56,5 @@ namespace Assets.Scripts
             string sceneName = ScenesChangeCommonSceneName.GetScenceNameSceneConfigurationGameTeamMembers();
             ScenesChangeCommon.ChangeScene(sceneName);
         }
-
     }
 }

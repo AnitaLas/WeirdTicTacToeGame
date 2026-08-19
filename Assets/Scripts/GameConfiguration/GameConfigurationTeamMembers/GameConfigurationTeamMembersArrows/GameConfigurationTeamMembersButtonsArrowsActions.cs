@@ -9,7 +9,6 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationTeamMembersButtonsArrowsActions
     {
-
         public static int SetUpNewIndexForArrowLeft(List<List<GameObject[,,]>> buttonsGroupByTeams, int indexForOneTeamGameButtonsVisible, string tagName)
         {
             int teamsNumbers = buttonsGroupByTeams.Count - 1;
@@ -85,7 +84,6 @@ namespace Assets.Scripts
 
 
         // arrows
-
         public static void HideArrows(List<GameObject> buttonsArrows)
         {
             int listElements = buttonsArrows.Count;
@@ -110,7 +108,5 @@ namespace Assets.Scripts
                 GameCommonMethodsSetUpCoordinates.SetUpNewYForGameObject(arrow, newCoordinateY);
             }
         }
-
-
     }
 }

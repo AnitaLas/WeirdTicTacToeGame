@@ -8,7 +8,6 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsTeamMembersTagName
     {
-
         public static string GetTagsNameFromDictionaryTagsConfigurationTeamMembers(int dictionatyId)
         {
             Dictionary<int, string> defaulNumbers = GameDictionariesSceneTeamMembers.DictionaryTagsNameConfigurationTeamMembers();

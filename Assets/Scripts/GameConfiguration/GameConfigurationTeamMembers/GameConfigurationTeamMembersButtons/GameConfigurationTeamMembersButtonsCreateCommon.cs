@@ -9,7 +9,6 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationTeamMembersButtonsCreateCommon : MonoBehaviour
     {
-
         public static GameObject[,,] CreateCommonButtonForTeamMembersFourRows(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, string tagNameDictionary, string buttonText)
         {
             GameObject[,,] button;
@@ -55,14 +54,12 @@ namespace Assets.Scripts
         public static GameObject[,,] GameConfigurationTeamMembersCreateSingleTableWithButtonsSymbols(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D, Tuple<int, int> tableSize)
         {
             GameObject[,,] tableWithNumbers;
-           // GameObject[,,] tableWithNumberFinal;
 
             int numberOfDepths = 1;
-            int numberOfRows = tableSize.Item1; 
-            int numberOfColumns = tableSize.Item2; 
+            int numberOfRows = tableSize.Item1;
+            int numberOfColumns = tableSize.Item2;
 
             tableWithNumbers = GameConfigurationButtonsWithNumbersForTeamMembers.CreateTableWithTeamMembersSymbols(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D);
-            //tableWithNumberFinal = GameConfigurationButtonsWithNumbersForTeamMembers.ChangeDataForTableWithTeamMembers(tableWithNumbers);
 
             return tableWithNumbers;
         }
@@ -71,6 +68,5 @@ namespace Assets.Scripts
         {
             return Instantiate(buttoArrow);
         }
-
     }
 }

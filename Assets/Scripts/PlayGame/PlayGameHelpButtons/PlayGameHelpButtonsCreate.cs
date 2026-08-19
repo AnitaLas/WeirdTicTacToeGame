@@ -14,9 +14,7 @@ namespace Assets.Scripts
             if (isCellphoneMode == true)
             {
                 if (numberOfColumns > 5 || numberOfRows > 5)
-                {
                     CreateHelpButtons(prefabHelpButtons);
-                }
             }
         }
     }

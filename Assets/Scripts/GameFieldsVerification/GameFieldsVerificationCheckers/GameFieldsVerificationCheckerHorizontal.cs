@@ -12,7 +12,7 @@ namespace Assets.Scripts
             int boardRowLength = boardToCheck.GetLength(0);
             int boardColumnLength = boardToCheck.GetLength(1);
 
-            int boardMaxRowIndex = boardRowLength - 1;          
+            int boardMaxRowIndex = boardRowLength - 1;
             int boardMaxColumnIndex = boardColumnLength - 1;
 
             bool checker = false;
@@ -49,7 +49,7 @@ namespace Assets.Scripts
                         listCheckerHorizontal.Insert(0, checker);
                     }
                     else if (checkArray[0].Equals(boardToCheck[rowIndex, columnIndex]))
-                    {                       
+                    {
                         if (matchingArray[0] < lenghtToCheck)
                         {
                             checkArray[0] = boardToCheck[rowIndex, columnIndex];
@@ -69,7 +69,7 @@ namespace Assets.Scripts
                             int currentIndexY = indexYToMark[0];
                             coordinateXYToMark[currentIndexY, 0] = rowIndex;
                             coordinateXYToMark[currentIndexY, 1] = columnIndex;
-                           
+
                             listCheckerHorizontal.Insert(0, checker);
                             listCheckerHorizontal.Insert(1, coordinateXYToMark);
 
@@ -115,7 +115,7 @@ namespace Assets.Scripts
                                 checkArray[0] = "";
                                 matchingArray[0] = 0;
                                 indexYToMark[0] = 0;
-                                coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];                              
+                                coordinateXYToMark = new int[lenghtToCheck + 1, lenghtToCheck + 1];
                             }
                         }
                     }

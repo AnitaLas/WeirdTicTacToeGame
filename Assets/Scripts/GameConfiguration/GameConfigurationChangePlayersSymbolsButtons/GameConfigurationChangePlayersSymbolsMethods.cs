@@ -9,21 +9,18 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationChangePlayersSymbolsMethods
     {
-
-        public static bool IsSamePlayersNumberInEachTeam(List<string[]>  teamGameSymbols)
+        public static bool IsSamePlayersNumberInEachTeam(List<string[]> teamGameSymbols)
         {
             int teamsNumbers = teamGameSymbols.Count;
-            //int[] numbers = { 0, 0};
-            int[] numbers = {0, 0};
+            int[] numbers = { 0, 0 };
             int currentPlayersNumbers = 0;
-           
+
             bool isSamePlayersNumberInEachTeam = true;
 
             for (int i = 0; i < teamsNumbers; i++)
             {
                 string[] team = teamGameSymbols[i];
                 int playersNumbers = team.Length;
-               // Debug.Log("playersNumbers: " + playersNumbers);
 
                 if (i == 0)
                 {
@@ -36,13 +33,11 @@ namespace Assets.Scripts
                     {
                         currentPlayersNumbers = playersNumbers;
                         numbers[0] = 0;
-                        //Debug.Log("number: " + 0);                    
                     }
                     else
                     {
                         currentPlayersNumbers = playersNumbers;
                         numbers[1] = 1;
-                        //Debug.Log("number: " + 1);
                     }
                 }
             }
@@ -52,18 +47,12 @@ namespace Assets.Scripts
             int result = numberEqual + numberNotEqual;
 
             if (result == 0)
-            {
                 isSamePlayersNumberInEachTeam = true;
-            }
-            else
-            {
-                isSamePlayersNumberInEachTeam = false;
-            }
 
-            //Debug.Log("isSamePlayersNumberInEachTeam: " + isSamePlayersNumberInEachTeam);
+            else
+                isSamePlayersNumberInEachTeam = false;
 
             return isSamePlayersNumberInEachTeam;
-
         }
 
         public static bool SetUpMoveQuantityForTeamsChosenByUser()
@@ -77,29 +66,18 @@ namespace Assets.Scripts
             string symbolEqualMoves = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonSymbolForEqualMoveQuantity();
             string symbolNotEqualMoves = GameConfigurationButtonsCommonButtonsDefaultNumber.GetDefaultButtonSymbolForNotEqualMoveQuantity();
 
-            //Debug.Log("currentSymbol: " + currentSymbol);
-
             if (currentSymbol == symbolEqualMoves)
             {
-                //Debug.Log("symbolEqualMoves: " + symbolEqualMoves);
                 CommonMethods.ChangeTextForCubePlay(gameObject, symbolNotEqualMoves);
                 isEqualMoveQuantityForBothTeamsSetUpBeUser = false;
             }
             else
             {
-                //Debug.Log("symbolNotEqualMoves: " + symbolNotEqualMoves);
                 CommonMethods.ChangeTextForCubePlay(gameObject, symbolEqualMoves);
                 isEqualMoveQuantityForBothTeamsSetUpBeUser = true;
             }
 
-
-
-           //Debug.Log("isEqualMoveQuantityForBothTeamsSetUpBeUser: " + isEqualMoveQuantityForBothTeamsSetUpBeUser);
-
-
             return isEqualMoveQuantityForBothTeamsSetUpBeUser;
         }
-
-
     }
 }

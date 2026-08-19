@@ -19,30 +19,20 @@ namespace Assets.Scripts
         // --
         public static void HideHelpButtons()
         {
-            //Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
-            //string tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
             string tagGameButtonParentObjectHelpButtons = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagParentObjectHelpButtons();
-
             bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
 
             if (isGameObjectWithTagExsist == true)
-            {
                 ButtonsCommonMethodsActions.GameObjectToHide(tagGameButtonParentObjectHelpButtons);
-            }
         }
 
         public static void UnhideHelpButtons()
         {
-            //Dictionary<int, string> tagGameDictionary = GameDictionariesSceneGame.DictionaryTagsGame();
-            //string tagGameButtonParentObjectHelpButtons = tagGameDictionary[6];
             string tagGameButtonParentObjectHelpButtons = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagParentObjectHelpButtons();
-
             bool isGameObjectWithTagExsist = GameCommonMethodsMain.IsGameObjectWithTagExsist(tagGameButtonParentObjectHelpButtons);
 
             if (isGameObjectWithTagExsist == true)
-            {
                 ButtonsCommonMethodsActions.GameObjectToUnhide(tagGameButtonParentObjectHelpButtons);
-            }          
         }
 
         // ---
@@ -82,7 +72,7 @@ namespace Assets.Scripts
             UnhideTopObjects();
             UnhideBoardGame(gameBoard);
         }
-    
+
         public static void DisactivateConfigurationMenu()
         {
             string tagGameButtonMenuConfigurationDisactivate = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationDisactivate();
@@ -90,6 +80,7 @@ namespace Assets.Scripts
             string tagGameButtonMenuConfigurationLeft = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationRight();
 
             string[] tagConfigurationMenu = new string[3];
+
             tagConfigurationMenu[0] = tagGameButtonMenuConfigurationDisactivate;
             tagConfigurationMenu[1] = tagGameButtonMenuConfigurationRight;
             tagConfigurationMenu[2] = tagGameButtonMenuConfigurationLeft;
@@ -114,42 +105,25 @@ namespace Assets.Scripts
 
         public static void DestroyConfigurationMenu()
         {
-            //string tagGameButtonMenuConfigurationDisactivate = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationDisactivate();
-            //string tagGameButtonMenuConfigurationRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationLeft();
             string tagGameButtonMenuConfigurationRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationRight();
             string tagGameButtonMenuConfigurationLeft = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagMenuConfigurationLeft();
 
             string[] tagConfigurationMenu = new string[2];
             tagConfigurationMenu[0] = tagGameButtonMenuConfigurationRight;
             tagConfigurationMenu[1] = tagGameButtonMenuConfigurationLeft;
-            //tagConfigurationMenu[0] = tagGameButtonMenuConfigurationDisactivate;
-
-            //string tagName;
-
 
             int tagConfigurationMenuLength = tagConfigurationMenu.Length;
 
             for (int i = 0; i < tagConfigurationMenuLength; i++)
             {
-                //string tagName = tagConfigurationMenu[i];
-                //Debug.Log("DestroyConfigurationMenu() => tagName: " + tagName);
-                //GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
-
-                //for (int j = 0; j < 5; j++)
-                //{
-                //    Destroy(gameObject);
-                //}
-
                 string tagName = tagConfigurationMenu[i];
 
                 GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(tagName);
 
                 foreach (var gameObject in gameObjects)
                 {
-                   // GameObject manuButtons = GameCommonMethodsMain.GetObjectByTagName(tagName);
                     Destroy(gameObject);
                 }
-
             }
         }
 
@@ -165,15 +139,11 @@ namespace Assets.Scripts
             tagNames[1] = tagPlayerSymbolPrevious;
             tagNames[2] = tagPlayerSymbolNext;
 
-
             for (int i = 0; i < 3; i++)
             {
                 string tagName = tagNames[i];
-                //Debug.Log("DestroyConfigurationMenu() => tagName: " + tagName);
                 GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagName);
-
                 Destroy(gameObject);
-
             }
         }
 
@@ -229,11 +199,6 @@ namespace Assets.Scripts
             string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame();
             ButtonsCommonMethodsActions.GameObjectToHide(tagName);
         }
-        //public static void HideTimerForGameBoardIfExist()
-        //{
-        //    string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame();
-        //    ButtonsCommonMethodsActions.GameObjectToHide(tagName);
-        //}
 
         public static void HideTimerForChangePlayersSymbols()
         {
@@ -243,7 +208,7 @@ namespace Assets.Scripts
 
         public static void UnhideTimerForGameBoard()
         {
-            string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame(); 
+            string tagName = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagInformationTimerForBoardGame();
             ButtonsCommonMethodsActions.GameObjectToUnhide(tagName);
         }
 

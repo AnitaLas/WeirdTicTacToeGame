@@ -11,7 +11,7 @@ namespace Assets.Scripts
             float newY = 0.5f;
             float newZ = 0;
 
-            var newObject= Instantiate(objectWithtext, new Vector3(newX, newY, newZ), Quaternion.identity);
+            var newObject = Instantiate(objectWithtext, new Vector3(newX, newY, newZ), Quaternion.identity);
         }
 
         public static void CreateGameInformationsTextNextVersions(GameObject objectWithtext)

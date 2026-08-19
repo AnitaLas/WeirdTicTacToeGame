@@ -7,7 +7,7 @@ namespace Assets.Scripts
 {
     internal class GameStartButtonsCreate
     {
- 
+
         public static void CreateButtonsStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, Material[] prefabCubePlayButtonsNumberColour, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
             GameNameButtons.CreateButtonGameName(prefabCubePlay, prefabCubePlayDefaultColour, prefabCubePlayButtonsNumberColour, prefabCubePlayButtonsBackColour, isGame2D);
@@ -15,19 +15,13 @@ namespace Assets.Scripts
             CreateButtonStartGameBackgroundForStartGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
             CreateButtonStartGame(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
 
-
             CreateButtonStartGameBackgroundForStartTeamGame(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
             CreateButtonStartTeamGame(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D);
 
-
-
             CreateButtonStartGameInformation(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D);
-
-           
         }
 
         // button background
-
         public static GameObject[,,] CreateButtonStartGameBackgroundForStartGame(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             GameObject[,,] button;
@@ -44,9 +38,6 @@ namespace Assets.Scripts
             button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
             float newCoordinateY = 1.2f;
-            //ButtonsCommonMethods.ChangeDataForSingleGameButtons(button, newCoordinateY, tagGameButtonNewGame);
-
-            //float newCoordinateY2 = 0f;
             float newCoordinateX = 0f;
 
             ButtonsCommonMethods.ChangeDataForSingleGameStartButtons(button, newCoordinateY, newCoordinateX, tagName);
@@ -59,7 +50,7 @@ namespace Assets.Scripts
         {
             GameObject[,,] button;
 
-            string tagName = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartGame();;
+            string tagName = GameStartCommonButtonsTagName.GetTagForButtonNameByTagStartGame(); ;
             string buttonText = GameStartCommonButtonsName.GetButtonNameForTraditionalGame();
 
             int numberOfDepths = 1;
@@ -71,10 +62,8 @@ namespace Assets.Scripts
             button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
             float newCoordinateY = 0.7f;
-           // ButtonsCommonMethods.ChangeDataForSingleGameButtons(button, newCoordinateY, tagName);
-
-            //float newCoordinateY2 = 0f;
             float newCoordinateX = 0f;
+
             ButtonsCommonMethods.ChangeDataForSingleGameStartButtons(button, newCoordinateY, newCoordinateX, tagName);
 
             return button;
@@ -98,12 +87,9 @@ namespace Assets.Scripts
             button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
             float newCoordinateY = -1.0f;
-            //ButtonsCommonMethods.ChangeDataForSingleGameButtons(button, newCoordinateY, tagName);
 
-            //float newCoordinateY2 = 0f;
             float newCoordinateX = 0f;
             ButtonsCommonMethods.ChangeDataForSingleGameStartButtons(button, newCoordinateY, newCoordinateX, tagName);
-
 
             return button;
         }
@@ -124,16 +110,12 @@ namespace Assets.Scripts
             button = ButtonsCommonMethods.CreateSingleConfigurationButton(prefabCubePlay, numberOfDepths, numberOfRows, numberOfColumns, prefabCubePlayDefaultColour, isGame2D, tableWithTextForButtonNewGame);
 
             float newCoordinateY = -1.5f;
-            //ButtonsCommonMethods.ChangeDataForSingleGameButtons(button, newCoordinateY, tagName);
 
-            //float newCoordinateY2 = 0f;
             float newCoordinateX = 0f;
             ButtonsCommonMethods.ChangeDataForSingleGameStartButtons(button, newCoordinateY, newCoordinateX, tagName);
 
-
             return button;
         }
-
 
         // button: information "?"
 

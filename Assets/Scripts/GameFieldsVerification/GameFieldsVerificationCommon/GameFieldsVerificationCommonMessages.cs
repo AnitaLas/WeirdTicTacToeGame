@@ -7,7 +7,6 @@ namespace Assets.Scripts
         public static void MessageWin(string playerSymbol)
         {
             Debug.Log($"{playerSymbol} - You win!");
-            //Debug.Log(" --------------------  ");
         }
 
         public static void MessageGameOver()

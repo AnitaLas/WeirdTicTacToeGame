@@ -17,7 +17,7 @@ namespace Assets.Scripts
             {
                 currentPlayer[0] = currentPlayer[0] + 1;
                 return currentPlayer;
-            } 
+            }
             else
             {
                 currentPlayer[0] = 0;
@@ -41,6 +41,6 @@ namespace Assets.Scripts
             GameCommonMethodsMain.ChangeTextColourForCubePlay(cubePlay, symbolColor);
 
             return Tuple.Create(cubePlayDataZYX, symbol);
-        }    
+        }
     }
 }

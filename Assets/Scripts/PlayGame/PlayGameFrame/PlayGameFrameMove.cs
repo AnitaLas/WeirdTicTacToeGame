@@ -47,13 +47,6 @@ namespace Assets.Scripts
 
         public static int[] SetUpNewMoveIndexXYForCubePlayFrame(int[] moveIndexForFrame, string tagArrow, GameObject cubePlayFrame, float cubePlayForFrameScale, int numberOfRows, int numberOfColumns)
         {
-            //Dictionary<int, string> tagArrowDictionary = GameDictionariesSceneGame.DictionaryTagHelpButtons();
-
-            //string tagArrowRight = tagArrowDictionary[1];
-            //string tagArrowLeft = tagArrowDictionary[3];
-            //string tagArrowUp = tagArrowDictionary[4];
-            //string tagArrowDown = tagArrowDictionary[2];
-
             string tagArrowRight = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagArrowRight();
             string tagArrowDown = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagArrowDown();
             string tagArrowLeft = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagArrowLeft();
@@ -108,7 +101,7 @@ namespace Assets.Scripts
         public static void SetUpNewXYForCubePlayFrame(GameObject cubePlayFrame, GameObject cubePlay)
         {
             bool isGame2D = true;
-           
+
             if (isGame2D == true)
             {
                 float x = cubePlay.transform.position.x;
@@ -121,8 +114,6 @@ namespace Assets.Scripts
 
         public static GameObject GetCubePlayFrame()
         {
-            //Dictionary<int, string> tagCubePlayDictionary = GameDictionariesSceneGame.DictionaryTagCubePlay();
-            //string tagCubePlayFrame = tagCubePlayDictionary[3];
             string tagCubePlayFrame = PlayGameCommonButtonsTagName.GetTagForButtonNameByTagFrame();
             GameObject gameObject = GameCommonMethodsMain.GetObjectByTagName(tagCubePlayFrame);
             return gameObject;

@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts
 {
-    internal class ButtonsText 
+    internal class ButtonsText
     {
         public static string[] CreateTableWithButtonNameForGameConfiguration(int numberOfRows, int numberOfColumns, string buttonText)
         {
@@ -28,7 +28,7 @@ namespace Assets.Scripts
                     {
                         table[i] = emptyString;
                     }
-                } 
+                }
                 else
                 {
                     string symbol = buttonText.Substring(0, 1);
@@ -58,13 +58,10 @@ namespace Assets.Scripts
             else
             {
                 if (numberOfRows > 3)
-                {
                     differenceBetweenHalves = stringHalfLength - textHalfLength - 1;
-                }
                 else
-                {
                     differenceBetweenHalves = stringHalfLength - textHalfLength;
-                }
+
             }
 
             for (int i = 0; i < numberOfColumns; i++)

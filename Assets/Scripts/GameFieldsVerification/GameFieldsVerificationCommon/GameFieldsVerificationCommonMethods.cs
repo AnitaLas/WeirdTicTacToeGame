@@ -38,6 +38,5 @@ namespace Assets.Scripts
             string defaulNumber = GetFieldsVerificationKindOfChecker(dictionatyId);
             return defaulNumber;
         }
-
     }
 }

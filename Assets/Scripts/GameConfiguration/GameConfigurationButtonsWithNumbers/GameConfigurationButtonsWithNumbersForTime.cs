@@ -9,7 +9,6 @@ namespace Assets.Scripts
 {
     internal class GameConfigurationButtonsWithNumbersForTime
     {
-
         public static GameObject[,,] CreateTableWithTime(GameObject prefabCubePlay, int numberOfDepths, int numberOfRows, int numberOfColumns, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             GameObject[,,] tableWithNumber;
@@ -22,7 +21,6 @@ namespace Assets.Scripts
         public static int[] CreateTableWithSeconds()
         {
             int numberOfCubePlay = 4 * 4; // number: rows & columns
-            //int maxSecondsNumber = 60;
             int[] table = new int[numberOfCubePlay];
             table[0] = 0;
             int increaseNumber = 5;
@@ -93,7 +91,7 @@ namespace Assets.Scripts
                 {
                     for (int indexColumn = 0; indexColumn < numberOfColumns; indexColumn++)
                     {
-                        string stringNumber = numbers3D[indexDepth, indexRow, indexColumn];                      
+                        string stringNumber = numbers3D[indexDepth, indexRow, indexColumn];
                         newTable[indexDepth, indexRow, indexColumn] = stringNumber;
                     }
                 }

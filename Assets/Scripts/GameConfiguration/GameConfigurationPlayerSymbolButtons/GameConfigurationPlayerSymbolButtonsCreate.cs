@@ -27,7 +27,6 @@ namespace Assets.Scripts
         public static GameObject[,,] GameConfigurationPlayerSymbolCreateButtonSave(GameObject prefabCubePlay, Material[] prefabCubePlayDefaultColour, bool isGame2D)
         {
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolButtonSave();
-
             GameObject[,,] buttonSave = GameConfigurationButtonsCommonCreate.CreateCommonButtonSave(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName);
             return buttonSave;
         }
@@ -35,7 +34,6 @@ namespace Assets.Scripts
         public static GameObject[,,] GameConfigurationPlayerSymbolCreateButtonBack(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsBackColour, bool isGame2D)
         {
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolButtonBack();
-
             GameObject[,,] buttonBack = GameConfigurationButtonsCommonCreate.CreateCommonButtonBack(prefabCubePlay, prefabCubePlayButtonsBackColour, isGame2D, tagName);
             return buttonBack;
         }
@@ -46,8 +44,6 @@ namespace Assets.Scripts
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBoardGameButtonInformation();
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayersSymbols();
 
-
-            //GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonForText(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
             GameObject[,,] button = GameConfigurationButtonsCommonCreate.CreateCommonButtonTopForTextInformation(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, buttonText);
 
             string frontTextToAdd = "TopPlayersSymbols_";
@@ -55,28 +51,19 @@ namespace Assets.Scripts
 
             ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
 
-            //float newCoordinateY = 4.35f;
-            //float newCoordinateX = -0.8f;
-            //ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
-
             return button;
         }
 
         public static GameObject[,,] GameConfigurationCreateInformationButtonTopSetUp(GameObject prefabCubePlay, Material[] prefabCubePlayButtonsNumberColour, bool isGame2D)
         {
-            //GameObject[,,] buttons;
-
             string tagName = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonBoardGameButtonInformation();
             string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNameSetUp();
 
             GameObject[,,] button = PlayGameChangePlayersSymbolsButtonsCommonCreate.CreateCommonButtonForChangePlayersSymbolsChange(prefabCubePlay, prefabCubePlayButtonsNumberColour, isGame2D, tagName, buttonText);
 
-            //string frontTextToAdd = "InformationButtonTopChange_";
             float newCoordinateY = 3.9f;
             float newCoordinateX = -0.4f;
             ButtonsCommonMethods.ChangeDataForSingleGameConfigurationChangePlayersSymbolsButtons(button, newCoordinateY, newCoordinateX);
-
-            //ButtonsGameConfigurationMethods.ChangeDataForGameConfigurationButtonsInformation(button);
 
             return button;
         }
@@ -88,13 +75,10 @@ namespace Assets.Scripts
             List<GameObject[,,]> buttonsList = new List<GameObject[,,]>();
 
             if (playersNumber <= 6)
-            {
                 buttonsList = GameConfigurationPlayerSymbolCreateButtonsForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumber);
-            }
+
             else
-            {
                 buttonsList = GameConfigurationPlayerSymbolCreateButtonsForPlayerNumberBiggerThanSix(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumber);
-            }
 
             return buttonsList;
         }
@@ -110,7 +94,6 @@ namespace Assets.Scripts
 
             buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerNumber(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultTextForButtons);
 
-            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerNumber(buttonsList);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForConfigurationButtonsPlayersNumbers(buttonsList);
 
             return buttonsList;
@@ -137,13 +120,10 @@ namespace Assets.Scripts
             List<GameObject[,,]> buttonsList = new List<GameObject[,,]>();
 
             if (playersNumber <= 6)
-            {
                 buttonsList = GameConfigurationPlayerSymbolCreateButtonsForModeCellphone(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumber);
-            }
+
             else
-            {
                 buttonsList = GameConfigurationPlayerSymbolCreateButtonsForModeTablet(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, playersNumber);
-            }
 
             return buttonsList;
         }
@@ -159,7 +139,6 @@ namespace Assets.Scripts
 
             buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultPlayersSymbols);
 
-            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbols(buttonsList);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForConfigurationButtonsPlayersSymbols(buttonsList);
 
             return buttonsList;
@@ -176,7 +155,6 @@ namespace Assets.Scripts
 
             buttonsList = GameConfigurationPlayerSymbolButtonsMethods.GameConfigurationPlayerSymbolAllCreateButtonsForPlayerSymbol(prefabCubePlay, prefabCubePlayDefaultColour, isGame2D, tagName, playersNumber, defaultPlayersSymbols);
 
-            //GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForTableWithPlayerSymbolBiggerThanSix(buttonsList);
             GameConfigurationPlayerSymbolTableWithPlayerNumber.ChangeDataForConfigurationButtonsPlayersSymbolsBiggerThanSix(buttonsList);
 
             return buttonsList;
@@ -188,8 +166,6 @@ namespace Assets.Scripts
 
             string tagConfigurationPlayerSymbolChooseSymbol = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolChooseSymbol();
             string tagConfigurationPlayerSymbolInactiveField = GameConfigurationButtonsCommonButtonsTagName.GetTagForButtonPlayerSymbolInactiveField();
-
-            //string buttonText = GameConfigurationButtonsCommonButtonsName.GetButtonNamePlayer();
 
             int numberOfDepths = 1;
             int numberOfColumns = 4;

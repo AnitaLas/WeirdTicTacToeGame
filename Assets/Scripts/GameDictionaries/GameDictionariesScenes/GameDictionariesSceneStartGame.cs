@@ -11,7 +11,7 @@ namespace Assets.Scripts
                 { 1, "StartGameButtonStartGame" },
                 { 2, "StartGameButtonStartTeamGame" },
                 { 3, "StartGameButtonInformations" }, // should be without s xD
-                { 4, "StartGameButtonInactiveField" } 
+                { 4, "StartGameButtonInactiveField" }
             };
 
             return tagStartGameDictionary;
@@ -21,10 +21,7 @@ namespace Assets.Scripts
         {
             Dictionary<int, string> buttonsNameDictionary = new Dictionary<int, string>
             {
-                //{ 1, "START GAME" },
-                //{ 1, "PAST PLAY" },
                 { 1, "OLD VERSION" },
-               // { 2, "TEAM GAME" },
                 { 2, "TEAM GAME" },
                 { 3, "?" },
                 { 4, "GAME" }
