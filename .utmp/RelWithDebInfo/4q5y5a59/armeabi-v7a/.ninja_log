@@ -1,5 +1,5 @@
 # ninja log v5
-1	481	8088387320140403	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4d37bd60f33e8ba5
-485	754	8088387323465272	C:/PROJECTS/Game_WeirdTicTacToe/WeirdTicTacToeGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4q5y5a59/obj/armeabi-v7a/libswappywrapper.so	5fadbb0134d5334e
-8	606	8088390342407668	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4d37bd60f33e8ba5
-608	1023	8088390345497551	C:/PROJECTS/Game_WeirdTicTacToe/WeirdTicTacToeGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4q5y5a59/obj/armeabi-v7a/libswappywrapper.so	5fadbb0134d5334e
+3	242	8088562254350295	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4d37bd60f33e8ba5
+243	433	8088562256075161	C:/PROJECTS/Game_WeirdTicTacToe/WeirdTicTacToeGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4q5y5a59/obj/armeabi-v7a/libswappywrapper.so	5fadbb0134d5334e
+4	255	8088566547163659	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4d37bd60f33e8ba5
+256	457	8088566548998983	C:/PROJECTS/Game_WeirdTicTacToe/WeirdTicTacToeGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4q5y5a59/obj/armeabi-v7a/libswappywrapper.so	5fadbb0134d5334e
